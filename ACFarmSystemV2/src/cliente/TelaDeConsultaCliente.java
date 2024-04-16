@@ -1,0 +1,271 @@
+package cliente;
+
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
+public class TelaDeConsultaCliente extends javax.swing.JFrame {
+
+    public TelaDeConsultaCliente() {
+        initComponents();
+    }
+
+    private String nomeBuscado;
+    private ControleCliente controleCliente = new ControleCliente();
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jButtonVoltarAoInicio = new javax.swing.JButton();
+        jButtonBuscarFornecedor = new javax.swing.JButton();
+        jTextFieldEndereco = new javax.swing.JTextField();
+        jTextFieldCNPJOuCPF = new javax.swing.JTextField();
+        jTextFieldCEP = new javax.swing.JTextField();
+        jTextFieldCidade = new javax.swing.JTextField();
+        jTextFieldFornecedorBuscado = new javax.swing.JTextField();
+        jTextFieldTelefone = new javax.swing.JTextField();
+        jTextFieldTipo = new javax.swing.JTextField();
+        jTextFieldNome = new javax.swing.JTextField();
+        jTextFieldEstado = new javax.swing.JTextField();
+        jLabelIMGTelaInicialFornecedor = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButtonVoltarAoInicio.setBorder(null);
+        jButtonVoltarAoInicio.setContentAreaFilled(false);
+        jButtonVoltarAoInicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonVoltarAoInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVoltarAoInicioActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonVoltarAoInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 40, 25));
+
+        jButtonBuscarFornecedor.setBorder(null);
+        jButtonBuscarFornecedor.setContentAreaFilled(false);
+        jButtonBuscarFornecedor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonBuscarFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBuscarFornecedorActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonBuscarFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 107, 260, 44));
+
+        jTextFieldEndereco.setEditable(false);
+        jTextFieldEndereco.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldEndereco.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldEndereco.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldEndereco.setBorder(null);
+        jTextFieldEndereco.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldEndereco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldEnderecoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 316, 420, 29));
+
+        jTextFieldCNPJOuCPF.setEditable(false);
+        jTextFieldCNPJOuCPF.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldCNPJOuCPF.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldCNPJOuCPF.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldCNPJOuCPF.setBorder(null);
+        jTextFieldCNPJOuCPF.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldCNPJOuCPF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCNPJOuCPFActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldCNPJOuCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 316, 237, 29));
+
+        jTextFieldCEP.setEditable(false);
+        jTextFieldCEP.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldCEP.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldCEP.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldCEP.setBorder(null);
+        jTextFieldCEP.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldCEP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCEPActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldCEP, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 406, 320, 29));
+
+        jTextFieldCidade.setEditable(false);
+        jTextFieldCidade.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldCidade.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldCidade.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldCidade.setBorder(null);
+        jTextFieldCidade.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldCidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCidadeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 497, 320, 29));
+
+        jTextFieldFornecedorBuscado.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldFornecedorBuscado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldFornecedorBuscado.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldFornecedorBuscado.setBorder(null);
+        jTextFieldFornecedorBuscado.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldFornecedorBuscado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldFornecedorBuscadoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldFornecedorBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 114, 272, 30));
+
+        jTextFieldTelefone.setEditable(false);
+        jTextFieldTelefone.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldTelefone.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldTelefone.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldTelefone.setBorder(null);
+        jTextFieldTelefone.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldTelefone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldTelefoneActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 406, 320, 29));
+
+        jTextFieldTipo.setEditable(false);
+        jTextFieldTipo.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldTipo.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldTipo.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldTipo.setBorder(null);
+        jTextFieldTipo.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldTipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldTipoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 497, 320, 29));
+
+        jTextFieldNome.setEditable(false);
+        jTextFieldNome.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldNome.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldNome.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldNome.setBorder(null);
+        jTextFieldNome.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNomeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 225, 323, 30));
+
+        jTextFieldEstado.setEditable(false);
+        jTextFieldEstado.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldEstado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldEstado.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldEstado.setBorder(null);
+        jTextFieldEstado.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldEstado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldEstadoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 225, 319, 30));
+
+        jLabelIMGTelaInicialFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasCliente/img_tela_verificacao_cliente.png"))); // NOI18N
+        getContentPane().add(jLabelIMGTelaInicialFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 643));
+
+        pack();
+        setLocationRelativeTo(null);
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonVoltarAoInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarAoInicioActionPerformed
+        this.dispose();
+        new TelaDeInicioCliente().setVisible(true);
+    }//GEN-LAST:event_jButtonVoltarAoInicioActionPerformed
+
+    private void jTextFieldCNPJOuCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCNPJOuCPFActionPerformed
+
+    }//GEN-LAST:event_jTextFieldCNPJOuCPFActionPerformed
+
+    private void jTextFieldCEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCEPActionPerformed
+
+    }//GEN-LAST:event_jTextFieldCEPActionPerformed
+
+    private void jTextFieldCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCidadeActionPerformed
+
+    }//GEN-LAST:event_jTextFieldCidadeActionPerformed
+
+    private void jTextFieldFornecedorBuscadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldFornecedorBuscadoActionPerformed
+
+    }//GEN-LAST:event_jTextFieldFornecedorBuscadoActionPerformed
+
+    private void jTextFieldTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTelefoneActionPerformed
+
+    }//GEN-LAST:event_jTextFieldTelefoneActionPerformed
+
+    private void jTextFieldTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTipoActionPerformed
+
+    }//GEN-LAST:event_jTextFieldTipoActionPerformed
+
+    private void jTextFieldNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeActionPerformed
+
+    }//GEN-LAST:event_jTextFieldNomeActionPerformed
+
+    private void jTextFieldEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEstadoActionPerformed
+
+    }//GEN-LAST:event_jTextFieldEstadoActionPerformed
+
+    private void jButtonBuscarFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarFornecedorActionPerformed
+        try {
+            buscarCliente();
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaDeConsultaCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButtonBuscarFornecedorActionPerformed
+
+    private void jTextFieldEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEnderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldEnderecoActionPerformed
+
+    public void buscarCliente() throws SQLException {
+        nomeBuscado = jTextFieldFornecedorBuscado.getText();
+
+        Cliente clienteEncontrado = controleCliente.buscarCliente(nomeBuscado);
+
+        if (clienteEncontrado != null) {
+            jTextFieldEstado.setText(clienteEncontrado.getEstadoCliente());
+            jTextFieldCEP.setText(clienteEncontrado.getCepCliente());
+            jTextFieldTelefone.setText(clienteEncontrado.getTelefoneCliente());
+            jTextFieldTipo.setText(clienteEncontrado.getTipoCliente());
+            jTextFieldEndereco.setText(clienteEncontrado.getEnderecoCliente());
+            jTextFieldCNPJOuCPF.setText(clienteEncontrado.getCnpjOuCpfCliente());
+            jTextFieldNome.setText(clienteEncontrado.getNomeCliente());
+            jTextFieldCidade.setText(clienteEncontrado.getCidadeCliente());
+        } else {
+            JOptionPane.showMessageDialog(this, "Cliente não encontrado");
+            jTextFieldEstado.setText("");
+            jTextFieldCEP.setText("");
+            jTextFieldTelefone.setText("");
+            jTextFieldTipo.setText("");
+            jTextFieldEndereco.setText("");
+            jTextFieldCNPJOuCPF.setText("");
+            jTextFieldNome.setText("");
+            jTextFieldCidade.setText("");
+        }
+    }
+
+    
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonBuscarFornecedor;
+    private javax.swing.JButton jButtonVoltarAoInicio;
+    private javax.swing.JLabel jLabelIMGTelaInicialFornecedor;
+    private javax.swing.JTextField jTextFieldCEP;
+    private javax.swing.JTextField jTextFieldCNPJOuCPF;
+    private javax.swing.JTextField jTextFieldCidade;
+    private javax.swing.JTextField jTextFieldEndereco;
+    private javax.swing.JTextField jTextFieldEstado;
+    private javax.swing.JTextField jTextFieldFornecedorBuscado;
+    private javax.swing.JTextField jTextFieldNome;
+    private javax.swing.JTextField jTextFieldTelefone;
+    private javax.swing.JTextField jTextFieldTipo;
+    // End of variables declaration//GEN-END:variables
+}
