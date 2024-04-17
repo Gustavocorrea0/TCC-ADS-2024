@@ -15,7 +15,7 @@ public class TelaDeLogin extends javax.swing.JFrame {
     private String senha;
     private String senhaCriptografada;
     private boolean validaSenha;
-    
+
     public TelaDeLogin() {
         initComponents();
     }
@@ -43,7 +43,7 @@ public class TelaDeLogin extends javax.swing.JFrame {
                 jButtonEntrarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 417, 405, 50));
+        getContentPane().add(jButtonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(252, 412, 408, 56));
 
         jTextNomeUsuario.setBackground(new java.awt.Color(255, 255, 255));
         jTextNomeUsuario.setFont(new java.awt.Font("Arial", 0, 23)); // NOI18N
@@ -54,13 +54,13 @@ public class TelaDeLogin extends javax.swing.JFrame {
                 jTextNomeUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextNomeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 222, 404, 45));
+        getContentPane().add(jTextNomeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(305, 207, 460, 51));
 
         jPasswordSenhaDoUsuario.setBackground(new java.awt.Color(255, 255, 255));
         jPasswordSenhaDoUsuario.setFont(new java.awt.Font("Arial", 0, 23)); // NOI18N
         jPasswordSenhaDoUsuario.setForeground(new java.awt.Color(0, 0, 0));
         jPasswordSenhaDoUsuario.setBorder(null);
-        getContentPane().add(jPasswordSenhaDoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 307, 405, 45));
+        getContentPane().add(jPasswordSenhaDoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(305, 299, 460, 51));
 
         jButtonEncerrarSistema.setBorder(null);
         jButtonEncerrarSistema.setBorderPainted(false);
@@ -74,7 +74,7 @@ public class TelaDeLogin extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonEncerrarSistema, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 10, 50, 40));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img_tela_de_login.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img_tela_de_login_2.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -102,8 +102,11 @@ public class TelaDeLogin extends javax.swing.JFrame {
         nome = jTextNomeUsuario.getText();
         senha = jPasswordSenhaDoUsuario.getText();
 
-        if (nome.equals("")) {
+        if (nome.isEmpty() && nome.isBlank()) {
             JOptionPane.showMessageDialog(null, "Nome inválido");
+            jTextNomeUsuario.setText("");
+            jPasswordSenhaDoUsuario.setText("");
+            return;
         }
 
         usuarioEncontrado = controleUsuario.executarLogin(nome);
@@ -116,10 +119,14 @@ public class TelaDeLogin extends javax.swing.JFrame {
                 jTextNomeUsuario.setText("");
                 jPasswordSenhaDoUsuario.setText("");
                 JOptionPane.showMessageDialog(null, "Dados Inválidos");
-            } else {
+                return;
+            }
+
+            if (validaSenha == true) {
                 this.dispose();
                 new TelaDeInicio().setVisible(true);
             }
+
         } else {
             jTextNomeUsuario.setText("");
             jPasswordSenhaDoUsuario.setText("");
