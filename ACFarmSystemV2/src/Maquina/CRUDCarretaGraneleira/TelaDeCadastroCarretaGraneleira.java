@@ -108,6 +108,11 @@ public class TelaDeCadastroCarretaGraneleira extends javax.swing.JFrame {
         jButtonCancelarCadastroDeMaquina.setBorder(null);
         jButtonCancelarCadastroDeMaquina.setBorderPainted(false);
         jButtonCancelarCadastroDeMaquina.setContentAreaFilled(false);
+        jButtonCancelarCadastroDeMaquina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelarCadastroDeMaquinaActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonCancelarCadastroDeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 600, 280, 33));
 
         jButtonConfirmarCadastroDeMaquina.setBorder(null);
@@ -187,6 +192,10 @@ public class TelaDeCadastroCarretaGraneleira extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jComboBoxEstadoActionPerformed
 
+    private void jButtonCancelarCadastroDeMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarCadastroDeMaquinaActionPerformed
+        limparCampos();
+    }//GEN-LAST:event_jButtonCancelarCadastroDeMaquinaActionPerformed
+
     public void cadastrarCarretaGraneleira() {
         Calendar cal = Calendar.getInstance();
         int anoAtual = cal.get(Calendar.YEAR);
@@ -196,7 +205,7 @@ public class TelaDeCadastroCarretaGraneleira extends javax.swing.JFrame {
         chassiMaquina = jTextFieldChassiMaquina.getText();
         estado = jComboBoxEstado.getSelectedItem().toString();
         tipoMaquina = "Carreta Graneleira";
-        
+
         Double capacidadeCargaEmKG = Double.parseDouble(jTextFieldCapacidadeDePeso.getText());
         int capacidadeDeSacas = Integer.parseInt(jTextFieldCapacidadeDePeso.getText());
 
@@ -225,24 +234,24 @@ public class TelaDeCadastroCarretaGraneleira extends javax.swing.JFrame {
             return;
         }
 
-        if(capacidadeDeSacas <= 0){
+        if (capacidadeDeSacas <= 0) {
             JOptionPane.showMessageDialog(null, "Capacidade de Sacas inválida");
             return;
         }
-        
-        if(capacidadeCargaEmKG <= 0){
+
+        if (capacidadeCargaEmKG <= 0) {
             JOptionPane.showMessageDialog(null, "Capacidade de carga inválida");
             return;
         }
-        
+
         if (estado.equals("Ativo")) {
             estado = "A";
         }
-        
+
         if (estado.equals("Inativo")) {
             estado = "I";
         }
-        
+
         try {
             controleMaquina.carretaGraneleira.setTipoMaquina(tipoMaquina);
             controleMaquina.carretaGraneleira.setNomeMaquina(nomeMaquina);
@@ -255,10 +264,20 @@ public class TelaDeCadastroCarretaGraneleira extends javax.swing.JFrame {
 
             String msg = controleMaquina.cadastrarCarretaGraneleira(ControleMaquina.INCLUSAO);
             JOptionPane.showMessageDialog(this, msg);
+            limparCampos();
         } catch (NullPointerException ex) {
             System.out.println("Problema no sistema, tipo: ");
             ex.printStackTrace();
         }
+    }
+
+    private void limparCampos() {
+        jTextFieldNomeMaquina.setText("");
+        jTextFieldMarcaMaquina.setText("");
+        jTextFieldChassiMaquina.setText("");
+        jTextFieldCapacidadeDeSacas.setText("");
+        jTextFieldCapacidadeDePeso.setText("");
+        jTextFieldAnoMaquina.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -275,4 +294,5 @@ public class TelaDeCadastroCarretaGraneleira extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldMarcaMaquina;
     private javax.swing.JTextField jTextFieldNomeMaquina;
     // End of variables declaration//GEN-END:variables
+
 }

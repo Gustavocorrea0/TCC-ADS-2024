@@ -18,7 +18,7 @@ public class TelaDeCadastroCarregador extends javax.swing.JFrame {
     public TelaDeCadastroCarregador() {
         initComponents();
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -92,6 +92,11 @@ public class TelaDeCadastroCarregador extends javax.swing.JFrame {
         jButtonCancelarCadastroDeMaquina.setBorderPainted(false);
         jButtonCancelarCadastroDeMaquina.setContentAreaFilled(false);
         jButtonCancelarCadastroDeMaquina.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCancelarCadastroDeMaquina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelarCadastroDeMaquinaActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonCancelarCadastroDeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 600, 280, 33));
 
         jButtonConfirmarCadastroDeMaquina.setBorder(null);
@@ -167,11 +172,15 @@ public class TelaDeCadastroCarregador extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jComboBoxEstadoActionPerformed
 
+    private void jButtonCancelarCadastroDeMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarCadastroDeMaquinaActionPerformed
+        limparCampos();
+    }//GEN-LAST:event_jButtonCancelarCadastroDeMaquinaActionPerformed
+
     public void cadastrarCarregador() {
 
         Calendar cal = Calendar.getInstance();
         int anoAtual = cal.get(Calendar.YEAR);
-        
+
         nomeMaquina = jTextFieldNomeMaquina.getText();
         marcaMaquina = jTextFieldMarcaMaquina.getText();
         anoMaquina = Integer.parseInt(jTextFieldAnoMaquina.getText());
@@ -199,8 +208,8 @@ public class TelaDeCadastroCarregador extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Chassi Inválido");
             return;
         }
-        
-        if(estado.equals("Selecione")){
+
+        if (estado.equals("Selecione")) {
             JOptionPane.showMessageDialog(null, "Adicione o estado");
             return;
         }
@@ -209,12 +218,12 @@ public class TelaDeCadastroCarregador extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Peso Inválido");
             return;
         }
-        
+
         if (estado.equals("Ativo")) {
             estado = "A";
-        } 
-        
-        if (estado.equals("Inativo")){
+        }
+
+        if (estado.equals("Inativo")) {
             estado = "I";
         }
 
@@ -231,12 +240,21 @@ public class TelaDeCadastroCarregador extends javax.swing.JFrame {
 
             String msg = controleMaquina.cadastrarCarregador(ControleMaquina.INCLUSAO);
             JOptionPane.showMessageDialog(this, msg);
+            limparCampos();
 
         } catch (NullPointerException ex) {
             System.out.println("Problema no sistema, tipo: ");
             ex.printStackTrace();
         }
 
+    }
+
+    private void limparCampos() {
+        jTextFieldAnoMaquina.setText("");
+        jTextFieldChassiMaquina.setText("");
+        jTextFieldMarcaMaquina.setText("");
+        jTextFieldNomeMaquina.setText("");
+        jTextFieldPesoSuportado.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

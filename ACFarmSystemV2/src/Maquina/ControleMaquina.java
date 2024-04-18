@@ -906,7 +906,7 @@ public class ControleMaquina {
         try {
             if (operacao == INCLUSAO) {
                 
-                sql = "INSERT INTO sub_solador (tipo_Maquina, nome_Maquina, marca_Maquina, ano_da_maquina, chassi_maquina,"
+                sql = "INSERT INTO subsolador (tipo_Maquina, nome_Maquina, marca_Maquina, ano_da_maquina, chassi_maquina,"
                         + " estado_maquina, peso, largura_em_mm, numero_de_hastes, potencia_do_trator_em_cv)\n"
                         + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
                 
