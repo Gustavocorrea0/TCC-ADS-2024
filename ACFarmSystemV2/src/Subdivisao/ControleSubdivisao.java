@@ -10,10 +10,10 @@ import java.util.List;
 public class ControleSubdivisao {
 
     public Conecta conexao = new Conecta();
-    public PreparedStatement ps; 
+    public PreparedStatement ps;
     public ResultSet resultados;
-    public String msg; 
-    public String sql; 
+    public String msg;
+    public String sql;
     public Subdivisao subdivisao;
 
     public static final byte INCLUSAO = 1;
@@ -34,12 +34,13 @@ public class ControleSubdivisao {
 
         try {
             if (operacao == INCLUSAO) {
-                sql = "INSERT INTO subdivisao (nome_subdivisao, area_subdivisao, tipo_de_cultura_subdivisao, id_propriedade) VALUES (?,?,?,?)";
+                sql = "INSERT INTO subdivisao (nome_subdivisao, area_subdivisao, tipo_de_cultura_subdivisao, id_propriedade, nome_propriedade) VALUES (?,?,?,?,?)";
                 ps = conexao.conn.prepareStatement(sql);
                 ps.setString(1, subdivisao.getNomeSubdivisao());
                 ps.setDouble(2, subdivisao.getAreaSubdivisao());
                 ps.setString(3, subdivisao.getCulturaSubdivisao());
                 ps.setInt(4, subdivisao.getIdPropriedade());
+                ps.setString(5, subdivisao.getNomePropriedade());
 
                 int linhasAfetadas = ps.executeUpdate();
                 if (linhasAfetadas > 0) {
@@ -82,6 +83,7 @@ public class ControleSubdivisao {
                 subdivisaoBuscada.setAreaSubdivisao(resultados.getDouble("area_subdivisao"));
                 subdivisaoBuscada.setCulturaSubdivisao(resultados.getString("tipo_de_cultura_subdivisao"));
                 subdivisaoBuscada.setIdPropriedade(resultados.getInt("id_subdivisao"));
+                subdivisaoBuscada.setNomePropriedade(resultados.getString("nome_propriedade"));
 
                 return subdivisaoBuscada;
             } else {
@@ -133,21 +135,19 @@ public class ControleSubdivisao {
         try {
             ps = conexao.conn.prepareStatement(sql);
             resultados = ps.executeQuery();
-            
-            Subdivisao subdivisaoBuscada = new Subdivisao();
 
-            while(resultados.next()){
+            while (resultados.next()) {
+                Subdivisao subdivisaoBuscada = new Subdivisao();
                 subdivisaoBuscada.setNomeSubdivisao(resultados.getString("nome_subdivisao"));
                 subdivisaoBuscada.setAreaSubdivisao(resultados.getDouble("area_subdivisao"));
                 subdivisaoBuscada.setCulturaSubdivisao(resultados.getString("tipo_de_cultura_subdivisao"));
-                subdivisaoBuscada.setIdSubdivisao(resultados.getInt("id_subdivisao"));
+                subdivisaoBuscada.setNomePropriedade(resultados.getString("nome_propriedade"));
                 subdivisoes.add(subdivisaoBuscada);
             }
-            
 
         } catch (SQLException ex) {
             ex.printStackTrace();
-        } 
+        }
         return subdivisoes;
     }
 
@@ -187,5 +187,5 @@ public class ControleSubdivisao {
         }
 
     }
-    
+
 }

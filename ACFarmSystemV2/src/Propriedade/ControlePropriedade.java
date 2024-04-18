@@ -121,12 +121,12 @@ public class ControlePropriedade {
             resultados = ps.executeQuery();
             
             while(resultados.next()){
-                Propriedade propriedade = new Propriedade();
-                propriedade.setNomePropriedade(resultados.getString("nome"));
-                propriedade.setAreaPropriedade(resultados.getDouble("area"));
-                propriedade.setCidade(resultados.getString("cidade"));
-                propriedade.setTipoDeCulturaDaPropriedade(resultados.getString("cultura"));
-                propriedades.add(propriedade);
+                Propriedade propriedadeEncontrada = new Propriedade();
+                propriedadeEncontrada.setNomePropriedade(resultados.getString("nome"));
+                propriedadeEncontrada.setAreaPropriedade(resultados.getDouble("area"));
+                propriedadeEncontrada.setCidade(resultados.getString("cidade"));
+                propriedadeEncontrada.setTipoDeCulturaDaPropriedade(resultados.getString("cultura"));
+                propriedades.add(propriedadeEncontrada);
             }
         } catch (SQLException ex) {
             Logger.getLogger(ControlePropriedade.class.getName()).log(Level.SEVERE, null, ex);

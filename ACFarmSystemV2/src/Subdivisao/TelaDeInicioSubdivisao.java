@@ -3,10 +3,6 @@ package Subdivisao;
 import acfarmsystemv2.telaDeInicio.TelaDeInicio;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Gustavo
- */
 public final class TelaDeInicioSubdivisao extends javax.swing.JFrame {
 
     private DefaultTableModel modeloPropriedade;
@@ -41,7 +37,7 @@ public final class TelaDeInicioSubdivisao extends javax.swing.JFrame {
                 jButtonCadastrarPropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCadastrarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 261, 45));
+        getContentPane().add(jButtonCadastrarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 108, 261, 45));
 
         jButtonAtualizarPropriedade.setBorder(null);
         jButtonAtualizarPropriedade.setContentAreaFilled(false);
@@ -51,7 +47,7 @@ public final class TelaDeInicioSubdivisao extends javax.swing.JFrame {
                 jButtonAtualizarPropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAtualizarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(606, 176, 261, 45));
+        getContentPane().add(jButtonAtualizarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 182, 261, 45));
 
         jButtonDeletarPropriedade.setBorder(null);
         jButtonDeletarPropriedade.setContentAreaFilled(false);
@@ -94,11 +90,11 @@ public final class TelaDeInicioSubdivisao extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nome", "Area(Alqueire)", "Cultura", "ID"
+                "Nome", "Area(Alqueire)", "Cultura", "Propriedade"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Double.class, java.lang.String.class, java.lang.Integer.class
+                java.lang.String.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false
@@ -129,7 +125,7 @@ public final class TelaDeInicioSubdivisao extends javax.swing.JFrame {
 
     private void jButtonCadastrarPropriedadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarPropriedadeActionPerformed
         this.dispose();
-        new TelaDeCadastroDeSubdivisao().setVisible(true);
+        new TelaDePropriedades().setVisible(true);
     }//GEN-LAST:event_jButtonCadastrarPropriedadeActionPerformed
 
     private void jButtonAtualizarPropriedadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtualizarPropriedadeActionPerformed
@@ -159,7 +155,7 @@ public final class TelaDeInicioSubdivisao extends javax.swing.JFrame {
         
         for (Subdivisao u: controleSubdivisao.lerSubdivisao()){
               modeloPropriedade.addRow(new Object[]{u.getNomeSubdivisao(),
-                  u.getAreaSubdivisao(), u.getCulturaSubdivisao(), u.getIdSubdivisao()});
+                  u.getAreaSubdivisao(), u.getCulturaSubdivisao(), u.getNomePropriedade()});
         }
     }
      

@@ -5,8 +5,17 @@ public class Subdivisao {
     private String nomeSubdivisao;
     private Double areaSubdivisao;
     private String culturaSubdivisao;
+    private String nomePropriedade;
     private int idPropriedade;
+    
+    public String getNomePropriedade() {
+        return nomePropriedade;
+    }
 
+    public void setNomePropriedade(String nomePropriedade) {
+        this.nomePropriedade = nomePropriedade;
+    }
+    
     public int getIdPropriedade() {
         return idPropriedade;
     }

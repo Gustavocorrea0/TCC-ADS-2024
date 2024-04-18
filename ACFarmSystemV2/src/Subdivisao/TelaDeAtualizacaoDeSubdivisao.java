@@ -24,6 +24,7 @@ public class TelaDeAtualizacaoDeSubdivisao extends javax.swing.JFrame {
         jButtonBuscarSubdivisao = new javax.swing.JButton();
         jButtonCancelarAtualizacao = new javax.swing.JButton();
         jButtonConfirmarAtualizacao = new javax.swing.JButton();
+        jTextFieldNomePropriedade = new javax.swing.JTextField();
         jLabelCadatroSubdivisao = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -117,6 +118,19 @@ public class TelaDeAtualizacaoDeSubdivisao extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonConfirmarAtualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(585, 509, 280, 36));
 
+        jTextFieldNomePropriedade.setEditable(false);
+        jTextFieldNomePropriedade.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldNomePropriedade.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldNomePropriedade.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldNomePropriedade.setBorder(null);
+        jTextFieldNomePropriedade.setSelectionColor(new java.awt.Color(153, 204, 255));
+        jTextFieldNomePropriedade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNomePropriedadeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldNomePropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(496, 256, 276, 28));
+
         jLabelCadatroSubdivisao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasSubdivisao/img_tela_de_atualizacao_subdivisao.png"))); // NOI18N
         jLabelCadatroSubdivisao.setText("jLabel1");
         getContentPane().add(jLabelCadatroSubdivisao, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 640));
@@ -177,22 +191,31 @@ public class TelaDeAtualizacaoDeSubdivisao extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonConfirmarAtualizacaoActionPerformed
 
+    private void jTextFieldNomePropriedadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomePropriedadeActionPerformed
+
+    }//GEN-LAST:event_jTextFieldNomePropriedadeActionPerformed
+
     public void buscarSubdivisao() throws SQLException {
         nomeSubdivisao = jTextFieldIdSubdivisao.getText();
         Subdivisao subdivisaoEncontrada = controleSubdivisao.buscarSubdivisao(nomeSubdivisao);
 
         if (subdivisaoEncontrada != null) {
             String areaPropriedadeTexto = Double.toString(subdivisaoEncontrada.getAreaSubdivisao());
-            jTextFieldAreaSubdivisao.setText(areaPropriedadeTexto);
             jTextFieldNomeSubdivisao.setText(subdivisaoEncontrada.getNomeSubdivisao());
             jTextFieldCulturaSubdivisao.setText(subdivisaoEncontrada.getCulturaSubdivisao());
-            idSubdivisao = subdivisaoEncontrada.getIdPropriedade();
+            jTextFieldNomePropriedade.setText(subdivisaoEncontrada.getNomePropriedade());
+            jTextFieldAreaSubdivisao.setText(areaPropriedadeTexto);
         } else {
             JOptionPane.showMessageDialog(this, "Subdivisão não encontrada.");
-            jTextFieldAreaSubdivisao.setText("");
-            jTextFieldNomeSubdivisao.setText("");
-            jTextFieldCulturaSubdivisao.setText("");
+            limparCampos();
         }
+    }
+    
+    public void limparCampos() {
+        jTextFieldAreaSubdivisao.setText("");
+        jTextFieldNomeSubdivisao.setText("");
+        jTextFieldCulturaSubdivisao.setText("");
+        jTextFieldNomePropriedade.setText("");
     }
 
     public void atualizarSubdivisao() throws SQLException {
@@ -230,14 +253,12 @@ public class TelaDeAtualizacaoDeSubdivisao extends javax.swing.JFrame {
     private javax.swing.JButton jButtonBuscarSubdivisao;
     private javax.swing.JButton jButtonCancelarAtualizacao;
     private javax.swing.JButton jButtonConfirmarAtualizacao;
-    private javax.swing.JButton jButtonConfirmarRemocaoDePropriedade;
-    private javax.swing.JButton jButtonConfirmarRemocaoDePropriedade1;
-    private javax.swing.JButton jButtonConfirmarRemocaoDePropriedade2;
     private javax.swing.JButton jButtonVoltarAoTelaDeUsuario;
     private javax.swing.JLabel jLabelCadatroSubdivisao;
     private javax.swing.JTextField jTextFieldAreaSubdivisao;
     private javax.swing.JTextField jTextFieldCulturaSubdivisao;
     private javax.swing.JTextField jTextFieldIdSubdivisao;
+    private javax.swing.JTextField jTextFieldNomePropriedade;
     private javax.swing.JTextField jTextFieldNomeSubdivisao;
     // End of variables declaration//GEN-END:variables
 }

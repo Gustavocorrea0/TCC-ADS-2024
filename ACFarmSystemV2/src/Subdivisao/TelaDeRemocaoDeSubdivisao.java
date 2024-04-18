@@ -18,12 +18,13 @@ public class TelaDeRemocaoDeSubdivisao extends javax.swing.JFrame {
         botaoTipoDeCultura = new javax.swing.ButtonGroup();
         jTextFieldNomeSubdivisao = new javax.swing.JTextField();
         jTextFieldCulturaSubdivisao = new javax.swing.JTextField();
-        jTextFieldIdSubdivisao = new javax.swing.JTextField();
+        jTextFieldNomeBuscaSubdivisao = new javax.swing.JTextField();
         jTextFieldAreaSubdivisao = new javax.swing.JTextField();
         jButtonVoltarAoTelaDeUsuario = new javax.swing.JButton();
         jButtonBuscarSubdivisao = new javax.swing.JButton();
         jButtonCancelarSubdivisao = new javax.swing.JButton();
         jButtonRemoverSubdivisao = new javax.swing.JButton();
+        jTextFieldNomePropriedade = new javax.swing.JTextField();
         jLabelCadatroPropriedade = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -53,16 +54,16 @@ public class TelaDeRemocaoDeSubdivisao extends javax.swing.JFrame {
         });
         getContentPane().add(jTextFieldCulturaSubdivisao, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 510, 275, 28));
 
-        jTextFieldIdSubdivisao.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldIdSubdivisao.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldIdSubdivisao.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldIdSubdivisao.setBorder(null);
-        jTextFieldIdSubdivisao.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldNomeBuscaSubdivisao.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldNomeBuscaSubdivisao.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldNomeBuscaSubdivisao.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldNomeBuscaSubdivisao.setBorder(null);
+        jTextFieldNomeBuscaSubdivisao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldIdSubdivisaoActionPerformed(evt);
+                jTextFieldNomeBuscaSubdivisaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldIdSubdivisao, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 131, 304, 28));
+        getContentPane().add(jTextFieldNomeBuscaSubdivisao, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 131, 304, 28));
 
         jTextFieldAreaSubdivisao.setEditable(false);
         jTextFieldAreaSubdivisao.setBackground(new java.awt.Color(255, 255, 255));
@@ -120,6 +121,19 @@ public class TelaDeRemocaoDeSubdivisao extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonRemoverSubdivisao, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 508, 280, 36));
 
+        jTextFieldNomePropriedade.setEditable(false);
+        jTextFieldNomePropriedade.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldNomePropriedade.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldNomePropriedade.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldNomePropriedade.setBorder(null);
+        jTextFieldNomePropriedade.setSelectionColor(new java.awt.Color(153, 204, 255));
+        jTextFieldNomePropriedade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNomePropriedadeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldNomePropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(496, 256, 276, 28));
+
         jLabelCadatroPropriedade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasSubdivisao/img_tela_de_remocao_subdivisao.png"))); // NOI18N
         jLabelCadatroPropriedade.setText("jLabel1");
         getContentPane().add(jLabelCadatroPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 640));
@@ -140,9 +154,9 @@ public class TelaDeRemocaoDeSubdivisao extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jTextFieldCulturaSubdivisaoActionPerformed
 
-    private void jTextFieldIdSubdivisaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdSubdivisaoActionPerformed
+    private void jTextFieldNomeBuscaSubdivisaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeBuscaSubdivisaoActionPerformed
 
-    }//GEN-LAST:event_jTextFieldIdSubdivisaoActionPerformed
+    }//GEN-LAST:event_jTextFieldNomeBuscaSubdivisaoActionPerformed
 
     private void jButtonVoltarAoTelaDeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarAoTelaDeUsuarioActionPerformed
         this.dispose();
@@ -166,23 +180,28 @@ public class TelaDeRemocaoDeSubdivisao extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonRemoverSubdivisaoActionPerformed
 
     private void jButtonCancelarSubdivisaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarSubdivisaoActionPerformed
-        jTextFieldIdSubdivisao.setText("");
+        jTextFieldNomeBuscaSubdivisao.setText("");
         jTextFieldAreaSubdivisao.setText("");
         jTextFieldNomeSubdivisao.setText("");
         jTextFieldCulturaSubdivisao.setText("");
     }//GEN-LAST:event_jButtonCancelarSubdivisaoActionPerformed
 
+    private void jTextFieldNomePropriedadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomePropriedadeActionPerformed
+
+    }//GEN-LAST:event_jTextFieldNomePropriedadeActionPerformed
+
     public void removerSubdivisao() {
-        nomeSubdivisao = jTextFieldIdSubdivisao.getText();
+        nomeSubdivisao = jTextFieldNomeBuscaSubdivisao.getText();
         msg1 = controleSubdivisao.removerSubdivisao(nomeSubdivisao);
         JOptionPane.showMessageDialog(this, msg1);
         jTextFieldAreaSubdivisao.setText("");
         jTextFieldNomeSubdivisao.setText("");
         jTextFieldCulturaSubdivisao.setText("");
+        jTextFieldNomePropriedade.setText("");
     }
 
     public void buscarSubdivisao() throws SQLException {
-        nomeSubdivisao = jTextFieldIdSubdivisao.getText();
+        nomeSubdivisao = jTextFieldNomeBuscaSubdivisao.getText();
         Subdivisao subdivisaoEncontrada = controleSubdivisao.buscarSubdivisao(nomeSubdivisao);
 
         if (subdivisaoEncontrada != null) {
@@ -190,12 +209,18 @@ public class TelaDeRemocaoDeSubdivisao extends javax.swing.JFrame {
             jTextFieldAreaSubdivisao.setText(areaPropriedadeTexto);
             jTextFieldNomeSubdivisao.setText(subdivisaoEncontrada.getNomeSubdivisao());
             jTextFieldCulturaSubdivisao.setText(subdivisaoEncontrada.getCulturaSubdivisao());
+            jTextFieldNomePropriedade.setText(subdivisaoEncontrada.getNomePropriedade());
         } else {
             JOptionPane.showMessageDialog(this, "Subdivisão não encontrada.");
-            jTextFieldAreaSubdivisao.setText("");
-            jTextFieldNomeSubdivisao.setText("");
-            jTextFieldCulturaSubdivisao.setText("");
+            limparCampos();
         }
+    }
+
+    public void limparCampos() {
+        jTextFieldAreaSubdivisao.setText("");
+        jTextFieldNomeSubdivisao.setText("");
+        jTextFieldCulturaSubdivisao.setText("");
+        jTextFieldNomePropriedade.setText("");
     }
 
 
@@ -208,7 +233,8 @@ public class TelaDeRemocaoDeSubdivisao extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelCadatroPropriedade;
     private javax.swing.JTextField jTextFieldAreaSubdivisao;
     private javax.swing.JTextField jTextFieldCulturaSubdivisao;
-    private javax.swing.JTextField jTextFieldIdSubdivisao;
+    private javax.swing.JTextField jTextFieldNomeBuscaSubdivisao;
+    private javax.swing.JTextField jTextFieldNomePropriedade;
     private javax.swing.JTextField jTextFieldNomeSubdivisao;
     // End of variables declaration//GEN-END:variables
 }
