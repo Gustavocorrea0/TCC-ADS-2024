@@ -183,7 +183,6 @@ public class TelaDeConsultaSoja extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonBuscarActionPerformed
 
     private void jButtonSairDaTelaAdicionarMilhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairDaTelaAdicionarMilhoActionPerformed
-        // TODO add your handling code here:
         this.dispose();
         new TelaCRUDSoja().setVisible(true);
     }//GEN-LAST:event_jButtonSairDaTelaAdicionarMilhoActionPerformed
@@ -196,7 +195,7 @@ public class TelaDeConsultaSoja extends javax.swing.JFrame {
             fornecedorPlanta = sojaEncontrado.getNomeFornecedor();
             cicloEmDias = Integer.toString(sojaEncontrado.getCicloEmDias());
             alturaAtualDaPlanta = Double.toString(sojaEncontrado.getAlturaAtualDaPlanta());
-            
+
             SimpleDateFormat formatoSQL = new SimpleDateFormat("yyyy-MM-dd");
             SimpleDateFormat formatoBrasileiro = new SimpleDateFormat("dd/MM/yyyy");
 
@@ -213,14 +212,18 @@ public class TelaDeConsultaSoja extends javax.swing.JFrame {
             jTextFieldSurgimentoDeSementes.setText(dataDeSurgimentoDeSementes);
         } else {
             JOptionPane.showMessageDialog(this, "Planta não encontrada");
-            jTextFieldAlturaPlanta.setText("");
-            jTextFieldCicloAproximadoEmDias.setText("");
-            jTextFieldDataPlantio.setText("");
-            jTextFieldFornecedor.setText("");
-            jTextFieldSurgimentoDeSementes.setText("");
+            limparCampos();
         }
     }
 
+    public void limparCampos(){
+        jTextFieldAlturaPlanta.setText("");
+        jTextFieldCicloAproximadoEmDias.setText("");
+        jTextFieldDataPlantio.setText("");
+        jTextFieldFornecedor.setText("");
+        jTextFieldSurgimentoDeSementes.setText("");
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscar;
     private javax.swing.JButton jButtonSairDaTelaAdicionarMilho;

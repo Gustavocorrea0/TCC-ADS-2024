@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package planta;
 
 import javax.swing.table.DefaultTableModel;
@@ -131,31 +127,26 @@ public class TelaCRUDMilho extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSairDaTelaInicioPlantaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairDaTelaInicioPlantaActionPerformed
-        // TODO add your handling code here:
         this.dispose();
         new TelaDeInicioPlanta().setVisible(true);
     }//GEN-LAST:event_jButtonSairDaTelaInicioPlantaActionPerformed
 
     private void jButtonAdicionarMilhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdicionarMilhoActionPerformed
-        // TODO add your handling code here:
         this.dispose();
         new TelaVizualizacaoPropriedadeEFornecedorMilho().setVisible(true);
     }//GEN-LAST:event_jButtonAdicionarMilhoActionPerformed
 
     private void jButtonVerificarMilhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerificarMilhoActionPerformed
-        // TODO add your handling code here:
         this.dispose();
         new TelaDeConsultaMilho().setVisible(true);
     }//GEN-LAST:event_jButtonVerificarMilhoActionPerformed
 
     private void jButtonMovimentacaoMilhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMovimentacaoMilhoActionPerformed
-        // TODO add your handling code here:
         this.dispose();
         new TelaDeMovimentacaoMilho().setVisible(true);
     }//GEN-LAST:event_jButtonMovimentacaoMilhoActionPerformed
 
     private void jButtonRemoverMilhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoverMilhoActionPerformed
-        // TODO add your handling code here:
         this.dispose();
         new TelaDeRemocaoMilho().setVisible(true);
     }//GEN-LAST:event_jButtonRemoverMilhoActionPerformed

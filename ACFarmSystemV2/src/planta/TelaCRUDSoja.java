@@ -1,11 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package planta;
 
 import javax.swing.table.DefaultTableModel;
-import planta.CRUDSoja.TelaDeAdicaoSoja;
 import planta.CRUDSoja.TelaDeConsultaSoja;
 import planta.CRUDSoja.TelaDeMovimentacaoSoja;
 import planta.CRUDSoja.TelaDeRemocaoSoja;
@@ -27,7 +22,7 @@ public class TelaCRUDSoja extends javax.swing.JFrame {
         jButtonMovimentacaoSoja = new javax.swing.JButton();
         jButtonRemoverSoja = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTableMilho = new javax.swing.JTable();
+        jTableSoja = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -89,15 +84,15 @@ public class TelaCRUDSoja extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonRemoverSoja, new org.netbeans.lib.awtextra.AbsoluteConstraints(598, 175, 259, 42));
 
-        jTableMilho.setBackground(new java.awt.Color(15, 42, 61));
-        jTableMilho.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTableMilho.setForeground(new java.awt.Color(255, 255, 255));
-        jTableMilho.setModel(new javax.swing.table.DefaultTableModel(
+        jTableSoja.setBackground(new java.awt.Color(15, 42, 61));
+        jTableSoja.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTableSoja.setForeground(new java.awt.Color(255, 255, 255));
+        jTableSoja.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Codigo Milho", "Fornecedor", "Altura da Planta"
+                "Codigo Soja", "Fornecedor", "Altura da Planta"
             }
         ) {
             Class[] types = new Class [] {
@@ -115,12 +110,12 @@ public class TelaCRUDSoja extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTableMilho.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jTableMilho.setGridColor(new java.awt.Color(255, 255, 255));
-        jTableMilho.setRowHeight(30);
-        jTableMilho.setSelectionForeground(new java.awt.Color(15, 42, 61));
-        jTableMilho.getTableHeader().setReorderingAllowed(false);
-        jScrollPane2.setViewportView(jTableMilho);
+        jTableSoja.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTableSoja.setGridColor(new java.awt.Color(255, 255, 255));
+        jTableSoja.setRowHeight(30);
+        jTableSoja.setSelectionForeground(new java.awt.Color(15, 42, 61));
+        jTableSoja.getTableHeader().setReorderingAllowed(false);
+        jScrollPane2.setViewportView(jTableSoja);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 830, 300));
 
@@ -132,41 +127,36 @@ public class TelaCRUDSoja extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSairDaTelaInicioPlantaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairDaTelaInicioPlantaActionPerformed
-        // TODO add your handling code here:
         this.dispose();
         new TelaDeInicioPlanta().setVisible(true);
     }//GEN-LAST:event_jButtonSairDaTelaInicioPlantaActionPerformed
 
     private void jButtonAdicionarSojaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdicionarSojaActionPerformed
-        // TODO add your handling code here:
         this.dispose();
         new TelaVizualizacaoPropriedadeEFornecedorSoja().setVisible(true);
     }//GEN-LAST:event_jButtonAdicionarSojaActionPerformed
 
     private void jButtonVerificarSojaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerificarSojaActionPerformed
-        // TODO add your handling code here:
         this.dispose();
         new TelaDeConsultaSoja().setVisible(true);
     }//GEN-LAST:event_jButtonVerificarSojaActionPerformed
 
     private void jButtonMovimentacaoSojaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMovimentacaoSojaActionPerformed
-        // TODO add your handling code here:
         this.dispose();
         new TelaDeMovimentacaoSoja().setVisible(true);
     }//GEN-LAST:event_jButtonMovimentacaoSojaActionPerformed
 
     private void jButtonRemoverSojaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoverSojaActionPerformed
-        // TODO add your handling code here:
         this.dispose();
         new TelaDeRemocaoSoja().setVisible(true);
     }//GEN-LAST:event_jButtonRemoverSojaActionPerformed
 
     private void readJtableSoja() {
-        DefaultTableModel modelo = (DefaultTableModel) jTableMilho.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) jTableSoja.getModel();
         ControlePlanta controlePlanta = new ControlePlanta();
 
         for (Soja s : controlePlanta.readSoja()) {
-            modelo.addRow(new Object[]{s.getIdSoja(), s.getNomeFornecedor(), s.getIdSoja()});
+            modelo.addRow(new Object[]{s.getIdSoja(), s.getNomeFornecedor(), s.getAlturaAtualDaPlanta()});
         }
     }
 
@@ -178,6 +168,6 @@ public class TelaCRUDSoja extends javax.swing.JFrame {
     private javax.swing.JButton jButtonVerificarSoja;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTableMilho;
+    private javax.swing.JTable jTableSoja;
     // End of variables declaration//GEN-END:variables
 }

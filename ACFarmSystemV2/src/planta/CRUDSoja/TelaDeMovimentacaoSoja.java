@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package planta.CRUDSoja;
 
 import java.sql.SQLException;
@@ -16,7 +12,7 @@ import planta.Soja;
 import planta.TelaCRUDSoja;
 
 public class TelaDeMovimentacaoSoja extends javax.swing.JFrame {
-    
+
     private ControlePlanta controlePlanta = new ControlePlanta();
     private String fornecedorPlanta;
     private String cicloEmDias;
@@ -26,7 +22,7 @@ public class TelaDeMovimentacaoSoja extends javax.swing.JFrame {
     private String idPropriedade;
     private String dataDeSurgimentoDeSementes;
     private String tipoDePlanta;
-    
+
     public TelaDeMovimentacaoSoja() {
         initComponents();
     }
@@ -45,6 +41,7 @@ public class TelaDeMovimentacaoSoja extends javax.swing.JFrame {
         jButtonSairDaTelaAdicionarMilho = new javax.swing.JButton();
         jButtonBuscar = new javax.swing.JButton();
         jButtonConfirmaAtualizacao = new javax.swing.JButton();
+        jButtonCancelarMovimentacao = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -73,7 +70,7 @@ public class TelaDeMovimentacaoSoja extends javax.swing.JFrame {
                 jTextFieldCicloAproximadoEmDiasActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCicloAproximadoEmDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 463, 330, 29));
+        getContentPane().add(jTextFieldCicloAproximadoEmDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 464, 330, 29));
 
         jTextFieldDataPlantio.setEditable(false);
         jTextFieldDataPlantio.setBackground(new java.awt.Color(255, 255, 255));
@@ -85,7 +82,7 @@ public class TelaDeMovimentacaoSoja extends javax.swing.JFrame {
                 jTextFieldDataPlantioActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldDataPlantio, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 354, 270, 30));
+        getContentPane().add(jTextFieldDataPlantio, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 356, 270, 30));
 
         jTextFieldAlturaPlanta.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldAlturaPlanta.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -96,7 +93,7 @@ public class TelaDeMovimentacaoSoja extends javax.swing.JFrame {
                 jTextFieldAlturaPlantaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldAlturaPlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 251, 330, 30));
+        getContentPane().add(jTextFieldAlturaPlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 252, 330, 29));
 
         jTextFieldAlturaPlantaAdicionarMilho.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldAlturaPlantaAdicionarMilho.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -118,7 +115,7 @@ public class TelaDeMovimentacaoSoja extends javax.swing.JFrame {
                 jTextFieldDataSurgimentoDeSementesActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldDataSurgimentoDeSementes, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 354, 330, 30));
+        getContentPane().add(jTextFieldDataSurgimentoDeSementes, new org.netbeans.lib.awtextra.AbsoluteConstraints(522, 356, 330, 30));
 
         jTextFieldIdSoja.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldIdSoja.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -162,7 +159,18 @@ public class TelaDeMovimentacaoSoja extends javax.swing.JFrame {
                 jButtonConfirmaAtualizacaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonConfirmaAtualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(602, 550, 280, 35));
+        getContentPane().add(jButtonConfirmaAtualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(602, 552, 280, 35));
+
+        jButtonCancelarMovimentacao.setBorder(null);
+        jButtonCancelarMovimentacao.setBorderPainted(false);
+        jButtonCancelarMovimentacao.setContentAreaFilled(false);
+        jButtonCancelarMovimentacao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCancelarMovimentacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelarMovimentacaoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonCancelarMovimentacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(602, 606, 280, 35));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasPlanta/img_tela_de_movimentacao_soja.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 650));
@@ -172,31 +180,31 @@ public class TelaDeMovimentacaoSoja extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextFieldFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldFornecedorActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldFornecedorActionPerformed
 
     private void jTextFieldCicloAproximadoEmDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCicloAproximadoEmDiasActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldCicloAproximadoEmDiasActionPerformed
 
     private void jTextFieldDataPlantioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDataPlantioActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldDataPlantioActionPerformed
 
     private void jTextFieldAlturaPlantaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAlturaPlantaActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldAlturaPlantaActionPerformed
 
     private void jTextFieldAlturaPlantaAdicionarMilhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAlturaPlantaAdicionarMilhoActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldAlturaPlantaAdicionarMilhoActionPerformed
 
     private void jTextFieldDataSurgimentoDeSementesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDataSurgimentoDeSementesActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldDataSurgimentoDeSementesActionPerformed
 
     private void jTextFieldIdSojaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdSojaActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldIdSojaActionPerformed
 
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
@@ -210,10 +218,13 @@ public class TelaDeMovimentacaoSoja extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonBuscarActionPerformed
 
     private void jButtonSairDaTelaAdicionarMilhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairDaTelaAdicionarMilhoActionPerformed
-        // TODO add your handling code here:
         this.dispose();
         new TelaCRUDSoja().setVisible(true);
     }//GEN-LAST:event_jButtonSairDaTelaAdicionarMilhoActionPerformed
+
+    private void jButtonCancelarMovimentacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarMovimentacaoActionPerformed
+        limparCampos();
+    }//GEN-LAST:event_jButtonCancelarMovimentacaoActionPerformed
 
     private void jButtonConfirmaAtualizacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmaAtualizacaoActionPerformed
         try {
@@ -224,18 +235,18 @@ public class TelaDeMovimentacaoSoja extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonConfirmaAtualizacaoActionPerformed
 
     public void atualizarPlanta() throws ParseException {
-        int idParaBusca = Integer.parseInt(jTextFieldIdSoja.getText()); 
+        int idParaBusca = Integer.parseInt(jTextFieldIdSoja.getText());
         Double alturaAtual = Double.valueOf(jTextFieldAlturaPlanta.getText());
         String dataDeSurgimentoDeSementesAtualizada = jTextFieldDataSurgimentoDeSementes.getText();
-        
+
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Date dataSAtualizada = dateFormat.parse(dataDeSurgimentoDeSementesAtualizada);
-        
+
         if (alturaAtual < 0) {
             JOptionPane.showMessageDialog(null, "Altura inválida");
         }
-        
-        if(dataSAtualizada != null){
+
+        if (dataSAtualizada != null) {
             Soja sojaAtualizado = new Soja();
             sojaAtualizado.setIdSoja(idParaBusca);
             sojaAtualizado.setAlturaAtualDaPlanta(alturaAtual);
@@ -244,7 +255,7 @@ public class TelaDeMovimentacaoSoja extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, msgAtualizacao);
         }
     }
-    
+
     public void consultarPlanta() throws SQLException, ParseException {
         int idParaBusca = Integer.parseInt(jTextFieldIdSoja.getText());
         Soja sojaEncontrado = controlePlanta.consultarSoja(idParaBusca);
@@ -254,7 +265,7 @@ public class TelaDeMovimentacaoSoja extends javax.swing.JFrame {
             cicloEmDias = Integer.toString(sojaEncontrado.getCicloEmDias());
             alturaAtualDaPlanta = Double.toString(sojaEncontrado.getAlturaAtualDaPlanta());
             tipoDePlanta = sojaEncontrado.getTipoDePlanta();
-            
+
             SimpleDateFormat formatoSQL = new SimpleDateFormat("yyyy-MM-dd");
             SimpleDateFormat formatoBrasileiro = new SimpleDateFormat("dd/MM/yyyy");
 
@@ -271,17 +282,22 @@ public class TelaDeMovimentacaoSoja extends javax.swing.JFrame {
             jTextFieldDataSurgimentoDeSementes.setText(dataDeSurgimentoDeSementes);
         } else {
             JOptionPane.showMessageDialog(this, "Planta não encontrada");
-            jTextFieldAlturaPlanta.setText("");
-            jTextFieldCicloAproximadoEmDias.setText("");
-            jTextFieldDataPlantio.setText("");
-            jTextFieldFornecedor.setText("");
-            jTextFieldDataSurgimentoDeSementes.setText("");
+            limparCampos();
         }
-        
+
+    }
+
+    public void limparCampos() {
+        jTextFieldAlturaPlanta.setText("");
+        jTextFieldCicloAproximadoEmDias.setText("");
+        jTextFieldDataPlantio.setText("");
+        jTextFieldFornecedor.setText("");
+        jTextFieldDataSurgimentoDeSementes.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscar;
+    private javax.swing.JButton jButtonCancelarMovimentacao;
     private javax.swing.JButton jButtonConfirmaAtualizacao;
     private javax.swing.JButton jButtonSairDaTelaAdicionarMilho;
     private javax.swing.JLabel jLabel1;

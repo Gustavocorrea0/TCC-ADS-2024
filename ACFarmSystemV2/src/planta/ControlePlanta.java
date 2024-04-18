@@ -266,7 +266,7 @@ public class ControlePlanta {
             ps.setDouble(1, soja.getAlturaAtualDaPlanta());
             ps.setDate(2, new java.sql.Date(soja.getDataDeSurgimentoDeSementes().getTime()));
             ps.setInt(3, soja.getIdSoja());
-            
+
             linhasAfetadas = ps.executeUpdate();
 
             if (linhasAfetadas > 0) {
@@ -305,12 +305,13 @@ public class ControlePlanta {
             resultados = ps.executeQuery();
 
             while (resultados.next()) {
-                Soja soja1 = new Soja();
-                soja1.setIdSoja(resultados.getInt("id_soja"));
-                soja1.setNomeFornecedor(resultados.getString("nome_fornecedor"));
-                soja1.setAlturaAtualDaPlanta(resultados.getDouble("altura_atual_da_planta"));
-                sojas.add(soja);
+                Soja sojaBuscado = new Soja();
+                sojaBuscado.setIdSoja(resultados.getInt("id_soja"));
+                sojaBuscado.setNomeFornecedor(resultados.getString("nome_fornecedor"));
+                sojaBuscado.setAlturaAtualDaPlanta(resultados.getDouble("altura_atual_da_planta"));
+                sojas.add(sojaBuscado);
             }
+            
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally {

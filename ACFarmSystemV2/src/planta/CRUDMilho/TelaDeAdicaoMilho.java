@@ -12,15 +12,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import planta.ControlePlanta;
-import planta.TelaCRUDMilho;
 import planta.TelaVizualizacaoPropriedadeEFornecedorMilho;
-import planta.TelaVizualizacaoPropriedadeEFornecedorSoja;
 
 public class TelaDeAdicaoMilho extends javax.swing.JFrame {
-    
+
     private String nomeFornecedorBuscado;
     private String nomePropriedadeBuscado;
-    
+
     private String fornecedorPlanta;
     private int cicloEmDias;
     private String dataDePlantio;
@@ -29,17 +27,17 @@ public class TelaDeAdicaoMilho extends javax.swing.JFrame {
     private int idPropriedade;
     private String nomePropriedade;
     private String tipoDePlanta = "Milho";
-    
+
     private ControlePlanta controlePlanta = new ControlePlanta();
     private ControlePropriedade controlePropriedade = new ControlePropriedade();
     private ControleFornecedor controleFornecedor = new ControleFornecedor();
-    
+
     private String msg;
-    
+
     public TelaDeAdicaoMilho() {
         initComponents();
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -55,7 +53,8 @@ public class TelaDeAdicaoMilho extends javax.swing.JFrame {
         jButtonSairDaTelaAdicionarMilho = new javax.swing.JButton();
         jButtonBuscarFornecedor = new javax.swing.JButton();
         jButtonBuscarPropriedade = new javax.swing.JButton();
-        jButtonConfirmarCadastro = new javax.swing.JButton();
+        jButtonCancelarCadastro = new javax.swing.JButton();
+        jButtonConfirmarCadastro1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -139,7 +138,7 @@ public class TelaDeAdicaoMilho extends javax.swing.JFrame {
                 jTextFieldNomeFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(486, 118, 305, 29));
+        getContentPane().add(jTextFieldNomeFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(486, 116, 305, 29));
 
         jTextFieldBuscarPropriedade.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldBuscarPropriedade.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -185,16 +184,27 @@ public class TelaDeAdicaoMilho extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonBuscarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 113, 60, 37));
 
-        jButtonConfirmarCadastro.setBorder(null);
-        jButtonConfirmarCadastro.setBorderPainted(false);
-        jButtonConfirmarCadastro.setContentAreaFilled(false);
-        jButtonConfirmarCadastro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonConfirmarCadastro.addActionListener(new java.awt.event.ActionListener() {
+        jButtonCancelarCadastro.setBorder(null);
+        jButtonCancelarCadastro.setBorderPainted(false);
+        jButtonCancelarCadastro.setContentAreaFilled(false);
+        jButtonCancelarCadastro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCancelarCadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonConfirmarCadastroActionPerformed(evt);
+                jButtonCancelarCadastroActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonConfirmarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(602, 550, 280, 35));
+        getContentPane().add(jButtonCancelarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 603, 280, 35));
+
+        jButtonConfirmarCadastro1.setBorder(null);
+        jButtonConfirmarCadastro1.setBorderPainted(false);
+        jButtonConfirmarCadastro1.setContentAreaFilled(false);
+        jButtonConfirmarCadastro1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonConfirmarCadastro1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConfirmarCadastro1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonConfirmarCadastro1, new org.netbeans.lib.awtextra.AbsoluteConstraints(602, 550, 280, 35));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasPlanta/img_tela_de_adicao_milho.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 650));
@@ -244,9 +254,9 @@ public class TelaDeAdicaoMilho extends javax.swing.JFrame {
         new TelaVizualizacaoPropriedadeEFornecedorMilho().setVisible(true);
     }//GEN-LAST:event_jButtonSairDaTelaAdicionarMilhoActionPerformed
 
-    private void jButtonConfirmarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarCadastroActionPerformed
-        adicionarPlanta();
-    }//GEN-LAST:event_jButtonConfirmarCadastroActionPerformed
+    private void jButtonCancelarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarCadastroActionPerformed
+        limparCampos();
+    }//GEN-LAST:event_jButtonCancelarCadastroActionPerformed
 
     private void jTextFieldBuscarPropriedadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBuscarPropriedadeActionPerformed
 
@@ -259,36 +269,40 @@ public class TelaDeAdicaoMilho extends javax.swing.JFrame {
             Logger.getLogger(TelaDeAdicaoMilho.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButtonBuscarPropriedadeActionPerformed
-    
+
+    private void jButtonConfirmarCadastro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarCadastro1ActionPerformed
+        adicionarPlanta();
+    }//GEN-LAST:event_jButtonConfirmarCadastro1ActionPerformed
+
     public void buscarPropriedade() throws SQLException {
         Propriedade propriedadeEncontrada = controlePropriedade.buscarPropriedadePorNome(jTextFieldBuscarPropriedade.getText());
-        
+
         if (propriedadeEncontrada != null) {
             nomePropriedade = propriedadeEncontrada.getNomePropriedade();
             JOptionPane.showMessageDialog(this, "Propriedade encontrada.");
             jTextFielFornecedorEncontrado.setText(nomePropriedade);
         } else {
             JOptionPane.showMessageDialog(this, "Propriedade não encontrada.");
-            jTextFielFornecedorEncontrado.setText("");
+            limparCampos();
         }
-        
+
     }
-    
+
     public void buscarFornecedor() throws SQLException {
         nomeFornecedorBuscado = jTextFieldNomeFornecedor.getText();
         Fornecedor fornecedorEncontrado = controleFornecedor.buscarFornecedor(nomeFornecedorBuscado);
-        
+
         if (fornecedorEncontrado != null) {
             fornecedorPlanta = fornecedorEncontrado.getNomeFantasia();
             JOptionPane.showMessageDialog(this, "Fornecedor encontrado");
             jTextFieldPropriedadeEncontrada.setText(fornecedorPlanta);
         } else {
             JOptionPane.showMessageDialog(this, "Fornecedor não encontrado");
-            jTextFieldPropriedadeEncontrada.setText("");
+            limparCampos();
         }
-        
+
     }
-    
+
     public void adicionarPlanta() {
         tipoDePlanta = "Milho";
         fornecedorPlanta = jTextFielFornecedorEncontrado.getText();
@@ -297,43 +311,43 @@ public class TelaDeAdicaoMilho extends javax.swing.JFrame {
         dataDeSurgimentoDeEspigas = jTextFieldDataSurgimentoDeEspigas.getText();
         dataDePlantio = jTextFieldDataDePlantio.getText();
         nomePropriedade = jTextFielFornecedorEncontrado.getText();
-        
+
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        
+
         if (fornecedorPlanta.equals("")) {
             JOptionPane.showMessageDialog(this, "Fornecedor inválido");
             return;
         }
-        
+
         if (nomePropriedade.equals("")) {
             JOptionPane.showMessageDialog(this, "Propriedade inválida");
             return;
         }
-        
+
         if (nomeFornecedorBuscado.equals("")) {
             JOptionPane.showMessageDialog(this, "Fornecedor inválido");
             return;
         }
-        
+
         if (cicloEmDias < 0) {
             JOptionPane.showMessageDialog(this, "Ciclo em dias inválido");
             return;
         }
-        
+
         if (alturaAtualDaPlanta < 0) {
             JOptionPane.showMessageDialog(this, "Altura atual da planta inválido");
             return;
         }
-        
+
         try {
             Date dataSurgimentoDeEspigas = dateFormat.parse(dataDeSurgimentoDeEspigas);
             Date dataPlantio = dateFormat.parse(dataDePlantio);
-            
+
             if (dataSurgimentoDeEspigas == dataPlantio) {
                 JOptionPane.showMessageDialog(null, "Datas de Plantio e surgimento de sementes não devem ser iguais");
                 return;
             }
-            
+
             controlePlanta.milho.setNomePropriedade(nomePropriedade);
             controlePlanta.milho.setNomeFornecedor(nomeFornecedorBuscado);
             controlePlanta.milho.setTipoDePlanta(tipoDePlanta);
@@ -341,20 +355,32 @@ public class TelaDeAdicaoMilho extends javax.swing.JFrame {
             controlePlanta.milho.setAlturaAtualDaPlanta(alturaAtualDaPlanta);
             controlePlanta.milho.setDataDePlantio(dataPlantio);
             controlePlanta.milho.setDataDeSurgimentoDeEspigas(dataSurgimentoDeEspigas);
-            
+
             msg = controlePlanta.cadastrarMilho(ControlePlanta.INCLUSAO);
             JOptionPane.showMessageDialog(this, msg);
-            
+
         } catch (ParseException px) {
             JOptionPane.showMessageDialog(this, "Formato de data inválido, o formato é dd/mm/aaaa.");
         }
-        
+
     }
 
+    private void limparCampos() {
+        jTextFielFornecedorEncontrado.setText("");
+        jTextFieldAlturaPlanta.setText("");
+        jTextFieldBuscarPropriedade.setText("");
+        jTextFieldCicloAproximadoEmDias.setText("");
+        jTextFieldDataDePlantio.setText("");
+        jTextFieldDataSurgimentoDeEspigas.setText("");
+        jTextFieldNomeFornecedor.setText("");
+        jTextFieldPropriedadeEncontrada.setText("");
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscarFornecedor;
     private javax.swing.JButton jButtonBuscarPropriedade;
-    private javax.swing.JButton jButtonConfirmarCadastro;
+    private javax.swing.JButton jButtonCancelarCadastro;
+    private javax.swing.JButton jButtonConfirmarCadastro1;
     private javax.swing.JButton jButtonSairDaTelaAdicionarMilho;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField jTextFielFornecedorEncontrado;

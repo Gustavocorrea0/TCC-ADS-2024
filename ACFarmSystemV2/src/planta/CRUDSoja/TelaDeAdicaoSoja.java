@@ -56,6 +56,7 @@ public class TelaDeAdicaoSoja extends javax.swing.JFrame {
         jButtonSairDaTelaAdicionarMilho = new javax.swing.JButton();
         jButtonBuscarFornecedor = new javax.swing.JButton();
         jButtonBuscarPropriedade = new javax.swing.JButton();
+        jButtonCancelarCadastro = new javax.swing.JButton();
         jButtonConfirmarCadastro = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -186,6 +187,17 @@ public class TelaDeAdicaoSoja extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonBuscarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 113, 60, 37));
 
+        jButtonCancelarCadastro.setBorder(null);
+        jButtonCancelarCadastro.setBorderPainted(false);
+        jButtonCancelarCadastro.setContentAreaFilled(false);
+        jButtonCancelarCadastro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCancelarCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelarCadastroActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonCancelarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 605, 280, 35));
+
         jButtonConfirmarCadastro.setBorder(null);
         jButtonConfirmarCadastro.setBorderPainted(false);
         jButtonConfirmarCadastro.setContentAreaFilled(false);
@@ -195,7 +207,7 @@ public class TelaDeAdicaoSoja extends javax.swing.JFrame {
                 jButtonConfirmarCadastroActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonConfirmarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(603, 577, 280, 35));
+        getContentPane().add(jButtonConfirmarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 550, 280, 35));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasPlanta/img_tela_de_adicao_soja.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 650));
@@ -245,9 +257,9 @@ public class TelaDeAdicaoSoja extends javax.swing.JFrame {
         new TelaVizualizacaoPropriedadeEFornecedorSoja().setVisible(true);
     }//GEN-LAST:event_jButtonSairDaTelaAdicionarMilhoActionPerformed
 
-    private void jButtonConfirmarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarCadastroActionPerformed
-        adicionarPlanta();
-    }//GEN-LAST:event_jButtonConfirmarCadastroActionPerformed
+    private void jButtonCancelarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarCadastroActionPerformed
+        limparCampos();
+    }//GEN-LAST:event_jButtonCancelarCadastroActionPerformed
 
     private void jTextFieldBuscarPropriedadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBuscarPropriedadeActionPerformed
 
@@ -260,6 +272,10 @@ public class TelaDeAdicaoSoja extends javax.swing.JFrame {
             Logger.getLogger(TelaDeAdicaoSoja.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButtonBuscarPropriedadeActionPerformed
+
+    private void jButtonConfirmarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarCadastroActionPerformed
+        adicionarPlanta();
+    }//GEN-LAST:event_jButtonConfirmarCadastroActionPerformed
 
    public void buscarPropriedade() throws SQLException {
         Propriedade propriedadeEncontrada = controlePropriedade.buscarPropriedadePorNome(jTextFieldBuscarPropriedade.getText());
@@ -334,16 +350,28 @@ public class TelaDeAdicaoSoja extends javax.swing.JFrame {
 
             msg = controlePlanta.cadastrarSoja(ControlePlanta.INCLUSAO);
             JOptionPane.showMessageDialog(this, msg);
+            limparCampos();
             
         } catch (ParseException ex) {
             JOptionPane.showMessageDialog(this, "Formato de data inválido, o formato é dd/mm/aaaa.");
         }
 
     }
+    
+    private void limparCampos() {
+        jTextFielFornecedorEncontrado.setText("");
+        jTextFieldCicloAproximadoEmDias.setText("");
+        jTextFieldAlturaPlanta.setText("");
+        jTextFieldSurgimentoDeSementes.setText("");
+       jTextFieldDataDePlantio.setText("");
+        jTextFieldPropriedadeEncontrada.setText("");
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscarFornecedor;
     private javax.swing.JButton jButtonBuscarPropriedade;
+    private javax.swing.JButton jButtonCancelarCadastro;
     private javax.swing.JButton jButtonConfirmarCadastro;
     private javax.swing.JButton jButtonSairDaTelaAdicionarMilho;
     private javax.swing.JLabel jLabel1;
@@ -356,5 +384,4 @@ public class TelaDeAdicaoSoja extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldPropriedadeEncontrada;
     private javax.swing.JTextField jTextFieldSurgimentoDeSementes;
     // End of variables declaration//GEN-END:variables
-
 }

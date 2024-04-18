@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package planta.CRUDMilho;
 
 import java.text.ParseException;
@@ -12,7 +8,6 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import planta.ControlePlanta;
 import planta.Milho;
-import planta.Soja;
 import planta.TelaCRUDMilho;
 
 public class TelaDeMovimentacaoMilho extends javax.swing.JFrame {
@@ -42,7 +37,8 @@ public class TelaDeMovimentacaoMilho extends javax.swing.JFrame {
         jTextFieldIdMilho = new javax.swing.JTextField();
         jButtonSairDaTelaAdicionarMilho = new javax.swing.JButton();
         jButtonBuscarMilho = new javax.swing.JButton();
-        jButtonConfirma = new javax.swing.JButton();
+        jButtonCancelarMovimentacao = new javax.swing.JButton();
+        jButtonConfirmarMovimentacao = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -59,7 +55,7 @@ public class TelaDeMovimentacaoMilho extends javax.swing.JFrame {
                 jTextFieldFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 252, 270, 29));
+        getContentPane().add(jTextFieldFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 251, 270, 29));
 
         jTextFieldCicloAproximadoEmDias.setEditable(false);
         jTextFieldCicloAproximadoEmDias.setBackground(new java.awt.Color(255, 255, 255));
@@ -71,7 +67,7 @@ public class TelaDeMovimentacaoMilho extends javax.swing.JFrame {
                 jTextFieldCicloAproximadoEmDiasActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCicloAproximadoEmDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 464, 330, 29));
+        getContentPane().add(jTextFieldCicloAproximadoEmDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 462, 330, 29));
 
         jTextFieldDataPlantio.setEditable(false);
         jTextFieldDataPlantio.setBackground(new java.awt.Color(255, 255, 255));
@@ -83,7 +79,7 @@ public class TelaDeMovimentacaoMilho extends javax.swing.JFrame {
                 jTextFieldDataPlantioActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldDataPlantio, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 355, 270, 30));
+        getContentPane().add(jTextFieldDataPlantio, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 354, 270, 30));
 
         jTextFieldAlturaPlanta.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldAlturaPlanta.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -94,7 +90,7 @@ public class TelaDeMovimentacaoMilho extends javax.swing.JFrame {
                 jTextFieldAlturaPlantaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldAlturaPlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 252, 330, 30));
+        getContentPane().add(jTextFieldAlturaPlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 250, 330, 30));
 
         jTextFieldDataSurgimentoDeEspigas.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldDataSurgimentoDeEspigas.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -105,7 +101,7 @@ public class TelaDeMovimentacaoMilho extends javax.swing.JFrame {
                 jTextFieldDataSurgimentoDeEspigasActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldDataSurgimentoDeEspigas, new org.netbeans.lib.awtextra.AbsoluteConstraints(521, 355, 330, 30));
+        getContentPane().add(jTextFieldDataSurgimentoDeEspigas, new org.netbeans.lib.awtextra.AbsoluteConstraints(521, 354, 330, 30));
 
         jTextFieldIdMilho.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldIdMilho.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -116,7 +112,7 @@ public class TelaDeMovimentacaoMilho extends javax.swing.JFrame {
                 jTextFieldIdMilhoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldIdMilho, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 118, 303, 28));
+        getContentPane().add(jTextFieldIdMilho, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 116, 303, 28));
 
         jButtonSairDaTelaAdicionarMilho.setBorder(null);
         jButtonSairDaTelaAdicionarMilho.setBorderPainted(false);
@@ -140,16 +136,27 @@ public class TelaDeMovimentacaoMilho extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonBuscarMilho, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 107, 260, 45));
 
-        jButtonConfirma.setBorder(null);
-        jButtonConfirma.setBorderPainted(false);
-        jButtonConfirma.setContentAreaFilled(false);
-        jButtonConfirma.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonConfirma.addActionListener(new java.awt.event.ActionListener() {
+        jButtonCancelarMovimentacao.setBorder(null);
+        jButtonCancelarMovimentacao.setBorderPainted(false);
+        jButtonCancelarMovimentacao.setContentAreaFilled(false);
+        jButtonCancelarMovimentacao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCancelarMovimentacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonConfirmaActionPerformed(evt);
+                jButtonCancelarMovimentacaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonConfirma, new org.netbeans.lib.awtextra.AbsoluteConstraints(602, 552, 280, 35));
+        getContentPane().add(jButtonCancelarMovimentacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 603, 280, 35));
+
+        jButtonConfirmarMovimentacao.setBorder(null);
+        jButtonConfirmarMovimentacao.setBorderPainted(false);
+        jButtonConfirmarMovimentacao.setContentAreaFilled(false);
+        jButtonConfirmarMovimentacao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonConfirmarMovimentacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConfirmarMovimentacaoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonConfirmarMovimentacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(602, 550, 280, 35));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasPlanta/img_tela_de_movimentacao_milho.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 650));
@@ -159,23 +166,23 @@ public class TelaDeMovimentacaoMilho extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextFieldFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldFornecedorActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldFornecedorActionPerformed
 
     private void jTextFieldCicloAproximadoEmDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCicloAproximadoEmDiasActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldCicloAproximadoEmDiasActionPerformed
 
     private void jTextFieldDataPlantioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDataPlantioActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldDataPlantioActionPerformed
 
     private void jTextFieldAlturaPlantaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAlturaPlantaActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldAlturaPlantaActionPerformed
 
     private void jTextFieldDataSurgimentoDeEspigasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDataSurgimentoDeEspigasActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldDataSurgimentoDeEspigasActionPerformed
 
     private void jButtonBuscarMilhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarMilhoActionPerformed
@@ -187,7 +194,7 @@ public class TelaDeMovimentacaoMilho extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonBuscarMilhoActionPerformed
 
     private void jTextFieldIdMilhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdMilhoActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldIdMilhoActionPerformed
 
     private void jButtonSairDaTelaAdicionarMilhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairDaTelaAdicionarMilhoActionPerformed
@@ -195,13 +202,17 @@ public class TelaDeMovimentacaoMilho extends javax.swing.JFrame {
         new TelaCRUDMilho().setVisible(true);
     }//GEN-LAST:event_jButtonSairDaTelaAdicionarMilhoActionPerformed
 
-    private void jButtonConfirmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmaActionPerformed
+    private void jButtonCancelarMovimentacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarMovimentacaoActionPerformed
+        limparCampos();
+    }//GEN-LAST:event_jButtonCancelarMovimentacaoActionPerformed
+
+    private void jButtonConfirmarMovimentacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarMovimentacaoActionPerformed
         try {
             atualizarPlanta();
         } catch (ParseException ex) {
             Logger.getLogger(TelaDeMovimentacaoMilho.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jButtonConfirmaActionPerformed
+    }//GEN-LAST:event_jButtonConfirmarMovimentacaoActionPerformed
 
     public void atualizarPlanta() throws ParseException {
         int idParaBusca = Integer.parseInt(jTextFieldIdMilho.getText());
@@ -222,6 +233,7 @@ public class TelaDeMovimentacaoMilho extends javax.swing.JFrame {
             milhoAtualizado.setDataDeSurgimentoDeEspigas(dataSAtualizada);
             String msgAtualizacao = controlePlanta.atualizarMilho(milhoAtualizado);
             JOptionPane.showMessageDialog(null, msgAtualizacao);
+            limparCampos();
         }
     }
 
@@ -252,19 +264,24 @@ public class TelaDeMovimentacaoMilho extends javax.swing.JFrame {
             jTextFieldDataSurgimentoDeEspigas.setText(dataDeSurgimentoDeEspigas);
         } else {
             JOptionPane.showMessageDialog(this, "Planta não encontrada");
-            jTextFieldAlturaPlanta.setText("");
-            jTextFieldCicloAproximadoEmDias.setText("");
-            jTextFieldDataPlantio.setText("");
-            jTextFieldFornecedor.setText("");
-            jTextFieldIdMilho.setText(String.valueOf(""));
-            jTextFieldDataSurgimentoDeEspigas.setText("");
+            limparCampos();
         }
 
     }
 
+    private void limparCampos() {
+        jTextFieldAlturaPlanta.setText("");
+        jTextFieldCicloAproximadoEmDias.setText("");
+        jTextFieldDataPlantio.setText("");
+        jTextFieldFornecedor.setText("");
+        jTextFieldIdMilho.setText(String.valueOf(""));
+        jTextFieldDataSurgimentoDeEspigas.setText("");
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscarMilho;
-    private javax.swing.JButton jButtonConfirma;
+    private javax.swing.JButton jButtonCancelarMovimentacao;
+    private javax.swing.JButton jButtonConfirmarMovimentacao;
     private javax.swing.JButton jButtonSairDaTelaAdicionarMilho;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField jTextFieldAlturaPlanta;

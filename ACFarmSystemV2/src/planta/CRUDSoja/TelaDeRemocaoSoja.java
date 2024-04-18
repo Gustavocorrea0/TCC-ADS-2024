@@ -38,7 +38,8 @@ public class TelaDeRemocaoSoja extends javax.swing.JFrame {
         jTextFieldIdSoja = new javax.swing.JTextField();
         jButtonSairDaTelaAdicionarMilho = new javax.swing.JButton();
         jButtonBuscar = new javax.swing.JButton();
-        jButtonConfirmarRemocao = new javax.swing.JButton();
+        jButtonCancelarRemocao = new javax.swing.JButton();
+        jButtonConfirmarRemocao1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -149,16 +150,27 @@ public class TelaDeRemocaoSoja extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 105, 260, 45));
 
-        jButtonConfirmarRemocao.setBorder(null);
-        jButtonConfirmarRemocao.setBorderPainted(false);
-        jButtonConfirmarRemocao.setContentAreaFilled(false);
-        jButtonConfirmarRemocao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonConfirmarRemocao.addActionListener(new java.awt.event.ActionListener() {
+        jButtonCancelarRemocao.setBorder(null);
+        jButtonCancelarRemocao.setBorderPainted(false);
+        jButtonCancelarRemocao.setContentAreaFilled(false);
+        jButtonCancelarRemocao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCancelarRemocao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonConfirmarRemocaoActionPerformed(evt);
+                jButtonCancelarRemocaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonConfirmarRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(602, 550, 280, 35));
+        getContentPane().add(jButtonCancelarRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 605, 280, 35));
+
+        jButtonConfirmarRemocao1.setBorder(null);
+        jButtonConfirmarRemocao1.setBorderPainted(false);
+        jButtonConfirmarRemocao1.setContentAreaFilled(false);
+        jButtonConfirmarRemocao1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonConfirmarRemocao1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConfirmarRemocao1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonConfirmarRemocao1, new org.netbeans.lib.awtextra.AbsoluteConstraints(602, 550, 280, 35));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasPlanta/img_tela_de_remocao_soja.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 650));
@@ -210,19 +222,19 @@ public class TelaDeRemocaoSoja extends javax.swing.JFrame {
         new TelaCRUDSoja().setVisible(true);
     }//GEN-LAST:event_jButtonSairDaTelaAdicionarMilhoActionPerformed
 
-    private void jButtonConfirmarRemocaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarRemocaoActionPerformed
+    private void jButtonCancelarRemocaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarRemocaoActionPerformed
+        limparCampos();
+    }//GEN-LAST:event_jButtonCancelarRemocaoActionPerformed
+
+    private void jButtonConfirmarRemocao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarRemocao1ActionPerformed
         removerPlanta();
-    }//GEN-LAST:event_jButtonConfirmarRemocaoActionPerformed
+    }//GEN-LAST:event_jButtonConfirmarRemocao1ActionPerformed
 
     public void removerPlanta() {
         idParaBusca = Integer.parseInt(jTextFieldIdSoja.getText());
         String msg = controlePlanta.removerSoja(idParaBusca);
         JOptionPane.showMessageDialog(this, msg);
-        jTextFieldAlturaPlanta.setText("");
-        jTextFieldCicloAproximadoEmDias.setText("");
-        jTextFieldDataPlantio.setText("");
-        jTextFieldFornecedor.setText("");
-        jTextFieldSurgimentoDeSementes.setText("");
+        limparCampos();
     }
 
     public void consultarPlanta() throws SQLException, ParseException {
@@ -258,9 +270,18 @@ public class TelaDeRemocaoSoja extends javax.swing.JFrame {
         }
     }
 
+    public void limparCampos(){
+        jTextFieldAlturaPlanta.setText("");
+        jTextFieldCicloAproximadoEmDias.setText("");
+        jTextFieldDataPlantio.setText("");
+        jTextFieldFornecedor.setText("");
+        jTextFieldSurgimentoDeSementes.setText("");
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscar;
-    private javax.swing.JButton jButtonConfirmarRemocao;
+    private javax.swing.JButton jButtonCancelarRemocao;
+    private javax.swing.JButton jButtonConfirmarRemocao1;
     private javax.swing.JButton jButtonSairDaTelaAdicionarMilho;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField jTextFieldAlturaPlanta;
