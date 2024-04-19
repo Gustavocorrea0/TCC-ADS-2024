@@ -324,18 +324,24 @@ public class TelaDeConsultaVendaProducao extends javax.swing.JFrame {
 
     public String converterValorParaReal(Double valorReal) {
 
-        if (valorReal <= 99999.99) {
-            return String.format("%,.2f", valorReal).replace(".", ",");
+        if (valorReal >= 9999.99 && valorReal < 100000.00) {
+            return String.format("%,.2f", valorReal).replace(".", "#").replace(",", ",").replace("#", ".");
         }
-        
-        if (valorReal >= 100000.00 && valorReal <= 999999.99) {
+
+        if (valorReal >= 99999.99 && valorReal < 100000.00) {
+            return String.format("%,.2f", valorReal).replace(".", "#").replace(",", ".");
+        }
+
+        if (valorReal >= 100000.00 && valorReal < 999999.99) {
             return String.format("%,.2f", valorReal).replace(",", "#").replace(",", ".").replace("#", ",");
         }
 
         if (valorReal >= 1000000.00) {
             return String.format("%,.2f", valorReal).replace(",", "#").replace(",", ".").replace("#", ",");
         }
+
         return "Erro";
+
     }
 
     public void limparCampos() {

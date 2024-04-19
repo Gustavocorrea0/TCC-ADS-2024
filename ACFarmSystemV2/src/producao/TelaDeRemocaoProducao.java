@@ -41,9 +41,9 @@ public class TelaDeRemocaoProducao extends javax.swing.JFrame {
         jTextFieldNomeProducao = new javax.swing.JTextField();
         jTextFieldDataInicioColheita = new javax.swing.JTextField();
         jTextFieldDataFimColheita = new javax.swing.JTextField();
-        jTextFieldValorTotalDeDespesas = new javax.swing.JTextField();
+        jTextFieldValorTotalDeDespesas1 = new javax.swing.JTextField();
         jTextFieldValorTotalDeLucro = new javax.swing.JTextField();
-        jTextFieldQuantidadeProduzidaEmSacos = new javax.swing.JTextField();
+        jTextFieldValorTotalDeDespesas = new javax.swing.JTextField();
         jTextFieldDataPlantio = new javax.swing.JTextField();
         jTextFieldCultura = new javax.swing.JTextField();
         jTextFieldEstadoDeVenda = new javax.swing.JTextField();
@@ -146,18 +146,18 @@ public class TelaDeRemocaoProducao extends javax.swing.JFrame {
         });
         getContentPane().add(jTextFieldDataFimColheita, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 520, 270, 27));
 
-        jTextFieldValorTotalDeDespesas.setEditable(false);
-        jTextFieldValorTotalDeDespesas.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldValorTotalDeDespesas.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldValorTotalDeDespesas.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldValorTotalDeDespesas.setBorder(null);
-        jTextFieldValorTotalDeDespesas.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextFieldValorTotalDeDespesas.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldValorTotalDeDespesas1.setEditable(false);
+        jTextFieldValorTotalDeDespesas1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldValorTotalDeDespesas1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldValorTotalDeDespesas1.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldValorTotalDeDespesas1.setBorder(null);
+        jTextFieldValorTotalDeDespesas1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldValorTotalDeDespesas1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldValorTotalDeDespesasActionPerformed(evt);
+                jTextFieldValorTotalDeDespesas1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldValorTotalDeDespesas, new org.netbeans.lib.awtextra.AbsoluteConstraints(368, 228, 311, 27));
+        getContentPane().add(jTextFieldValorTotalDeDespesas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(368, 228, 311, 27));
 
         jTextFieldValorTotalDeLucro.setEditable(false);
         jTextFieldValorTotalDeLucro.setBackground(new java.awt.Color(255, 255, 255));
@@ -172,18 +172,18 @@ public class TelaDeRemocaoProducao extends javax.swing.JFrame {
         });
         getContentPane().add(jTextFieldValorTotalDeLucro, new org.netbeans.lib.awtextra.AbsoluteConstraints(368, 324, 311, 27));
 
-        jTextFieldQuantidadeProduzidaEmSacos.setEditable(false);
-        jTextFieldQuantidadeProduzidaEmSacos.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldQuantidadeProduzidaEmSacos.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldQuantidadeProduzidaEmSacos.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldQuantidadeProduzidaEmSacos.setBorder(null);
-        jTextFieldQuantidadeProduzidaEmSacos.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextFieldQuantidadeProduzidaEmSacos.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldValorTotalDeDespesas.setEditable(false);
+        jTextFieldValorTotalDeDespesas.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldValorTotalDeDespesas.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldValorTotalDeDespesas.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldValorTotalDeDespesas.setBorder(null);
+        jTextFieldValorTotalDeDespesas.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldValorTotalDeDespesas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldQuantidadeProduzidaEmSacosActionPerformed(evt);
+                jTextFieldValorTotalDeDespesasActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldQuantidadeProduzidaEmSacos, new org.netbeans.lib.awtextra.AbsoluteConstraints(368, 427, 310, 27));
+        getContentPane().add(jTextFieldValorTotalDeDespesas, new org.netbeans.lib.awtextra.AbsoluteConstraints(368, 427, 310, 27));
 
         jTextFieldDataPlantio.setEditable(false);
         jTextFieldDataPlantio.setBackground(new java.awt.Color(255, 255, 255));
@@ -263,13 +263,13 @@ public class TelaDeRemocaoProducao extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jTextFieldDataFimColheitaActionPerformed
 
+    private void jTextFieldValorTotalDeDespesas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldValorTotalDeDespesas1ActionPerformed
+
+    }//GEN-LAST:event_jTextFieldValorTotalDeDespesas1ActionPerformed
+
     private void jTextFieldValorTotalDeDespesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldValorTotalDeDespesasActionPerformed
 
     }//GEN-LAST:event_jTextFieldValorTotalDeDespesasActionPerformed
-
-    private void jTextFieldQuantidadeProduzidaEmSacosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldQuantidadeProduzidaEmSacosActionPerformed
-
-    }//GEN-LAST:event_jTextFieldQuantidadeProduzidaEmSacosActionPerformed
 
     private void jTextFieldCulturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCulturaActionPerformed
 
@@ -292,16 +292,7 @@ public class TelaDeRemocaoProducao extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonConfirmarAdicaoActionPerformed
 
     private void jButtonCancelarAdicaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarAdicaoActionPerformed
-        jTextFieldCultura.setText("");
-        jTextFieldDataFimColheita.setText("");
-        jTextFieldDataInicioColheita.setText("");
-        jTextFieldDataPlantio.setText("");
-        jTextFieldNomeProducao.setText("");
-        jTextFieldNomeProducao.setText("");
-        jTextFieldQuantidadeProduzidaEmSacos.setText("");
-        jTextFieldValorTotalDeDespesas.setText("");
-        jTextFieldValorTotalDeLucro.setText("");
-        jTextFieldEstadoDeVenda.setText("");
+        limparCampos();
     }//GEN-LAST:event_jButtonCancelarAdicaoActionPerformed
 
     public void consultarProducao() throws SQLException, ParseException {
@@ -310,8 +301,8 @@ public class TelaDeRemocaoProducao extends javax.swing.JFrame {
 
         if (producaoEncontrada != null) {
             nomeProducao = producaoEncontrada.getNomeProducao();
-            valorTotalDespesas = Double.toString(producaoEncontrada.getValorTotalDespesas());
-            valorTotalDeLucro = Double.toString(producaoEncontrada.getValorTotalDeLucro());
+            valorTotalDeLucro = converterValorParaReal(producaoEncontrada.getValorTotalDeLucro());
+            valorTotalDespesas = converterValorParaReal(producaoEncontrada.getValorTotalDespesas());
             quantidadeProduzidaEmSacos = Integer.toString(producaoEncontrada.getQuantidadeProduzidaEmSacos());
             cultura = producaoEncontrada.getCultura();
 
@@ -331,8 +322,8 @@ public class TelaDeRemocaoProducao extends javax.swing.JFrame {
             jTextFieldDataFimColheita.setText(dataFimColheita);
             jTextFieldDataInicioColheita.setText(dataInicioColheita);
             jTextFieldDataPlantio.setText(dataDePlantio);
-            jTextFieldQuantidadeProduzidaEmSacos.setText(quantidadeProduzidaEmSacos);
-            jTextFieldValorTotalDeDespesas.setText(valorTotalDespesas);
+            jTextFieldValorTotalDeDespesas.setText(quantidadeProduzidaEmSacos);
+            jTextFieldValorTotalDeDespesas1.setText(valorTotalDespesas);
             jTextFieldValorTotalDeLucro.setText(valorTotalDeLucro);
             jTextFieldEstadoDeVenda.setText(producaoEncontrada.getStatusDeVenda());
 
@@ -341,39 +332,54 @@ public class TelaDeRemocaoProducao extends javax.swing.JFrame {
             jTextFieldDataFimColheita.setEnabled(false);
             jTextFieldDataInicioColheita.setEnabled(false);
             jTextFieldDataPlantio.setEnabled(false);
-            jTextFieldQuantidadeProduzidaEmSacos.setEnabled(false);
             jTextFieldValorTotalDeDespesas.setEnabled(false);
+            jTextFieldValorTotalDeDespesas1.setEnabled(false);
             jTextFieldValorTotalDeLucro.setEnabled(false);
 
         } else {
             JOptionPane.showMessageDialog(this, "Produção não encontrada");
-            jTextFieldCultura.setText("");
-            jTextFieldDataFimColheita.setText("");
-            jTextFieldDataInicioColheita.setText("");
-            jTextFieldDataPlantio.setText("");
-            jTextFieldNomeProducao.setText("");
-            jTextFieldNomeProducao.setText("");
-            jTextFieldQuantidadeProduzidaEmSacos.setText("");
-            jTextFieldValorTotalDeDespesas.setText("");
-            jTextFieldValorTotalDeLucro.setText("");
-            jTextFieldEstadoDeVenda.setText("");
+            limparCampos();
         }
 
     }
 
+    public String converterValorParaReal(Double valorReal) {
+
+        if (valorReal >= 9999.99 && valorReal < 100000.00) {
+            return String.format("%,.2f", valorReal).replace(".", "#").replace(",", ",").replace("#", ".");
+        }
+
+        if (valorReal >= 99999.99 && valorReal < 100000.00) {
+            return String.format("%,.2f", valorReal).replace(".", "#").replace(",", ".");
+        }
+
+        if (valorReal >= 100000.00 && valorReal < 999999.99) {
+            return String.format("%,.2f", valorReal).replace(",", "#").replace(",", ".").replace("#", ",");
+        }
+
+        if (valorReal >= 1000000.00) {
+            return String.format("%,.2f", valorReal).replace(",", "#").replace(",", ".").replace("#", ",");
+        }
+
+        return "Erro";
+
+    }
     public void removerProducao() {
         nomeProducaoBuscada = jTextFieldNomeProducaoBuscada.getText();
         String msg = controleProducao.removerProducao(nomeProducaoBuscada);
         JOptionPane.showMessageDialog(this, msg);
+        limparCampos();
+    }
 
+    public void limparCampos() {
         jTextFieldCultura.setText("");
         jTextFieldDataFimColheita.setText("");
         jTextFieldDataInicioColheita.setText("");
         jTextFieldDataPlantio.setText("");
         jTextFieldNomeProducao.setText("");
         jTextFieldNomeProducao.setText("");
-        jTextFieldQuantidadeProduzidaEmSacos.setText("");
         jTextFieldValorTotalDeDespesas.setText("");
+        jTextFieldValorTotalDeDespesas1.setText("");
         jTextFieldValorTotalDeLucro.setText("");
         jTextFieldEstadoDeVenda.setText("");
     }
@@ -391,8 +397,8 @@ public class TelaDeRemocaoProducao extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldEstadoDeVenda;
     private javax.swing.JTextField jTextFieldNomeProducao;
     private javax.swing.JTextField jTextFieldNomeProducaoBuscada;
-    private javax.swing.JTextField jTextFieldQuantidadeProduzidaEmSacos;
     private javax.swing.JTextField jTextFieldValorTotalDeDespesas;
+    private javax.swing.JTextField jTextFieldValorTotalDeDespesas1;
     private javax.swing.JTextField jTextFieldValorTotalDeLucro;
     // End of variables declaration//GEN-END:variables
 }

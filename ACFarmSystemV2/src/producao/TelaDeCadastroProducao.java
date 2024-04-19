@@ -26,8 +26,6 @@ public class TelaDeCadastroProducao extends javax.swing.JFrame {
     private String dataFimColheita;
     private String nomeProducao;
     private int quantidadeProduzidaEmSacos;
-    private Double valorTotalDeDespesas;
-    private Double valorTotalDeLucro;
     private String nomePropriedade;
     private String msg;
     private String estadoDeVenda;
@@ -35,9 +33,14 @@ public class TelaDeCadastroProducao extends javax.swing.JFrame {
     private Date dataPlantioValida;
     private Date dataInicioColheitaValida;
     private Date dataFimColheitaValida;
-
+    
+    private Double valorTotalDeDespesas;
+    private Double valorTotalDeLucro;
+    
     private String valorTotalDeLucroTexto;
     private String valorTotalDeDespesasTexto;
+    
+   
 
     public TelaDeCadastroProducao() {
         initComponents();
@@ -259,7 +262,7 @@ public class TelaDeCadastroProducao extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxCulturaActionPerformed
 
     private void jTextFieldValorTotalDeLucroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldValorTotalDeLucroActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jTextFieldValorTotalDeLucroActionPerformed
 
     public void buscarPropriedade() throws SQLException {
@@ -282,8 +285,12 @@ public class TelaDeCadastroProducao extends javax.swing.JFrame {
         quantidadeProduzidaEmSacos = Integer.parseInt(jTextFieldQuantidadeProduzidaEmSacos.getText());
         estadoDeVenda = jComboBoxEstadoDeVenda.getSelectedItem().toString();
         tipoDeCultura = jComboBoxCultura.getSelectedItem().toString();
-        valorTotalDeDespesas = Double.valueOf(jTextFieldValorTotalDeDespesas.getText());
-        valorTotalDeLucro = Double.valueOf(jTextFieldValorTotalDeLucro.getText());
+        
+        valorTotalDeDespesasTexto = jTextFieldValorTotalDeDespesas.getText();
+        valorTotalDeLucroTexto = jTextFieldValorTotalDeLucro.getText();
+        
+        valorTotalDeDespesas = Double.valueOf(valorTotalDeDespesasTexto.replace(".", "").replace(",", "."));
+        valorTotalDeLucro =  Double.valueOf(valorTotalDeLucroTexto.replace(".", "").replace(",", "."));
         
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
