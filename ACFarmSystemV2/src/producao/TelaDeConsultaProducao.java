@@ -8,10 +8,6 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import java.text.SimpleDateFormat;
 
-/**
- *
- * @author Gustavo
- */
 public class TelaDeConsultaProducao extends javax.swing.JFrame {
 
     private ControleProducao controleProducao = new ControleProducao();
@@ -202,7 +198,7 @@ public class TelaDeConsultaProducao extends javax.swing.JFrame {
 
         jLabelTelaProducao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasProducao/img_tela_de_consultar_producao.png"))); // NOI18N
         jLabelTelaProducao.setText("jLabel1");
-        getContentPane().add(jLabelTelaProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 912, -1));
+        getContentPane().add(jLabelTelaProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -224,7 +220,7 @@ public class TelaDeConsultaProducao extends javax.swing.JFrame {
 
     private void jButtonVoltarATelaDeProducaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarATelaDeProducaoActionPerformed
         this.dispose();
-        new TelaDeRelatorioProducao().setVisible(true);
+        new TelaDeInicioProducao().setVisible(true);
     }//GEN-LAST:event_jButtonVoltarATelaDeProducaoActionPerformed
 
     private void jTextFieldNomeProducaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeProducaoActionPerformed

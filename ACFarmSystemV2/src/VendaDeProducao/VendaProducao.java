@@ -2,10 +2,6 @@ package VendaDeProducao;
 
 import java.util.Date;
 
-/**
- *
- * @author Gustavo
- */
 public class VendaProducao {
     private int idVendaProducao;
     private String nomeProducao;

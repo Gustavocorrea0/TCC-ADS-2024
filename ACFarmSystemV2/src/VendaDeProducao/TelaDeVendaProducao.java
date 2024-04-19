@@ -32,7 +32,8 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
     private String CNPJOuCPFNovo;
     private String dataProducaoNovo;
     private String dataVendaNovo;
-    private Double valorTotalVendaNovo;
+    private String valorTotalTexto;
+    private Double valorTotalVendaNovoCorrigido;
     private int quantidadeDeSacasProducaoNovo;
     private String formaDePagamentoNovo;
     private String metodoDePagamentoNovo;
@@ -349,13 +350,13 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
 
         dataProducaoNovo = jTextFieldDataProducao.getText();
         dataVendaNovo = jTextFieldDataDaVenda.getText();
-        valorTotalVendaNovo = Double.valueOf(jTextFieldValorTotal.getText());
+        valorTotalTexto = jTextFieldValorTotal.getText(); 
+        valorTotalVendaNovoCorrigido = Double.valueOf(valorTotalTexto.replace(".", "").replace(",", "."));
         quantidadeDeSacasProducaoNovo = Integer.parseInt(jTextFieldNumeroSacasProducao.getText());
         quantidadeDeParcelasNovo = Integer.parseInt(jTextFieldNumeroDeParcelas.getText());
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        NumberFormat formatoReal = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
-        
+
         if (statusDeVendaProducao.equalsIgnoreCase("sim")) {
             JOptionPane.showMessageDialog(this, "Esta produção já foi vendida");
             return;
@@ -391,7 +392,7 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
             return;
         }
 
-        if (valorTotalVendaNovo < 0 || valorTotalVendaNovo.equals("")) {
+        if (valorTotalVendaNovoCorrigido < 0 || valorTotalVendaNovoCorrigido.equals("")) {
             JOptionPane.showMessageDialog(this, "Valor da venda inválido");
             return;
         }
@@ -419,7 +420,7 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
             controleVendaProducao.vendaProducao.setNomeProducao(nomeProducaoNovo);
             controleVendaProducao.vendaProducao.setQuantidadeDeParcelas(quantidadeDeParcelasNovo);
             controleVendaProducao.vendaProducao.setQuantidadeDeSacasProducao(quantidadeDeSacasProducaoNovo);
-            controleVendaProducao.vendaProducao.setValorTotalVenda(valorTotalVendaNovo);
+            controleVendaProducao.vendaProducao.setValorTotalVenda(valorTotalVendaNovoCorrigido);
 
             atualizarStatusDeVendaProducao();
 

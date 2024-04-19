@@ -21,7 +21,6 @@ public class TelaDeConsultaVendaProducao extends javax.swing.JFrame {
     private String CNPJOuCPF;
     private String dataProducao;
     private String dataVenda;
-    private String valorTotalVenda;
     private String quantidadeDeSacasProducao;
     private String formaDePagamento;
     private String metodoDePagamento;
@@ -29,6 +28,8 @@ public class TelaDeConsultaVendaProducao extends javax.swing.JFrame {
     private Date dataVendaEncontrada;
     private Date dataProducaoEncontrada;
     private int codigoBuscado;
+    private String valorTotalVendaCorrigido;
+    private Double valorTotalVenda;
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -267,15 +268,15 @@ public class TelaDeConsultaVendaProducao extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonBuscarFornecedorActionPerformed
 
     private void jTextFieldMetodoDePagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldMetodoDePagamentoActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldMetodoDePagamentoActionPerformed
 
     private void jTextFieldDataVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDataVendaActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldDataVendaActionPerformed
 
     private void jTextFieldCodigoBuscadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCodigoBuscadoActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldCodigoBuscadoActionPerformed
 
     public void buscarVendaDeProducao() throws SQLException, ParseException {
@@ -296,12 +297,14 @@ public class TelaDeConsultaVendaProducao extends javax.swing.JFrame {
             CNPJOuCPF = vendaProducaoEncontrada.getCNPJOuCPF();
             dataProducao = formatoBrasileiro.format(dataVendaEncontrada);
             dataVenda = formatoBrasileiro.format(dataProducaoEncontrada);
-            valorTotalVenda = Double.toString(vendaProducaoEncontrada.getValorTotalVenda());
             quantidadeDeSacasProducao = Integer.toString(vendaProducaoEncontrada.getQuantidadeDeSacasProducao());
             formaDePagamento = vendaProducaoEncontrada.getFormaDePagamento();
             metodoDePagamento = vendaProducaoEncontrada.getMetodoDePagamento();
             quantidadeDeParcelas = Integer.toString(vendaProducaoEncontrada.getQuantidadeDeParcelas());
-            
+
+            valorTotalVenda = vendaProducaoEncontrada.getValorTotalVenda();
+            valorTotalVendaCorrigido = converterValorParaReal(valorTotalVenda);
+
             jTextFieldCliente.setText(nomeCliente);
             jTextFieldDataDaProducao.setText(dataProducao);
             jTextFieldDataVenda.setText(dataVenda);
@@ -310,21 +313,42 @@ public class TelaDeConsultaVendaProducao extends javax.swing.JFrame {
             jTextFieldNumeroDeSacas.setText(quantidadeDeSacasProducao);
             jTextFieldProducao.setText(nomeProducao);
             jTextFieldQuantidadeDeVezes.setText(quantidadeDeParcelas);
-            jTextFieldValorTotal.setText(valorTotalVenda);
+            jTextFieldValorTotal.setText(valorTotalVendaCorrigido);
             jTextFieldCNPJOuCPF.setText(CNPJOuCPF);
-            
+
         } else {
             JOptionPane.showMessageDialog(this, "Venda não encontrada");
-            jTextFieldCliente.setText("");
-            jTextFieldDataDaProducao.setText("");
-            jTextFieldDataVenda.setText("");
-            jTextFieldFormaDePagamento.setText("");
-            jTextFieldMetodoDePagamento.setText("");
-            jTextFieldNumeroDeSacas.setText("");
-            jTextFieldProducao.setText("");
-            jTextFieldQuantidadeDeVezes.setText("");
-            jTextFieldValorTotal.setText("");
+            limparCampos();
         }
+    }
+
+    public String converterValorParaReal(Double valorReal) {
+
+        if (valorReal <= 99999.99) {
+            return String.format("%,.2f", valorReal).replace(".", ",");
+        }
+        
+        if (valorReal >= 100000.00 && valorReal <= 999999.99) {
+            return String.format("%,.2f", valorReal).replace(",", "#").replace(",", ".").replace("#", ",");
+        }
+
+        if (valorReal >= 1000000.00) {
+            return String.format("%,.2f", valorReal).replace(",", "#").replace(",", ".").replace("#", ",");
+        }
+        return "Erro";
+    }
+
+    public void limparCampos() {
+        jTextFieldCliente.setText("");
+        jTextFieldDataDaProducao.setText("");
+        jTextFieldDataVenda.setText("");
+        jTextFieldFormaDePagamento.setText("");
+        jTextFieldMetodoDePagamento.setText("");
+        jTextFieldNumeroDeSacas.setText("");
+        jTextFieldProducao.setText("");
+        jTextFieldQuantidadeDeVezes.setText("");
+        jTextFieldValorTotal.setText("");
+        jTextFieldCNPJOuCPF.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

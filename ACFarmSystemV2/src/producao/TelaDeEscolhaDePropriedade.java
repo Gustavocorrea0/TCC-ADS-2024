@@ -69,7 +69,7 @@ public class TelaDeEscolhaDePropriedade extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nome", "Area(Alqueire)", "Cidade", "Cultura"
+                "Propriedade", "Area(Alqueire)", "Cidade", "Cultura"
             }
         ) {
             Class[] types = new Class [] {
