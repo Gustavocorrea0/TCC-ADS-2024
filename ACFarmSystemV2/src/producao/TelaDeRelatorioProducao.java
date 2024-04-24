@@ -7,10 +7,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Gustavo
- */
 public class TelaDeRelatorioProducao extends javax.swing.JFrame {
 
     ControleProducao controleProducao = new ControleProducao();
@@ -90,7 +86,7 @@ public class TelaDeRelatorioProducao extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonGerarRelatorioProducaoActionPerformed
 
     private void jButtonVoltarATelaDeProducaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarATelaDeProducaoActionPerformed
-        // TODO add your handling code here:
+
         this.dispose();
         new TelaDeInicioProducao().setVisible(true);
     }//GEN-LAST:event_jButtonVoltarATelaDeProducaoActionPerformed

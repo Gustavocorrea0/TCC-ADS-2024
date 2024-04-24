@@ -10,10 +10,6 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import java.text.SimpleDateFormat;
 
-/**
- *
- * @author Gustavo
- */
 public class TelaDeRelatorioDetalhadoDeProducao extends javax.swing.JFrame {
 
     private ControleProducao controleProducao = new ControleProducao();

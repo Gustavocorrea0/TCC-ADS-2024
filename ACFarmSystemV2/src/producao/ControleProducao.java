@@ -248,7 +248,7 @@ public class ControleProducao {
             Paragraph linhaEmBranco = new Paragraph(" ", fonte2);
 
             // ERRO DE ORIGEM
-            Image imagem = Image.getInstance("C:\\Users\\Gustavo\\Desktop\\Gustavo Arquivos 5\\TCC_P2\\ACFarmSystemV2\\src\\logo_ac_farm_system.png");
+             Image imagem = Image.getInstance("C:\\Users\\Gustavo\\Desktop\\Gustavo Arquivos 5\\TCC_P2\\Codigo Final\\ACFarmSystemV2\\src\\logo_ac_farm_system.png");
             //Formacao de imagem pxXpx
             imagem.scaleToFit(55, 50);
 
@@ -384,8 +384,9 @@ public class ControleProducao {
             Font fonte2 = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL);
             Paragraph linhaEmBranco = new Paragraph(" ", fonte2);
 
-            // ERRO DE ORIGEM
-            Image imagem = Image.getInstance("C:\\Users\\Gustavo\\Desktop\\Gustavo Arquivos 5\\TCC_P2\\ACFarmSystemV2\\src\\logo_ac_farm_system.png");
+            // ERRO DE ORIGEM C:\Users\Gustavo\Desktop\Gustavo Arquivos 5\TCC_P2\Codigo Final\ACFarmSystemV2\src
+            Image imagem = Image.getInstance("C:\\Users\\Gustavo\\Desktop\\Gustavo Arquivos 5\\TCC_P2\\Codigo Final\\ACFarmSystemV2\\src\\logo_ac_farm_system.png");
+
             // Formacao de imagem pxXpx
             imagem.scaleToFit(55, 50);
 
@@ -517,27 +518,29 @@ public class ControleProducao {
 
         Font fonteTitulo = new Font(Font.FontFamily.HELVETICA, 14, Font.BOLD);
         Font fonteSubtitulo = new Font(Font.FontFamily.HELVETICA, 13, Font.BOLD);
-        Font fonteIdentificacao = new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD);
         Font fonteTextoComun = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL);
 
         Paragraph linhaEmBranco = new Paragraph(" ", fonteTextoComun);
 
         try {
             if (resultados.next()) {
+                System.out.println("DENTRO DO TRY");
                 Producao producaoBuscada = new Producao();
                 producaoBuscada.setNomeProducao(resultados.getString("nome_producao"));
                 producaoBuscada.setDataDePlantio(resultados.getDate("data_plantio"));
                 producaoBuscada.setDataInicioColheita(resultados.getDate("data_inicio_colheita"));
                 producaoBuscada.setDataFimColheita(resultados.getDate("data_fim_colheita"));
+
                 producaoBuscada.setValorTotalDespesas(resultados.getDouble("valor_total_despesas"));
                 producaoBuscada.setValorTotalDeLucro(resultados.getDouble("valor_total_de_lucro"));
+
                 producaoBuscada.setQuantidadeProduzidaEmSacos(resultados.getInt("quantidade_produzida_em_sacos"));
                 producaoBuscada.setCultura(resultados.getString("cultura"));
                 producaoBuscada.setIdProducao(resultados.getInt("id_producao"));
                 producaoBuscada.setStatusDeVenda(resultados.getString("status_de_venda"));
                 producaoBuscada.setPropriedadeColheita(resultados.getString("propriedade_da_colheita"));
 
-                Image imagem = Image.getInstance("C:\\Users\\Gustavo\\Desktop\\Gustavo Arquivos 5\\TCC_P2\\ACFarmSystemV2\\src\\logo_ac_farm_system.png");
+                Image imagem = Image.getInstance("C:\\Users\\Gustavo\\Desktop\\Gustavo Arquivos 5\\TCC_P2\\Codigo Final\\ACFarmSystemV2\\src\\logo_ac_farm_system.png");
                 imagem.scaleToFit(55, 50);
 
                 LineSeparator line = new LineSeparator();
@@ -626,11 +629,33 @@ public class ControleProducao {
                 Desktop.getDesktop().open(new File(nomePDF));
 
             }
-            
+
         } catch (DocumentException | FileNotFoundException | SQLException | NullPointerException d) {
             d.getMessage();
         }
-        
+
+    }
+
+    public String converterValorParaReal(Double valorReal) {
+
+        if (valorReal >= 9999.99 && valorReal < 100000.00) {
+            return String.format("%,.2f", valorReal).replace(".", "#").replace(",", ",").replace("#", ".");
+        }
+
+        if (valorReal >= 99999.99 && valorReal < 100000.00) {
+            return String.format("%,.2f", valorReal).replace(".", "#").replace(",", ".");
+        }
+
+        if (valorReal >= 100000.00 && valorReal < 999999.99) {
+            return String.format("%,.2f", valorReal).replace(",", "#").replace(",", ".").replace("#", ",");
+        }
+
+        if (valorReal >= 1000000.00) {
+            return String.format("%,.2f", valorReal).replace(",", "#").replace(",", ".").replace("#", ",");
+        }
+
+        return "Erro";
+
     }
 
 }

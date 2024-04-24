@@ -249,7 +249,7 @@ public class ControleFornecedor {
             Font fonte2 = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL);
             Paragraph linhaEmBranco = new Paragraph(" ", fonte2);
 
-            Image imagem = Image.getInstance("C:\\Users\\Gustavo\\Desktop\\Gustavo Arquivos 5\\TCC_P2\\ACFarmSystemV2\\src\\logo_ac_farm_system.png");
+            Image imagem = Image.getInstance("C:\\Users\\Gustavo\\Desktop\\Gustavo Arquivos 5\\TCC_P2\\Codigo Final\\ACFarmSystemV2\\src\\logo_ac_farm_system.png");
             imagem.scaleToFit(55, 50);
 
             LineSeparator line = new LineSeparator();
@@ -377,12 +377,12 @@ public class ControleFornecedor {
 
                 Font fonteTitulo = new Font(Font.FontFamily.HELVETICA, 14, Font.BOLD);
                 Font fonteSubtitulo = new Font(Font.FontFamily.HELVETICA, 13, Font.BOLD);
-                Font fonteIdentificacao= new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD);
+                Font fonteIdentificacao = new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD);
                 Font fonteTextoComun = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL);
 
                 Paragraph linhaEmBranco = new Paragraph(" ", fonteTextoComun);
 
-                Image imagem = Image.getInstance("C:\\Users\\Gustavo\\Desktop\\Gustavo Arquivos 5\\TCC_P2\\ACFarmSystemV2\\src\\logo_ac_farm_system.png");
+                Image imagem = Image.getInstance("C:\\Users\\Gustavo\\Desktop\\Gustavo Arquivos 5\\TCC_P2\\Codigo Final\\ACFarmSystemV2\\src\\logo_ac_farm_system.png");
                 imagem.scaleToFit(55, 50);
 
                 LineSeparator line = new LineSeparator();
@@ -404,7 +404,7 @@ public class ControleFornecedor {
                 String estadoEncontrado = fornecedorBuscado.getEstadoFornecedor();
                 String cidadeEncontrado = fornecedorBuscado.getCidadeFornecedor();
                 String cepEncontrado = fornecedorBuscado.getCepFornecedor();
-                
+
                 Paragraph p = new Paragraph("Relatorio de Fornecedor", fonteTitulo);
 
                 Paragraph nomeDoFornecedor = new Paragraph("            Fornecedor: " + nomeFornecedor, fonteTextoComun);

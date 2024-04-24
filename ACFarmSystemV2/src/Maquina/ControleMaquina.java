@@ -1096,7 +1096,7 @@ public class ControleMaquina {
             Paragraph linhaEmBranco = new Paragraph(" ", fonte2);
 
             // ERRO DE ORIGEM
-            Image imagem = Image.getInstance("C:\\Users\\Gustavo\\Desktop\\AC FARM SYSTEMV2\\ACFarmSystemV2\\ACFarmSystemV2\\src\\logo_ac_farm_system.png");
+            Image imagem = Image.getInstance("C:\\Users\\Gustavo\\Desktop\\Gustavo Arquivos 5\\TCC_P2\\Codigo Final\\ACFarmSystemV2\\src\\logo_ac_farm_system.png");
             //Formacao de imagem pxXpx
             imagem.scaleToFit(55, 50);
 
