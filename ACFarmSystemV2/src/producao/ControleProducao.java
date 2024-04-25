@@ -248,8 +248,9 @@ public class ControleProducao {
             Paragraph linhaEmBranco = new Paragraph(" ", fonte2);
 
             // ERRO DE ORIGEM
-             Image imagem = Image.getInstance("C:\\Users\\Gustavo\\Desktop\\Gustavo Arquivos 5\\TCC_P2\\Codigo Final\\ACFarmSystemV2\\src\\logo_ac_farm_system.png");
-            //Formacao de imagem pxXpx
+            String imagePath = "/logo_ac_farm_system.png";
+            Image imagem = Image.getInstance(getClass().getResource(imagePath));
+
             imagem.scaleToFit(55, 50);
 
             // linha de separacao
@@ -384,9 +385,9 @@ public class ControleProducao {
             Font fonte2 = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL);
             Paragraph linhaEmBranco = new Paragraph(" ", fonte2);
 
-            // ERRO DE ORIGEM C:\Users\Gustavo\Desktop\Gustavo Arquivos 5\TCC_P2\Codigo Final\ACFarmSystemV2\src
-            Image imagem = Image.getInstance("C:\\Users\\Gustavo\\Desktop\\Gustavo Arquivos 5\\TCC_P2\\Codigo Final\\ACFarmSystemV2\\src\\logo_ac_farm_system.png");
-
+            String imagePath = "/logo_ac_farm_system.png";
+            Image imagem = Image.getInstance(getClass().getResource(imagePath));
+            
             // Formacao de imagem pxXpx
             imagem.scaleToFit(55, 50);
 
@@ -524,7 +525,6 @@ public class ControleProducao {
 
         try {
             if (resultados.next()) {
-                System.out.println("DENTRO DO TRY");
                 Producao producaoBuscada = new Producao();
                 producaoBuscada.setNomeProducao(resultados.getString("nome_producao"));
                 producaoBuscada.setDataDePlantio(resultados.getDate("data_plantio"));
@@ -540,7 +540,8 @@ public class ControleProducao {
                 producaoBuscada.setStatusDeVenda(resultados.getString("status_de_venda"));
                 producaoBuscada.setPropriedadeColheita(resultados.getString("propriedade_da_colheita"));
 
-                Image imagem = Image.getInstance("C:\\Users\\Gustavo\\Desktop\\Gustavo Arquivos 5\\TCC_P2\\Codigo Final\\ACFarmSystemV2\\src\\logo_ac_farm_system.png");
+                String imagePath = "/logo_ac_farm_system.png";
+                Image imagem = Image.getInstance(getClass().getResource(imagePath));
                 imagem.scaleToFit(55, 50);
 
                 LineSeparator line = new LineSeparator();
@@ -557,8 +558,8 @@ public class ControleProducao {
                 String dataDePlantioProducaoEncontrado = formatarData(producaoBuscada.getDataDePlantio());
                 String dataDeInicioColheitaProducaoEncontrado = formatarData(producaoBuscada.getDataInicioColheita());
                 String dataDeFimColheitaProducaoEncontrado = formatarData(producaoBuscada.getDataFimColheita());
-                String valorTotalDeDespesasProducaoEncontrado = Double.toString(producaoBuscada.getValorTotalDespesas());
-                String valorTotalDeLucroProducaoEncontrado = Double.toString(producaoBuscada.getValorTotalDeLucro());
+                String valorTotalDeDespesasProducaoEncontrado = converterValorParaReal(producaoBuscada.getValorTotalDespesas());
+                String valorTotalDeLucroProducaoEncontrado = converterValorParaReal(producaoBuscada.getValorTotalDeLucro());
                 String quantidadeProduzidaEmSacosProducaoEncontrado = Integer.toString(producaoBuscada.getQuantidadeProduzidaEmSacos());
                 String culturaProducaoEncontrado = producaoBuscada.getCultura();
                 String statusDeVendaProducaoEncontrado = producaoBuscada.getStatusDeVenda();

@@ -61,7 +61,7 @@ public class TelaDeDadosDeProducao extends javax.swing.JFrame {
 
     private void jButtonVoltarATelaDeProducaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarATelaDeProducaoActionPerformed
         this.dispose();
-        new TelaDeInicioProducao().setVisible(true);
+        new TelaDeRelatorioProducao().setVisible(true);
     }//GEN-LAST:event_jButtonVoltarATelaDeProducaoActionPerformed
 
     private void jButtonGerarRelatorioFinanceiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGerarRelatorioFinanceiroActionPerformed

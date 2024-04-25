@@ -22,7 +22,7 @@ public class TelaDeRelatorioDetalhadoDeProducao extends javax.swing.JFrame {
     private String quantidadeProduzidaEmSacos;
     private String cultura;
     private String nomeProducaoBuscada;
-    
+
     public TelaDeRelatorioDetalhadoDeProducao() {
         initComponents();
     }
@@ -212,7 +212,7 @@ public class TelaDeRelatorioDetalhadoDeProducao extends javax.swing.JFrame {
 
         jLabelTelaProducao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasProducao/img_tela_de_relatorio_detalhado_de_producao.png"))); // NOI18N
         jLabelTelaProducao.setText("jLabel1");
-        getContentPane().add(jLabelTelaProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 912, -1));
+        getContentPane().add(jLabelTelaProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -229,7 +229,7 @@ public class TelaDeRelatorioDetalhadoDeProducao extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonBuscarPropriedadeActionPerformed
 
     private void jTextFieldIdProducaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdProducaoActionPerformed
-        
+
     }//GEN-LAST:event_jTextFieldIdProducaoActionPerformed
 
     private void jButtonVoltarATelaDeProducaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarATelaDeProducaoActionPerformed
@@ -242,35 +242,35 @@ public class TelaDeRelatorioDetalhadoDeProducao extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldNomeProducaoActionPerformed
 
     private void jTextFieldDataInicioColheitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDataInicioColheitaActionPerformed
-  
+
     }//GEN-LAST:event_jTextFieldDataInicioColheitaActionPerformed
 
     private void jTextFieldDataFimColheitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDataFimColheitaActionPerformed
-      
+
     }//GEN-LAST:event_jTextFieldDataFimColheitaActionPerformed
 
     private void jTextFieldValorTotalDeDespesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldValorTotalDeDespesasActionPerformed
-       
+
     }//GEN-LAST:event_jTextFieldValorTotalDeDespesasActionPerformed
 
     private void jTextFieldQuantidadeProduzidaEmSacosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldQuantidadeProduzidaEmSacosActionPerformed
-        
+
     }//GEN-LAST:event_jTextFieldQuantidadeProduzidaEmSacosActionPerformed
 
     private void jTextFieldCulturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCulturaActionPerformed
-        
+
     }//GEN-LAST:event_jTextFieldCulturaActionPerformed
 
     private void jTextFieldValorTotalDeLucroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldValorTotalDeLucroActionPerformed
-       
+
     }//GEN-LAST:event_jTextFieldValorTotalDeLucroActionPerformed
 
     private void jTextFieldDataPlantioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDataPlantioActionPerformed
-      
+
     }//GEN-LAST:event_jTextFieldDataPlantioActionPerformed
 
     private void jTextFieldEstadoDeVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEstadoDeVendaActionPerformed
-        
+
     }//GEN-LAST:event_jTextFieldEstadoDeVendaActionPerformed
 
     private void jButtonGerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGerarRelatorioActionPerformed
@@ -295,11 +295,11 @@ public class TelaDeRelatorioDetalhadoDeProducao extends javax.swing.JFrame {
 
         if (producaoEncontrada != null) {
             nomeProducao = producaoEncontrada.getNomeProducao();
-            valorTotalDespesas = Double.toString(producaoEncontrada.getValorTotalDespesas());
-            valorTotalDeLucro = Double.toString(producaoEncontrada.getValorTotalDeLucro());
+            valorTotalDespesas = converterValorParaReal(producaoEncontrada.getValorTotalDespesas());
+            valorTotalDeLucro = converterValorParaReal(producaoEncontrada.getValorTotalDeLucro());
             quantidadeProduzidaEmSacos = Integer.toString(producaoEncontrada.getQuantidadeProduzidaEmSacos());
             cultura = producaoEncontrada.getCultura();
-            
+
             SimpleDateFormat formatoSQL = new SimpleDateFormat("yyyy-MM-dd");
             SimpleDateFormat formatoBrasileiro = new SimpleDateFormat("dd/MM/yyyy");
 
@@ -343,10 +343,32 @@ public class TelaDeRelatorioDetalhadoDeProducao extends javax.swing.JFrame {
             jTextFieldValorTotalDeLucro.setText("");
             jTextFieldEstadoDeVenda.setText("");
         }
-        
+
     }
-    
-    
+
+    public String converterValorParaReal(Double valorReal) {
+
+        if (valorReal >= 9999.99 && valorReal < 100000.00) {
+            return String.format("%,.2f", valorReal).replace(".", "#").replace(",", ",").replace("#", ".");
+        }
+
+        if (valorReal >= 99999.99 && valorReal < 100000.00) {
+            return String.format("%,.2f", valorReal).replace(".", "#").replace(",", ".");
+        }
+
+        if (valorReal >= 100000.00 && valorReal < 999999.99) {
+            return String.format("%,.2f", valorReal).replace(",", "#").replace(",", ".").replace("#", ",");
+        }
+
+        if (valorReal >= 1000000.00) {
+            return String.format("%,.2f", valorReal).replace(",", "#").replace(",", ".").replace("#", ",");
+        }
+
+        return "Erro";
+
+    }
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscarPropriedade;
     private javax.swing.JButton jButtonGerarRelatorio;
