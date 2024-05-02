@@ -93,7 +93,7 @@ public class TelaDeInicioProducao extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false
@@ -115,10 +115,15 @@ public class TelaDeInicioProducao extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTableProducao);
         if (jTableProducao.getColumnModel().getColumnCount() > 0) {
             jTableProducao.getColumnModel().getColumn(0).setResizable(false);
+            jTableProducao.getColumnModel().getColumn(0).setHeaderValue("Nome da Produção");
             jTableProducao.getColumnModel().getColumn(1).setResizable(false);
+            jTableProducao.getColumnModel().getColumn(1).setHeaderValue("Quantidade Produzida (Sacas)");
             jTableProducao.getColumnModel().getColumn(2).setResizable(false);
+            jTableProducao.getColumnModel().getColumn(2).setHeaderValue("Valor Total de Lucro (R$)");
             jTableProducao.getColumnModel().getColumn(3).setResizable(false);
+            jTableProducao.getColumnModel().getColumn(3).setHeaderValue("Cultura");
             jTableProducao.getColumnModel().getColumn(4).setResizable(false);
+            jTableProducao.getColumnModel().getColumn(4).setHeaderValue("Vendido");
         }
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 850, 370));
@@ -161,9 +166,32 @@ public class TelaDeInicioProducao extends javax.swing.JFrame {
         ControleProducao controleProducao = new ControleProducao();
 
         for (Producao p : controleProducao.buscarTodasAsProducoes()) {
-            modelo.addRow(new Object[]{p.getNomeProducao(), p.getQuantidadeProduzidaEmSacos(), p.getValorTotalDeLucro(), p.getCultura(), p.getStatusDeVenda()});
+            String valorTotalLucro = converterValorParaReal(p.getValorTotalDeLucro());
+            modelo.addRow(new Object[]{p.getNomeProducao(), p.getQuantidadeProduzidaEmSacos(), valorTotalLucro, p.getCultura(), p.getStatusDeVenda()});
         }
         
+    }
+    
+    public String converterValorParaReal(Double valorReal) {
+
+        if (valorReal >= 9999.99 && valorReal < 100000.00) {
+            return String.format("%,.2f", valorReal).replace(".", "#").replace(",", ",").replace("#", ".");
+        }
+
+        if (valorReal >= 99999.99 && valorReal < 100000.00) {
+            return String.format("%,.2f", valorReal).replace(".", "#").replace(",", ".");
+        }
+
+        if (valorReal >= 100000.00 && valorReal < 999999.99) {
+            return String.format("%,.2f", valorReal).replace(",", "#").replace(",", ".").replace("#", ",");
+        }
+
+        if (valorReal >= 1000000.00) {
+            return String.format("%,.2f", valorReal).replace(",", "#").replace(",", ".").replace("#", ",");
+        }
+
+        return "Erro";
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

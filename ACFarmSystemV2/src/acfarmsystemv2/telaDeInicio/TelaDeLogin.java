@@ -1,5 +1,6 @@
 package acfarmsystemv2.telaDeInicio;
 
+import java.awt.event.KeyEvent;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -41,6 +42,11 @@ public class TelaDeLogin extends javax.swing.JFrame {
         jButtonEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonEntrarActionPerformed(evt);
+            }
+        });
+        jButtonEntrar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jButtonEntrarKeyPressed(evt);
             }
         });
         getContentPane().add(jButtonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(252, 412, 408, 56));
@@ -94,8 +100,18 @@ public class TelaDeLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonEncerrarSistemaActionPerformed
 
     private void jTextNomeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNomeUsuarioActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextNomeUsuarioActionPerformed
+
+    private void jButtonEntrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButtonEntrarKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            try {
+                executarLogin();
+            } catch (SQLException ex) {
+                Logger.getLogger(TelaDeLogin.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_jButtonEntrarKeyPressed
 
     public void executarLogin() throws SQLException {
         BasicPasswordEncryptor passwordEncryptor = new BasicPasswordEncryptor();

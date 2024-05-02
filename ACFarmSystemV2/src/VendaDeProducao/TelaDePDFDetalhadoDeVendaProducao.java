@@ -324,12 +324,12 @@ public class TelaDePDFDetalhadoDeVendaProducao extends javax.swing.JFrame {
             CNPJOuCPF = vendaProducaoEncontrada.getCNPJOuCPF();
             dataProducao = formatoBrasileiro.format(dataVendaEncontrada);
             dataVenda = formatoBrasileiro.format(dataProducaoEncontrada);
-            valorTotalVenda = Double.toString(vendaProducaoEncontrada.getValorTotalVenda());
+            valorTotalVenda = converterValorParaReal(vendaProducaoEncontrada.getValorTotalVenda());
             quantidadeDeSacasProducao = Integer.toString(vendaProducaoEncontrada.getQuantidadeDeSacasProducao());
             formaDePagamento = vendaProducaoEncontrada.getFormaDePagamento();
             metodoDePagamento = vendaProducaoEncontrada.getMetodoDePagamento();
             quantidadeDeParcelas = Integer.toString(vendaProducaoEncontrada.getQuantidadeDeParcelas());
-            
+
             jTextFieldCliente.setText(nomeCliente);
             jTextFieldDataDaProducao.setText(dataProducao);
             jTextFieldDataVenda.setText(dataVenda);
@@ -340,7 +340,7 @@ public class TelaDePDFDetalhadoDeVendaProducao extends javax.swing.JFrame {
             jTextFieldQuantidadeDeVezes.setText(quantidadeDeParcelas);
             jTextFieldValorTotal.setText(valorTotalVenda);
             jTextFieldCNPJOuCPF.setText(CNPJOuCPF);
-            
+
         } else {
             JOptionPane.showMessageDialog(this, "Venda não encontrada");
             jTextFieldCliente.setText("");
@@ -355,6 +355,28 @@ public class TelaDePDFDetalhadoDeVendaProducao extends javax.swing.JFrame {
         }
     }
 
+    public String converterValorParaReal(Double valorReal) {
+
+        if (valorReal >= 9999.99 && valorReal < 100000.00) {
+            return String.format("%,.2f", valorReal).replace(".", "#").replace(",", ",").replace("#", ".");
+        }
+
+        if (valorReal >= 99999.99 && valorReal < 100000.00) {
+            return String.format("%,.2f", valorReal).replace(".", "#").replace(",", ".");
+        }
+
+        if (valorReal >= 100000.00 && valorReal < 999999.99) {
+            return String.format("%,.2f", valorReal).replace(",", "#").replace(",", ".").replace("#", ",");
+        }
+
+        if (valorReal >= 1000000.00) {
+            return String.format("%,.2f", valorReal).replace(",", "#").replace(",", ".").replace("#", ",");
+        }
+
+        return "Erro";
+
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscarFornecedor;
     private javax.swing.JButton jButtonConfirmarAdicao;

@@ -207,7 +207,8 @@ public class ControleVendaProducao {
             Font fonte2 = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL);
             Paragraph linhaEmBranco = new Paragraph(" ", fonte2);
 
-            Image imagem = Image.getInstance("C:\\Users\\Gustavo\\Desktop\\Gustavo Arquivos 5\\TCC_P2\\ACFarmSystemV2\\src\\logo_ac_farm_system.png");
+            String imagePath = "/logo_ac_farm_system.png";
+            Image imagem = Image.getInstance(getClass().getResource(imagePath));
 
             imagem.scaleToFit(55, 50);
 
@@ -353,7 +354,9 @@ public class ControleVendaProducao {
                 vendaProducaoBuscada.setQuantidadeDeParcelas(resultados.getInt("quantidade_parcelas"));
                 vendaProducaoBuscada.setIdVendaProducao(resultados.getInt("id_venda_producao"));
 
-                Image imagem = Image.getInstance("C:\\Users\\Gustavo\\Desktop\\Gustavo Arquivos 5\\TCC_P2\\ACFarmSystemV2\\src\\logo_ac_farm_system.png");
+                String imagePath = "/logo_ac_farm_system.png";
+                Image imagem = Image.getInstance(getClass().getResource(imagePath));
+
                 imagem.scaleToFit(55, 50);
 
                 LineSeparator line = new LineSeparator();
@@ -373,7 +376,7 @@ public class ControleVendaProducao {
                 String quantidadeDeSacasEncontrado = Integer.toString(vendaProducaoBuscada.getQuantidadeDeSacasProducao());
                 String nomeClienteEncontrado = vendaProducaoBuscada.getNomeCliente();
                 String nomeProducaoEncontrado = vendaProducaoBuscada.getNomeProducao();
-                String valorVendaEncontrado = Double.toString(vendaProducaoBuscada.getValorTotalVenda());
+                String valorVendaEncontrado = converterValorParaReal(vendaProducaoBuscada.getValorTotalVenda());
                 String metodoDePagamentoEncontrado = vendaProducaoBuscada.getMetodoDePagamento();
                 String formaDePagamentoEncontrado = vendaProducaoBuscada.getFormaDePagamento();
                 String quantidadeDeParcelasEncontrado = Integer.toString(vendaProducaoBuscada.getQuantidadeDeParcelas());
@@ -395,7 +398,7 @@ public class ControleVendaProducao {
                 Paragraph quantidadeDeSacasParagrafo = new Paragraph("            Quantidade de sacas: " + quantidadeDeSacasEncontrado, fonteTextoComun);
                 Paragraph nomeClienteParagrafo = new Paragraph("            Cliente: " + nomeClienteEncontrado, fonteTextoComun);
                 Paragraph nomeProducaoParagrafo = new Paragraph("            Nome da producao: " + nomeProducaoEncontrado, fonteTextoComun);
-                Paragraph valorVendaParagrafo = new Paragraph("            Valor total: " + valorVendaEncontrado, fonteValor);
+                Paragraph valorVendaParagrafo = new Paragraph("            Valor total: R$" + valorVendaEncontrado, fonteValor);
                 Paragraph metodoDePagamentoParagrafo = new Paragraph("            Método de pagamento: " + metodoDePagamentoEncontrado, fonteTextoComun);
                 Paragraph formaDePagamentoParagrafo = new Paragraph("            Forma de pagamento: " + formaDePagamentoEncontrado, fonteTextoComun);
                 Paragraph quantidadeDeParcelasParagrafo = new Paragraph("            Quantidade de parcelas: " + quantidadeDeParcelasEncontrado, fonteTextoComun);
@@ -446,5 +449,27 @@ public class ControleVendaProducao {
         } catch (DocumentException | FileNotFoundException | SQLException | NullPointerException d) {
             d.getMessage();
         }
+    }
+
+    public String converterValorParaReal(Double valorReal) {
+
+        if (valorReal >= 9999.99 && valorReal < 100000.00) {
+            return String.format("%,.2f", valorReal).replace(".", "#").replace(",", ",").replace("#", ".");
+        }
+
+        if (valorReal >= 99999.99 && valorReal < 100000.00) {
+            return String.format("%,.2f", valorReal).replace(".", "#").replace(",", ".");
+        }
+
+        if (valorReal >= 100000.00 && valorReal < 999999.99) {
+            return String.format("%,.2f", valorReal).replace(",", "#").replace(",", ".").replace("#", ",");
+        }
+
+        if (valorReal >= 1000000.00) {
+            return String.format("%,.2f", valorReal).replace(",", "#").replace(",", ".").replace("#", ",");
+        }
+
+        return "Erro";
+
     }
 }

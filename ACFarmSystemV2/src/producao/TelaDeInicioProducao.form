@@ -152,7 +152,7 @@
               <Table columnCount="5" rowCount="0">
                 <Column editable="false" title="Nome da Produ&#xe7;&#xe3;o" type="java.lang.String"/>
                 <Column editable="false" title="Quantidade Produzida (Sacas)" type="java.lang.Double"/>
-                <Column editable="false" title="Valor Total de Lucro (R$)" type="java.lang.Double"/>
+                <Column editable="false" title="Valor Total de Lucro (R$)" type="java.lang.String"/>
                 <Column editable="false" title="Cultura" type="java.lang.String"/>
                 <Column editable="false" title="Vendido" type="java.lang.String"/>
               </Table>
@@ -160,27 +160,27 @@
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
               <TableColumnModel selectionModel="0">
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                  <Title/>
+                  <Title value="Nome da Produ&#xe7;&#xe3;o"/>
                   <Editor/>
                   <Renderer/>
                 </Column>
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                  <Title/>
+                  <Title value="Quantidade Produzida (Sacas)"/>
                   <Editor/>
                   <Renderer/>
                 </Column>
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                  <Title/>
+                  <Title value="Valor Total de Lucro (R$)"/>
                   <Editor/>
                   <Renderer/>
                 </Column>
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                  <Title/>
+                  <Title value="Cultura"/>
                   <Editor/>
                   <Renderer/>
                 </Column>
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                  <Title/>
+                  <Title value="Vendido"/>
                   <Editor/>
                   <Renderer/>
                 </Column>
