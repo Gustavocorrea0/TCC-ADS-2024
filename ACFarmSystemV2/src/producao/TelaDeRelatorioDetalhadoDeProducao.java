@@ -295,8 +295,8 @@ public class TelaDeRelatorioDetalhadoDeProducao extends javax.swing.JFrame {
 
         if (producaoEncontrada != null) {
             nomeProducao = producaoEncontrada.getNomeProducao();
-            valorTotalDespesas = converterValorParaReal(producaoEncontrada.getValorTotalDespesas());
             valorTotalDeLucro = converterValorParaReal(producaoEncontrada.getValorTotalDeLucro());
+            valorTotalDespesas = converterValorParaReal(producaoEncontrada.getValorTotalDespesas());
             quantidadeProduzidaEmSacos = Integer.toString(producaoEncontrada.getQuantidadeProduzidaEmSacos());
             cultura = producaoEncontrada.getCultura();
 
@@ -332,16 +332,7 @@ public class TelaDeRelatorioDetalhadoDeProducao extends javax.swing.JFrame {
 
         } else {
             JOptionPane.showMessageDialog(this, "Produção não encontrada");
-            jTextFieldCultura.setText("");
-            jTextFieldDataFimColheita.setText("");
-            jTextFieldDataInicioColheita.setText("");
-            jTextFieldDataPlantio.setText("");
-            jTextFieldNomeProducao.setText("");
-            jTextFieldNomeProducao.setText("");
-            jTextFieldQuantidadeProduzidaEmSacos.setText("");
-            jTextFieldValorTotalDeDespesas.setText("");
-            jTextFieldValorTotalDeLucro.setText("");
-            jTextFieldEstadoDeVenda.setText("");
+            limparCampos();
         }
 
     }
@@ -366,6 +357,19 @@ public class TelaDeRelatorioDetalhadoDeProducao extends javax.swing.JFrame {
 
         return "Erro";
 
+    }
+    
+    public void limparCampos() {
+        jTextFieldCultura.setText("");
+        jTextFieldDataFimColheita.setText("");
+        jTextFieldDataInicioColheita.setText("");
+        jTextFieldDataPlantio.setText("");
+        jTextFieldNomeProducao.setText("");
+        jTextFieldNomeProducao.setText("");
+        jTextFieldQuantidadeProduzidaEmSacos.setText("");
+        jTextFieldValorTotalDeDespesas.setText("");
+        jTextFieldValorTotalDeLucro.setText("");
+        jTextFieldEstadoDeVenda.setText("");
     }
 
 

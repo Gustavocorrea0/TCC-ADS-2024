@@ -471,10 +471,13 @@ public class ControleProducao {
                 cellCultura = new PdfPCell(new Paragraph(producao.getCultura()));
                 cellNomePropriedade = new PdfPCell(new Paragraph(producao.getPropriedade()));
                 cellQuantidadeProduzida = new PdfPCell(new Paragraph(String.valueOf(producao.getQuantidadeProduzidaEmSacos())));
-                cellValorTotalDespesas = new PdfPCell(new Paragraph(String.valueOf("R$ " + producao.getValorTotalDespesas())));
-                cellValorTotalLucro = new PdfPCell(new Paragraph(String.valueOf("R$ " + producao.getValorTotalDeLucro())));
+                String valorTotalDeDespesasProducaoEncontrado = converterValorParaReal(producao.getValorTotalDespesas());
+                cellValorTotalDespesas = new PdfPCell(new Paragraph("R$ " + String.valueOf(valorTotalDeDespesasProducaoEncontrado)));
+                String valorTotalDeLucro = converterValorParaReal(producao.getValorTotalDeLucro());
+                cellValorTotalLucro = new PdfPCell(new Paragraph("R$ " + String.valueOf(valorTotalDeLucro)));
                 Double valorLiquido = producao.getValorTotalDeLucro() - producao.getValorTotalDespesas();
-                cellValorTotalDeLucroLiquido = new PdfPCell(new Paragraph("R$ " + String.valueOf(valorLiquido)));
+                String valorCorrigido = converterValorParaReal(valorLiquido);
+                cellValorTotalDeLucroLiquido = new PdfPCell(new Paragraph("R$ " + String.valueOf(valorCorrigido)));
 
                 table.addCell(cellNomePropriedade);
                 table.addCell(cellCultura);
