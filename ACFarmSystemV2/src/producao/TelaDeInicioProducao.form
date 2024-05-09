@@ -149,10 +149,9 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="5" rowCount="0">
+              <Table columnCount="4" rowCount="0">
                 <Column editable="false" title="Nome da Produ&#xe7;&#xe3;o" type="java.lang.String"/>
                 <Column editable="false" title="Quantidade Produzida (Sacas)" type="java.lang.Double"/>
-                <Column editable="false" title="Valor Total de Lucro (R$)" type="java.lang.String"/>
                 <Column editable="false" title="Cultura" type="java.lang.String"/>
                 <Column editable="false" title="Vendido" type="java.lang.String"/>
               </Table>
@@ -160,27 +159,22 @@
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
               <TableColumnModel selectionModel="0">
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                  <Title value="Nome da Produ&#xe7;&#xe3;o"/>
+                  <Title/>
                   <Editor/>
                   <Renderer/>
                 </Column>
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                  <Title value="Quantidade Produzida (Sacas)"/>
+                  <Title/>
                   <Editor/>
                   <Renderer/>
                 </Column>
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                  <Title value="Valor Total de Lucro (R$)"/>
+                  <Title/>
                   <Editor/>
                   <Renderer/>
                 </Column>
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                  <Title value="Cultura"/>
-                  <Editor/>
-                  <Renderer/>
-                </Column>
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                  <Title value="Vendido"/>
+                  <Title/>
                   <Editor/>
                   <Renderer/>
                 </Column>
