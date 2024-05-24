@@ -43,7 +43,7 @@ public class TelaDeEscolhaTipoDeVeiculo extends javax.swing.JFrame {
                 jButtonVerificarCaminhaoOuTransporteActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonVerificarCaminhaoOuTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(626, 365, 118, 28));
+        getContentPane().add(jButtonVerificarCaminhaoOuTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(608, 270, 150, 110));
 
         jButtonVerificarTrator.setBorder(null);
         jButtonVerificarTrator.setContentAreaFilled(false);
@@ -54,7 +54,7 @@ public class TelaDeEscolhaTipoDeVeiculo extends javax.swing.JFrame {
                 jButtonVerificarTratorActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonVerificarTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(398, 365, 118, 28));
+        getContentPane().add(jButtonVerificarTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 270, 144, 110));
 
         jButtonVerificarCarro.setBorder(null);
         jButtonVerificarCarro.setContentAreaFilled(false);
@@ -65,7 +65,7 @@ public class TelaDeEscolhaTipoDeVeiculo extends javax.swing.JFrame {
                 jButtonVerificarCarroActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonVerificarCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 365, 119, 28));
+        getContentPane().add(jButtonVerificarCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 270, 144, 110));
 
         jLabelFundoEscolhaParaVerificacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasVeiculo/img_escolha_tipo_de_veiculo.png"))); // NOI18N
         getContentPane().add(jLabelFundoEscolhaParaVerificacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));

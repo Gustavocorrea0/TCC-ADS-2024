@@ -27,7 +27,6 @@ public class TelaDeInicio extends javax.swing.JFrame {
 
         jButtonAcessarVeiculos = new javax.swing.JButton();
         jButtonAcessarMaquinas = new javax.swing.JButton();
-        jButtonAcessarSubdivisao = new javax.swing.JButton();
         jButtonAcessarControlePlanta = new javax.swing.JButton();
         jButtonAcessarUsuario = new javax.swing.JButton();
         jButtonAcessarFornecedor = new javax.swing.JButton();
@@ -36,9 +35,10 @@ public class TelaDeInicio extends javax.swing.JFrame {
         jButtonAcessarPraga = new javax.swing.JButton();
         jButtonVoltarAoLogin = new javax.swing.JButton();
         jButtonEquipe = new javax.swing.JButton();
-        jButtonAcessarPropriedadeOP2 = new javax.swing.JButton();
-        jButtonAcessarVenda1 = new javax.swing.JButton();
-        jButtonAcessarEstoqueOP2 = new javax.swing.JButton();
+        jButtonAcessarPropriedade = new javax.swing.JButton();
+        jButtonAcessarVenda = new javax.swing.JButton();
+        jButtonAcessarEstoque = new javax.swing.JButton();
+        jButtonAcessarSubdivisao = new javax.swing.JButton();
         jDesktopPaneGraficoDeProducao = new javax.swing.JDesktopPane();
         jLabel1 = new javax.swing.JLabel();
 
@@ -54,7 +54,7 @@ public class TelaDeInicio extends javax.swing.JFrame {
                 jButtonAcessarVeiculosActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAcessarVeiculos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 198, 29));
+        getContentPane().add(jButtonAcessarVeiculos, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 176, 134, 112));
 
         jButtonAcessarMaquinas.setBorder(null);
         jButtonAcessarMaquinas.setBorderPainted(false);
@@ -65,19 +65,7 @@ public class TelaDeInicio extends javax.swing.JFrame {
                 jButtonAcessarMaquinasActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAcessarMaquinas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 164, 198, 29));
-
-        jButtonAcessarSubdivisao.setToolTipText("");
-        jButtonAcessarSubdivisao.setBorder(null);
-        jButtonAcessarSubdivisao.setBorderPainted(false);
-        jButtonAcessarSubdivisao.setContentAreaFilled(false);
-        jButtonAcessarSubdivisao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonAcessarSubdivisao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAcessarSubdivisaoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonAcessarSubdivisao, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 252, 198, 29));
+        getContentPane().add(jButtonAcessarMaquinas, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 177, 130, 112));
 
         jButtonAcessarControlePlanta.setBorder(null);
         jButtonAcessarControlePlanta.setBorderPainted(false);
@@ -88,7 +76,7 @@ public class TelaDeInicio extends javax.swing.JFrame {
                 jButtonAcessarControlePlantaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAcessarControlePlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 343, 198, 29));
+        getContentPane().add(jButtonAcessarControlePlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 515, 134, 128));
 
         jButtonAcessarUsuario.setBorder(null);
         jButtonAcessarUsuario.setBorderPainted(false);
@@ -99,7 +87,7 @@ public class TelaDeInicio extends javax.swing.JFrame {
                 jButtonAcessarUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAcessarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 403, 198, 29));
+        getContentPane().add(jButtonAcessarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(315, 80, 130, 84));
 
         jButtonAcessarFornecedor.setBorder(null);
         jButtonAcessarFornecedor.setBorderPainted(false);
@@ -110,7 +98,7 @@ public class TelaDeInicio extends javax.swing.JFrame {
                 jButtonAcessarFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAcessarFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 435, 198, 29));
+        getContentPane().add(jButtonAcessarFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(462, 80, 130, 84));
 
         jButtonAcessarCliente.setBorder(null);
         jButtonAcessarCliente.setBorderPainted(false);
@@ -121,7 +109,7 @@ public class TelaDeInicio extends javax.swing.JFrame {
                 jButtonAcessarClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAcessarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 465, 198, 29));
+        getContentPane().add(jButtonAcessarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(315, 190, 130, 84));
 
         jButtonAcessarProducao.setToolTipText("");
         jButtonAcessarProducao.setBorder(null);
@@ -133,7 +121,7 @@ public class TelaDeInicio extends javax.swing.JFrame {
                 jButtonAcessarProducaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAcessarProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 526, 198, 29));
+        getContentPane().add(jButtonAcessarProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 80, 130, 84));
 
         jButtonAcessarPraga.setBorder(null);
         jButtonAcessarPraga.setBorderPainted(false);
@@ -144,7 +132,7 @@ public class TelaDeInicio extends javax.swing.JFrame {
                 jButtonAcessarPragaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAcessarPraga, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 555, 198, 29));
+        getContentPane().add(jButtonAcessarPraga, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 80, 134, 84));
 
         jButtonVoltarAoLogin.setBorder(null);
         jButtonVoltarAoLogin.setBorderPainted(false);
@@ -169,42 +157,54 @@ public class TelaDeInicio extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonEquipe, new org.netbeans.lib.awtextra.AbsoluteConstraints(844, 10, 50, 40));
 
-        jButtonAcessarPropriedadeOP2.setToolTipText("");
-        jButtonAcessarPropriedadeOP2.setBorder(null);
-        jButtonAcessarPropriedadeOP2.setBorderPainted(false);
-        jButtonAcessarPropriedadeOP2.setContentAreaFilled(false);
-        jButtonAcessarPropriedadeOP2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonAcessarPropriedadeOP2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAcessarPropriedade.setToolTipText("");
+        jButtonAcessarPropriedade.setBorder(null);
+        jButtonAcessarPropriedade.setBorderPainted(false);
+        jButtonAcessarPropriedade.setContentAreaFilled(false);
+        jButtonAcessarPropriedade.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonAcessarPropriedade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAcessarPropriedadeOP2ActionPerformed(evt);
+                jButtonAcessarPropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAcessarPropriedadeOP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 222, 198, 29));
+        getContentPane().add(jButtonAcessarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 138, 127));
 
-        jButtonAcessarVenda1.setBorder(null);
-        jButtonAcessarVenda1.setBorderPainted(false);
-        jButtonAcessarVenda1.setContentAreaFilled(false);
-        jButtonAcessarVenda1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonAcessarVenda1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAcessarVenda.setBorder(null);
+        jButtonAcessarVenda.setBorderPainted(false);
+        jButtonAcessarVenda.setContentAreaFilled(false);
+        jButtonAcessarVenda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonAcessarVenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAcessarVenda1ActionPerformed(evt);
+                jButtonAcessarVendaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAcessarVenda1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 586, 198, 29));
+        getContentPane().add(jButtonAcessarVenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 190, 277, 83));
 
-        jButtonAcessarEstoqueOP2.setBorder(null);
-        jButtonAcessarEstoqueOP2.setBorderPainted(false);
-        jButtonAcessarEstoqueOP2.setContentAreaFilled(false);
-        jButtonAcessarEstoqueOP2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonAcessarEstoqueOP2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAcessarEstoque.setBorder(null);
+        jButtonAcessarEstoque.setBorderPainted(false);
+        jButtonAcessarEstoque.setContentAreaFilled(false);
+        jButtonAcessarEstoque.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonAcessarEstoque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAcessarEstoqueOP2ActionPerformed(evt);
+                jButtonAcessarEstoqueActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAcessarEstoqueOP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 313, 198, 29));
-        getContentPane().add(jDesktopPaneGraficoDeProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 660, 540));
+        getContentPane().add(jButtonAcessarEstoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 518, 137, 125));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img_tela_de_inicio_2.png"))); // NOI18N
+        jButtonAcessarSubdivisao.setToolTipText("");
+        jButtonAcessarSubdivisao.setBorder(null);
+        jButtonAcessarSubdivisao.setBorderPainted(false);
+        jButtonAcessarSubdivisao.setContentAreaFilled(false);
+        jButtonAcessarSubdivisao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonAcessarSubdivisao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAcessarSubdivisaoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonAcessarSubdivisao, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 130, 127));
+        getContentPane().add(jDesktopPaneGraficoDeProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, 590, 340));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img_tela_de_inicio_3.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -266,20 +266,20 @@ public class TelaDeInicio extends javax.swing.JFrame {
         new TelaDeAcessoUsuario().setVisible(true);
     }//GEN-LAST:event_jButtonAcessarUsuarioActionPerformed
 
-    private void jButtonAcessarPropriedadeOP2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAcessarPropriedadeOP2ActionPerformed
+    private void jButtonAcessarPropriedadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAcessarPropriedadeActionPerformed
         this.dispose();
         new TelaDeInicioPropriedade().setVisible(true);
-    }//GEN-LAST:event_jButtonAcessarPropriedadeOP2ActionPerformed
+    }//GEN-LAST:event_jButtonAcessarPropriedadeActionPerformed
 
-    private void jButtonAcessarVenda1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAcessarVenda1ActionPerformed
+    private void jButtonAcessarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAcessarVendaActionPerformed
         this.dispose();
         new TelaDeInicioVendasProducao().setVisible(true);
-    }//GEN-LAST:event_jButtonAcessarVenda1ActionPerformed
+    }//GEN-LAST:event_jButtonAcessarVendaActionPerformed
 
-    private void jButtonAcessarEstoqueOP2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAcessarEstoqueOP2ActionPerformed
+    private void jButtonAcessarEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAcessarEstoqueActionPerformed
         this.dispose();
         new TelaDeInicioEstoque().setVisible(true);
-    }//GEN-LAST:event_jButtonAcessarEstoqueOP2ActionPerformed
+    }//GEN-LAST:event_jButtonAcessarEstoqueActionPerformed
 
     public void apresentarGrafico() {
         JInternalFrameGraficoProducao graficoProducao = new JInternalFrameGraficoProducao();
@@ -289,16 +289,16 @@ public class TelaDeInicio extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAcessarCliente;
     private javax.swing.JButton jButtonAcessarControlePlanta;
-    private javax.swing.JButton jButtonAcessarEstoqueOP2;
+    private javax.swing.JButton jButtonAcessarEstoque;
     private javax.swing.JButton jButtonAcessarFornecedor;
     private javax.swing.JButton jButtonAcessarMaquinas;
     private javax.swing.JButton jButtonAcessarPraga;
     private javax.swing.JButton jButtonAcessarProducao;
-    private javax.swing.JButton jButtonAcessarPropriedadeOP2;
+    private javax.swing.JButton jButtonAcessarPropriedade;
     private javax.swing.JButton jButtonAcessarSubdivisao;
     private javax.swing.JButton jButtonAcessarUsuario;
     private javax.swing.JButton jButtonAcessarVeiculos;
-    private javax.swing.JButton jButtonAcessarVenda1;
+    private javax.swing.JButton jButtonAcessarVenda;
     private javax.swing.JButton jButtonEquipe;
     private javax.swing.JButton jButtonVoltarAoLogin;
     private javax.swing.JDesktopPane jDesktopPaneGraficoDeProducao;

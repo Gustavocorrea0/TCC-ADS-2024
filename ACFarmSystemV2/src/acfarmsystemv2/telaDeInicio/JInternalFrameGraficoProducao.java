@@ -14,7 +14,7 @@ public class JInternalFrameGraficoProducao extends javax.swing.JInternalFrame {
     public JInternalFrameGraficoProducao() {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Grafico");
-        setSize(630, 540);
+        setSize(590, 340);
 
         setVisible(true);
 
@@ -24,6 +24,8 @@ public class JInternalFrameGraficoProducao extends javax.swing.JInternalFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+
+        setPreferredSize(new java.awt.Dimension(590, 340));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -50,7 +52,8 @@ public class JInternalFrameGraficoProducao extends javax.swing.JInternalFrame {
         }
 
         // Grafico 3D
-        JFreeChart grafico = ChartFactory.createBarChart3D("Sacas por producão", "Produção", "Sacas", barra, PlotOrientation.VERTICAL, true, true , false);
+        //JFreeChart grafico = ChartFactory.createBarChart3D("Sacas por producão", "Produção", "Sacas", barra, PlotOrientation.VERTICAL, true, true , false);
+        JFreeChart grafico = ChartFactory.createBarChart3D("Sacas por producão", "Produção", "Sacas", barra, PlotOrientation.HORIZONTAL, true, true , false);
         ChartPanel painel = new ChartPanel(grafico);
         
         // Mudar cor da barra
