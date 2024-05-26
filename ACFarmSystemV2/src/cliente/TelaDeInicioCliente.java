@@ -34,7 +34,7 @@ public class TelaDeInicioCliente extends javax.swing.JFrame {
                 jButtonAdicionarClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAdicionarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 133, 261, 44));
+        getContentPane().add(jButtonAdicionarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 80, 70));
 
         jButtonVerificarCliente.setBorder(null);
         jButtonVerificarCliente.setContentAreaFilled(false);
@@ -44,7 +44,7 @@ public class TelaDeInicioCliente extends javax.swing.JFrame {
                 jButtonVerificarClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonVerificarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 207, 261, 44));
+        getContentPane().add(jButtonVerificarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, 80, 70));
 
         jButtonDeletarCliente.setBorder(null);
         jButtonDeletarCliente.setContentAreaFilled(false);
@@ -54,7 +54,7 @@ public class TelaDeInicioCliente extends javax.swing.JFrame {
                 jButtonDeletarClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonDeletarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 134, 261, 44));
+        getContentPane().add(jButtonDeletarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 80, 64));
 
         jButtonAtualizarCliente.setBorder(null);
         jButtonAtualizarCliente.setContentAreaFilled(false);
@@ -64,7 +64,7 @@ public class TelaDeInicioCliente extends javax.swing.JFrame {
                 jButtonAtualizarClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAtualizarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 207, 261, 44));
+        getContentPane().add(jButtonAtualizarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 240, 70, 70));
 
         jButtonVoltarAoInicio.setBorder(null);
         jButtonVoltarAoInicio.setContentAreaFilled(false);
@@ -108,7 +108,7 @@ public class TelaDeInicioCliente extends javax.swing.JFrame {
         jTableFornecedor.setSelectionForeground(new java.awt.Color(15, 42, 61));
         jScrollPane1.setViewportView(jTableFornecedor);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 870, 350));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 770, 480));
 
         jLabelIMGTelaInicialFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasCliente/img_tela_escolha_cliente.png"))); // NOI18N
         getContentPane().add(jLabelIMGTelaInicialFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 643));

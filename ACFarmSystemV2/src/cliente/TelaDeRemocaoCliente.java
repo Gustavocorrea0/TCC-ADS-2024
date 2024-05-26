@@ -55,7 +55,7 @@ public class TelaDeRemocaoCliente extends javax.swing.JFrame {
                 jButtonBuscarFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 107, 260, 44));
+        getContentPane().add(jButtonBuscarFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(362, 107, 280, 44));
 
         jTextFieldEndereco.setEditable(false);
         jTextFieldEndereco.setBackground(new java.awt.Color(255, 255, 255));
@@ -68,7 +68,7 @@ public class TelaDeRemocaoCliente extends javax.swing.JFrame {
                 jTextFieldEnderecoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 305, 420, 29));
+        getContentPane().add(jTextFieldEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 225, 420, 29));
 
         jTextFieldCNPJOuCPF.setEditable(false);
         jTextFieldCNPJOuCPF.setBackground(new java.awt.Color(255, 255, 255));
@@ -81,7 +81,7 @@ public class TelaDeRemocaoCliente extends javax.swing.JFrame {
                 jTextFieldCNPJOuCPFActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCNPJOuCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 305, 237, 29));
+        getContentPane().add(jTextFieldCNPJOuCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 315, 235, 29));
 
         jTextFieldCEP.setEditable(false);
         jTextFieldCEP.setBackground(new java.awt.Color(255, 255, 255));
@@ -94,7 +94,7 @@ public class TelaDeRemocaoCliente extends javax.swing.JFrame {
                 jTextFieldCEPActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCEP, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 395, 320, 29));
+        getContentPane().add(jTextFieldCEP, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 406, 318, 29));
 
         jTextFieldCidade.setEditable(false);
         jTextFieldCidade.setBackground(new java.awt.Color(255, 255, 255));
@@ -107,7 +107,7 @@ public class TelaDeRemocaoCliente extends javax.swing.JFrame {
                 jTextFieldCidadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 486, 320, 29));
+        getContentPane().add(jTextFieldCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 496, 320, 29));
 
         jTextFieldClienteBuscado.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldClienteBuscado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -132,7 +132,7 @@ public class TelaDeRemocaoCliente extends javax.swing.JFrame {
                 jTextFieldTelefoneActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 395, 320, 29));
+        getContentPane().add(jTextFieldTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 315, 320, 29));
 
         jTextFieldTipo.setEditable(false);
         jTextFieldTipo.setBackground(new java.awt.Color(255, 255, 255));
@@ -145,7 +145,7 @@ public class TelaDeRemocaoCliente extends javax.swing.JFrame {
                 jTextFieldTipoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 486, 320, 29));
+        getContentPane().add(jTextFieldTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 406, 319, 29));
 
         jTextFieldNome.setEditable(false);
         jTextFieldNome.setBackground(new java.awt.Color(255, 255, 255));
@@ -158,7 +158,7 @@ public class TelaDeRemocaoCliente extends javax.swing.JFrame {
                 jTextFieldNomeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 214, 323, 30));
+        getContentPane().add(jTextFieldNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 224, 323, 30));
 
         jTextFieldEstado.setEditable(false);
         jTextFieldEstado.setBackground(new java.awt.Color(255, 255, 255));
@@ -171,7 +171,7 @@ public class TelaDeRemocaoCliente extends javax.swing.JFrame {
                 jTextFieldEstadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 214, 319, 30));
+        getContentPane().add(jTextFieldEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 587, 319, 30));
 
         jButtonValidarRemocao.setBorder(null);
         jButtonValidarRemocao.setContentAreaFilled(false);
@@ -181,7 +181,7 @@ public class TelaDeRemocaoCliente extends javax.swing.JFrame {
                 jButtonValidarRemocaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonValidarRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 550, 280, 35));
+        getContentPane().add(jButtonValidarRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 545, 280, 35));
 
         jButtonCancelarRemocao.setBorder(null);
         jButtonCancelarRemocao.setContentAreaFilled(false);
@@ -311,9 +311,6 @@ public class TelaDeRemocaoCliente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscarFornecedor;
     private javax.swing.JButton jButtonCancelarRemocao;
-    private javax.swing.JButton jButtonConfirmarRemocao;
-    private javax.swing.JButton jButtonConfirmarRemocao1;
-    private javax.swing.JButton jButtonConfirmarRemocao2;
     private javax.swing.JButton jButtonValidarRemocao;
     private javax.swing.JButton jButtonVoltarAoInicio;
     private javax.swing.JLabel jLabelIMGTelaInicialFornecedor;

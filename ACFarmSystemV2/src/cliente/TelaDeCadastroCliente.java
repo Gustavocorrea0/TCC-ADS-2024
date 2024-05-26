@@ -65,7 +65,7 @@ public class TelaDeCadastroCliente extends javax.swing.JFrame {
                 jTextFieldCNPJOuCPFActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCNPJOuCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 244, 234, 29));
+        getContentPane().add(jTextFieldCNPJOuCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 243, 234, 29));
 
         jTextFieldCep.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCep.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -77,7 +77,7 @@ public class TelaDeCadastroCliente extends javax.swing.JFrame {
                 jTextFieldCepActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCep, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 348, 322, 29));
+        getContentPane().add(jTextFieldCep, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 348, 322, 29));
 
         jTextFieldCidade.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCidade.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -89,7 +89,7 @@ public class TelaDeCadastroCliente extends javax.swing.JFrame {
                 jTextFieldCidadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 453, 322, 29));
+        getContentPane().add(jTextFieldCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 452, 322, 29));
 
         jTextFieldEstado.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldEstado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -113,7 +113,7 @@ public class TelaDeCadastroCliente extends javax.swing.JFrame {
                 jTextFieldEnderecoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 139, 402, 29));
+        getContentPane().add(jTextFieldEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 138, 402, 29));
 
         jTextFieldTelefone.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldTelefone.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -125,7 +125,7 @@ public class TelaDeCadastroCliente extends javax.swing.JFrame {
                 jTextFieldTelefoneActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 244, 295, 29));
+        getContentPane().add(jTextFieldTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 243, 295, 29));
 
         jTextFieldNomeCliente.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNomeCliente.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -166,7 +166,7 @@ public class TelaDeCadastroCliente extends javax.swing.JFrame {
                 jComboBoxTipoClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxTipoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 360, 300, -1));
+        getContentPane().add(jComboBoxTipoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 360, 300, 30));
 
         jLabelIMGTelaInicialFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasCliente/img_tela_cadastro_cliente.png"))); // NOI18N
         getContentPane().add(jLabelIMGTelaInicialFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 643));

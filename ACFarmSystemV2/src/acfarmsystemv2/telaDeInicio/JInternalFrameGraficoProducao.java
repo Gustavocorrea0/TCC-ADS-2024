@@ -14,7 +14,7 @@ public class JInternalFrameGraficoProducao extends javax.swing.JInternalFrame {
     public JInternalFrameGraficoProducao() {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Grafico");
-        setSize(590, 340);
+        setSize(720, 240);
 
         setVisible(true);
 

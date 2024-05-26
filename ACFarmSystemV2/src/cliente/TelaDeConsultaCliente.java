@@ -52,7 +52,7 @@ public class TelaDeConsultaCliente extends javax.swing.JFrame {
                 jButtonBuscarFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 107, 260, 44));
+        getContentPane().add(jButtonBuscarFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(362, 107, 280, 44));
 
         jTextFieldEndereco.setEditable(false);
         jTextFieldEndereco.setBackground(new java.awt.Color(255, 255, 255));
@@ -65,7 +65,7 @@ public class TelaDeConsultaCliente extends javax.swing.JFrame {
                 jTextFieldEnderecoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 316, 420, 29));
+        getContentPane().add(jTextFieldEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 225, 420, 29));
 
         jTextFieldCNPJOuCPF.setEditable(false);
         jTextFieldCNPJOuCPF.setBackground(new java.awt.Color(255, 255, 255));
@@ -78,7 +78,7 @@ public class TelaDeConsultaCliente extends javax.swing.JFrame {
                 jTextFieldCNPJOuCPFActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCNPJOuCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 316, 237, 29));
+        getContentPane().add(jTextFieldCNPJOuCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 315, 237, 29));
 
         jTextFieldCEP.setEditable(false);
         jTextFieldCEP.setBackground(new java.awt.Color(255, 255, 255));
@@ -91,7 +91,7 @@ public class TelaDeConsultaCliente extends javax.swing.JFrame {
                 jTextFieldCEPActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCEP, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 406, 320, 29));
+        getContentPane().add(jTextFieldCEP, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 406, 320, 29));
 
         jTextFieldCidade.setEditable(false);
         jTextFieldCidade.setBackground(new java.awt.Color(255, 255, 255));
@@ -104,7 +104,7 @@ public class TelaDeConsultaCliente extends javax.swing.JFrame {
                 jTextFieldCidadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 497, 320, 29));
+        getContentPane().add(jTextFieldCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 496, 320, 29));
 
         jTextFieldFornecedorBuscado.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldFornecedorBuscado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -129,7 +129,7 @@ public class TelaDeConsultaCliente extends javax.swing.JFrame {
                 jTextFieldTelefoneActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 406, 320, 29));
+        getContentPane().add(jTextFieldTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 315, 320, 29));
 
         jTextFieldTipo.setEditable(false);
         jTextFieldTipo.setBackground(new java.awt.Color(255, 255, 255));
@@ -142,7 +142,7 @@ public class TelaDeConsultaCliente extends javax.swing.JFrame {
                 jTextFieldTipoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 497, 320, 29));
+        getContentPane().add(jTextFieldTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 406, 320, 29));
 
         jTextFieldNome.setEditable(false);
         jTextFieldNome.setBackground(new java.awt.Color(255, 255, 255));
@@ -155,7 +155,7 @@ public class TelaDeConsultaCliente extends javax.swing.JFrame {
                 jTextFieldNomeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 225, 323, 30));
+        getContentPane().add(jTextFieldNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 224, 323, 30));
 
         jTextFieldEstado.setEditable(false);
         jTextFieldEstado.setBackground(new java.awt.Color(255, 255, 255));
@@ -168,7 +168,7 @@ public class TelaDeConsultaCliente extends javax.swing.JFrame {
                 jTextFieldEstadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 225, 319, 30));
+        getContentPane().add(jTextFieldEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 586, 319, 30));
 
         jLabelIMGTelaInicialFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasCliente/img_tela_verificacao_cliente.png"))); // NOI18N
         getContentPane().add(jLabelIMGTelaInicialFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 643));

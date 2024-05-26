@@ -34,7 +34,7 @@ public class TelaDeInicioVendasProducao extends javax.swing.JFrame {
                 jButtonVerificarVendaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonVerificarVenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 260, 45));
+        getContentPane().add(jButtonVerificarVenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 80, 90));
 
         jButtonVoltarAoInicio.setBorder(null);
         jButtonVoltarAoInicio.setBorderPainted(false);
@@ -56,7 +56,7 @@ public class TelaDeInicioVendasProducao extends javax.swing.JFrame {
                 jButtonRelatorioVendaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonRelatorioVenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(624, 110, 260, 45));
+        getContentPane().add(jButtonRelatorioVenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 485, 80, 80));
 
         jButtonRealizarVenda.setBorder(null);
         jButtonRealizarVenda.setBorderPainted(false);
@@ -67,7 +67,7 @@ public class TelaDeInicioVendasProducao extends javax.swing.JFrame {
                 jButtonRealizarVendaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonRealizarVenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 262, 45));
+        getContentPane().add(jButtonRealizarVenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 60, 90));
 
         jTableHistoricoDeVendas.setBackground(new java.awt.Color(15, 42, 61));
         jTableHistoricoDeVendas.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -108,7 +108,7 @@ public class TelaDeInicioVendasProducao extends javax.swing.JFrame {
             jTableHistoricoDeVendas.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 850, 370));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 710, 370));
 
         jLabelTelaProducao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasVendaProducao/img_tela_de_inicio_vendas.png"))); // NOI18N
         jLabelTelaProducao.setText("jLabel1");

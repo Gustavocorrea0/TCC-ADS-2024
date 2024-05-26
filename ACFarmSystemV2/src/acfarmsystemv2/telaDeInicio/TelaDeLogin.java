@@ -49,7 +49,7 @@ public class TelaDeLogin extends javax.swing.JFrame {
                 jButtonEntrarKeyPressed(evt);
             }
         });
-        getContentPane().add(jButtonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(252, 412, 408, 56));
+        getContentPane().add(jButtonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(252, 455, 408, 55));
 
         jTextNomeUsuario.setBackground(new java.awt.Color(255, 255, 255));
         jTextNomeUsuario.setFont(new java.awt.Font("Arial", 0, 23)); // NOI18N
@@ -60,13 +60,13 @@ public class TelaDeLogin extends javax.swing.JFrame {
                 jTextNomeUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextNomeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(305, 207, 460, 51));
+        getContentPane().add(jTextNomeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(305, 242, 450, 50));
 
         jPasswordSenhaDoUsuario.setBackground(new java.awt.Color(255, 255, 255));
         jPasswordSenhaDoUsuario.setFont(new java.awt.Font("Arial", 0, 23)); // NOI18N
         jPasswordSenhaDoUsuario.setForeground(new java.awt.Color(0, 0, 0));
         jPasswordSenhaDoUsuario.setBorder(null);
-        getContentPane().add(jPasswordSenhaDoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(305, 299, 460, 51));
+        getContentPane().add(jPasswordSenhaDoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(305, 334, 450, 50));
 
         jButtonEncerrarSistema.setBorder(null);
         jButtonEncerrarSistema.setBorderPainted(false);
