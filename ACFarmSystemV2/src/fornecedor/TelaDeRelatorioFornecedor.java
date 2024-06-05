@@ -64,7 +64,7 @@ public class TelaDeRelatorioFornecedor extends javax.swing.JFrame {
                 jButtonGerarRelatorioGeralDeFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonGerarRelatorioGeralDeFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 448, 247, 44));
+        getContentPane().add(jButtonGerarRelatorioGeralDeFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 447, 247, 44));
 
         jLabelTelaProducao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasFornecedor/img_tela_de_escolha_de_relatorio_fornecedor.png"))); // NOI18N
         jLabelTelaProducao.setText("jLabel1");

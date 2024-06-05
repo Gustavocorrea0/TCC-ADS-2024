@@ -81,7 +81,7 @@ public class TelaDePDFDetalhadoFornecedor extends javax.swing.JFrame {
                 jTextFieldRazaoSocialActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldRazaoSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 216, 323, 29));
+        getContentPane().add(jTextFieldRazaoSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 222, 320, 29));
 
         jTextFieldNomeFantasia.setEditable(false);
         jTextFieldNomeFantasia.setBackground(new java.awt.Color(255, 255, 255));
@@ -94,7 +94,7 @@ public class TelaDePDFDetalhadoFornecedor extends javax.swing.JFrame {
                 jTextFieldNomeFantasiaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeFantasia, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 307, 323, 29));
+        getContentPane().add(jTextFieldNomeFantasia, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 313, 320, 29));
 
         jTextFieldCNPJ.setEditable(false);
         jTextFieldCNPJ.setBackground(new java.awt.Color(255, 255, 255));
@@ -107,7 +107,7 @@ public class TelaDePDFDetalhadoFornecedor extends javax.swing.JFrame {
                 jTextFieldCNPJActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCNPJ, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 398, 320, 29));
+        getContentPane().add(jTextFieldCNPJ, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 403, 318, 29));
 
         jTextFieldTelefoneFornecedor.setEditable(false);
         jTextFieldTelefoneFornecedor.setBackground(new java.awt.Color(255, 255, 255));
@@ -120,7 +120,7 @@ public class TelaDePDFDetalhadoFornecedor extends javax.swing.JFrame {
                 jTextFieldTelefoneFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldTelefoneFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 494, 204, 29));
+        getContentPane().add(jTextFieldTelefoneFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 499, 202, 29));
 
         jTextFieldEmailFornecedor.setEditable(false);
         jTextFieldEmailFornecedor.setBackground(new java.awt.Color(255, 255, 255));
@@ -133,7 +133,7 @@ public class TelaDePDFDetalhadoFornecedor extends javax.swing.JFrame {
                 jTextFieldEmailFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldEmailFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 590, 366, 29));
+        getContentPane().add(jTextFieldEmailFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 596, 368, 29));
 
         jTextFieldEnderecoFornecedor.setEditable(false);
         jTextFieldEnderecoFornecedor.setBackground(new java.awt.Color(255, 255, 255));
@@ -146,7 +146,7 @@ public class TelaDePDFDetalhadoFornecedor extends javax.swing.JFrame {
                 jTextFieldEnderecoFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldEnderecoFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(482, 216, 408, 29));
+        getContentPane().add(jTextFieldEnderecoFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 500, 407, 29));
 
         jTextFieldEstadoFornecedor.setEditable(false);
         jTextFieldEstadoFornecedor.setBackground(new java.awt.Color(255, 255, 255));
@@ -159,7 +159,7 @@ public class TelaDePDFDetalhadoFornecedor extends javax.swing.JFrame {
                 jTextFieldEstadoFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldEstadoFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(482, 307, 63, 29));
+        getContentPane().add(jTextFieldEstadoFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 313, 63, 29));
 
         jTextFieldCidadeFornecedor.setEditable(false);
         jTextFieldCidadeFornecedor.setBackground(new java.awt.Color(255, 255, 255));
@@ -172,7 +172,7 @@ public class TelaDePDFDetalhadoFornecedor extends javax.swing.JFrame {
                 jTextFieldCidadeFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCidadeFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(482, 398, 323, 29));
+        getContentPane().add(jTextFieldCidadeFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 403, 323, 29));
 
         jTextFieldCEPFornecedor.setEditable(false);
         jTextFieldCEPFornecedor.setBackground(new java.awt.Color(255, 255, 255));
@@ -185,7 +185,7 @@ public class TelaDePDFDetalhadoFornecedor extends javax.swing.JFrame {
                 jTextFieldCEPFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCEPFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(482, 484, 230, 29));
+        getContentPane().add(jTextFieldCEPFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 222, 232, 29));
 
         jButtonBuscarFornecedor.setBorder(null);
         jButtonBuscarFornecedor.setContentAreaFilled(false);

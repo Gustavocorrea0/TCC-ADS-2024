@@ -35,7 +35,7 @@ public class TelaDeInicioFornecedor extends javax.swing.JFrame {
                 jButtonAdicionarFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAdicionarFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 97, 261, 44));
+        getContentPane().add(jButtonAdicionarFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 116, 80, 70));
 
         jButtonVerificarFornecedor.setBorder(null);
         jButtonVerificarFornecedor.setContentAreaFilled(false);
@@ -45,7 +45,7 @@ public class TelaDeInicioFornecedor extends javax.swing.JFrame {
                 jButtonVerificarFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonVerificarFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 179, 261, 44));
+        getContentPane().add(jButtonVerificarFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 414, 80, 70));
 
         jButtonDeletarFornecedor.setBorder(null);
         jButtonDeletarFornecedor.setContentAreaFilled(false);
@@ -55,7 +55,7 @@ public class TelaDeInicioFornecedor extends javax.swing.JFrame {
                 jButtonDeletarFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonDeletarFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, 261, 44));
+        getContentPane().add(jButtonDeletarFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 80, 70));
 
         jButtonAtualizarFornecedor.setBorder(null);
         jButtonAtualizarFornecedor.setContentAreaFilled(false);
@@ -65,7 +65,7 @@ public class TelaDeInicioFornecedor extends javax.swing.JFrame {
                 jButtonAtualizarFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAtualizarFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 97, 261, 44));
+        getContentPane().add(jButtonAtualizarFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 80, 70));
 
         jButtonAcessarRelatorios.setBorder(null);
         jButtonAcessarRelatorios.setContentAreaFilled(false);
@@ -75,7 +75,7 @@ public class TelaDeInicioFornecedor extends javax.swing.JFrame {
                 jButtonAcessarRelatoriosActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAcessarRelatorios, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 97, 260, 44));
+        getContentPane().add(jButtonAcessarRelatorios, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, 80, 70));
 
         jButtonVoltarAoInicio.setBorder(null);
         jButtonVoltarAoInicio.setContentAreaFilled(false);
@@ -119,7 +119,7 @@ public class TelaDeInicioFornecedor extends javax.swing.JFrame {
         jTableFornecedor.setSelectionForeground(new java.awt.Color(15, 42, 61));
         jScrollPane1.setViewportView(jTableFornecedor);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 870, 370));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 750, 340));
 
         jLabelIMGTelaInicialFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasFornecedor/img_tela_inicial_fornecedor.png"))); // NOI18N
         getContentPane().add(jLabelIMGTelaInicialFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 643));

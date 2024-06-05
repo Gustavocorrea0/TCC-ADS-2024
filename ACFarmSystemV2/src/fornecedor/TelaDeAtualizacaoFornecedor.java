@@ -66,7 +66,7 @@ public class TelaDeAtualizacaoFornecedor extends javax.swing.JFrame {
                 jButtonBuscarFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 107, 260, 44));
+        getContentPane().add(jButtonBuscarFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 107, 280, 44));
 
         jTextFieldEstadoFornecedor.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldEstadoFornecedor.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -78,7 +78,7 @@ public class TelaDeAtualizacaoFornecedor extends javax.swing.JFrame {
                 jTextFieldEstadoFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldEstadoFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(484, 308, 60, 29));
+        getContentPane().add(jTextFieldEstadoFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 314, 63, 29));
 
         jTextFieldFornecedorBuscado.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldFornecedorBuscado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -90,7 +90,7 @@ public class TelaDeAtualizacaoFornecedor extends javax.swing.JFrame {
                 jTextFieldFornecedorBuscadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldFornecedorBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 115, 272, 30));
+        getContentPane().add(jTextFieldFornecedorBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 115, 271, 29));
 
         jTextFieldRazaoSocial.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldRazaoSocial.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -102,7 +102,7 @@ public class TelaDeAtualizacaoFornecedor extends javax.swing.JFrame {
                 jTextFieldRazaoSocialActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldRazaoSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 218, 323, 29));
+        getContentPane().add(jTextFieldRazaoSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 223, 321, 29));
 
         jTextFieldNomeFantasia.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNomeFantasia.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -114,7 +114,7 @@ public class TelaDeAtualizacaoFornecedor extends javax.swing.JFrame {
                 jTextFieldNomeFantasiaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeFantasia, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 308, 323, 29));
+        getContentPane().add(jTextFieldNomeFantasia, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 314, 322, 29));
 
         jTextFieldCNPJ.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCNPJ.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -126,7 +126,7 @@ public class TelaDeAtualizacaoFornecedor extends javax.swing.JFrame {
                 jTextFieldCNPJActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCNPJ, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 399, 319, 29));
+        getContentPane().add(jTextFieldCNPJ, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 404, 319, 29));
 
         jTextFieldTelefoneFornecedor.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldTelefoneFornecedor.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -138,7 +138,7 @@ public class TelaDeAtualizacaoFornecedor extends javax.swing.JFrame {
                 jTextFieldTelefoneFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldTelefoneFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 495, 202, 29));
+        getContentPane().add(jTextFieldTelefoneFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 500, 320, 29));
 
         jTextFieldEmailFornecedor.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldEmailFornecedor.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -150,7 +150,7 @@ public class TelaDeAtualizacaoFornecedor extends javax.swing.JFrame {
                 jTextFieldEmailFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldEmailFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 591, 366, 29));
+        getContentPane().add(jTextFieldEmailFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 597, 366, 29));
 
         jTextFieldEnderecoFornecedor.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldEnderecoFornecedor.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -162,7 +162,7 @@ public class TelaDeAtualizacaoFornecedor extends javax.swing.JFrame {
                 jTextFieldEnderecoFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldEnderecoFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(484, 217, 407, 29));
+        getContentPane().add(jTextFieldEnderecoFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 501, 407, 29));
 
         jTextFieldCidadeFornecedor.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCidadeFornecedor.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -174,7 +174,7 @@ public class TelaDeAtualizacaoFornecedor extends javax.swing.JFrame {
                 jTextFieldCidadeFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCidadeFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(482, 399, 323, 29));
+        getContentPane().add(jTextFieldCidadeFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 404, 323, 29));
 
         jTextFieldCEPFornecedor.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCEPFornecedor.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -186,7 +186,7 @@ public class TelaDeAtualizacaoFornecedor extends javax.swing.JFrame {
                 jTextFieldCEPFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCEPFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(483, 485, 232, 29));
+        getContentPane().add(jTextFieldCEPFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 223, 232, 29));
 
         jButtonConfirmarAtualizacao.setBorder(null);
         jButtonConfirmarAtualizacao.setContentAreaFilled(false);

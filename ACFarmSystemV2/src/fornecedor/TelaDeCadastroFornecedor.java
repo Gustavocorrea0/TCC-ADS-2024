@@ -61,7 +61,7 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame {
                 jTextFieldNomeFantasiaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeFantasia, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 222, 323, 29));
+        getContentPane().add(jTextFieldNomeFantasia, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 222, 322, 29));
 
         jTextFieldCNPJ.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCNPJ.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -73,7 +73,7 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame {
                 jTextFieldCNPJActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCNPJ, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 325, 270, 29));
+        getContentPane().add(jTextFieldCNPJ, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 324, 270, 29));
 
         jTextFieldTelefoneFornecedor.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldTelefoneFornecedor.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -85,7 +85,7 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame {
                 jTextFieldTelefoneFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldTelefoneFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 425, 270, 29));
+        getContentPane().add(jTextFieldTelefoneFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 424, 270, 29));
 
         jTextFieldEmailFornecedor.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldEmailFornecedor.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -97,7 +97,7 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame {
                 jTextFieldEmailFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldEmailFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 531, 366, 29));
+        getContentPane().add(jTextFieldEmailFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 530, 366, 29));
 
         jTextFieldCEPFornecedor.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCEPFornecedor.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -109,7 +109,7 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame {
                 jTextFieldCEPFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCEPFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 233, 29));
+        getContentPane().add(jTextFieldCEPFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(461, 119, 231, 29));
 
         jTextFieldEnderecoFornecedor.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldEnderecoFornecedor.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -133,7 +133,7 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame {
                 jTextFieldRazaoSocialActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldRazaoSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 120, 323, 29));
+        getContentPane().add(jTextFieldRazaoSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 119, 323, 29));
 
         jTextFieldCidadeFornecedor.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCidadeFornecedor.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -145,7 +145,7 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame {
                 jTextFieldCidadeFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCidadeFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(461, 324, 323, 29));
+        getContentPane().add(jTextFieldCidadeFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(461, 324, 322, 29));
 
         jButtonCancelarCadastro.setBorder(null);
         jButtonCancelarCadastro.setContentAreaFilled(false);
@@ -321,8 +321,6 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame {
     private javax.swing.JButton jButtonCancelarCadastro;
     private javax.swing.JButton jButtonConfirmarCadastro;
     private javax.swing.JButton jButtonVoltarAoInicio;
-    private javax.swing.JComboBox<String> jComboBoxEstado;
-    private javax.swing.JComboBox<String> jComboBoxEstado1;
     private javax.swing.JComboBox<String> jComboBoxEstadoFornecedor;
     private javax.swing.JLabel jLabelIMGTelaInicialFornecedor;
     private javax.swing.JTextField jTextFieldCEPFornecedor;
