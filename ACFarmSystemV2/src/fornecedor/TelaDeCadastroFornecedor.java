@@ -1,8 +1,11 @@
 package fornecedor;
 
+import buscarCEP.ViaCEP;
+import buscarCEP.ViaCEPEvents;
+import buscarCEP.ViaCEPException;
 import javax.swing.JOptionPane;
 
-public class TelaDeCadastroFornecedor extends javax.swing.JFrame {
+public class TelaDeCadastroFornecedor extends javax.swing.JFrame implements ViaCEPEvents {
 
     public TelaDeCadastroFornecedor() {
         initComponents();
@@ -29,13 +32,14 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame {
         jTextFieldCNPJ = new javax.swing.JTextField();
         jTextFieldTelefoneFornecedor = new javax.swing.JTextField();
         jTextFieldEmailFornecedor = new javax.swing.JTextField();
+        jTextFieldEstadoFornecedor = new javax.swing.JTextField();
         jTextFieldCEPFornecedor = new javax.swing.JTextField();
         jTextFieldEnderecoFornecedor = new javax.swing.JTextField();
         jTextFieldRazaoSocial = new javax.swing.JTextField();
         jTextFieldCidadeFornecedor = new javax.swing.JTextField();
         jButtonCancelarCadastro = new javax.swing.JButton();
+        jButtonBuscarCEP = new javax.swing.JButton();
         jButtonConfirmarCadastro = new javax.swing.JButton();
-        jComboBoxEstadoFornecedor = new javax.swing.JComboBox<>();
         jLabelIMGTelaInicialFornecedor = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -99,6 +103,19 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame {
         });
         getContentPane().add(jTextFieldEmailFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 530, 366, 29));
 
+        jTextFieldEstadoFornecedor.setEditable(false);
+        jTextFieldEstadoFornecedor.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldEstadoFornecedor.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldEstadoFornecedor.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldEstadoFornecedor.setBorder(null);
+        jTextFieldEstadoFornecedor.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldEstadoFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldEstadoFornecedorActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldEstadoFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 214, 110, 29));
+
         jTextFieldCEPFornecedor.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCEPFornecedor.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTextFieldCEPFornecedor.setForeground(new java.awt.Color(0, 0, 0));
@@ -109,7 +126,7 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame {
                 jTextFieldCEPFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCEPFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(461, 119, 231, 29));
+        getContentPane().add(jTextFieldCEPFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(461, 120, 231, 29));
 
         jTextFieldEnderecoFornecedor.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldEnderecoFornecedor.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -135,6 +152,7 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame {
         });
         getContentPane().add(jTextFieldRazaoSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 119, 323, 29));
 
+        jTextFieldCidadeFornecedor.setEditable(false);
         jTextFieldCidadeFornecedor.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCidadeFornecedor.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTextFieldCidadeFornecedor.setForeground(new java.awt.Color(0, 0, 0));
@@ -157,6 +175,16 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonCancelarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 595, 280, 35));
 
+        jButtonBuscarCEP.setBorder(null);
+        jButtonBuscarCEP.setContentAreaFilled(false);
+        jButtonBuscarCEP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonBuscarCEP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBuscarCEPActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonBuscarCEP, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 115, 60, 40));
+
         jButtonConfirmarCadastro.setBorder(null);
         jButtonConfirmarCadastro.setContentAreaFilled(false);
         jButtonConfirmarCadastro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -166,15 +194,6 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonConfirmarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 544, 280, 35));
-
-        jComboBoxEstadoFornecedor.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jComboBoxEstadoFornecedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
-        jComboBoxEstadoFornecedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxEstadoFornecedorActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jComboBoxEstadoFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 220, 240, 30));
 
         jLabelIMGTelaInicialFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasFornecedor/img_tela_de_cadastro_de_fornecedor.png"))); // NOI18N
         getContentPane().add(jLabelIMGTelaInicialFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 643));
@@ -213,71 +232,97 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldRazaoSocialActionPerformed
 
     private void jButtonCancelarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarCadastroActionPerformed
-        jTextFieldEmailFornecedor.setText("");
-        jTextFieldEnderecoFornecedor.setText("");
-        jTextFieldNomeFantasia.setText("");
-        jTextFieldRazaoSocial.setText("");
-        jTextFieldTelefoneFornecedor.setText("");
+        limparCampos();
     }//GEN-LAST:event_jButtonCancelarCadastroActionPerformed
+
+    private void jButtonBuscarCEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarCEPActionPerformed
+        buscarCEP();
+    }//GEN-LAST:event_jButtonBuscarCEPActionPerformed
+
+    private void jTextFieldCEPFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCEPFornecedorActionPerformed
+
+    }//GEN-LAST:event_jTextFieldCEPFornecedorActionPerformed
+
+    private void jTextFieldCidadeFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCidadeFornecedorActionPerformed
+
+    }//GEN-LAST:event_jTextFieldCidadeFornecedorActionPerformed
+
+    private void jTextFieldEstadoFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEstadoFornecedorActionPerformed
+
+    }//GEN-LAST:event_jTextFieldEstadoFornecedorActionPerformed
 
     private void jButtonConfirmarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarCadastroActionPerformed
         cadastrarFornecedor();
     }//GEN-LAST:event_jButtonConfirmarCadastroActionPerformed
 
-    private void jTextFieldCEPFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCEPFornecedorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldCEPFornecedorActionPerformed
+    @Override
+    public void onCEPSuccess(ViaCEP cep) {
+        jTextFieldEstadoFornecedor.setText(cep.getUf());
+        jTextFieldCidadeFornecedor.setText(cep.getLocalidade());
+    }
 
-    private void jTextFieldCidadeFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCidadeFornecedorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldCidadeFornecedorActionPerformed
+    @Override
+    public void onCEPError(String cep) {
+        JOptionPane.showMessageDialog(this, "CEP inválido");
+    }
 
-    private void jComboBoxEstadoFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxEstadoFornecedorActionPerformed
+    public void buscarCEP() {
+        ViaCEP viaCEP = new ViaCEP(this);
+        String cep = jTextFieldCEPFornecedor.getText();
 
-    }//GEN-LAST:event_jComboBoxEstadoFornecedorActionPerformed
+        if (cep.length() != 8) {
+            JOptionPane.showMessageDialog(this, "CEP inválido apenas números");
+            return;
+        }
+
+        try {
+            viaCEP.buscar(cep);
+        } catch (ViaCEPException ex) {
+            System.out.print("CEP INVÁLIDO");
+        }
+    }
 
     public void cadastrarFornecedor() {
         cepNovoFornecedor = jTextFieldCEPFornecedor.getText();
         cnpjNovoFornecedor = jTextFieldCNPJ.getText();
-        cidadeNovoFornecedor = jTextFieldCidadeFornecedor.getText();
+        estadoNovoFornecedor = jTextFieldEstadoFornecedor.getText();
         emailNovoFornecedor = jTextFieldEmailFornecedor.getText();
         enderecoNovoFornecedor = jTextFieldEnderecoFornecedor.getText();
-        estadoNovoFornecedor = jComboBoxEstadoFornecedor.getSelectedItem().toString();
+        cidadeNovoFornecedor = jTextFieldCidadeFornecedor.getText();
         nomeFantasiaNovoFornecedor = jTextFieldNomeFantasia.getText();
         razaoSocialNovoFornecedor = jTextFieldRazaoSocial.getText();
         telefoneNovoFornecedor = jTextFieldTelefoneFornecedor.getText();
 
         if (cepNovoFornecedor.length() != 8) {
-            JOptionPane.showMessageDialog(null, "CEP Inválido, apenas 8 digitos");
-            return;
+            JOptionPane.showMessageDialog(this, "CEP inválido");
         }
 
         if (cnpjNovoFornecedor.length() != 14) {
-            JOptionPane.showMessageDialog(null, "CEP Inválido, apenas 14 digitos");
+            JOptionPane.showMessageDialog(null, "CNPJ Inválido, apenas 14 digitos");
             return;
         }
 
-        if (cidadeNovoFornecedor.equals("")) {
+        if (cidadeNovoFornecedor.isBlank()) {
             JOptionPane.showMessageDialog(null, "Cidade Inválida");
             return;
         }
 
-        if (emailNovoFornecedor.equals("")) {
+        if (emailNovoFornecedor.isBlank()) {
             JOptionPane.showMessageDialog(null, "Email Inválido");
             return;
         }
 
-        if (estadoNovoFornecedor.equals("")) {
+        if (estadoNovoFornecedor.isBlank()) {
             JOptionPane.showMessageDialog(null, "Estado Inválido");
             return;
         }
 
-        if (nomeFantasiaNovoFornecedor.equals("")) {
+        if (nomeFantasiaNovoFornecedor.isBlank()) {
             JOptionPane.showMessageDialog(null, "Nome Fantasia Inválido");
             return;
         }
 
-        if (razaoSocialNovoFornecedor.equals("")) {
+        if (razaoSocialNovoFornecedor.isBlank()) {
             JOptionPane.showMessageDialog(null, "Razao social Inválida");
             return;
         }
@@ -287,13 +332,8 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame {
             return;
         }
 
-        if (enderecoNovoFornecedor.equals("")) {
+        if (enderecoNovoFornecedor.isBlank()) {
             JOptionPane.showMessageDialog(null, "Endereço Inválido");
-            return;
-        }
-
-        if (estadoNovoFornecedor.equals("Selecione")) {
-            JOptionPane.showMessageDialog(null, "Adicione o estado do fornecedor");
             return;
         }
 
@@ -310,26 +350,41 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame {
 
             String msg = controleFornecedor.cadastrarFornecedor(ControleFornecedor.INCLUSAO);
             JOptionPane.showMessageDialog(this, msg);
-
+            limparCampos();
+            
         } catch (NullPointerException ex) {
             System.out.println("Falha no sistema, tipo: ");
             ex.printStackTrace();
         }
     }
 
+    public void limparCampos() {
+        jTextFieldCEPFornecedor.setText("");
+        jTextFieldCNPJ.setText("");
+        jTextFieldCidadeFornecedor.setText("");
+        jTextFieldEmailFornecedor.setText("");
+        jTextFieldEnderecoFornecedor.setText("");
+        jTextFieldEstadoFornecedor.setText("");
+        jTextFieldNomeFantasia.setText("");
+        jTextFieldRazaoSocial.setText("");
+        jTextFieldTelefoneFornecedor.setText("");
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonBuscarCEP;
     private javax.swing.JButton jButtonCancelarCadastro;
     private javax.swing.JButton jButtonConfirmarCadastro;
     private javax.swing.JButton jButtonVoltarAoInicio;
-    private javax.swing.JComboBox<String> jComboBoxEstadoFornecedor;
     private javax.swing.JLabel jLabelIMGTelaInicialFornecedor;
     private javax.swing.JTextField jTextFieldCEPFornecedor;
     private javax.swing.JTextField jTextFieldCNPJ;
     private javax.swing.JTextField jTextFieldCidadeFornecedor;
     private javax.swing.JTextField jTextFieldEmailFornecedor;
     private javax.swing.JTextField jTextFieldEnderecoFornecedor;
+    private javax.swing.JTextField jTextFieldEstadoFornecedor;
     private javax.swing.JTextField jTextFieldNomeFantasia;
     private javax.swing.JTextField jTextFieldRazaoSocial;
     private javax.swing.JTextField jTextFieldTelefoneFornecedor;
     // End of variables declaration//GEN-END:variables
+
 }

@@ -261,16 +261,21 @@ public class TelaDeConsultaFornecedor extends javax.swing.JFrame {
             jTextFieldTelefoneFornecedor.setText(fornecedorEncontrado.getTelefoneFornecedor());
         } else {
             JOptionPane.showMessageDialog(this, "Fornecedor não encontrado");
-            jTextFieldCEPFornecedor.setText("");
-            jTextFieldCNPJ.setText("");
-            jTextFieldCidadeFornecedor.setText("");
-            jTextFieldEmailFornecedor.setText("");
-            jTextFieldEnderecoFornecedor.setText("");
-            jTextFieldEstadoFornecedor.setText("");
-            jTextFieldNomeFantasia.setText("");
-            jTextFieldRazaoSocial.setText("");
-            jTextFieldTelefoneFornecedor.setText("");
+            limparCampos();
         }
+    }
+
+    public void limparCampos() {
+        jTextFieldCEPFornecedor.setText("");
+        jTextFieldCNPJ.setText("");
+        jTextFieldCidadeFornecedor.setText("");
+        jTextFieldEmailFornecedor.setText("");
+        jTextFieldEnderecoFornecedor.setText("");
+        jTextFieldEstadoFornecedor.setText("");
+        jTextFieldFornecedorBuscado.setText("");
+        jTextFieldNomeFantasia.setText("");
+        jTextFieldRazaoSocial.setText("");
+        jTextFieldTelefoneFornecedor.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

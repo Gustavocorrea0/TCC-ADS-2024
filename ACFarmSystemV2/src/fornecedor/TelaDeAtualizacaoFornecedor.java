@@ -273,15 +273,7 @@ public class TelaDeAtualizacaoFornecedor extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonConfirmarAtualizacaoActionPerformed
 
     private void jButtonCancelarAtualizacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarAtualizacaoActionPerformed
-        jTextFieldCEPFornecedor.setText("");
-        jTextFieldCNPJ.setText("");
-        jTextFieldCidadeFornecedor.setText("");
-        jTextFieldEmailFornecedor.setText("");
-        jTextFieldCEPFornecedor.setText("");
-        jTextFieldEstadoFornecedor.setText("");
-        jTextFieldNomeFantasia.setText("");
-        jTextFieldRazaoSocial.setText("");
-        jTextFieldTelefoneFornecedor.setText("");
+       limparCampos();
     }//GEN-LAST:event_jButtonCancelarAtualizacaoActionPerformed
 
     private void jTextFieldEstadoFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEstadoFornecedorActionPerformed
@@ -307,15 +299,7 @@ public class TelaDeAtualizacaoFornecedor extends javax.swing.JFrame {
 
         } else {
             JOptionPane.showMessageDialog(this, "Fornecedor não encontrado");
-            jTextFieldCEPFornecedor.setText("");
-            jTextFieldCNPJ.setText("");
-            jTextFieldCidadeFornecedor.setText("");
-            jTextFieldEmailFornecedor.setText("");
-            jTextFieldEnderecoFornecedor.setText("");
-            jTextFieldEstadoFornecedor.setText("");
-            jTextFieldNomeFantasia.setText("");
-            jTextFieldRazaoSocial.setText("");
-            jTextFieldTelefoneFornecedor.setText("");
+            limparCampos();
         }
     }
 
@@ -340,27 +324,27 @@ public class TelaDeAtualizacaoFornecedor extends javax.swing.JFrame {
             return;
         }
 
-        if (cidadeAtualizadoFornecedor.equals("")) {
+        if (cidadeAtualizadoFornecedor.isBlank()) {
             JOptionPane.showMessageDialog(null, "Cidade Inválida");
             return;
         }
 
-        if (emailAtualizadoFornecedor.equals("")) {
+        if (emailAtualizadoFornecedor.isBlank()) {
             JOptionPane.showMessageDialog(null, "Email Inválido");
             return;
         }
 
-        if (estadoAtualizadoFornecedor.equals("")) {
+        if (estadoAtualizadoFornecedor.isBlank()) {
             JOptionPane.showMessageDialog(null, "Estado Inválido");
             return;
         }
 
-        if (nomeFantasiaAtualizadoFornecedor.equals("")) {
+        if (nomeFantasiaAtualizadoFornecedor.isBlank()) {
             JOptionPane.showMessageDialog(null, "Nome Fantasia Inválido");
             return;
         }
 
-        if (razaoSocialAtualizadoFornecedor.equals("")) {
+        if (razaoSocialAtualizadoFornecedor.isBlank()) {
             JOptionPane.showMessageDialog(null, "Razao social Inválida");
             return;
         }
@@ -370,7 +354,7 @@ public class TelaDeAtualizacaoFornecedor extends javax.swing.JFrame {
             return;
         }
 
-        if (enderecoAtualizadoFornecedor.equals("")) {
+        if (enderecoAtualizadoFornecedor.isBlank()) {
             JOptionPane.showMessageDialog(null, "Endereço Inválido");
             return;
         }
@@ -390,6 +374,19 @@ public class TelaDeAtualizacaoFornecedor extends javax.swing.JFrame {
         controleFornecedor = new ControleFornecedor();
         String msgAtualizacao = controleFornecedor.atualizarFornecedor(fornecedorAtualizado);
         JOptionPane.showMessageDialog(null, msgAtualizacao);
+    }
+
+    public void limparCampos() {
+        jTextFieldCEPFornecedor.setText("");
+        jTextFieldCNPJ.setText("");
+        jTextFieldCidadeFornecedor.setText("");
+        jTextFieldEmailFornecedor.setText("");
+        jTextFieldEnderecoFornecedor.setText("");
+        jTextFieldEstadoFornecedor.setText("");
+        jTextFieldFornecedorBuscado.setText("");
+        jTextFieldNomeFantasia.setText("");
+        jTextFieldRazaoSocial.setText("");
+        jTextFieldTelefoneFornecedor.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

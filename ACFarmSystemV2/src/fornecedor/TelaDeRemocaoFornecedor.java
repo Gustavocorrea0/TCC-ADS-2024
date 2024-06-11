@@ -268,19 +268,11 @@ public class TelaDeRemocaoFornecedor extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonConfirmarRemocaoActionPerformed
 
     private void jButtonCancelarRemocaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarRemocaoActionPerformed
-        jTextFieldCEPFornecedor.setText("");
-        jTextFieldCNPJ.setText("");
-        jTextFieldCidadeFornecedor.setText("");
-        jTextFieldEmailFornecedor.setText("");
-        jTextFieldCEPFornecedor.setText("");
-        jTextFieldEstadoFornecedor.setText("");
-        jTextFieldNomeFantasia.setText("");
-        jTextFieldRazaoSocial.setText("");
-        jTextFieldTelefoneFornecedor.setText("");
+        limparCampos();
     }//GEN-LAST:event_jButtonCancelarRemocaoActionPerformed
 
     private void jTextFieldEstadoFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEstadoFornecedorActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldEstadoFornecedorActionPerformed
 
     public void buscarFornecedor() throws SQLException {
@@ -301,15 +293,7 @@ public class TelaDeRemocaoFornecedor extends javax.swing.JFrame {
 
         } else {
             JOptionPane.showMessageDialog(this, "Fornecedor não encontrado");
-            jTextFieldCEPFornecedor.setText("");
-            jTextFieldCNPJ.setText("");
-            jTextFieldCidadeFornecedor.setText("");
-            jTextFieldEmailFornecedor.setText("");
-            jTextFieldEnderecoFornecedor.setText("");
-            jTextFieldEstadoFornecedor.setText("");
-            jTextFieldNomeFantasia.setText("");
-            jTextFieldRazaoSocial.setText("");
-            jTextFieldTelefoneFornecedor.setText("");
+            limparCampos();
         }
     }
 
@@ -325,6 +309,19 @@ public class TelaDeRemocaoFornecedor extends javax.swing.JFrame {
         jTextFieldEmailFornecedor.setText("");
         jTextFieldEnderecoFornecedor.setText("");
         jTextFieldEstadoFornecedor.setText("");
+        jTextFieldNomeFantasia.setText("");
+        jTextFieldRazaoSocial.setText("");
+        jTextFieldTelefoneFornecedor.setText("");
+    }
+
+    public void limparCampos() {
+        jTextFieldCEPFornecedor.setText("");
+        jTextFieldCNPJ.setText("");
+        jTextFieldCidadeFornecedor.setText("");
+        jTextFieldEmailFornecedor.setText("");
+        jTextFieldEnderecoFornecedor.setText("");
+        jTextFieldEstadoFornecedor.setText("");
+        jTextFieldFornecedorBuscado.setText("");
         jTextFieldNomeFantasia.setText("");
         jTextFieldRazaoSocial.setText("");
         jTextFieldTelefoneFornecedor.setText("");
