@@ -25,6 +25,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 public class ControleFornecedor {
 
@@ -240,102 +242,112 @@ public class ControleFornecedor {
 
         Document doc = new Document();
 
-        String nomePDF = "C:\\Users\\Gustavo\\Desktop\\relatorio_de_dados_geral_de_fornecedores.pdf";
+        JFileChooser jFileChooser = new JFileChooser();
+        jFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 
-        try {
-            ps = conexao.conn.prepareStatement(sql);
-            resultados = ps.executeQuery();
+        int result = jFileChooser.showSaveDialog(null);
 
-            Font fonte2 = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL);
-            Paragraph linhaEmBranco = new Paragraph(" ", fonte2);
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File selectedDirectory = jFileChooser.getSelectedFile();
+            String nomePDF = selectedDirectory.getAbsolutePath() + File.separator + "relatorio_de_dados_geral_de_fornecedores.pdf";
 
-            Image imagem = Image.getInstance("C:\\Users\\Gustavo\\Desktop\\Gustavo Arquivos 5\\TCC_P2\\Codigo Final\\ACFarmSystemV2\\src\\logo_ac_farm_system.png");
-            imagem.scaleToFit(55, 50);
+            try {
+                ps = conexao.conn.prepareStatement(sql);
+                resultados = ps.executeQuery();
 
-            LineSeparator line = new LineSeparator();
-            line.setLineWidth(0.5f);
-            line.setPercentage(85f);
+                Font fonte2 = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL);
+                Paragraph linhaEmBranco = new Paragraph(" ", fonte2);
 
-            PdfWriter.getInstance(doc, new FileOutputStream(nomePDF));
-            doc.open();
+                String imagePath = "/logo_ac_farm_system.png";
+                Image imagem = Image.getInstance(getClass().getResource(imagePath));
 
-            imagem.setAbsolutePosition(76, imagem.getAbsoluteX());
-            doc.add(imagem);
+                imagem.scaleToFit(55, 50);
 
-            Font fonte = new Font(Font.FontFamily.HELVETICA, 13, Font.BOLD);
-            Paragraph p = new Paragraph("Relatorio de Fornecedores", fonte);
+                LineSeparator line = new LineSeparator();
+                line.setLineWidth(0.5f);
+                line.setPercentage(85f);
 
-            Paragraph data = new Paragraph("            Data de geração: " + dataDeHoje, fonte2);
-            Paragraph tipoDeDados = new Paragraph("            Tipos de dados: Fornecedores", fonte2);
-            Paragraph formato = new Paragraph("            Formato: Tabela", fonte2);
+                PdfWriter.getInstance(doc, new FileOutputStream(nomePDF));
+                doc.open();
 
-            p.setAlignment(Element.ALIGN_CENTER);
-            data.setAlignment(Element.ALIGN_JUSTIFIED);
-            tipoDeDados.setAlignment(3);
-            formato.setAlignment(3);
+                imagem.setAbsolutePosition(76, imagem.getAbsoluteX());
+                doc.add(imagem);
 
-            doc.add(p);
-            doc.add(linhaEmBranco);
-            doc.add(line);
-            doc.add(linhaEmBranco);
-            doc.add(data);
-            doc.add(tipoDeDados);
-            doc.add(formato);
-            doc.add(linhaEmBranco);
-            doc.add(line);
+                Font fonte = new Font(Font.FontFamily.HELVETICA, 13, Font.BOLD);
+                Paragraph p = new Paragraph("Relatorio de Fornecedores", fonte);
 
-            PdfPTable table = new PdfPTable(4);
-            table.setWidthPercentage(85);
-            table.setWidths(new int[]{2, 2, 2, 2});
+                Paragraph data = new Paragraph("            Data de geração: " + dataDeHoje, fonte2);
+                Paragraph tipoDeDados = new Paragraph("            Tipos de dados: Fornecedores", fonte2);
+                Paragraph formato = new Paragraph("            Formato: Tabela", fonte2);
 
-            PdfPCell cellNomeFantasiaFornecedor = new PdfPCell(new Paragraph("Nome Fantasia"));
-            PdfPCell cellTelefoneFornecedor = new PdfPCell(new Paragraph("Telefone"));
-            PdfPCell cellEstadoFornecedor = new PdfPCell(new Paragraph("Estado"));
-            PdfPCell cellCidadeFornecedor = new PdfPCell(new Paragraph("Cidade"));
+                p.setAlignment(Element.ALIGN_CENTER);
+                data.setAlignment(Element.ALIGN_JUSTIFIED);
+                tipoDeDados.setAlignment(3);
+                formato.setAlignment(3);
 
-            cellNomeFantasiaFornecedor.setBackgroundColor(BaseColor.LIGHT_GRAY);
-            cellTelefoneFornecedor.setBackgroundColor(BaseColor.LIGHT_GRAY);
-            cellEstadoFornecedor.setBackgroundColor(BaseColor.LIGHT_GRAY);
-            cellCidadeFornecedor.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                doc.add(p);
+                doc.add(linhaEmBranco);
+                doc.add(line);
+                doc.add(linhaEmBranco);
+                doc.add(data);
+                doc.add(tipoDeDados);
+                doc.add(formato);
+                doc.add(linhaEmBranco);
+                doc.add(line);
 
-            cellNomeFantasiaFornecedor.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cellTelefoneFornecedor.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cellEstadoFornecedor.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cellCidadeFornecedor.setHorizontalAlignment(Element.ALIGN_CENTER);
+                PdfPTable table = new PdfPTable(4);
+                table.setWidthPercentage(85);
+                table.setWidths(new int[]{2, 2, 2, 2});
 
-            table.addCell(cellNomeFantasiaFornecedor);
-            table.addCell(cellTelefoneFornecedor);
-            table.addCell(cellEstadoFornecedor);
-            table.addCell(cellCidadeFornecedor);
+                PdfPCell cellNomeFantasiaFornecedor = new PdfPCell(new Paragraph("Nome Fantasia"));
+                PdfPCell cellTelefoneFornecedor = new PdfPCell(new Paragraph("Telefone"));
+                PdfPCell cellEstadoFornecedor = new PdfPCell(new Paragraph("Estado"));
+                PdfPCell cellCidadeFornecedor = new PdfPCell(new Paragraph("Cidade"));
 
-            while (resultados.next()) {
+                cellNomeFantasiaFornecedor.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                cellTelefoneFornecedor.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                cellEstadoFornecedor.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                cellCidadeFornecedor.setBackgroundColor(BaseColor.LIGHT_GRAY);
 
-                fornecedor = new Fornecedor();
-
-                fornecedor.setNomeFantasia(resultados.getString("nome_fantasia"));
-                fornecedor.setTelefoneFornecedor(resultados.getString("telefone_fornecedor"));
-                fornecedor.setEstadoFornecedor(resultados.getString("estado_fornecedor"));
-                fornecedor.setCidadeFornecedor(resultados.getString("cidade_fornecedor"));
-
-                cellNomeFantasiaFornecedor = new PdfPCell(new Paragraph(fornecedor.getNomeFantasia()));
-                cellTelefoneFornecedor = new PdfPCell(new Paragraph(fornecedor.getTelefoneFornecedor()));
-                cellEstadoFornecedor = new PdfPCell(new Paragraph(fornecedor.getEstadoFornecedor()));
-                cellCidadeFornecedor = new PdfPCell(new Paragraph(fornecedor.getCidadeFornecedor()));
+                cellNomeFantasiaFornecedor.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellTelefoneFornecedor.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellEstadoFornecedor.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellCidadeFornecedor.setHorizontalAlignment(Element.ALIGN_CENTER);
 
                 table.addCell(cellNomeFantasiaFornecedor);
                 table.addCell(cellTelefoneFornecedor);
                 table.addCell(cellEstadoFornecedor);
                 table.addCell(cellCidadeFornecedor);
+
+                while (resultados.next()) {
+
+                    fornecedor = new Fornecedor();
+
+                    fornecedor.setNomeFantasia(resultados.getString("nome_fantasia"));
+                    fornecedor.setTelefoneFornecedor(resultados.getString("telefone_fornecedor"));
+                    fornecedor.setEstadoFornecedor(resultados.getString("estado_fornecedor"));
+                    fornecedor.setCidadeFornecedor(resultados.getString("cidade_fornecedor"));
+
+                    cellNomeFantasiaFornecedor = new PdfPCell(new Paragraph(fornecedor.getNomeFantasia()));
+                    cellTelefoneFornecedor = new PdfPCell(new Paragraph(fornecedor.getTelefoneFornecedor()));
+                    cellEstadoFornecedor = new PdfPCell(new Paragraph(fornecedor.getEstadoFornecedor()));
+                    cellCidadeFornecedor = new PdfPCell(new Paragraph(fornecedor.getCidadeFornecedor()));
+
+                    table.addCell(cellNomeFantasiaFornecedor);
+                    table.addCell(cellTelefoneFornecedor);
+                    table.addCell(cellEstadoFornecedor);
+                    table.addCell(cellCidadeFornecedor);
+                }
+
+                doc.add(new Paragraph(" "));
+                doc.add(table);
+                doc.close();
+
+                Desktop.getDesktop().open(new File(nomePDF));
+
+            } catch (DocumentException | FileNotFoundException | SQLException | NullPointerException d) {
+                d.getMessage();
             }
-
-            doc.add(new Paragraph(" "));
-            doc.add(table);
-            doc.close();
-
-            Desktop.getDesktop().open(new File(nomePDF));
-
-        } catch (DocumentException | FileNotFoundException | SQLException | NullPointerException d) {
-            d.getMessage();
         }
 
     }
@@ -358,123 +370,131 @@ public class ControleFornecedor {
 
         Document doc = new Document();
 
-        String nomePDF = "C:\\Users\\Gustavo\\Desktop\\relatorio_de_dados_detalhado_de_fornecedores.pdf";
+        JFileChooser jFileChooser = new JFileChooser();
+        jFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        int result = jFileChooser.showSaveDialog(null);
 
-        try {
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File selectedDirectory = jFileChooser.getSelectedFile();
+            String nomePDF = selectedDirectory.getAbsolutePath() + File.separator + "relatorio_de_delhado_de_fornecedor.pdf";
 
-            if (resultados.next()) {
-                Fornecedor fornecedorBuscado = new Fornecedor();
-                fornecedorBuscado.setNomeFantasia(resultados.getString("nome_fantasia"));
-                fornecedorBuscado.setCnpj(resultados.getString("cnpj"));
-                fornecedorBuscado.setCepFornecedor(resultados.getString("cep_fornecedor"));
-                fornecedorBuscado.setCidadeFornecedor(resultados.getString("cidade_fornecedor"));
-                fornecedorBuscado.setEmailFornecedor(resultados.getString("email_fornecedor"));
-                fornecedorBuscado.setEstadoFornecedor(resultados.getString("estado_fornecedor"));
-                fornecedorBuscado.setEnderecoFornecedor(resultados.getString("endereco_fornecedor"));
-                fornecedorBuscado.setRazaoSocial(resultados.getString("razao_social"));
-                fornecedorBuscado.setTelefoneFornecedor(resultados.getString("telefone_fornecedor"));
-                fornecedorBuscado.setIdFornecedor(resultados.getInt("id_fornecedor"));
+            try {
 
-                Font fonteTitulo = new Font(Font.FontFamily.HELVETICA, 14, Font.BOLD);
-                Font fonteSubtitulo = new Font(Font.FontFamily.HELVETICA, 13, Font.BOLD);
-                Font fonteIdentificacao = new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD);
-                Font fonteTextoComun = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL);
+                if (resultados.next()) {
+                    Fornecedor fornecedorBuscado = new Fornecedor();
+                    fornecedorBuscado.setNomeFantasia(resultados.getString("nome_fantasia"));
+                    fornecedorBuscado.setCnpj(resultados.getString("cnpj"));
+                    fornecedorBuscado.setCepFornecedor(resultados.getString("cep_fornecedor"));
+                    fornecedorBuscado.setCidadeFornecedor(resultados.getString("cidade_fornecedor"));
+                    fornecedorBuscado.setEmailFornecedor(resultados.getString("email_fornecedor"));
+                    fornecedorBuscado.setEstadoFornecedor(resultados.getString("estado_fornecedor"));
+                    fornecedorBuscado.setEnderecoFornecedor(resultados.getString("endereco_fornecedor"));
+                    fornecedorBuscado.setRazaoSocial(resultados.getString("razao_social"));
+                    fornecedorBuscado.setTelefoneFornecedor(resultados.getString("telefone_fornecedor"));
+                    fornecedorBuscado.setIdFornecedor(resultados.getInt("id_fornecedor"));
 
-                Paragraph linhaEmBranco = new Paragraph(" ", fonteTextoComun);
+                    Font fonteTitulo = new Font(Font.FontFamily.HELVETICA, 14, Font.BOLD);
+                    Font fonteSubtitulo = new Font(Font.FontFamily.HELVETICA, 13, Font.BOLD);
+                    Font fonteIdentificacao = new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD);
+                    Font fonteTextoComun = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL);
 
-                Image imagem = Image.getInstance("C:\\Users\\Gustavo\\Desktop\\Gustavo Arquivos 5\\TCC_P2\\Codigo Final\\ACFarmSystemV2\\src\\logo_ac_farm_system.png");
-                imagem.scaleToFit(55, 50);
+                    Paragraph linhaEmBranco = new Paragraph(" ", fonteTextoComun);
 
-                LineSeparator line = new LineSeparator();
-                line.setLineWidth(0.5f);
-                line.setPercentage(85f);
+                    String imagePath = "/logo_ac_farm_system.png";
+                    Image imagem = Image.getInstance(getClass().getResource(imagePath));
 
-                PdfWriter.getInstance(doc, new FileOutputStream(nomePDF));
-                doc.open();
+                    imagem.scaleToFit(55, 50);
 
-                imagem.setAbsolutePosition(76, imagem.getAbsoluteX());
-                doc.add(imagem);
+                    LineSeparator line = new LineSeparator();
+                    line.setLineWidth(0.5f);
+                    line.setPercentage(85f);
 
-                String razaoSocialEncontrado = fornecedorBuscado.getRazaoSocial();
-                String nomeFantasiaEncontrado = fornecedorBuscado.getNomeFantasia();
-                String cnpjEncontrado = fornecedorBuscado.getCnpj();
-                String telefoneEncontrado = fornecedorBuscado.getTelefoneFornecedor();
-                String emailEncontrado = fornecedorBuscado.getEmailFornecedor();
-                String enderecoEncontrado = fornecedorBuscado.getEnderecoFornecedor();
-                String estadoEncontrado = fornecedorBuscado.getEstadoFornecedor();
-                String cidadeEncontrado = fornecedorBuscado.getCidadeFornecedor();
-                String cepEncontrado = fornecedorBuscado.getCepFornecedor();
+                    PdfWriter.getInstance(doc, new FileOutputStream(nomePDF));
+                    doc.open();
 
-                Paragraph p = new Paragraph("Relatorio de Fornecedor", fonteTitulo);
+                    imagem.setAbsolutePosition(76, imagem.getAbsoluteX());
+                    doc.add(imagem);
 
-                Paragraph nomeDoFornecedor = new Paragraph("            Fornecedor: " + nomeFornecedor, fonteTextoComun);
-                Paragraph data = new Paragraph("            Data de geração: " + dataDeHoje, fonteTextoComun);
-                Paragraph tipoDeDados = new Paragraph("            Tipo de Informações: Fornecedor", fonteTextoComun);
-                Paragraph formato = new Paragraph("            Formato: Detalhado", fonteTextoComun);
+                    String razaoSocialEncontrado = fornecedorBuscado.getRazaoSocial();
+                    String nomeFantasiaEncontrado = fornecedorBuscado.getNomeFantasia();
+                    String cnpjEncontrado = fornecedorBuscado.getCnpj();
+                    String telefoneEncontrado = fornecedorBuscado.getTelefoneFornecedor();
+                    String emailEncontrado = fornecedorBuscado.getEmailFornecedor();
+                    String enderecoEncontrado = fornecedorBuscado.getEnderecoFornecedor();
+                    String estadoEncontrado = fornecedorBuscado.getEstadoFornecedor();
+                    String cidadeEncontrado = fornecedorBuscado.getCidadeFornecedor();
+                    String cepEncontrado = fornecedorBuscado.getCepFornecedor();
 
-                Paragraph razaoSocial = new Paragraph("            Razão Social: " + razaoSocialEncontrado);
-                Paragraph nomeFantasia = new Paragraph("            Nome Fantasia: " + nomeFantasiaEncontrado);
-                Paragraph cnpj = new Paragraph("            CNPJ: " + cnpjEncontrado);
-                Paragraph telefone = new Paragraph("            Telefone: " + telefoneEncontrado);
-                Paragraph email = new Paragraph("            Email: " + emailEncontrado);
-                Paragraph endereco = new Paragraph("            Endereço: " + enderecoEncontrado);
-                Paragraph estado = new Paragraph("            Estado: " + estadoEncontrado);
-                Paragraph cidade = new Paragraph("            Cidade: " + cidadeEncontrado);
-                Paragraph cep = new Paragraph("            CEP: " + cepEncontrado);
+                    Paragraph p = new Paragraph("Relatorio de Fornecedor", fonteTitulo);
 
-                Paragraph dadosDoFornecedorSubtitulo = new Paragraph("            Dados de Identificação", fonteSubtitulo);
-                Paragraph enderecoDoFornecedorSubtitulo = new Paragraph("            Endereço", fonteSubtitulo);
-                Paragraph contatosDoFornecedorSubtitulo = new Paragraph("            Contato(s)", fonteSubtitulo);
+                    Paragraph nomeDoFornecedor = new Paragraph("            Fornecedor: " + nomeFornecedor, fonteTextoComun);
+                    Paragraph data = new Paragraph("            Data de geração: " + dataDeHoje, fonteTextoComun);
+                    Paragraph tipoDeDados = new Paragraph("            Tipo de Informações: Fornecedor", fonteTextoComun);
+                    Paragraph formato = new Paragraph("            Formato: Detalhado", fonteTextoComun);
 
-                p.setAlignment(Element.ALIGN_CENTER);
-                data.setAlignment(Element.ALIGN_JUSTIFIED);
-                tipoDeDados.setAlignment(3);
-                formato.setAlignment(3);
+                    Paragraph razaoSocial = new Paragraph("            Razão Social: " + razaoSocialEncontrado);
+                    Paragraph nomeFantasia = new Paragraph("            Nome Fantasia: " + nomeFantasiaEncontrado);
+                    Paragraph cnpj = new Paragraph("            CNPJ: " + cnpjEncontrado);
+                    Paragraph telefone = new Paragraph("            Telefone: " + telefoneEncontrado);
+                    Paragraph email = new Paragraph("            Email: " + emailEncontrado);
+                    Paragraph endereco = new Paragraph("            Endereço: " + enderecoEncontrado);
+                    Paragraph estado = new Paragraph("            Estado: " + estadoEncontrado);
+                    Paragraph cidade = new Paragraph("            Cidade: " + cidadeEncontrado);
+                    Paragraph cep = new Paragraph("            CEP: " + cepEncontrado);
 
-                doc.add(p);
-                doc.add(linhaEmBranco);
-                doc.add(line);
-                doc.add(linhaEmBranco);
-                doc.add(nomeDoFornecedor);
-                doc.add(data);
-                doc.add(tipoDeDados);
-                doc.add(formato);
-                doc.add(linhaEmBranco);
-                doc.add(line);
-                doc.add(linhaEmBranco);
-                doc.add(dadosDoFornecedorSubtitulo);
-                doc.add(linhaEmBranco);
-                doc.add(razaoSocial);
-                doc.add(nomeFantasia);
-                doc.add(cnpj);
-                doc.add(linhaEmBranco);
-                doc.add(line);
-                doc.add(linhaEmBranco);
-                doc.add(enderecoDoFornecedorSubtitulo);
-                doc.add(linhaEmBranco);
-                doc.add(endereco);
-                doc.add(estado);
-                doc.add(cidade);
-                doc.add(cep);
-                doc.add(linhaEmBranco);
-                doc.add(line);
-                doc.add(linhaEmBranco);
-                doc.add(contatosDoFornecedorSubtitulo);
-                doc.add(linhaEmBranco);
-                doc.add(telefone);
-                doc.add(email);
+                    Paragraph dadosDoFornecedorSubtitulo = new Paragraph("            Dados de Identificação", fonteSubtitulo);
+                    Paragraph enderecoDoFornecedorSubtitulo = new Paragraph("            Endereço", fonteSubtitulo);
+                    Paragraph contatosDoFornecedorSubtitulo = new Paragraph("            Contato(s)", fonteSubtitulo);
 
-                fornecedor = new Fornecedor();
+                    p.setAlignment(Element.ALIGN_CENTER);
+                    data.setAlignment(Element.ALIGN_JUSTIFIED);
+                    tipoDeDados.setAlignment(3);
+                    formato.setAlignment(3);
 
-                doc.add(new Paragraph(" "));
-                doc.close();
+                    doc.add(p);
+                    doc.add(linhaEmBranco);
+                    doc.add(line);
+                    doc.add(linhaEmBranco);
+                    doc.add(nomeDoFornecedor);
+                    doc.add(data);
+                    doc.add(tipoDeDados);
+                    doc.add(formato);
+                    doc.add(linhaEmBranco);
+                    doc.add(line);
+                    doc.add(linhaEmBranco);
+                    doc.add(dadosDoFornecedorSubtitulo);
+                    doc.add(linhaEmBranco);
+                    doc.add(razaoSocial);
+                    doc.add(nomeFantasia);
+                    doc.add(cnpj);
+                    doc.add(linhaEmBranco);
+                    doc.add(line);
+                    doc.add(linhaEmBranco);
+                    doc.add(enderecoDoFornecedorSubtitulo);
+                    doc.add(linhaEmBranco);
+                    doc.add(endereco);
+                    doc.add(estado);
+                    doc.add(cidade);
+                    doc.add(cep);
+                    doc.add(linhaEmBranco);
+                    doc.add(line);
+                    doc.add(linhaEmBranco);
+                    doc.add(contatosDoFornecedorSubtitulo);
+                    doc.add(linhaEmBranco);
+                    doc.add(telefone);
+                    doc.add(email);
 
-                Desktop.getDesktop().open(new File(nomePDF));
+                    fornecedor = new Fornecedor();
+
+                    doc.add(new Paragraph(" "));
+                    doc.close();
+
+                    Desktop.getDesktop().open(new File(nomePDF));
+                }
+
+            } catch (DocumentException | FileNotFoundException | SQLException | NullPointerException d) {
+                d.getMessage();
             }
-
-        } catch (DocumentException | FileNotFoundException | SQLException | NullPointerException d) {
-            d.getMessage();
         }
-
     }
 }

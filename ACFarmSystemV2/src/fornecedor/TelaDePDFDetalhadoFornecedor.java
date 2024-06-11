@@ -246,22 +246,26 @@ public class TelaDePDFDetalhadoFornecedor extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldCEPFornecedorActionPerformed
 
     private void jButtonGerarRelatorioDetalhadoDeFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGerarRelatorioDetalhadoDeFornecedorActionPerformed
-        try {
-            JOptionPane.showMessageDialog(this, "Gerando Relatorio de Fornecedor");
-            controleFornecedor.gerarRelatorioDetalhadoDeFornecedores(nomeBuscado);
-            this.dispose();
-            new TelaDePDFDetalhadoFornecedor().setVisible(true);
-        } catch (SQLException ex) {
-            Logger.getLogger(TelaDePDFDetalhadoFornecedor.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ParseException ex) {
-            Logger.getLogger(TelaDePDFDetalhadoFornecedor.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(TelaDePDFDetalhadoFornecedor.class.getName()).log(Level.SEVERE, null, ex);
+        if (jTextFieldFornecedorBuscado.getText().isBlank() || jTextFieldCidadeFornecedor.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Busque o Fornecedor");
+        } else {
+            try {
+                controleFornecedor.gerarRelatorioDetalhadoDeFornecedores(nomeBuscado);
+                this.dispose();
+                new TelaDePDFDetalhadoFornecedor().setVisible(true);
+            } catch (SQLException ex) {
+                Logger.getLogger(TelaDePDFDetalhadoFornecedor.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ParseException ex) {
+                Logger.getLogger(TelaDePDFDetalhadoFornecedor.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(TelaDePDFDetalhadoFornecedor.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
+
     }//GEN-LAST:event_jButtonGerarRelatorioDetalhadoDeFornecedorActionPerformed
 
     private void jTextFieldEstadoFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEstadoFornecedorActionPerformed
-        
+
     }//GEN-LAST:event_jTextFieldEstadoFornecedorActionPerformed
 
     private void jButtonBuscarFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarFornecedorActionPerformed
@@ -289,16 +293,21 @@ public class TelaDePDFDetalhadoFornecedor extends javax.swing.JFrame {
             jTextFieldTelefoneFornecedor.setText(fornecedorEncontrado.getTelefoneFornecedor());
         } else {
             JOptionPane.showMessageDialog(this, "Fornecedor não encontrado");
-            jTextFieldCEPFornecedor.setText("");
-            jTextFieldCNPJ.setText("");
-            jTextFieldCidadeFornecedor.setText("");
-            jTextFieldEmailFornecedor.setText("");
-            jTextFieldEnderecoFornecedor.setText("");
-            jTextFieldEstadoFornecedor.setText("");
-            jTextFieldNomeFantasia.setText("");
-            jTextFieldRazaoSocial.setText("");
-            jTextFieldTelefoneFornecedor.setText("");
+            limparCampos();
         }
+    }
+
+    public void limparCampos() {
+        jTextFieldCEPFornecedor.setText("");
+        jTextFieldCNPJ.setText("");
+        jTextFieldCidadeFornecedor.setText("");
+        jTextFieldEmailFornecedor.setText("");
+        jTextFieldEnderecoFornecedor.setText("");
+        jTextFieldEstadoFornecedor.setText("");
+        jTextFieldFornecedorBuscado.setText("");
+        jTextFieldNomeFantasia.setText("");
+        jTextFieldRazaoSocial.setText("");
+        jTextFieldTelefoneFornecedor.setText("");
     }
 
 

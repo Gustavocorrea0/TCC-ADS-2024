@@ -86,7 +86,6 @@ public class TelaDeRelatorioFornecedor extends javax.swing.JFrame {
 
     private void jButtonGerarRelatorioGeralDeFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGerarRelatorioGeralDeFornecedorActionPerformed
         try {
-            JOptionPane.showMessageDialog(this, "Gerando Relatorio geral de Fornecedores");
             controleFornecedor.gerarRelatorioGeralDeFornecedores();
             this.dispose();
             new TelaDeRelatorioFornecedor().setVisible(true);
