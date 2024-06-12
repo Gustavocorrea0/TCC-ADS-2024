@@ -1,12 +1,16 @@
 package cliente;
 
+import buscarCEP.ViaCEP;
+import buscarCEP.ViaCEPEvents;
+import buscarCEP.ViaCEPException;
 import java.text.ParseException;
-import java.util.HashSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import validacoes.ValidarCNPJ;
+import validacoes.ValidarCPF;
 
-public class TelaDeCadastroCliente extends javax.swing.JFrame {
+public class TelaDeCadastroCliente extends javax.swing.JFrame implements ViaCEPEvents {
 
     private ControleCliente controleCliente = new ControleCliente();
     private String nomeClienteNovo;
@@ -18,7 +22,6 @@ public class TelaDeCadastroCliente extends javax.swing.JFrame {
     private String telefoneClienteNovo;
     private String tipoClienteNovo;
     private String msg;
-    private HashSet<String> siglaEstado = new HashSet<>();
 
     public TelaDeCadastroCliente() {
         initComponents();
@@ -39,6 +42,7 @@ public class TelaDeCadastroCliente extends javax.swing.JFrame {
         jTextFieldNomeCliente = new javax.swing.JTextField();
         jButtonCancelarCadastro = new javax.swing.JButton();
         jButtonConfirmarCadastro = new javax.swing.JButton();
+        jButtonBuscarCEP = new javax.swing.JButton();
         jComboBoxTipoCliente = new javax.swing.JComboBox<>();
         jLabelIMGTelaInicialFornecedor = new javax.swing.JLabel();
 
@@ -79,6 +83,7 @@ public class TelaDeCadastroCliente extends javax.swing.JFrame {
         });
         getContentPane().add(jTextFieldCep, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 348, 322, 29));
 
+        jTextFieldCidade.setEditable(false);
         jTextFieldCidade.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCidade.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTextFieldCidade.setForeground(new java.awt.Color(0, 0, 0));
@@ -91,6 +96,7 @@ public class TelaDeCadastroCliente extends javax.swing.JFrame {
         });
         getContentPane().add(jTextFieldCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 452, 322, 29));
 
+        jTextFieldEstado.setEditable(false);
         jTextFieldEstado.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldEstado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTextFieldEstado.setForeground(new java.awt.Color(0, 0, 0));
@@ -157,10 +163,20 @@ public class TelaDeCadastroCliente extends javax.swing.JFrame {
                 jButtonConfirmarCadastroActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonConfirmarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 544, 280, 35));
+        getContentPane().add(jButtonConfirmarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 545, 280, 35));
+
+        jButtonBuscarCEP.setBorder(null);
+        jButtonBuscarCEP.setContentAreaFilled(false);
+        jButtonBuscarCEP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonBuscarCEP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBuscarCEPActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonBuscarCEP, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 344, 60, 35));
 
         jComboBoxTipoCliente.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jComboBoxTipoCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Cooperativa", "Empresa", "Pessoa fisica" }));
+        jComboBoxTipoCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "cooperativa", "empresa", "pessoa" }));
         jComboBoxTipoCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxTipoClienteActionPerformed(evt);
@@ -205,18 +221,12 @@ public class TelaDeCadastroCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldNomeClienteActionPerformed
 
     private void jButtonCancelarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarCadastroActionPerformed
-        jTextFieldTelefone.setText("");
-        jTextFieldCep.setText("");
-        jTextFieldEstado.setText("");
-        jTextFieldCNPJOuCPF.setText("");
-        jTextFieldNomeCliente.setText("");
-        jTextFieldCidade.setText("");
-        jTextFieldEndereco.setText("");
+        limparCampos();
     }//GEN-LAST:event_jButtonCancelarCadastroActionPerformed
 
     private void jButtonConfirmarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarCadastroActionPerformed
         try {
-            cadastrarCliente();
+            ValidarCliente();
         } catch (ParseException ex) {
             Logger.getLogger(TelaDeCadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -230,7 +240,25 @@ public class TelaDeCadastroCliente extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jComboBoxTipoClienteActionPerformed
 
-    public void cadastrarCliente() throws ParseException {
+    private void jButtonBuscarCEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarCEPActionPerformed
+        ViaCEP viaCEP = new ViaCEP(this);
+        String cep = jTextFieldCep.getText();
+
+        if (cep.length() != 8) {
+            jTextFieldEstado.setText("");
+            jTextFieldCidade.setText("");
+            JOptionPane.showMessageDialog(this, "CEP inválido, apenas 8 digitos(sem pontos)");
+            return;
+        }
+
+        try {
+            viaCEP.buscar(cep);
+        } catch (ViaCEPException ex) {
+            System.out.print("CEP INVÁLIDO");
+        }
+    }//GEN-LAST:event_jButtonBuscarCEPActionPerformed
+
+    public void ValidarCliente() throws ParseException {
         nomeClienteNovo = jTextFieldNomeCliente.getText();
         cnpjOuCpfClienteNovo = jTextFieldCNPJOuCPF.getText();
         cepClienteNovo = jTextFieldCep.getText();
@@ -239,29 +267,25 @@ public class TelaDeCadastroCliente extends javax.swing.JFrame {
         enderecoClienteNovo = jTextFieldEndereco.getText();
         telefoneClienteNovo = jTextFieldTelefone.getText();
 
-        siglaEstado = new HashSet<>();
-
-        validarEstado(siglaEstado);
-
         tipoClienteNovo = jComboBoxTipoCliente.getSelectedItem().toString();
 
-        if (nomeClienteNovo.equals("")) {
+        if (nomeClienteNovo.isBlank()) {
             JOptionPane.showMessageDialog(null, "Nome Inválido");
             return;
         }
 
-        if (cidadeClienteNovo.equals("")) {
+        if (cidadeClienteNovo.isBlank()) {
             JOptionPane.showMessageDialog(null, "Cidade Inválida");
             return;
         }
 
-        if (enderecoClienteNovo.equals("")) {
+        if (enderecoClienteNovo.isBlank()) {
             JOptionPane.showMessageDialog(null, "Endereço Inválido");
             return;
         }
 
-        if (telefoneClienteNovo.length() != 13) {
-            JOptionPane.showMessageDialog(null, "Telefone Inválido, deve possuir 14 Digitos (ex: 5511933445566)");
+        if (telefoneClienteNovo.length() < 10 || telefoneClienteNovo.length() > 15) {
+            JOptionPane.showMessageDialog(null, "Telefone Inválido, deve possuir 14 digitos (ex: 5511933445566)");
             return;
         }
 
@@ -270,75 +294,80 @@ public class TelaDeCadastroCliente extends javax.swing.JFrame {
             return;
         }
 
-        if (tipoClienteNovo.equals("Selecione")) {
-            JOptionPane.showMessageDialog(null, "Adicione o tipo de Cliente");
-            return;
-        }
+        switch (tipoClienteNovo.toLowerCase()) {
+            case "pessoa":
+                if (cnpjOuCpfClienteNovo.length() == 11) {
 
-        if (!siglaEstado.contains(estadoClienteNovo)) {
-            JOptionPane.showMessageDialog(null, "Estado Inválido");
-            return;
-        }
+                    if (ValidarCPF.validaCPF(cnpjOuCpfClienteNovo)) {
+                        cadastrarCliente();
+                        return;
+                    } else {
+                        JOptionPane.showMessageDialog(null, "CPF inválido");
+                        return;
+                    }
 
-        try {
+                } else {
+                    JOptionPane.showMessageDialog(null, "Se desejada cadastrar uma pessoa adicione um  CPF(11 digitos) sem pontos");
+                    return;
+                }
 
-            if (cnpjOuCpfClienteNovo.length() == 11 || cnpjOuCpfClienteNovo.length() == 14) {
-                controleCliente.cliente.setNomeCliente(nomeClienteNovo);
-                controleCliente.cliente.setCnpjOuCpfCliente(cnpjOuCpfClienteNovo);
-                controleCliente.cliente.setCepCliente(cepClienteNovo);
-                controleCliente.cliente.setCidadeCliente(cidadeClienteNovo);
-                controleCliente.cliente.setEstadoCliente(estadoClienteNovo);
-                controleCliente.cliente.setEnderecoCliente(enderecoClienteNovo);
-                controleCliente.cliente.setTelefoneCliente(telefoneClienteNovo);
-                controleCliente.cliente.setTipoCliente(tipoClienteNovo);
+            case "cooperativa":
+            case "empresa":
+                if (cnpjOuCpfClienteNovo.length() == 14) {
+                    if (ValidarCNPJ.validaCNPJ(cnpjOuCpfClienteNovo)) {
+                        cadastrarCliente();
+                        return;
+                    } else {
+                        JOptionPane.showMessageDialog(null, "CNPJ inválido");
+                        return;
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Se desejada cadastrar uma empresa ou cooperativa adicione um CNPJ(14 digitos) sem pontos");
+                    return;
+                }
 
-                msg = controleCliente.cadastrarCliente(ControleCliente.INCLUSAO);
-                JOptionPane.showMessageDialog(this, msg);
-
-            } else {
-                JOptionPane.showMessageDialog(null, "Apenas CPF(11 DIGITOS) ou CNPJ(14 Digitos)");
+            default:
+                JOptionPane.showMessageDialog(null, "Adicione o tipo de Cliente");
                 return;
-            }
+        }
+
+    }
+
+    public void cadastrarCliente() {
+        try {
+            controleCliente.cliente.setNomeCliente(nomeClienteNovo);
+            controleCliente.cliente.setCnpjOuCpfCliente(cnpjOuCpfClienteNovo);
+            controleCliente.cliente.setCepCliente(cepClienteNovo);
+            controleCliente.cliente.setCidadeCliente(cidadeClienteNovo);
+            controleCliente.cliente.setEstadoCliente(estadoClienteNovo);
+            controleCliente.cliente.setEnderecoCliente(enderecoClienteNovo);
+            controleCliente.cliente.setTelefoneCliente(telefoneClienteNovo);
+            controleCliente.cliente.setTipoCliente(tipoClienteNovo);
+
+            msg = controleCliente.cadastrarCliente(ControleCliente.INCLUSAO);
+            JOptionPane.showMessageDialog(this, msg);
+            limparCampos();
 
         } catch (NullPointerException ex) {
             System.out.println("Falha no sistema, tipo: ");
             ex.printStackTrace();
         }
-
     }
 
-    private static void validarEstado(HashSet<String> siglaEstado) {
-        siglaEstado.add("AC"); // Acre
-        siglaEstado.add("AL"); // Alagoas
-        siglaEstado.add("AP"); // Amapá
-        siglaEstado.add("AM"); // Amazonas
-        siglaEstado.add("BA"); // Bahia
-        siglaEstado.add("CE"); // Ceará
-        siglaEstado.add("DF"); // Distrito Federal
-        siglaEstado.add("ES"); // Espírito Santo
-        siglaEstado.add("GO"); // Goiás
-        siglaEstado.add("MA"); // Maranhão
-        siglaEstado.add("MT"); // Mato Grosso
-        siglaEstado.add("MS"); // Mato Grosso do Sul
-        siglaEstado.add("MG"); // Minas Gerais
-        siglaEstado.add("PA"); // Pará
-        siglaEstado.add("PB"); // Paraíba
-        siglaEstado.add("PR"); // Paraná
-        siglaEstado.add("PE"); // Pernambuco
-        siglaEstado.add("PI"); // Piauí
-        siglaEstado.add("RJ"); // Rio de Janeiro
-        siglaEstado.add("RN"); // Rio Grande do Norte
-        siglaEstado.add("RS"); // Rio Grande do Sul
-        siglaEstado.add("RO"); // Rondônia
-        siglaEstado.add("RR"); // Roraima
-        siglaEstado.add("SC"); // Santa Catarina
-        siglaEstado.add("SP"); // São Paulo
-        siglaEstado.add("SE"); // Sergipe
-        siglaEstado.add("TO"); // Tocantins
+    public void limparCampos() {
+        jTextFieldTelefone.setText("");
+        jTextFieldCep.setText("");
+        jTextFieldEstado.setText("");
+        jTextFieldCNPJOuCPF.setText("");
+        jTextFieldNomeCliente.setText("");
+        jTextFieldCidade.setText("");
+        jTextFieldEndereco.setText("");
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup botaoTipoCliente;
+    private javax.swing.JButton jButtonBuscarCEP;
     private javax.swing.JButton jButtonCancelarCadastro;
     private javax.swing.JButton jButtonConfirmarCadastro;
     private javax.swing.JButton jButtonVoltarAoInicio;
@@ -352,4 +381,17 @@ public class TelaDeCadastroCliente extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldNomeCliente;
     private javax.swing.JTextField jTextFieldTelefone;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void onCEPSuccess(ViaCEP cep) {
+        jTextFieldEstado.setText(cep.getUf());
+        jTextFieldCidade.setText(cep.getLocalidade());
+    }
+
+    @Override
+    public void onCEPError(String cep) {
+        jTextFieldEstado.setText("");
+        jTextFieldCidade.setText("");
+        JOptionPane.showMessageDialog(this, "CEP inválido");
+    }
 }

@@ -4,6 +4,7 @@ import buscarCEP.ViaCEP;
 import buscarCEP.ViaCEPEvents;
 import buscarCEP.ViaCEPException;
 import javax.swing.JOptionPane;
+import validacoes.ValidarCNPJ;
 
 public class TelaDeCadastroFornecedor extends javax.swing.JFrame implements ViaCEPEvents {
 
@@ -65,7 +66,7 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame implements ViaC
                 jTextFieldNomeFantasiaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeFantasia, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 222, 322, 29));
+        getContentPane().add(jTextFieldNomeFantasia, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 221, 322, 29));
 
         jTextFieldCNPJ.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCNPJ.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -77,7 +78,7 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame implements ViaC
                 jTextFieldCNPJActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCNPJ, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 324, 270, 29));
+        getContentPane().add(jTextFieldCNPJ, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 323, 270, 29));
 
         jTextFieldTelefoneFornecedor.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldTelefoneFornecedor.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -89,7 +90,7 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame implements ViaC
                 jTextFieldTelefoneFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldTelefoneFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 424, 270, 29));
+        getContentPane().add(jTextFieldTelefoneFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 423, 270, 29));
 
         jTextFieldEmailFornecedor.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldEmailFornecedor.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -101,7 +102,7 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame implements ViaC
                 jTextFieldEmailFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldEmailFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 530, 366, 29));
+        getContentPane().add(jTextFieldEmailFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 529, 366, 29));
 
         jTextFieldEstadoFornecedor.setEditable(false);
         jTextFieldEstadoFornecedor.setBackground(new java.awt.Color(255, 255, 255));
@@ -114,7 +115,7 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame implements ViaC
                 jTextFieldEstadoFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldEstadoFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 214, 110, 29));
+        getContentPane().add(jTextFieldEstadoFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(462, 221, 110, 29));
 
         jTextFieldCEPFornecedor.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCEPFornecedor.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -126,7 +127,7 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame implements ViaC
                 jTextFieldCEPFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCEPFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(461, 120, 231, 29));
+        getContentPane().add(jTextFieldCEPFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 118, 231, 29));
 
         jTextFieldEnderecoFornecedor.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldEnderecoFornecedor.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -138,7 +139,7 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame implements ViaC
                 jTextFieldEnderecoFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldEnderecoFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(461, 424, 407, 29));
+        getContentPane().add(jTextFieldEnderecoFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(461, 423, 407, 29));
 
         jTextFieldRazaoSocial.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldRazaoSocial.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -150,7 +151,7 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame implements ViaC
                 jTextFieldRazaoSocialActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldRazaoSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 119, 323, 29));
+        getContentPane().add(jTextFieldRazaoSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 118, 323, 29));
 
         jTextFieldCidadeFornecedor.setEditable(false);
         jTextFieldCidadeFornecedor.setBackground(new java.awt.Color(255, 255, 255));
@@ -163,7 +164,7 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame implements ViaC
                 jTextFieldCidadeFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCidadeFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(461, 324, 322, 29));
+        getContentPane().add(jTextFieldCidadeFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(461, 323, 322, 29));
 
         jButtonCancelarCadastro.setBorder(null);
         jButtonCancelarCadastro.setContentAreaFilled(false);
@@ -173,7 +174,7 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame implements ViaC
                 jButtonCancelarCadastroActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCancelarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 595, 280, 35));
+        getContentPane().add(jButtonCancelarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 592, 280, 36));
 
         jButtonBuscarCEP.setBorder(null);
         jButtonBuscarCEP.setContentAreaFilled(false);
@@ -183,7 +184,7 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame implements ViaC
                 jButtonBuscarCEPActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarCEP, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 115, 60, 40));
+        getContentPane().add(jButtonBuscarCEP, new org.netbeans.lib.awtextra.AbsoluteConstraints(742, 112, 60, 40));
 
         jButtonConfirmarCadastro.setBorder(null);
         jButtonConfirmarCadastro.setContentAreaFilled(false);
@@ -294,11 +295,17 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame implements ViaC
         telefoneNovoFornecedor = jTextFieldTelefoneFornecedor.getText();
 
         if (cepNovoFornecedor.length() != 8) {
-            JOptionPane.showMessageDialog(this, "CEP inválido");
+            JOptionPane.showMessageDialog(this, "CEP inválido, 8 digitos");
+            return;
         }
 
-        if (cnpjNovoFornecedor.length() != 14) {
-            JOptionPane.showMessageDialog(null, "CNPJ Inválido, apenas 14 digitos");
+        if (cnpjNovoFornecedor.length() == 14) {
+            JOptionPane.showMessageDialog(null, "CNPJ Inválido, apenas 14 digitos (não utilize pontos)");
+            return;
+        }
+        
+        if (ValidarCNPJ.validaCNPJ(cnpjNovoFornecedor)  == false) {
+            JOptionPane.showMessageDialog(null, "CNPJ Inválido");
             return;
         }
 
@@ -327,7 +334,7 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame implements ViaC
             return;
         }
 
-        if (telefoneNovoFornecedor.length() != 13) {
+        if (telefoneNovoFornecedor.length() < 10 || telefoneNovoFornecedor.length() > 15) {
             JOptionPane.showMessageDialog(null, "Telefone Inválido");
             return;
         }

@@ -4,6 +4,8 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import validacoes.ValidarCNPJ;
+import validacoes.ValidarCPF;
 
 public class TelaDeAtualizacaoCliente extends javax.swing.JFrame {
 
@@ -91,6 +93,7 @@ public class TelaDeAtualizacaoCliente extends javax.swing.JFrame {
         });
         getContentPane().add(jTextFieldCNPJOuCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 315, 237, 29));
 
+        jTextFieldCEP.setEditable(false);
         jTextFieldCEP.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCEP.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTextFieldCEP.setForeground(new java.awt.Color(0, 0, 0));
@@ -103,6 +106,7 @@ public class TelaDeAtualizacaoCliente extends javax.swing.JFrame {
         });
         getContentPane().add(jTextFieldCEP, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 406, 320, 29));
 
+        jTextFieldCidade.setEditable(false);
         jTextFieldCidade.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCidade.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTextFieldCidade.setForeground(new java.awt.Color(0, 0, 0));
@@ -163,6 +167,7 @@ public class TelaDeAtualizacaoCliente extends javax.swing.JFrame {
         });
         getContentPane().add(jTextFieldNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 224, 323, 30));
 
+        jTextFieldEstado.setEditable(false);
         jTextFieldEstado.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldEstado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTextFieldEstado.setForeground(new java.awt.Color(0, 0, 0));
@@ -253,22 +258,14 @@ public class TelaDeAtualizacaoCliente extends javax.swing.JFrame {
 
     private void jButtonValidarRemocaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonValidarRemocaoActionPerformed
         try {
-            atualizarCliente();
+            validarCliente();
         } catch (SQLException ex) {
             Logger.getLogger(TelaDeAtualizacaoCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButtonValidarRemocaoActionPerformed
 
     private void jButtonCancelarRemocaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarRemocaoActionPerformed
-        jTextFieldClienteBuscado.setText("");
-        jTextFieldEstado.setText("");
-        jTextFieldCEP.setText("");
-        jTextFieldTelefone.setText("");
-        jTextFieldTipo.setText("");
-        jTextFieldEndereco.setText("");
-        jTextFieldCNPJOuCPF.setText("");
-        jTextFieldNome.setText("");
-        jTextFieldCidade.setText("");
+        limparCampos();
     }//GEN-LAST:event_jButtonCancelarRemocaoActionPerformed
 
     public void buscarCliente() throws SQLException {
@@ -288,19 +285,11 @@ public class TelaDeAtualizacaoCliente extends javax.swing.JFrame {
             idClienteAtualizado = clienteEncontrado.getIdCliente();
         } else {
             JOptionPane.showMessageDialog(this, "Cliente não encontrado");
-            jTextFieldEstado.setText("");
-            jTextFieldCEP.setText("");
-            jTextFieldTelefone.setText("");
-            jTextFieldTipo.setText("");
-            jTextFieldEndereco.setText("");
-            jTextFieldCNPJOuCPF.setText("");
-            jTextFieldNome.setText("");
-            jTextFieldCidade.setText("");
-            jTextFieldTipo.setText("");
+            limparCampos();
         }
     }
 
-    public void atualizarCliente() throws SQLException {
+    public void validarCliente() throws SQLException {
         nomeClienteAtualizado = jTextFieldNome.getText();
         cnpjOuCpfClienteAtualizado = jTextFieldCNPJOuCPF.getText();
         cepClienteAtualizado = jTextFieldCEP.getText();
@@ -310,68 +299,103 @@ public class TelaDeAtualizacaoCliente extends javax.swing.JFrame {
         telefoneClienteAtualizado = jTextFieldTelefone.getText();
         tipoClienteAtualizado = jTextFieldTipo.getText();
 
-        if (nomeClienteAtualizado.equals("")) {
+        if (nomeClienteAtualizado.isBlank()) {
             JOptionPane.showMessageDialog(null, "Nome Inválido");
             return;
         }
 
-        if (cidadeClienteAtualizado.equals("")) {
+        if (cidadeClienteAtualizado.isBlank()) {
             JOptionPane.showMessageDialog(null, "Cidade Inválida");
             return;
         }
 
-        if (estadoClienteAtualizado.length() != 2) {
-            JOptionPane.showMessageDialog(null, "O estado deve possuir 2 DIGITOS");
-            return;
-        }
-
-        if (enderecoClienteAtualizado.equals("")) {
+        if (enderecoClienteAtualizado.isBlank()) {
             JOptionPane.showMessageDialog(null, "Endereço Inválido");
             return;
         }
 
-        if (telefoneClienteAtualizado.length() != 13) {
-            JOptionPane.showMessageDialog(null, "Telefone Inválido, deve possuir 14 Digitos (ex: 5511933445566)");
+        if (telefoneClienteAtualizado.length() < 10 || telefoneClienteAtualizado.length() > 15) {
+            JOptionPane.showMessageDialog(null, "Telefone Inválido");
             return;
         }
 
         if (cepClienteAtualizado.length() != 8) {
-            JOptionPane.showMessageDialog(null, "CEP Inválido, 8 digitos");
+            JOptionPane.showMessageDialog(null, "CEP Inválido, 8 digitos sem pontos");
             return;
         }
 
-        if (tipoClienteAtualizado.equalsIgnoreCase("pessoa") || tipoClienteAtualizado.equalsIgnoreCase("empresa") || tipoClienteAtualizado.equalsIgnoreCase("cooperativa")) {
-            try {
+        switch (tipoClienteAtualizado.toLowerCase()) {
+            case "pessoa":
+                if (cnpjOuCpfClienteAtualizado.length() == 11) {
 
-                if (cnpjOuCpfClienteAtualizado.length() == 11 || cnpjOuCpfClienteAtualizado.length() == 14) {
-                    Cliente clienteAtualizado = new Cliente();
-                    clienteAtualizado.setNomeCliente(nomeClienteAtualizado);
-                    clienteAtualizado.setCnpjOuCpfCliente(cnpjOuCpfClienteAtualizado);
-                    clienteAtualizado.setCepCliente(cepClienteAtualizado);
-                    clienteAtualizado.setCidadeCliente(cidadeClienteAtualizado);
-                    clienteAtualizado.setEstadoCliente(estadoClienteAtualizado);
-                    clienteAtualizado.setEnderecoCliente(enderecoClienteAtualizado);
-                    clienteAtualizado.setTelefoneCliente(telefoneClienteAtualizado);
-                    clienteAtualizado.setTipoCliente(tipoClienteAtualizado);
-                    clienteAtualizado.setIdCliente(idClienteAtualizado);
-
-                    controleCliente = new ControleCliente();
-                    String msgAtualizacao = controleCliente.atualizarCliente(clienteAtualizado);
-                    JOptionPane.showMessageDialog(null, msgAtualizacao);
+                    if (ValidarCPF.validaCPF(cnpjOuCpfClienteAtualizado)) {
+                        atualizarCliente();
+                        return;
+                    } else {
+                        JOptionPane.showMessageDialog(null, "CPF inválido");
+                        return;
+                    }
 
                 } else {
-                    JOptionPane.showMessageDialog(null, "Apenas CPF(11 DIGITOS) ou CNPJ(14 Digitos)");
+                    JOptionPane.showMessageDialog(null, "Se desejada atualizar uma pessoa adicione um  CPF(11 digitos) sem pontos");
                     return;
                 }
-            } catch (NullPointerException ex) {
-                System.out.println("Falha no sistema, tipo: ");
-                ex.printStackTrace();
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "Tipo de Cliente inválido, APENAS: Pessoa, Empresa ou Cooperativa");
-            return;
+
+            case "cooperativa":
+            case "empresa":
+                if (cnpjOuCpfClienteAtualizado.length() == 14) {
+                    if (ValidarCNPJ.validaCNPJ(cnpjOuCpfClienteAtualizado)) {
+                        atualizarCliente();
+                        return;
+                    } else {
+                        JOptionPane.showMessageDialog(null, "CNPJ inválido");
+                        return;
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Se desejada atualizar uma empresa ou cooperativa adicione um CNPJ(14 digitos) sem pontos");
+                    return;
+                }
+
+            default:
+                JOptionPane.showMessageDialog(null, "Tipo de Cliente inválido, APENAS: pessoa, empresa ou cooperativa");
+                return;
         }
 
+    }
+
+    public void atualizarCliente() {
+        try {
+
+            Cliente clienteAtualizado = new Cliente();
+            clienteAtualizado.setNomeCliente(nomeClienteAtualizado);
+            clienteAtualizado.setCnpjOuCpfCliente(cnpjOuCpfClienteAtualizado);
+            clienteAtualizado.setCepCliente(cepClienteAtualizado);
+            clienteAtualizado.setCidadeCliente(cidadeClienteAtualizado);
+            clienteAtualizado.setEstadoCliente(estadoClienteAtualizado);
+            clienteAtualizado.setEnderecoCliente(enderecoClienteAtualizado);
+            clienteAtualizado.setTelefoneCliente(telefoneClienteAtualizado);
+            clienteAtualizado.setTipoCliente(tipoClienteAtualizado);
+            clienteAtualizado.setIdCliente(idClienteAtualizado);
+
+            controleCliente = new ControleCliente();
+            String msgAtualizacao = controleCliente.atualizarCliente(clienteAtualizado);
+            JOptionPane.showMessageDialog(null, msgAtualizacao);
+        } catch (NullPointerException ex) {
+            System.out.println("Falha no sistema, tipo: ");
+            ex.printStackTrace();
+        }
+    }
+
+    public void limparCampos() {
+        jTextFieldClienteBuscado.setText("");
+        jTextFieldEstado.setText("");
+        jTextFieldCEP.setText("");
+        jTextFieldTelefone.setText("");
+        jTextFieldTipo.setText("");
+        jTextFieldEndereco.setText("");
+        jTextFieldCNPJOuCPF.setText("");
+        jTextFieldNome.setText("");
+        jTextFieldCidade.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

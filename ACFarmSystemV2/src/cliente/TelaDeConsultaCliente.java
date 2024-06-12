@@ -242,18 +242,23 @@ public class TelaDeConsultaCliente extends javax.swing.JFrame {
             jTextFieldCidade.setText(clienteEncontrado.getCidadeCliente());
         } else {
             JOptionPane.showMessageDialog(this, "Cliente não encontrado");
-            jTextFieldEstado.setText("");
-            jTextFieldCEP.setText("");
-            jTextFieldTelefone.setText("");
-            jTextFieldTipo.setText("");
-            jTextFieldEndereco.setText("");
-            jTextFieldCNPJOuCPF.setText("");
-            jTextFieldNome.setText("");
-            jTextFieldCidade.setText("");
+            limparCampos();
         }
     }
 
-    
+    public void limparCampos() {
+         jTextFieldFornecedorBuscado.setText("");
+        jTextFieldEstado.setText("");
+        jTextFieldCEP.setText("");
+        jTextFieldTelefone.setText("");
+        jTextFieldTipo.setText("");
+        jTextFieldEndereco.setText("");
+        jTextFieldCNPJOuCPF.setText("");
+        jTextFieldNome.setText("");
+        jTextFieldCidade.setText("");
+    }
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscarFornecedor;
     private javax.swing.JButton jButtonVoltarAoInicio;

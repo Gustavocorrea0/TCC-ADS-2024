@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import validacoes.ValidarCNPJ;
 
 public class TelaDeAtualizacaoFornecedor extends javax.swing.JFrame {
 
@@ -68,6 +69,7 @@ public class TelaDeAtualizacaoFornecedor extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonBuscarFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 107, 280, 44));
 
+        jTextFieldEstadoFornecedor.setEditable(false);
         jTextFieldEstadoFornecedor.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldEstadoFornecedor.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTextFieldEstadoFornecedor.setForeground(new java.awt.Color(0, 0, 0));
@@ -164,6 +166,7 @@ public class TelaDeAtualizacaoFornecedor extends javax.swing.JFrame {
         });
         getContentPane().add(jTextFieldEnderecoFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 501, 407, 29));
 
+        jTextFieldCidadeFornecedor.setEditable(false);
         jTextFieldCidadeFornecedor.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCidadeFornecedor.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTextFieldCidadeFornecedor.setForeground(new java.awt.Color(0, 0, 0));
@@ -176,6 +179,7 @@ public class TelaDeAtualizacaoFornecedor extends javax.swing.JFrame {
         });
         getContentPane().add(jTextFieldCidadeFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 404, 323, 29));
 
+        jTextFieldCEPFornecedor.setEditable(false);
         jTextFieldCEPFornecedor.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCEPFornecedor.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTextFieldCEPFornecedor.setForeground(new java.awt.Color(0, 0, 0));
@@ -319,8 +323,8 @@ public class TelaDeAtualizacaoFornecedor extends javax.swing.JFrame {
             return;
         }
 
-        if (cnpjAtualizadoFornecedor.length() != 14) {
-            JOptionPane.showMessageDialog(null, "CEP Inválido, apenas 14 digitos");
+        if (ValidarCNPJ.validaCNPJ(cnpjAtualizadoFornecedor)  == false) {
+            JOptionPane.showMessageDialog(null, "CNPJ Inválido(14 digitos)");
             return;
         }
 
@@ -349,7 +353,7 @@ public class TelaDeAtualizacaoFornecedor extends javax.swing.JFrame {
             return;
         }
 
-        if (telefoneAtualizadoFornecedor.length() != 13) {
+        if (telefoneAtualizadoFornecedor.length() < 10 || telefoneAtualizadoFornecedor.length() > 15) {
             JOptionPane.showMessageDialog(null, "Telefone Inválido");
             return;
         }
@@ -374,6 +378,7 @@ public class TelaDeAtualizacaoFornecedor extends javax.swing.JFrame {
         controleFornecedor = new ControleFornecedor();
         String msgAtualizacao = controleFornecedor.atualizarFornecedor(fornecedorAtualizado);
         JOptionPane.showMessageDialog(null, msgAtualizacao);
+        limparCampos();
     }
 
     public void limparCampos() {
@@ -383,7 +388,6 @@ public class TelaDeAtualizacaoFornecedor extends javax.swing.JFrame {
         jTextFieldEmailFornecedor.setText("");
         jTextFieldEnderecoFornecedor.setText("");
         jTextFieldEstadoFornecedor.setText("");
-        jTextFieldFornecedorBuscado.setText("");
         jTextFieldNomeFantasia.setText("");
         jTextFieldRazaoSocial.setText("");
         jTextFieldTelefoneFornecedor.setText("");
