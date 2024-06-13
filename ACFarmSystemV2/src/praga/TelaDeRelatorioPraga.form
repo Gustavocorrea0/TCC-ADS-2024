@@ -61,7 +61,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="612" y="447" width="248" height="44"/>
+          <AbsoluteConstraints x="612" y="445" width="248" height="46"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -81,14 +81,14 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="50" y="448" width="247" height="44"/>
+          <AbsoluteConstraints x="50" y="445" width="247" height="46"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelTelaProducao">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/img/telasFornecedor/img_tela_de_escolha_de_relatorio_fornecedor.png"/>
+          <Image iconType="3" name="/img/telasPraga/img_tela_escolha_de_relatorio_de_praga.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>

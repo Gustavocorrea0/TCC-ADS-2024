@@ -1,13 +1,10 @@
 package praga;
 
-import Maquina.*;
-import com.itextpdf.text.DocumentException;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -53,7 +50,7 @@ public class TelaDeRelatorioPraga extends javax.swing.JFrame {
                 jButtonGerarRelatorioDetalhadoDeFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonGerarRelatorioDetalhadoDeFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(612, 447, 248, 44));
+        getContentPane().add(jButtonGerarRelatorioDetalhadoDeFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(612, 445, 248, 46));
 
         jButtonGerarRelatorioGeralDeFornecedor.setBorder(null);
         jButtonGerarRelatorioGeralDeFornecedor.setBorderPainted(false);
@@ -64,9 +61,9 @@ public class TelaDeRelatorioPraga extends javax.swing.JFrame {
                 jButtonGerarRelatorioGeralDeFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonGerarRelatorioGeralDeFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 448, 247, 44));
+        getContentPane().add(jButtonGerarRelatorioGeralDeFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 445, 247, 46));
 
-        jLabelTelaProducao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasFornecedor/img_tela_de_escolha_de_relatorio_fornecedor.png"))); // NOI18N
+        jLabelTelaProducao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasPraga/img_tela_escolha_de_relatorio_de_praga.png"))); // NOI18N
         jLabelTelaProducao.setText("jLabel1");
         getContentPane().add(jLabelTelaProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, -1));
 
@@ -86,7 +83,6 @@ public class TelaDeRelatorioPraga extends javax.swing.JFrame {
 
     private void jButtonGerarRelatorioGeralDeFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGerarRelatorioGeralDeFornecedorActionPerformed
         try {
-            JOptionPane.showMessageDialog(this, "Gerando Relatorio geral de Pragas");
             controlePraga.gerarRelatorioGeralDePragas();
             this.dispose();
             new TelaDeRelatorioPraga().setVisible(true);

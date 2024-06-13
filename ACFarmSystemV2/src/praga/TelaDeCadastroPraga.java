@@ -125,7 +125,7 @@ public class TelaDeCadastroPraga extends javax.swing.JFrame {
                 jButtonBuscarPropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 107, 260, 43));
+        getContentPane().add(jButtonBuscarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 107, 280, 43));
 
         jButtonConfirmarCadastro.setBorder(null);
         jButtonConfirmarCadastro.setContentAreaFilled(false);
@@ -164,7 +164,7 @@ public class TelaDeCadastroPraga extends javax.swing.JFrame {
 
     private void jButtonVoltarAoInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarAoInicioActionPerformed
         this.dispose();
-        new TelaDeInicioPraga().setVisible(true);
+        new TelaDeConsultaPropriedade().setVisible(true);
     }//GEN-LAST:event_jButtonVoltarAoInicioActionPerformed
 
     private void jTextFieldDataDeSurgimentoPragaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDataDeSurgimentoPragaActionPerformed
@@ -180,10 +180,7 @@ public class TelaDeCadastroPraga extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldNomePropriedadeActionPerformed
 
     private void jButtonCancelarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarCadastroActionPerformed
-        jTextFieldDataDeSurgimentoPraga.setText("");
-        jTextFieldNomePraga.setText("");
-        jTextFieldNomePropriedade.setText("");
-        jTextFieldPropriedadeEncontrada.setText("");
+        limparCampos();
     }//GEN-LAST:event_jButtonCancelarCadastroActionPerformed
 
     private void jButtonBuscarPropriedadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarPropriedadeActionPerformed
@@ -211,7 +208,7 @@ public class TelaDeCadastroPraga extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxEstadoDeControleActionPerformed
 
     private void jComboBoxNivelDeAtaqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxNivelDeAtaqueActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jComboBoxNivelDeAtaqueActionPerformed
 
     public void cadastrarFornecedor() throws ParseException {
@@ -224,17 +221,17 @@ public class TelaDeCadastroPraga extends javax.swing.JFrame {
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
-        if (nomePraga.equals("")) {
+        if (nomePraga.isBlank()) {
             JOptionPane.showMessageDialog(null, "Nome Inválido");
             return;
         }
 
-        if (dataSurgimentoPraga.equals("")) {
+        if (dataSurgimentoPraga.isBlank()) {
             JOptionPane.showMessageDialog(null, "Data Inválida");
             return;
         }
 
-        if (propriedadePraga.equals("")) {
+        if (propriedadePraga.isBlank()) {
             JOptionPane.showMessageDialog(null, "Cidade Inválida");
             return;
         }
@@ -243,7 +240,7 @@ public class TelaDeCadastroPraga extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Adicione o nivél de Ataque da Praga");
             return;
         }
-        
+
         if (estadoDeControlePraga.equals("Selecione")) {
             JOptionPane.showMessageDialog(null, "Adicione o estado de Controle da Praga");
             return;
@@ -279,6 +276,14 @@ public class TelaDeCadastroPraga extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, "Propriedade não encontrada.");
         }
+    }
+
+    public void limparCampos() {
+        jTextFieldNomePropriedade.setText("");
+        jTextFieldDataDeSurgimentoPraga.setText("");
+        jTextFieldNomePraga.setText("");
+        jTextFieldNomePropriedade.setText("");
+        jTextFieldPropriedadeEncontrada.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -61,7 +61,7 @@ public class TelaDeAtualizacaoPraga extends javax.swing.JFrame {
                 jButtonBuscarFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 107, 260, 44));
+        getContentPane().add(jButtonBuscarFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 107, 282, 44));
 
         jTextFieldDataDeSurgimento.setEditable(false);
         jTextFieldDataDeSurgimento.setBackground(new java.awt.Color(255, 255, 255));
@@ -74,7 +74,7 @@ public class TelaDeAtualizacaoPraga extends javax.swing.JFrame {
                 jTextFieldDataDeSurgimentoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldDataDeSurgimento, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 397, 322, 29));
+        getContentPane().add(jTextFieldDataDeSurgimento, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 396, 322, 29));
 
         jTextFieldPropriedade.setEditable(false);
         jTextFieldPropriedade.setBackground(new java.awt.Color(255, 255, 255));
@@ -87,7 +87,7 @@ public class TelaDeAtualizacaoPraga extends javax.swing.JFrame {
                 jTextFieldPropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 568, 321, 29));
+        getContentPane().add(jTextFieldPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 568, 323, 29));
 
         jTextFieldFornecedorBuscado.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldFornecedorBuscado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -99,7 +99,7 @@ public class TelaDeAtualizacaoPraga extends javax.swing.JFrame {
                 jTextFieldFornecedorBuscadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldFornecedorBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 114, 272, 30));
+        getContentPane().add(jTextFieldFornecedorBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 114, 271, 29));
 
         jTextFieldEstado.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldEstado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -111,7 +111,7 @@ public class TelaDeAtualizacaoPraga extends javax.swing.JFrame {
                 jTextFieldEstadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 397, 323, 29));
+        getContentPane().add(jTextFieldEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(478, 396, 321, 29));
 
         jTextFieldNomePraga.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNomePraga.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -123,7 +123,7 @@ public class TelaDeAtualizacaoPraga extends javax.swing.JFrame {
                 jTextFieldNomePragaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomePraga, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 225, 323, 29));
+        getContentPane().add(jTextFieldNomePraga, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 225, 322, 29));
 
         jTextFieldNivelDeAtaque.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNivelDeAtaque.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -135,7 +135,7 @@ public class TelaDeAtualizacaoPraga extends javax.swing.JFrame {
                 jTextFieldNivelDeAtaqueActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNivelDeAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 225, 324, 29));
+        getContentPane().add(jTextFieldNivelDeAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(478, 224, 322, 29));
 
         jButtonCancelarAtualizacao.setBorder(null);
         jButtonCancelarAtualizacao.setBorderPainted(false);
@@ -146,7 +146,7 @@ public class TelaDeAtualizacaoPraga extends javax.swing.JFrame {
                 jButtonCancelarAtualizacaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCancelarAtualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 596, 280, 34));
+        getContentPane().add(jButtonCancelarAtualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 594, 280, 36));
 
         jButtonConfirmarAtualizacao.setBorder(null);
         jButtonConfirmarAtualizacao.setBorderPainted(false);
@@ -157,7 +157,7 @@ public class TelaDeAtualizacaoPraga extends javax.swing.JFrame {
                 jButtonConfirmarAtualizacaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonConfirmarAtualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 544, 280, 34));
+        getContentPane().add(jButtonConfirmarAtualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(612, 544, 283, 37));
 
         jLabelIMGTelaInicialFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasPraga/img_tela_atualizacao_praga.png"))); // NOI18N
         getContentPane().add(jLabelIMGTelaInicialFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 643));
@@ -207,11 +207,7 @@ public class TelaDeAtualizacaoPraga extends javax.swing.JFrame {
 
     private void jButtonCancelarAtualizacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarAtualizacaoActionPerformed
         JOptionPane.showMessageDialog(this, "Remoção Cancelada");
-        jTextFieldNivelDeAtaque.setText("");
-        jTextFieldDataDeSurgimento.setText("");
-        jTextFieldEstado.setText("");
-        jTextFieldPropriedade.setText("");
-        jTextFieldNomePraga.setText("");
+        limparCampos();
     }//GEN-LAST:event_jButtonCancelarAtualizacaoActionPerformed
 
     private void jButtonConfirmarAtualizacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarAtualizacaoActionPerformed
@@ -239,12 +235,8 @@ public class TelaDeAtualizacaoPraga extends javax.swing.JFrame {
             idPraga = pragaEncontrada.getIdPraga();
 
         } else {
-            JOptionPane.showMessageDialog(this, "Praga não encontrado");
-            jTextFieldNivelDeAtaque.setText("");
-            jTextFieldDataDeSurgimento.setText("");
-            jTextFieldEstado.setText("");
-            jTextFieldPropriedade.setText("");
-            jTextFieldNomePraga.setText("");
+            JOptionPane.showMessageDialog(this, "Praga não encontrada");
+            limparCampos();
         }
     }
 
@@ -253,19 +245,22 @@ public class TelaDeAtualizacaoPraga extends javax.swing.JFrame {
         nivelDeAtaquePragaAtualizado = jTextFieldNivelDeAtaque.getText();
         estadoAtualizado = jTextFieldEstado.getText();
 
-        if (nomePragaAtualizado.equals("")) {
+        if (nomePragaAtualizado.isBlank()) {
             JOptionPane.showMessageDialog(null, "Nome Inválido");
             return;
         }
 
-        if (nivelDeAtaquePragaAtualizado.equalsIgnoreCase("ALTO") || nivelDeAtaquePragaAtualizado.equalsIgnoreCase("MEDIO") || nivelDeAtaquePragaAtualizado.equalsIgnoreCase("BAIXO")) {
-            if (estadoAtualizado.equalsIgnoreCase("SIM") || estadoAtualizado.equalsIgnoreCase("NAO")) {
+        if (nivelDeAtaquePragaAtualizado.equalsIgnoreCase("alto")
+                || nivelDeAtaquePragaAtualizado.equalsIgnoreCase("medio")
+                || nivelDeAtaquePragaAtualizado.equalsIgnoreCase("médio")
+                || nivelDeAtaquePragaAtualizado.equalsIgnoreCase("baixo")) {
+            if (estadoAtualizado.equalsIgnoreCase("sim") || estadoAtualizado.equalsIgnoreCase("nao") || estadoAtualizado.equalsIgnoreCase("não")) {
                 Praga pragaAtualizada = new Praga();
                 pragaAtualizada.setNomePraga(nomePragaAtualizado);
                 pragaAtualizada.setEstadoDeControlePraga(estadoAtualizado);
                 pragaAtualizada.setNivelDeAtaquePraga(nivelDeAtaquePragaAtualizado);
                 pragaAtualizada.setIdPraga(idPraga);
-                
+
                 ControlePraga controlePraga1 = new ControlePraga();
                 String msgAtualizacao = controlePraga1.atualizarPraga(pragaAtualizada);
                 JOptionPane.showMessageDialog(null, msgAtualizacao);
@@ -274,10 +269,18 @@ public class TelaDeAtualizacaoPraga extends javax.swing.JFrame {
                 return;
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Nivél Inválido, apenas ALTO, MEDIO ou BAIXO");
+            JOptionPane.showMessageDialog(null, "Nivél Inválido, apenas ALTO, MÉDIO ou BAIXO");
             return;
         }
+    }
 
+    public void limparCampos() {
+        jTextFieldDataDeSurgimento.setText("");
+        jTextFieldEstado.setText("");
+        jTextFieldFornecedorBuscado.setText("");
+        jTextFieldNivelDeAtaque.setText("");
+        jTextFieldNomePraga.setText("");
+        jTextFieldPropriedade.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -57,7 +57,7 @@ public class TelaDePDFDetalhadoPraga extends javax.swing.JFrame {
                 jButtonBuscarFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 107, 260, 44));
+        getContentPane().add(jButtonBuscarFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 107, 282, 44));
 
         jTextFieldDataDeSurgimento.setEditable(false);
         jTextFieldDataDeSurgimento.setBackground(new java.awt.Color(255, 255, 255));
@@ -83,7 +83,7 @@ public class TelaDePDFDetalhadoPraga extends javax.swing.JFrame {
                 jTextFieldPropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 568, 321, 29));
+        getContentPane().add(jTextFieldPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 569, 321, 29));
 
         jTextFieldFornecedorBuscado.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldFornecedorBuscado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -108,7 +108,7 @@ public class TelaDePDFDetalhadoPraga extends javax.swing.JFrame {
                 jTextFieldEstadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 397, 323, 29));
+        getContentPane().add(jTextFieldEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 397, 322, 29));
 
         jTextFieldNomePraga.setEditable(false);
         jTextFieldNomePraga.setBackground(new java.awt.Color(255, 255, 255));
@@ -121,7 +121,7 @@ public class TelaDePDFDetalhadoPraga extends javax.swing.JFrame {
                 jTextFieldNomePragaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomePraga, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 225, 323, 29));
+        getContentPane().add(jTextFieldNomePraga, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 226, 323, 29));
 
         jTextFieldNivelDeAtaque.setEditable(false);
         jTextFieldNivelDeAtaque.setBackground(new java.awt.Color(255, 255, 255));
@@ -134,7 +134,7 @@ public class TelaDePDFDetalhadoPraga extends javax.swing.JFrame {
                 jTextFieldNivelDeAtaqueActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNivelDeAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 225, 324, 29));
+        getContentPane().add(jTextFieldNivelDeAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 225, 323, 29));
 
         jButtonGerarRelatorioDetalhadoDePraga.setBorder(null);
         jButtonGerarRelatorioDetalhadoDePraga.setContentAreaFilled(false);
@@ -144,7 +144,7 @@ public class TelaDePDFDetalhadoPraga extends javax.swing.JFrame {
                 jButtonGerarRelatorioDetalhadoDePragaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonGerarRelatorioDetalhadoDePraga, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 566, 280, 35));
+        getContentPane().add(jButtonGerarRelatorioDetalhadoDePraga, new org.netbeans.lib.awtextra.AbsoluteConstraints(578, 566, 282, 35));
 
         jLabelIMGTelaInicialFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasPraga/img_tela_busca_para_relatorio_detalhado_de_praga.png"))); // NOI18N
         getContentPane().add(jLabelIMGTelaInicialFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 643));
@@ -194,7 +194,7 @@ public class TelaDePDFDetalhadoPraga extends javax.swing.JFrame {
 
     private void jButtonGerarRelatorioDetalhadoDePragaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGerarRelatorioDetalhadoDePragaActionPerformed
         try {
-            JOptionPane.showMessageDialog(this, "Gerando Relatorio de pragas");
+            JOptionPane.showMessageDialog(this, "Gerando Relatório de pragas");
             controlePraga.gerarRelatorioDetalhadoDePragas(nomeBuscado);
             this.dispose();
             new TelaDeRelatorioPraga().setVisible(true);
@@ -227,13 +227,18 @@ public class TelaDePDFDetalhadoPraga extends javax.swing.JFrame {
             jTextFieldNomePraga.setText(pragaEncontrada.getNomePraga());
 
         } else {
-            JOptionPane.showMessageDialog(this, "Praga não encontrado");
-            jTextFieldNivelDeAtaque.setText("");
-            jTextFieldDataDeSurgimento.setText("");
-            jTextFieldEstado.setText("");
-            jTextFieldPropriedade.setText("");
-            jTextFieldNomePraga.setText("");
+            JOptionPane.showMessageDialog(this, "Praga não encontrada");
+            limparCampos();
         }
+    }
+
+    public void limparCampos() {
+        jTextFieldDataDeSurgimento.setText("");
+        jTextFieldEstado.setText("");
+        jTextFieldFornecedorBuscado.setText("");
+        jTextFieldNivelDeAtaque.setText("");
+        jTextFieldNomePraga.setText("");
+        jTextFieldPropriedade.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

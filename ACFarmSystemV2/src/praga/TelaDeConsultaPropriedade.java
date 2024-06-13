@@ -3,7 +3,6 @@ package praga;
 import Propriedade.ControlePropriedade;
 import Propriedade.Propriedade;
 import Propriedade.TelaDeInicioPropriedade;
-import acfarmsystemv2.telaDeInicio.TelaDeInicio;
 import javax.swing.table.DefaultTableModel;
 
 public final class TelaDeConsultaPropriedade extends javax.swing.JFrame {
@@ -103,7 +102,7 @@ public final class TelaDeConsultaPropriedade extends javax.swing.JFrame {
 
     private void jButtonVoltarAoInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarAoInicioActionPerformed
         this.dispose();
-        new TelaDeInicio().setVisible(true);
+        new TelaDeInicioPraga().setVisible(true);
     }//GEN-LAST:event_jButtonVoltarAoInicioActionPerformed
 
     private void jButtonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarActionPerformed

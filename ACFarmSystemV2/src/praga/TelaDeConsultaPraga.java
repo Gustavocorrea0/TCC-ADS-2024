@@ -54,7 +54,7 @@ public class TelaDeConsultaPraga extends javax.swing.JFrame {
                 jButtonBuscarFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 107, 260, 44));
+        getContentPane().add(jButtonBuscarFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 107, 282, 44));
 
         jTextFieldDataDeSurgimento.setEditable(false);
         jTextFieldDataDeSurgimento.setBackground(new java.awt.Color(255, 255, 255));
@@ -67,7 +67,7 @@ public class TelaDeConsultaPraga extends javax.swing.JFrame {
                 jTextFieldDataDeSurgimentoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldDataDeSurgimento, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 397, 322, 29));
+        getContentPane().add(jTextFieldDataDeSurgimento, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 396, 322, 29));
 
         jTextFieldPropriedade.setEditable(false);
         jTextFieldPropriedade.setBackground(new java.awt.Color(255, 255, 255));
@@ -92,7 +92,7 @@ public class TelaDeConsultaPraga extends javax.swing.JFrame {
                 jTextFieldFornecedorBuscadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldFornecedorBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 114, 272, 30));
+        getContentPane().add(jTextFieldFornecedorBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 114, 270, 30));
 
         jTextFieldEstado.setEditable(false);
         jTextFieldEstado.setBackground(new java.awt.Color(255, 255, 255));
@@ -105,7 +105,7 @@ public class TelaDeConsultaPraga extends javax.swing.JFrame {
                 jTextFieldEstadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 397, 323, 29));
+        getContentPane().add(jTextFieldEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 396, 322, 29));
 
         jTextFieldNomePraga.setEditable(false);
         jTextFieldNomePraga.setBackground(new java.awt.Color(255, 255, 255));
@@ -131,7 +131,7 @@ public class TelaDeConsultaPraga extends javax.swing.JFrame {
                 jTextFieldNivelDeAtaqueActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNivelDeAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 225, 324, 29));
+        getContentPane().add(jTextFieldNivelDeAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 224, 323, 29));
 
         jLabelIMGTelaInicialFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasPraga/img_tela_verificacao_praga.png"))); // NOI18N
         getContentPane().add(jLabelIMGTelaInicialFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 643));
@@ -191,7 +191,7 @@ public class TelaDeConsultaPraga extends javax.swing.JFrame {
 
             dataSQL = formatoSQL.parse(pragaEncontrada.getDataSurgimentoPraga().toString());
             dataBR = formatoBrasileiro.format(dataSQL);
-            
+
             jTextFieldNivelDeAtaque.setText(pragaEncontrada.getNivelDeAtaquePraga());
             jTextFieldDataDeSurgimento.setText(dataBR);
             jTextFieldEstado.setText(pragaEncontrada.getEstadoDeControlePraga());
@@ -199,13 +199,18 @@ public class TelaDeConsultaPraga extends javax.swing.JFrame {
             jTextFieldNomePraga.setText(pragaEncontrada.getNomePraga());
 
         } else {
-            JOptionPane.showMessageDialog(this, "Praga não encontrado");
-            jTextFieldNivelDeAtaque.setText("");
-            jTextFieldDataDeSurgimento.setText("");
-            jTextFieldEstado.setText("");
-            jTextFieldPropriedade.setText("");
-            jTextFieldNomePraga.setText("");
+            JOptionPane.showMessageDialog(this, "Praga não encontrada");
+            limparCampos();
         }
+    }
+
+    public void limparCampos() {
+        jTextFieldDataDeSurgimento.setText("");
+        jTextFieldEstado.setText("");
+        jTextFieldFornecedorBuscado.setText("");
+        jTextFieldNivelDeAtaque.setText("");
+        jTextFieldNomePraga.setText("");
+        jTextFieldPropriedade.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

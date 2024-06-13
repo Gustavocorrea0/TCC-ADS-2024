@@ -15,10 +15,10 @@ public class TelaDeInicioPraga extends javax.swing.JFrame {
     private void initComponents() {
 
         jButtonAdicionarPraga = new javax.swing.JButton();
+        jButtonAtualizarPraga = new javax.swing.JButton();
         jButtonVerificarPraga = new javax.swing.JButton();
         jButtonDeletarPraga = new javax.swing.JButton();
         jButtonRelatorioPraga = new javax.swing.JButton();
-        jButtonAtualizarPraga = new javax.swing.JButton();
         jButtonVoltarAoInicio = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableFornecedor = new javax.swing.JTable();
@@ -35,37 +35,7 @@ public class TelaDeInicioPraga extends javax.swing.JFrame {
                 jButtonAdicionarPragaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAdicionarPraga, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 98, 261, 44));
-
-        jButtonVerificarPraga.setBorder(null);
-        jButtonVerificarPraga.setContentAreaFilled(false);
-        jButtonVerificarPraga.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonVerificarPraga.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonVerificarPragaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonVerificarPraga, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 261, 44));
-
-        jButtonDeletarPraga.setBorder(null);
-        jButtonDeletarPraga.setContentAreaFilled(false);
-        jButtonDeletarPraga.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonDeletarPraga.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonDeletarPragaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonDeletarPraga, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, 261, 44));
-
-        jButtonRelatorioPraga.setBorder(null);
-        jButtonRelatorioPraga.setContentAreaFilled(false);
-        jButtonRelatorioPraga.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonRelatorioPraga.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonRelatorioPragaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonRelatorioPraga, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 98, 261, 44));
+        getContentPane().add(jButtonAdicionarPraga, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 118, 70, 65));
 
         jButtonAtualizarPraga.setBorder(null);
         jButtonAtualizarPraga.setContentAreaFilled(false);
@@ -75,7 +45,37 @@ public class TelaDeInicioPraga extends javax.swing.JFrame {
                 jButtonAtualizarPragaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAtualizarPraga, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 98, 261, 44));
+        getContentPane().add(jButtonAtualizarPraga, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 214, 70, 67));
+
+        jButtonVerificarPraga.setBorder(null);
+        jButtonVerificarPraga.setContentAreaFilled(false);
+        jButtonVerificarPraga.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonVerificarPraga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVerificarPragaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonVerificarPraga, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 412, 70, 65));
+
+        jButtonDeletarPraga.setBorder(null);
+        jButtonDeletarPraga.setContentAreaFilled(false);
+        jButtonDeletarPraga.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonDeletarPraga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDeletarPragaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonDeletarPraga, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 315, 70, 65));
+
+        jButtonRelatorioPraga.setBorder(null);
+        jButtonRelatorioPraga.setContentAreaFilled(false);
+        jButtonRelatorioPraga.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonRelatorioPraga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRelatorioPragaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonRelatorioPraga, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 504, 75, 65));
 
         jButtonVoltarAoInicio.setBorder(null);
         jButtonVoltarAoInicio.setContentAreaFilled(false);
@@ -119,7 +119,7 @@ public class TelaDeInicioPraga extends javax.swing.JFrame {
         jTableFornecedor.setSelectionForeground(new java.awt.Color(15, 42, 61));
         jScrollPane1.setViewportView(jTableFornecedor);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 870, 350));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 740, 350));
 
         jLabelIMGTelaInicialFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasPraga/img_tela_inicial_praga.png"))); // NOI18N
         getContentPane().add(jLabelIMGTelaInicialFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 643));

@@ -28,6 +28,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javax.swing.JFileChooser;
 
 public class ControlePraga {
 
@@ -227,99 +228,109 @@ public class ControlePraga {
 
         Document doc = new Document();
 
-        String nomePDF = "C:\\Users\\Gustavo\\Desktop\\relatorio_de_dados_geral_de_pragas.pdf";
+        JFileChooser jFileChooser = new JFileChooser();
+        jFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        int result = jFileChooser.showSaveDialog(null);
 
-        try {
-            ps = conexao.conn.prepareStatement(sql);
-            resultados = ps.executeQuery();
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File selectedDirectory = jFileChooser.getSelectedFile();
+            String nomePDF = selectedDirectory.getAbsolutePath() + File.separator + "relatorio_de_dados_geral_de_pragas.pdf";
 
-            Font fonte2 = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL);
-            Paragraph linhaEmBranco = new Paragraph(" ", fonte2);
+            try {
+                ps = conexao.conn.prepareStatement(sql);
+                resultados = ps.executeQuery();
 
-            Image imagem = Image.getInstance("C:\\Users\\Gustavo\\Desktop\\Gustavo Arquivos 5\\TCC_P2\\Codigo Final\\ACFarmSystemV2\\src\\logo_ac_farm_system.png");
-            imagem.scaleToFit(55, 50);
+                Font fonte2 = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL);
+                Paragraph linhaEmBranco = new Paragraph(" ", fonte2);
 
-            LineSeparator line = new LineSeparator();
-            line.setLineWidth(0.5f);
-            line.setPercentage(85f);
+                String imagePath = "/logo_ac_farm_system.png";
+                Image imagem = Image.getInstance(getClass().getResource(imagePath));
 
-            PdfWriter.getInstance(doc, new FileOutputStream(nomePDF));
-            doc.open();
+                imagem.scaleToFit(55, 50);
 
-            imagem.setAbsolutePosition(76, imagem.getAbsoluteX());
-            doc.add(imagem);
+                LineSeparator line = new LineSeparator();
+                line.setLineWidth(0.5f);
+                line.setPercentage(85f);
 
-            Font fonte = new Font(Font.FontFamily.HELVETICA, 13, Font.BOLD);
-            Paragraph p = new Paragraph("Relatorio de Pragas", fonte);
+                PdfWriter.getInstance(doc, new FileOutputStream(nomePDF));
+                doc.open();
 
-            Paragraph data = new Paragraph("            Data de geração: " + dataDeHoje, fonte2);
-            Paragraph tipoDeDados = new Paragraph("            Tipos de dados: Pragas", fonte2);
-            Paragraph formato = new Paragraph("            Formato: Tabela", fonte2);
+                imagem.setAbsolutePosition(76, imagem.getAbsoluteX());
+                doc.add(imagem);
 
-            p.setAlignment(Element.ALIGN_CENTER);
-            data.setAlignment(Element.ALIGN_JUSTIFIED);
-            tipoDeDados.setAlignment(3);
-            formato.setAlignment(3);
+                Font fonte = new Font(Font.FontFamily.HELVETICA, 13, Font.BOLD);
+                Paragraph p = new Paragraph("Relatorio geral de Pragas", fonte);
 
-            doc.add(p);
-            doc.add(linhaEmBranco);
-            doc.add(line);
-            doc.add(linhaEmBranco);
-            doc.add(data);
-            doc.add(tipoDeDados);
-            doc.add(formato);
-            doc.add(linhaEmBranco);
-            doc.add(line);
+                Paragraph data = new Paragraph("            Data de geração: " + dataDeHoje, fonte2);
+                Paragraph tipoDeDados = new Paragraph("            Tipos de dados: Pragas", fonte2);
+                Paragraph formato = new Paragraph("            Formato: Tabela", fonte2);
 
-            PdfPTable table = new PdfPTable(4);
-            table.setWidthPercentage(85);
-            table.setWidths(new int[]{2, 2, 2, 2});
+                p.setAlignment(Element.ALIGN_CENTER);
+                data.setAlignment(Element.ALIGN_JUSTIFIED);
+                tipoDeDados.setAlignment(3);
+                formato.setAlignment(3);
 
-            PdfPCell cellNomePraga = new PdfPCell(new Paragraph("Nome"));
-            PdfPCell cellDataDeSurgimentoPraga = new PdfPCell(new Paragraph("Data de Surgimento"));
-            PdfPCell cellNivelDeAtaquePraga = new PdfPCell(new Paragraph("Nivel de Ataque"));
-            PdfPCell cellControlePraga = new PdfPCell(new Paragraph("Controlado"));
+                doc.add(p);
+                doc.add(linhaEmBranco);
+                doc.add(line);
+                doc.add(linhaEmBranco);
+                doc.add(data);
+                doc.add(tipoDeDados);
+                doc.add(formato);
+                doc.add(linhaEmBranco);
+                doc.add(line);
 
-            cellNomePraga.setBackgroundColor(BaseColor.LIGHT_GRAY);
-            cellDataDeSurgimentoPraga.setBackgroundColor(BaseColor.LIGHT_GRAY);
-            cellNivelDeAtaquePraga.setBackgroundColor(BaseColor.LIGHT_GRAY);
-            cellControlePraga.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                PdfPTable table = new PdfPTable(4);
+                table.setWidthPercentage(85);
+                table.setWidths(new int[]{2, 2, 2, 2});
 
-            table.addCell(cellNomePraga);
-            table.addCell(cellDataDeSurgimentoPraga);
-            table.addCell(cellNivelDeAtaquePraga);
-            table.addCell(cellControlePraga);
+                PdfPCell cellNomePraga = new PdfPCell(new Paragraph("Nome"));
+                PdfPCell cellDataDeSurgimentoPraga = new PdfPCell(new Paragraph("Data de Surgimento"));
+                PdfPCell cellNivelDeAtaquePraga = new PdfPCell(new Paragraph("Nivel de Ataque"));
+                PdfPCell cellControlePraga = new PdfPCell(new Paragraph("Controlado"));
 
-            while (resultados.next()) {
-                Praga pragaBuscada = new Praga();
-
-                pragaBuscada.setNomePraga(resultados.getString("nome_praga"));
-                pragaBuscada.setDataSurgimentoPraga(resultados.getDate("data_surgimento_praga"));
-                pragaBuscada.setNivelDeAtaquePraga(resultados.getString("nivel_de_ataque_praga"));
-                pragaBuscada.setPropriedadePraga(resultados.getString("propriedade_praga"));
-                pragaBuscada.setEstadoDeControlePraga(resultados.getString("estado_de_controle_praga"));
-                pragaBuscada.setIdPraga(resultados.getInt("id_praga"));
-
-                cellNomePraga = new PdfPCell(new Paragraph(pragaBuscada.getNomePraga()));
-                cellNivelDeAtaquePraga = new PdfPCell(new Paragraph(pragaBuscada.getNivelDeAtaquePraga()));
-                cellControlePraga = new PdfPCell(new Paragraph(pragaBuscada.getEstadoDeControlePraga()));
-                cellDataDeSurgimentoPraga = new PdfPCell(new Paragraph(formatarData(pragaBuscada.getDataSurgimentoPraga())));
+                cellNomePraga.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                cellDataDeSurgimentoPraga.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                cellNivelDeAtaquePraga.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                cellControlePraga.setBackgroundColor(BaseColor.LIGHT_GRAY);
 
                 table.addCell(cellNomePraga);
                 table.addCell(cellDataDeSurgimentoPraga);
                 table.addCell(cellNivelDeAtaquePraga);
                 table.addCell(cellControlePraga);
+
+                while (resultados.next()) {
+                    Praga pragaBuscada = new Praga();
+
+                    pragaBuscada.setNomePraga(resultados.getString("nome_praga"));
+                    pragaBuscada.setDataSurgimentoPraga(resultados.getDate("data_surgimento_praga"));
+                    pragaBuscada.setNivelDeAtaquePraga(resultados.getString("nivel_de_ataque_praga"));
+                    pragaBuscada.setPropriedadePraga(resultados.getString("propriedade_praga"));
+                    pragaBuscada.setEstadoDeControlePraga(resultados.getString("estado_de_controle_praga"));
+                    pragaBuscada.setIdPraga(resultados.getInt("id_praga"));
+
+                    cellNomePraga = new PdfPCell(new Paragraph(pragaBuscada.getNomePraga()));
+                    cellNivelDeAtaquePraga = new PdfPCell(new Paragraph(pragaBuscada.getNivelDeAtaquePraga()));
+                    cellControlePraga = new PdfPCell(new Paragraph(pragaBuscada.getEstadoDeControlePraga()));
+                    cellDataDeSurgimentoPraga = new PdfPCell(new Paragraph(formatarData(pragaBuscada.getDataSurgimentoPraga())));
+
+                    table.addCell(cellNomePraga);
+                    table.addCell(cellDataDeSurgimentoPraga);
+                    table.addCell(cellNivelDeAtaquePraga);
+                    table.addCell(cellControlePraga);
+                }
+
+                doc.add(new Paragraph(" "));
+                doc.add(table);
+                doc.close();
+
+                Desktop.getDesktop().open(new File(nomePDF));
+
+            } catch (DocumentException | FileNotFoundException | SQLException | NullPointerException d) {
+                d.getMessage();
             }
-
-            doc.add(new Paragraph(" "));
-            doc.add(table);
-            doc.close();
-
-            Desktop.getDesktop().open(new File(nomePDF));
-
-        } catch (DocumentException | FileNotFoundException | SQLException | NullPointerException d) {
-            d.getMessage();
         }
+
     }
 
     public void gerarRelatorioDetalhadoDePragas(String nomePraga) throws SQLException, BadElementException, IOException {
@@ -339,92 +350,97 @@ public class ControlePraga {
         resultados = ps.executeQuery();
 
         Document doc = new Document();
+        JFileChooser jFileChooser = new JFileChooser();
+        jFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        int result = jFileChooser.showSaveDialog(null);
 
-        String nomePDF = "C:\\Users\\Gustavo\\Desktop\\relatorio_de_dados_detalhado_de_pragas.pdf";
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File selectedDirectory = jFileChooser.getSelectedFile();
+            String nomePDF = selectedDirectory.getAbsolutePath() + File.separator + "relatorio_de_dados_detalhado_de_praga.pdf";
 
-        Font fonteTitulo = new Font(Font.FontFamily.HELVETICA, 14, Font.BOLD);
-        Font fonteSubtitulo = new Font(Font.FontFamily.HELVETICA, 13, Font.BOLD);
-        Font fonteIdentificacao = new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD);
-        Font fonteTextoComun = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL);
+            try {
+                if (resultados.next()) {
+                    Praga pragaBuscada = new Praga();
+                    pragaBuscada.setNomePraga(resultados.getString("nome_praga"));
+                    pragaBuscada.setDataSurgimentoPraga(resultados.getDate("data_surgimento_praga"));
+                    pragaBuscada.setNivelDeAtaquePraga(resultados.getString("nivel_de_ataque_praga"));
+                    pragaBuscada.setPropriedadePraga(resultados.getString("propriedade_praga"));
+                    pragaBuscada.setEstadoDeControlePraga(resultados.getString("estado_de_controle_praga"));
 
-        Paragraph linhaEmBranco = new Paragraph(" ", fonteTextoComun);
+                    Font fonteTitulo = new Font(Font.FontFamily.HELVETICA, 14, Font.BOLD);
+                    Font fonteSubtitulo = new Font(Font.FontFamily.HELVETICA, 13, Font.BOLD);
+                    Font fonteTextoComun = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL);
+                    Paragraph linhaEmBranco = new Paragraph(" ", fonteTextoComun);
 
-        try {
-            if (resultados.next()) {
-                Praga pragaBuscada = new Praga();
-                pragaBuscada.setNomePraga(resultados.getString("nome_praga"));
-                pragaBuscada.setDataSurgimentoPraga(resultados.getDate("data_surgimento_praga"));
-                pragaBuscada.setNivelDeAtaquePraga(resultados.getString("nivel_de_ataque_praga"));
-                pragaBuscada.setPropriedadePraga(resultados.getString("propriedade_praga"));
-                pragaBuscada.setEstadoDeControlePraga(resultados.getString("estado_de_controle_praga"));
+                    String imagePath = "/logo_ac_farm_system.png";
+                    Image imagem = Image.getInstance(getClass().getResource(imagePath));
+                    imagem.scaleToFit(55, 50);
 
-                Image imagem = Image.getInstance("C:\\Users\\Gustavo\\Desktop\\Gustavo Arquivos 5\\TCC_P2\\ACFarmSystemV2\\src\\logo_ac_farm_system.png");
-                imagem.scaleToFit(55, 50);
+                    LineSeparator line = new LineSeparator();
+                    line.setLineWidth(0.5f);
+                    line.setPercentage(85f);
 
-                LineSeparator line = new LineSeparator();
-                line.setLineWidth(0.5f);
-                line.setPercentage(85f);
+                    PdfWriter.getInstance(doc, new FileOutputStream(nomePDF));
+                    doc.open();
 
-                PdfWriter.getInstance(doc, new FileOutputStream(nomePDF));
-                doc.open();
+                    imagem.setAbsolutePosition(76, imagem.getAbsoluteX());
+                    doc.add(imagem);
 
-                imagem.setAbsolutePosition(76, imagem.getAbsoluteX());
-                doc.add(imagem);
+                    String nomePragaEncontrado = pragaBuscada.getNomePraga();
+                    String dataDeSurgimentoEncontrado = formatarData(pragaBuscada.getDataSurgimentoPraga());
+                    String nivelDeAtaquePragaEncontrado = pragaBuscada.getNivelDeAtaquePraga();
+                    String propridadePragaEncontrado = pragaBuscada.getPropriedadePraga();
+                    String estadoPragaEncontrada = pragaBuscada.getEstadoDeControlePraga();
 
-                String nomePragaEncontrado = pragaBuscada.getNomePraga();
-                String dataDeSurgimentoEncontrado = formatarData(pragaBuscada.getDataSurgimentoPraga());
-                String nivelDeAtaquePragaEncontrado = pragaBuscada.getNivelDeAtaquePraga();
-                String propridadePragaEncontrado = pragaBuscada.getPropriedadePraga();
-                String estadoPragaEncontrada = pragaBuscada.getEstadoDeControlePraga();
+                    Paragraph p = new Paragraph("Relatorio Detalhado De Praga", fonteTitulo);
 
-                Paragraph p = new Paragraph("Relatorio de Praga", fonteTitulo);
+                    Paragraph nomePragaRelatorio = new Paragraph("            Praga: " + nomePraga, fonteTextoComun);
+                    Paragraph data = new Paragraph("            Data de geração: " + dataDeHoje, fonteTextoComun);
+                    Paragraph tipoDeDados = new Paragraph("            Tipo de Informações: Praga", fonteTextoComun);
+                    Paragraph formato = new Paragraph("            Formato: Detalhado", fonteTextoComun);
 
-                Paragraph nomePragaRelatorio = new Paragraph("            Praga: " + nomePraga, fonteTextoComun);
-                Paragraph data = new Paragraph("            Data de geração: " + dataDeHoje, fonteTextoComun);
-                Paragraph tipoDeDados = new Paragraph("            Tipo de Informações: Praga", fonteTextoComun);
-                Paragraph formato = new Paragraph("            Formato: Detalhado", fonteTextoComun);
+                    Paragraph nomeDaPragaParagrafo = new Paragraph("            Praga: " + nomePragaEncontrado);
+                    Paragraph dataDeSurgimentoPragaParagrafo = new Paragraph("            Data de Surgimento: " + dataDeSurgimentoEncontrado);
+                    Paragraph nivelDeAtaqueParagrafo = new Paragraph("            Nivel de Ataque: " + nivelDeAtaquePragaEncontrado);
+                    Paragraph propriedadeParagrafo = new Paragraph("            Propriedade: " + propridadePragaEncontrado);
+                    Paragraph estadoDeControleDaPragaParagrafo = new Paragraph("            Controlado(SIM ou NÃO): " + estadoPragaEncontrada);
 
-                Paragraph nomeDaPragaParagrafo = new Paragraph("            Praga: " + nomePragaEncontrado);
-                Paragraph dataDeSurgimentoPragaParagrafo = new Paragraph("            Data de Surgimento: " + dataDeSurgimentoEncontrado);
-                Paragraph nivelDeAtaqueParagrafo = new Paragraph("            Nivel de Ataque: " + nivelDeAtaquePragaEncontrado);
-                Paragraph propriedadeParagrafo = new Paragraph("            Propriedade: " + propridadePragaEncontrado);
-                Paragraph estadoDeControleDaPragaParagrafo = new Paragraph("            Estado de Controle: " + estadoPragaEncontrada);
+                    p.setAlignment(Element.ALIGN_CENTER);
+                    data.setAlignment(Element.ALIGN_JUSTIFIED);
+                    tipoDeDados.setAlignment(3);
+                    formato.setAlignment(3);
 
-                p.setAlignment(Element.ALIGN_CENTER);
-                data.setAlignment(Element.ALIGN_JUSTIFIED);
-                tipoDeDados.setAlignment(3);
-                formato.setAlignment(3);
+                    Paragraph dadosPragaSubtitulo = new Paragraph("           Dados da praga", fonteSubtitulo);
 
-                Paragraph dadosPragaSubtitulo = new Paragraph("           Dados da praga", fonteSubtitulo);
+                    doc.add(p);
+                    doc.add(linhaEmBranco);
+                    doc.add(line);
+                    doc.add(linhaEmBranco);
+                    doc.add(nomeDaPragaParagrafo);
+                    doc.add(data);
+                    doc.add(tipoDeDados);
+                    doc.add(formato);
+                    doc.add(linhaEmBranco);
+                    doc.add(line);
+                    doc.add(linhaEmBranco);
+                    doc.add(dadosPragaSubtitulo);
+                    doc.add(linhaEmBranco);
+                    doc.add(nomePragaRelatorio);
+                    doc.add(propriedadeParagrafo);
+                    doc.add(dataDeSurgimentoPragaParagrafo);
+                    doc.add(nivelDeAtaqueParagrafo);
+                    doc.add(estadoDeControleDaPragaParagrafo);
 
-                doc.add(p);
-                doc.add(linhaEmBranco);
-                doc.add(line);
-                doc.add(linhaEmBranco);
-                doc.add(nomeDaPragaParagrafo);
-                doc.add(data);
-                doc.add(tipoDeDados);
-                doc.add(formato);
-                doc.add(linhaEmBranco);
-                doc.add(line);
-                doc.add(linhaEmBranco);
-                doc.add(dadosPragaSubtitulo);
-                doc.add(linhaEmBranco);
-                doc.add(nomePragaRelatorio);
-                doc.add(propriedadeParagrafo);
-                doc.add(dataDeSurgimentoPragaParagrafo);
-                doc.add(nivelDeAtaqueParagrafo);
-                doc.add(estadoDeControleDaPragaParagrafo);
+                    praga = new Praga();
 
-                praga = new Praga();
+                    doc.add(new Paragraph(""));
+                    doc.close();
 
-                doc.add(new Paragraph(""));
-                doc.close();
-
-                Desktop.getDesktop().open(new File(nomePDF));
+                    Desktop.getDesktop().open(new File(nomePDF));
+                }
+            } catch (DocumentException | FileNotFoundException | SQLException | NullPointerException d) {
+                d.getMessage();
             }
-        } catch (DocumentException | FileNotFoundException | SQLException | NullPointerException d) {
-            d.getMessage();
         }
     }
 
