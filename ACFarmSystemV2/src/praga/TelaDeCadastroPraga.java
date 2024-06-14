@@ -9,6 +9,7 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import validacoes.ValidarData;
 
 public class TelaDeCadastroPraga extends javax.swing.JFrame {
 
@@ -220,14 +221,14 @@ public class TelaDeCadastroPraga extends javax.swing.JFrame {
         estadoDeControlePraga = jComboBoxEstadoDeControle.getSelectedItem().toString();
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-
+        
         if (nomePraga.isBlank()) {
             JOptionPane.showMessageDialog(null, "Nome Inválido");
             return;
         }
 
-        if (dataSurgimentoPraga.isBlank()) {
-            JOptionPane.showMessageDialog(null, "Data Inválida");
+        if (ValidarData.validaData(dataSurgimentoPraga) == false) {
+            JOptionPane.showMessageDialog(null, "Data Inválida (dd/mm/aaaa)");
             return;
         }
 
@@ -257,7 +258,7 @@ public class TelaDeCadastroPraga extends javax.swing.JFrame {
 
             String msg = controlePraga.cadastrarPraga(controlePraga.INCLUSAO);
             JOptionPane.showMessageDialog(this, msg);
-
+            limparCampos();
         } catch (ParseException ex) {
             JOptionPane.showMessageDialog(this, "Formato de data inválido, o formato é dd/mm/aaaa.");
             System.out.println("Falha no sistema, tipo: ");
@@ -275,6 +276,8 @@ public class TelaDeCadastroPraga extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Propriedade encontrada.");
         } else {
             JOptionPane.showMessageDialog(this, "Propriedade não encontrada.");
+            limparCampos();
+            return;
         }
     }
 

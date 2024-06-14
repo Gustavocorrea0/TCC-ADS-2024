@@ -199,9 +199,6 @@ CREATE TABLE semente (
     PRIMARY KEY (id_semente)
 );
 
-ALTER TABLE usuario ADD CONSTRAINT nome_usuario UNIQUE (nome);
-INSERT INTO usuario (nome, senha, nivel_de_acesso) VALUES ('admin', 'wqPRm+3n68u+sJHCIlyX7Y62GL42QhuI', 'M');
-
 CREATE TABLE fornecedor (
     id_fornecedor SERIAL NOT NULL,
     razao_social VARCHAR(255) NOT NULL,
@@ -266,6 +263,6 @@ CREATE TABLE controle (
     id_producao INTEGER REFERENCES producao(id_producao),
     id_fornecedor INTEGER REFERENCES fornecedor(id_fornecedor),
     id_praga INTEGER REFERENCES praga(id_praga),
-    id_cliente INTEGER REFERENCES cliente(id_cliente)
+    id_cliente INTEGER REFERENCES cliente(id_cliente),
     id_cliente INTEGER REFERENCES venda_producao(id_venda_producao)
 );

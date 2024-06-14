@@ -49,6 +49,11 @@ public class TelaDeCadastroDeUsuario extends javax.swing.JFrame {
         jPasswordSenhaDoUsuario.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jPasswordSenhaDoUsuario.setForeground(new java.awt.Color(0, 0, 0));
         jPasswordSenhaDoUsuario.setBorder(null);
+        jPasswordSenhaDoUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordSenhaDoUsuarioActionPerformed(evt);
+            }
+        });
         getContentPane().add(jPasswordSenhaDoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 341, 303, 28));
 
         jButtonConfirmarCadastroDeUsuario1.setBorder(null);
@@ -127,6 +132,10 @@ public class TelaDeCadastroDeUsuario extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jComboBoxNivelDeAcessoActionPerformed
 
+    private void jPasswordSenhaDoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordSenhaDoUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordSenhaDoUsuarioActionPerformed
+
     public void cadastrarUsuario() {
         BasicPasswordEncryptor passwordEncryptor = new BasicPasswordEncryptor();
 
@@ -147,7 +156,7 @@ public class TelaDeCadastroDeUsuario extends javax.swing.JFrame {
         senhasFracas.add("********");
         senhasFracas.add("1234567890");
 
-        if (jPasswordSenhaDoUsuario.getText().equals("")) {
+        if (jPasswordSenhaDoUsuario.getText().isBlank()) {
             JOptionPane.showMessageDialog(null, "A Senha não pode ser Validada");
             jPasswordSenhaDoUsuario.requestFocus();
             return;

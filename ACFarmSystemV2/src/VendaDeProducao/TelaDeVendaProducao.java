@@ -11,8 +11,10 @@ import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import producao.ControleProducao;
 import producao.Producao;
+import validacoes.ValidarData;
 
 public class TelaDeVendaProducao extends javax.swing.JFrame {
 
@@ -22,6 +24,8 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
 
     public TelaDeVendaProducao() {
         initComponents();
+        readClientes();
+        readProducao();
     }
 
     private String msg;
@@ -57,10 +61,14 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
         jTextFieldCPFOuCNPJCliente = new javax.swing.JTextField();
         jButtonVoltarAoInicio = new javax.swing.JButton();
         jButtonBuscarCliente = new javax.swing.JButton();
-        jButtonConfirmarVenda = new javax.swing.JButton();
         jButtonBuscarProducao = new javax.swing.JButton();
+        jButtonConfirmarVenda = new javax.swing.JButton();
         jComboBoxMetodoDePagamento = new javax.swing.JComboBox<>();
         jComboBoxFormaDePagamento = new javax.swing.JComboBox<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTableProducao = new javax.swing.JTable();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableFornecedor = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -72,7 +80,7 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
         jTextFieldNumeroSacasProducao.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldNumeroSacasProducao.setBorder(null);
         jTextFieldNumeroSacasProducao.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        getContentPane().add(jTextFieldNumeroSacasProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 273, 324, 30));
+        getContentPane().add(jTextFieldNumeroSacasProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 260, 324, 30));
 
         jTextFieldDataProducao.setEditable(false);
         jTextFieldDataProducao.setBackground(new java.awt.Color(255, 255, 255));
@@ -80,14 +88,14 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
         jTextFieldDataProducao.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldDataProducao.setBorder(null);
         jTextFieldDataProducao.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        getContentPane().add(jTextFieldDataProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 353, 325, 30));
+        getContentPane().add(jTextFieldDataProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 338, 325, 30));
 
         jTextFieldNomeProducaoBuscada.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNomeProducaoBuscada.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTextFieldNomeProducaoBuscada.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldNomeProducaoBuscada.setBorder(null);
         jTextFieldNomeProducaoBuscada.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        getContentPane().add(jTextFieldNomeProducaoBuscada, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 116, 320, 30));
+        getContentPane().add(jTextFieldNomeProducaoBuscada, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 116, 270, 30));
 
         jTextFieldNomeCliente.setEditable(false);
         jTextFieldNomeCliente.setBackground(new java.awt.Color(255, 255, 255));
@@ -100,7 +108,7 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
                 jTextFieldNomeClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(469, 195, 325, 30));
+        getContentPane().add(jTextFieldNomeCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 511, 325, 30));
 
         jTextFieldNumeroDeParcelas.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNumeroDeParcelas.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -112,7 +120,7 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
                 jTextFieldNumeroDeParcelasActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNumeroDeParcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(449, 370, 207, 30));
+        getContentPane().add(jTextFieldNumeroDeParcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(423, 415, 207, 30));
 
         jTextFieldNomeClienteBuscado.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNomeClienteBuscado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -124,7 +132,7 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
                 jTextFieldNomeClienteBuscadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeClienteBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(469, 116, 325, 29));
+        getContentPane().add(jTextFieldNomeClienteBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 432, 271, 29));
 
         jTextFieldNomeProducao.setEditable(false);
         jTextFieldNomeProducao.setBackground(new java.awt.Color(255, 255, 255));
@@ -132,7 +140,7 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
         jTextFieldNomeProducao.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldNomeProducao.setBorder(null);
         jTextFieldNomeProducao.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        getContentPane().add(jTextFieldNomeProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 195, 325, 30));
+        getContentPane().add(jTextFieldNomeProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 188, 325, 30));
 
         jTextFieldDataDaVenda.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldDataDaVenda.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -144,7 +152,7 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
                 jTextFieldDataDaVendaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldDataDaVenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(688, 369, 207, 30));
+        getContentPane().add(jTextFieldDataDaVenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(677, 415, 207, 30));
 
         jTextFieldValorTotal.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldValorTotal.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
@@ -156,7 +164,7 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
                 jTextFieldValorTotalActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldValorTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(507, 486, 370, 50));
+        getContentPane().add(jTextFieldValorTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(426, 499, 447, 29));
 
         jTextFieldCPFOuCNPJCliente.setEditable(false);
         jTextFieldCPFOuCNPJCliente.setBackground(new java.awt.Color(255, 255, 255));
@@ -169,7 +177,7 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
                 jTextFieldCPFOuCNPJClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCPFOuCNPJCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(469, 273, 325, 30));
+        getContentPane().add(jTextFieldCPFOuCNPJCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 589, 325, 30));
 
         jButtonVoltarAoInicio.setBorder(null);
         jButtonVoltarAoInicio.setBorderPainted(false);
@@ -191,18 +199,7 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
                 jButtonBuscarClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(811, 112, 60, 35));
-
-        jButtonConfirmarVenda.setBorder(null);
-        jButtonConfirmarVenda.setBorderPainted(false);
-        jButtonConfirmarVenda.setContentAreaFilled(false);
-        jButtonConfirmarVenda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonConfirmarVenda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonConfirmarVendaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonConfirmarVenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(606, 575, 278, 35));
+        getContentPane().add(jButtonBuscarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(317, 429, 60, 35));
 
         jButtonBuscarProducao.setBorder(null);
         jButtonBuscarProducao.setBorderPainted(false);
@@ -213,7 +210,18 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
                 jButtonBuscarProducaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 113, 60, 35));
+        getContentPane().add(jButtonBuscarProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(317, 113, 60, 36));
+
+        jButtonConfirmarVenda.setBorder(null);
+        jButtonConfirmarVenda.setBorderPainted(false);
+        jButtonConfirmarVenda.setContentAreaFilled(false);
+        jButtonConfirmarVenda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonConfirmarVenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConfirmarVendaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonConfirmarVenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 550, 282, 35));
 
         jComboBoxMetodoDePagamento.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jComboBoxMetodoDePagamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Parcelado", "Á vista", "" }));
@@ -222,7 +230,7 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
                 jComboBoxMetodoDePagamentoActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxMetodoDePagamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(9, 460, 200, -1));
+        getContentPane().add(jComboBoxMetodoDePagamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 330, 210, -1));
 
         jComboBoxFormaDePagamento.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jComboBoxFormaDePagamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Dinheiro Fisico", "Pix", "Cheque Comun", "Cheque pré-datado", "Outro", "" }));
@@ -231,7 +239,76 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
                 jComboBoxFormaDePagamentoActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxFormaDePagamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 460, 190, -1));
+        getContentPane().add(jComboBoxFormaDePagamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 330, 190, -1));
+
+        jTableProducao.setBackground(new java.awt.Color(15, 42, 61));
+        jTableProducao.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTableProducao.setForeground(new java.awt.Color(255, 255, 255));
+        jTableProducao.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nome da Produção", "Vendido"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTableProducao.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTableProducao.setGridColor(new java.awt.Color(255, 255, 255));
+        jTableProducao.setRowHeight(30);
+        jTableProducao.setSelectionForeground(new java.awt.Color(15, 42, 61));
+        jTableProducao.getTableHeader().setReorderingAllowed(false);
+        jScrollPane2.setViewportView(jTableProducao);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 110, 240, 160));
+
+        jTableFornecedor.setBackground(new java.awt.Color(15, 42, 61));
+        jTableFornecedor.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        jTableFornecedor.setForeground(new java.awt.Color(255, 255, 255));
+        jTableFornecedor.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nome do Cliente"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTableFornecedor.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTableFornecedor.setGridColor(new java.awt.Color(255, 204, 0));
+        jTableFornecedor.setRowHeight(30);
+        jTableFornecedor.setSelectionForeground(new java.awt.Color(15, 42, 61));
+        jScrollPane1.setViewportView(jTableFornecedor);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, 190, 160));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasVendaProducao/img_tela_de_realizar_vendas.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -242,7 +319,11 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
 
     private void jButtonVoltarAoInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarAoInicioActionPerformed
         this.dispose();
-        new TelaDeClienteEProducoes().setVisible(true);
+        try {
+            new TelaDeInicioVendasProducao().setVisible(true);
+        } catch (ParseException ex) {
+            Logger.getLogger(TelaDeVendaProducao.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButtonVoltarAoInicioActionPerformed
 
     private void jButtonBuscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarClienteActionPerformed
@@ -288,15 +369,15 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldNomeClienteActionPerformed
 
     private void jTextFieldDataDaVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDataDaVendaActionPerformed
-       
+
     }//GEN-LAST:event_jTextFieldDataDaVendaActionPerformed
 
     private void jTextFieldNumeroDeParcelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNumeroDeParcelasActionPerformed
-       
+
     }//GEN-LAST:event_jTextFieldNumeroDeParcelasActionPerformed
 
     private void jComboBoxFormaDePagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxFormaDePagamentoActionPerformed
-       
+
     }//GEN-LAST:event_jComboBoxFormaDePagamentoActionPerformed
 
     public void buscarCliente() throws SQLException {
@@ -309,6 +390,7 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
             jTextFieldNomeCliente.setText(clienteEncontrado.getNomeCliente());
         } else {
             JOptionPane.showMessageDialog(this, "Cliente não encontrado");
+            jTextFieldNomeClienteBuscado.setText("");
             jTextFieldCPFOuCNPJCliente.setText("");
             jTextFieldNomeCliente.setText("");
         }
@@ -333,13 +415,14 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
 
         } else {
             JOptionPane.showMessageDialog(this, "Produção não encontrada");
+            jTextFieldNomeProducaoBuscada.setText("");
             jTextFieldNomeProducao.setText("");
             jTextFieldDataProducao.setText("");
             jTextFieldNumeroSacasProducao.setText("");
         }
 
     }
-    
+
     public void realizarVenda() {
         metodoDePagamentoNovo = jComboBoxMetodoDePagamento.getSelectedItem().toString();
         formaDePagamentoNovo = jComboBoxFormaDePagamento.getSelectedItem().toString();
@@ -350,7 +433,7 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
 
         dataProducaoNovo = jTextFieldDataProducao.getText();
         dataVendaNovo = jTextFieldDataDaVenda.getText();
-        valorTotalTexto = jTextFieldValorTotal.getText(); 
+        valorTotalTexto = jTextFieldValorTotal.getText();
         valorTotalVendaNovoCorrigido = Double.valueOf(valorTotalTexto.replace(".", "").replace(",", "."));
         quantidadeDeSacasProducaoNovo = Integer.parseInt(jTextFieldNumeroSacasProducao.getText());
         quantidadeDeParcelasNovo = Integer.parseInt(jTextFieldNumeroDeParcelas.getText());
@@ -367,27 +450,27 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
             return;
         }
 
-        if (nomeProducaoNovo.equals("")) {
+        if (nomeProducaoNovo.isBlank()) {
             JOptionPane.showMessageDialog(this, "Nome da produção é inválido");
             return;
         }
 
-        if (nomeClienteNovo.equals("")) {
+        if (nomeClienteNovo.isBlank()) {
             JOptionPane.showMessageDialog(this, "Nome do cliente é inválido");
             return;
         }
 
-        if (CNPJOuCPFNovo.equals("")) {
+        if (CNPJOuCPFNovo.isBlank()) {
             JOptionPane.showMessageDialog(this, "CNPJ ou CPF, inválido");
             return;
         }
 
-        if (dataProducaoNovo.equals("")) {
+        if (dataProducaoNovo.isBlank()) {
             JOptionPane.showMessageDialog(this, "Data de produção inválida");
             return;
         }
 
-        if (dataVendaNovo.equals("")) {
+        if (ValidarData.validaData(dataVendaNovo) == false) {
             JOptionPane.showMessageDialog(this, "Data de venda produção inválida");
             return;
         }
@@ -426,17 +509,7 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
 
             msg = controleVendaProducao.adicionarVenda(ControleVendaProducao.INCLUSAO);
             JOptionPane.showMessageDialog(this, msg);
-
-            jTextFieldCPFOuCNPJCliente.setText("");
-            jTextFieldDataDaVenda.setText("");
-            jTextFieldDataProducao.setText("");
-            jTextFieldNomeCliente.setText("");
-            jTextFieldNomeClienteBuscado.setText("");
-            jTextFieldNomeProducao.setText("");
-            jTextFieldNomeProducaoBuscada.setText("");
-            jTextFieldNumeroDeParcelas.setText("");
-            jTextFieldNumeroSacasProducao.setText("");
-            jTextFieldValorTotal.setText("");
+            limparCampos();
 
         } catch (ParseException e) {
             JOptionPane.showMessageDialog(this, "Formato de data inválido, o formato é dd/mm/aaaa.");
@@ -445,18 +518,49 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
         }
     }
 
-    
-
     public void atualizarStatusDeVendaProducao() {
         Producao producaoAtualizada = new Producao();
 
         statusDeVendaProducao = "sim";
-        
+
         producaoAtualizada.setIdProducao(idProducao);
         producaoAtualizada.setStatusDeVenda(statusDeVendaProducao);
 
         controleProducao = new ControleProducao();
         String msgAtualizacao = controleProducao.atualizacaoDeStatusDeVenda(producaoAtualizada);
+    }
+
+    private void readClientes() {
+        DefaultTableModel modelo = (DefaultTableModel) jTableFornecedor.getModel();
+        ControleCliente controleCliente = new ControleCliente();
+
+        for (Cliente t : controleCliente.readCliente()) {
+            modelo.addRow(new Object[]{t.getNomeCliente()});
+        }
+
+    }
+
+    private void readProducao() {
+        DefaultTableModel modelo1 = (DefaultTableModel) jTableProducao.getModel();
+        ControleProducao controleProducao = new ControleProducao();
+
+        for (Producao p : controleProducao.buscarTodasAsProducoes()) {
+            modelo1.addRow(new Object[]{p.getNomeProducao(), p.getStatusDeVenda()});
+        }
+
+    }
+
+    private void limparCampos() {
+        jTextFieldCPFOuCNPJCliente.setText("");
+        jTextFieldDataDaVenda.setText("");
+        jTextFieldDataProducao.setText("");
+        jTextFieldNomeCliente.setText("");
+        jTextFieldNomeClienteBuscado.setText("");
+        jTextFieldNomeProducao.setText("");
+        jTextFieldNomeProducaoBuscada.setText("");
+        jTextFieldNumeroDeParcelas.setText("");
+        jTextFieldNumeroSacasProducao.setText("");
+        jTextFieldValorTotal.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -467,6 +571,10 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxFormaDePagamento;
     private javax.swing.JComboBox<String> jComboBoxMetodoDePagamento;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTableFornecedor;
+    private javax.swing.JTable jTableProducao;
     private javax.swing.JTextField jTextFieldCPFOuCNPJCliente;
     private javax.swing.JTextField jTextFieldDataDaVenda;
     private javax.swing.JTextField jTextFieldDataProducao;

@@ -29,6 +29,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javax.swing.JFileChooser;
 import producao.Producao;
 
 public class ControleVendaProducao {
@@ -195,103 +196,85 @@ public class ControleVendaProducao {
         resultados = null;
         ps = null;
         sql = "SELECT * FROM venda_producao";
+        ps = conexao.conn.prepareStatement(sql);
+        resultados = ps.executeQuery();
 
         Document doc = new Document();
+        JFileChooser jFileChooser = new JFileChooser();
+        jFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 
-        String nomePDF = "C:\\Users\\Gustavo\\Desktop\\relatorio_geral_de_vendas.pdf";
+        int result = jFileChooser.showSaveDialog(null);
 
-        try {
-            ps = conexao.conn.prepareStatement(sql);
-            resultados = ps.executeQuery();
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File selectedDirectory = jFileChooser.getSelectedFile();
+            String nomePDF = selectedDirectory.getAbsolutePath() + File.separator + "relatorio_geral_de_vendas.pdf";
 
-            Font fonte2 = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL);
-            Paragraph linhaEmBranco = new Paragraph(" ", fonte2);
+            try {
 
-            String imagePath = "/logo_ac_farm_system.png";
-            Image imagem = Image.getInstance(getClass().getResource(imagePath));
+                Font fonte2 = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL);
+                Paragraph linhaEmBranco = new Paragraph(" ", fonte2);
 
-            imagem.scaleToFit(55, 50);
+                String imagePath = "/logo_ac_farm_system.png";
+                Image imagem = Image.getInstance(getClass().getResource(imagePath));
 
-            LineSeparator line = new LineSeparator();
-            line.setLineWidth(0.5f);
-            line.setPercentage(85f);
+                imagem.scaleToFit(55, 50);
 
-            PdfWriter.getInstance(doc, new FileOutputStream(nomePDF));
-            doc.open();
+                LineSeparator line = new LineSeparator();
+                line.setLineWidth(0.5f);
+                line.setPercentage(85f);
 
-            imagem.setAbsolutePosition(76, imagem.getAbsoluteY());
-            doc.add(imagem);
+                PdfWriter.getInstance(doc, new FileOutputStream(nomePDF));
+                doc.open();
 
-            Font fonte = new Font(Font.FontFamily.HELVETICA, 13, Font.BOLD);
-            Paragraph p = new Paragraph("Relatorio de Dados de Venda", fonte);
+                imagem.setAbsolutePosition(76, imagem.getAbsoluteY());
+                doc.add(imagem);
 
-            Paragraph data = new Paragraph("            Data de geração: " + dataDeHoje, fonte2);
-            Paragraph tiposDeDados = new Paragraph("            Tipos de dados: Vendas", fonte2);
-            Paragraph formato = new Paragraph("            Formato: Tabela", fonte2);
+                Font fonte = new Font(Font.FontFamily.HELVETICA, 13, Font.BOLD);
+                Paragraph p = new Paragraph("Relatorio de Geral de Vendas", fonte);
 
-            p.setAlignment(Element.ALIGN_CENTER);
-            data.setAlignment(Element.ALIGN_JUSTIFIED);
-            tiposDeDados.setAlignment(3);
-            formato.setAlignment(3);
+                Paragraph data = new Paragraph("            Data de geração: " + dataDeHoje, fonte2);
+                Paragraph tiposDeDados = new Paragraph("            Tipos de dados: Vendas", fonte2);
+                Paragraph formato = new Paragraph("            Formato: Tabela", fonte2);
 
-            doc.add(p);
-            doc.add(linhaEmBranco);
-            doc.add(line);
-            doc.add(linhaEmBranco);
-            doc.add(data);
-            doc.add(tiposDeDados);
-            doc.add(formato);
-            doc.add(linhaEmBranco);
-            doc.add(line);
+                p.setAlignment(Element.ALIGN_CENTER);
+                data.setAlignment(Element.ALIGN_JUSTIFIED);
+                tiposDeDados.setAlignment(3);
+                formato.setAlignment(3);
 
-            PdfPTable table = new PdfPTable(6);
-            table.setWidthPercentage(85);
-            table.setWidths(new int[]{2, 2, 2, 2, 2, 2});
+                doc.add(p);
+                doc.add(linhaEmBranco);
+                doc.add(line);
+                doc.add(linhaEmBranco);
+                doc.add(data);
+                doc.add(tiposDeDados);
+                doc.add(formato);
+                doc.add(linhaEmBranco);
+                doc.add(line);
 
-            PdfPCell cellNomeProducao = new PdfPCell(new Paragraph("Produção"));
-            PdfPCell cellSacasProducao = new PdfPCell(new Paragraph("Sacas"));
-            PdfPCell cellDataVenda = new PdfPCell(new Paragraph("Data venda"));
-            PdfPCell cellMetodoDePagamentoVenda = new PdfPCell(new Paragraph("Metodo de pagamento"));
-            PdfPCell cellFormaDePagamento = new PdfPCell(new Paragraph("Forma de Pagamento"));
-            PdfPCell cellCodigoVenda = new PdfPCell(new Paragraph("Codigo"));
+                PdfPTable table = new PdfPTable(6);
+                table.setWidthPercentage(85);
+                table.setWidths(new int[]{2, 2, 2, 2, 2, 2});
 
-            cellNomeProducao.setBackgroundColor(BaseColor.LIGHT_GRAY);
-            cellSacasProducao.setBackgroundColor(BaseColor.LIGHT_GRAY);
-            cellDataVenda.setBackgroundColor(BaseColor.LIGHT_GRAY);
-            cellMetodoDePagamentoVenda.setBackgroundColor(BaseColor.LIGHT_GRAY);
-            cellFormaDePagamento.setBackgroundColor(BaseColor.LIGHT_GRAY);
-            cellCodigoVenda.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                PdfPCell cellNomeProducao = new PdfPCell(new Paragraph("Produção"));
+                PdfPCell cellSacasProducao = new PdfPCell(new Paragraph("Sacas"));
+                PdfPCell cellDataVenda = new PdfPCell(new Paragraph("Data venda"));
+                PdfPCell cellMetodoDePagamentoVenda = new PdfPCell(new Paragraph("Metodo de pagamento"));
+                PdfPCell cellFormaDePagamento = new PdfPCell(new Paragraph("Forma de Pagamento"));
+                PdfPCell cellCodigoVenda = new PdfPCell(new Paragraph("Codigo"));
 
-            cellNomeProducao.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cellSacasProducao.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cellDataVenda.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cellMetodoDePagamentoVenda.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cellFormaDePagamento.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cellCodigoVenda.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellNomeProducao.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                cellSacasProducao.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                cellDataVenda.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                cellMetodoDePagamentoVenda.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                cellFormaDePagamento.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                cellCodigoVenda.setBackgroundColor(BaseColor.LIGHT_GRAY);
 
-            table.addCell(cellNomeProducao);
-            table.addCell(cellSacasProducao);
-            table.addCell(cellDataVenda);
-            table.addCell(cellMetodoDePagamentoVenda);
-            table.addCell(cellFormaDePagamento);
-            table.addCell(cellCodigoVenda);
-
-            while (resultados.next()) {
-                vendaProducao = new VendaProducao();
-
-                vendaProducao.setNomeProducao(resultados.getString("nome_producao"));
-                vendaProducao.setQuantidadeDeSacasProducao(resultados.getInt("quantidade_de_sacas_producao"));
-                vendaProducao.setDataVenda(resultados.getDate("data_venda"));
-                vendaProducao.setMetodoDePagamento(resultados.getString("metodo_pagamento"));
-                vendaProducao.setFormaDePagamento(resultados.getString("forma_pagamento"));
-                vendaProducao.setIdVendaProducao(resultados.getInt("id_venda_producao"));
-
-                cellNomeProducao = new PdfPCell(new Paragraph(vendaProducao.getNomeProducao()));
-                cellSacasProducao = new PdfPCell(new Paragraph(String.valueOf(vendaProducao.getQuantidadeDeSacasProducao())));
-                cellDataVenda = new PdfPCell(new Paragraph(formatarData(vendaProducao.getDataVenda())));
-                cellMetodoDePagamentoVenda = new PdfPCell(new Paragraph(vendaProducao.getMetodoDePagamento()));
-                cellFormaDePagamento = new PdfPCell(new Paragraph(vendaProducao.getFormaDePagamento()));
-                cellCodigoVenda = new PdfPCell(new Paragraph(String.valueOf(vendaProducao.getIdVendaProducao())));
+                cellNomeProducao.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellSacasProducao.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellDataVenda.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellMetodoDePagamentoVenda.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellFormaDePagamento.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellCodigoVenda.setHorizontalAlignment(Element.ALIGN_CENTER);
 
                 table.addCell(cellNomeProducao);
                 table.addCell(cellSacasProducao);
@@ -299,17 +282,43 @@ public class ControleVendaProducao {
                 table.addCell(cellMetodoDePagamentoVenda);
                 table.addCell(cellFormaDePagamento);
                 table.addCell(cellCodigoVenda);
+
+                while (resultados.next()) {
+                    vendaProducao = new VendaProducao();
+
+                    vendaProducao.setNomeProducao(resultados.getString("nome_producao"));
+                    vendaProducao.setQuantidadeDeSacasProducao(resultados.getInt("quantidade_de_sacas_producao"));
+                    vendaProducao.setDataVenda(resultados.getDate("data_venda"));
+                    vendaProducao.setMetodoDePagamento(resultados.getString("metodo_pagamento"));
+                    vendaProducao.setFormaDePagamento(resultados.getString("forma_pagamento"));
+                    vendaProducao.setIdVendaProducao(resultados.getInt("id_venda_producao"));
+
+                    cellNomeProducao = new PdfPCell(new Paragraph(vendaProducao.getNomeProducao()));
+                    cellSacasProducao = new PdfPCell(new Paragraph(String.valueOf(vendaProducao.getQuantidadeDeSacasProducao())));
+                    cellDataVenda = new PdfPCell(new Paragraph(formatarData(vendaProducao.getDataVenda())));
+                    cellMetodoDePagamentoVenda = new PdfPCell(new Paragraph(vendaProducao.getMetodoDePagamento()));
+                    cellFormaDePagamento = new PdfPCell(new Paragraph(vendaProducao.getFormaDePagamento()));
+                    cellCodigoVenda = new PdfPCell(new Paragraph(String.valueOf(vendaProducao.getIdVendaProducao())));
+
+                    table.addCell(cellNomeProducao);
+                    table.addCell(cellSacasProducao);
+                    table.addCell(cellDataVenda);
+                    table.addCell(cellMetodoDePagamentoVenda);
+                    table.addCell(cellFormaDePagamento);
+                    table.addCell(cellCodigoVenda);
+                }
+
+                doc.add(new Paragraph(" "));
+                doc.add(table);
+                doc.close();
+
+                Desktop.getDesktop().open(new File(nomePDF));
+
+            } catch (DocumentException | FileNotFoundException | SQLException | NullPointerException d) {
+                d.getMessage();
             }
-
-            doc.add(new Paragraph(" "));
-            doc.add(table);
-            doc.close();
-
-            Desktop.getDesktop().open(new File(nomePDF));
-
-        } catch (DocumentException | FileNotFoundException | SQLException | NullPointerException d) {
-            d.getMessage();
         }
+
     }
 
     public void geraRelatorioDetalhadoDeVenda(int idVenda) throws SQLException, BadElementException, IOException {
@@ -329,126 +338,133 @@ public class ControleVendaProducao {
         resultados = ps.executeQuery();
 
         Document doc = new Document();
+        JFileChooser jFileChooser = new JFileChooser();
+        jFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        int result = jFileChooser.showSaveDialog(null);
 
-        String nomePDF = "C:\\Users\\Gustavo\\Desktop\\relatorio_detalhado_de_venda.pdf";
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File selectedDirectory = jFileChooser.getSelectedFile();
+            String nomePDF = selectedDirectory.getAbsolutePath() + File.separator + "relatorio_detalhado_de_venda.pdf";
 
-        Font fonteTitulo = new Font(Font.FontFamily.HELVETICA, 14, Font.BOLD);
-        Font fonteSubtitulo = new Font(Font.FontFamily.HELVETICA, 13, Font.BOLD);
-        Font fonteValor = new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD);
-        Font fonteTextoComun = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL);
+            Font fonteTitulo = new Font(Font.FontFamily.HELVETICA, 14, Font.BOLD);
+            Font fonteSubtitulo = new Font(Font.FontFamily.HELVETICA, 13, Font.BOLD);
+            Font fonteValor = new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD);
+            Font fonteTextoComun = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL);
 
-        Paragraph linhaEmBranco = new Paragraph(" ", fonteTextoComun);
+            Paragraph linhaEmBranco = new Paragraph(" ", fonteTextoComun);
 
-        try {
-            if (resultados.next()) {
-                VendaProducao vendaProducaoBuscada = new VendaProducao();
-                vendaProducaoBuscada.setDataProducao(resultados.getDate("data_producao"));
-                vendaProducaoBuscada.setDataVenda(resultados.getDate("data_venda"));
-                vendaProducaoBuscada.setCNPJOuCPF(resultados.getString("cnpj_ou_cpf"));
-                vendaProducaoBuscada.setQuantidadeDeSacasProducao(resultados.getInt("quantidade_de_sacas_producao"));
-                vendaProducaoBuscada.setNomeCliente(resultados.getString("nome_cliente"));
-                vendaProducaoBuscada.setNomeProducao(resultados.getString("nome_producao"));
-                vendaProducaoBuscada.setValorTotalVenda(resultados.getDouble("valor_total_venda"));
-                vendaProducaoBuscada.setMetodoDePagamento(resultados.getString("metodo_pagamento"));
-                vendaProducaoBuscada.setFormaDePagamento(resultados.getString("forma_pagamento"));
-                vendaProducaoBuscada.setQuantidadeDeParcelas(resultados.getInt("quantidade_parcelas"));
-                vendaProducaoBuscada.setIdVendaProducao(resultados.getInt("id_venda_producao"));
+            try {
+                if (resultados.next()) {
+                    VendaProducao vendaProducaoBuscada = new VendaProducao();
+                    vendaProducaoBuscada.setDataProducao(resultados.getDate("data_producao"));
+                    vendaProducaoBuscada.setDataVenda(resultados.getDate("data_venda"));
+                    vendaProducaoBuscada.setCNPJOuCPF(resultados.getString("cnpj_ou_cpf"));
+                    vendaProducaoBuscada.setQuantidadeDeSacasProducao(resultados.getInt("quantidade_de_sacas_producao"));
+                    vendaProducaoBuscada.setNomeCliente(resultados.getString("nome_cliente"));
+                    vendaProducaoBuscada.setNomeProducao(resultados.getString("nome_producao"));
+                    vendaProducaoBuscada.setValorTotalVenda(resultados.getDouble("valor_total_venda"));
+                    vendaProducaoBuscada.setMetodoDePagamento(resultados.getString("metodo_pagamento"));
+                    vendaProducaoBuscada.setFormaDePagamento(resultados.getString("forma_pagamento"));
+                    vendaProducaoBuscada.setQuantidadeDeParcelas(resultados.getInt("quantidade_parcelas"));
+                    vendaProducaoBuscada.setIdVendaProducao(resultados.getInt("id_venda_producao"));
 
-                String imagePath = "/logo_ac_farm_system.png";
-                Image imagem = Image.getInstance(getClass().getResource(imagePath));
+                    String imagePath = "/logo_ac_farm_system.png";
+                    Image imagem = Image.getInstance(getClass().getResource(imagePath));
 
-                imagem.scaleToFit(55, 50);
+                    imagem.scaleToFit(55, 50);
 
-                LineSeparator line = new LineSeparator();
-                line.setLineWidth(0.5f);
-                line.setPercentage(85f);
+                    LineSeparator line = new LineSeparator();
+                    line.setLineWidth(0.5f);
+                    line.setPercentage(85f);
 
-                PdfWriter.getInstance(doc, new FileOutputStream(nomePDF));
-                doc.open();
+                    PdfWriter.getInstance(doc, new FileOutputStream(nomePDF));
+                    doc.open();
 
-                imagem.setAbsolutePosition(76, imagem.getAbsoluteX());
-                doc.add(imagem);
+                    imagem.setAbsolutePosition(76, imagem.getAbsoluteX());
+                    doc.add(imagem);
 
-                String codigoDaVendaEncontrado = Integer.toString(vendaProducaoBuscada.getIdVendaProducao());
-                String dataProducaoEncontrado = formatarData(vendaProducaoBuscada.getDataProducao());
-                String dataVendaEncontrado = formatarData(vendaProducaoBuscada.getDataVenda());
-                String cpfOUcnpjEncontrado = vendaProducaoBuscada.getCNPJOuCPF();
-                String quantidadeDeSacasEncontrado = Integer.toString(vendaProducaoBuscada.getQuantidadeDeSacasProducao());
-                String nomeClienteEncontrado = vendaProducaoBuscada.getNomeCliente();
-                String nomeProducaoEncontrado = vendaProducaoBuscada.getNomeProducao();
-                String valorVendaEncontrado = converterValorParaReal(vendaProducaoBuscada.getValorTotalVenda());
-                String metodoDePagamentoEncontrado = vendaProducaoBuscada.getMetodoDePagamento();
-                String formaDePagamentoEncontrado = vendaProducaoBuscada.getFormaDePagamento();
-                String quantidadeDeParcelasEncontrado = Integer.toString(vendaProducaoBuscada.getQuantidadeDeParcelas());
+                    String codigoDaVendaEncontrado = Integer.toString(vendaProducaoBuscada.getIdVendaProducao());
+                    String dataProducaoEncontrado = formatarData(vendaProducaoBuscada.getDataProducao());
+                    String dataVendaEncontrado = formatarData(vendaProducaoBuscada.getDataVenda());
+                    String cpfOUcnpjEncontrado = vendaProducaoBuscada.getCNPJOuCPF();
+                    String quantidadeDeSacasEncontrado = Integer.toString(vendaProducaoBuscada.getQuantidadeDeSacasProducao());
+                    String nomeClienteEncontrado = vendaProducaoBuscada.getNomeCliente();
+                    String nomeProducaoEncontrado = vendaProducaoBuscada.getNomeProducao();
+                    String valorVendaEncontrado = converterValorParaReal(vendaProducaoBuscada.getValorTotalVenda());
+                    String metodoDePagamentoEncontrado = vendaProducaoBuscada.getMetodoDePagamento();
+                    String formaDePagamentoEncontrado = vendaProducaoBuscada.getFormaDePagamento();
+                    String quantidadeDeParcelasEncontrado = Integer.toString(vendaProducaoBuscada.getQuantidadeDeParcelas());
 
-                Paragraph p = new Paragraph("Dados de venda", fonteTitulo);
+                    Paragraph p = new Paragraph("Dados de venda", fonteTitulo);
 
-                Paragraph codigoVendaRelatorio = new Paragraph("            Codigo venda: " + codigoDaVendaEncontrado, fonteTextoComun);
-                Paragraph data = new Paragraph("            Data de geração: " + dataDeHoje, fonteTextoComun);
-                Paragraph tipoDeDados = new Paragraph("            Tipo de Informações: Venda", fonteTextoComun);
-                Paragraph formato = new Paragraph("            Formato: Detalhado", fonteTextoComun);
+                    Paragraph codigoVendaRelatorio = new Paragraph("            Codigo venda: " + codigoDaVendaEncontrado, fonteTextoComun);
+                    Paragraph data = new Paragraph("            Data de geração: " + dataDeHoje, fonteTextoComun);
+                    Paragraph tipoDeDados = new Paragraph("            Tipo de Informações: Venda", fonteTextoComun);
+                    Paragraph formato = new Paragraph("            Formato: Detalhado", fonteTextoComun);
 
-                Paragraph dadosProducaoSubtitulo = new Paragraph("           Dados da Produção", fonteSubtitulo);
-                Paragraph dadosClienteSubtitulo = new Paragraph("           Dados do Cliente", fonteSubtitulo);
-                Paragraph dadosVendaSubtitulo = new Paragraph("           Dados da Venda", fonteSubtitulo);
+                    Paragraph dadosProducaoSubtitulo = new Paragraph("           Dados da Produção", fonteSubtitulo);
+                    Paragraph dadosClienteSubtitulo = new Paragraph("           Dados do Cliente", fonteSubtitulo);
+                    Paragraph dadosVendaSubtitulo = new Paragraph("           Dados da Venda", fonteSubtitulo);
 
-                Paragraph dataProducaoParagrafo = new Paragraph("            Data da produção: " + dataProducaoEncontrado, fonteTextoComun);
-                Paragraph dataVendaParagrafo = new Paragraph("            Data da venda: " + dataVendaEncontrado, fonteTextoComun);
-                Paragraph cpfOUcnpjParagrafo = new Paragraph("            CPF / CNPJ cliente: " + cpfOUcnpjEncontrado, fonteTextoComun);
-                Paragraph quantidadeDeSacasParagrafo = new Paragraph("            Quantidade de sacas: " + quantidadeDeSacasEncontrado, fonteTextoComun);
-                Paragraph nomeClienteParagrafo = new Paragraph("            Cliente: " + nomeClienteEncontrado, fonteTextoComun);
-                Paragraph nomeProducaoParagrafo = new Paragraph("            Nome da producao: " + nomeProducaoEncontrado, fonteTextoComun);
-                Paragraph valorVendaParagrafo = new Paragraph("            Valor total: R$" + valorVendaEncontrado, fonteValor);
-                Paragraph metodoDePagamentoParagrafo = new Paragraph("            Método de pagamento: " + metodoDePagamentoEncontrado, fonteTextoComun);
-                Paragraph formaDePagamentoParagrafo = new Paragraph("            Forma de pagamento: " + formaDePagamentoEncontrado, fonteTextoComun);
-                Paragraph quantidadeDeParcelasParagrafo = new Paragraph("            Quantidade de parcelas: " + quantidadeDeParcelasEncontrado, fonteTextoComun);
+                    Paragraph dataProducaoParagrafo = new Paragraph("            Data da produção: " + dataProducaoEncontrado, fonteTextoComun);
+                    Paragraph dataVendaParagrafo = new Paragraph("            Data da venda: " + dataVendaEncontrado, fonteTextoComun);
+                    Paragraph cpfOUcnpjParagrafo = new Paragraph("            CPF / CNPJ cliente: " + cpfOUcnpjEncontrado, fonteTextoComun);
+                    Paragraph quantidadeDeSacasParagrafo = new Paragraph("            Quantidade de sacas: " + quantidadeDeSacasEncontrado, fonteTextoComun);
+                    Paragraph nomeClienteParagrafo = new Paragraph("            Cliente: " + nomeClienteEncontrado, fonteTextoComun);
+                    Paragraph nomeProducaoParagrafo = new Paragraph("            Nome da producao: " + nomeProducaoEncontrado, fonteTextoComun);
+                    Paragraph valorVendaParagrafo = new Paragraph("            Valor total: R$" + valorVendaEncontrado, fonteValor);
+                    Paragraph metodoDePagamentoParagrafo = new Paragraph("            Método de pagamento: " + metodoDePagamentoEncontrado, fonteTextoComun);
+                    Paragraph formaDePagamentoParagrafo = new Paragraph("            Forma de pagamento: " + formaDePagamentoEncontrado, fonteTextoComun);
+                    Paragraph quantidadeDeParcelasParagrafo = new Paragraph("            Quantidade de parcelas: " + quantidadeDeParcelasEncontrado, fonteTextoComun);
 
-                p.setAlignment(Element.ALIGN_CENTER);
-                data.setAlignment(Element.ALIGN_JUSTIFIED);
-                tipoDeDados.setAlignment(3);
-                formato.setAlignment(3);
+                    p.setAlignment(Element.ALIGN_CENTER);
+                    data.setAlignment(Element.ALIGN_JUSTIFIED);
+                    tipoDeDados.setAlignment(3);
+                    formato.setAlignment(3);
 
-                doc.add(p);
-                doc.add(linhaEmBranco);
-                doc.add(line);
-                doc.add(linhaEmBranco);
-                doc.add(codigoVendaRelatorio);
-                doc.add(data);
-                doc.add(tipoDeDados);
-                doc.add(formato);
-                doc.add(linhaEmBranco);
-                doc.add(line);
-                doc.add(linhaEmBranco);
-                doc.add(dadosProducaoSubtitulo);
-                doc.add(linhaEmBranco);
-                doc.add(nomeProducaoParagrafo);
-                doc.add(quantidadeDeSacasParagrafo);
-                doc.add(dataProducaoParagrafo);
-                doc.add(linhaEmBranco);
-                doc.add(dadosClienteSubtitulo);
-                doc.add(linhaEmBranco);
-                doc.add(nomeClienteParagrafo);
-                doc.add(cpfOUcnpjParagrafo);
-                doc.add(linhaEmBranco);
-                doc.add(dadosVendaSubtitulo);
-                doc.add(linhaEmBranco);
-                doc.add(dataVendaParagrafo);
-                doc.add(metodoDePagamentoParagrafo);
-                doc.add(formaDePagamentoParagrafo);
-                doc.add(quantidadeDeParcelasParagrafo);
-                doc.add(linhaEmBranco);
-                doc.add(valorVendaParagrafo);
-                doc.add(linhaEmBranco);
+                    doc.add(p);
+                    doc.add(linhaEmBranco);
+                    doc.add(line);
+                    doc.add(linhaEmBranco);
+                    doc.add(codigoVendaRelatorio);
+                    doc.add(data);
+                    doc.add(tipoDeDados);
+                    doc.add(formato);
+                    doc.add(linhaEmBranco);
+                    doc.add(line);
+                    doc.add(linhaEmBranco);
+                    doc.add(dadosProducaoSubtitulo);
+                    doc.add(linhaEmBranco);
+                    doc.add(nomeProducaoParagrafo);
+                    doc.add(quantidadeDeSacasParagrafo);
+                    doc.add(dataProducaoParagrafo);
+                    doc.add(linhaEmBranco);
+                    doc.add(dadosClienteSubtitulo);
+                    doc.add(linhaEmBranco);
+                    doc.add(nomeClienteParagrafo);
+                    doc.add(cpfOUcnpjParagrafo);
+                    doc.add(linhaEmBranco);
+                    doc.add(dadosVendaSubtitulo);
+                    doc.add(linhaEmBranco);
+                    doc.add(dataVendaParagrafo);
+                    doc.add(metodoDePagamentoParagrafo);
+                    doc.add(formaDePagamentoParagrafo);
+                    doc.add(quantidadeDeParcelasParagrafo);
+                    doc.add(linhaEmBranco);
+                    doc.add(valorVendaParagrafo);
+                    doc.add(linhaEmBranco);
 
-                doc.add(new Paragraph(""));
-                doc.close();
+                    doc.add(new Paragraph(""));
+                    doc.close();
 
-                Desktop.getDesktop().open(new File(nomePDF));
+                    Desktop.getDesktop().open(new File(nomePDF));
+                }
+
+            } catch (DocumentException | FileNotFoundException | SQLException | NullPointerException d) {
+                d.getMessage();
             }
-
-        } catch (DocumentException | FileNotFoundException | SQLException | NullPointerException d) {
-            d.getMessage();
         }
+
     }
 
     public String converterValorParaReal(Double valorReal) {

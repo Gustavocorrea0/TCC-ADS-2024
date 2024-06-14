@@ -10,7 +10,7 @@ import usuario.Usuario;
 
 public class TelaDeLogin extends javax.swing.JFrame {
 
-    private ControleUsuario controleUsuario = new ControleUsuario();
+    private ControleUsuarioLogin controleUsuario = new ControleUsuarioLogin();
     private Usuario usuarioEncontrado = new Usuario();
     private String nome;
     private String senha;

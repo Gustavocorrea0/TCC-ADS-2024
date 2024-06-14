@@ -1,11 +1,14 @@
 package VendaDeProducao;
 
 import acfarmsystemv2.telaDeInicio.TelaDeInicio;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.table.DefaultTableModel;
 
 public class TelaDeInicioVendasProducao extends javax.swing.JFrame {
 
-    public TelaDeInicioVendasProducao() {
+    public TelaDeInicioVendasProducao() throws ParseException {
         initComponents();
         readJtable();
     }
@@ -77,14 +80,14 @@ public class TelaDeInicioVendasProducao extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Código Da Venda", "Nome Da Produção", "Cliente", "Forma de Pagamento"
+                "Data de Venda", "Código Da Venda", "Nome Da Produção", "Cliente", "Forma de Pagamento"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -106,6 +109,7 @@ public class TelaDeInicioVendasProducao extends javax.swing.JFrame {
             jTableHistoricoDeVendas.getColumnModel().getColumn(1).setResizable(false);
             jTableHistoricoDeVendas.getColumnModel().getColumn(2).setResizable(false);
             jTableHistoricoDeVendas.getColumnModel().getColumn(3).setResizable(false);
+            jTableHistoricoDeVendas.getColumnModel().getColumn(4).setResizable(false);
         }
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 710, 370));
@@ -120,7 +124,7 @@ public class TelaDeInicioVendasProducao extends javax.swing.JFrame {
 
     private void jButtonRealizarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRealizarVendaActionPerformed
         this.dispose();
-        new TelaDeClienteEProducoes().setVisible(true);
+        new TelaDeVendaProducao().setVisible(true);
     }//GEN-LAST:event_jButtonRealizarVendaActionPerformed
 
     private void jButtonVerificarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerificarVendaActionPerformed
@@ -138,14 +142,18 @@ public class TelaDeInicioVendasProducao extends javax.swing.JFrame {
         new TelaDeInicio().setVisible(true);
     }//GEN-LAST:event_jButtonVoltarAoInicioActionPerformed
 
-     public void readJtable() {
+    public void readJtable() throws ParseException {
         DefaultTableModel modelo = (DefaultTableModel) jTableHistoricoDeVendas.getModel();
         ControleVendaProducao controleVendaProducao = new ControleVendaProducao();
 
-        for (VendaProducao p : controleVendaProducao.buscarTodasAsVenda()) {
-            modelo.addRow(new Object[]{p.getIdVendaProducao(), p.getNomeProducao(), p.getNomeCliente(), p.getFormaDePagamento()});
-        }
+        SimpleDateFormat formatoSQL = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat formatoBrasileiro = new SimpleDateFormat("dd/MM/yyyy");
         
+        for (VendaProducao p : controleVendaProducao.buscarTodasAsVenda()) {
+            Date dataVenda = formatoSQL.parse(p.getDataVenda().toString());
+            String dataVendaFormatado =formatoBrasileiro.format(dataVenda);
+            modelo.addRow(new Object[]{dataVendaFormatado, p.getIdVendaProducao(), p.getNomeProducao(), p.getNomeCliente(), p.getFormaDePagamento()});
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

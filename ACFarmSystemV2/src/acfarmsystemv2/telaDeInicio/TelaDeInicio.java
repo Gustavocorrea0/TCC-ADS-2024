@@ -8,6 +8,9 @@ import Veiculo.TelaDeEscolhaTipoDeVeiculo;
 import VendaDeProducao.TelaDeInicioVendasProducao;
 import cliente.TelaDeInicioCliente;
 import fornecedor.TelaDeInicioFornecedor;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import planta.TelaDeInicioPlanta;
 import praga.TelaDeInicioPraga;
 import producao.TelaDeInicioProducao;
@@ -273,7 +276,11 @@ public class TelaDeInicio extends javax.swing.JFrame {
 
     private void jButtonAcessarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAcessarVendaActionPerformed
         this.dispose();
-        new TelaDeInicioVendasProducao().setVisible(true);
+        try {
+            new TelaDeInicioVendasProducao().setVisible(true);
+        } catch (ParseException ex) {
+            Logger.getLogger(TelaDeInicio.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButtonAcessarVendaActionPerformed
 
     private void jButtonAcessarEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAcessarEstoqueActionPerformed

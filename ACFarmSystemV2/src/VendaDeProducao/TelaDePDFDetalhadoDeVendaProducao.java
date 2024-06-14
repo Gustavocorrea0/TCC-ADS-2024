@@ -73,7 +73,7 @@ public class TelaDePDFDetalhadoDeVendaProducao extends javax.swing.JFrame {
                 jButtonBuscarFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 98, 262, 44));
+        getContentPane().add(jButtonBuscarFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(348, 107, 281, 45));
 
         jTextFieldProducao.setEditable(false);
         jTextFieldProducao.setBackground(new java.awt.Color(255, 255, 255));
@@ -86,7 +86,7 @@ public class TelaDePDFDetalhadoDeVendaProducao extends javax.swing.JFrame {
                 jTextFieldProducaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 320, 29));
+        getContentPane().add(jTextFieldProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 213, 319, 29));
 
         jTextFieldNumeroDeSacas.setEditable(false);
         jTextFieldNumeroDeSacas.setBackground(new java.awt.Color(255, 255, 255));
@@ -99,7 +99,7 @@ public class TelaDePDFDetalhadoDeVendaProducao extends javax.swing.JFrame {
                 jTextFieldNumeroDeSacasActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNumeroDeSacas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 277, 320, 29));
+        getContentPane().add(jTextFieldNumeroDeSacas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 291, 319, 29));
 
         jTextFieldDataDaProducao.setEditable(false);
         jTextFieldDataDaProducao.setBackground(new java.awt.Color(255, 255, 255));
@@ -112,7 +112,7 @@ public class TelaDePDFDetalhadoDeVendaProducao extends javax.swing.JFrame {
                 jTextFieldDataDaProducaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldDataDaProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 357, 235, 29));
+        getContentPane().add(jTextFieldDataDaProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 235, 29));
 
         jTextFieldCliente.setEditable(false);
         jTextFieldCliente.setBackground(new java.awt.Color(255, 255, 255));
@@ -125,7 +125,7 @@ public class TelaDePDFDetalhadoDeVendaProducao extends javax.swing.JFrame {
                 jTextFieldClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 442, 319, 29));
+        getContentPane().add(jTextFieldCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 455, 319, 29));
 
         jTextFieldCNPJOuCPF.setEditable(false);
         jTextFieldCNPJOuCPF.setBackground(new java.awt.Color(255, 255, 255));
@@ -138,7 +138,7 @@ public class TelaDePDFDetalhadoDeVendaProducao extends javax.swing.JFrame {
                 jTextFieldCNPJOuCPFActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCNPJOuCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 527, 325, 29));
+        getContentPane().add(jTextFieldCNPJOuCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 325, 29));
 
         jTextFieldMetodoDePagamento.setEditable(false);
         jTextFieldMetodoDePagamento.setBackground(new java.awt.Color(255, 255, 255));
@@ -151,7 +151,7 @@ public class TelaDePDFDetalhadoDeVendaProducao extends javax.swing.JFrame {
                 jTextFieldMetodoDePagamentoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldMetodoDePagamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 277, 220, 29));
+        getContentPane().add(jTextFieldMetodoDePagamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 291, 220, 29));
 
         jTextFieldFormaDePagamento.setEditable(false);
         jTextFieldFormaDePagamento.setBackground(new java.awt.Color(255, 255, 255));
@@ -164,7 +164,7 @@ public class TelaDePDFDetalhadoDeVendaProducao extends javax.swing.JFrame {
                 jTextFieldFormaDePagamentoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldFormaDePagamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 200, 319, 30));
+        getContentPane().add(jTextFieldFormaDePagamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 212, 319, 30));
 
         jTextFieldQuantidadeDeVezes.setEditable(false);
         jTextFieldQuantidadeDeVezes.setBackground(new java.awt.Color(255, 255, 255));
@@ -177,7 +177,7 @@ public class TelaDePDFDetalhadoDeVendaProducao extends javax.swing.JFrame {
                 jTextFieldQuantidadeDeVezesActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldQuantidadeDeVezes, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 357, 220, 29));
+        getContentPane().add(jTextFieldQuantidadeDeVezes, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 371, 220, 29));
 
         jTextFieldDataVenda.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldDataVenda.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -189,7 +189,7 @@ public class TelaDePDFDetalhadoDeVendaProducao extends javax.swing.JFrame {
                 jTextFieldDataVendaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldDataVenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 441, 220, 30));
+        getContentPane().add(jTextFieldDataVenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 454, 220, 30));
 
         jTextFieldValorTotal.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldValorTotal.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -201,7 +201,7 @@ public class TelaDePDFDetalhadoDeVendaProducao extends javax.swing.JFrame {
                 jTextFieldValorTotalActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldValorTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 526, 325, 30));
+        getContentPane().add(jTextFieldValorTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 539, 325, 30));
 
         jTextFieldCodigoBuscado.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCodigoBuscado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -213,7 +213,7 @@ public class TelaDePDFDetalhadoDeVendaProducao extends javax.swing.JFrame {
                 jTextFieldCodigoBuscadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCodigoBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 105, 272, 30));
+        getContentPane().add(jTextFieldCodigoBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 114, 272, 30));
 
         jButtonGerarPDF.setBorder(null);
         jButtonGerarPDF.setContentAreaFilled(false);
@@ -223,7 +223,7 @@ public class TelaDePDFDetalhadoDeVendaProducao extends javax.swing.JFrame {
                 jButtonGerarPDFActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonGerarPDF, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 584, 280, 34));
+        getContentPane().add(jButtonGerarPDF, new org.netbeans.lib.awtextra.AbsoluteConstraints(608, 593, 280, 35));
 
         jLabelIMGTelaInicialFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasVendaProducao/img_tela_de_geracao_de_pdf_detalhado.png"))); // NOI18N
         getContentPane().add(jLabelIMGTelaInicialFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 643));
@@ -234,7 +234,11 @@ public class TelaDePDFDetalhadoDeVendaProducao extends javax.swing.JFrame {
 
     private void jButtonVoltarAoInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarAoInicioActionPerformed
         this.dispose();
-        new TelaDeInicioVendasProducao().setVisible(true);
+        try {
+            new TelaDeInicioVendasProducao().setVisible(true);
+        } catch (ParseException ex) {
+            Logger.getLogger(TelaDePDFDetalhadoDeVendaProducao.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButtonVoltarAoInicioActionPerformed
 
     private void jTextFieldNumeroDeSacasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNumeroDeSacasActionPerformed
@@ -280,21 +284,21 @@ public class TelaDePDFDetalhadoDeVendaProducao extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonBuscarFornecedorActionPerformed
 
     private void jTextFieldMetodoDePagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldMetodoDePagamentoActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jTextFieldMetodoDePagamentoActionPerformed
 
     private void jTextFieldDataVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDataVendaActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_jTextFieldDataVendaActionPerformed
 
     private void jTextFieldCodigoBuscadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCodigoBuscadoActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jTextFieldCodigoBuscadoActionPerformed
 
     private void jButtonGerarPDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGerarPDFActionPerformed
         try {
-            JOptionPane.showMessageDialog(this, "Relatorio Gerado");
             controleVendaProducao.geraRelatorioDetalhadoDeVenda(codigoBuscado);
+            JOptionPane.showMessageDialog(this, "Relatorio Gerado");
             this.dispose();
             new TelaDePDFDetalhadoDeVendaProducao().setVisible(true);
         } catch (SQLException ex) {
@@ -379,8 +383,6 @@ public class TelaDePDFDetalhadoDeVendaProducao extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscarFornecedor;
-    private javax.swing.JButton jButtonConfirmarAdicao;
-    private javax.swing.JButton jButtonConfirmarAdicao1;
     private javax.swing.JButton jButtonGerarPDF;
     private javax.swing.JButton jButtonVoltarAoInicio;
     private javax.swing.JLabel jLabelIMGTelaInicialFornecedor;

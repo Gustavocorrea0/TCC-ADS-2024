@@ -71,7 +71,7 @@ public class TelaDeConsultaVendaProducao extends javax.swing.JFrame {
                 jButtonBuscarFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 107, 262, 44));
+        getContentPane().add(jButtonBuscarFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 107, 282, 44));
 
         jTextFieldProducao.setEditable(false);
         jTextFieldProducao.setBackground(new java.awt.Color(255, 255, 255));
@@ -84,7 +84,7 @@ public class TelaDeConsultaVendaProducao extends javax.swing.JFrame {
                 jTextFieldProducaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 225, 319, 29));
+        getContentPane().add(jTextFieldProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 212, 319, 29));
 
         jTextFieldNumeroDeSacas.setEditable(false);
         jTextFieldNumeroDeSacas.setBackground(new java.awt.Color(255, 255, 255));
@@ -97,7 +97,7 @@ public class TelaDeConsultaVendaProducao extends javax.swing.JFrame {
                 jTextFieldNumeroDeSacasActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNumeroDeSacas, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 303, 320, 29));
+        getContentPane().add(jTextFieldNumeroDeSacas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 319, 29));
 
         jTextFieldDataDaProducao.setEditable(false);
         jTextFieldDataDaProducao.setBackground(new java.awt.Color(255, 255, 255));
@@ -110,7 +110,7 @@ public class TelaDeConsultaVendaProducao extends javax.swing.JFrame {
                 jTextFieldDataDaProducaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldDataDaProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 383, 235, 29));
+        getContentPane().add(jTextFieldDataDaProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 235, 29));
 
         jTextFieldCliente.setEditable(false);
         jTextFieldCliente.setBackground(new java.awt.Color(255, 255, 255));
@@ -123,7 +123,7 @@ public class TelaDeConsultaVendaProducao extends javax.swing.JFrame {
                 jTextFieldClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 468, 319, 29));
+        getContentPane().add(jTextFieldCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 454, 319, 29));
 
         jTextFieldCNPJOuCPF.setEditable(false);
         jTextFieldCNPJOuCPF.setBackground(new java.awt.Color(255, 255, 255));
@@ -136,7 +136,7 @@ public class TelaDeConsultaVendaProducao extends javax.swing.JFrame {
                 jTextFieldCNPJOuCPFActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCNPJOuCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 553, 325, 29));
+        getContentPane().add(jTextFieldCNPJOuCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 539, 325, 29));
 
         jTextFieldMetodoDePagamento.setEditable(false);
         jTextFieldMetodoDePagamento.setBackground(new java.awt.Color(255, 255, 255));
@@ -149,7 +149,7 @@ public class TelaDeConsultaVendaProducao extends javax.swing.JFrame {
                 jTextFieldMetodoDePagamentoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldMetodoDePagamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 303, 220, 29));
+        getContentPane().add(jTextFieldMetodoDePagamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, 220, 29));
 
         jTextFieldFormaDePagamento.setEditable(false);
         jTextFieldFormaDePagamento.setBackground(new java.awt.Color(255, 255, 255));
@@ -162,7 +162,7 @@ public class TelaDeConsultaVendaProducao extends javax.swing.JFrame {
                 jTextFieldFormaDePagamentoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldFormaDePagamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 225, 319, 30));
+        getContentPane().add(jTextFieldFormaDePagamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 212, 319, 30));
 
         jTextFieldQuantidadeDeVezes.setEditable(false);
         jTextFieldQuantidadeDeVezes.setBackground(new java.awt.Color(255, 255, 255));
@@ -175,7 +175,7 @@ public class TelaDeConsultaVendaProducao extends javax.swing.JFrame {
                 jTextFieldQuantidadeDeVezesActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldQuantidadeDeVezes, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 383, 220, 29));
+        getContentPane().add(jTextFieldQuantidadeDeVezes, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 370, 220, 29));
 
         jTextFieldDataVenda.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldDataVenda.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -187,7 +187,7 @@ public class TelaDeConsultaVendaProducao extends javax.swing.JFrame {
                 jTextFieldDataVendaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldDataVenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 467, 220, 30));
+        getContentPane().add(jTextFieldDataVenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 455, 220, 30));
 
         jTextFieldValorTotal.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldValorTotal.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -199,7 +199,7 @@ public class TelaDeConsultaVendaProducao extends javax.swing.JFrame {
                 jTextFieldValorTotalActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldValorTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 552, 325, 30));
+        getContentPane().add(jTextFieldValorTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 540, 325, 30));
 
         jTextFieldCodigoBuscado.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCodigoBuscado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -211,7 +211,7 @@ public class TelaDeConsultaVendaProducao extends javax.swing.JFrame {
                 jTextFieldCodigoBuscadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCodigoBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 114, 272, 30));
+        getContentPane().add(jTextFieldCodigoBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 114, 272, 29));
 
         jLabelIMGTelaInicialFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasVendaProducao/img_tela_de_consulta_vendas.png"))); // NOI18N
         getContentPane().add(jLabelIMGTelaInicialFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 643));
@@ -222,7 +222,11 @@ public class TelaDeConsultaVendaProducao extends javax.swing.JFrame {
 
     private void jButtonVoltarAoInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarAoInicioActionPerformed
         this.dispose();
-        new TelaDeInicioVendasProducao().setVisible(true);
+        try {
+            new TelaDeInicioVendasProducao().setVisible(true);
+        } catch (ParseException ex) {
+            Logger.getLogger(TelaDeConsultaVendaProducao.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButtonVoltarAoInicioActionPerformed
 
     private void jTextFieldNumeroDeSacasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNumeroDeSacasActionPerformed

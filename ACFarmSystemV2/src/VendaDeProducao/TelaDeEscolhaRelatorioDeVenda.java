@@ -49,7 +49,7 @@ public class TelaDeEscolhaRelatorioDeVenda extends javax.swing.JFrame {
                 jButtonGerarRelatorioDetalhadoDeFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonGerarRelatorioDetalhadoDeFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 554, 153, 35));
+        getContentPane().add(jButtonGerarRelatorioDetalhadoDeFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 553, 153, 35));
 
         jButtonGerarRelatorioGeralDeFornecedor.setBorder(null);
         jButtonGerarRelatorioGeralDeFornecedor.setBorderPainted(false);

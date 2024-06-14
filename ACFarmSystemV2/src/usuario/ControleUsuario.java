@@ -14,6 +14,8 @@ public class ControleUsuario {
     public ResultSet resultados;
     public String msg; // Armazena mensagens de retorno
     public String sql; // Armazena a query
+    private int linhasAfetadas;
+    
     public Usuario usuario; //Objeto da classe a ser manipulada
 
     // Constantes que representam as operações
@@ -268,4 +270,6 @@ public class ControleUsuario {
 
         return null;
     }
+    
+    
 }
