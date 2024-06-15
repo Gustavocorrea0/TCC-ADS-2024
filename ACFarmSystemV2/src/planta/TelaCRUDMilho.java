@@ -1,6 +1,7 @@
 package planta;
 
 import javax.swing.table.DefaultTableModel;
+import planta.CRUDMilho.TelaDeAdicaoMilho;
 import planta.CRUDMilho.TelaDeConsultaMilho;
 import planta.CRUDMilho.TelaDeMovimentacaoMilho;
 import planta.CRUDMilho.TelaDeRemocaoMilho;
@@ -18,9 +19,9 @@ public class TelaCRUDMilho extends javax.swing.JFrame {
 
         jButtonSairDaTelaInicioPlanta = new javax.swing.JButton();
         jButtonAdicionarMilho = new javax.swing.JButton();
-        jButtonVerificarMilho = new javax.swing.JButton();
         jButtonMovimentacaoMilho = new javax.swing.JButton();
         jButtonRemoverMilho = new javax.swing.JButton();
+        jButtonVerificarMilho = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableMilho = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
@@ -48,7 +49,29 @@ public class TelaCRUDMilho extends javax.swing.JFrame {
                 jButtonAdicionarMilhoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAdicionarMilho, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 113, 260, 45));
+        getContentPane().add(jButtonAdicionarMilho, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 126, 80, 65));
+
+        jButtonMovimentacaoMilho.setBorder(null);
+        jButtonMovimentacaoMilho.setBorderPainted(false);
+        jButtonMovimentacaoMilho.setContentAreaFilled(false);
+        jButtonMovimentacaoMilho.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonMovimentacaoMilho.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMovimentacaoMilhoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonMovimentacaoMilho, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 250, 110, 63));
+
+        jButtonRemoverMilho.setBorder(null);
+        jButtonRemoverMilho.setBorderPainted(false);
+        jButtonRemoverMilho.setContentAreaFilled(false);
+        jButtonRemoverMilho.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonRemoverMilho.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRemoverMilhoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonRemoverMilho, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 70, 70));
 
         jButtonVerificarMilho.setBorder(null);
         jButtonVerificarMilho.setBorderPainted(false);
@@ -60,29 +83,7 @@ public class TelaCRUDMilho extends javax.swing.JFrame {
                 jButtonVerificarMilhoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonVerificarMilho, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 173, 260, 44));
-
-        jButtonMovimentacaoMilho.setBorder(null);
-        jButtonMovimentacaoMilho.setBorderPainted(false);
-        jButtonMovimentacaoMilho.setContentAreaFilled(false);
-        jButtonMovimentacaoMilho.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonMovimentacaoMilho.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonMovimentacaoMilhoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonMovimentacaoMilho, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 113, 260, 44));
-
-        jButtonRemoverMilho.setBorder(null);
-        jButtonRemoverMilho.setBorderPainted(false);
-        jButtonRemoverMilho.setContentAreaFilled(false);
-        jButtonRemoverMilho.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonRemoverMilho.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonRemoverMilhoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonRemoverMilho, new org.netbeans.lib.awtextra.AbsoluteConstraints(597, 175, 262, 43));
+        getContentPane().add(jButtonVerificarMilho, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 494, 70, 70));
 
         jTableMilho.setBackground(new java.awt.Color(15, 42, 61));
         jTableMilho.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -92,14 +93,14 @@ public class TelaCRUDMilho extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Codigo Milho", "Fornecedor", "Altura da Planta"
+                "Codigo Milho", "Fornecedor", "Altura da Planta", "Propriedade"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -117,9 +118,10 @@ public class TelaCRUDMilho extends javax.swing.JFrame {
         jTableMilho.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(jTableMilho);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 830, 300));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 680, 340));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasPlanta/img_escolha_CRUD_milho.png"))); // NOI18N
+        jLabel1.setToolTipText("");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -133,7 +135,7 @@ public class TelaCRUDMilho extends javax.swing.JFrame {
 
     private void jButtonAdicionarMilhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdicionarMilhoActionPerformed
         this.dispose();
-        new TelaVizualizacaoPropriedadeEFornecedorMilho().setVisible(true);
+        new TelaDeAdicaoMilho().setVisible(true);
     }//GEN-LAST:event_jButtonAdicionarMilhoActionPerformed
 
     private void jButtonVerificarMilhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerificarMilhoActionPerformed
@@ -156,7 +158,7 @@ public class TelaCRUDMilho extends javax.swing.JFrame {
         ControlePlanta controlePlanta = new ControlePlanta();
 
         for (Milho m : controlePlanta.readMilho()) {
-            modelo.addRow(new Object[]{m.getIdMilho(), m.getNomeFornecedor(), m.getAlturaAtualDaPlanta()});
+            modelo.addRow(new Object[]{m.getIdMilho(), m.getNomeFornecedor(), m.getAlturaAtualDaPlanta(), m.getNomePropriedade()});
         }
     }
 

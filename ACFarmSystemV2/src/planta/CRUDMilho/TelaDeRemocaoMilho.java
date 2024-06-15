@@ -58,7 +58,7 @@ public class TelaDeRemocaoMilho extends javax.swing.JFrame {
                 jTextFieldFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 252, 270, 29));
+        getContentPane().add(jTextFieldFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 251, 272, 29));
 
         jTextFieldCicloAproximadoEmDias.setEditable(false);
         jTextFieldCicloAproximadoEmDias.setBackground(new java.awt.Color(255, 255, 255));
@@ -70,7 +70,7 @@ public class TelaDeRemocaoMilho extends javax.swing.JFrame {
                 jTextFieldCicloAproximadoEmDiasActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCicloAproximadoEmDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 463, 330, 29));
+        getContentPane().add(jTextFieldCicloAproximadoEmDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 462, 333, 29));
 
         jTextFieldDataPlantio.setEditable(false);
         jTextFieldDataPlantio.setBackground(new java.awt.Color(255, 255, 255));
@@ -82,7 +82,7 @@ public class TelaDeRemocaoMilho extends javax.swing.JFrame {
                 jTextFieldDataPlantioActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldDataPlantio, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 355, 270, 30));
+        getContentPane().add(jTextFieldDataPlantio, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 354, 272, 30));
 
         jTextFieldAlturaPlanta.setEditable(false);
         jTextFieldAlturaPlanta.setBackground(new java.awt.Color(255, 255, 255));
@@ -94,7 +94,7 @@ public class TelaDeRemocaoMilho extends javax.swing.JFrame {
                 jTextFieldAlturaPlantaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldAlturaPlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 251, 330, 30));
+        getContentPane().add(jTextFieldAlturaPlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(518, 250, 332, 30));
 
         jTextFieldAlturaPlantaAdicionarMilho.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldAlturaPlantaAdicionarMilho.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -117,7 +117,7 @@ public class TelaDeRemocaoMilho extends javax.swing.JFrame {
                 jTextFieldDataSurgimentoDeEspigasActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldDataSurgimentoDeEspigas, new org.netbeans.lib.awtextra.AbsoluteConstraints(521, 354, 330, 30));
+        getContentPane().add(jTextFieldDataSurgimentoDeEspigas, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 354, 330, 30));
 
         jTextFieldIdMilho.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldIdMilho.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -128,7 +128,7 @@ public class TelaDeRemocaoMilho extends javax.swing.JFrame {
                 jTextFieldIdMilhoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldIdMilho, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 116, 303, 28));
+        getContentPane().add(jTextFieldIdMilho, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 116, 305, 29));
 
         jButtonSairDaTelaAdicionarMilho.setBorder(null);
         jButtonSairDaTelaAdicionarMilho.setBorderPainted(false);
@@ -150,7 +150,7 @@ public class TelaDeRemocaoMilho extends javax.swing.JFrame {
                 jButtonBuscarMilhoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarMilho, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 106, 260, 45));
+        getContentPane().add(jButtonBuscarMilho, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 106, 282, 45));
 
         jButtonCancelarRemocao.setBorder(null);
         jButtonCancelarRemocao.setBorderPainted(false);
@@ -161,7 +161,7 @@ public class TelaDeRemocaoMilho extends javax.swing.JFrame {
                 jButtonCancelarRemocaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCancelarRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 605, 280, 33));
+        getContentPane().add(jButtonCancelarRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 599, 280, 35));
 
         jButtonConfirmarRemocao.setBorder(null);
         jButtonConfirmarRemocao.setBorderPainted(false);
@@ -172,7 +172,7 @@ public class TelaDeRemocaoMilho extends javax.swing.JFrame {
                 jButtonConfirmarRemocaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonConfirmarRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 552, 280, 33));
+        getContentPane().add(jButtonConfirmarRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(612, 550, 280, 34));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasPlanta/img_tela_de_remocao_milho.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 650));
@@ -210,6 +210,9 @@ public class TelaDeRemocaoMilho extends javax.swing.JFrame {
             consultarPlanta();
         } catch (ParseException ex) {
             Logger.getLogger(TelaDeRemocaoMilho.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Busque uma planta");
+            return;
         }
     }//GEN-LAST:event_jButtonBuscarMilhoActionPerformed
 
@@ -231,11 +234,14 @@ public class TelaDeRemocaoMilho extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonConfirmarRemocaoActionPerformed
 
     public void removerPlanta() {
-        int idParaBusca = Integer.parseInt(jTextFieldIdMilho.getText());
-        msg = controlePlanta.removerMilho(idParaBusca);
-        JOptionPane.showMessageDialog(this, msg);
-
-        limparCampos();
+        try {
+            int idParaBusca = Integer.parseInt(jTextFieldIdMilho.getText());
+            msg = controlePlanta.removerMilho(idParaBusca);
+            JOptionPane.showMessageDialog(this, msg);
+            limparCampos();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Busque uma planta");
+        }
     }
 
     public void consultarPlanta() throws ParseException {
@@ -292,6 +298,5 @@ public class TelaDeRemocaoMilho extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldFornecedor;
     private javax.swing.JTextField jTextFieldIdMilho;
     // End of variables declaration//GEN-END:variables
-
 
 }

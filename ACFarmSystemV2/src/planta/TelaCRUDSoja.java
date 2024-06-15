@@ -1,6 +1,7 @@
 package planta;
 
 import javax.swing.table.DefaultTableModel;
+import planta.CRUDSoja.TelaDeAdicaoSoja;
 import planta.CRUDSoja.TelaDeConsultaSoja;
 import planta.CRUDSoja.TelaDeMovimentacaoSoja;
 import planta.CRUDSoja.TelaDeRemocaoSoja;
@@ -48,7 +49,7 @@ public class TelaCRUDSoja extends javax.swing.JFrame {
                 jButtonAdicionarSojaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAdicionarSoja, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 113, 260, 45));
+        getContentPane().add(jButtonAdicionarSoja, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 70, 70));
 
         jButtonVerificarSoja.setBorder(null);
         jButtonVerificarSoja.setBorderPainted(false);
@@ -60,7 +61,7 @@ public class TelaCRUDSoja extends javax.swing.JFrame {
                 jButtonVerificarSojaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonVerificarSoja, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 175, 260, 42));
+        getContentPane().add(jButtonVerificarSoja, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 70, 60));
 
         jButtonMovimentacaoSoja.setBorder(null);
         jButtonMovimentacaoSoja.setBorderPainted(false);
@@ -71,7 +72,7 @@ public class TelaCRUDSoja extends javax.swing.JFrame {
                 jButtonMovimentacaoSojaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonMovimentacaoSoja, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 115, 260, 43));
+        getContentPane().add(jButtonMovimentacaoSoja, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 100, 60));
 
         jButtonRemoverSoja.setBorder(null);
         jButtonRemoverSoja.setBorderPainted(false);
@@ -82,7 +83,7 @@ public class TelaCRUDSoja extends javax.swing.JFrame {
                 jButtonRemoverSojaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonRemoverSoja, new org.netbeans.lib.awtextra.AbsoluteConstraints(598, 175, 259, 42));
+        getContentPane().add(jButtonRemoverSoja, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 372, 70, 65));
 
         jTableSoja.setBackground(new java.awt.Color(15, 42, 61));
         jTableSoja.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -92,14 +93,14 @@ public class TelaCRUDSoja extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Codigo Soja", "Fornecedor", "Altura da Planta"
+                "Codigo Soja", "Fornecedor", "Altura da Planta", "Propriedade"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -117,7 +118,7 @@ public class TelaCRUDSoja extends javax.swing.JFrame {
         jTableSoja.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(jTableSoja);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 830, 300));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 720, 360));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasPlanta/img_escolha_CRUD_soja.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -133,7 +134,7 @@ public class TelaCRUDSoja extends javax.swing.JFrame {
 
     private void jButtonAdicionarSojaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdicionarSojaActionPerformed
         this.dispose();
-        new TelaVizualizacaoPropriedadeEFornecedorSoja().setVisible(true);
+        new TelaDeAdicaoSoja().setVisible(true);
     }//GEN-LAST:event_jButtonAdicionarSojaActionPerformed
 
     private void jButtonVerificarSojaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerificarSojaActionPerformed
@@ -156,7 +157,7 @@ public class TelaCRUDSoja extends javax.swing.JFrame {
         ControlePlanta controlePlanta = new ControlePlanta();
 
         for (Soja s : controlePlanta.readSoja()) {
-            modelo.addRow(new Object[]{s.getIdSoja(), s.getNomeFornecedor(), s.getAlturaAtualDaPlanta()});
+            modelo.addRow(new Object[]{s.getIdSoja(), s.getNomeFornecedor(), s.getAlturaAtualDaPlanta(), s.getNomePropriedade()});
         }
     }
 

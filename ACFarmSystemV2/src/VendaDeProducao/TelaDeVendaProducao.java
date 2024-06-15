@@ -440,6 +440,16 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
+        if (nomeProducaoNovo.isBlank()) {
+            JOptionPane.showMessageDialog(this, "Busque uma producao");
+            return;
+        }
+
+        if (nomeClienteNovo.isBlank()) {
+            JOptionPane.showMessageDialog(this, "Busque um cliente");
+            return;
+        }
+
         if (statusDeVendaProducao.equalsIgnoreCase("sim")) {
             JOptionPane.showMessageDialog(this, "Esta produção já foi vendida");
             return;
@@ -447,16 +457,6 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
 
         if (metodoDePagamentoNovo.equals("Selecione") || formaDePagamentoNovo.equals("Selecione")) {
             JOptionPane.showMessageDialog(this, "Adicione o método de pagamento / Forma de pagamento");
-            return;
-        }
-
-        if (nomeProducaoNovo.isBlank()) {
-            JOptionPane.showMessageDialog(this, "Nome da produção é inválido");
-            return;
-        }
-
-        if (nomeClienteNovo.isBlank()) {
-            JOptionPane.showMessageDialog(this, "Nome do cliente é inválido");
             return;
         }
 
@@ -509,7 +509,7 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
 
             msg = controleVendaProducao.adicionarVenda(ControleVendaProducao.INCLUSAO);
             JOptionPane.showMessageDialog(this, msg);
-            limparCampos();
+            new TelaDeVendaProducao().setVisible(true);
 
         } catch (ParseException e) {
             JOptionPane.showMessageDialog(this, "Formato de data inválido, o formato é dd/mm/aaaa.");

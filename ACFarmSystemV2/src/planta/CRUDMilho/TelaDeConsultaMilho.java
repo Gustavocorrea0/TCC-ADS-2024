@@ -58,7 +58,7 @@ public class TelaDeConsultaMilho extends javax.swing.JFrame {
                 jTextFieldFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 251, 270, 29));
+        getContentPane().add(jTextFieldFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 251, 272, 29));
 
         jTextFieldCicloAproximadoEmDias.setEditable(false);
         jTextFieldCicloAproximadoEmDias.setBackground(new java.awt.Color(255, 255, 255));
@@ -70,7 +70,7 @@ public class TelaDeConsultaMilho extends javax.swing.JFrame {
                 jTextFieldCicloAproximadoEmDiasActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCicloAproximadoEmDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 463, 330, 29));
+        getContentPane().add(jTextFieldCicloAproximadoEmDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 462, 333, 29));
 
         jTextFieldDataPlantio.setEditable(false);
         jTextFieldDataPlantio.setBackground(new java.awt.Color(255, 255, 255));
@@ -82,7 +82,7 @@ public class TelaDeConsultaMilho extends javax.swing.JFrame {
                 jTextFieldDataPlantioActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldDataPlantio, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 354, 270, 30));
+        getContentPane().add(jTextFieldDataPlantio, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 355, 272, 29));
 
         jTextFieldAlturaPlanta.setEditable(false);
         jTextFieldAlturaPlanta.setBackground(new java.awt.Color(255, 255, 255));
@@ -94,7 +94,7 @@ public class TelaDeConsultaMilho extends javax.swing.JFrame {
                 jTextFieldAlturaPlantaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldAlturaPlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 251, 330, 30));
+        getContentPane().add(jTextFieldAlturaPlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 251, 333, 29));
 
         jTextFieldDataSurgimentoDeEspigas.setEditable(false);
         jTextFieldDataSurgimentoDeEspigas.setBackground(new java.awt.Color(255, 255, 255));
@@ -106,7 +106,7 @@ public class TelaDeConsultaMilho extends javax.swing.JFrame {
                 jTextFieldDataSurgimentoDeEspigasActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldDataSurgimentoDeEspigas, new org.netbeans.lib.awtextra.AbsoluteConstraints(521, 355, 330, 30));
+        getContentPane().add(jTextFieldDataSurgimentoDeEspigas, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 355, 332, 29));
 
         jTextFieldIdMilho.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldIdMilho.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -117,7 +117,7 @@ public class TelaDeConsultaMilho extends javax.swing.JFrame {
                 jTextFieldIdMilhoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldIdMilho, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 117, 303, 28));
+        getContentPane().add(jTextFieldIdMilho, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 116, 306, 29));
 
         jButtonSairDaTelaAdicionarMilho.setBorder(null);
         jButtonSairDaTelaAdicionarMilho.setBorderPainted(false);
@@ -139,7 +139,7 @@ public class TelaDeConsultaMilho extends javax.swing.JFrame {
                 jButtonBuscarMilhoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarMilho, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 105, 260, 45));
+        getContentPane().add(jButtonBuscarMilho, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 107, 282, 45));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasPlanta/img_tela_de_consulta_milho.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 650));
@@ -173,15 +173,17 @@ public class TelaDeConsultaMilho extends javax.swing.JFrame {
             consultarPlanta();
         } catch (ParseException ex) {
             Logger.getLogger(TelaDeConsultaMilho.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Busque uma planta");
+            return;
         }
     }//GEN-LAST:event_jButtonBuscarMilhoActionPerformed
 
     private void jTextFieldIdMilhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdMilhoActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldIdMilhoActionPerformed
 
     private void jButtonSairDaTelaAdicionarMilhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairDaTelaAdicionarMilhoActionPerformed
-        // TODO add your handling code here:
         this.dispose();
         new TelaCRUDMilho().setVisible(true);
     }//GEN-LAST:event_jButtonSairDaTelaAdicionarMilhoActionPerformed
@@ -195,7 +197,7 @@ public class TelaDeConsultaMilho extends javax.swing.JFrame {
             fornecedorPlanta = milhoEncontrado.getNomeFornecedor();
             cicloEmDias = Integer.toString(milhoEncontrado.getCicloEmDias());
             alturaAtualDaPlanta = Double.toString(milhoEncontrado.getAlturaAtualDaPlanta());
-          
+
             SimpleDateFormat formatoSQL = new SimpleDateFormat("yyyy-MM-dd");
             SimpleDateFormat formatoBrasileiro = new SimpleDateFormat("dd/MM/yyyy");
 

@@ -309,6 +309,7 @@ public class ControlePlanta {
                 sojaBuscado.setIdSoja(resultados.getInt("id_soja"));
                 sojaBuscado.setNomeFornecedor(resultados.getString("nome_fornecedor"));
                 sojaBuscado.setAlturaAtualDaPlanta(resultados.getDouble("altura_atual_da_planta"));
+                sojaBuscado.setNomePropriedade(resultados.getString("nome_propriedade"));
                 sojas.add(sojaBuscado);
             }
             
@@ -348,6 +349,7 @@ public class ControlePlanta {
                 milho1.setIdMilho(resultados.getInt("id_milho"));
                 milho1.setNomeFornecedor(resultados.getString("nome_fornecedor"));
                 milho1.setAlturaAtualDaPlanta(resultados.getDouble("altura_atual_da_planta"));
+                milho1.setNomePropriedade(resultados.getString("nome_propriedade"));
                 milhos.add(milho1);
             }
         } catch (SQLException ex) {

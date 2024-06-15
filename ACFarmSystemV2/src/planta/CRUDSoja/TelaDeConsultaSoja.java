@@ -58,7 +58,7 @@ public class TelaDeConsultaSoja extends javax.swing.JFrame {
                 jTextFieldFornecedorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 251, 270, 29));
+        getContentPane().add(jTextFieldFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 251, 272, 29));
 
         jTextFieldCicloAproximadoEmDias.setEditable(false);
         jTextFieldCicloAproximadoEmDias.setBackground(new java.awt.Color(255, 255, 255));
@@ -70,7 +70,7 @@ public class TelaDeConsultaSoja extends javax.swing.JFrame {
                 jTextFieldCicloAproximadoEmDiasActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCicloAproximadoEmDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 463, 330, 29));
+        getContentPane().add(jTextFieldCicloAproximadoEmDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 462, 333, 29));
 
         jTextFieldDataPlantio.setEditable(false);
         jTextFieldDataPlantio.setBackground(new java.awt.Color(255, 255, 255));
@@ -82,7 +82,7 @@ public class TelaDeConsultaSoja extends javax.swing.JFrame {
                 jTextFieldDataPlantioActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldDataPlantio, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 354, 270, 30));
+        getContentPane().add(jTextFieldDataPlantio, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 355, 272, 29));
 
         jTextFieldAlturaPlanta.setEditable(false);
         jTextFieldAlturaPlanta.setBackground(new java.awt.Color(255, 255, 255));
@@ -94,7 +94,7 @@ public class TelaDeConsultaSoja extends javax.swing.JFrame {
                 jTextFieldAlturaPlantaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldAlturaPlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 251, 330, 30));
+        getContentPane().add(jTextFieldAlturaPlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(518, 251, 332, 29));
 
         jTextFieldSurgimentoDeSementes.setEditable(false);
         jTextFieldSurgimentoDeSementes.setBackground(new java.awt.Color(255, 255, 255));
@@ -106,7 +106,7 @@ public class TelaDeConsultaSoja extends javax.swing.JFrame {
                 jTextFieldSurgimentoDeSementesActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldSurgimentoDeSementes, new org.netbeans.lib.awtextra.AbsoluteConstraints(523, 355, 328, 30));
+        getContentPane().add(jTextFieldSurgimentoDeSementes, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 355, 332, 29));
 
         jTextFieldIdSoja.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldIdSoja.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -117,7 +117,7 @@ public class TelaDeConsultaSoja extends javax.swing.JFrame {
                 jTextFieldIdSojaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldIdSoja, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 117, 302, 28));
+        getContentPane().add(jTextFieldIdSoja, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 116, 305, 29));
 
         jButtonSairDaTelaAdicionarMilho.setBorder(null);
         jButtonSairDaTelaAdicionarMilho.setBorderPainted(false);
@@ -139,7 +139,7 @@ public class TelaDeConsultaSoja extends javax.swing.JFrame {
                 jButtonBuscarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 105, 260, 45));
+        getContentPane().add(jButtonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(394, 106, 279, 45));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasPlanta/img_tela_de_consulta_soja.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 650));
@@ -179,6 +179,8 @@ public class TelaDeConsultaSoja extends javax.swing.JFrame {
             Logger.getLogger(TelaDeConsultaSoja.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ParseException ex) {
             Logger.getLogger(TelaDeConsultaSoja.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Adicione o codigo da planta");
         }
     }//GEN-LAST:event_jButtonBuscarActionPerformed
 
@@ -216,14 +218,14 @@ public class TelaDeConsultaSoja extends javax.swing.JFrame {
         }
     }
 
-    public void limparCampos(){
+    public void limparCampos() {
         jTextFieldAlturaPlanta.setText("");
         jTextFieldCicloAproximadoEmDias.setText("");
         jTextFieldDataPlantio.setText("");
         jTextFieldFornecedor.setText("");
         jTextFieldSurgimentoDeSementes.setText("");
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscar;
     private javax.swing.JButton jButtonSairDaTelaAdicionarMilho;

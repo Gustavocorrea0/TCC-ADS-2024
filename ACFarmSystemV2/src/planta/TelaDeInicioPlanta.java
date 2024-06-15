@@ -1,17 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package planta;
 
 import acfarmsystemv2.telaDeInicio.TelaDeInicio;
-import planta.CRUDMilho.TelaDeAdicaoMilho;
-import planta.CRUDSoja.TelaDeAdicaoSoja;
 
-/**
- *
- * @author Vinicius Camacho
- */
 public class TelaDeInicioPlanta extends javax.swing.JFrame {
 
     public TelaDeInicioPlanta() {
@@ -39,7 +29,7 @@ public class TelaDeInicioPlanta extends javax.swing.JFrame {
                 jButtonCRUDMilhoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCRUDMilho, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 387, 220, 50));
+        getContentPane().add(jButtonCRUDMilho, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 177, 272, 260));
 
         jButtonCRUDSoja.setBorder(null);
         jButtonCRUDSoja.setBorderPainted(false);
@@ -50,7 +40,7 @@ public class TelaDeInicioPlanta extends javax.swing.JFrame {
                 jButtonCRUDSojaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCRUDSoja, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 387, 220, 50));
+        getContentPane().add(jButtonCRUDSoja, new org.netbeans.lib.awtextra.AbsoluteConstraints(544, 180, 272, 260));
 
         jButtonSairDaTelaAdicionarPlanta.setBorder(null);
         jButtonSairDaTelaAdicionarPlanta.setBorderPainted(false);
@@ -72,19 +62,19 @@ public class TelaDeInicioPlanta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonCRUDMilhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCRUDMilhoActionPerformed
-        // TODO add your handling code here:
+
         this.dispose();
         new TelaCRUDMilho().setVisible(true);
     }//GEN-LAST:event_jButtonCRUDMilhoActionPerformed
 
     private void jButtonSairDaTelaAdicionarPlantaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairDaTelaAdicionarPlantaActionPerformed
-        // TODO add your handling code here:
+
         this.dispose();
         new TelaDeInicio().setVisible(true);
     }//GEN-LAST:event_jButtonSairDaTelaAdicionarPlantaActionPerformed
 
     private void jButtonCRUDSojaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCRUDSojaActionPerformed
-        // TODO add your handling code here:
+
         this.dispose();
         new TelaCRUDSoja().setVisible(true);
     }//GEN-LAST:event_jButtonCRUDSojaActionPerformed
