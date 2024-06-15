@@ -9,16 +9,14 @@ import java.util.*;
 
 public class ControleUsuario {
 
-    public Conecta conexao = new Conecta(); //Conexao com Banco
-    public PreparedStatement ps; // Realiza as queries no banco
+    public Conecta conexao = new Conecta();
+    public PreparedStatement ps;
     public ResultSet resultados;
-    public String msg; // Armazena mensagens de retorno
-    public String sql; // Armazena a query
-    private int linhasAfetadas;
-    
-    public Usuario usuario; //Objeto da classe a ser manipulada
+    public String msg;
+    public String sql;
 
-    // Constantes que representam as operações
+    public Usuario usuario;
+
     public static final byte INCLUSAO = 1;
     public static final byte ALTERACAO = 2;
     public static final byte EXCLUSAO = 3;
@@ -270,6 +268,5 @@ public class ControleUsuario {
 
         return null;
     }
-    
-    
+
 }

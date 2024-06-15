@@ -14,11 +14,11 @@ public class TelaDeInicioProducao extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButtonVericarProducao = new javax.swing.JButton();
+        jButtonAdicionarProducao = new javax.swing.JButton();
+        jButtonVerificarProducao = new javax.swing.JButton();
         jButtonRemoverProducao = new javax.swing.JButton();
         jButtonVoltarAoInicio = new javax.swing.JButton();
         jButtonRelatorioProducao = new javax.swing.JButton();
-        jButtonAdicionarProducao = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableProducao = new javax.swing.JTable();
         jLabelTelaProducao = new javax.swing.JLabel();
@@ -26,16 +26,27 @@ public class TelaDeInicioProducao extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButtonVericarProducao.setBorder(null);
-        jButtonVericarProducao.setBorderPainted(false);
-        jButtonVericarProducao.setContentAreaFilled(false);
-        jButtonVericarProducao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonVericarProducao.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAdicionarProducao.setBorder(null);
+        jButtonAdicionarProducao.setBorderPainted(false);
+        jButtonAdicionarProducao.setContentAreaFilled(false);
+        jButtonAdicionarProducao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonAdicionarProducao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonVericarProducaoActionPerformed(evt);
+                jButtonAdicionarProducaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonVericarProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 172, 260, 45));
+        getContentPane().add(jButtonAdicionarProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 115, 70, 70));
+
+        jButtonVerificarProducao.setBorder(null);
+        jButtonVerificarProducao.setBorderPainted(false);
+        jButtonVerificarProducao.setContentAreaFilled(false);
+        jButtonVerificarProducao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonVerificarProducao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVerificarProducaoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonVerificarProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 376, 65, 68));
 
         jButtonRemoverProducao.setBorder(null);
         jButtonRemoverProducao.setBorderPainted(false);
@@ -46,7 +57,7 @@ public class TelaDeInicioProducao extends javax.swing.JFrame {
                 jButtonRemoverProducaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonRemoverProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 172, 260, 45));
+        getContentPane().add(jButtonRemoverProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 246, 70, 70));
 
         jButtonVoltarAoInicio.setBorder(null);
         jButtonVoltarAoInicio.setBorderPainted(false);
@@ -68,18 +79,7 @@ public class TelaDeInicioProducao extends javax.swing.JFrame {
                 jButtonRelatorioProducaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonRelatorioProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(601, 112, 260, 45));
-
-        jButtonAdicionarProducao.setBorder(null);
-        jButtonAdicionarProducao.setBorderPainted(false);
-        jButtonAdicionarProducao.setContentAreaFilled(false);
-        jButtonAdicionarProducao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonAdicionarProducao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAdicionarProducaoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonAdicionarProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 112, 260, 45));
+        getContentPane().add(jButtonRelatorioProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 505, 74, 65));
 
         jTableProducao.setBackground(new java.awt.Color(15, 42, 61));
         jTableProducao.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -120,7 +120,7 @@ public class TelaDeInicioProducao extends javax.swing.JFrame {
             jTableProducao.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 850, 370));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 720, 370));
 
         jLabelTelaProducao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasProducao/img_tela_de_inicio_producao.png"))); // NOI18N
         jLabelTelaProducao.setText("jLabel1");
@@ -132,13 +132,13 @@ public class TelaDeInicioProducao extends javax.swing.JFrame {
 
     private void jButtonAdicionarProducaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdicionarProducaoActionPerformed
         this.dispose();
-        new TelaDeEscolhaDePropriedade().setVisible(true);
+        new TelaDeCadastroProducao().setVisible(true);
     }//GEN-LAST:event_jButtonAdicionarProducaoActionPerformed
 
-    private void jButtonVericarProducaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVericarProducaoActionPerformed
+    private void jButtonVerificarProducaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerificarProducaoActionPerformed
         this.dispose();
         new TelaDeConsultaProducao().setVisible(true);
-    }//GEN-LAST:event_jButtonVericarProducaoActionPerformed
+    }//GEN-LAST:event_jButtonVerificarProducaoActionPerformed
 
     private void jButtonRelatorioProducaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRelatorioProducaoActionPerformed
         this.dispose();
@@ -191,7 +191,7 @@ public class TelaDeInicioProducao extends javax.swing.JFrame {
     private javax.swing.JButton jButtonAdicionarProducao;
     private javax.swing.JButton jButtonRelatorioProducao;
     private javax.swing.JButton jButtonRemoverProducao;
-    private javax.swing.JButton jButtonVericarProducao;
+    private javax.swing.JButton jButtonVerificarProducao;
     private javax.swing.JButton jButtonVoltarAoInicio;
     private javax.swing.JLabel jLabelTelaProducao;
     private javax.swing.JScrollPane jScrollPane1;

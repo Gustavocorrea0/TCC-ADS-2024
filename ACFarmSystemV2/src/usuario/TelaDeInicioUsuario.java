@@ -50,7 +50,7 @@ public final class TelaDeInicioUsuario extends javax.swing.JFrame {
                 jButtonCadastrarUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCadastrarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 187, 260, 45));
+        getContentPane().add(jButtonCadastrarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 75, 65));
 
         jButtonVoltarAoTelaDeInicio.setBorder(null);
         jButtonVoltarAoTelaDeInicio.setBorderPainted(false);
@@ -76,7 +76,7 @@ public final class TelaDeInicioUsuario extends javax.swing.JFrame {
                 jButtonDeletarUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonDeletarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 302, 260, 45));
+        getContentPane().add(jButtonDeletarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 425, 60, 70));
 
         jButtonAtualizarUsuario.setBorder(null);
         jButtonAtualizarUsuario.setBorderPainted(false);
@@ -87,7 +87,7 @@ public final class TelaDeInicioUsuario extends javax.swing.JFrame {
                 jButtonAtualizarUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAtualizarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 417, 260, 45));
+        getContentPane().add(jButtonAtualizarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 305, 65, 60));
 
         jTableUsuarios.setBackground(new java.awt.Color(15, 42, 61));
         jTableUsuarios.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -97,7 +97,7 @@ public final class TelaDeInicioUsuario extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nome", "ID", "Nivel de Acesso"
+                "Nome", "Código", "Nivel de Acesso"
             }
         ) {
             Class[] types = new Class [] {
@@ -127,7 +127,7 @@ public final class TelaDeInicioUsuario extends javax.swing.JFrame {
             jTableUsuarios.getColumnModel().getColumn(2).setResizable(false);
         }
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 80, 450, 490));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 670, 380));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasUsuario/img_tela_de_usuario.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 640));

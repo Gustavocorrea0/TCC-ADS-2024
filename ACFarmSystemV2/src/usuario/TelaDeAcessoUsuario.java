@@ -45,7 +45,7 @@ public class TelaDeAcessoUsuario extends javax.swing.JFrame {
                 jButtonEntrarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 410, 405, 50));
+        getContentPane().add(jButtonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 415, 405, 55));
 
         jTextNomeUsuario.setBackground(new java.awt.Color(255, 255, 255));
         jTextNomeUsuario.setFont(new java.awt.Font("Arial", 0, 23)); // NOI18N

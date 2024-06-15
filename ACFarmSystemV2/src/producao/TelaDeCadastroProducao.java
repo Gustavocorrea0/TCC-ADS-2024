@@ -3,20 +3,18 @@ package producao;
 import Propriedade.ControlePropriedade;
 import Propriedade.Propriedade;
 import java.sql.SQLException;
-import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import validacoes.ValidarData;
 
-/**
- *
- * @author Gustavo
- */
 public class TelaDeCadastroProducao extends javax.swing.JFrame {
+
+    private DefaultTableModel modeloPropriedade;
 
     private ControleProducao controleProducao = new ControleProducao();
     private ControlePropriedade controlePropriedade = new ControlePropriedade();
@@ -33,17 +31,16 @@ public class TelaDeCadastroProducao extends javax.swing.JFrame {
     private Date dataPlantioValida;
     private Date dataInicioColheitaValida;
     private Date dataFimColheitaValida;
-    
+
     private Double valorTotalDeDespesas;
     private Double valorTotalDeLucro;
-    
+
     private String valorTotalDeLucroTexto;
     private String valorTotalDeDespesasTexto;
-    
-   
 
     public TelaDeCadastroProducao() {
         initComponents();
+        readTable();
     }
 
     @SuppressWarnings("unchecked")
@@ -56,16 +53,18 @@ public class TelaDeCadastroProducao extends javax.swing.JFrame {
         jButtonVoltarATelaDeProducao = new javax.swing.JButton();
         jButtonBuscarPropriedade = new javax.swing.JButton();
         jButtonConfirmarAdicao = new javax.swing.JButton();
-        jTextFieldIdPropriedade = new javax.swing.JTextField();
+        jTextFieldNomePropriedade = new javax.swing.JTextField();
+        jTextFieldNomeProducao = new javax.swing.JTextField();
+        jTextFieldDataPlantio = new javax.swing.JTextField();
         jTextFieldDataInicioColheita = new javax.swing.JTextField();
         jTextFieldDataFimColheita = new javax.swing.JTextField();
         jTextFieldValorTotalDeDespesas = new javax.swing.JTextField();
         jTextFieldValorTotalDeLucro = new javax.swing.JTextField();
         jTextFieldQuantidadeProduzidaEmSacos = new javax.swing.JTextField();
-        jTextFieldNomeProducao = new javax.swing.JTextField();
-        jTextFieldDataPlantio = new javax.swing.JTextField();
         jComboBoxEstadoDeVenda = new javax.swing.JComboBox<>();
         jComboBoxCultura = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTablePropriedade = new javax.swing.JTable();
         jLabelTelaProducao = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -102,7 +101,7 @@ public class TelaDeCadastroProducao extends javax.swing.JFrame {
                 jButtonBuscarPropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(373, 106, 260, 45));
+        getContentPane().add(jButtonBuscarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 115, 60, 37));
 
         jButtonConfirmarAdicao.setBorder(null);
         jButtonConfirmarAdicao.setBorderPainted(false);
@@ -113,33 +112,47 @@ public class TelaDeCadastroProducao extends javax.swing.JFrame {
                 jButtonConfirmarAdicaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonConfirmarAdicao, new org.netbeans.lib.awtextra.AbsoluteConstraints(315, 595, 280, 38));
+        getContentPane().add(jButtonConfirmarAdicao, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 546, 280, 37));
 
-        jTextFieldIdPropriedade.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldIdPropriedade.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldIdPropriedade.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldIdPropriedade.setBorder(null);
-        jTextFieldIdPropriedade.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jTextFieldIdPropriedade.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldNomePropriedade.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldNomePropriedade.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldNomePropriedade.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldNomePropriedade.setBorder(null);
+        jTextFieldNomePropriedade.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextFieldNomePropriedade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldIdPropriedadeActionPerformed(evt);
+                jTextFieldNomePropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldIdPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 115, 304, 27));
+        getContentPane().add(jTextFieldNomePropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 118, 310, 29));
+
+        jTextFieldNomeProducao.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldNomeProducao.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldNomeProducao.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldNomeProducao.setBorder(null);
+        jTextFieldNomeProducao.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        getContentPane().add(jTextFieldNomeProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 386, 390, 29));
+
+        jTextFieldDataPlantio.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldDataPlantio.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldDataPlantio.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldDataPlantio.setBorder(null);
+        jTextFieldDataPlantio.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        getContentPane().add(jTextFieldDataPlantio, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 479, 271, 29));
 
         jTextFieldDataInicioColheita.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldDataInicioColheita.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTextFieldDataInicioColheita.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldDataInicioColheita.setBorder(null);
         jTextFieldDataInicioColheita.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        getContentPane().add(jTextFieldDataInicioColheita, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 408, 272, 29));
+        getContentPane().add(jTextFieldDataInicioColheita, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 572, 271, 29));
 
         jTextFieldDataFimColheita.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldDataFimColheita.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTextFieldDataFimColheita.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldDataFimColheita.setBorder(null);
         jTextFieldDataFimColheita.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        getContentPane().add(jTextFieldDataFimColheita, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 507, 272, 29));
+        getContentPane().add(jTextFieldDataFimColheita, new org.netbeans.lib.awtextra.AbsoluteConstraints(475, 115, 312, 29));
 
         jTextFieldValorTotalDeDespesas.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldValorTotalDeDespesas.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -151,7 +164,7 @@ public class TelaDeCadastroProducao extends javax.swing.JFrame {
                 jTextFieldValorTotalDeDespesasActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldValorTotalDeDespesas, new org.netbeans.lib.awtextra.AbsoluteConstraints(358, 220, 271, 27));
+        getContentPane().add(jTextFieldValorTotalDeDespesas, new org.netbeans.lib.awtextra.AbsoluteConstraints(475, 193, 312, 29));
 
         jTextFieldValorTotalDeLucro.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldValorTotalDeLucro.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -163,46 +176,66 @@ public class TelaDeCadastroProducao extends javax.swing.JFrame {
                 jTextFieldValorTotalDeLucroActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldValorTotalDeLucro, new org.netbeans.lib.awtextra.AbsoluteConstraints(358, 314, 272, 27));
+        getContentPane().add(jTextFieldValorTotalDeLucro, new org.netbeans.lib.awtextra.AbsoluteConstraints(475, 270, 312, 30));
 
         jTextFieldQuantidadeProduzidaEmSacos.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldQuantidadeProduzidaEmSacos.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTextFieldQuantidadeProduzidaEmSacos.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldQuantidadeProduzidaEmSacos.setBorder(null);
         jTextFieldQuantidadeProduzidaEmSacos.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        getContentPane().add(jTextFieldQuantidadeProduzidaEmSacos, new org.netbeans.lib.awtextra.AbsoluteConstraints(358, 406, 270, 29));
-
-        jTextFieldNomeProducao.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldNomeProducao.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldNomeProducao.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldNomeProducao.setBorder(null);
-        jTextFieldNomeProducao.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        getContentPane().add(jTextFieldNomeProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 222, 272, 29));
-
-        jTextFieldDataPlantio.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldDataPlantio.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldDataPlantio.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldDataPlantio.setBorder(null);
-        jTextFieldDataPlantio.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        getContentPane().add(jTextFieldDataPlantio, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 315, 272, 29));
+        getContentPane().add(jTextFieldQuantidadeProduzidaEmSacos, new org.netbeans.lib.awtextra.AbsoluteConstraints(475, 351, 312, 29));
 
         jComboBoxEstadoDeVenda.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jComboBoxEstadoDeVenda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Sim", "Nao" }));
+        jComboBoxEstadoDeVenda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "sim", "nao" }));
         jComboBoxEstadoDeVenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxEstadoDeVendaActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxEstadoDeVenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 260, 190, -1));
+        getContentPane().add(jComboBoxEstadoDeVenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(694, 430, 134, -1));
 
         jComboBoxCultura.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jComboBoxCultura.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Soja", "Milho" }));
+        jComboBoxCultura.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "soja", "milho" }));
         jComboBoxCultura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxCulturaActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxCultura, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 370, 190, -1));
+        getContentPane().add(jComboBoxCultura, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 430, 130, -1));
+
+        jTablePropriedade.setBackground(new java.awt.Color(15, 42, 61));
+        jTablePropriedade.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        jTablePropriedade.setForeground(new java.awt.Color(255, 255, 255));
+        jTablePropriedade.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Propriedade", "Area(Alqueire)", "Cidade"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Double.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTablePropriedade.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTablePropriedade.setGridColor(new java.awt.Color(255, 204, 0));
+        jTablePropriedade.setRowHeight(30);
+        jTablePropriedade.setSelectionForeground(new java.awt.Color(15, 42, 61));
+        jScrollPane1.setViewportView(jTablePropriedade);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 410, 140));
 
         jLabelTelaProducao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasProducao/img_tela_de_adicao_producao.png"))); // NOI18N
         jLabelTelaProducao.setText("jLabel1");
@@ -212,9 +245,9 @@ public class TelaDeCadastroProducao extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextFieldIdPropriedadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdPropriedadeActionPerformed
+    private void jTextFieldNomePropriedadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomePropriedadeActionPerformed
 
-    }//GEN-LAST:event_jTextFieldIdPropriedadeActionPerformed
+    }//GEN-LAST:event_jTextFieldNomePropriedadeActionPerformed
 
     private void jButtonConfirmarAdicaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarAdicaoActionPerformed
         try {
@@ -234,23 +267,16 @@ public class TelaDeCadastroProducao extends javax.swing.JFrame {
 
     private void jButtonVoltarATelaDeProducaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarATelaDeProducaoActionPerformed
         this.dispose();
-        new TelaDeEscolhaDePropriedade().setVisible(true);
+        new TelaDeInicioProducao().setVisible(true);
     }//GEN-LAST:event_jButtonVoltarATelaDeProducaoActionPerformed
 
     private void jButtonCancelarAdicaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarAdicaoActionPerformed
         JOptionPane.showMessageDialog(this, "Adição cancelada");
-        jTextFieldDataFimColheita.setText("");
-        jTextFieldDataInicioColheita.setText("");
-        jTextFieldDataPlantio.setText("");
-        jTextFieldIdPropriedade.setText("");
-        jTextFieldNomeProducao.setText("");
-        jTextFieldQuantidadeProduzidaEmSacos.setText("");
-        jTextFieldValorTotalDeDespesas.setText("");
-        jTextFieldValorTotalDeLucro.setText("");
+        limparCampos();
     }//GEN-LAST:event_jButtonCancelarAdicaoActionPerformed
 
     private void jTextFieldValorTotalDeDespesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldValorTotalDeDespesasActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldValorTotalDeDespesasActionPerformed
 
     private void jComboBoxEstadoDeVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxEstadoDeVendaActionPerformed
@@ -262,11 +288,11 @@ public class TelaDeCadastroProducao extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxCulturaActionPerformed
 
     private void jTextFieldValorTotalDeLucroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldValorTotalDeLucroActionPerformed
-        
+
     }//GEN-LAST:event_jTextFieldValorTotalDeLucroActionPerformed
 
     public void buscarPropriedade() throws SQLException {
-        nomePropriedade = jTextFieldIdPropriedade.getText();
+        nomePropriedade = jTextFieldNomePropriedade.getText();
         Propriedade propriedadeEncontrada = controlePropriedade.buscarPropriedadePorNome(nomePropriedade);
 
         if (propriedadeEncontrada != null) {
@@ -285,27 +311,32 @@ public class TelaDeCadastroProducao extends javax.swing.JFrame {
         quantidadeProduzidaEmSacos = Integer.parseInt(jTextFieldQuantidadeProduzidaEmSacos.getText());
         estadoDeVenda = jComboBoxEstadoDeVenda.getSelectedItem().toString();
         tipoDeCultura = jComboBoxCultura.getSelectedItem().toString();
-        
+
         valorTotalDeDespesasTexto = jTextFieldValorTotalDeDespesas.getText();
         valorTotalDeLucroTexto = jTextFieldValorTotalDeLucro.getText();
-        
+
         valorTotalDeDespesas = Double.valueOf(valorTotalDeDespesasTexto.replace(".", "").replace(",", "."));
-        valorTotalDeLucro =  Double.valueOf(valorTotalDeLucroTexto.replace(".", "").replace(",", "."));
-        
+        valorTotalDeLucro = Double.valueOf(valorTotalDeLucroTexto.replace(".", "").replace(",", "."));
+
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
-        if (estadoDeVenda.equals("Selecione")) {
-            JOptionPane.showMessageDialog(this, "Estado Inválido");
-            return;
-        }
-        
-        if (tipoDeCultura.equals("Selecione")) {
-            JOptionPane.showMessageDialog(this, "Tipo de cultura Inválido");
-            return;
-        }
-        
-        if (nomeProducao.equals("")) {
+        if (nomeProducao.isBlank()) {
             JOptionPane.showMessageDialog(this, "Nome Inválido");
+            return;
+        }
+
+        if (!ValidarData.validaData(dataPlantio)) {
+            JOptionPane.showMessageDialog(this, "Data de plantio Inválida (insira: dd/MM/aaaa)");
+            return;
+        }
+        
+        if (!ValidarData.validaData(dataInicioColheita)) {
+            JOptionPane.showMessageDialog(this, "Data de inicio de colheita Inválida (insira: dd/MM/aaaa)");
+            return;
+        }
+        
+        if (!ValidarData.validaData(dataFimColheita)) {
+            JOptionPane.showMessageDialog(this, "Data de fim de colheita Inválida (insira: dd/MM/aaaa)");
             return;
         }
 
@@ -319,8 +350,18 @@ public class TelaDeCadastroProducao extends javax.swing.JFrame {
             return;
         }
 
-        if (valorTotalDeLucro <= 0) {
+        if (valorTotalDeLucro < 0) {
             JOptionPane.showMessageDialog(this, "Valor de lucro inválido");
+            return;
+        }
+
+        if (estadoDeVenda.equals("Selecione")) {
+            JOptionPane.showMessageDialog(this, "Estado Inválido");
+            return;
+        }
+
+        if (tipoDeCultura.equals("Selecione")) {
+            JOptionPane.showMessageDialog(this, "Tipo de cultura Inválido");
             return;
         }
 
@@ -331,16 +372,6 @@ public class TelaDeCadastroProducao extends javax.swing.JFrame {
 
             if (dataPlantioValida == dataInicioColheitaValida) {
                 JOptionPane.showMessageDialog(null, "Datas de Plantio e colheita não devem ser iguais");
-                return;
-            }
-
-            if (estadoDeVenda.equals("Selecione")) {
-                JOptionPane.showMessageDialog(null, "Selecione o estado de Venda");
-                return;
-            }
-
-            if (tipoDeCultura.equals("Selecione")) {
-                JOptionPane.showMessageDialog(null, "Selecione a cultura");
                 return;
             }
 
@@ -358,21 +389,34 @@ public class TelaDeCadastroProducao extends javax.swing.JFrame {
             msg = controleProducao.cadastrarProducao(ControlePropriedade.INCLUSAO);
             JOptionPane.showMessageDialog(this, msg);
 
-            jTextFieldDataFimColheita.setText("");
-            jTextFieldDataInicioColheita.setText("");
-            jTextFieldDataPlantio.setText("");
-            jTextFieldIdPropriedade.setText("");
-            jTextFieldNomeProducao.setText("");
-            jTextFieldQuantidadeProduzidaEmSacos.setText("");
-            jTextFieldValorTotalDeDespesas.setText("");
-            jTextFieldValorTotalDeLucro.setText("");
-
+            limparCampos();
         } catch (ParseException e) {
             JOptionPane.showMessageDialog(this, "Formato de data inválido, o formato é dd/mm/aaaa.");
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "Formato de moeda inválido");
         }
     }
+
+    public void readTable() {
+        modeloPropriedade = (DefaultTableModel) jTablePropriedade.getModel();
+        controlePropriedade = new ControlePropriedade();
+
+        for (Propriedade u : controlePropriedade.readPropriedade()) {
+            modeloPropriedade.addRow(new Object[]{u.getNomePropriedade(), u.getAreaPropriedade(), u.getCidade()});
+        }
+    }
+
+    public void limparCampos() {
+        jTextFieldDataFimColheita.setText("");
+        jTextFieldDataInicioColheita.setText("");
+        jTextFieldDataPlantio.setText("");
+        jTextFieldNomePropriedade.setText("");
+        jTextFieldNomeProducao.setText("");
+        jTextFieldQuantidadeProduzidaEmSacos.setText("");
+        jTextFieldValorTotalDeDespesas.setText("");
+        jTextFieldValorTotalDeLucro.setText("");
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup botaoCultura;
@@ -384,11 +428,13 @@ public class TelaDeCadastroProducao extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxCultura;
     private javax.swing.JComboBox<String> jComboBoxEstadoDeVenda;
     private javax.swing.JLabel jLabelTelaProducao;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTablePropriedade;
     private javax.swing.JTextField jTextFieldDataFimColheita;
     private javax.swing.JTextField jTextFieldDataInicioColheita;
     private javax.swing.JTextField jTextFieldDataPlantio;
-    private javax.swing.JTextField jTextFieldIdPropriedade;
     private javax.swing.JTextField jTextFieldNomeProducao;
+    private javax.swing.JTextField jTextFieldNomePropriedade;
     private javax.swing.JTextField jTextFieldQuantidadeProduzidaEmSacos;
     private javax.swing.JTextField jTextFieldValorTotalDeDespesas;
     private javax.swing.JTextField jTextFieldValorTotalDeLucro;

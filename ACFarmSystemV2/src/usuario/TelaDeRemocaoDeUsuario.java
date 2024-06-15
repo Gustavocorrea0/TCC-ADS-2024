@@ -8,7 +8,9 @@ import javax.swing.JOptionPane;
 public class TelaDeRemocaoDeUsuario extends javax.swing.JFrame {
 
     private ControleUsuario usuario = new ControleUsuario();
-    private int idUsuario;
+
+    private String nomeUsuario;
+    private String nivelDeAcessoUsuario;
 
     public TelaDeRemocaoDeUsuario() {
         initComponents();
@@ -23,7 +25,7 @@ public class TelaDeRemocaoDeUsuario extends javax.swing.JFrame {
         jButtonConfirmarRemocao = new javax.swing.JButton();
         jButtonVoltarAoTelaDeUsuario = new javax.swing.JButton();
         jTextNivelDeAcesso = new javax.swing.JTextField();
-        jTextIDBuscado = new javax.swing.JTextField();
+        jTextNomeUsuarioBuscado = new javax.swing.JTextField();
         jTextNomeUsuario = new javax.swing.JTextField();
         jLabelIMGUsuario = new javax.swing.JLabel();
 
@@ -41,7 +43,7 @@ public class TelaDeRemocaoDeUsuario extends javax.swing.JFrame {
                 jButtonBuscarUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(372, 128, 260, 45));
+        getContentPane().add(jButtonBuscarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(389, 130, 280, 45));
 
         jButtonCancelarRemocao.setToolTipText("");
         jButtonCancelarRemocao.setBorder(null);
@@ -54,7 +56,7 @@ public class TelaDeRemocaoDeUsuario extends javax.swing.JFrame {
                 jButtonCancelarRemocaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCancelarRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(603, 588, 280, 35));
+        getContentPane().add(jButtonCancelarRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 595, 280, 35));
 
         jButtonConfirmarRemocao.setToolTipText("");
         jButtonConfirmarRemocao.setBorder(null);
@@ -67,7 +69,7 @@ public class TelaDeRemocaoDeUsuario extends javax.swing.JFrame {
                 jButtonConfirmarRemocaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonConfirmarRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(603, 537, 280, 35));
+        getContentPane().add(jButtonConfirmarRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 545, 280, 35));
 
         jButtonVoltarAoTelaDeUsuario.setBorder(null);
         jButtonVoltarAoTelaDeUsuario.setBorderPainted(false);
@@ -83,25 +85,25 @@ public class TelaDeRemocaoDeUsuario extends javax.swing.JFrame {
         getContentPane().add(jButtonVoltarAoTelaDeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 20, 38, 29));
 
         jTextNivelDeAcesso.setBackground(new java.awt.Color(255, 255, 255));
-        jTextNivelDeAcesso.setFont(new java.awt.Font("Arial", 0, 23)); // NOI18N
+        jTextNivelDeAcesso.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTextNivelDeAcesso.setForeground(new java.awt.Color(0, 0, 0));
         jTextNivelDeAcesso.setBorder(null);
-        getContentPane().add(jTextNivelDeAcesso, new org.netbeans.lib.awtextra.AbsoluteConstraints(547, 278, 278, 28));
+        getContentPane().add(jTextNivelDeAcesso, new org.netbeans.lib.awtextra.AbsoluteConstraints(549, 273, 278, 29));
 
-        jTextIDBuscado.setBackground(new java.awt.Color(255, 255, 255));
-        jTextIDBuscado.setFont(new java.awt.Font("Arial", 0, 23)); // NOI18N
-        jTextIDBuscado.setForeground(new java.awt.Color(0, 0, 0));
-        jTextIDBuscado.setBorder(null);
-        getContentPane().add(jTextIDBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 143, 304, 28));
+        jTextNomeUsuarioBuscado.setBackground(new java.awt.Color(255, 255, 255));
+        jTextNomeUsuarioBuscado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextNomeUsuarioBuscado.setForeground(new java.awt.Color(0, 0, 0));
+        jTextNomeUsuarioBuscado.setBorder(null);
+        getContentPane().add(jTextNomeUsuarioBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 138, 304, 28));
 
         jTextNomeUsuario.setBackground(new java.awt.Color(255, 255, 255));
-        jTextNomeUsuario.setFont(new java.awt.Font("Arial", 0, 23)); // NOI18N
+        jTextNomeUsuario.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTextNomeUsuario.setForeground(new java.awt.Color(0, 0, 0));
         jTextNomeUsuario.setBorder(null);
-        getContentPane().add(jTextNomeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 278, 305, 28));
+        getContentPane().add(jTextNomeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 273, 278, 29));
 
         jLabelIMGUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasUsuario/img_tela_de_remocao_de_usuario.png"))); // NOI18N
-        getContentPane().add(jLabelIMGUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 650));
+        getContentPane().add(jLabelIMGUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 910, 660));
 
         pack();
         setLocationRelativeTo(null);
@@ -116,8 +118,7 @@ public class TelaDeRemocaoDeUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonBuscarUsuarioActionPerformed
 
     private void jButtonCancelarRemocaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarRemocaoActionPerformed
-        jTextNomeUsuario.setText("");
-        jTextNivelDeAcesso.setText("");
+        limparCampos();
     }//GEN-LAST:event_jButtonCancelarRemocaoActionPerformed
 
     private void jButtonConfirmarRemocaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarRemocaoActionPerformed
@@ -130,7 +131,7 @@ public class TelaDeRemocaoDeUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonVoltarAoTelaDeUsuarioActionPerformed
 
     public void buscarUsuario() throws SQLException {
-        String nomeParaBusca = jTextIDBuscado.getText();
+        String nomeParaBusca = jTextNomeUsuarioBuscado.getText();
         Usuario usuarioEncontrado = usuario.buscarUsuario(nomeParaBusca);
 
         if (usuarioEncontrado != null) {
@@ -143,11 +144,19 @@ public class TelaDeRemocaoDeUsuario extends javax.swing.JFrame {
     }
 
     public void removerUsuario() {
-        String nomeParaRemover = jTextIDBuscado.getText();
-        String mensagem = usuario.removerUsuarioPorNome(nomeParaRemover);
-        JOptionPane.showMessageDialog(this, mensagem);
+        nomeUsuario = jTextNomeUsuarioBuscado.getText();
+        if (nomeUsuario.isBlank()) {
+            JOptionPane.showMessageDialog(this, "Busque um usuario");
+            return;
+        } 
 
-        jTextIDBuscado.setText("");
+        String mensagem = usuario.removerUsuarioPorNome(nomeUsuario);
+        JOptionPane.showMessageDialog(this, mensagem);
+        limparCampos();
+    }
+
+    public void limparCampos() {
+        jTextNomeUsuarioBuscado.setText("");
         jTextNivelDeAcesso.setText("");
         jTextNomeUsuario.setText("");
     }
@@ -159,8 +168,8 @@ public class TelaDeRemocaoDeUsuario extends javax.swing.JFrame {
     private javax.swing.JButton jButtonConfirmarRemocao;
     private javax.swing.JButton jButtonVoltarAoTelaDeUsuario;
     private javax.swing.JLabel jLabelIMGUsuario;
-    private javax.swing.JTextField jTextIDBuscado;
     private javax.swing.JTextField jTextNivelDeAcesso;
     private javax.swing.JTextField jTextNomeUsuario;
+    private javax.swing.JTextField jTextNomeUsuarioBuscado;
     // End of variables declaration//GEN-END:variables
 }

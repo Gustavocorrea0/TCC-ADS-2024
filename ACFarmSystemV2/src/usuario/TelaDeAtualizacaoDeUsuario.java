@@ -11,6 +11,8 @@ public class TelaDeAtualizacaoDeUsuario extends javax.swing.JFrame {
 
     private String nomeParaBusca;
     private int idUsuario;
+    private String novoNome;
+    private String novoNivelDeAcesso; 
 
     public TelaDeAtualizacaoDeUsuario() {
         initComponents();
@@ -43,7 +45,7 @@ public class TelaDeAtualizacaoDeUsuario extends javax.swing.JFrame {
                 jButtonBuscarIdUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarIdUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(378, 132, 260, 45));
+        getContentPane().add(jButtonBuscarIdUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 134, 282, 45));
 
         jButtonConfirmarAtualizacao.setToolTipText("");
         jButtonConfirmarAtualizacao.setBorder(null);
@@ -56,7 +58,7 @@ public class TelaDeAtualizacaoDeUsuario extends javax.swing.JFrame {
                 jButtonConfirmarAtualizacaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonConfirmarAtualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(598, 533, 280, 35));
+        getContentPane().add(jButtonConfirmarAtualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 547, 280, 37));
 
         jButtonCancelarAtualizacao.setToolTipText("");
         jButtonCancelarAtualizacao.setBorder(null);
@@ -69,10 +71,10 @@ public class TelaDeAtualizacaoDeUsuario extends javax.swing.JFrame {
                 jButtonCancelarAtualizacaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCancelarAtualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(598, 584, 280, 35));
+        getContentPane().add(jButtonCancelarAtualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 597, 280, 35));
 
         jTextNomeBuscado.setBackground(new java.awt.Color(255, 255, 255));
-        jTextNomeBuscado.setFont(new java.awt.Font("Arial", 0, 23)); // NOI18N
+        jTextNomeBuscado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTextNomeBuscado.setForeground(new java.awt.Color(0, 0, 0));
         jTextNomeBuscado.setBorder(null);
         jTextNomeBuscado.addActionListener(new java.awt.event.ActionListener() {
@@ -83,16 +85,16 @@ public class TelaDeAtualizacaoDeUsuario extends javax.swing.JFrame {
         getContentPane().add(jTextNomeBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 141, 304, 28));
 
         jTextNomeUsuario.setBackground(new java.awt.Color(255, 255, 255));
-        jTextNomeUsuario.setFont(new java.awt.Font("Arial", 0, 23)); // NOI18N
+        jTextNomeUsuario.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTextNomeUsuario.setForeground(new java.awt.Color(0, 0, 0));
         jTextNomeUsuario.setBorder(null);
-        getContentPane().add(jTextNomeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 275, 276, 28));
+        getContentPane().add(jTextNomeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 276, 277, 29));
 
         jTextNivelDeAcesso.setBackground(new java.awt.Color(255, 255, 255));
-        jTextNivelDeAcesso.setFont(new java.awt.Font("Arial", 0, 23)); // NOI18N
+        jTextNivelDeAcesso.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTextNivelDeAcesso.setForeground(new java.awt.Color(0, 0, 0));
         jTextNivelDeAcesso.setBorder(null);
-        getContentPane().add(jTextNivelDeAcesso, new org.netbeans.lib.awtextra.AbsoluteConstraints(552, 276, 274, 28));
+        getContentPane().add(jTextNivelDeAcesso, new org.netbeans.lib.awtextra.AbsoluteConstraints(549, 276, 278, 29));
 
         jButtonVoltarAoTelaDeUsuario.setBorder(null);
         jButtonVoltarAoTelaDeUsuario.setBorderPainted(false);
@@ -132,8 +134,7 @@ public class TelaDeAtualizacaoDeUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonConfirmarAtualizacaoActionPerformed
 
     private void jButtonCancelarAtualizacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarAtualizacaoActionPerformed
-        jTextNomeUsuario.setText("");
-        jTextNivelDeAcesso.setText("");
+        limparCampos();
     }//GEN-LAST:event_jButtonCancelarAtualizacaoActionPerformed
 
     private void jButtonVoltarAoTelaDeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarAoTelaDeUsuarioActionPerformed
@@ -152,19 +153,20 @@ public class TelaDeAtualizacaoDeUsuario extends javax.swing.JFrame {
         if (usuarioEncontrado != null) {
             jTextNomeUsuario.setText(usuarioEncontrado.getNome());
             jTextNivelDeAcesso.setText(usuarioEncontrado.getNivelDeAcesso());
-            idUsuario = usuarioEncontrado.getId(); //ERRO
+            idUsuario = usuarioEncontrado.getId(); 
         } else {
             JOptionPane.showMessageDialog(this, "Usuário não encontrado.");
+            limparCampos();
         }
     }
 
     public void atualizarUsuario() throws SQLException {
         nomeParaBusca = jTextNomeBuscado.getText();
-        String novoNome = jTextNomeUsuario.getText();
-        String novoNivelDeAcesso = jTextNivelDeAcesso.getText();
+        novoNome = jTextNomeUsuario.getText();
+        novoNivelDeAcesso = jTextNivelDeAcesso.getText();
 
-        if (novoNome.equals("")) {
-            JOptionPane.showMessageDialog(null, "Nome Inválido");
+        if (novoNome.isBlank()) {
+            JOptionPane.showMessageDialog(null, "Busque um Usuario");
             return;
         }
 
@@ -176,11 +178,17 @@ public class TelaDeAtualizacaoDeUsuario extends javax.swing.JFrame {
             ControleUsuario controleUsuario = new ControleUsuario();
             String msgAtualizacao = controleUsuario.atualizarUsuario(usuarioAtualizado);
             JOptionPane.showMessageDialog(null, msgAtualizacao);
-            
+            limparCampos();
         } else {
             JOptionPane.showMessageDialog(null, "Nivel de acesso inválido, M para master e C para comun");
         }
 
+    }
+
+    public void limparCampos() {
+        jTextNomeUsuario.setText("");
+        jTextNivelDeAcesso.setText("");
+        jTextNomeBuscado.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

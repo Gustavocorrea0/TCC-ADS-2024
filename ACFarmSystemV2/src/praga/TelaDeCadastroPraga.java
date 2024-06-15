@@ -227,8 +227,8 @@ public class TelaDeCadastroPraga extends javax.swing.JFrame {
             return;
         }
 
-        if (ValidarData.validaData(dataSurgimentoPraga) == false) {
-            JOptionPane.showMessageDialog(null, "Data Inválida (dd/mm/aaaa)");
+        if (!ValidarData.validaData(dataSurgimentoPraga)) {
+            JOptionPane.showMessageDialog(null, "Data Inválida, (insira: dd/MM/aaaa)");
             return;
         }
 

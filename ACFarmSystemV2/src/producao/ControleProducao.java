@@ -29,6 +29,7 @@ import com.itextpdf.text.pdf.draw.LineSeparator;
 import java.io.FileOutputStream;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import javax.swing.JFileChooser;
 
 public class ControleProducao {
 
@@ -237,105 +238,85 @@ public class ControleProducao {
 
         Document doc = new Document();
 
-        String nomePDF = "C:\\Users\\Gustavo\\Desktop\\relatorio_de_dados_de_producao.pdf";
-        //String nomePDF = "relatorio de dados de producoes.pdf"; // ORIGEM + NOME DO PDF
+        JFileChooser jFileChooser = new JFileChooser();
+        jFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        int result = jFileChooser.showSaveDialog(null);
 
-        try {
-            ps = conexao.conn.prepareStatement(sql);
-            resultados = ps.executeQuery();
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File selectedDirectory = jFileChooser.getSelectedFile();
+            String nomePDF = selectedDirectory.getAbsolutePath() + File.separator + "relatorio_de_dados_de_producao.pdf";
 
-            Font fonte2 = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL);
-            Paragraph linhaEmBranco = new Paragraph(" ", fonte2);
+            try {
+                ps = conexao.conn.prepareStatement(sql);
+                resultados = ps.executeQuery();
 
-            // ERRO DE ORIGEM
-            String imagePath = "/logo_ac_farm_system.png";
-            Image imagem = Image.getInstance(getClass().getResource(imagePath));
+                Font fonte2 = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL);
+                Paragraph linhaEmBranco = new Paragraph(" ", fonte2);
 
-            imagem.scaleToFit(55, 50);
+                // ERRO DE ORIGEM
+                String imagePath = "/logo_ac_farm_system.png";
+                Image imagem = Image.getInstance(getClass().getResource(imagePath));
 
-            // linha de separacao
-            LineSeparator line = new LineSeparator();
-            line.setLineWidth(0.5f);
-            line.setPercentage(85f);
+                imagem.scaleToFit(55, 50);
 
-            PdfWriter.getInstance(doc, new FileOutputStream(nomePDF));
-            doc.open();
+                // linha de separacao
+                LineSeparator line = new LineSeparator();
+                line.setLineWidth(0.5f);
+                line.setPercentage(85f);
 
-            imagem.setAbsolutePosition(76, imagem.getAbsoluteY());
-            doc.add(imagem);
+                PdfWriter.getInstance(doc, new FileOutputStream(nomePDF));
+                doc.open();
 
-            Font fonte = new Font(Font.FontFamily.HELVETICA, 13, Font.BOLD);
-            Paragraph p = new Paragraph("Relatorio de Dados de Produção", fonte);
+                imagem.setAbsolutePosition(76, imagem.getAbsoluteY());
+                doc.add(imagem);
 
-            Paragraph data = new Paragraph("            Data de geração: " + dataDeHoje, fonte2);
-            Paragraph tiposDeDados = new Paragraph("            Tipos de dados: Produção", fonte2);
-            Paragraph formato = new Paragraph("            Formato: Tabela", fonte2);
+                Font fonte = new Font(Font.FontFamily.HELVETICA, 13, Font.BOLD);
+                Paragraph p = new Paragraph("Relatorio de Dados de Produção", fonte);
 
-            p.setAlignment(Element.ALIGN_CENTER);
-            data.setAlignment(Element.ALIGN_JUSTIFIED);
-            tiposDeDados.setAlignment(3);
-            formato.setAlignment(3);
+                Paragraph data = new Paragraph("            Data de geração: " + dataDeHoje, fonte2);
+                Paragraph tiposDeDados = new Paragraph("            Tipos de dados: Produção", fonte2);
+                Paragraph formato = new Paragraph("            Formato: Tabela", fonte2);
 
-            doc.add(p);
-            doc.add(linhaEmBranco);
-            doc.add(line);
-            doc.add(linhaEmBranco);
-            doc.add(data);
-            doc.add(tiposDeDados);
-            doc.add(formato);
-            doc.add(linhaEmBranco);
-            doc.add(line);
+                p.setAlignment(Element.ALIGN_CENTER);
+                data.setAlignment(Element.ALIGN_JUSTIFIED);
+                tiposDeDados.setAlignment(3);
+                formato.setAlignment(3);
 
-            //Tamanho da coluna
-            PdfPTable table = new PdfPTable(6);
-            table.setWidthPercentage(85);
-            table.setWidths(new int[]{2, 2, 2, 2, 2, 2});
+                doc.add(p);
+                doc.add(linhaEmBranco);
+                doc.add(line);
+                doc.add(linhaEmBranco);
+                doc.add(data);
+                doc.add(tiposDeDados);
+                doc.add(formato);
+                doc.add(linhaEmBranco);
+                doc.add(line);
 
-            PdfPCell cellNomePropriedade = new PdfPCell(new Paragraph("Propriedade"));
-            PdfPCell cellCultura = new PdfPCell(new Paragraph("Cultura"));
-            PdfPCell cellDataPlantio = new PdfPCell(new Paragraph("Plantio"));
-            PdfPCell cellDataInicioColheita = new PdfPCell(new Paragraph("Inicio Colheita"));
-            PdfPCell cellDataFimColheita = new PdfPCell(new Paragraph("Fim Colheita"));
-            PdfPCell cellQuantidadeProduzida = new PdfPCell(new Paragraph("Sacas"));
+                //Tamanho da coluna
+                PdfPTable table = new PdfPTable(6);
+                table.setWidthPercentage(85);
+                table.setWidths(new int[]{2, 2, 2, 2, 2, 2});
 
-            cellNomePropriedade.setBackgroundColor(BaseColor.LIGHT_GRAY);
-            cellCultura.setBackgroundColor(BaseColor.LIGHT_GRAY);
-            cellDataPlantio.setBackgroundColor(BaseColor.LIGHT_GRAY);
-            cellDataInicioColheita.setBackgroundColor(BaseColor.LIGHT_GRAY);
-            cellDataFimColheita.setBackgroundColor(BaseColor.LIGHT_GRAY);
-            cellQuantidadeProduzida.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                PdfPCell cellNomePropriedade = new PdfPCell(new Paragraph("Propriedade"));
+                PdfPCell cellCultura = new PdfPCell(new Paragraph("Cultura"));
+                PdfPCell cellDataPlantio = new PdfPCell(new Paragraph("Plantio"));
+                PdfPCell cellDataInicioColheita = new PdfPCell(new Paragraph("Inicio Colheita"));
+                PdfPCell cellDataFimColheita = new PdfPCell(new Paragraph("Fim Colheita"));
+                PdfPCell cellQuantidadeProduzida = new PdfPCell(new Paragraph("Sacas"));
 
-            cellNomePropriedade.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cellCultura.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cellDataPlantio.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cellDataInicioColheita.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cellDataFimColheita.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cellQuantidadeProduzida.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellNomePropriedade.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                cellCultura.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                cellDataPlantio.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                cellDataInicioColheita.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                cellDataFimColheita.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                cellQuantidadeProduzida.setBackgroundColor(BaseColor.LIGHT_GRAY);
 
-            table.addCell(cellNomePropriedade);
-            table.addCell(cellCultura);
-            table.addCell(cellDataPlantio);
-            table.addCell(cellDataInicioColheita);
-            table.addCell(cellDataFimColheita);
-            table.addCell(cellQuantidadeProduzida);
-
-            while (resultados.next()) {
-
-                producao = new Producao();
-
-                producao.setCultura(resultados.getString("cultura"));
-                producao.setPropriedade(resultados.getString("propriedade_da_colheita"));
-                producao.setDataDePlantio(resultados.getDate("data_plantio"));
-                producao.setDataInicioColheita(resultados.getDate("data_inicio_colheita"));
-                producao.setDataFimColheita(resultados.getDate("data_fim_colheita"));
-                producao.setQuantidadeProduzidaEmSacos(resultados.getInt("quantidade_produzida_em_sacos"));
-
-                cellCultura = new PdfPCell(new Paragraph(producao.getCultura()));
-                cellNomePropriedade = new PdfPCell(new Paragraph(producao.getPropriedade()));
-                cellDataPlantio = new PdfPCell(new Paragraph(formatarData(producao.getDataDePlantio())));
-                cellDataInicioColheita = new PdfPCell(new Paragraph(formatarData(producao.getDataInicioColheita())));
-                cellDataFimColheita = new PdfPCell(new Paragraph(formatarData(producao.getDataFimColheita())));
-                cellQuantidadeProduzida = new PdfPCell(new Paragraph(String.valueOf(producao.getQuantidadeProduzidaEmSacos())));
+                cellNomePropriedade.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellCultura.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellDataPlantio.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellDataInicioColheita.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellDataFimColheita.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellQuantidadeProduzida.setHorizontalAlignment(Element.ALIGN_CENTER);
 
                 table.addCell(cellNomePropriedade);
                 table.addCell(cellCultura);
@@ -343,16 +324,42 @@ public class ControleProducao {
                 table.addCell(cellDataInicioColheita);
                 table.addCell(cellDataFimColheita);
                 table.addCell(cellQuantidadeProduzida);
+
+                while (resultados.next()) {
+
+                    producao = new Producao();
+
+                    producao.setCultura(resultados.getString("cultura"));
+                    producao.setPropriedade(resultados.getString("propriedade_da_colheita"));
+                    producao.setDataDePlantio(resultados.getDate("data_plantio"));
+                    producao.setDataInicioColheita(resultados.getDate("data_inicio_colheita"));
+                    producao.setDataFimColheita(resultados.getDate("data_fim_colheita"));
+                    producao.setQuantidadeProduzidaEmSacos(resultados.getInt("quantidade_produzida_em_sacos"));
+
+                    cellCultura = new PdfPCell(new Paragraph(producao.getCultura()));
+                    cellNomePropriedade = new PdfPCell(new Paragraph(producao.getPropriedade()));
+                    cellDataPlantio = new PdfPCell(new Paragraph(formatarData(producao.getDataDePlantio())));
+                    cellDataInicioColheita = new PdfPCell(new Paragraph(formatarData(producao.getDataInicioColheita())));
+                    cellDataFimColheita = new PdfPCell(new Paragraph(formatarData(producao.getDataFimColheita())));
+                    cellQuantidadeProduzida = new PdfPCell(new Paragraph(String.valueOf(producao.getQuantidadeProduzidaEmSacos())));
+
+                    table.addCell(cellNomePropriedade);
+                    table.addCell(cellCultura);
+                    table.addCell(cellDataPlantio);
+                    table.addCell(cellDataInicioColheita);
+                    table.addCell(cellDataFimColheita);
+                    table.addCell(cellQuantidadeProduzida);
+                }
+
+                doc.add(new Paragraph(" "));
+                doc.add(table);
+                doc.close();
+
+                Desktop.getDesktop().open(new File(nomePDF));
+
+            } catch (DocumentException | FileNotFoundException | SQLException | NullPointerException d) {
+                d.getMessage();
             }
-
-            doc.add(new Paragraph(" "));
-            doc.add(table);
-            doc.close();
-
-            Desktop.getDesktop().open(new File(nomePDF));
-
-        } catch (DocumentException | FileNotFoundException | SQLException | NullPointerException d) {
-            d.getMessage();
         }
 
     }
@@ -374,110 +381,84 @@ public class ControleProducao {
 
         Document doc = new Document();
 
-        List<Producao> producoes = new ArrayList();
+        JFileChooser jFileChooser = new JFileChooser();
+        jFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        int result = jFileChooser.showSaveDialog(null);
 
-        String nomePDF = "C:\\Users\\Gustavo\\Desktop\\relatorio_dados_finaceiros_de_producao.pdf"; // ORIGEM + NOME DO PDF
-        //String nomePDF = "relatorio de dados de producoes.pdf"; // ORIGEM + NOME DO PDF
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File selectedDirectory = jFileChooser.getSelectedFile();
+            String nomePDF = selectedDirectory.getAbsolutePath() + File.separator + "relatorio_dados_finaceiros_de_producao.pdf";
+            try {
+                ps = conexao.conn.prepareStatement(sql);
+                resultados = ps.executeQuery();
+                Font fonte2 = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL);
+                Paragraph linhaEmBranco = new Paragraph(" ", fonte2);
 
-        try {
-            ps = conexao.conn.prepareStatement(sql);
-            resultados = ps.executeQuery();
-            Font fonte2 = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL);
-            Paragraph linhaEmBranco = new Paragraph(" ", fonte2);
+                String imagePath = "/logo_ac_farm_system.png";
+                Image imagem = Image.getInstance(getClass().getResource(imagePath));
 
-            String imagePath = "/logo_ac_farm_system.png";
-            Image imagem = Image.getInstance(getClass().getResource(imagePath));
-            
-            // Formacao de imagem pxXpx
-            imagem.scaleToFit(55, 50);
+                // Formacao de imagem pxXpx
+                imagem.scaleToFit(55, 50);
 
-            // Linha de Separacao
-            LineSeparator line = new LineSeparator();
-            line.setLineWidth(0.5f);
-            line.setPercentage(85f);
+                // Linha de Separacao
+                LineSeparator line = new LineSeparator();
+                line.setLineWidth(0.5f);
+                line.setPercentage(85f);
 
-            PdfWriter.getInstance(doc, new FileOutputStream(nomePDF));
-            doc.open();
+                PdfWriter.getInstance(doc, new FileOutputStream(nomePDF));
+                doc.open();
 
-            imagem.setAbsolutePosition(76, imagem.getAbsoluteY());
-            doc.add(imagem);
+                imagem.setAbsolutePosition(76, imagem.getAbsoluteY());
+                doc.add(imagem);
 
-            Font fonte = new Font(Font.FontFamily.HELVETICA, 13, Font.BOLD);
-            Paragraph p = new Paragraph("Relatorio Finaceiro de Producao", fonte);
+                Font fonte = new Font(Font.FontFamily.HELVETICA, 13, Font.BOLD);
+                Paragraph p = new Paragraph("Relatorio Finaceiro de Producao", fonte);
 
-            Paragraph data = new Paragraph("            Data de geração: " + dataDeHoje, fonte2);
-            Paragraph tiposDeDados = new Paragraph("            Tipos de dados: Financeiro", fonte2);
-            Paragraph formato = new Paragraph("            Formato: Tabela", fonte2);
+                Paragraph data = new Paragraph("            Data de geração: " + dataDeHoje, fonte2);
+                Paragraph tiposDeDados = new Paragraph("            Tipos de dados: Financeiro", fonte2);
+                Paragraph formato = new Paragraph("            Formato: Tabela", fonte2);
 
-            p.setAlignment(Element.ALIGN_CENTER);
-            data.setAlignment(Element.ALIGN_JUSTIFIED);
-            tiposDeDados.setAlignment(3);
-            formato.setAlignment(3);
+                p.setAlignment(Element.ALIGN_CENTER);
+                data.setAlignment(Element.ALIGN_JUSTIFIED);
+                tiposDeDados.setAlignment(3);
+                formato.setAlignment(3);
 
-            doc.add(p);
-            doc.add(linhaEmBranco);
-            doc.add(line);
-            doc.add(linhaEmBranco);
-            doc.add(data);
-            doc.add(tiposDeDados);
-            doc.add(formato);
-            doc.add(linhaEmBranco);
-            doc.add(line);
+                doc.add(p);
+                doc.add(linhaEmBranco);
+                doc.add(line);
+                doc.add(linhaEmBranco);
+                doc.add(data);
+                doc.add(tiposDeDados);
+                doc.add(formato);
+                doc.add(linhaEmBranco);
+                doc.add(line);
 
-            PdfPTable table = new PdfPTable(6);
-            table.setWidthPercentage(85);
-            table.setWidths(new int[]{2, 2, 2, 2, 2, 2});
+                PdfPTable table = new PdfPTable(6);
+                table.setWidthPercentage(85);
+                table.setWidths(new int[]{2, 2, 2, 2, 2, 2});
 
-            PdfPCell cellNomePropriedade = new PdfPCell(new Paragraph("Propriedade"));
-            PdfPCell cellCultura = new PdfPCell(new Paragraph("Cultura"));
-            PdfPCell cellQuantidadeProduzida = new PdfPCell(new Paragraph("Sacas"));
-            PdfPCell cellValorTotalDespesas = new PdfPCell(new Paragraph("Despesas"));
-            PdfPCell cellValorTotalLucro = new PdfPCell(new Paragraph("Lucro"));
-            PdfPCell cellValorTotalDeLucroLiquido = new PdfPCell(new Paragraph("Valor Liquido"));
+                PdfPCell cellNomePropriedade = new PdfPCell(new Paragraph("Propriedade"));
+                PdfPCell cellCultura = new PdfPCell(new Paragraph("Cultura"));
+                PdfPCell cellQuantidadeProduzida = new PdfPCell(new Paragraph("Sacas"));
+                PdfPCell cellValorTotalDespesas = new PdfPCell(new Paragraph("Despesas"));
+                PdfPCell cellValorTotalLucro = new PdfPCell(new Paragraph("Lucro"));
+                PdfPCell cellValorTotalDeLucroLiquido = new PdfPCell(new Paragraph("Valor Liquido"));
 
-            cellNomePropriedade.setBackgroundColor(BaseColor.LIGHT_GRAY);
-            cellCultura.setBackgroundColor(BaseColor.LIGHT_GRAY);
-            cellQuantidadeProduzida.setBackgroundColor(BaseColor.LIGHT_GRAY);
-            cellValorTotalDespesas.setBackgroundColor(BaseColor.LIGHT_GRAY);
-            cellValorTotalDespesas.setBackgroundColor(BaseColor.LIGHT_GRAY);
-            cellValorTotalLucro.setBackgroundColor(BaseColor.LIGHT_GRAY);
-            cellValorTotalDeLucroLiquido.setBackgroundColor(BaseColor.GREEN);
+                cellNomePropriedade.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                cellCultura.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                cellQuantidadeProduzida.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                cellValorTotalDespesas.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                cellValorTotalDespesas.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                cellValorTotalLucro.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                cellValorTotalDeLucroLiquido.setBackgroundColor(BaseColor.GREEN);
 
-            cellNomePropriedade.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cellCultura.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cellQuantidadeProduzida.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cellValorTotalDespesas.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cellValorTotalDespesas.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cellValorTotalLucro.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cellValorTotalDeLucroLiquido.setHorizontalAlignment(Element.ALIGN_CENTER);
-
-            table.addCell(cellNomePropriedade);
-            table.addCell(cellCultura);
-            table.addCell(cellQuantidadeProduzida);
-            table.addCell(cellValorTotalDespesas);
-            table.addCell(cellValorTotalLucro);
-            table.addCell(cellValorTotalDeLucroLiquido);
-
-            while (resultados.next()) {
-
-                producao = new Producao();
-
-                producao.setCultura(resultados.getString("cultura"));
-                producao.setPropriedade(resultados.getString("propriedade_da_colheita"));
-                producao.setQuantidadeProduzidaEmSacos(resultados.getInt("quantidade_produzida_em_sacos"));
-                producao.setValorTotalDespesas(resultados.getDouble("valor_total_despesas"));
-                producao.setValorTotalDeLucro(resultados.getDouble("valor_total_de_lucro"));
-
-                cellCultura = new PdfPCell(new Paragraph(producao.getCultura()));
-                cellNomePropriedade = new PdfPCell(new Paragraph(producao.getPropriedade()));
-                cellQuantidadeProduzida = new PdfPCell(new Paragraph(String.valueOf(producao.getQuantidadeProduzidaEmSacos())));
-                String valorTotalDeDespesasProducaoEncontrado = converterValorParaReal(producao.getValorTotalDespesas());
-                cellValorTotalDespesas = new PdfPCell(new Paragraph("R$ " + String.valueOf(valorTotalDeDespesasProducaoEncontrado)));
-                String valorTotalDeLucro = converterValorParaReal(producao.getValorTotalDeLucro());
-                cellValorTotalLucro = new PdfPCell(new Paragraph("R$ " + String.valueOf(valorTotalDeLucro)));
-                Double valorLiquido = producao.getValorTotalDeLucro() - producao.getValorTotalDespesas();
-                String valorCorrigido = converterValorParaReal(valorLiquido);
-                cellValorTotalDeLucroLiquido = new PdfPCell(new Paragraph("R$ " + String.valueOf(valorCorrigido)));
+                cellNomePropriedade.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellCultura.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellQuantidadeProduzida.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellValorTotalDespesas.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellValorTotalDespesas.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellValorTotalLucro.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cellValorTotalDeLucroLiquido.setHorizontalAlignment(Element.ALIGN_CENTER);
 
                 table.addCell(cellNomePropriedade);
                 table.addCell(cellCultura);
@@ -486,16 +467,45 @@ public class ControleProducao {
                 table.addCell(cellValorTotalLucro);
                 table.addCell(cellValorTotalDeLucroLiquido);
 
+                while (resultados.next()) {
+
+                    producao = new Producao();
+
+                    producao.setCultura(resultados.getString("cultura"));
+                    producao.setPropriedade(resultados.getString("propriedade_da_colheita"));
+                    producao.setQuantidadeProduzidaEmSacos(resultados.getInt("quantidade_produzida_em_sacos"));
+                    producao.setValorTotalDespesas(resultados.getDouble("valor_total_despesas"));
+                    producao.setValorTotalDeLucro(resultados.getDouble("valor_total_de_lucro"));
+
+                    cellCultura = new PdfPCell(new Paragraph(producao.getCultura()));
+                    cellNomePropriedade = new PdfPCell(new Paragraph(producao.getPropriedade()));
+                    cellQuantidadeProduzida = new PdfPCell(new Paragraph(String.valueOf(producao.getQuantidadeProduzidaEmSacos())));
+                    String valorTotalDeDespesasProducaoEncontrado = converterValorParaReal(producao.getValorTotalDespesas());
+                    cellValorTotalDespesas = new PdfPCell(new Paragraph("R$ " + String.valueOf(valorTotalDeDespesasProducaoEncontrado)));
+                    String valorTotalDeLucro = converterValorParaReal(producao.getValorTotalDeLucro());
+                    cellValorTotalLucro = new PdfPCell(new Paragraph("R$ " + String.valueOf(valorTotalDeLucro)));
+                    Double valorLiquido = producao.getValorTotalDeLucro() - producao.getValorTotalDespesas();
+                    String valorCorrigido = converterValorParaReal(valorLiquido);
+                    cellValorTotalDeLucroLiquido = new PdfPCell(new Paragraph("R$ " + String.valueOf(valorCorrigido)));
+
+                    table.addCell(cellNomePropriedade);
+                    table.addCell(cellCultura);
+                    table.addCell(cellQuantidadeProduzida);
+                    table.addCell(cellValorTotalDespesas);
+                    table.addCell(cellValorTotalLucro);
+                    table.addCell(cellValorTotalDeLucroLiquido);
+
+                }
+
+                doc.add(new Paragraph(" "));
+                doc.add(table);
+                doc.close();
+
+                Desktop.getDesktop().open(new File(nomePDF));
+
+            } catch (DocumentException | FileNotFoundException | SQLException | NullPointerException d) {
+                d.getMessage();
             }
-
-            doc.add(new Paragraph(" "));
-            doc.add(table);
-            doc.close();
-
-            Desktop.getDesktop().open(new File(nomePDF));
-
-        } catch (DocumentException | FileNotFoundException | SQLException | NullPointerException d) {
-            d.getMessage();
         }
 
     }
@@ -518,124 +528,131 @@ public class ControleProducao {
 
         Document doc = new Document();
 
-        String nomePDF = "C:\\Users\\Gustavo\\Desktop\\relatorio_de_dados_detalhado_de_producao.pdf";
+        JFileChooser jFileChooser = new JFileChooser();
+        jFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        int result = jFileChooser.showSaveDialog(null);
 
-        Font fonteTitulo = new Font(Font.FontFamily.HELVETICA, 14, Font.BOLD);
-        Font fonteSubtitulo = new Font(Font.FontFamily.HELVETICA, 13, Font.BOLD);
-        Font fonteTextoComun = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL);
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File selectedDirectory = jFileChooser.getSelectedFile();
+            String nomePDF = selectedDirectory.getAbsolutePath() + File.separator + "relatorio_de_dados_detalhado_de_producao.pdf";
 
-        Paragraph linhaEmBranco = new Paragraph(" ", fonteTextoComun);
+            Font fonteTitulo = new Font(Font.FontFamily.HELVETICA, 14, Font.BOLD);
+            Font fonteSubtitulo = new Font(Font.FontFamily.HELVETICA, 13, Font.BOLD);
+            Font fonteTextoComun = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL);
 
-        try {
-            if (resultados.next()) {
-                Producao producaoBuscada = new Producao();
-                producaoBuscada.setNomeProducao(resultados.getString("nome_producao"));
-                producaoBuscada.setDataDePlantio(resultados.getDate("data_plantio"));
-                producaoBuscada.setDataInicioColheita(resultados.getDate("data_inicio_colheita"));
-                producaoBuscada.setDataFimColheita(resultados.getDate("data_fim_colheita"));
+            Paragraph linhaEmBranco = new Paragraph(" ", fonteTextoComun);
 
-                producaoBuscada.setValorTotalDespesas(resultados.getDouble("valor_total_despesas"));
-                producaoBuscada.setValorTotalDeLucro(resultados.getDouble("valor_total_de_lucro"));
+            try {
+                if (resultados.next()) {
+                    Producao producaoBuscada = new Producao();
+                    producaoBuscada.setNomeProducao(resultados.getString("nome_producao"));
+                    producaoBuscada.setDataDePlantio(resultados.getDate("data_plantio"));
+                    producaoBuscada.setDataInicioColheita(resultados.getDate("data_inicio_colheita"));
+                    producaoBuscada.setDataFimColheita(resultados.getDate("data_fim_colheita"));
 
-                producaoBuscada.setQuantidadeProduzidaEmSacos(resultados.getInt("quantidade_produzida_em_sacos"));
-                producaoBuscada.setCultura(resultados.getString("cultura"));
-                producaoBuscada.setIdProducao(resultados.getInt("id_producao"));
-                producaoBuscada.setStatusDeVenda(resultados.getString("status_de_venda"));
-                producaoBuscada.setPropriedadeColheita(resultados.getString("propriedade_da_colheita"));
+                    producaoBuscada.setValorTotalDespesas(resultados.getDouble("valor_total_despesas"));
+                    producaoBuscada.setValorTotalDeLucro(resultados.getDouble("valor_total_de_lucro"));
 
-                String imagePath = "/logo_ac_farm_system.png";
-                Image imagem = Image.getInstance(getClass().getResource(imagePath));
-                imagem.scaleToFit(55, 50);
+                    producaoBuscada.setQuantidadeProduzidaEmSacos(resultados.getInt("quantidade_produzida_em_sacos"));
+                    producaoBuscada.setCultura(resultados.getString("cultura"));
+                    producaoBuscada.setIdProducao(resultados.getInt("id_producao"));
+                    producaoBuscada.setStatusDeVenda(resultados.getString("status_de_venda"));
+                    producaoBuscada.setPropriedadeColheita(resultados.getString("propriedade_da_colheita"));
 
-                LineSeparator line = new LineSeparator();
-                line.setLineWidth(0.5f);
-                line.setPercentage(85f);
+                    String imagePath = "/logo_ac_farm_system.png";
+                    Image imagem = Image.getInstance(getClass().getResource(imagePath));
+                    imagem.scaleToFit(55, 50);
 
-                PdfWriter.getInstance(doc, new FileOutputStream(nomePDF));
-                doc.open();
+                    LineSeparator line = new LineSeparator();
+                    line.setLineWidth(0.5f);
+                    line.setPercentage(85f);
 
-                imagem.setAbsolutePosition(76, imagem.getAbsoluteX());
-                doc.add(imagem);
+                    PdfWriter.getInstance(doc, new FileOutputStream(nomePDF));
+                    doc.open();
 
-                String nomeProducaoEncontrado = producaoBuscada.getNomeProducao();
-                String dataDePlantioProducaoEncontrado = formatarData(producaoBuscada.getDataDePlantio());
-                String dataDeInicioColheitaProducaoEncontrado = formatarData(producaoBuscada.getDataInicioColheita());
-                String dataDeFimColheitaProducaoEncontrado = formatarData(producaoBuscada.getDataFimColheita());
-                String valorTotalDeDespesasProducaoEncontrado = converterValorParaReal(producaoBuscada.getValorTotalDespesas());
-                String valorTotalDeLucroProducaoEncontrado = converterValorParaReal(producaoBuscada.getValorTotalDeLucro());
-                String quantidadeProduzidaEmSacosProducaoEncontrado = Integer.toString(producaoBuscada.getQuantidadeProduzidaEmSacos());
-                String culturaProducaoEncontrado = producaoBuscada.getCultura();
-                String statusDeVendaProducaoEncontrado = producaoBuscada.getStatusDeVenda();
-                String propriedadeProducao = producaoBuscada.getPropriedade();
+                    imagem.setAbsolutePosition(76, imagem.getAbsoluteX());
+                    doc.add(imagem);
 
-                Paragraph titulo = new Paragraph("Relatorio de Produção", fonteTitulo);
+                    String nomeProducaoEncontrado = producaoBuscada.getNomeProducao();
+                    String dataDePlantioProducaoEncontrado = formatarData(producaoBuscada.getDataDePlantio());
+                    String dataDeInicioColheitaProducaoEncontrado = formatarData(producaoBuscada.getDataInicioColheita());
+                    String dataDeFimColheitaProducaoEncontrado = formatarData(producaoBuscada.getDataFimColheita());
+                    String valorTotalDeDespesasProducaoEncontrado = converterValorParaReal(producaoBuscada.getValorTotalDespesas());
+                    String valorTotalDeLucroProducaoEncontrado = converterValorParaReal(producaoBuscada.getValorTotalDeLucro());
+                    String quantidadeProduzidaEmSacosProducaoEncontrado = Integer.toString(producaoBuscada.getQuantidadeProduzidaEmSacos());
+                    String culturaProducaoEncontrado = producaoBuscada.getCultura();
+                    String statusDeVendaProducaoEncontrado = producaoBuscada.getStatusDeVenda();
+                    String propriedadeProducao = producaoBuscada.getPropriedade();
 
-                Paragraph nomeProducaoRelatorio = new Paragraph("            Praga: " + nomeProducaoEncontrado, fonteTextoComun);
-                Paragraph data = new Paragraph("            Data de geração: " + dataDeHoje, fonteTextoComun);
-                Paragraph tipoDeDados = new Paragraph("            Tipo de Informações: Produção", fonteTextoComun);
-                Paragraph formato = new Paragraph("            Formato: Detalhado", fonteTextoComun);
+                    Paragraph titulo = new Paragraph("Relatorio de Produção", fonteTitulo);
 
-                Paragraph nomeProducaoParagrafo = new Paragraph("            Produção: " + nomeProducaoEncontrado);
-                Paragraph dataDePlantioProducaoParagrafo = new Paragraph("            Data de Plantio: " + dataDePlantioProducaoEncontrado);
-                Paragraph dataDeInicioColheitaProducaoParagrafo = new Paragraph("            Data de Inicio colheita: " + dataDeInicioColheitaProducaoEncontrado);
-                Paragraph dataDeFimColheitaProducaoParagrafo = new Paragraph("            Data fim colheita: " + dataDeFimColheitaProducaoEncontrado);
-                Paragraph valorTotalDeDespesasProducaoParagrafo = new Paragraph("            Valor total de despesas: R$ " + valorTotalDeDespesasProducaoEncontrado);
-                Paragraph valorTotalDeLucroProducaoParagrafo = new Paragraph("            Valor total de lucro: R$ " + valorTotalDeLucroProducaoEncontrado);
-                Paragraph culturaProducaoParagrafo = new Paragraph("            Cultura: " + culturaProducaoEncontrado);
-                Paragraph quantidadeProduzidaEmSacosProducaoParagrafo = new Paragraph("            Quantidade produzida em sacos: " + quantidadeProduzidaEmSacosProducaoEncontrado);
-                Paragraph statusDeVendaProducaoParagrafo = new Paragraph("            Vendido: " + statusDeVendaProducaoEncontrado);
-                Paragraph propriedadeProducaoParagrafo = new Paragraph("            Propriedade/Subdivisao: " + propriedadeProducao);
+                    Paragraph nomeProducaoRelatorio = new Paragraph("            Praga: " + nomeProducaoEncontrado, fonteTextoComun);
+                    Paragraph data = new Paragraph("            Data de geração: " + dataDeHoje, fonteTextoComun);
+                    Paragraph tipoDeDados = new Paragraph("            Tipo de Informações: Produção", fonteTextoComun);
+                    Paragraph formato = new Paragraph("            Formato: Detalhado", fonteTextoComun);
 
-                titulo.setAlignment(Element.ALIGN_CENTER);
-                data.setAlignment(Element.ALIGN_JUSTIFIED);
-                tipoDeDados.setAlignment(3);
-                formato.setAlignment(3);
+                    Paragraph nomeProducaoParagrafo = new Paragraph("            Produção: " + nomeProducaoEncontrado);
+                    Paragraph dataDePlantioProducaoParagrafo = new Paragraph("            Data de Plantio: " + dataDePlantioProducaoEncontrado);
+                    Paragraph dataDeInicioColheitaProducaoParagrafo = new Paragraph("            Data de Inicio colheita: " + dataDeInicioColheitaProducaoEncontrado);
+                    Paragraph dataDeFimColheitaProducaoParagrafo = new Paragraph("            Data fim colheita: " + dataDeFimColheitaProducaoEncontrado);
+                    Paragraph valorTotalDeDespesasProducaoParagrafo = new Paragraph("            Valor total de despesas: R$ " + valorTotalDeDespesasProducaoEncontrado);
+                    Paragraph valorTotalDeLucroProducaoParagrafo = new Paragraph("            Valor total de lucro: R$ " + valorTotalDeLucroProducaoEncontrado);
+                    Paragraph culturaProducaoParagrafo = new Paragraph("            Cultura: " + culturaProducaoEncontrado);
+                    Paragraph quantidadeProduzidaEmSacosProducaoParagrafo = new Paragraph("            Quantidade produzida em sacos: " + quantidadeProduzidaEmSacosProducaoEncontrado);
+                    Paragraph statusDeVendaProducaoParagrafo = new Paragraph("            Vendido: " + statusDeVendaProducaoEncontrado);
+                    Paragraph propriedadeProducaoParagrafo = new Paragraph("            Propriedade/Subdivisao: " + propriedadeProducao);
 
-                Paragraph dadosProducaoSubtitulo = new Paragraph("           Dados da praga", fonteSubtitulo);
-                Paragraph datasProducaoSubtitulo = new Paragraph("           Datas", fonteSubtitulo);
-                Paragraph valoresProducaoSubtitulo = new Paragraph("           Valores", fonteSubtitulo);
+                    titulo.setAlignment(Element.ALIGN_CENTER);
+                    data.setAlignment(Element.ALIGN_JUSTIFIED);
+                    tipoDeDados.setAlignment(3);
+                    formato.setAlignment(3);
 
-                doc.add(titulo);
-                doc.add(linhaEmBranco);
-                doc.add(line);
-                doc.add(linhaEmBranco);
-                doc.add(nomeProducaoRelatorio);
-                doc.add(data);
-                doc.add(tipoDeDados);
-                doc.add(formato);
-                doc.add(linhaEmBranco);
-                doc.add(line);
-                doc.add(linhaEmBranco);
-                doc.add(dadosProducaoSubtitulo);
-                doc.add(linhaEmBranco);
-                doc.add(nomeProducaoParagrafo);
-                doc.add(culturaProducaoParagrafo);
-                doc.add(propriedadeProducaoParagrafo);
-                doc.add(quantidadeProduzidaEmSacosProducaoParagrafo);
-                doc.add(statusDeVendaProducaoParagrafo);
-                doc.add(linhaEmBranco);
-                doc.add(datasProducaoSubtitulo);
-                doc.add(linhaEmBranco);
-                doc.add(dataDePlantioProducaoParagrafo);
-                doc.add(dataDeInicioColheitaProducaoParagrafo);
-                doc.add(dataDeFimColheitaProducaoParagrafo);
-                doc.add(linhaEmBranco);
-                doc.add(valoresProducaoSubtitulo);
-                doc.add(linhaEmBranco);
-                doc.add(valorTotalDeDespesasProducaoParagrafo);
-                doc.add(valorTotalDeLucroProducaoParagrafo);
+                    Paragraph dadosProducaoSubtitulo = new Paragraph("           Dados da praga", fonteSubtitulo);
+                    Paragraph datasProducaoSubtitulo = new Paragraph("           Datas", fonteSubtitulo);
+                    Paragraph valoresProducaoSubtitulo = new Paragraph("           Valores", fonteSubtitulo);
 
-                producao = new Producao();
+                    doc.add(titulo);
+                    doc.add(linhaEmBranco);
+                    doc.add(line);
+                    doc.add(linhaEmBranco);
+                    doc.add(nomeProducaoRelatorio);
+                    doc.add(data);
+                    doc.add(tipoDeDados);
+                    doc.add(formato);
+                    doc.add(linhaEmBranco);
+                    doc.add(line);
+                    doc.add(linhaEmBranco);
+                    doc.add(dadosProducaoSubtitulo);
+                    doc.add(linhaEmBranco);
+                    doc.add(nomeProducaoParagrafo);
+                    doc.add(culturaProducaoParagrafo);
+                    doc.add(propriedadeProducaoParagrafo);
+                    doc.add(quantidadeProduzidaEmSacosProducaoParagrafo);
+                    doc.add(statusDeVendaProducaoParagrafo);
+                    doc.add(linhaEmBranco);
+                    doc.add(datasProducaoSubtitulo);
+                    doc.add(linhaEmBranco);
+                    doc.add(dataDePlantioProducaoParagrafo);
+                    doc.add(dataDeInicioColheitaProducaoParagrafo);
+                    doc.add(dataDeFimColheitaProducaoParagrafo);
+                    doc.add(linhaEmBranco);
+                    doc.add(valoresProducaoSubtitulo);
+                    doc.add(linhaEmBranco);
+                    doc.add(valorTotalDeDespesasProducaoParagrafo);
+                    doc.add(valorTotalDeLucroProducaoParagrafo);
 
-                doc.add(new Paragraph(""));
-                doc.close();
+                    producao = new Producao();
 
-                Desktop.getDesktop().open(new File(nomePDF));
+                    doc.add(new Paragraph(""));
+                    doc.close();
 
+                    Desktop.getDesktop().open(new File(nomePDF));
+
+                }
+
+            } catch (DocumentException | FileNotFoundException | SQLException | NullPointerException d) {
+                d.getMessage();
             }
-
-        } catch (DocumentException | FileNotFoundException | SQLException | NullPointerException d) {
-            d.getMessage();
         }
 
     }

@@ -24,7 +24,7 @@ public class TelaDeCadastroDeUsuario extends javax.swing.JFrame {
         botaoNivelDeAcesso = new javax.swing.ButtonGroup();
         jTextFieldNomeUsuario = new javax.swing.JTextField();
         jPasswordSenhaDoUsuario = new javax.swing.JPasswordField();
-        jButtonConfirmarCadastroDeUsuario1 = new javax.swing.JButton();
+        jButtonConfirmarCadastroDeUsuario = new javax.swing.JButton();
         jButtonCancelarCadastroDeUsuario = new javax.swing.JButton();
         jButtonVoltarAoTelaDeUsuario = new javax.swing.JButton();
         jComboBoxNivelDeAcesso = new javax.swing.JComboBox<>();
@@ -42,7 +42,7 @@ public class TelaDeCadastroDeUsuario extends javax.swing.JFrame {
                 jTextFieldNomeUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 189, 306, 28));
+        getContentPane().add(jTextFieldNomeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 189, 306, 29));
         jTextFieldNomeUsuario.getAccessibleContext().setAccessibleName("");
 
         jPasswordSenhaDoUsuario.setBackground(new java.awt.Color(255, 255, 255));
@@ -54,19 +54,19 @@ public class TelaDeCadastroDeUsuario extends javax.swing.JFrame {
                 jPasswordSenhaDoUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(jPasswordSenhaDoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 341, 303, 28));
+        getContentPane().add(jPasswordSenhaDoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 341, 305, 29));
 
-        jButtonConfirmarCadastroDeUsuario1.setBorder(null);
-        jButtonConfirmarCadastroDeUsuario1.setBorderPainted(false);
-        jButtonConfirmarCadastroDeUsuario1.setContentAreaFilled(false);
-        jButtonConfirmarCadastroDeUsuario1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonConfirmarCadastroDeUsuario1.setFocusPainted(false);
-        jButtonConfirmarCadastroDeUsuario1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonConfirmarCadastroDeUsuario.setBorder(null);
+        jButtonConfirmarCadastroDeUsuario.setBorderPainted(false);
+        jButtonConfirmarCadastroDeUsuario.setContentAreaFilled(false);
+        jButtonConfirmarCadastroDeUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonConfirmarCadastroDeUsuario.setFocusPainted(false);
+        jButtonConfirmarCadastroDeUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonConfirmarCadastroDeUsuario1ActionPerformed(evt);
+                jButtonConfirmarCadastroDeUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonConfirmarCadastroDeUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 512, 280, 35));
+        getContentPane().add(jButtonConfirmarCadastroDeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(612, 548, 283, 35));
 
         jButtonCancelarCadastroDeUsuario.setBorder(null);
         jButtonCancelarCadastroDeUsuario.setBorderPainted(false);
@@ -79,7 +79,7 @@ public class TelaDeCadastroDeUsuario extends javax.swing.JFrame {
                 jButtonCancelarCadastroDeUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCancelarCadastroDeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 562, 280, 35));
+        getContentPane().add(jButtonCancelarCadastroDeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 597, 280, 36));
 
         jButtonVoltarAoTelaDeUsuario.setBorder(null);
         jButtonVoltarAoTelaDeUsuario.setBorderPainted(false);
@@ -101,7 +101,7 @@ public class TelaDeCadastroDeUsuario extends javax.swing.JFrame {
                 jComboBoxNivelDeAcessoActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxNivelDeAcesso, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 190, 200, -1));
+        getContentPane().add(jComboBoxNivelDeAcesso, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 190, 250, -1));
 
         jLabelIMGCadastroDeUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasUsuario/img_tela_de_cadastro_de_usuario.png"))); // NOI18N
         getContentPane().add(jLabelIMGCadastroDeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -111,13 +111,12 @@ public class TelaDeCadastroDeUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonCancelarCadastroDeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarCadastroDeUsuarioActionPerformed
-        jTextFieldNomeUsuario.setText("");
-        jPasswordSenhaDoUsuario.setText("");
+        limparCampos();
     }//GEN-LAST:event_jButtonCancelarCadastroDeUsuarioActionPerformed
 
-    private void jButtonConfirmarCadastroDeUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarCadastroDeUsuario1ActionPerformed
+    private void jButtonConfirmarCadastroDeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarCadastroDeUsuarioActionPerformed
         cadastrarUsuario();
-    }//GEN-LAST:event_jButtonConfirmarCadastroDeUsuario1ActionPerformed
+    }//GEN-LAST:event_jButtonConfirmarCadastroDeUsuarioActionPerformed
 
     private void jButtonVoltarAoTelaDeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarAoTelaDeUsuarioActionPerformed
         this.dispose();
@@ -133,7 +132,7 @@ public class TelaDeCadastroDeUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxNivelDeAcessoActionPerformed
 
     private void jPasswordSenhaDoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordSenhaDoUsuarioActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jPasswordSenhaDoUsuarioActionPerformed
 
     public void cadastrarUsuario() {
@@ -141,7 +140,7 @@ public class TelaDeCadastroDeUsuario extends javax.swing.JFrame {
 
         nivelDeAcesso = jComboBoxNivelDeAcesso.getSelectedItem().toString();
         senhaInserida = new String(jPasswordSenhaDoUsuario.getPassword());
-
+        nomeUsuario = jTextFieldNomeUsuario.getText();
         senhasFracas = new HashSet<>();
 
         senhasFracas.add("admin");
@@ -156,42 +155,31 @@ public class TelaDeCadastroDeUsuario extends javax.swing.JFrame {
         senhasFracas.add("********");
         senhasFracas.add("1234567890");
 
-        if (jPasswordSenhaDoUsuario.getText().isBlank()) {
+        if (senhaInserida.isBlank()) {
             JOptionPane.showMessageDialog(null, "A Senha não pode ser Validada");
-            jPasswordSenhaDoUsuario.requestFocus();
             return;
         }
 
-        if (jPasswordSenhaDoUsuario.getText().length() < 6) {
+        if (senhaInserida.length() < 6) {
             JOptionPane.showMessageDialog(null, "A senha deve possuir no minimo 6 caracteres");
-            jPasswordSenhaDoUsuario.requestFocus();
             return;
         }
 
         if (senhasFracas.contains(senhaInserida)) {
             JOptionPane.showMessageDialog(null, "Está senha é muito fraca");
-            jPasswordSenhaDoUsuario.requestFocus();
             return;
         }
 
         if (jPasswordSenhaDoUsuario.getText().equals(jTextFieldNomeUsuario.getText())) {
-            JOptionPane.showMessageDialog(null, "Os nome de usuario e senha são iguais");
-            jPasswordSenhaDoUsuario.requestFocus();
+            JOptionPane.showMessageDialog(null, "Nome de usuario e senha não devem ser iguais");
             return;
         }
 
-        if (jTextFieldNomeUsuario.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "A Senha não pode ser Validada");
-            jTextFieldNomeUsuario.requestFocus();
+        if (nomeUsuario.isBlank()) {
+            JOptionPane.showMessageDialog(null, "O nome não é válido");
             return;
         }
 
-        if (botaoNivelDeAcesso.equals("")) {
-            JOptionPane.showMessageDialog(null, "Adicione o nivel de Acesso");
-            return;
-        }
-
-        nomeUsuario = jTextFieldNomeUsuario.getText();
         senhaCriptograda = passwordEncryptor.encryptPassword(senhaInserida);
 
         if (nivelDeAcesso.equals("Master")) {
@@ -205,8 +193,7 @@ public class TelaDeCadastroDeUsuario extends javax.swing.JFrame {
 
             JOptionPane.showMessageDialog(this, msg);
 
-            jTextFieldNomeUsuario.setText("");
-            jPasswordSenhaDoUsuario.setText("");
+            limparCampos();
 
         } else if (nivelDeAcesso.equals("Comum")) {
 
@@ -216,23 +203,24 @@ public class TelaDeCadastroDeUsuario extends javax.swing.JFrame {
             usuario.usuario.setNivelDeAcesso(nivelDeAcesso);
 
             String msg = usuario.cadastrar(ControleUsuario.INCLUSAO);
-
             JOptionPane.showMessageDialog(this, msg);
-
-            jTextFieldNomeUsuario.setText("");
-            jPasswordSenhaDoUsuario.setText("");
+            limparCampos();
 
         } else if (nivelDeAcesso.equals("Selecione")) {
             JOptionPane.showMessageDialog(this, "Adicione o nivel de acesso");
             return;
         }
+    }
 
+    public void limparCampos() {
+        jTextFieldNomeUsuario.setText("");
+        jPasswordSenhaDoUsuario.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup botaoNivelDeAcesso;
     private javax.swing.JButton jButtonCancelarCadastroDeUsuario;
-    private javax.swing.JButton jButtonConfirmarCadastroDeUsuario1;
+    private javax.swing.JButton jButtonConfirmarCadastroDeUsuario;
     private javax.swing.JButton jButtonVoltarAoTelaDeUsuario;
     private javax.swing.JComboBox<String> jComboBoxNivelDeAcesso;
     private javax.swing.JLabel jLabelIMGCadastroDeUsuario;

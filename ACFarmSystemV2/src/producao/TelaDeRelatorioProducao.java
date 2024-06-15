@@ -20,8 +20,8 @@ public class TelaDeRelatorioProducao extends javax.swing.JFrame {
     private void initComponents() {
 
         jButtonVoltarATelaDeProducao = new javax.swing.JButton();
-        jButtonGerarRelatorioFinanceiro = new javax.swing.JButton();
         jButtonGerarRelatorioProducao = new javax.swing.JButton();
+        jButtonGerarRelatorioFinanceiro = new javax.swing.JButton();
         jButtonTelaDeRelatorioDetalhado = new javax.swing.JButton();
         jLabelTelaProducao = new javax.swing.JLabel();
 
@@ -39,17 +39,6 @@ public class TelaDeRelatorioProducao extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonVoltarATelaDeProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 23, 40, 24));
 
-        jButtonGerarRelatorioFinanceiro.setBorder(null);
-        jButtonGerarRelatorioFinanceiro.setBorderPainted(false);
-        jButtonGerarRelatorioFinanceiro.setContentAreaFilled(false);
-        jButtonGerarRelatorioFinanceiro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonGerarRelatorioFinanceiro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonGerarRelatorioFinanceiroActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonGerarRelatorioFinanceiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(344, 428, 225, 44));
-
         jButtonGerarRelatorioProducao.setBorder(null);
         jButtonGerarRelatorioProducao.setBorderPainted(false);
         jButtonGerarRelatorioProducao.setContentAreaFilled(false);
@@ -59,7 +48,18 @@ public class TelaDeRelatorioProducao extends javax.swing.JFrame {
                 jButtonGerarRelatorioProducaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonGerarRelatorioProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 429, 225, 44));
+        getContentPane().add(jButtonGerarRelatorioProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 403, 142, 46));
+
+        jButtonGerarRelatorioFinanceiro.setBorder(null);
+        jButtonGerarRelatorioFinanceiro.setBorderPainted(false);
+        jButtonGerarRelatorioFinanceiro.setContentAreaFilled(false);
+        jButtonGerarRelatorioFinanceiro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonGerarRelatorioFinanceiro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonGerarRelatorioFinanceiroActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonGerarRelatorioFinanceiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(385, 404, 140, 44));
 
         jButtonTelaDeRelatorioDetalhado.setBorder(null);
         jButtonTelaDeRelatorioDetalhado.setBorderPainted(false);
@@ -70,7 +70,7 @@ public class TelaDeRelatorioProducao extends javax.swing.JFrame {
                 jButtonTelaDeRelatorioDetalhadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonTelaDeRelatorioDetalhado, new org.netbeans.lib.awtextra.AbsoluteConstraints(656, 428, 225, 44));
+        getContentPane().add(jButtonTelaDeRelatorioDetalhado, new org.netbeans.lib.awtextra.AbsoluteConstraints(675, 403, 140, 45));
 
         jLabelTelaProducao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasProducao/img_tela_de_relatorio_producao.png"))); // NOI18N
         jLabelTelaProducao.setText("jLabel1");
@@ -81,8 +81,18 @@ public class TelaDeRelatorioProducao extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonGerarRelatorioProducaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGerarRelatorioProducaoActionPerformed
-        this.dispose();
-        new TelaDeDadosDeProducao().setVisible(true);
+        try {
+            controleProducao.gerarRelatorioDeDadosDeProducoesEmPDF();
+            JOptionPane.showMessageDialog(this, "Gerando Relatorio de produção");
+            this.dispose();
+            new TelaDeRelatorioProducao().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaDeRelatorioProducao.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ParseException ex) {
+            Logger.getLogger(TelaDeRelatorioProducao.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(TelaDeRelatorioProducao.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButtonGerarRelatorioProducaoActionPerformed
 
     private void jButtonVoltarATelaDeProducaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarATelaDeProducaoActionPerformed
@@ -94,8 +104,8 @@ public class TelaDeRelatorioProducao extends javax.swing.JFrame {
     private void jButtonGerarRelatorioFinanceiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGerarRelatorioFinanceiroActionPerformed
 
         try {
-            JOptionPane.showMessageDialog(this, "Gerando Relatorio de custos");
             controleProducao.gerarRelatorioDeDadosFinanceirosEmPDF();
+            JOptionPane.showMessageDialog(this, "Gerando Relatorio de custos");
             this.dispose();
             new TelaDeRelatorioProducao().setVisible(true);
         } catch (SQLException ex) {
