@@ -19,8 +19,8 @@ public class TelaDeInicioEstoque extends javax.swing.JFrame {
         jButtonCombustivel = new javax.swing.JButton();
         jButtonSementes = new javax.swing.JButton();
         jButtonAgrotoxico = new javax.swing.JButton();
-        jButtonVoltarAoInicio = new javax.swing.JButton();
         jButtonFertilizante = new javax.swing.JButton();
+        jButtonVoltarAoInicio = new javax.swing.JButton();
         jLabelTelaDeInicio = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -35,7 +35,7 @@ public class TelaDeInicioEstoque extends javax.swing.JFrame {
                 jButtonCombustivelActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCombustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 268, 152, 35));
+        getContentPane().add(jButtonCombustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 143, 190, 184));
 
         jButtonSementes.setBorder(null);
         jButtonSementes.setBorderPainted(false);
@@ -46,7 +46,7 @@ public class TelaDeInicioEstoque extends javax.swing.JFrame {
                 jButtonSementesActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonSementes, new org.netbeans.lib.awtextra.AbsoluteConstraints(666, 268, 153, 35));
+        getContentPane().add(jButtonSementes, new org.netbeans.lib.awtextra.AbsoluteConstraints(544, 143, 190, 182));
 
         jButtonAgrotoxico.setBorder(null);
         jButtonAgrotoxico.setBorderPainted(false);
@@ -57,7 +57,18 @@ public class TelaDeInicioEstoque extends javax.swing.JFrame {
                 jButtonAgrotoxicoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 507, 152, 35));
+        getContentPane().add(jButtonAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 402, 190, 187));
+
+        jButtonFertilizante.setBorder(null);
+        jButtonFertilizante.setBorderPainted(false);
+        jButtonFertilizante.setContentAreaFilled(false);
+        jButtonFertilizante.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonFertilizante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonFertilizanteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(545, 401, 190, 188));
 
         jButtonVoltarAoInicio.setBorder(null);
         jButtonVoltarAoInicio.setBorderPainted(false);
@@ -69,17 +80,6 @@ public class TelaDeInicioEstoque extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonVoltarAoInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 23, 40, 22));
-
-        jButtonFertilizante.setBorder(null);
-        jButtonFertilizante.setBorderPainted(false);
-        jButtonFertilizante.setContentAreaFilled(false);
-        jButtonFertilizante.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonFertilizante.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonFertilizanteActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(666, 507, 153, 35));
 
         jLabelTelaDeInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasDeEstoque/img_tela_de_inicio_estoque.png"))); // NOI18N
         getContentPane().add(jLabelTelaDeInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));

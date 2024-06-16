@@ -180,6 +180,11 @@ public class TelaDeConsultaPraga extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonBuscarFornecedorActionPerformed
 
     public void buscarPraga() throws SQLException, ParseException {
+        if (jTextFieldFornecedorBuscado.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Adicione o nome de uma praga");
+            return;
+        }
+
         nomeBuscado = jTextFieldFornecedorBuscado.getText();
 
         Praga pragaEncontrada = controlePraga.buscarPraga(nomeBuscado);

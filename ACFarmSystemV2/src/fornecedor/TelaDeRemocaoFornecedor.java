@@ -268,6 +268,7 @@ public class TelaDeRemocaoFornecedor extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonConfirmarRemocaoActionPerformed
 
     private void jButtonCancelarRemocaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarRemocaoActionPerformed
+        JOptionPane.showMessageDialog(this, "Remoção cancelada");
         limparCampos();
     }//GEN-LAST:event_jButtonCancelarRemocaoActionPerformed
 
@@ -276,6 +277,11 @@ public class TelaDeRemocaoFornecedor extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldEstadoFornecedorActionPerformed
 
     public void buscarFornecedor() throws SQLException {
+        if (jTextFieldFornecedorBuscado.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome do fornecedor desejado");
+            return;
+        }
+
         nomeBuscado = jTextFieldFornecedorBuscado.getText();
 
         Fornecedor fornecedorEncontrado = controleFornecedor.buscarFornecedor(nomeBuscado);
@@ -298,6 +304,10 @@ public class TelaDeRemocaoFornecedor extends javax.swing.JFrame {
     }
 
     public void removerFornecedor() {
+        if (jTextFieldFornecedorBuscado.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Busque um fornecedor");
+            return;
+        }
         nomeBuscado = jTextFieldFornecedorBuscado.getText();
         msg = controleFornecedor.removerFornecedor(nomeBuscado);
 

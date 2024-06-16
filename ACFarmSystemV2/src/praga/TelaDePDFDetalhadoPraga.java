@@ -189,10 +189,17 @@ public class TelaDePDFDetalhadoPraga extends javax.swing.JFrame {
             Logger.getLogger(TelaDePDFDetalhadoPraga.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ParseException ex) {
             Logger.getLogger(TelaDePDFDetalhadoPraga.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Busque uma praga");
         }
     }//GEN-LAST:event_jButtonBuscarFornecedorActionPerformed
 
     private void jButtonGerarRelatorioDetalhadoDePragaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGerarRelatorioDetalhadoDePragaActionPerformed
+        if (jTextFieldNomePraga.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Busque uma praga");
+            return;
+        }
+        
         try {
             JOptionPane.showMessageDialog(this, "Gerando Relatório de pragas");
             controlePraga.gerarRelatorioDetalhadoDePragas(nomeBuscado);

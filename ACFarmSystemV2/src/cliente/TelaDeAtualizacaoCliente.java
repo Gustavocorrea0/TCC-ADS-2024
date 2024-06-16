@@ -265,10 +265,16 @@ public class TelaDeAtualizacaoCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonValidarRemocaoActionPerformed
 
     private void jButtonCancelarRemocaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarRemocaoActionPerformed
+        JOptionPane.showMessageDialog(null, "Atualização cancelada");
         limparCampos();
     }//GEN-LAST:event_jButtonCancelarRemocaoActionPerformed
 
     public void buscarCliente() throws SQLException {
+        if (jTextFieldClienteBuscado.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome do cliente para a busca");
+            return;
+        }
+
         nomeBuscado = jTextFieldClienteBuscado.getText();
 
         Cliente clienteEncontrado = controleCliente.buscarCliente(nomeBuscado);
@@ -290,6 +296,11 @@ public class TelaDeAtualizacaoCliente extends javax.swing.JFrame {
     }
 
     public void validarCliente() throws SQLException {
+        if (jTextFieldClienteBuscado.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Busque um cliente");
+            return;
+        }
+
         nomeClienteAtualizado = jTextFieldNome.getText();
         cnpjOuCpfClienteAtualizado = jTextFieldCNPJOuCPF.getText();
         cepClienteAtualizado = jTextFieldCEP.getText();

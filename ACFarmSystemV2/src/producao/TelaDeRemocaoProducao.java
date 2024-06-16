@@ -226,7 +226,7 @@ public class TelaDeRemocaoProducao extends javax.swing.JFrame {
 
         jLabelTelaProducao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasProducao/img_tela_de_remover_producao.png"))); // NOI18N
         jLabelTelaProducao.setText("jLabel1");
-        getContentPane().add(jLabelTelaProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 912, -1));
+        getContentPane().add(jLabelTelaProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -292,10 +292,17 @@ public class TelaDeRemocaoProducao extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonConfirmarRemocaoActionPerformed
 
     private void jButtonCancelarRemocaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarRemocaoActionPerformed
+        JOptionPane.showMessageDialog(this, "Remoção cancelada");
         limparCampos();
     }//GEN-LAST:event_jButtonCancelarRemocaoActionPerformed
 
     public void consultarProducao() throws SQLException, ParseException {
+
+        if (jTextFieldNomeProducaoBuscada.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome da produção");
+            return;
+        }
+
         nomeProducaoBuscada = jTextFieldNomeProducaoBuscada.getText();
         Producao producaoEncontrada = controleProducao.buscarProducao(nomeProducaoBuscada);
 
@@ -364,7 +371,12 @@ public class TelaDeRemocaoProducao extends javax.swing.JFrame {
         return "Erro";
 
     }
+
     public void removerProducao() {
+        if (jTextFieldNomeProducaoBuscada.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Busque uma produção");
+            return;
+        }
         nomeProducaoBuscada = jTextFieldNomeProducaoBuscada.getText();
         String msg = controleProducao.removerProducao(nomeProducaoBuscada);
         JOptionPane.showMessageDialog(this, msg);

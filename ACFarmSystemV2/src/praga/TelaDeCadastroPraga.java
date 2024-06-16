@@ -9,12 +9,16 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import validacoes.ValidarData;
 
 public class TelaDeCadastroPraga extends javax.swing.JFrame {
 
+    private DefaultTableModel modeloPropriedade;
+
     public TelaDeCadastroPraga() {
         initComponents();
+        readTable();
     }
 
     private ControlePraga controlePraga = new ControlePraga();
@@ -35,15 +39,17 @@ public class TelaDeCadastroPraga extends javax.swing.JFrame {
         botaoNivelDeAtaque = new javax.swing.ButtonGroup();
         botaoControle = new javax.swing.ButtonGroup();
         jButtonVoltarAoInicio = new javax.swing.JButton();
+        jTextFieldPropriedadeEncontrada = new javax.swing.JTextField();
         jTextFieldNomePraga = new javax.swing.JTextField();
         jTextFieldDataDeSurgimentoPraga = new javax.swing.JTextField();
-        jTextFieldPropriedadeEncontrada = new javax.swing.JTextField();
         jTextFieldNomePropriedade = new javax.swing.JTextField();
         jButtonCancelarCadastro = new javax.swing.JButton();
         jButtonBuscarPropriedade = new javax.swing.JButton();
         jButtonConfirmarCadastro = new javax.swing.JButton();
         jComboBoxEstadoDeControle = new javax.swing.JComboBox<>();
         jComboBoxNivelDeAtaque = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTablePropriedade = new javax.swing.JTable();
         jLabelIMGTelaInicialFornecedor = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -59,30 +65,6 @@ public class TelaDeCadastroPraga extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonVoltarAoInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 40, 25));
 
-        jTextFieldNomePraga.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldNomePraga.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldNomePraga.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldNomePraga.setBorder(null);
-        jTextFieldNomePraga.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextFieldNomePraga.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldNomePragaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextFieldNomePraga, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 245, 323, 29));
-
-        jTextFieldDataDeSurgimentoPraga.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldDataDeSurgimentoPraga.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldDataDeSurgimentoPraga.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldDataDeSurgimentoPraga.setBorder(null);
-        jTextFieldDataDeSurgimentoPraga.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextFieldDataDeSurgimentoPraga.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldDataDeSurgimentoPragaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextFieldDataDeSurgimentoPraga, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 372, 322, 29));
-
         jTextFieldPropriedadeEncontrada.setEditable(false);
         jTextFieldPropriedadeEncontrada.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldPropriedadeEncontrada.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -94,7 +76,31 @@ public class TelaDeCadastroPraga extends javax.swing.JFrame {
                 jTextFieldPropriedadeEncontradaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldPropriedadeEncontrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 499, 322, 29));
+        getContentPane().add(jTextFieldPropriedadeEncontrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(497, 114, 322, 29));
+
+        jTextFieldNomePraga.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldNomePraga.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldNomePraga.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldNomePraga.setBorder(null);
+        jTextFieldNomePraga.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldNomePraga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNomePragaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldNomePraga, new org.netbeans.lib.awtextra.AbsoluteConstraints(497, 202, 323, 29));
+
+        jTextFieldDataDeSurgimentoPraga.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldDataDeSurgimentoPraga.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldDataDeSurgimentoPraga.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldDataDeSurgimentoPraga.setBorder(null);
+        jTextFieldDataDeSurgimentoPraga.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldDataDeSurgimentoPraga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldDataDeSurgimentoPragaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldDataDeSurgimentoPraga, new org.netbeans.lib.awtextra.AbsoluteConstraints(497, 287, 322, 29));
 
         jTextFieldNomePropriedade.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNomePropriedade.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -126,7 +132,7 @@ public class TelaDeCadastroPraga extends javax.swing.JFrame {
                 jButtonBuscarPropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 107, 280, 43));
+        getContentPane().add(jButtonBuscarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 60, 36));
 
         jButtonConfirmarCadastro.setBorder(null);
         jButtonConfirmarCadastro.setContentAreaFilled(false);
@@ -145,7 +151,7 @@ public class TelaDeCadastroPraga extends javax.swing.JFrame {
                 jComboBoxEstadoDeControleActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxEstadoDeControle, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 258, 180, -1));
+        getContentPane().add(jComboBoxEstadoDeControle, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 513, 160, -1));
 
         jComboBoxNivelDeAtaque.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jComboBoxNivelDeAtaque.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Alto", "Medio", "Baixo" }));
@@ -154,7 +160,41 @@ public class TelaDeCadastroPraga extends javax.swing.JFrame {
                 jComboBoxNivelDeAtaqueActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxNivelDeAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(453, 258, 200, -1));
+        getContentPane().add(jComboBoxNivelDeAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 513, 170, -1));
+
+        jTablePropriedade.setBackground(new java.awt.Color(15, 42, 61));
+        jTablePropriedade.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        jTablePropriedade.setForeground(new java.awt.Color(255, 255, 255));
+        jTablePropriedade.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nome", "Cidade"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTablePropriedade.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTablePropriedade.setGridColor(new java.awt.Color(255, 204, 0));
+        jTablePropriedade.setRowHeight(30);
+        jTablePropriedade.setSelectionForeground(new java.awt.Color(15, 42, 61));
+        jScrollPane1.setViewportView(jTablePropriedade);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 430, 260));
 
         jLabelIMGTelaInicialFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasPraga/img_tela_cadastro_de_praga.png"))); // NOI18N
         getContentPane().add(jLabelIMGTelaInicialFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 643));
@@ -165,7 +205,7 @@ public class TelaDeCadastroPraga extends javax.swing.JFrame {
 
     private void jButtonVoltarAoInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarAoInicioActionPerformed
         this.dispose();
-        new TelaDeConsultaPropriedade().setVisible(true);
+        new TelaDeInicioPraga().setVisible(true);
     }//GEN-LAST:event_jButtonVoltarAoInicioActionPerformed
 
     private void jTextFieldDataDeSurgimentoPragaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDataDeSurgimentoPragaActionPerformed
@@ -181,6 +221,7 @@ public class TelaDeCadastroPraga extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldNomePropriedadeActionPerformed
 
     private void jButtonCancelarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarCadastroActionPerformed
+        JOptionPane.showMessageDialog(this, "Cadastro cancelado");
         limparCampos();
     }//GEN-LAST:event_jButtonCancelarCadastroActionPerformed
 
@@ -213,6 +254,7 @@ public class TelaDeCadastroPraga extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxNivelDeAtaqueActionPerformed
 
     public void cadastrarFornecedor() throws ParseException {
+
         nomePraga = jTextFieldNomePraga.getText();
         dataSurgimentoPraga = jTextFieldDataDeSurgimentoPraga.getText();
         propriedadePraga = jTextFieldPropriedadeEncontrada.getText();
@@ -221,7 +263,12 @@ public class TelaDeCadastroPraga extends javax.swing.JFrame {
         estadoDeControlePraga = jComboBoxEstadoDeControle.getSelectedItem().toString();
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        
+
+        if (propriedadePraga.isBlank()) {
+            JOptionPane.showMessageDialog(null, "Propriedade Inválida");
+            return;
+        }
+
         if (nomePraga.isBlank()) {
             JOptionPane.showMessageDialog(null, "Nome Inválido");
             return;
@@ -229,11 +276,6 @@ public class TelaDeCadastroPraga extends javax.swing.JFrame {
 
         if (!ValidarData.validaData(dataSurgimentoPraga)) {
             JOptionPane.showMessageDialog(null, "Data Inválida, (insira: dd/MM/aaaa)");
-            return;
-        }
-
-        if (propriedadePraga.isBlank()) {
-            JOptionPane.showMessageDialog(null, "Cidade Inválida");
             return;
         }
 
@@ -246,7 +288,6 @@ public class TelaDeCadastroPraga extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Adicione o estado de Controle da Praga");
             return;
         }
-
         try {
             dataFormatada = dateFormat.parse(dataSurgimentoPraga);
 
@@ -289,6 +330,15 @@ public class TelaDeCadastroPraga extends javax.swing.JFrame {
         jTextFieldPropriedadeEncontrada.setText("");
     }
 
+    public void readTable() {
+        modeloPropriedade = (DefaultTableModel) jTablePropriedade.getModel();
+        controlePropriedade = new ControlePropriedade();
+
+        for (Propriedade u : controlePropriedade.readPropriedade()) {
+            modeloPropriedade.addRow(new Object[]{u.getNomePropriedade(), u.getCidade()});
+        }
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup botaoControle;
     private javax.swing.ButtonGroup botaoNivelDeAtaque;
@@ -299,6 +349,8 @@ public class TelaDeCadastroPraga extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxEstadoDeControle;
     private javax.swing.JComboBox<String> jComboBoxNivelDeAtaque;
     private javax.swing.JLabel jLabelIMGTelaInicialFornecedor;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTablePropriedade;
     private javax.swing.JTextField jTextFieldDataDeSurgimentoPraga;
     private javax.swing.JTextField jTextFieldNomePraga;
     private javax.swing.JTextField jTextFieldNomePropriedade;

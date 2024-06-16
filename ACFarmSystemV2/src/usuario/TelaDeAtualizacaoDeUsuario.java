@@ -12,7 +12,7 @@ public class TelaDeAtualizacaoDeUsuario extends javax.swing.JFrame {
     private String nomeParaBusca;
     private int idUsuario;
     private String novoNome;
-    private String novoNivelDeAcesso; 
+    private String novoNivelDeAcesso;
 
     public TelaDeAtualizacaoDeUsuario() {
         initComponents();
@@ -134,6 +134,7 @@ public class TelaDeAtualizacaoDeUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonConfirmarAtualizacaoActionPerformed
 
     private void jButtonCancelarAtualizacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarAtualizacaoActionPerformed
+        JOptionPane.showMessageDialog(null, "Atualização cancelada");
         limparCampos();
     }//GEN-LAST:event_jButtonCancelarAtualizacaoActionPerformed
 
@@ -147,13 +148,18 @@ public class TelaDeAtualizacaoDeUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextNomeBuscadoActionPerformed
 
     public void buscarUsuario() throws SQLException {
+        if (jTextNomeBuscado.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome do usuário desejado");
+            return;
+        }
+
         nomeParaBusca = jTextNomeBuscado.getText();
         Usuario usuarioEncontrado = usuario.buscarUsuario(nomeParaBusca);
 
         if (usuarioEncontrado != null) {
             jTextNomeUsuario.setText(usuarioEncontrado.getNome());
             jTextNivelDeAcesso.setText(usuarioEncontrado.getNivelDeAcesso());
-            idUsuario = usuarioEncontrado.getId(); 
+            idUsuario = usuarioEncontrado.getId();
         } else {
             JOptionPane.showMessageDialog(this, "Usuário não encontrado.");
             limparCampos();
@@ -161,14 +167,14 @@ public class TelaDeAtualizacaoDeUsuario extends javax.swing.JFrame {
     }
 
     public void atualizarUsuario() throws SQLException {
+        if (jTextNomeBuscado.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Busque um usuário");
+            return;
+        }
+
         nomeParaBusca = jTextNomeBuscado.getText();
         novoNome = jTextNomeUsuario.getText();
         novoNivelDeAcesso = jTextNivelDeAcesso.getText();
-
-        if (novoNome.isBlank()) {
-            JOptionPane.showMessageDialog(null, "Busque um Usuario");
-            return;
-        }
 
         if (novoNivelDeAcesso.equalsIgnoreCase("M") || novoNivelDeAcesso.equalsIgnoreCase("C")) {
             Usuario usuarioAtualizado = new Usuario();

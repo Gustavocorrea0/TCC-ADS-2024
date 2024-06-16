@@ -24,10 +24,10 @@ public class TelaDeRemocaoPraga extends javax.swing.JFrame {
     private void initComponents() {
 
         jButtonVoltarAoInicio = new javax.swing.JButton();
-        jButtonBuscarFornecedor = new javax.swing.JButton();
+        jButtonBuscarPraga = new javax.swing.JButton();
         jTextFieldDataDeSurgimento = new javax.swing.JTextField();
         jTextFieldPropriedade = new javax.swing.JTextField();
-        jTextFieldFornecedorBuscado = new javax.swing.JTextField();
+        jTextFieldPragaBuscada = new javax.swing.JTextField();
         jTextFieldEstado = new javax.swing.JTextField();
         jTextFieldNomePraga = new javax.swing.JTextField();
         jTextFieldNivelDeAtaque = new javax.swing.JTextField();
@@ -48,15 +48,15 @@ public class TelaDeRemocaoPraga extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonVoltarAoInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 40, 25));
 
-        jButtonBuscarFornecedor.setBorder(null);
-        jButtonBuscarFornecedor.setContentAreaFilled(false);
-        jButtonBuscarFornecedor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonBuscarFornecedor.addActionListener(new java.awt.event.ActionListener() {
+        jButtonBuscarPraga.setBorder(null);
+        jButtonBuscarPraga.setContentAreaFilled(false);
+        jButtonBuscarPraga.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonBuscarPraga.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonBuscarFornecedorActionPerformed(evt);
+                jButtonBuscarPragaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 107, 281, 44));
+        getContentPane().add(jButtonBuscarPraga, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 107, 281, 44));
 
         jTextFieldDataDeSurgimento.setEditable(false);
         jTextFieldDataDeSurgimento.setBackground(new java.awt.Color(255, 255, 255));
@@ -84,17 +84,17 @@ public class TelaDeRemocaoPraga extends javax.swing.JFrame {
         });
         getContentPane().add(jTextFieldPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 568, 321, 29));
 
-        jTextFieldFornecedorBuscado.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldFornecedorBuscado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldFornecedorBuscado.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldFornecedorBuscado.setBorder(null);
-        jTextFieldFornecedorBuscado.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextFieldFornecedorBuscado.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldPragaBuscada.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldPragaBuscada.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldPragaBuscada.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldPragaBuscada.setBorder(null);
+        jTextFieldPragaBuscada.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldPragaBuscada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldFornecedorBuscadoActionPerformed(evt);
+                jTextFieldPragaBuscadaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldFornecedorBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 114, 270, 30));
+        getContentPane().add(jTextFieldPragaBuscada, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 114, 270, 30));
 
         jTextFieldEstado.setEditable(false);
         jTextFieldEstado.setBackground(new java.awt.Color(255, 255, 255));
@@ -177,9 +177,9 @@ public class TelaDeRemocaoPraga extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jTextFieldPropriedadeActionPerformed
 
-    private void jTextFieldFornecedorBuscadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldFornecedorBuscadoActionPerformed
+    private void jTextFieldPragaBuscadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPragaBuscadaActionPerformed
 
-    }//GEN-LAST:event_jTextFieldFornecedorBuscadoActionPerformed
+    }//GEN-LAST:event_jTextFieldPragaBuscadaActionPerformed
 
     private void jTextFieldEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEstadoActionPerformed
 
@@ -193,15 +193,17 @@ public class TelaDeRemocaoPraga extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jTextFieldNivelDeAtaqueActionPerformed
 
-    private void jButtonBuscarFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarFornecedorActionPerformed
+    private void jButtonBuscarPragaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarPragaActionPerformed
         try {
             buscarPraga();
         } catch (SQLException ex) {
             Logger.getLogger(TelaDeRemocaoPraga.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ParseException ex) {
             Logger.getLogger(TelaDeRemocaoPraga.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Busque uma praga");
         }
-    }//GEN-LAST:event_jButtonBuscarFornecedorActionPerformed
+    }//GEN-LAST:event_jButtonBuscarPragaActionPerformed
 
     private void jButtonCancelarRemocaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarRemocaoActionPerformed
         JOptionPane.showMessageDialog(this, "Remoção Cancelada");
@@ -209,12 +211,20 @@ public class TelaDeRemocaoPraga extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCancelarRemocaoActionPerformed
 
     private void jButtonConfirmarRemocaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarRemocaoActionPerformed
+        if (jTextFieldPragaBuscada.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Busque uma praga");
+            return;
+        }
         removerPraga();
     }//GEN-LAST:event_jButtonConfirmarRemocaoActionPerformed
 
     public void buscarPraga() throws SQLException, ParseException {
-        nomeBuscado = jTextFieldFornecedorBuscado.getText();
+        if (jTextFieldPragaBuscada.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Busque uma praga");
+            return;
+        }
 
+        nomeBuscado = jTextFieldPragaBuscada.getText();
         Praga pragaEncontrada = controlePraga.buscarPraga(nomeBuscado);
 
         if (pragaEncontrada != null) {
@@ -246,22 +256,22 @@ public class TelaDeRemocaoPraga extends javax.swing.JFrame {
     public void limparCampos() {
         jTextFieldDataDeSurgimento.setText("");
         jTextFieldEstado.setText("");
-        jTextFieldFornecedorBuscado.setText("");
+        jTextFieldPragaBuscada.setText("");
         jTextFieldNivelDeAtaque.setText("");
         jTextFieldNomePraga.setText("");
         jTextFieldPropriedade.setText("");
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonBuscarFornecedor;
+    private javax.swing.JButton jButtonBuscarPraga;
     private javax.swing.JButton jButtonCancelarRemocao;
     private javax.swing.JButton jButtonConfirmarRemocao;
     private javax.swing.JButton jButtonVoltarAoInicio;
     private javax.swing.JLabel jLabelIMGTelaInicialFornecedor;
     private javax.swing.JTextField jTextFieldDataDeSurgimento;
     private javax.swing.JTextField jTextFieldEstado;
-    private javax.swing.JTextField jTextFieldFornecedorBuscado;
     private javax.swing.JTextField jTextFieldNivelDeAtaque;
     private javax.swing.JTextField jTextFieldNomePraga;
+    private javax.swing.JTextField jTextFieldPragaBuscada;
     private javax.swing.JTextField jTextFieldPropriedade;
     // End of variables declaration//GEN-END:variables
 }

@@ -274,6 +274,16 @@ public class TelaDeCadastroCliente extends javax.swing.JFrame implements ViaCEPE
             return;
         }
 
+        if (jTextFieldCep.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Adicione o cep, 8 digitos numéricos");
+            return;
+        }
+
+        if (cepClienteNovo.length() != 8) {
+            JOptionPane.showMessageDialog(null, "CEP Inválido, 8 digitos numéricos");
+            return;
+        }
+
         if (cidadeClienteNovo.isBlank()) {
             JOptionPane.showMessageDialog(null, "Cidade Inválida");
             return;
@@ -286,11 +296,6 @@ public class TelaDeCadastroCliente extends javax.swing.JFrame implements ViaCEPE
 
         if (telefoneClienteNovo.length() < 10 || telefoneClienteNovo.length() > 15) {
             JOptionPane.showMessageDialog(null, "Telefone Inválido, deve possuir 14 digitos (ex: 5511933445566)");
-            return;
-        }
-
-        if (cepClienteNovo.length() != 8) {
-            JOptionPane.showMessageDialog(null, "CEP Inválido, 8 digitos");
             return;
         }
 

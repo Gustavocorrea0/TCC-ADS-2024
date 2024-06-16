@@ -254,18 +254,15 @@ public class TelaDeRemocaoCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonValidarRemocaoActionPerformed
 
     private void jButtonCancelarRemocaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarRemocaoActionPerformed
-        jTextFieldClienteBuscado.setText("");
-        jTextFieldEstado.setText("");
-        jTextFieldCEP.setText("");
-        jTextFieldTelefone.setText("");
-        jTextFieldTipo.setText("");
-        jTextFieldEndereco.setText("");
-        jTextFieldCNPJOuCPF.setText("");
-        jTextFieldNome.setText("");
-        jTextFieldCidade.setText("");
+        limparCampos();
     }//GEN-LAST:event_jButtonCancelarRemocaoActionPerformed
 
     public void buscarCliente() throws SQLException {
+        if (jTextFieldClienteBuscado.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome do cliente");
+            return;
+        }
+
         nomeBuscado = jTextFieldClienteBuscado.getText();
 
         Cliente clienteEncontrado = controleCliente.buscarCliente(nomeBuscado);
@@ -281,23 +278,25 @@ public class TelaDeRemocaoCliente extends javax.swing.JFrame {
             jTextFieldCidade.setText(clienteEncontrado.getCidadeCliente());
         } else {
             JOptionPane.showMessageDialog(this, "Cliente não encontrado");
-            jTextFieldEstado.setText("");
-            jTextFieldCEP.setText("");
-            jTextFieldTelefone.setText("");
-            jTextFieldTipo.setText("");
-            jTextFieldEndereco.setText("");
-            jTextFieldCNPJOuCPF.setText("");
-            jTextFieldNome.setText("");
-            jTextFieldCidade.setText("");
+            limparCampos();
         }
     }
 
     public void removerCliente() {
+        if (jTextFieldClienteBuscado.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Busque um cliente");
+            return;
+        }
+
         nomeBuscado = jTextFieldClienteBuscado.getText();
         msg = controleCliente.removerCliente(nomeBuscado);
 
         JOptionPane.showMessageDialog(this, msg);
+        limparCampos();
+    }
 
+    public void limparCampos() {
+        jTextFieldClienteBuscado.setText("");
         jTextFieldEstado.setText("");
         jTextFieldCEP.setText("");
         jTextFieldTelefone.setText("");

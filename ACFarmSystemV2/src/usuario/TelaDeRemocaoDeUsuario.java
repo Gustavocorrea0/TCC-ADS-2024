@@ -118,6 +118,7 @@ public class TelaDeRemocaoDeUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonBuscarUsuarioActionPerformed
 
     private void jButtonCancelarRemocaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarRemocaoActionPerformed
+        JOptionPane.showMessageDialog(this, "Remoção cancelada");
         limparCampos();
     }//GEN-LAST:event_jButtonCancelarRemocaoActionPerformed
 
@@ -131,6 +132,11 @@ public class TelaDeRemocaoDeUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonVoltarAoTelaDeUsuarioActionPerformed
 
     public void buscarUsuario() throws SQLException {
+        if (jTextNomeUsuarioBuscado.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome do usuário desejado");
+            return;
+        }
+
         String nomeParaBusca = jTextNomeUsuarioBuscado.getText();
         Usuario usuarioEncontrado = usuario.buscarUsuario(nomeParaBusca);
 
@@ -144,12 +150,12 @@ public class TelaDeRemocaoDeUsuario extends javax.swing.JFrame {
     }
 
     public void removerUsuario() {
-        nomeUsuario = jTextNomeUsuarioBuscado.getText();
-        if (nomeUsuario.isBlank()) {
-            JOptionPane.showMessageDialog(this, "Busque um usuario");
+        if (jTextNomeUsuarioBuscado.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Busque um usuário");
             return;
-        } 
-
+        }
+        
+        nomeUsuario = jTextNomeUsuarioBuscado.getText();
         String mensagem = usuario.removerUsuarioPorNome(nomeUsuario);
         JOptionPane.showMessageDialog(this, mensagem);
         limparCampos();

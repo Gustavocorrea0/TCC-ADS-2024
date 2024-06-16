@@ -245,6 +245,11 @@ public class TelaDeConsultaFornecedor extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldEstadoFornecedorActionPerformed
 
     public void buscarFornecedor() throws SQLException {
+        if (jTextFieldFornecedorBuscado.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome do fornecedor desejado");
+            return;
+        }
+        
         nomeBuscado = jTextFieldFornecedorBuscado.getText();
 
         Fornecedor fornecedorEncontrado = controleFornecedor.buscarFornecedor(nomeBuscado);

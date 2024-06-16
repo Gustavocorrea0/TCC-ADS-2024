@@ -254,6 +254,8 @@ public class TelaDeCadastroProducao extends javax.swing.JFrame {
             cadastrarProducao();
         } catch (ParseException ex) {
             Logger.getLogger(TelaDeCadastroProducao.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Busque uma propriedade");
         }
     }//GEN-LAST:event_jButtonConfirmarAdicaoActionPerformed
 
@@ -304,10 +306,50 @@ public class TelaDeCadastroProducao extends javax.swing.JFrame {
     }
 
     public void cadastrarProducao() throws ParseException {
-        dataPlantio = jTextFieldDataPlantio.getText();
+        if (jTextFieldNomePropriedade.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Busque uma propriedade");
+            return;
+        }
+
+        if (jTextFieldNomeProducao.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Nome Inválido");
+            return;
+        }
+
+        if (jTextFieldDataPlantio.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Data de plantio Inválida");
+            return;
+        }
+
+        if (jTextFieldDataInicioColheita.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Data de inicio colheita Inválida");
+            return;
+        }
+
+        if (jTextFieldDataFimColheita.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Data de fim colheita Inválida");
+            return;
+        }
+
+        if (jTextFieldValorTotalDeDespesas.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Valor total de despesas Inválido");
+            return;
+        }
+
+        if (jTextFieldValorTotalDeLucro.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Valor total de lucro Inválido");
+            return;
+        }
+
+        if (jTextFieldQuantidadeProduzidaEmSacos.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Produção em sacos Inválida");
+            return;
+        }
+
+        dataPlantio = jTextFieldDataPlantio.getText(); //
         dataInicioColheita = jTextFieldDataInicioColheita.getText();
         dataFimColheita = jTextFieldDataFimColheita.getText();
-        nomeProducao = jTextFieldNomeProducao.getText();
+        nomeProducao = jTextFieldNomeProducao.getText();//
         quantidadeProduzidaEmSacos = Integer.parseInt(jTextFieldQuantidadeProduzidaEmSacos.getText());
         estadoDeVenda = jComboBoxEstadoDeVenda.getSelectedItem().toString();
         tipoDeCultura = jComboBoxCultura.getSelectedItem().toString();
@@ -320,21 +362,16 @@ public class TelaDeCadastroProducao extends javax.swing.JFrame {
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
-        if (nomeProducao.isBlank()) {
-            JOptionPane.showMessageDialog(this, "Nome Inválido");
-            return;
-        }
-
         if (!ValidarData.validaData(dataPlantio)) {
             JOptionPane.showMessageDialog(this, "Data de plantio Inválida (insira: dd/MM/aaaa)");
             return;
         }
-        
+
         if (!ValidarData.validaData(dataInicioColheita)) {
             JOptionPane.showMessageDialog(this, "Data de inicio de colheita Inválida (insira: dd/MM/aaaa)");
             return;
         }
-        
+
         if (!ValidarData.validaData(dataFimColheita)) {
             JOptionPane.showMessageDialog(this, "Data de fim de colheita Inválida (insira: dd/MM/aaaa)");
             return;
@@ -356,7 +393,7 @@ public class TelaDeCadastroProducao extends javax.swing.JFrame {
         }
 
         if (estadoDeVenda.equals("Selecione")) {
-            JOptionPane.showMessageDialog(this, "Estado Inválido");
+            JOptionPane.showMessageDialog(this, "Vendido Inválido");
             return;
         }
 

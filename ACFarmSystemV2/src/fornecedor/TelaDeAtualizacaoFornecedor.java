@@ -277,7 +277,8 @@ public class TelaDeAtualizacaoFornecedor extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonConfirmarAtualizacaoActionPerformed
 
     private void jButtonCancelarAtualizacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarAtualizacaoActionPerformed
-       limparCampos();
+        JOptionPane.showMessageDialog(this, "Atualização cancelada");
+        limparCampos();
     }//GEN-LAST:event_jButtonCancelarAtualizacaoActionPerformed
 
     private void jTextFieldEstadoFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEstadoFornecedorActionPerformed
@@ -285,6 +286,11 @@ public class TelaDeAtualizacaoFornecedor extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldEstadoFornecedorActionPerformed
 
     public void buscarFornecedor() throws SQLException {
+        if (jTextFieldFornecedorBuscado.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome do fornecedor");
+            return;
+        }
+
         nomeBuscado = jTextFieldFornecedorBuscado.getText();
 
         Fornecedor fornecedorEncontrado = controleFornecedor.buscarFornecedor(nomeBuscado);
@@ -308,6 +314,11 @@ public class TelaDeAtualizacaoFornecedor extends javax.swing.JFrame {
     }
 
     public void atualizarFornecedor() throws SQLException {
+        if (jTextFieldFornecedorBuscado.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Busque o fornecedor desejado");
+            return;
+        }
+
         cepAtualizadoFornecedor = jTextFieldCEPFornecedor.getText();
         cnpjAtualizadoFornecedor = jTextFieldCNPJ.getText();
         cidadeAtualizadoFornecedor = jTextFieldCidadeFornecedor.getText();
@@ -318,28 +329,8 @@ public class TelaDeAtualizacaoFornecedor extends javax.swing.JFrame {
         razaoSocialAtualizadoFornecedor = jTextFieldRazaoSocial.getText();
         telefoneAtualizadoFornecedor = jTextFieldTelefoneFornecedor.getText();
 
-        if (cepAtualizadoFornecedor.length() != 8) {
-            JOptionPane.showMessageDialog(null, "CEP Inválido, apenas 8 digitos");
-            return;
-        }
-
-        if (ValidarCNPJ.validaCNPJ(cnpjAtualizadoFornecedor)  == false) {
-            JOptionPane.showMessageDialog(null, "CNPJ Inválido(14 digitos)");
-            return;
-        }
-
-        if (cidadeAtualizadoFornecedor.isBlank()) {
-            JOptionPane.showMessageDialog(null, "Cidade Inválida");
-            return;
-        }
-
-        if (emailAtualizadoFornecedor.isBlank()) {
-            JOptionPane.showMessageDialog(null, "Email Inválido");
-            return;
-        }
-
-        if (estadoAtualizadoFornecedor.isBlank()) {
-            JOptionPane.showMessageDialog(null, "Estado Inválido");
+        if (razaoSocialAtualizadoFornecedor.isBlank()) {
+            JOptionPane.showMessageDialog(null, "Razao social Inválida");
             return;
         }
 
@@ -348,13 +339,18 @@ public class TelaDeAtualizacaoFornecedor extends javax.swing.JFrame {
             return;
         }
 
-        if (razaoSocialAtualizadoFornecedor.isBlank()) {
-            JOptionPane.showMessageDialog(null, "Razao social Inválida");
+        if (!ValidarCNPJ.validaCNPJ(cnpjAtualizadoFornecedor)) {
+            JOptionPane.showMessageDialog(null, "CNPJ Inválido(14 digitos)");
             return;
         }
 
         if (telefoneAtualizadoFornecedor.length() < 10 || telefoneAtualizadoFornecedor.length() > 15) {
             JOptionPane.showMessageDialog(null, "Telefone Inválido");
+            return;
+        }
+
+        if (emailAtualizadoFornecedor.isBlank()) {
+            JOptionPane.showMessageDialog(null, "Email Inválido");
             return;
         }
 
@@ -382,6 +378,7 @@ public class TelaDeAtualizacaoFornecedor extends javax.swing.JFrame {
     }
 
     public void limparCampos() {
+        jTextFieldFornecedorBuscado.setText("");
         jTextFieldCEPFornecedor.setText("");
         jTextFieldCNPJ.setText("");
         jTextFieldCidadeFornecedor.setText("");

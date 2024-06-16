@@ -260,6 +260,11 @@ public class TelaDeConsultaProducao extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldEstadoDeVendaActionPerformed
 
     public void consultarProducao() throws SQLException, ParseException {
+        if (jTextFieldIdProducao.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome da produção");
+            return;
+        }
+
         nomeProducaoBuscada = jTextFieldIdProducao.getText();
         Producao producaoEncontrada = controleProducao.buscarProducao(nomeProducaoBuscada);
 

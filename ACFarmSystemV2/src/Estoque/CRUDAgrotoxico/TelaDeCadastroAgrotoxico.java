@@ -57,7 +57,7 @@ public class TelaDeCadastroAgrotoxico extends javax.swing.JFrame {
                 jButtonCancelarCadastroActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCancelarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 599, 280, 35));
+        getContentPane().add(jButtonCancelarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(612, 597, 280, 35));
 
         jTextFieldDataDeValidade.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldDataDeValidade.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -68,7 +68,7 @@ public class TelaDeCadastroAgrotoxico extends javax.swing.JFrame {
                 jTextFieldDataDeValidadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldDataDeValidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(507, 152, 271, 30));
+        getContentPane().add(jTextFieldDataDeValidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(505, 151, 271, 29));
 
         jTextFieldQuantidadeAgrotoxico.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldQuantidadeAgrotoxico.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -79,7 +79,7 @@ public class TelaDeCadastroAgrotoxico extends javax.swing.JFrame {
                 jTextFieldQuantidadeAgrotoxicoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldQuantidadeAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 488, 270, 29));
+        getContentPane().add(jTextFieldQuantidadeAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 486, 272, 29));
 
         jTextFieldMarcaAgrotoxico.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldMarcaAgrotoxico.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -90,7 +90,7 @@ public class TelaDeCadastroAgrotoxico extends javax.swing.JFrame {
                 jTextFieldMarcaAgrotoxicoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldMarcaAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 313, 272, 30));
+        getContentPane().add(jTextFieldMarcaAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 312, 272, 29));
 
         jTextFieldQuantidadeMinima.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldQuantidadeMinima.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -101,7 +101,7 @@ public class TelaDeCadastroAgrotoxico extends javax.swing.JFrame {
                 jTextFieldQuantidadeMinimaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldQuantidadeMinima, new org.netbeans.lib.awtextra.AbsoluteConstraints(507, 314, 271, 30));
+        getContentPane().add(jTextFieldQuantidadeMinima, new org.netbeans.lib.awtextra.AbsoluteConstraints(505, 312, 271, 29));
 
         jTextFieldNomeAgrotoxico.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNomeAgrotoxico.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -112,7 +112,7 @@ public class TelaDeCadastroAgrotoxico extends javax.swing.JFrame {
                 jTextFieldNomeAgrotoxicoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 152, 271, 30));
+        getContentPane().add(jTextFieldNomeAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 151, 271, 29));
 
         jButtonVoltarATelaAnterior.setBorder(null);
         jButtonVoltarATelaAnterior.setBorderPainted(false);

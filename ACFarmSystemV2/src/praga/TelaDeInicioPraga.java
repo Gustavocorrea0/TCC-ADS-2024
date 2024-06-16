@@ -150,7 +150,7 @@ public class TelaDeInicioPraga extends javax.swing.JFrame {
 
     private void jButtonAdicionarPragaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdicionarPragaActionPerformed
         this.dispose();
-        new TelaDeConsultaPropriedade().setVisible(true);
+        new TelaDeCadastroPraga().setVisible(true);
     }//GEN-LAST:event_jButtonAdicionarPragaActionPerformed
 
     private void jButtonAtualizarPragaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtualizarPragaActionPerformed

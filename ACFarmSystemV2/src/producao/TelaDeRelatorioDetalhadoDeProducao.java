@@ -274,7 +274,7 @@ public class TelaDeRelatorioDetalhadoDeProducao extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldEstadoDeVendaActionPerformed
 
     private void jButtonGerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGerarRelatorioActionPerformed
-        if (jTextFieldNomeProducao.getText().isBlank() || jTextFieldNomeProducao.getText().isEmpty() || jTextFieldNomeProducao.getText() == null) {
+        if (jTextFieldNomeProducao.getText().isBlank()) {
             JOptionPane.showMessageDialog(this, "Busque uma produção");
             return;
         } else {

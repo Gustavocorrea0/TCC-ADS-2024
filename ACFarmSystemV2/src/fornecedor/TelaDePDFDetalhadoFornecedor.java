@@ -277,6 +277,11 @@ public class TelaDePDFDetalhadoFornecedor extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonBuscarFornecedorActionPerformed
 
     public void buscarFornecedor() throws SQLException {
+        if (jTextFieldFornecedorBuscado.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome do fornecedor desejado");
+            return;
+        }
+
         nomeBuscado = jTextFieldFornecedorBuscado.getText();
 
         Fornecedor fornecedorEncontrado = controleFornecedor.buscarFornecedor(nomeBuscado);

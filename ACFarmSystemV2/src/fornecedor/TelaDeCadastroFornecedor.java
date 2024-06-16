@@ -233,6 +233,7 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame implements ViaC
     }//GEN-LAST:event_jTextFieldRazaoSocialActionPerformed
 
     private void jButtonCancelarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarCadastroActionPerformed
+        JOptionPane.showMessageDialog(null, "Cadastro cancelado");
         limparCampos();
     }//GEN-LAST:event_jButtonCancelarCadastroActionPerformed
 
@@ -294,33 +295,8 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame implements ViaC
         razaoSocialNovoFornecedor = jTextFieldRazaoSocial.getText();
         telefoneNovoFornecedor = jTextFieldTelefoneFornecedor.getText();
 
-        if (cepNovoFornecedor.length() != 8) {
-            JOptionPane.showMessageDialog(this, "CEP inválido, 8 digitos");
-            return;
-        }
-
-        if (cnpjNovoFornecedor.length() == 14) {
-            JOptionPane.showMessageDialog(null, "CNPJ Inválido, apenas 14 digitos (não utilize pontos)");
-            return;
-        }
-        
-        if (ValidarCNPJ.validaCNPJ(cnpjNovoFornecedor)  == false) {
-            JOptionPane.showMessageDialog(null, "CNPJ Inválido");
-            return;
-        }
-
-        if (cidadeNovoFornecedor.isBlank()) {
-            JOptionPane.showMessageDialog(null, "Cidade Inválida");
-            return;
-        }
-
-        if (emailNovoFornecedor.isBlank()) {
-            JOptionPane.showMessageDialog(null, "Email Inválido");
-            return;
-        }
-
-        if (estadoNovoFornecedor.isBlank()) {
-            JOptionPane.showMessageDialog(null, "Estado Inválido");
+        if (razaoSocialNovoFornecedor.isBlank()) {
+            JOptionPane.showMessageDialog(null, "Razao social Inválida");
             return;
         }
 
@@ -329,13 +305,38 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame implements ViaC
             return;
         }
 
-        if (razaoSocialNovoFornecedor.isBlank()) {
-            JOptionPane.showMessageDialog(null, "Razao social Inválida");
+        if (cnpjNovoFornecedor.length() != 14) {
+            JOptionPane.showMessageDialog(null, "CNPJ Inválido, apenas 14 digitos (não utilize pontos)");
+            return;
+        }
+
+        if (!ValidarCNPJ.validaCNPJ(cnpjNovoFornecedor)) {
+            JOptionPane.showMessageDialog(null, "CNPJ Inválido");
             return;
         }
 
         if (telefoneNovoFornecedor.length() < 10 || telefoneNovoFornecedor.length() > 15) {
             JOptionPane.showMessageDialog(null, "Telefone Inválido");
+            return;
+        }
+
+        if (emailNovoFornecedor.isBlank()) {
+            JOptionPane.showMessageDialog(null, "Email Inválido");
+            return;
+        }
+
+        if (cepNovoFornecedor.length() != 8) {
+            JOptionPane.showMessageDialog(this, "CEP inválido, 8 digitos");
+            return;
+        }
+
+        if (cidadeNovoFornecedor.isBlank()) {
+            JOptionPane.showMessageDialog(null, "Cidade Inválida");
+            return;
+        }
+
+        if (estadoNovoFornecedor.isBlank()) {
+            JOptionPane.showMessageDialog(null, "Estado Inválido");
             return;
         }
 
@@ -358,7 +359,7 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame implements ViaC
             String msg = controleFornecedor.cadastrarFornecedor(ControleFornecedor.INCLUSAO);
             JOptionPane.showMessageDialog(this, msg);
             limparCampos();
-            
+
         } catch (NullPointerException ex) {
             System.out.println("Falha no sistema, tipo: ");
             ex.printStackTrace();

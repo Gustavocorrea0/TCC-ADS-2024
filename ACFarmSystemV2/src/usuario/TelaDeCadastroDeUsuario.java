@@ -138,6 +138,11 @@ public class TelaDeCadastroDeUsuario extends javax.swing.JFrame {
     public void cadastrarUsuario() {
         BasicPasswordEncryptor passwordEncryptor = new BasicPasswordEncryptor();
 
+        if (jTextFieldNomeUsuario.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o nome");
+            return;
+        }
+        
         nivelDeAcesso = jComboBoxNivelDeAcesso.getSelectedItem().toString();
         senhaInserida = new String(jPasswordSenhaDoUsuario.getPassword());
         nomeUsuario = jTextFieldNomeUsuario.getText();

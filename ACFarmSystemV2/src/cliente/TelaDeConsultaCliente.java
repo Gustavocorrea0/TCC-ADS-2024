@@ -24,7 +24,7 @@ public class TelaDeConsultaCliente extends javax.swing.JFrame {
         jTextFieldCNPJOuCPF = new javax.swing.JTextField();
         jTextFieldCEP = new javax.swing.JTextField();
         jTextFieldCidade = new javax.swing.JTextField();
-        jTextFieldFornecedorBuscado = new javax.swing.JTextField();
+        jTextFieldClienteBuscado = new javax.swing.JTextField();
         jTextFieldTelefone = new javax.swing.JTextField();
         jTextFieldTipo = new javax.swing.JTextField();
         jTextFieldNome = new javax.swing.JTextField();
@@ -106,17 +106,17 @@ public class TelaDeConsultaCliente extends javax.swing.JFrame {
         });
         getContentPane().add(jTextFieldCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 496, 320, 29));
 
-        jTextFieldFornecedorBuscado.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldFornecedorBuscado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldFornecedorBuscado.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldFornecedorBuscado.setBorder(null);
-        jTextFieldFornecedorBuscado.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextFieldFornecedorBuscado.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldClienteBuscado.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldClienteBuscado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldClienteBuscado.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldClienteBuscado.setBorder(null);
+        jTextFieldClienteBuscado.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldClienteBuscado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldFornecedorBuscadoActionPerformed(evt);
+                jTextFieldClienteBuscadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldFornecedorBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 114, 272, 30));
+        getContentPane().add(jTextFieldClienteBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 114, 272, 30));
 
         jTextFieldTelefone.setEditable(false);
         jTextFieldTelefone.setBackground(new java.awt.Color(255, 255, 255));
@@ -194,9 +194,9 @@ public class TelaDeConsultaCliente extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jTextFieldCidadeActionPerformed
 
-    private void jTextFieldFornecedorBuscadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldFornecedorBuscadoActionPerformed
+    private void jTextFieldClienteBuscadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldClienteBuscadoActionPerformed
 
-    }//GEN-LAST:event_jTextFieldFornecedorBuscadoActionPerformed
+    }//GEN-LAST:event_jTextFieldClienteBuscadoActionPerformed
 
     private void jTextFieldTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTelefoneActionPerformed
 
@@ -227,7 +227,11 @@ public class TelaDeConsultaCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldEnderecoActionPerformed
 
     public void buscarCliente() throws SQLException {
-        nomeBuscado = jTextFieldFornecedorBuscado.getText();
+        if (jTextFieldClienteBuscado.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome do cliente");
+            return;
+        }
+        nomeBuscado = jTextFieldClienteBuscado.getText();
 
         Cliente clienteEncontrado = controleCliente.buscarCliente(nomeBuscado);
 
@@ -247,7 +251,7 @@ public class TelaDeConsultaCliente extends javax.swing.JFrame {
     }
 
     public void limparCampos() {
-         jTextFieldFornecedorBuscado.setText("");
+        jTextFieldClienteBuscado.setText("");
         jTextFieldEstado.setText("");
         jTextFieldCEP.setText("");
         jTextFieldTelefone.setText("");
@@ -266,9 +270,9 @@ public class TelaDeConsultaCliente extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldCEP;
     private javax.swing.JTextField jTextFieldCNPJOuCPF;
     private javax.swing.JTextField jTextFieldCidade;
+    private javax.swing.JTextField jTextFieldClienteBuscado;
     private javax.swing.JTextField jTextFieldEndereco;
     private javax.swing.JTextField jTextFieldEstado;
-    private javax.swing.JTextField jTextFieldFornecedorBuscado;
     private javax.swing.JTextField jTextFieldNome;
     private javax.swing.JTextField jTextFieldTelefone;
     private javax.swing.JTextField jTextFieldTipo;
