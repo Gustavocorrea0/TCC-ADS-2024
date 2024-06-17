@@ -17,7 +17,7 @@ public class TelaDeVerificacaoFertilizante extends javax.swing.JFrame {
     private String quantidadeEmLitrosEncontrado;
     private String msg;
     private String nomeInsumo;
-    
+
     public TelaDeVerificacaoFertilizante() {
         initComponents();
     }
@@ -26,7 +26,7 @@ public class TelaDeVerificacaoFertilizante extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextFieldIdFertilizante = new javax.swing.JTextField();
+        jTextFieldNomeFertilizanteBuscado = new javax.swing.JTextField();
         jTextFieldQuantidadeEmLitros = new javax.swing.JTextField();
         jTextFieldMarcaFertilizante = new javax.swing.JTextField();
         jTextFieldTipoFertilizante = new javax.swing.JTextField();
@@ -41,16 +41,16 @@ public class TelaDeVerificacaoFertilizante extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextFieldIdFertilizante.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldIdFertilizante.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldIdFertilizante.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldIdFertilizante.setBorder(null);
-        jTextFieldIdFertilizante.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldNomeFertilizanteBuscado.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldNomeFertilizanteBuscado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldNomeFertilizanteBuscado.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldNomeFertilizanteBuscado.setBorder(null);
+        jTextFieldNomeFertilizanteBuscado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldIdFertilizanteActionPerformed(evt);
+                jTextFieldNomeFertilizanteBuscadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldIdFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 117, 272, 30));
+        getContentPane().add(jTextFieldNomeFertilizanteBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 116, 272, 29));
 
         jTextFieldQuantidadeEmLitros.setEditable(false);
         jTextFieldQuantidadeEmLitros.setBackground(new java.awt.Color(255, 255, 255));
@@ -62,7 +62,7 @@ public class TelaDeVerificacaoFertilizante extends javax.swing.JFrame {
                 jTextFieldQuantidadeEmLitrosActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldQuantidadeEmLitros, new org.netbeans.lib.awtextra.AbsoluteConstraints(505, 398, 271, 30));
+        getContentPane().add(jTextFieldQuantidadeEmLitros, new org.netbeans.lib.awtextra.AbsoluteConstraints(504, 407, 271, 29));
 
         jTextFieldMarcaFertilizante.setEditable(false);
         jTextFieldMarcaFertilizante.setBackground(new java.awt.Color(255, 255, 255));
@@ -74,7 +74,7 @@ public class TelaDeVerificacaoFertilizante extends javax.swing.JFrame {
                 jTextFieldMarcaFertilizanteActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldMarcaFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 398, 271, 30));
+        getContentPane().add(jTextFieldMarcaFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 407, 271, 29));
 
         jTextFieldTipoFertilizante.setEditable(false);
         jTextFieldTipoFertilizante.setBackground(new java.awt.Color(255, 255, 255));
@@ -86,7 +86,7 @@ public class TelaDeVerificacaoFertilizante extends javax.swing.JFrame {
                 jTextFieldTipoFertilizanteActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldTipoFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 572, 271, 30));
+        getContentPane().add(jTextFieldTipoFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 571, 271, 29));
 
         jTextFieldQuantidadeEmSacos.setEditable(false);
         jTextFieldQuantidadeEmSacos.setBackground(new java.awt.Color(255, 255, 255));
@@ -98,7 +98,7 @@ public class TelaDeVerificacaoFertilizante extends javax.swing.JFrame {
                 jTextFieldQuantidadeEmSacosActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldQuantidadeEmSacos, new org.netbeans.lib.awtextra.AbsoluteConstraints(505, 237, 271, 30));
+        getContentPane().add(jTextFieldQuantidadeEmSacos, new org.netbeans.lib.awtextra.AbsoluteConstraints(504, 246, 271, 29));
 
         jTextFieldNomeFertilizante.setEditable(false);
         jTextFieldNomeFertilizante.setBackground(new java.awt.Color(255, 255, 255));
@@ -110,7 +110,7 @@ public class TelaDeVerificacaoFertilizante extends javax.swing.JFrame {
                 jTextFieldNomeFertilizanteActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 236, 271, 30));
+        getContentPane().add(jTextFieldNomeFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 246, 272, 29));
 
         jButtonBuscarFertilizante.setBorder(null);
         jButtonBuscarFertilizante.setBorderPainted(false);
@@ -121,7 +121,7 @@ public class TelaDeVerificacaoFertilizante extends javax.swing.JFrame {
                 jButtonBuscarFertilizanteActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(344, 111, 262, 42));
+        getContentPane().add(jButtonBuscarFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(374, 107, 282, 42));
 
         jButtonVoltarATelaAnterior.setBorder(null);
         jButtonVoltarATelaAnterior.setBorderPainted(false);
@@ -147,15 +147,15 @@ public class TelaDeVerificacaoFertilizante extends javax.swing.JFrame {
         getContentPane().add(jButtonCancelarRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 600, 280, 32));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasDeEstoque/telasFertilizante/img_tela_verificacao_fertilizante.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -2, -1, 650));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextFieldIdFertilizanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdFertilizanteActionPerformed
+    private void jTextFieldNomeFertilizanteBuscadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeFertilizanteBuscadoActionPerformed
 
-    }//GEN-LAST:event_jTextFieldIdFertilizanteActionPerformed
+    }//GEN-LAST:event_jTextFieldNomeFertilizanteBuscadoActionPerformed
 
     private void jTextFieldQuantidadeEmLitrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldQuantidadeEmLitrosActionPerformed
 
@@ -191,7 +191,13 @@ public class TelaDeVerificacaoFertilizante extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldNomeFertilizanteActionPerformed
 
     public void buscarFertilizante() throws SQLException {
-        nomeInsumo = jTextFieldIdFertilizante.getText();
+        if (jTextFieldNomeFertilizanteBuscado.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome do fertilizante");
+            limparCampos();
+            return;
+        }
+
+        nomeInsumo = jTextFieldNomeFertilizanteBuscado.getText();
         Fertilizante fertilizanteEncontrado = controleEstoque.buscarFertilizante(nomeInsumo);
 
         if (fertilizanteEncontrado != null) {
@@ -208,12 +214,16 @@ public class TelaDeVerificacaoFertilizante extends javax.swing.JFrame {
             jTextFieldTipoFertilizante.setText(tipoEncontrado);
         } else {
             JOptionPane.showMessageDialog(this, "Fertilizante não encontrado");
-            jTextFieldMarcaFertilizante.setText("");
-            jTextFieldNomeFertilizante.setText("");
-            jTextFieldQuantidadeEmLitros.setText("");
-            jTextFieldQuantidadeEmSacos.setText("");
-            jTextFieldTipoFertilizante.setText("");
+            limparCampos();
         }
+    }
+
+    private void limparCampos() {
+        jTextFieldMarcaFertilizante.setText("");
+        jTextFieldNomeFertilizante.setText("");
+        jTextFieldQuantidadeEmLitros.setText("");
+        jTextFieldQuantidadeEmSacos.setText("");
+        jTextFieldTipoFertilizante.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -222,9 +232,9 @@ public class TelaDeVerificacaoFertilizante extends javax.swing.JFrame {
     private javax.swing.JButton jButtonConfirmarRemocao;
     private javax.swing.JButton jButtonVoltarATelaAnterior;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextFieldIdFertilizante;
     private javax.swing.JTextField jTextFieldMarcaFertilizante;
     private javax.swing.JTextField jTextFieldNomeFertilizante;
+    private javax.swing.JTextField jTextFieldNomeFertilizanteBuscado;
     private javax.swing.JTextField jTextFieldQuantidadeEmLitros;
     private javax.swing.JTextField jTextFieldQuantidadeEmSacos;
     private javax.swing.JTextField jTextFieldTipoFertilizante;

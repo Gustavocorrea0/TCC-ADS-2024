@@ -5,6 +5,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
+import validacoes.ValidarData;
 
 public class TelaDeCadastroAgrotoxico extends javax.swing.JFrame {
 
@@ -159,11 +160,7 @@ public class TelaDeCadastroAgrotoxico extends javax.swing.JFrame {
 
     private void jButtonCancelarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarCadastroActionPerformed
         JOptionPane.showMessageDialog(this, "Cadastro Cancelado");
-        jTextFieldDataDeValidade.setText("");
-        jTextFieldMarcaAgrotoxico.setText("");
-        jTextFieldNomeAgrotoxico.setText("");
-        jTextFieldQuantidadeAgrotoxico.setText("");
-        jTextFieldQuantidadeMinima.setText("");
+        limparCampos();
     }//GEN-LAST:event_jButtonCancelarCadastroActionPerformed
 
     private void jButtonConfirmarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarCadastroActionPerformed
@@ -171,57 +168,90 @@ public class TelaDeCadastroAgrotoxico extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonConfirmarCadastroActionPerformed
 
     public void cadastrarAgrotoxico() {
-        nomeAgrotoxico = jTextFieldNomeAgrotoxico.getText();
-        marcaAgrotoxico = jTextFieldMarcaAgrotoxico.getText();
-        quantidadeEmLitros = Double.parseDouble(jTextFieldQuantidadeAgrotoxico.getText());
-        quantidadeMinimaEmLitros = Double.parseDouble(jTextFieldQuantidadeMinima.getText());
-        dataDeValidade = jTextFieldDataDeValidade.getText();
-
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-
-        if (nomeAgrotoxico.equalsIgnoreCase("")) {
-            JOptionPane.showMessageDialog(this, "Nome Inválido");
+        if (jTextFieldNomeAgrotoxico.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome do agrotóxico");
             return;
         }
 
-        if (marcaAgrotoxico.equalsIgnoreCase("")) {
-            JOptionPane.showMessageDialog(this, "Marca Inválida");
+        if (jTextFieldMarcaAgrotoxico.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira a marca do agrotóxico");
             return;
         }
 
-        if (quantidadeEmLitros < 0) {
-            JOptionPane.showMessageDialog(this, "Quantidade Inválida");
+        if (jTextFieldQuantidadeAgrotoxico.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira a quantidade do agrotóxico ");
             return;
         }
 
-        if (quantidadeMinimaEmLitros < 0) {
-            JOptionPane.showMessageDialog(this, "Quantidade minima Inválida");
+        if (jTextFieldDataDeValidade.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira a data de validade (dd/MM/aaaa) do agrotóxico");
+            return;
+        }
+
+        if (jTextFieldQuantidadeMinima.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira a quantidade minima do agrotóxico");
             return;
         }
 
         try {
+            nomeAgrotoxico = jTextFieldNomeAgrotoxico.getText();
+            marcaAgrotoxico = jTextFieldMarcaAgrotoxico.getText();
+            quantidadeEmLitros = Double.valueOf(jTextFieldQuantidadeAgrotoxico.getText());
+            quantidadeMinimaEmLitros = Double.valueOf(jTextFieldQuantidadeMinima.getText());
+            dataDeValidade = jTextFieldDataDeValidade.getText();
+
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+            if (nomeAgrotoxico.isBlank()) {
+                JOptionPane.showMessageDialog(this, "Nome Inválido");
+                return;
+            }
+
+            if (marcaAgrotoxico.isBlank()) {
+                JOptionPane.showMessageDialog(this, "Marca Inválida");
+                return;
+            }
+
+            if (quantidadeEmLitros < 0) {
+                JOptionPane.showMessageDialog(this, "Quantidade Inválida");
+                return;
+            }
+
+            if (quantidadeMinimaEmLitros < 0) {
+                JOptionPane.showMessageDialog(this, "Quantidade minima Inválida");
+                return;
+            }
+
+            if (!ValidarData.validaData(dataDeValidade)) {
+                JOptionPane.showMessageDialog(this, "Data de validade inválida (dd/MM/aaaa)");
+                return;
+            }
+
             Date dataDeValidadeValida = dateFormat.parse(dataDeValidade);
             controleEstoque.agrotoxico.setNomeAgrotoxico(nomeAgrotoxico);
             controleEstoque.agrotoxico.setMarcaAgrotoxico(marcaAgrotoxico);
             controleEstoque.agrotoxico.setQuantidadeMinimaEmLitros(quantidadeMinimaEmLitros);
             controleEstoque.agrotoxico.setQuantidadeEmLitros(quantidadeEmLitros);
             controleEstoque.agrotoxico.setDataDeValidade(dataDeValidadeValida);
-            
+
             msg = controleEstoque.cadastrarAgrotoxico(ControleEstoque.INCLUSAO);
             JOptionPane.showMessageDialog(this, msg);
-
-            jTextFieldDataDeValidade.setText("");
-            jTextFieldMarcaAgrotoxico.setText("");
-            jTextFieldNomeAgrotoxico.setText("");
-            jTextFieldQuantidadeAgrotoxico.setText("");
-            jTextFieldQuantidadeMinima.setText("");
-            
+            limparCampos();
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "As quantidades de agrotóxico devem ser númericas");
         } catch (ParseException e) {
             JOptionPane.showMessageDialog(this, "Formato de data inválido, o formato é dd/mm/aaaa.");
         }
 
     }
 
+    public void limparCampos() {
+        jTextFieldDataDeValidade.setText("");
+        jTextFieldMarcaAgrotoxico.setText("");
+        jTextFieldNomeAgrotoxico.setText("");
+        jTextFieldQuantidadeAgrotoxico.setText("");
+        jTextFieldQuantidadeMinima.setText("");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCancelarCadastro;

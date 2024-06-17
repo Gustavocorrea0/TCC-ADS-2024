@@ -1,7 +1,6 @@
 package Estoque.CRUDCombustivel;
 
 import Estoque.ControleEstoque;
-import java.text.ParseException;
 import javax.swing.JOptionPane;
 
 public class TelaDeCadastroCombustivel extends javax.swing.JFrame {
@@ -123,9 +122,7 @@ public class TelaDeCadastroCombustivel extends javax.swing.JFrame {
 
     private void jButtonCancelarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarCadastroActionPerformed
         JOptionPane.showMessageDialog(this, "Cadastro cancelado");
-        jTextFieldNomeCombustivel.setText("");
-        jTextFieldQuantidadeCombustivel.setText("");
-        jTextFieldQuantidadeMinimaCombustivel.setText("");
+        limparCampos();
     }//GEN-LAST:event_jButtonCancelarCadastroActionPerformed
 
     private void jButtonConfirmarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarCadastroActionPerformed
@@ -133,40 +130,62 @@ public class TelaDeCadastroCombustivel extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonConfirmarCadastroActionPerformed
 
     public void cadastrarCombustivel() {
-        nomeCombustivel = jTextFieldNomeCombustivel.getText();
-        quantidadeCombustivel = Double.parseDouble(jTextFieldQuantidadeCombustivel.getText());
-        quantidadeMinima = Double.parseDouble(jTextFieldQuantidadeMinimaCombustivel.getText());
-
-        if (nomeCombustivel.equals("")) {
-            JOptionPane.showMessageDialog(this, "Nome Inválido");
+        if (jTextFieldNomeCombustivel.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome do combustível");
             return;
         }
 
-        if (quantidadeCombustivel < 0) {
-            JOptionPane.showMessageDialog(this, "Quantidade Inválida");
+        if (jTextFieldQuantidadeMinimaCombustivel.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira a quantidade miníma de combustível");
             return;
         }
 
-        if (quantidadeMinima < 0) {
-            JOptionPane.showMessageDialog(this, "Quantidade minima Inválida");
+        if (jTextFieldQuantidadeCombustivel.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira a quantidade de combustível");
             return;
         }
 
         try {
+
+            nomeCombustivel = jTextFieldNomeCombustivel.getText();
+            quantidadeMinima = Double.valueOf(jTextFieldQuantidadeMinimaCombustivel.getText());
+            quantidadeCombustivel = Double.valueOf(jTextFieldQuantidadeCombustivel.getText());
+
+            if (nomeCombustivel.isBlank()) {
+                JOptionPane.showMessageDialog(this, "Nome Inválido");
+                return;
+            }
+
+            if (quantidadeCombustivel < 0) {
+                JOptionPane.showMessageDialog(this, "Quantidade Inválida");
+                return;
+            }
+
+            if (quantidadeMinima < 0) {
+                JOptionPane.showMessageDialog(this, "Quantidade minima Inválida");
+                return;
+            }
+
             controleEstoque.combustivel.setNomeCombustivel(nomeCombustivel);
-            controleEstoque.combustivel.setQuantidadeEmLitros(quantidadeMinima);
+            controleEstoque.combustivel.setQuantidadeEmLitros(quantidadeCombustivel);
             controleEstoque.combustivel.setQuantidadeMinimaEmLitros(quantidadeMinima);
 
             msg = controleEstoque.cadastrarCombustivel(ControleEstoque.INCLUSAO);
             JOptionPane.showMessageDialog(this, msg);
-
-            jTextFieldNomeCombustivel.setText("");
-            jTextFieldQuantidadeCombustivel.setText("");
-            jTextFieldQuantidadeMinimaCombustivel.setText("");
-
+            limparCampos();
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "As quantidades de combustíveis devem ser númericas");
+            return;
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Falha ao cadastrar combustivel");
+            JOptionPane.showMessageDialog(this, "Falha ao cadastrar combustível");
         }
+
+    }
+
+    public void limparCampos() {
+        jTextFieldNomeCombustivel.setText("");
+        jTextFieldQuantidadeCombustivel.setText("");
+        jTextFieldQuantidadeMinimaCombustivel.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

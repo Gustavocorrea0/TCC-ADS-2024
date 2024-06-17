@@ -51,7 +51,7 @@ public class TelaDeVerificacaoAgrotoxico extends javax.swing.JFrame {
                 jTextFieldIdAgrotoxicoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldIdAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 117, 272, 30));
+        getContentPane().add(jTextFieldIdAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 117, 271, 29));
 
         jTextFieldDataDeValidade.setEditable(false);
         jTextFieldDataDeValidade.setBackground(new java.awt.Color(255, 255, 255));
@@ -63,7 +63,7 @@ public class TelaDeVerificacaoAgrotoxico extends javax.swing.JFrame {
                 jTextFieldDataDeValidadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldDataDeValidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(507, 236, 271, 30));
+        getContentPane().add(jTextFieldDataDeValidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(506, 236, 272, 29));
 
         jTextFieldQuantidadeAgrotoxico.setEditable(false);
         jTextFieldQuantidadeAgrotoxico.setBackground(new java.awt.Color(255, 255, 255));
@@ -87,7 +87,7 @@ public class TelaDeVerificacaoAgrotoxico extends javax.swing.JFrame {
                 jTextFieldQuantidadeMinimaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldQuantidadeMinima, new org.netbeans.lib.awtextra.AbsoluteConstraints(507, 397, 271, 30));
+        getContentPane().add(jTextFieldQuantidadeMinima, new org.netbeans.lib.awtextra.AbsoluteConstraints(506, 397, 272, 29));
 
         jTextFieldMarcaAgrotoxico.setEditable(false);
         jTextFieldMarcaAgrotoxico.setBackground(new java.awt.Color(255, 255, 255));
@@ -99,7 +99,7 @@ public class TelaDeVerificacaoAgrotoxico extends javax.swing.JFrame {
                 jTextFieldMarcaAgrotoxicoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldMarcaAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 397, 271, 30));
+        getContentPane().add(jTextFieldMarcaAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 397, 272, 30));
 
         jTextFieldNomeAgrotoxico.setEditable(false);
         jTextFieldNomeAgrotoxico.setBackground(new java.awt.Color(255, 255, 255));
@@ -111,7 +111,7 @@ public class TelaDeVerificacaoAgrotoxico extends javax.swing.JFrame {
                 jTextFieldNomeAgrotoxicoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 236, 271, 30));
+        getContentPane().add(jTextFieldNomeAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 236, 272, 29));
 
         jButtonBuscarAgrotoxico.setBorder(null);
         jButtonBuscarAgrotoxico.setBorderPainted(false);
@@ -122,7 +122,7 @@ public class TelaDeVerificacaoAgrotoxico extends javax.swing.JFrame {
                 jButtonBuscarAgrotoxicoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(344, 110, 262, 42));
+        getContentPane().add(jButtonBuscarAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 110, 280, 43));
 
         jButtonVoltarAoInicio.setBorder(null);
         jButtonVoltarAoInicio.setBorderPainted(false);
@@ -181,7 +181,12 @@ public class TelaDeVerificacaoAgrotoxico extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jTextFieldNomeAgrotoxicoActionPerformed
 
-public void consultarAgrotoxico() throws SQLException, ParseException {
+    public void consultarAgrotoxico() throws SQLException, ParseException {
+        if (jTextFieldIdAgrotoxico.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome do Agrotóxico");
+            return;
+        }
+
         nomeInsumo = jTextFieldIdAgrotoxico.getText();
         Agrotoxico agrotoxicoEncontrado = controleEstoque.buscarAgrotoxico(nomeInsumo);
 
@@ -214,7 +219,7 @@ public void consultarAgrotoxico() throws SQLException, ParseException {
             jTextFieldQuantidadeMinima.setText("");
         }
     }
- 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscarAgrotoxico;
     private javax.swing.JButton jButtonVoltarAoInicio;

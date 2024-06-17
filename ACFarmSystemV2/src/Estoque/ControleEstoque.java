@@ -142,6 +142,7 @@ public class ControleEstoque {
                 agrotoxicoBuscado.setNomeAgrotoxico(resultados.getString("nome_agrotoxico"));
                 agrotoxicoBuscado.setMarcaAgrotoxico(resultados.getString("marca_agrotoxico"));
                 agrotoxicoBuscado.setQuantidadeEmLitros(resultados.getDouble("quantidade_em_litros"));
+                agrotoxicoBuscado.setQuantidadeMinimaEmLitros(resultados.getDouble("quantidade_minima_em_litros"));
                 agrotoxicoBuscado.setIdAgrotoxico(resultados.getInt("id_agrotoxico"));
 
                 agrotoxicos.add(agrotoxicoBuscado);
@@ -181,7 +182,6 @@ public class ControleEstoque {
         }
     }
 
-//-----------------------------------------------------------------------------------------------------------------------------------
     public String cadastrarCombustivel(byte operacao) {
         if (!conexao.getConexao()) {
             msg = "Falha de conexao com o banco de dados";
@@ -284,6 +284,7 @@ public class ControleEstoque {
 
                 combustivelBuscado.setNomeCombustivel(resultados.getString("nome_combustivel"));
                 combustivelBuscado.setQuantidadeEmLitros(resultados.getDouble("quantidade_em_litros"));
+                combustivelBuscado.setQuantidadeMinimaEmLitros(resultados.getDouble("quantidade_minima_em_litros"));
                 combustivelBuscado.setIdCombustivel(resultados.getInt("id_combustivel"));
                 combustiveis.add(combustivelBuscado);
             }
@@ -341,9 +342,9 @@ public class ControleEstoque {
                 linhasAfetadas = ps.executeUpdate();
 
                 if (linhasAfetadas > 0) {
-                    msg = "O Fertilizante foi lançado";
+                    msg = "O Fertilizante foi cadastrado";
                 } else {
-                    msg = "O Fertilizante não foi lançado";
+                    msg = "O Fertilizante não foi cadastrado";
                 }
             } else {
                 msg = "Operacão não suportada";
@@ -490,9 +491,9 @@ public class ControleEstoque {
                 linhasAfetadas = ps.executeUpdate();
 
                 if (linhasAfetadas > 0) {
-                    msg = "O Semente foi cadastrada";
+                    msg = "A Semente foi cadastrada";
                 } else {
-                    msg = "O Semente não foi lançada";
+                    msg = "A Semente não foi lançada";
                 }
             } else {
                 msg = "Operacão não suportada";
@@ -547,7 +548,7 @@ public class ControleEstoque {
             if (linhasAfetadas1 > 0) {
                 msg = "Semente removida com sucesso";
             } else {
-                msg = "O Semente não foi removido";
+                msg = "Semente não foi removida";
             }
         } catch (SQLException ex) {
             ex.printStackTrace();

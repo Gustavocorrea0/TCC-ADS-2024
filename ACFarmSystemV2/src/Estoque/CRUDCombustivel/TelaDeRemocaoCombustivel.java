@@ -16,7 +16,7 @@ public class TelaDeRemocaoCombustivel extends javax.swing.JFrame {
     private String quantidadeAtual;
     private String msg;
     private String nomeInsumo;
-    
+
     public TelaDeRemocaoCombustivel() {
         initComponents();
     }
@@ -25,7 +25,7 @@ public class TelaDeRemocaoCombustivel extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextFieldIdCombustivel = new javax.swing.JTextField();
+        jTextFieldNomeCombustivelBuscado = new javax.swing.JTextField();
         jTextFieldNomeCombustivel = new javax.swing.JTextField();
         jTextFieldQuantidadeMinima = new javax.swing.JTextField();
         jTextFieldQuantidadeCombustivel = new javax.swing.JTextField();
@@ -38,16 +38,16 @@ public class TelaDeRemocaoCombustivel extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextFieldIdCombustivel.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldIdCombustivel.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldIdCombustivel.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldIdCombustivel.setBorder(null);
-        jTextFieldIdCombustivel.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldNomeCombustivelBuscado.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldNomeCombustivelBuscado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldNomeCombustivelBuscado.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldNomeCombustivelBuscado.setBorder(null);
+        jTextFieldNomeCombustivelBuscado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldIdCombustivelActionPerformed(evt);
+                jTextFieldNomeCombustivelBuscadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldIdCombustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 117, 270, 30));
+        getContentPane().add(jTextFieldNomeCombustivelBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 116, 271, 29));
 
         jTextFieldNomeCombustivel.setEditable(false);
         jTextFieldNomeCombustivel.setBackground(new java.awt.Color(255, 255, 255));
@@ -59,7 +59,7 @@ public class TelaDeRemocaoCombustivel extends javax.swing.JFrame {
                 jTextFieldNomeCombustivelActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeCombustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 245, 273, 30));
+        getContentPane().add(jTextFieldNomeCombustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 243, 272, 29));
 
         jTextFieldQuantidadeMinima.setEditable(false);
         jTextFieldQuantidadeMinima.setBackground(new java.awt.Color(255, 255, 255));
@@ -71,7 +71,7 @@ public class TelaDeRemocaoCombustivel extends javax.swing.JFrame {
                 jTextFieldQuantidadeMinimaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldQuantidadeMinima, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 404, 272, 30));
+        getContentPane().add(jTextFieldQuantidadeMinima, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 403, 272, 29));
 
         jTextFieldQuantidadeCombustivel.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldQuantidadeCombustivel.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -82,7 +82,7 @@ public class TelaDeRemocaoCombustivel extends javax.swing.JFrame {
                 jTextFieldQuantidadeCombustivelActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldQuantidadeCombustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 570, 271, 30));
+        getContentPane().add(jTextFieldQuantidadeCombustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 570, 272, 29));
 
         jButtonBuscarCombustivel.setBorder(null);
         jButtonBuscarCombustivel.setBorderPainted(false);
@@ -93,7 +93,7 @@ public class TelaDeRemocaoCombustivel extends javax.swing.JFrame {
                 jButtonBuscarCombustivelActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarCombustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(344, 111, 262, 42));
+        getContentPane().add(jButtonBuscarCombustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 108, 280, 45));
 
         jButtonVoltarATelaAnterior.setBorder(null);
         jButtonVoltarATelaAnterior.setBorderPainted(false);
@@ -126,18 +126,18 @@ public class TelaDeRemocaoCombustivel extends javax.swing.JFrame {
                 jButtonCancelarRemocaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCancelarRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 600, 280, 32));
+        getContentPane().add(jButtonCancelarRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 596, 280, 36));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasDeEstoque/telasCombustivel/img_tela_de_remocao_combustivel.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -2, -1, 650));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextFieldIdCombustivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdCombustivelActionPerformed
+    private void jTextFieldNomeCombustivelBuscadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeCombustivelBuscadoActionPerformed
 
-    }//GEN-LAST:event_jTextFieldIdCombustivelActionPerformed
+    }//GEN-LAST:event_jTextFieldNomeCombustivelBuscadoActionPerformed
 
     private void jTextFieldNomeCombustivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeCombustivelActionPerformed
 
@@ -172,44 +172,48 @@ public class TelaDeRemocaoCombustivel extends javax.swing.JFrame {
 
     private void jButtonCancelarRemocaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarRemocaoActionPerformed
         JOptionPane.showMessageDialog(this, "Remoção cancelada");
-
-        jTextFieldNomeCombustivel.setText("");
-        jTextFieldQuantidadeMinima.setText("");
-        jTextFieldQuantidadeCombustivel.setText("");
-        jTextFieldIdCombustivel.setText("");
+        limparCampos();
     }//GEN-LAST:event_jButtonCancelarRemocaoActionPerformed
 
     public void buscarCombustivel() throws SQLException, ParseException {
-        nomeInsumo =  jTextFieldIdCombustivel.getText();
+        if (jTextFieldNomeCombustivelBuscado.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome do combustivél");
+            return;
+        }
+        nomeInsumo = jTextFieldNomeCombustivelBuscado.getText();
         Combustivel combustivelEncontrado = controleEstoque.buscarCombustivel(nomeInsumo);
 
         if (combustivelEncontrado != null) {
             nomeCombustivel = combustivelEncontrado.getNomeCombustivel();
             quantidadeMinima = Double.toString(combustivelEncontrado.getQuantidadeMinimaEmLitros());
             quantidadeAtual = Double.toString(combustivelEncontrado.getQuantidadeEmLitros());
-            
+
             jTextFieldNomeCombustivel.setText(nomeCombustivel);
             jTextFieldQuantidadeMinima.setText(quantidadeMinima);
             jTextFieldQuantidadeCombustivel.setText(quantidadeAtual);
         } else {
             JOptionPane.showMessageDialog(this, "Combustivel não encontrado");
-            jTextFieldNomeCombustivel.setText("");
-            jTextFieldQuantidadeMinima.setText("");
-            jTextFieldQuantidadeCombustivel.setText("");
-            jTextFieldIdCombustivel.setText("");
+            limparCampos();
         }
 
     }
 
     public void removerCombustivel() {
-        nomeInsumo =  jTextFieldIdCombustivel.getText();
+        if (jTextFieldNomeCombustivelBuscado.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Busque um combustível");
+            return;
+        }
+        nomeInsumo = jTextFieldNomeCombustivelBuscado.getText();
         msg = controleEstoque.removerCombustivel(nomeInsumo);
         JOptionPane.showMessageDialog(this, msg);
+        limparCampos();
+    }
 
+    public void limparCampos() {
         jTextFieldNomeCombustivel.setText("");
         jTextFieldQuantidadeMinima.setText("");
         jTextFieldQuantidadeCombustivel.setText("");
-        jTextFieldIdCombustivel.setText("");
+        jTextFieldNomeCombustivelBuscado.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -218,8 +222,8 @@ public class TelaDeRemocaoCombustivel extends javax.swing.JFrame {
     private javax.swing.JButton jButtonConfirmarRemocao;
     private javax.swing.JButton jButtonVoltarATelaAnterior;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextFieldIdCombustivel;
     private javax.swing.JTextField jTextFieldNomeCombustivel;
+    private javax.swing.JTextField jTextFieldNomeCombustivelBuscado;
     private javax.swing.JTextField jTextFieldQuantidadeCombustivel;
     private javax.swing.JTextField jTextFieldQuantidadeMinima;
     // End of variables declaration//GEN-END:variables

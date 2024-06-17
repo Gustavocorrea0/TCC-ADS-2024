@@ -17,9 +17,9 @@ public class TelaDeInicioFertilizante extends javax.swing.JFrame {
     private void initComponents() {
 
         jButtonAdicionarFertilizante = new javax.swing.JButton();
-        jButtonVerificarFertilizante = new javax.swing.JButton();
-        jButtonDeletarFertilizante = new javax.swing.JButton();
         jButtonAtualizarFertilizante = new javax.swing.JButton();
+        jButtonDeletarFertilizante = new javax.swing.JButton();
+        jButtonVerificarFertilizante = new javax.swing.JButton();
         jButtonVoltarATelaInicial = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableFertilizante = new javax.swing.JTable();
@@ -37,29 +37,7 @@ public class TelaDeInicioFertilizante extends javax.swing.JFrame {
                 jButtonAdicionarFertilizanteActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAdicionarFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 135, 260, 45));
-
-        jButtonVerificarFertilizante.setBorder(null);
-        jButtonVerificarFertilizante.setBorderPainted(false);
-        jButtonVerificarFertilizante.setContentAreaFilled(false);
-        jButtonVerificarFertilizante.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonVerificarFertilizante.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonVerificarFertilizanteActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonVerificarFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 209, 260, 42));
-
-        jButtonDeletarFertilizante.setBorder(null);
-        jButtonDeletarFertilizante.setBorderPainted(false);
-        jButtonDeletarFertilizante.setContentAreaFilled(false);
-        jButtonDeletarFertilizante.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonDeletarFertilizante.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonDeletarFertilizanteActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonDeletarFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 135, 260, 45));
+        getContentPane().add(jButtonAdicionarFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 125, 75, 65));
 
         jButtonAtualizarFertilizante.setBorder(null);
         jButtonAtualizarFertilizante.setBorderPainted(false);
@@ -70,7 +48,29 @@ public class TelaDeInicioFertilizante extends javax.swing.JFrame {
                 jButtonAtualizarFertilizanteActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAtualizarFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 209, 260, 44));
+        getContentPane().add(jButtonAtualizarFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 245, 70, 70));
+
+        jButtonDeletarFertilizante.setBorder(null);
+        jButtonDeletarFertilizante.setBorderPainted(false);
+        jButtonDeletarFertilizante.setContentAreaFilled(false);
+        jButtonDeletarFertilizante.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonDeletarFertilizante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDeletarFertilizanteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonDeletarFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 375, 70, 65));
+
+        jButtonVerificarFertilizante.setBorder(null);
+        jButtonVerificarFertilizante.setBorderPainted(false);
+        jButtonVerificarFertilizante.setContentAreaFilled(false);
+        jButtonVerificarFertilizante.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonVerificarFertilizante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVerificarFertilizanteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonVerificarFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 502, 65, 60));
 
         jButtonVoltarATelaInicial.setBorder(null);
         jButtonVoltarATelaInicial.setBorderPainted(false);
@@ -115,7 +115,7 @@ public class TelaDeInicioFertilizante extends javax.swing.JFrame {
         jTableFertilizante.setSelectionForeground(new java.awt.Color(15, 42, 61));
         jScrollPane1.setViewportView(jTableFertilizante);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 860, 340));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 720, 340));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasDeEstoque/telasFertilizante/img_tela_inicio_fertilizante.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 904, -1));

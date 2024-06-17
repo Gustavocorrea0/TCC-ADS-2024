@@ -17,9 +17,9 @@ public class TelaDeInicioSemente extends javax.swing.JFrame {
     private void initComponents() {
 
         jButtonAdicionarSemente = new javax.swing.JButton();
-        jButtonVerificarSemente = new javax.swing.JButton();
-        jButtonDeletarSemente = new javax.swing.JButton();
         jButtonAtualizarSemente = new javax.swing.JButton();
+        jButtonDeletarSemente = new javax.swing.JButton();
+        jButtonVerificarSemente = new javax.swing.JButton();
         jButtonVoltarATelaInicial = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableSemente = new javax.swing.JTable();
@@ -37,29 +37,7 @@ public class TelaDeInicioSemente extends javax.swing.JFrame {
                 jButtonAdicionarSementeActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAdicionarSemente, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 136, 260, 45));
-
-        jButtonVerificarSemente.setBorder(null);
-        jButtonVerificarSemente.setBorderPainted(false);
-        jButtonVerificarSemente.setContentAreaFilled(false);
-        jButtonVerificarSemente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonVerificarSemente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonVerificarSementeActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonVerificarSemente, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 211, 260, 42));
-
-        jButtonDeletarSemente.setBorder(null);
-        jButtonDeletarSemente.setBorderPainted(false);
-        jButtonDeletarSemente.setContentAreaFilled(false);
-        jButtonDeletarSemente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonDeletarSemente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonDeletarSementeActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonDeletarSemente, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 136, 260, 45));
+        getContentPane().add(jButtonAdicionarSemente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 125, 75, 65));
 
         jButtonAtualizarSemente.setBorder(null);
         jButtonAtualizarSemente.setBorderPainted(false);
@@ -70,7 +48,29 @@ public class TelaDeInicioSemente extends javax.swing.JFrame {
                 jButtonAtualizarSementeActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAtualizarSemente, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 211, 260, 44));
+        getContentPane().add(jButtonAtualizarSemente, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 244, 70, 70));
+
+        jButtonDeletarSemente.setBorder(null);
+        jButtonDeletarSemente.setBorderPainted(false);
+        jButtonDeletarSemente.setContentAreaFilled(false);
+        jButtonDeletarSemente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonDeletarSemente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDeletarSementeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonDeletarSemente, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 370, 65, 70));
+
+        jButtonVerificarSemente.setBorder(null);
+        jButtonVerificarSemente.setBorderPainted(false);
+        jButtonVerificarSemente.setContentAreaFilled(false);
+        jButtonVerificarSemente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonVerificarSemente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVerificarSementeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonVerificarSemente, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 495, 70, 70));
 
         jButtonVoltarATelaInicial.setBorder(null);
         jButtonVoltarATelaInicial.setBorderPainted(false);
@@ -115,7 +115,7 @@ public class TelaDeInicioSemente extends javax.swing.JFrame {
         jTableSemente.setSelectionForeground(new java.awt.Color(15, 42, 61));
         jScrollPane1.setViewportView(jTableSemente);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 860, 340));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 740, 340));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasDeEstoque/telasSemente/img_tela_inicio_semente.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 904, -1));

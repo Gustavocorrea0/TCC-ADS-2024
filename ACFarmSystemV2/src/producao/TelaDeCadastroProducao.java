@@ -346,63 +346,63 @@ public class TelaDeCadastroProducao extends javax.swing.JFrame {
             return;
         }
 
-        dataPlantio = jTextFieldDataPlantio.getText(); //
-        dataInicioColheita = jTextFieldDataInicioColheita.getText();
-        dataFimColheita = jTextFieldDataFimColheita.getText();
-        nomeProducao = jTextFieldNomeProducao.getText();//
-        quantidadeProduzidaEmSacos = Integer.parseInt(jTextFieldQuantidadeProduzidaEmSacos.getText());
-        estadoDeVenda = jComboBoxEstadoDeVenda.getSelectedItem().toString();
-        tipoDeCultura = jComboBoxCultura.getSelectedItem().toString();
-
-        valorTotalDeDespesasTexto = jTextFieldValorTotalDeDespesas.getText();
-        valorTotalDeLucroTexto = jTextFieldValorTotalDeLucro.getText();
-
-        valorTotalDeDespesas = Double.valueOf(valorTotalDeDespesasTexto.replace(".", "").replace(",", "."));
-        valorTotalDeLucro = Double.valueOf(valorTotalDeLucroTexto.replace(".", "").replace(",", "."));
-
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-
-        if (!ValidarData.validaData(dataPlantio)) {
-            JOptionPane.showMessageDialog(this, "Data de plantio Inválida (insira: dd/MM/aaaa)");
-            return;
-        }
-
-        if (!ValidarData.validaData(dataInicioColheita)) {
-            JOptionPane.showMessageDialog(this, "Data de inicio de colheita Inválida (insira: dd/MM/aaaa)");
-            return;
-        }
-
-        if (!ValidarData.validaData(dataFimColheita)) {
-            JOptionPane.showMessageDialog(this, "Data de fim de colheita Inválida (insira: dd/MM/aaaa)");
-            return;
-        }
-
-        if (quantidadeProduzidaEmSacos <= 0) {
-            JOptionPane.showMessageDialog(this, "Quantidade produzida inválida");
-            return;
-        }
-
-        if (valorTotalDeDespesas <= 0) {
-            JOptionPane.showMessageDialog(this, "Valor de despesa inválida");
-            return;
-        }
-
-        if (valorTotalDeLucro < 0) {
-            JOptionPane.showMessageDialog(this, "Valor de lucro inválido");
-            return;
-        }
-
-        if (estadoDeVenda.equals("Selecione")) {
-            JOptionPane.showMessageDialog(this, "Vendido Inválido");
-            return;
-        }
-
-        if (tipoDeCultura.equals("Selecione")) {
-            JOptionPane.showMessageDialog(this, "Tipo de cultura Inválido");
-            return;
-        }
-
         try {
+            dataPlantio = jTextFieldDataPlantio.getText(); //
+            dataInicioColheita = jTextFieldDataInicioColheita.getText();
+            dataFimColheita = jTextFieldDataFimColheita.getText();
+            nomeProducao = jTextFieldNomeProducao.getText();//
+            quantidadeProduzidaEmSacos = Integer.parseInt(jTextFieldQuantidadeProduzidaEmSacos.getText());
+            estadoDeVenda = jComboBoxEstadoDeVenda.getSelectedItem().toString();
+            tipoDeCultura = jComboBoxCultura.getSelectedItem().toString();
+
+            valorTotalDeDespesasTexto = jTextFieldValorTotalDeDespesas.getText();
+            valorTotalDeLucroTexto = jTextFieldValorTotalDeLucro.getText();
+
+            valorTotalDeDespesas = Double.valueOf(valorTotalDeDespesasTexto.replace(".", "").replace(",", "."));
+            valorTotalDeLucro = Double.valueOf(valorTotalDeLucroTexto.replace(".", "").replace(",", "."));
+
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+            if (!ValidarData.validaData(dataPlantio)) {
+                JOptionPane.showMessageDialog(this, "Data de plantio Inválida (insira: dd/MM/aaaa)");
+                return;
+            }
+
+            if (!ValidarData.validaData(dataInicioColheita)) {
+                JOptionPane.showMessageDialog(this, "Data de inicio de colheita Inválida (insira: dd/MM/aaaa)");
+                return;
+            }
+
+            if (!ValidarData.validaData(dataFimColheita)) {
+                JOptionPane.showMessageDialog(this, "Data de fim de colheita Inválida (insira: dd/MM/aaaa)");
+                return;
+            }
+
+            if (quantidadeProduzidaEmSacos <= 0) {
+                JOptionPane.showMessageDialog(this, "Quantidade produzida inválida");
+                return;
+            }
+
+            if (valorTotalDeDespesas <= 0) {
+                JOptionPane.showMessageDialog(this, "Valor de despesa inválida");
+                return;
+            }
+
+            if (valorTotalDeLucro < 0) {
+                JOptionPane.showMessageDialog(this, "Valor de lucro inválido");
+                return;
+            }
+
+            if (estadoDeVenda.equals("Selecione")) {
+                JOptionPane.showMessageDialog(this, "Vendido Inválido");
+                return;
+            }
+
+            if (tipoDeCultura.equals("Selecione")) {
+                JOptionPane.showMessageDialog(this, "Tipo de cultura Inválido");
+                return;
+            }
+
             dataPlantioValida = dateFormat.parse(dataPlantio);
             dataInicioColheitaValida = dateFormat.parse(dataInicioColheita);
             dataFimColheitaValida = dateFormat.parse(dataFimColheita);
@@ -429,6 +429,8 @@ public class TelaDeCadastroProducao extends javax.swing.JFrame {
             limparCampos();
         } catch (ParseException e) {
             JOptionPane.showMessageDialog(this, "Formato de data inválido, o formato é dd/mm/aaaa.");
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Os valores devem ser númericos");
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "Formato de moeda inválido");
         }

@@ -20,7 +20,7 @@ public class TelaDeAtualizacaoCombustivel extends javax.swing.JFrame {
     private Double quantidadeAtualAtualizado;
     private String nomeInsumo;
     private int idInsumo;
-    
+
     public TelaDeAtualizacaoCombustivel() {
         initComponents();
     }
@@ -34,7 +34,7 @@ public class TelaDeAtualizacaoCombustivel extends javax.swing.JFrame {
         jTextFieldQuantidadeCombustivel = new javax.swing.JTextField();
         jButtonConfirmar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
-        jTextFieldIdCombustivel = new javax.swing.JTextField();
+        jTextFieldNomeCombustivelBuscado = new javax.swing.JTextField();
         jButtonSairDaTelaEstoqueAtualizarCombustivel = new javax.swing.JButton();
         jButtonBuscarEstoqueAtualizarCombustivel = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -51,7 +51,7 @@ public class TelaDeAtualizacaoCombustivel extends javax.swing.JFrame {
                 jTextFieldNomeCombustivelActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeCombustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 245, 273, 30));
+        getContentPane().add(jTextFieldNomeCombustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 243, 272, 29));
 
         jTextFieldQuantidadeMinima.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldQuantidadeMinima.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -62,7 +62,7 @@ public class TelaDeAtualizacaoCombustivel extends javax.swing.JFrame {
                 jTextFieldQuantidadeMinimaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldQuantidadeMinima, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 404, 272, 30));
+        getContentPane().add(jTextFieldQuantidadeMinima, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 403, 272, 29));
 
         jTextFieldQuantidadeCombustivel.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldQuantidadeCombustivel.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -73,7 +73,7 @@ public class TelaDeAtualizacaoCombustivel extends javax.swing.JFrame {
                 jTextFieldQuantidadeCombustivelActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldQuantidadeCombustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 570, 271, 30));
+        getContentPane().add(jTextFieldQuantidadeCombustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 570, 272, 29));
 
         jButtonConfirmar.setBorder(null);
         jButtonConfirmar.setBorderPainted(false);
@@ -95,18 +95,18 @@ public class TelaDeAtualizacaoCombustivel extends javax.swing.JFrame {
                 jButtonCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 600, 280, 32));
+        getContentPane().add(jButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(612, 597, 282, 35));
 
-        jTextFieldIdCombustivel.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldIdCombustivel.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldIdCombustivel.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldIdCombustivel.setBorder(null);
-        jTextFieldIdCombustivel.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldNomeCombustivelBuscado.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldNomeCombustivelBuscado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldNomeCombustivelBuscado.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldNomeCombustivelBuscado.setBorder(null);
+        jTextFieldNomeCombustivelBuscado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldIdCombustivelActionPerformed(evt);
+                jTextFieldNomeCombustivelBuscadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldIdCombustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 116, 270, 30));
+        getContentPane().add(jTextFieldNomeCombustivelBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 116, 272, 29));
 
         jButtonSairDaTelaEstoqueAtualizarCombustivel.setBorder(null);
         jButtonSairDaTelaEstoqueAtualizarCombustivel.setBorderPainted(false);
@@ -128,10 +128,10 @@ public class TelaDeAtualizacaoCombustivel extends javax.swing.JFrame {
                 jButtonBuscarEstoqueAtualizarCombustivelActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarEstoqueAtualizarCombustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 110, 262, 42));
+        getContentPane().add(jButtonBuscarEstoqueAtualizarCombustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 109, 282, 45));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasDeEstoque/telasCombustivel/img_tela_de_atualizacao_combustivel.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -2, -1, 650));
 
         pack();
         setLocationRelativeTo(null);
@@ -149,9 +149,9 @@ public class TelaDeAtualizacaoCombustivel extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jTextFieldQuantidadeCombustivelActionPerformed
 
-    private void jTextFieldIdCombustivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdCombustivelActionPerformed
+    private void jTextFieldNomeCombustivelBuscadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeCombustivelBuscadoActionPerformed
 
-    }//GEN-LAST:event_jTextFieldIdCombustivelActionPerformed
+    }//GEN-LAST:event_jTextFieldNomeCombustivelBuscadoActionPerformed
 
     private void jButtonSairDaTelaEstoqueAtualizarCombustivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairDaTelaEstoqueAtualizarCombustivelActionPerformed
         this.dispose();
@@ -173,67 +173,101 @@ public class TelaDeAtualizacaoCombustivel extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonConfirmarActionPerformed
 
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
-        jTextFieldNomeCombustivel.setText("");
-        jTextFieldQuantidadeMinima.setText("");
-        jTextFieldQuantidadeCombustivel.setText("");
-        jTextFieldIdCombustivel.setText("");
+        JOptionPane.showMessageDialog(null, "Atualização cancelada");
+        limparCampos();
     }//GEN-LAST:event_jButtonCancelarActionPerformed
 
-      public void buscarCombustivel() throws SQLException, ParseException {
-        nomeInsumo =  jTextFieldIdCombustivel.getText();
+    public void buscarCombustivel() throws SQLException, ParseException {
+        if (jTextFieldNomeCombustivelBuscado.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o nome do combustível");
+            return;
+        }
+
+        nomeInsumo = jTextFieldNomeCombustivelBuscado.getText();
         Combustivel combustivelEncontrado = controleEstoque.buscarCombustivel(nomeInsumo);
 
         if (combustivelEncontrado != null) {
             nomeCombustivel = combustivelEncontrado.getNomeCombustivel();
             quantidadeMinima = Double.toString(combustivelEncontrado.getQuantidadeMinimaEmLitros());
             quantidadeAtual = Double.toString(combustivelEncontrado.getQuantidadeEmLitros());
-            
+
             jTextFieldNomeCombustivel.setText(nomeCombustivel);
             jTextFieldQuantidadeMinima.setText(quantidadeMinima);
             jTextFieldQuantidadeCombustivel.setText(quantidadeAtual);
             idInsumo = combustivelEncontrado.getIdCombustivel();
-            
+
         } else {
             JOptionPane.showMessageDialog(this, "Combustivel não encontrado");
-            jTextFieldNomeCombustivel.setText("");
-            jTextFieldQuantidadeMinima.setText("");
-            jTextFieldQuantidadeCombustivel.setText("");
-            jTextFieldIdCombustivel.setText("");
+            limparCampos();
         }
 
     }
 
     public void atualizarCambustivel() {
-        Combustivel combustivelAtualizado = new Combustivel();
-
-        nomeCombustivelAtualizado = jTextFieldNomeCombustivel.getText();
-        quantidadeMinimaAtualizado = Double.valueOf(jTextFieldQuantidadeMinima.getText());
-        quantidadeAtualAtualizado = Double.valueOf(jTextFieldQuantidadeCombustivel.getText());
-
-        if (nomeCombustivelAtualizado.equalsIgnoreCase("")) {
-            JOptionPane.showMessageDialog(this, "Nome Inválido");
+        if (jTextFieldNomeCombustivelBuscado.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Busque um combustível");
             return;
         }
 
-        if (quantidadeMinimaAtualizado < 0) {
-            JOptionPane.showMessageDialog(this, "Quantidade minima Inválida");
+        if (jTextFieldNomeCombustivel.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome do combustível");
             return;
         }
 
-        if (quantidadeAtualAtualizado < 0) {
-            JOptionPane.showMessageDialog(this, "Quantidade Inválida");
+        if (jTextFieldQuantidadeMinima.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira a quantidade miníma de combustível");
             return;
         }
 
-        combustivelAtualizado.setNomeCombustivel(nomeCombustivelAtualizado);
-        combustivelAtualizado.setQuantidadeMinimaEmLitros(quantidadeMinimaAtualizado);
-        combustivelAtualizado.setQuantidadeEmLitros(quantidadeAtualAtualizado);
-        combustivelAtualizado.setIdCombustivel(idInsumo);
+        if (jTextFieldQuantidadeCombustivel.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira a quantidade de combustível");
+            return;
+        }
 
-        controleEstoque = new ControleEstoque();
-        String msgAtualizacao = controleEstoque.atualizarCombustivel(combustivelAtualizado);
-        JOptionPane.showMessageDialog(null, msgAtualizacao);
+        try {
+            Combustivel combustivelAtualizado = new Combustivel();
 
+            nomeCombustivelAtualizado = jTextFieldNomeCombustivel.getText();
+            quantidadeMinimaAtualizado = Double.valueOf(jTextFieldQuantidadeMinima.getText());
+            quantidadeAtualAtualizado = Double.valueOf(jTextFieldQuantidadeCombustivel.getText());
+
+            if (nomeCombustivelAtualizado.isBlank()) {
+                JOptionPane.showMessageDialog(this, "Nome Inválido");
+                return;
+            }
+
+            if (quantidadeMinimaAtualizado < 0) {
+                JOptionPane.showMessageDialog(this, "Quantidade minima Inválida");
+                return;
+            }
+
+            if (quantidadeAtualAtualizado < 0) {
+                JOptionPane.showMessageDialog(this, "Quantidade Inválida");
+                return;
+            }
+
+            combustivelAtualizado.setNomeCombustivel(nomeCombustivelAtualizado);
+            combustivelAtualizado.setQuantidadeMinimaEmLitros(quantidadeMinimaAtualizado);
+            combustivelAtualizado.setQuantidadeEmLitros(quantidadeAtualAtualizado);
+            combustivelAtualizado.setIdCombustivel(idInsumo);
+
+            controleEstoque = new ControleEstoque();
+            String msgAtualizacao = controleEstoque.atualizarCombustivel(combustivelAtualizado);
+            JOptionPane.showMessageDialog(null, msgAtualizacao);
+            limparCampos();
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "As quantidades de combustíveis devem ser númericas");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao atualizar combutível");
+        }
+
+    }
+
+    public void limparCampos() {
+        jTextFieldNomeCombustivel.setText("");
+        jTextFieldQuantidadeMinima.setText("");
+        jTextFieldQuantidadeCombustivel.setText("");
+        jTextFieldNomeCombustivelBuscado.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -242,8 +276,8 @@ public class TelaDeAtualizacaoCombustivel extends javax.swing.JFrame {
     private javax.swing.JButton jButtonConfirmar;
     private javax.swing.JButton jButtonSairDaTelaEstoqueAtualizarCombustivel;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextFieldIdCombustivel;
     private javax.swing.JTextField jTextFieldNomeCombustivel;
+    private javax.swing.JTextField jTextFieldNomeCombustivelBuscado;
     private javax.swing.JTextField jTextFieldQuantidadeCombustivel;
     private javax.swing.JTextField jTextFieldQuantidadeMinima;
     // End of variables declaration//GEN-END:variables

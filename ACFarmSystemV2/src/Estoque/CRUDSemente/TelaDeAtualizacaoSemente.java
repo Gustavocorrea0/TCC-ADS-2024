@@ -31,11 +31,11 @@ public class TelaDeAtualizacaoSemente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextFieldQuantidadeMinima = new javax.swing.JTextField();
-        jTextFieldMarcaSemente = new javax.swing.JTextField();
-        jTextFieldQuantidadeEmSacos = new javax.swing.JTextField();
         jTextFieldNomeSemente = new javax.swing.JTextField();
-        jTextFieldIdSemente = new javax.swing.JTextField();
+        jTextFieldMarcaSemente = new javax.swing.JTextField();
+        jTextFieldQuantidadeMinima = new javax.swing.JTextField();
+        jTextFieldQuantidadeEmSacos = new javax.swing.JTextField();
+        jTextFieldNomeSementeBuscada = new javax.swing.JTextField();
         jButtonConfirmarAtualizacao = new javax.swing.JButton();
         jButtonCancelarAtualizacao = new javax.swing.JButton();
         jButtonSairDaTelaEstoqueAtualizarCombustivel = new javax.swing.JButton();
@@ -44,39 +44,6 @@ public class TelaDeAtualizacaoSemente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jTextFieldQuantidadeMinima.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldQuantidadeMinima.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldQuantidadeMinima.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldQuantidadeMinima.setBorder(null);
-        jTextFieldQuantidadeMinima.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldQuantidadeMinimaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextFieldQuantidadeMinima, new org.netbeans.lib.awtextra.AbsoluteConstraints(507, 227, 270, 30));
-
-        jTextFieldMarcaSemente.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldMarcaSemente.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldMarcaSemente.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldMarcaSemente.setBorder(null);
-        jTextFieldMarcaSemente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldMarcaSementeActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextFieldMarcaSemente, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 388, 272, 30));
-
-        jTextFieldQuantidadeEmSacos.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldQuantidadeEmSacos.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldQuantidadeEmSacos.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldQuantidadeEmSacos.setBorder(null);
-        jTextFieldQuantidadeEmSacos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldQuantidadeEmSacosActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextFieldQuantidadeEmSacos, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 562, 270, 30));
 
         jTextFieldNomeSemente.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNomeSemente.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -87,18 +54,51 @@ public class TelaDeAtualizacaoSemente extends javax.swing.JFrame {
                 jTextFieldNomeSementeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeSemente, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 226, 272, 30));
+        getContentPane().add(jTextFieldNomeSemente, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 250, 271, 29));
 
-        jTextFieldIdSemente.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldIdSemente.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldIdSemente.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldIdSemente.setBorder(null);
-        jTextFieldIdSemente.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldMarcaSemente.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldMarcaSemente.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldMarcaSemente.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldMarcaSemente.setBorder(null);
+        jTextFieldMarcaSemente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldIdSementeActionPerformed(evt);
+                jTextFieldMarcaSementeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldIdSemente, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 114, 270, 30));
+        getContentPane().add(jTextFieldMarcaSemente, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 412, 271, 29));
+
+        jTextFieldQuantidadeMinima.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldQuantidadeMinima.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldQuantidadeMinima.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldQuantidadeMinima.setBorder(null);
+        jTextFieldQuantidadeMinima.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldQuantidadeMinimaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldQuantidadeMinima, new org.netbeans.lib.awtextra.AbsoluteConstraints(556, 250, 270, 29));
+
+        jTextFieldQuantidadeEmSacos.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldQuantidadeEmSacos.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldQuantidadeEmSacos.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldQuantidadeEmSacos.setBorder(null);
+        jTextFieldQuantidadeEmSacos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldQuantidadeEmSacosActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldQuantidadeEmSacos, new org.netbeans.lib.awtextra.AbsoluteConstraints(556, 411, 270, 29));
+
+        jTextFieldNomeSementeBuscada.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldNomeSementeBuscada.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldNomeSementeBuscada.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldNomeSementeBuscada.setBorder(null);
+        jTextFieldNomeSementeBuscada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNomeSementeBuscadaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldNomeSementeBuscada, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 116, 271, 29));
 
         jButtonConfirmarAtualizacao.setBorder(null);
         jButtonConfirmarAtualizacao.setBorderPainted(false);
@@ -120,7 +120,7 @@ public class TelaDeAtualizacaoSemente extends javax.swing.JFrame {
                 jButtonCancelarAtualizacaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCancelarAtualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 597, 280, 32));
+        getContentPane().add(jButtonCancelarAtualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 597, 280, 35));
 
         jButtonSairDaTelaEstoqueAtualizarCombustivel.setBorder(null);
         jButtonSairDaTelaEstoqueAtualizarCombustivel.setBorderPainted(false);
@@ -142,7 +142,7 @@ public class TelaDeAtualizacaoSemente extends javax.swing.JFrame {
                 jButtonBuscarSementeActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarSemente, new org.netbeans.lib.awtextra.AbsoluteConstraints(344, 111, 262, 42));
+        getContentPane().add(jButtonBuscarSemente, new org.netbeans.lib.awtextra.AbsoluteConstraints(374, 106, 282, 43));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasDeEstoque/telasSemente/img_tela_atualizacao_semente.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -163,9 +163,9 @@ public class TelaDeAtualizacaoSemente extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jTextFieldQuantidadeEmSacosActionPerformed
 
-    private void jTextFieldIdSementeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdSementeActionPerformed
+    private void jTextFieldNomeSementeBuscadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeSementeBuscadaActionPerformed
 
-    }//GEN-LAST:event_jTextFieldIdSementeActionPerformed
+    }//GEN-LAST:event_jTextFieldNomeSementeBuscadaActionPerformed
 
     private void jButtonSairDaTelaEstoqueAtualizarCombustivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairDaTelaEstoqueAtualizarCombustivelActionPerformed
         this.dispose();
@@ -189,15 +189,18 @@ public class TelaDeAtualizacaoSemente extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonConfirmarAtualizacaoActionPerformed
 
     private void jButtonCancelarAtualizacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarAtualizacaoActionPerformed
-        jTextFieldIdSemente.setText("");
-        jTextFieldMarcaSemente.setText("");
-        jTextFieldNomeSemente.setText("");
-        jTextFieldQuantidadeEmSacos.setText("");
-        jTextFieldQuantidadeMinima.setText("");
+        JOptionPane.showMessageDialog(this, "Atualização cancelada");
+        limparCampos();
     }//GEN-LAST:event_jButtonCancelarAtualizacaoActionPerformed
 
     public void buscarSemente() throws SQLException {
-        nomeInsumo = jTextFieldIdSemente.getText();
+        if (jTextFieldNomeSementeBuscada.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome da semente");
+            limparCampos();
+            return;
+        }
+
+        nomeInsumo = jTextFieldNomeSementeBuscada.getText();
         Semente sementeEncontrada = controleEstoque.buscarSemente(nomeInsumo);
 
         if (sementeEncontrada != null) {
@@ -206,71 +209,106 @@ public class TelaDeAtualizacaoSemente extends javax.swing.JFrame {
             quantidadeEmSacosEncontrada = Double.toString(sementeEncontrada.getQuantidadeEmSacos());
             quantidadeMinimaEncontrada = Double.toString(sementeEncontrada.getQuantidadeMinimaEmSacos());
             idSemente = sementeEncontrada.getIdSemente();
-            
+
             jTextFieldMarcaSemente.setText(marcaSementeEncontrada);
             jTextFieldNomeSemente.setText(nomeSementeEncontrada);
             jTextFieldQuantidadeEmSacos.setText(quantidadeEmSacosEncontrada);
             jTextFieldQuantidadeMinima.setText(quantidadeMinimaEncontrada);
         } else {
             JOptionPane.showMessageDialog(this, "Semente não encontrada");
-            jTextFieldIdSemente.setText("");
-            jTextFieldMarcaSemente.setText("");
-            jTextFieldNomeSemente.setText("");
-            jTextFieldQuantidadeEmSacos.setText("");
-            jTextFieldQuantidadeMinima.setText("");
+            limparCampos();
         }
 
     }
 
     public void atualizarSemente() {
+        if (jTextFieldNomeSementeBuscada.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Busque uma semente");
+            limparCampos();
+            return;
+        }
+
+        if (jTextFieldNomeSemente.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Busque uma semente");
+            return;
+        }
+
+        if (jTextFieldMarcaSemente.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira a marca da semente");
+            return;
+        }
+
+        if (jTextFieldQuantidadeMinima.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira a quantidade miníma de sacos de sementes");
+            return;
+        }
+
+        if (jTextFieldQuantidadeEmSacos.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira a quantidade de sacos de sementes");
+            return;
+        }
+
         Semente sementeAtualizada = new Semente();
+        try {
+            nomeSementeAtualizada = jTextFieldNomeSemente.getText();
+            marcaSementeAtualizada = jTextFieldMarcaSemente.getText();
+            quantidadeEmSacosAtualizada = Double.valueOf(jTextFieldQuantidadeEmSacos.getText());
+            quantidadeMinimaAtualizada = Double.valueOf(jTextFieldQuantidadeMinima.getText());
 
-        nomeSementeAtualizada = jTextFieldNomeSemente.getText();
-        marcaSementeAtualizada = jTextFieldMarcaSemente.getText();
-        quantidadeEmSacosAtualizada = Double.valueOf(jTextFieldQuantidadeEmSacos.getText());
-        quantidadeMinimaAtualizada = Double.valueOf(jTextFieldQuantidadeMinima.getText());
+            if (nomeSementeAtualizada.isBlank()) {
+                JOptionPane.showMessageDialog(this, "Nome Inválido");
+                return;
+            }
 
-        if (nomeSementeAtualizada.equals("")) {
-            JOptionPane.showMessageDialog(this, "Nome Inválido");
-            return;
+            if (marcaSementeAtualizada.isBlank()) {
+                JOptionPane.showMessageDialog(this, "Marca Inválida");
+                return;
+            }
+
+            if (quantidadeEmSacosAtualizada < 0) {
+                JOptionPane.showMessageDialog(this, "Quantidade Inválida");
+                return;
+            }
+
+            if (quantidadeMinimaAtualizada < 0) {
+                JOptionPane.showMessageDialog(this, "Quantidade minima Inválida");
+                return;
+            }
+
+            sementeAtualizada.setNomeSemente(nomeSementeAtualizada);
+            sementeAtualizada.setMarcaSemente(marcaSementeAtualizada);
+            sementeAtualizada.setQuantidadeEmSacos(quantidadeEmSacosAtualizada);
+            sementeAtualizada.setQuantidadeMinimaEmSacos(quantidadeMinimaAtualizada);
+            sementeAtualizada.setIdSemente(idSemente);
+
+            controleEstoque = new ControleEstoque();
+            String msgAtualizacao = controleEstoque.atualizarSemente(sementeAtualizada);
+            JOptionPane.showMessageDialog(null, msgAtualizacao);
+            limparCampos(); 
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "As quantidades devem ser numerícas");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Falha ao cadastrar semente");
         }
-
-        if (marcaSementeAtualizada.equals("")) {
-            JOptionPane.showMessageDialog(this, "Marca Inválida");
-            return;
-        }
-
-        if (quantidadeEmSacosAtualizada < 0) {
-            JOptionPane.showMessageDialog(this, "Quantidade Inválida");
-            return;
-        }
-
-        if (quantidadeMinimaAtualizada < 0) {
-            JOptionPane.showMessageDialog(this, "Quantidade minima Inválida");
-            return;
-        }
-
-        sementeAtualizada.setNomeSemente(nomeSementeAtualizada);
-        sementeAtualizada.setMarcaSemente(marcaSementeAtualizada);
-        sementeAtualizada.setQuantidadeEmSacos(quantidadeEmSacosAtualizada);
-        sementeAtualizada.setQuantidadeMinimaEmSacos(quantidadeMinimaAtualizada);
-        sementeAtualizada.setIdSemente(idSemente);
-
-        controleEstoque = new ControleEstoque();
-        String msgAtualizacao = controleEstoque.atualizarSemente(sementeAtualizada);
-        JOptionPane.showMessageDialog(null, msgAtualizacao);
 
     }
 
+    private void limparCampos() {
+        jTextFieldNomeSementeBuscada.setText("");
+        jTextFieldMarcaSemente.setText("");
+        jTextFieldNomeSemente.setText("");
+        jTextFieldQuantidadeEmSacos.setText("");
+        jTextFieldQuantidadeMinima.setText("");
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscarSemente;
     private javax.swing.JButton jButtonCancelarAtualizacao;
     private javax.swing.JButton jButtonConfirmarAtualizacao;
     private javax.swing.JButton jButtonSairDaTelaEstoqueAtualizarCombustivel;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextFieldIdSemente;
     private javax.swing.JTextField jTextFieldMarcaSemente;
     private javax.swing.JTextField jTextFieldNomeSemente;
+    private javax.swing.JTextField jTextFieldNomeSementeBuscada;
     private javax.swing.JTextField jTextFieldQuantidadeEmSacos;
     private javax.swing.JTextField jTextFieldQuantidadeMinima;
     // End of variables declaration//GEN-END:variables

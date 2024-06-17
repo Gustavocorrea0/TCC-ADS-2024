@@ -17,10 +17,10 @@ public class TelaDeInicioAgrotoxico extends javax.swing.JFrame {
     private void initComponents() {
 
         jButtonAdicionarAgrotoxico = new javax.swing.JButton();
-        jButtonVerificarAgrotoxico = new javax.swing.JButton();
         jButtonDeletarAgrotoxico = new javax.swing.JButton();
         jButtonAtualizarAgrotoxico = new javax.swing.JButton();
         jButtonVoltarATelaInicial = new javax.swing.JButton();
+        jButtonVerificarAgrotoxico = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableAgrotoxico = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
@@ -37,18 +37,7 @@ public class TelaDeInicioAgrotoxico extends javax.swing.JFrame {
                 jButtonAdicionarAgrotoxicoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAdicionarAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 135, 260, 45));
-
-        jButtonVerificarAgrotoxico.setBorder(null);
-        jButtonVerificarAgrotoxico.setBorderPainted(false);
-        jButtonVerificarAgrotoxico.setContentAreaFilled(false);
-        jButtonVerificarAgrotoxico.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonVerificarAgrotoxico.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonVerificarAgrotoxicoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonVerificarAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 209, 260, 42));
+        getContentPane().add(jButtonAdicionarAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 125, 80, 70));
 
         jButtonDeletarAgrotoxico.setBorder(null);
         jButtonDeletarAgrotoxico.setBorderPainted(false);
@@ -59,7 +48,7 @@ public class TelaDeInicioAgrotoxico extends javax.swing.JFrame {
                 jButtonDeletarAgrotoxicoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonDeletarAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 135, 260, 45));
+        getContentPane().add(jButtonDeletarAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 365, 60, 70));
 
         jButtonAtualizarAgrotoxico.setBorder(null);
         jButtonAtualizarAgrotoxico.setBorderPainted(false);
@@ -70,7 +59,7 @@ public class TelaDeInicioAgrotoxico extends javax.swing.JFrame {
                 jButtonAtualizarAgrotoxicoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAtualizarAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 208, 260, 44));
+        getContentPane().add(jButtonAtualizarAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 244, 70, 70));
 
         jButtonVoltarATelaInicial.setBorder(null);
         jButtonVoltarATelaInicial.setBorderPainted(false);
@@ -83,6 +72,17 @@ public class TelaDeInicioAgrotoxico extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonVoltarATelaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 22, 40, 25));
 
+        jButtonVerificarAgrotoxico.setBorder(null);
+        jButtonVerificarAgrotoxico.setBorderPainted(false);
+        jButtonVerificarAgrotoxico.setContentAreaFilled(false);
+        jButtonVerificarAgrotoxico.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonVerificarAgrotoxico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVerificarAgrotoxicoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonVerificarAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 500, 70, 65));
+
         jTableAgrotoxico.setBackground(new java.awt.Color(15, 42, 61));
         jTableAgrotoxico.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTableAgrotoxico.setForeground(new java.awt.Color(255, 255, 255));
@@ -91,14 +91,14 @@ public class TelaDeInicioAgrotoxico extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nome", "Marca", "Quantidade"
+                "Nome", "Marca", "Quantidade Atual", "Quantidade Minima", "Abaixo do Minimo"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Double.class
+                java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -115,7 +115,7 @@ public class TelaDeInicioAgrotoxico extends javax.swing.JFrame {
         jTableAgrotoxico.setSelectionForeground(new java.awt.Color(15, 42, 61));
         jScrollPane1.setViewportView(jTableAgrotoxico);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 860, 340));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 700, 340));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasDeEstoque/telasAgrotoxico/img_tela_inicial_agrotoxico.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 904, -1));
@@ -152,9 +152,15 @@ public class TelaDeInicioAgrotoxico extends javax.swing.JFrame {
     private void readJTable() {
         DefaultTableModel modelo = (DefaultTableModel) jTableAgrotoxico.getModel();
         ControleEstoque controleEstoque = new ControleEstoque();
-        
-        for (Agrotoxico u: controleEstoque.lerAgrotoxico()){
-            modelo.addRow(new Object[]{u.getNomeAgrotoxico(),u.getMarcaAgrotoxico(), u.getQuantidadeEmLitros(), u.getIdAgrotoxico()});
+        String statusQuantidadeMinima = "Não";
+        for (Agrotoxico u : controleEstoque.lerAgrotoxico()) {
+            
+            Double quantMin = u.getQuantidadeMinimaEmLitros();
+            Double quantMax = u.getQuantidadeEmLitros();
+            if ( quantMax < quantMin) {
+                statusQuantidadeMinima = "Sim";
+            }
+            modelo.addRow(new Object[]{u.getNomeAgrotoxico(), u.getMarcaAgrotoxico(), u.getQuantidadeEmLitros(), u.getQuantidadeMinimaEmLitros(), statusQuantidadeMinima});
         }
     }
 

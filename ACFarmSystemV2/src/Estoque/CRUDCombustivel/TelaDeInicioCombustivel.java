@@ -17,9 +17,9 @@ public class TelaDeInicioCombustivel extends javax.swing.JFrame {
     private void initComponents() {
 
         jButtonAdicionarCombustivel = new javax.swing.JButton();
-        jButtonVerificarCombustivel = new javax.swing.JButton();
-        jButtonDeletarCombustivel = new javax.swing.JButton();
         jButtonAtualizarCombustivel = new javax.swing.JButton();
+        jButtonDeletarCombustivel = new javax.swing.JButton();
+        jButtonVerificarCombustivel = new javax.swing.JButton();
         jButtonVoltarATelaInicial = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableCombustivel = new javax.swing.JTable();
@@ -37,29 +37,7 @@ public class TelaDeInicioCombustivel extends javax.swing.JFrame {
                 jButtonAdicionarCombustivelActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAdicionarCombustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 103, 260, 45));
-
-        jButtonVerificarCombustivel.setBorder(null);
-        jButtonVerificarCombustivel.setBorderPainted(false);
-        jButtonVerificarCombustivel.setContentAreaFilled(false);
-        jButtonVerificarCombustivel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonVerificarCombustivel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonVerificarCombustivelActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonVerificarCombustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 178, 260, 42));
-
-        jButtonDeletarCombustivel.setBorder(null);
-        jButtonDeletarCombustivel.setBorderPainted(false);
-        jButtonDeletarCombustivel.setContentAreaFilled(false);
-        jButtonDeletarCombustivel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonDeletarCombustivel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonDeletarCombustivelActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonDeletarCombustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 103, 260, 45));
+        getContentPane().add(jButtonAdicionarCombustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 125, 75, 65));
 
         jButtonAtualizarCombustivel.setBorder(null);
         jButtonAtualizarCombustivel.setBorderPainted(false);
@@ -70,7 +48,29 @@ public class TelaDeInicioCombustivel extends javax.swing.JFrame {
                 jButtonAtualizarCombustivelActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAtualizarCombustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 177, 260, 44));
+        getContentPane().add(jButtonAtualizarCombustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 250, 70, 65));
+
+        jButtonDeletarCombustivel.setBorder(null);
+        jButtonDeletarCombustivel.setBorderPainted(false);
+        jButtonDeletarCombustivel.setContentAreaFilled(false);
+        jButtonDeletarCombustivel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonDeletarCombustivel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDeletarCombustivelActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonDeletarCombustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 375, 60, 60));
+
+        jButtonVerificarCombustivel.setBorder(null);
+        jButtonVerificarCombustivel.setBorderPainted(false);
+        jButtonVerificarCombustivel.setContentAreaFilled(false);
+        jButtonVerificarCombustivel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonVerificarCombustivel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVerificarCombustivelActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonVerificarCombustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 495, 65, 70));
 
         jButtonVoltarATelaInicial.setBorder(null);
         jButtonVoltarATelaInicial.setBorderPainted(false);
@@ -91,14 +91,14 @@ public class TelaDeInicioCombustivel extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nome", "Quantidade"
+                "Nome", "Quantidade", "Quantidade Minima", "Abaixo do Minímo"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Double.class
+                java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -115,7 +115,7 @@ public class TelaDeInicioCombustivel extends javax.swing.JFrame {
         jTableCombustivel.setSelectionForeground(new java.awt.Color(15, 42, 61));
         jScrollPane1.setViewportView(jTableCombustivel);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 860, 340));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 720, 340));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasDeEstoque/telasCombustivel/img_tela_de_inicio_combustivel.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 904, -1));
@@ -152,9 +152,13 @@ public class TelaDeInicioCombustivel extends javax.swing.JFrame {
     private void readJTable() {
         DefaultTableModel modelo = (DefaultTableModel) jTableCombustivel.getModel();
         ControleEstoque controleEstoque = new ControleEstoque();
-        
-        for (Combustivel u: controleEstoque.lerCombustivel()){
-            modelo.addRow(new Object[]{u.getNomeCombustivel(),u.getQuantidadeEmLitros(), u.getIdCombustivel()});
+        String statusMinimoCombustivel = "Não";
+
+        for (Combustivel u : controleEstoque.lerCombustivel()) {
+            if (u.getQuantidadeEmLitros() < u.getQuantidadeMinimaEmLitros()) {
+                statusMinimoCombustivel = "Sim";
+            }
+            modelo.addRow(new Object[]{u.getNomeCombustivel(), u.getQuantidadeEmLitros(), u.getQuantidadeMinimaEmLitros() ,statusMinimoCombustivel});
         }
     }
 

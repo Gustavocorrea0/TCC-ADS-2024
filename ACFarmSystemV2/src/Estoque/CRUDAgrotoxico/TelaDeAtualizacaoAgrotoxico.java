@@ -9,6 +9,7 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import validacoes.ValidarData;
 
 public class TelaDeAtualizacaoAgrotoxico extends javax.swing.JFrame {
 
@@ -40,7 +41,7 @@ public class TelaDeAtualizacaoAgrotoxico extends javax.swing.JFrame {
         jTextFieldQuantidadeAgrotoxico = new javax.swing.JTextField();
         jButtonConfirmarAtualizacao = new javax.swing.JButton();
         jButtonCancelarAtualizacao = new javax.swing.JButton();
-        jTextFieldIdAgrotoxico = new javax.swing.JTextField();
+        jTextFieldNomeAgrotoxicoBuscado = new javax.swing.JTextField();
         jButtonSairDaTela = new javax.swing.JButton();
         jButtonBuscar = new javax.swing.JButton();
         jTextFieldQuantidadeMinima = new javax.swing.JTextField();
@@ -59,7 +60,7 @@ public class TelaDeAtualizacaoAgrotoxico extends javax.swing.JFrame {
                 jTextFieldDataDeValidadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldDataDeValidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(507, 228, 270, 30));
+        getContentPane().add(jTextFieldDataDeValidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(506, 237, 272, 29));
 
         jTextFieldMarcaAgrotoxico.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldMarcaAgrotoxico.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -70,7 +71,7 @@ public class TelaDeAtualizacaoAgrotoxico extends javax.swing.JFrame {
                 jTextFieldMarcaAgrotoxicoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldMarcaAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 390, 271, 30));
+        getContentPane().add(jTextFieldMarcaAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 398, 272, 29));
 
         jTextFieldQuantidadeAgrotoxico.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldQuantidadeAgrotoxico.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -81,7 +82,7 @@ public class TelaDeAtualizacaoAgrotoxico extends javax.swing.JFrame {
                 jTextFieldQuantidadeAgrotoxicoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldQuantidadeAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 564, 271, 30));
+        getContentPane().add(jTextFieldQuantidadeAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 572, 272, 29));
 
         jButtonConfirmarAtualizacao.setBorder(null);
         jButtonConfirmarAtualizacao.setBorderPainted(false);
@@ -92,7 +93,7 @@ public class TelaDeAtualizacaoAgrotoxico extends javax.swing.JFrame {
                 jButtonConfirmarAtualizacaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonConfirmarAtualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 548, 282, 33));
+        getContentPane().add(jButtonConfirmarAtualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 548, 282, 35));
 
         jButtonCancelarAtualizacao.setBorder(null);
         jButtonCancelarAtualizacao.setBorderPainted(false);
@@ -103,18 +104,18 @@ public class TelaDeAtualizacaoAgrotoxico extends javax.swing.JFrame {
                 jButtonCancelarAtualizacaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCancelarAtualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 600, 280, 32));
+        getContentPane().add(jButtonCancelarAtualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 597, 280, 37));
 
-        jTextFieldIdAgrotoxico.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldIdAgrotoxico.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldIdAgrotoxico.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldIdAgrotoxico.setBorder(null);
-        jTextFieldIdAgrotoxico.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldNomeAgrotoxicoBuscado.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldNomeAgrotoxicoBuscado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldNomeAgrotoxicoBuscado.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldNomeAgrotoxicoBuscado.setBorder(null);
+        jTextFieldNomeAgrotoxicoBuscado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldIdAgrotoxicoActionPerformed(evt);
+                jTextFieldNomeAgrotoxicoBuscadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldIdAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 117, 272, 30));
+        getContentPane().add(jTextFieldNomeAgrotoxicoBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 117, 272, 29));
 
         jButtonSairDaTela.setBorder(null);
         jButtonSairDaTela.setBorderPainted(false);
@@ -136,7 +137,7 @@ public class TelaDeAtualizacaoAgrotoxico extends javax.swing.JFrame {
                 jButtonBuscarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(344, 111, 262, 42));
+        getContentPane().add(jButtonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 110, 281, 43));
 
         jTextFieldQuantidadeMinima.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldQuantidadeMinima.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -147,7 +148,7 @@ public class TelaDeAtualizacaoAgrotoxico extends javax.swing.JFrame {
                 jTextFieldQuantidadeMinimaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldQuantidadeMinima, new org.netbeans.lib.awtextra.AbsoluteConstraints(507, 390, 271, 30));
+        getContentPane().add(jTextFieldQuantidadeMinima, new org.netbeans.lib.awtextra.AbsoluteConstraints(506, 398, 272, 29));
 
         jTextFieldNomeAgrotoxico.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNomeAgrotoxico.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -158,7 +159,7 @@ public class TelaDeAtualizacaoAgrotoxico extends javax.swing.JFrame {
                 jTextFieldNomeAgrotoxicoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 228, 272, 30));
+        getContentPane().add(jTextFieldNomeAgrotoxico, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 237, 272, 29));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasDeEstoque/telasAgrotoxico/img_tela_atualizacao_agrotoxico.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -179,9 +180,9 @@ public class TelaDeAtualizacaoAgrotoxico extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jTextFieldQuantidadeAgrotoxicoActionPerformed
 
-    private void jTextFieldIdAgrotoxicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdAgrotoxicoActionPerformed
+    private void jTextFieldNomeAgrotoxicoBuscadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeAgrotoxicoBuscadoActionPerformed
 
-    }//GEN-LAST:event_jTextFieldIdAgrotoxicoActionPerformed
+    }//GEN-LAST:event_jTextFieldNomeAgrotoxicoBuscadoActionPerformed
 
     private void jButtonSairDaTelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairDaTelaActionPerformed
         this.dispose();
@@ -216,16 +217,15 @@ public class TelaDeAtualizacaoAgrotoxico extends javax.swing.JFrame {
 
     private void jButtonCancelarAtualizacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarAtualizacaoActionPerformed
         JOptionPane.showMessageDialog(null, "Atualização cancelada");
-        jTextFieldDataDeValidade.setText("");
-        jTextFieldIdAgrotoxico.setText("");
-        jTextFieldMarcaAgrotoxico.setText("");
-        jTextFieldNomeAgrotoxico.setText("");
-        jTextFieldQuantidadeAgrotoxico.setText("");
-        jTextFieldQuantidadeMinima.setText("");
+        limparCampos();
     }//GEN-LAST:event_jButtonCancelarAtualizacaoActionPerformed
 
     public void consultarAgrotoxico() throws SQLException, ParseException {
-        nomeInsumo = jTextFieldIdAgrotoxico.getText();
+        if (jTextFieldNomeAgrotoxicoBuscado.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome do agrotóxico");
+            return;
+        }
+        nomeInsumo = jTextFieldNomeAgrotoxicoBuscado.getText();
         Agrotoxico agrotoxicoEncontrado = controleEstoque.buscarAgrotoxico(nomeInsumo);
 
         if (agrotoxicoEncontrado != null) {
@@ -246,49 +246,79 @@ public class TelaDeAtualizacaoAgrotoxico extends javax.swing.JFrame {
             jTextFieldNomeAgrotoxico.setText(nomeAgrotoxicoEncontrado);
             jTextFieldQuantidadeAgrotoxico.setText(quantidadeEmLitrosEncontrado);
             jTextFieldQuantidadeMinima.setText(quantidadeMinimaEmLitrosEncontrado);
-            
+
             idInsumo = agrotoxicoEncontrado.getIdAgrotoxico();
         } else {
-            JOptionPane.showMessageDialog(this, "Agrotoxico não encontrado");
-            jTextFieldDataDeValidade.setText("");
-            jTextFieldIdAgrotoxico.setText("");
-            jTextFieldMarcaAgrotoxico.setText("");
-            jTextFieldNomeAgrotoxico.setText("");
-            jTextFieldQuantidadeAgrotoxico.setText("");
-            jTextFieldQuantidadeMinima.setText("");
+            JOptionPane.showMessageDialog(this, "Agrotóxico não encontrado");
+            limparCampos();
         }
     }
 
     public void atualizarAgrotoxico() throws SQLException {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-
-        nomeAgrotoxicoAtualizado = jTextFieldNomeAgrotoxico.getText();
-        marcaAgrotoxicoAtualizado = jTextFieldMarcaAgrotoxico.getText();
-        quantidadeEmLitrosAtualizado = Double.parseDouble(jTextFieldQuantidadeAgrotoxico.getText());
-        quantidadeMinimaEmLitrosAtualizado = Double.parseDouble(jTextFieldQuantidadeMinima.getText());
-        dataDeValidadeAtualizado = jTextFieldDataDeValidade.getText();
-
-        if (nomeAgrotoxicoAtualizado.equalsIgnoreCase("")) {
-            JOptionPane.showMessageDialog(this, "Nome Inválido");
+        if (jTextFieldNomeAgrotoxicoBuscado.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Busque um agrotóxico");
             return;
         }
 
-        if (marcaAgrotoxicoAtualizado.equalsIgnoreCase("")) {
-            JOptionPane.showMessageDialog(this, "Marca Inválida");
+        if (jTextFieldNomeAgrotoxico.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome do agrotóxico");
             return;
         }
 
-        if (quantidadeEmLitrosAtualizado < 0) {
-            JOptionPane.showMessageDialog(this, "Quantidade Inválida");
+        if (jTextFieldMarcaAgrotoxico.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira a marca do agrotóxico");
             return;
         }
 
-        if (quantidadeMinimaEmLitrosAtualizado < 0) {
-            JOptionPane.showMessageDialog(this, "Quantidade minima Inválida");
+        if (jTextFieldQuantidadeAgrotoxico.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira a quantidade do agrotóxico ");
+            return;
+        }
+
+        if (jTextFieldDataDeValidade.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira a data de validade (dd/MM/aaaa) do agrotóxico");
+            return;
+        }
+
+        if (jTextFieldQuantidadeMinima.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira a quantidade minima do agrotóxico");
             return;
         }
 
         try {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+            nomeAgrotoxicoAtualizado = jTextFieldNomeAgrotoxico.getText();
+            marcaAgrotoxicoAtualizado = jTextFieldMarcaAgrotoxico.getText();
+            quantidadeEmLitrosAtualizado = Double.valueOf(jTextFieldQuantidadeAgrotoxico.getText());
+            quantidadeMinimaEmLitrosAtualizado = Double.valueOf(jTextFieldQuantidadeMinima.getText());
+            dataDeValidadeAtualizado = jTextFieldDataDeValidade.getText();
+
+            if (nomeAgrotoxicoAtualizado.isBlank()) {
+                JOptionPane.showMessageDialog(this, "Nome Inválido");
+                return;
+            }
+
+            if (marcaAgrotoxicoAtualizado.isBlank()) {
+                JOptionPane.showMessageDialog(this, "Marca Inválida");
+                return;
+            }
+
+            if (quantidadeEmLitrosAtualizado < 0) {
+                JOptionPane.showMessageDialog(this, "Quantidade Inválida");
+                return;
+            }
+
+            if (!ValidarData.validaData(dataDeValidadeAtualizado)) {
+                JOptionPane.showMessageDialog(this, "Data Inválida (dd/MM/aaaa)");
+                return;
+            }
+
+            if (quantidadeMinimaEmLitrosAtualizado < 0) {
+                JOptionPane.showMessageDialog(this, "Quantidade minima Inválida");
+                return;
+            }
+
             Date dataDeValidadeAtualizada = dateFormat.parse(dataDeValidadeAtualizado);
             Agrotoxico agrotoxicoAtualizado = new Agrotoxico();
 
@@ -298,15 +328,30 @@ public class TelaDeAtualizacaoAgrotoxico extends javax.swing.JFrame {
             agrotoxicoAtualizado.setQuantidadeEmLitros(quantidadeEmLitrosAtualizado);
             agrotoxicoAtualizado.setDataDeValidade(dataDeValidadeAtualizada);
             agrotoxicoAtualizado.setIdAgrotoxico(idInsumo);
+            limparCampos();
 
             controleEstoque = new ControleEstoque();
             String msgAtualizacao = controleEstoque.atualizarAgrotoxico(agrotoxicoAtualizado);
             JOptionPane.showMessageDialog(null, msgAtualizacao);
 
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "As quantidades de agrotóxico devem ser númericas");
         } catch (ParseException e) {
             JOptionPane.showMessageDialog(this, "Formato de data inválido, o formato é dd/mm/aaaa.");
         }
+        
     }
+
+    public void limparCampos() {
+        jTextFieldDataDeValidade.setText("");
+        jTextFieldNomeAgrotoxicoBuscado.setText("");
+        jTextFieldMarcaAgrotoxico.setText("");
+        jTextFieldNomeAgrotoxico.setText("");
+        jTextFieldQuantidadeAgrotoxico.setText("");
+        jTextFieldQuantidadeMinima.setText("");
+    }
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscar;
     private javax.swing.JButton jButtonCancelarAtualizacao;
@@ -314,9 +359,9 @@ public class TelaDeAtualizacaoAgrotoxico extends javax.swing.JFrame {
     private javax.swing.JButton jButtonSairDaTela;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField jTextFieldDataDeValidade;
-    private javax.swing.JTextField jTextFieldIdAgrotoxico;
     private javax.swing.JTextField jTextFieldMarcaAgrotoxico;
     private javax.swing.JTextField jTextFieldNomeAgrotoxico;
+    private javax.swing.JTextField jTextFieldNomeAgrotoxicoBuscado;
     private javax.swing.JTextField jTextFieldQuantidadeAgrotoxico;
     private javax.swing.JTextField jTextFieldQuantidadeMinima;
     // End of variables declaration//GEN-END:variables

@@ -437,60 +437,59 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
         valorTotalVendaNovoCorrigido = Double.valueOf(valorTotalTexto.replace(".", "").replace(",", "."));
         quantidadeDeSacasProducaoNovo = Integer.parseInt(jTextFieldNumeroSacasProducao.getText());
         quantidadeDeParcelasNovo = Integer.parseInt(jTextFieldNumeroDeParcelas.getText());
-
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-
-        if (nomeProducaoNovo.isBlank()) {
-            JOptionPane.showMessageDialog(this, "Busque uma producao");
-            return;
-        }
-
-        if (nomeClienteNovo.isBlank()) {
-            JOptionPane.showMessageDialog(this, "Busque um cliente");
-            return;
-        }
-
-        if (statusDeVendaProducao.equalsIgnoreCase("sim")) {
-            JOptionPane.showMessageDialog(this, "Esta produção já foi vendida");
-            return;
-        }
-
-        if (metodoDePagamentoNovo.equals("Selecione") || formaDePagamentoNovo.equals("Selecione")) {
-            JOptionPane.showMessageDialog(this, "Adicione o método de pagamento / Forma de pagamento");
-            return;
-        }
-
-        if (CNPJOuCPFNovo.isBlank()) {
-            JOptionPane.showMessageDialog(this, "CNPJ ou CPF, inválido");
-            return;
-        }
-
-        if (dataProducaoNovo.isBlank()) {
-            JOptionPane.showMessageDialog(this, "Data de produção inválida");
-            return;
-        }
-
-        if (ValidarData.validaData(dataVendaNovo) == false) {
-            JOptionPane.showMessageDialog(this, "Data de venda produção inválida");
-            return;
-        }
-
-        if (valorTotalVendaNovoCorrigido < 0 || valorTotalVendaNovoCorrigido.equals("")) {
-            JOptionPane.showMessageDialog(this, "Valor da venda inválido");
-            return;
-        }
-
-        if (quantidadeDeSacasProducaoNovo < 0) {
-            JOptionPane.showMessageDialog(this, "Quantidade de sacas inválida");
-            return;
-        }
-
-        if (quantidadeDeParcelasNovo < 0) {
-            JOptionPane.showMessageDialog(this, "Quantidade de parcelas inválida, mínimo 1");
-            return;
-        }
-
         try {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+            if (nomeProducaoNovo.isBlank()) {
+                JOptionPane.showMessageDialog(this, "Busque uma producao");
+                return;
+            }
+
+            if (nomeClienteNovo.isBlank()) {
+                JOptionPane.showMessageDialog(this, "Busque um cliente");
+                return;
+            }
+
+            if (statusDeVendaProducao.equalsIgnoreCase("sim")) {
+                JOptionPane.showMessageDialog(this, "Esta produção já foi vendida");
+                return;
+            }
+
+            if (metodoDePagamentoNovo.equals("Selecione") || formaDePagamentoNovo.equals("Selecione")) {
+                JOptionPane.showMessageDialog(this, "Adicione o método de pagamento / Forma de pagamento");
+                return;
+            }
+
+            if (CNPJOuCPFNovo.isBlank()) {
+                JOptionPane.showMessageDialog(this, "CNPJ ou CPF, inválido");
+                return;
+            }
+
+            if (dataProducaoNovo.isBlank()) {
+                JOptionPane.showMessageDialog(this, "Data de produção inválida");
+                return;
+            }
+
+            if (ValidarData.validaData(dataVendaNovo) == false) {
+                JOptionPane.showMessageDialog(this, "Data de venda produção inválida");
+                return;
+            }
+
+            if (valorTotalVendaNovoCorrigido < 0 || valorTotalVendaNovoCorrigido.equals("")) {
+                JOptionPane.showMessageDialog(this, "Valor da venda inválido");
+                return;
+            }
+
+            if (quantidadeDeSacasProducaoNovo < 0) {
+                JOptionPane.showMessageDialog(this, "Quantidade de sacas inválida");
+                return;
+            }
+
+            if (quantidadeDeParcelasNovo < 0) {
+                JOptionPane.showMessageDialog(this, "Quantidade de parcelas inválida, mínimo 1");
+                return;
+            }
+
             Date dataProducao = dateFormat.parse(dataProducaoNovo);
             Date dataVenda = dateFormat.parse(dataVendaNovo);
 
@@ -513,6 +512,8 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
 
         } catch (ParseException e) {
             JOptionPane.showMessageDialog(this, "Formato de data inválido, o formato é dd/mm/aaaa.");
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Os valores devem ser númericos");
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "Formato de moeda inválido");
         }

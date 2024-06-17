@@ -38,7 +38,7 @@ public class TelaDeAtualizacaoFertilizante extends javax.swing.JFrame {
         jTextFieldQuantidadeEmSacos = new javax.swing.JTextField();
         jTextFieldMarcaFertilizante = new javax.swing.JTextField();
         jTextFieldTipoFertilizante = new javax.swing.JTextField();
-        jTextFieldIdFertilizante = new javax.swing.JTextField();
+        jTextFieldNomeFertilizanteBuscado = new javax.swing.JTextField();
         jTextFieldQuantidadeEmLitros = new javax.swing.JTextField();
         jTextFieldNomeFertilizante = new javax.swing.JTextField();
         jButtonConfirmar = new javax.swing.JButton();
@@ -59,7 +59,7 @@ public class TelaDeAtualizacaoFertilizante extends javax.swing.JFrame {
                 jTextFieldQuantidadeEmSacosActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldQuantidadeEmSacos, new org.netbeans.lib.awtextra.AbsoluteConstraints(507, 237, 271, 30));
+        getContentPane().add(jTextFieldQuantidadeEmSacos, new org.netbeans.lib.awtextra.AbsoluteConstraints(504, 247, 271, 29));
 
         jTextFieldMarcaFertilizante.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldMarcaFertilizante.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -70,7 +70,7 @@ public class TelaDeAtualizacaoFertilizante extends javax.swing.JFrame {
                 jTextFieldMarcaFertilizanteActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldMarcaFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 398, 272, 30));
+        getContentPane().add(jTextFieldMarcaFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 408, 271, 29));
 
         jTextFieldTipoFertilizante.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldTipoFertilizante.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -81,18 +81,18 @@ public class TelaDeAtualizacaoFertilizante extends javax.swing.JFrame {
                 jTextFieldTipoFertilizanteActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldTipoFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 572, 271, 30));
+        getContentPane().add(jTextFieldTipoFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 572, 271, 29));
 
-        jTextFieldIdFertilizante.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldIdFertilizante.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldIdFertilizante.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldIdFertilizante.setBorder(null);
-        jTextFieldIdFertilizante.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldNomeFertilizanteBuscado.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldNomeFertilizanteBuscado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldNomeFertilizanteBuscado.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldNomeFertilizanteBuscado.setBorder(null);
+        jTextFieldNomeFertilizanteBuscado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldIdFertilizanteActionPerformed(evt);
+                jTextFieldNomeFertilizanteBuscadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldIdFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 117, 272, 30));
+        getContentPane().add(jTextFieldNomeFertilizanteBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 117, 272, 29));
 
         jTextFieldQuantidadeEmLitros.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldQuantidadeEmLitros.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -103,7 +103,7 @@ public class TelaDeAtualizacaoFertilizante extends javax.swing.JFrame {
                 jTextFieldQuantidadeEmLitrosActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldQuantidadeEmLitros, new org.netbeans.lib.awtextra.AbsoluteConstraints(507, 398, 271, 30));
+        getContentPane().add(jTextFieldQuantidadeEmLitros, new org.netbeans.lib.awtextra.AbsoluteConstraints(504, 408, 271, 29));
 
         jTextFieldNomeFertilizante.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNomeFertilizante.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -114,7 +114,7 @@ public class TelaDeAtualizacaoFertilizante extends javax.swing.JFrame {
                 jTextFieldNomeFertilizanteActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 237, 271, 30));
+        getContentPane().add(jTextFieldNomeFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 247, 271, 29));
 
         jButtonConfirmar.setBorder(null);
         jButtonConfirmar.setBorderPainted(false);
@@ -125,7 +125,7 @@ public class TelaDeAtualizacaoFertilizante extends javax.swing.JFrame {
                 jButtonConfirmarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 548, 282, 33));
+        getContentPane().add(jButtonConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 548, 282, 35));
 
         jButtonCancelar.setBorder(null);
         jButtonCancelar.setBorderPainted(false);
@@ -136,7 +136,7 @@ public class TelaDeAtualizacaoFertilizante extends javax.swing.JFrame {
                 jButtonCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 600, 280, 32));
+        getContentPane().add(jButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 597, 280, 35));
 
         jButtonSairDaTelaEstoqueAtualizarCombustivel.setBorder(null);
         jButtonSairDaTelaEstoqueAtualizarCombustivel.setBorderPainted(false);
@@ -158,7 +158,7 @@ public class TelaDeAtualizacaoFertilizante extends javax.swing.JFrame {
                 jButtonBuscarFertilizanteActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(344, 111, 262, 42));
+        getContentPane().add(jButtonBuscarFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(374, 108, 282, 42));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasDeEstoque/telasFertilizante/img_tela_atualizacao_fertilizante.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -179,9 +179,9 @@ public class TelaDeAtualizacaoFertilizante extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jTextFieldTipoFertilizanteActionPerformed
 
-    private void jTextFieldIdFertilizanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdFertilizanteActionPerformed
+    private void jTextFieldNomeFertilizanteBuscadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeFertilizanteBuscadoActionPerformed
 
-    }//GEN-LAST:event_jTextFieldIdFertilizanteActionPerformed
+    }//GEN-LAST:event_jTextFieldNomeFertilizanteBuscadoActionPerformed
 
     private void jButtonSairDaTelaEstoqueAtualizarCombustivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairDaTelaEstoqueAtualizarCombustivelActionPerformed
         this.dispose();
@@ -201,11 +201,8 @@ public class TelaDeAtualizacaoFertilizante extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonConfirmarActionPerformed
 
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
-        jTextFieldMarcaFertilizante.setText("");
-        jTextFieldNomeFertilizante.setText("");
-        jTextFieldQuantidadeEmLitros.setText("");
-        jTextFieldQuantidadeEmSacos.setText("");
-        jTextFieldTipoFertilizante.setText("");
+        JOptionPane.showMessageDialog(this, "Atualização cancelada");
+        limparCampos();
     }//GEN-LAST:event_jButtonCancelarActionPerformed
 
     private void jButtonBuscarFertilizanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarFertilizanteActionPerformed
@@ -217,7 +214,13 @@ public class TelaDeAtualizacaoFertilizante extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonBuscarFertilizanteActionPerformed
 
     public void buscarFertilizante() throws SQLException {
-        nomeInsumo = jTextFieldIdFertilizante.getText();
+        if (jTextFieldNomeFertilizanteBuscado.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome do fertilizante");
+            limparCampos();
+            return;
+        }
+
+        nomeInsumo = jTextFieldNomeFertilizanteBuscado.getText();
         Fertilizante fertilizanteEncontrado = controleEstoque.buscarFertilizante(nomeInsumo);
 
         if (fertilizanteEncontrado != null) {
@@ -236,75 +239,117 @@ public class TelaDeAtualizacaoFertilizante extends javax.swing.JFrame {
 
         } else {
             JOptionPane.showMessageDialog(this, "Fertilizante não encontrado");
-            jTextFieldMarcaFertilizante.setText("");
-            jTextFieldNomeFertilizante.setText("");
-            jTextFieldQuantidadeEmLitros.setText("");
-            jTextFieldQuantidadeEmSacos.setText("");
-            jTextFieldTipoFertilizante.setText("");
+            limparCampos();
         }
     }
 
     public void atualizarFertilizante() {
-        Fertilizante fertilizanteAtualizado = new Fertilizante();
-
-        nomeFertilizanteAtualizacao = jTextFieldNomeFertilizante.getText();
-        marcaFertilizanteAtualizacao = jTextFieldMarcaFertilizante.getText();
-        tipoAtualizacao = jTextFieldTipoFertilizante.getText();
-        quantidadeEmSacosAtualizacao = Double.valueOf(jTextFieldQuantidadeEmSacos.getText());
-        quantidadeEmLitrosAtualizacao = Double.valueOf(jTextFieldQuantidadeEmLitros.getText());
-
-        if (nomeFertilizanteAtualizacao.equals("")) {
-            JOptionPane.showMessageDialog(null, "Nome inválido ");
+        if (jTextFieldNomeFertilizanteBuscado.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Busque um fertilizante");
+            limparCampos();
             return;
         }
 
-        if (marcaFertilizanteAtualizacao.equals("")) {
-            JOptionPane.showMessageDialog(null, "Marca inválido ");
+        if (jTextFieldNomeFertilizante.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome do fertilizante");
             return;
         }
 
-        if (quantidadeEmSacosAtualizacao < 0) {
-            JOptionPane.showMessageDialog(null, "Quantidade em sacos inválida ");
+        if (jTextFieldMarcaFertilizante.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira a marca do fertilizante");
             return;
         }
 
-        if (quantidadeEmLitrosAtualizacao < 0) {
-            JOptionPane.showMessageDialog(null, "Quantidade em litros inválida ");
+        if (jTextFieldTipoFertilizante.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o tipo do fertilizante:\nSolido\nLiquido");
             return;
         }
 
-        if (tipoAtualizacao.equalsIgnoreCase("liquido")) {
-            quantidadeEmSacosAtualizacao = 0.0;
-            fertilizanteAtualizado.setIdFertilizante(idMaquina);
-            fertilizanteAtualizado.setNomeFertilizante(nomeFertilizanteAtualizacao);
-            fertilizanteAtualizado.setMarcaFertilizante(marcaFertilizanteAtualizacao);
-            fertilizanteAtualizado.setTipoFertilizante(tipoAtualizacao);
-            fertilizanteAtualizado.setQuantidadeEmLitros(quantidadeEmLitrosAtualizacao);
-            fertilizanteAtualizado.setQuantidadeEmSacos(quantidadeEmSacosAtualizacao);
-
-            controleEstoque = new ControleEstoque();
-            String msgAtualizacao = controleEstoque.atualizarFertilizante(fertilizanteAtualizado);
-            JOptionPane.showMessageDialog(null, msgAtualizacao);
-
-        } else if (tipoAtualizacao.equalsIgnoreCase("solido")) {
-            quantidadeEmLitrosAtualizacao = 0.0;
-            fertilizanteAtualizado.setIdFertilizante(idMaquina);
-            fertilizanteAtualizado.setNomeFertilizante(nomeFertilizanteEncontrado);
-            fertilizanteAtualizado.setMarcaFertilizante(marcaFertilizanteEncontrado);
-            fertilizanteAtualizado.setTipoFertilizante(tipoAtualizacao);
-            fertilizanteAtualizado.setQuantidadeEmLitros(quantidadeEmLitrosAtualizacao);
-            fertilizanteAtualizado.setQuantidadeEmSacos(quantidadeEmSacosAtualizacao);
-
-            controleEstoque = new ControleEstoque();
-            String msgAtualizacao = controleEstoque.atualizarFertilizante(fertilizanteAtualizado);
-            JOptionPane.showMessageDialog(null, msgAtualizacao);
-        } else {
-            JOptionPane.showMessageDialog(this, "Tipo Inválido, apenas: solido ou liquido");
+        if (jTextFieldQuantidadeEmSacos.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira a quantidade em sacos\nCaso sejam litros insira zero em sacos");
             return;
+        }
+
+        if (jTextFieldQuantidadeEmLitros.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira a quantidade em sacos\nCaso sejam sacos insira zero em litros");
+            return;
+        }
+
+        try {
+
+            Fertilizante fertilizanteAtualizado = new Fertilizante();
+
+            nomeFertilizanteAtualizacao = jTextFieldNomeFertilizante.getText();
+            marcaFertilizanteAtualizacao = jTextFieldMarcaFertilizante.getText();
+            tipoAtualizacao = jTextFieldTipoFertilizante.getText();
+            quantidadeEmSacosAtualizacao = Double.valueOf(jTextFieldQuantidadeEmSacos.getText());
+            quantidadeEmLitrosAtualizacao = Double.valueOf(jTextFieldQuantidadeEmLitros.getText());
+
+            if (nomeFertilizanteAtualizacao.isBlank()) {
+                JOptionPane.showMessageDialog(null, "Nome inválido");
+                return;
+            }
+
+            if (marcaFertilizanteAtualizacao.isBlank()) {
+                JOptionPane.showMessageDialog(null, "Marca inválido");
+                return;
+            }
+
+            if (quantidadeEmSacosAtualizacao < 0) {
+                JOptionPane.showMessageDialog(null, "Quantidade em sacos inválida\nCaso sejam litros insira zero em sacos");
+                return;
+            }
+
+            if (quantidadeEmLitrosAtualizacao < 0) {
+                JOptionPane.showMessageDialog(null, "Quantidade em litros inválida\nCaso sejam sacos insira zero em litros");
+                return;
+            }
+
+            if (tipoAtualizacao.equalsIgnoreCase("liquido")) {
+                quantidadeEmSacosAtualizacao = 0.0;
+                fertilizanteAtualizado.setIdFertilizante(idMaquina);
+                fertilizanteAtualizado.setNomeFertilizante(nomeFertilizanteAtualizacao);
+                fertilizanteAtualizado.setMarcaFertilizante(marcaFertilizanteAtualizacao);
+                fertilizanteAtualizado.setTipoFertilizante(tipoAtualizacao);
+                fertilizanteAtualizado.setQuantidadeEmLitros(quantidadeEmLitrosAtualizacao);
+                fertilizanteAtualizado.setQuantidadeEmSacos(quantidadeEmSacosAtualizacao);
+
+                controleEstoque = new ControleEstoque();
+                String msgAtualizacao = controleEstoque.atualizarFertilizante(fertilizanteAtualizado);
+                JOptionPane.showMessageDialog(null, msgAtualizacao);
+                limparCampos();
+            } else if (tipoAtualizacao.equalsIgnoreCase("solido")) {
+                quantidadeEmLitrosAtualizacao = 0.0;
+                fertilizanteAtualizado.setIdFertilizante(idMaquina);
+                fertilizanteAtualizado.setNomeFertilizante(nomeFertilizanteEncontrado);
+                fertilizanteAtualizado.setMarcaFertilizante(marcaFertilizanteEncontrado);
+                fertilizanteAtualizado.setTipoFertilizante(tipoAtualizacao);
+                fertilizanteAtualizado.setQuantidadeEmLitros(quantidadeEmLitrosAtualizacao);
+                fertilizanteAtualizado.setQuantidadeEmSacos(quantidadeEmSacosAtualizacao);
+
+                controleEstoque = new ControleEstoque();
+                String msgAtualizacao = controleEstoque.atualizarFertilizante(fertilizanteAtualizado);
+                JOptionPane.showMessageDialog(null, msgAtualizacao);
+                limparCampos();
+            } else {
+                JOptionPane.showMessageDialog(this, "Tipo Inválido, apenas: solido ou liquido");
+                return;
+            }
+
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "As quantidades devem ser numerícas");
         }
 
     }
 
+    private void limparCampos() {
+        jTextFieldNomeFertilizanteBuscado.setText("");
+        jTextFieldMarcaFertilizante.setText("");
+        jTextFieldNomeFertilizante.setText("");
+        jTextFieldQuantidadeEmLitros.setText("");
+        jTextFieldQuantidadeEmSacos.setText("");
+        jTextFieldTipoFertilizante.setText("");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscarFertilizante;
@@ -312,9 +357,9 @@ public class TelaDeAtualizacaoFertilizante extends javax.swing.JFrame {
     private javax.swing.JButton jButtonConfirmar;
     private javax.swing.JButton jButtonSairDaTelaEstoqueAtualizarCombustivel;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextFieldIdFertilizante;
     private javax.swing.JTextField jTextFieldMarcaFertilizante;
     private javax.swing.JTextField jTextFieldNomeFertilizante;
+    private javax.swing.JTextField jTextFieldNomeFertilizanteBuscado;
     private javax.swing.JTextField jTextFieldQuantidadeEmLitros;
     private javax.swing.JTextField jTextFieldQuantidadeEmSacos;
     private javax.swing.JTextField jTextFieldTipoFertilizante;

@@ -44,7 +44,7 @@ public class TelaDeCadastroFertilizante extends javax.swing.JFrame {
                 jButtonConfirmarCadastroActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonConfirmarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 548, 282, 33));
+        getContentPane().add(jButtonConfirmarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 548, 282, 35));
 
         jButtonCancelarCadastro.setBorder(null);
         jButtonCancelarCadastro.setBorderPainted(false);
@@ -55,7 +55,7 @@ public class TelaDeCadastroFertilizante extends javax.swing.JFrame {
                 jButtonCancelarCadastroActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCancelarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 599, 280, 35));
+        getContentPane().add(jButtonCancelarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 598, 280, 36));
 
         jTextFieldQuantidadeEmLitros.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldQuantidadeEmLitros.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -66,7 +66,7 @@ public class TelaDeCadastroFertilizante extends javax.swing.JFrame {
                 jTextFieldQuantidadeEmLitrosActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldQuantidadeEmLitros, new org.netbeans.lib.awtextra.AbsoluteConstraints(508, 314, 270, 30));
+        getContentPane().add(jTextFieldQuantidadeEmLitros, new org.netbeans.lib.awtextra.AbsoluteConstraints(506, 313, 272, 29));
 
         jTextFieldMarcaFertilizante.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldMarcaFertilizante.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -77,7 +77,7 @@ public class TelaDeCadastroFertilizante extends javax.swing.JFrame {
                 jTextFieldMarcaFertilizanteActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldMarcaFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 314, 272, 30));
+        getContentPane().add(jTextFieldMarcaFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 313, 272, 29));
 
         jTextFieldQuantidadeEmSacos.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldQuantidadeEmSacos.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -88,7 +88,7 @@ public class TelaDeCadastroFertilizante extends javax.swing.JFrame {
                 jTextFieldQuantidadeEmSacosActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldQuantidadeEmSacos, new org.netbeans.lib.awtextra.AbsoluteConstraints(506, 153, 272, 30));
+        getContentPane().add(jTextFieldQuantidadeEmSacos, new org.netbeans.lib.awtextra.AbsoluteConstraints(506, 152, 272, 29));
 
         jTextFieldNomeFertilizante.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNomeFertilizante.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -99,7 +99,7 @@ public class TelaDeCadastroFertilizante extends javax.swing.JFrame {
                 jTextFieldNomeFertilizanteActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 153, 272, 30));
+        getContentPane().add(jTextFieldNomeFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 152, 272, 29));
 
         jButtonVoltarATelaAnterior.setBorder(null);
         jButtonVoltarATelaAnterior.setBorderPainted(false);
@@ -119,7 +119,7 @@ public class TelaDeCadastroFertilizante extends javax.swing.JFrame {
                 jComboBoxTipoFertilizanteActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxTipoFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 500, 280, 30));
+        getContentPane().add(jComboBoxTipoFertilizante, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, 280, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasDeEstoque/telasFertilizante/img_tela_cadastro_fertilizante.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -151,10 +151,7 @@ public class TelaDeCadastroFertilizante extends javax.swing.JFrame {
 
     private void jButtonCancelarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarCadastroActionPerformed
         JOptionPane.showMessageDialog(this, "Cadastro cancelado");
-        jTextFieldMarcaFertilizante.setText("");
-        jTextFieldNomeFertilizante.setText("");
-        jTextFieldQuantidadeEmLitros.setText("");
-        jTextFieldQuantidadeEmSacos.setText("");
+        limparCampos();
     }//GEN-LAST:event_jButtonCancelarCadastroActionPerformed
 
     private void jButtonConfirmarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarCadastroActionPerformed
@@ -167,40 +164,58 @@ public class TelaDeCadastroFertilizante extends javax.swing.JFrame {
 
     public void cadastrarFertilizante() {
 
-        tipoFertilizante = jComboBoxTipoFertilizante.getSelectedItem().toString();
-        
-        nomeFertilizante = jTextFieldNomeFertilizante.getText();
-        marcaFertilizante = jTextFieldMarcaFertilizante.getText();
-        quantidadeEmSacos = Double.valueOf(jTextFieldQuantidadeEmSacos.getText());
-        quantidadeEmLitros = Double.valueOf(jTextFieldQuantidadeEmLitros.getText());
-
-        if (nomeFertilizante.equals("")) {
-            JOptionPane.showMessageDialog(null, "Nome inválido ");
+        if (jTextFieldNomeFertilizante.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o nome do fertilizante");
             return;
         }
 
-        if (marcaFertilizante.equals("")) {
-            JOptionPane.showMessageDialog(null, "Marca inválido ");
+        if (jTextFieldMarcaFertilizante.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a marca do fertilizante");
             return;
         }
 
-        if (quantidadeEmSacos < 0) {
-            JOptionPane.showMessageDialog(null, "Quantidade em sacos inválida ");
+        if (jTextFieldQuantidadeEmSacos.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a quantidade de sacos de fertilizante\nCaso sejam litros insira zero em sacos");
             return;
         }
 
-        if (quantidadeEmLitros < 0) {
-            JOptionPane.showMessageDialog(null, "Quantidade em litros inválida ");
-            return;
-        }
-
-        if (tipoFertilizante.equals("Selecione")) {
-            JOptionPane.showMessageDialog(null, "Escolha um tipo de fertilizante");
+        if (jTextFieldQuantidadeEmLitros.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a quantidade de litros de fertilizante\nCaso sejam sacos insira zero em litros");
             return;
         }
 
         try {
-            
+            tipoFertilizante = jComboBoxTipoFertilizante.getSelectedItem().toString();
+            nomeFertilizante = jTextFieldNomeFertilizante.getText();
+            marcaFertilizante = jTextFieldMarcaFertilizante.getText();
+            quantidadeEmSacos = Double.valueOf(jTextFieldQuantidadeEmSacos.getText());
+            quantidadeEmLitros = Double.valueOf(jTextFieldQuantidadeEmLitros.getText());
+
+            if (nomeFertilizante.isBlank()) {
+                JOptionPane.showMessageDialog(null, "Nome inválido");
+                return;
+            }
+
+            if (marcaFertilizante.isBlank()) {
+                JOptionPane.showMessageDialog(null, "Marca inválida");
+                return;
+            }
+
+            if (quantidadeEmSacos < 0) {
+                JOptionPane.showMessageDialog(null, "Quantidade em sacos inválida\nCaso sejam litros insira zero em sacos");
+                return;
+            }
+
+            if (quantidadeEmLitros < 0) {
+                JOptionPane.showMessageDialog(null, "Quantidade em litros inválida\nCaso sejam sacos insira zero em litros");
+                return;
+            }
+
+            if (tipoFertilizante.equals("Selecione")) {
+                JOptionPane.showMessageDialog(null, "Escolha um tipo de fertilizante");
+                return;
+            }
+
             controleEstoque.fertilizante.setNomeFertilizante(nomeFertilizante);
             controleEstoque.fertilizante.setMarcaFertilizante(marcaFertilizante);
             controleEstoque.fertilizante.setQuantidadeEmLitros(quantidadeEmLitros);
@@ -209,18 +224,22 @@ public class TelaDeCadastroFertilizante extends javax.swing.JFrame {
 
             msg = controleEstoque.cadastrarFertilizante(ControleEstoque.INCLUSAO);
             JOptionPane.showMessageDialog(this, msg);
+            limparCampos();
 
-            jTextFieldMarcaFertilizante.setText("");
-            jTextFieldNomeFertilizante.setText("");
-            jTextFieldQuantidadeEmLitros.setText("");
-            jTextFieldQuantidadeEmSacos.setText("");
-
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "As quantidades devem ser numerícas");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, msg);
         }
-        
+
     }
 
+    private void limparCampos() {
+        jTextFieldMarcaFertilizante.setText("");
+        jTextFieldNomeFertilizante.setText("");
+        jTextFieldQuantidadeEmLitros.setText("");
+        jTextFieldQuantidadeEmSacos.setText("");
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroupTipo;
     private javax.swing.JButton jButtonCancelarCadastro;
