@@ -37,7 +37,7 @@ public class TelaDeInicioPropriedade extends javax.swing.JFrame {
                 jButtonCadastrarPropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCadastrarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 103, 261, 45));
+        getContentPane().add(jButtonCadastrarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 123, 80, 65));
 
         jButtonAtualizarPropriedade.setBorder(null);
         jButtonAtualizarPropriedade.setContentAreaFilled(false);
@@ -47,7 +47,7 @@ public class TelaDeInicioPropriedade extends javax.swing.JFrame {
                 jButtonAtualizarPropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAtualizarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(606, 176, 261, 45));
+        getContentPane().add(jButtonAtualizarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 80, 70));
 
         jButtonDeletarPropriedade.setBorder(null);
         jButtonDeletarPropriedade.setContentAreaFilled(false);
@@ -57,7 +57,7 @@ public class TelaDeInicioPropriedade extends javax.swing.JFrame {
                 jButtonDeletarPropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonDeletarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(606, 103, 261, 45));
+        getContentPane().add(jButtonDeletarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 365, 80, 70));
 
         jButtonVerificarPropriedade.setBorder(null);
         jButtonVerificarPropriedade.setContentAreaFilled(false);
@@ -67,7 +67,7 @@ public class TelaDeInicioPropriedade extends javax.swing.JFrame {
                 jButtonVerificarPropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonVerificarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 177, 261, 45));
+        getContentPane().add(jButtonVerificarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, 80, 70));
 
         jButtonVoltarAoTelaDeInicio.setBorder(null);
         jButtonVoltarAoTelaDeInicio.setBorderPainted(false);
@@ -114,7 +114,7 @@ public class TelaDeInicioPropriedade extends javax.swing.JFrame {
         jTablePropriedade.setSelectionForeground(new java.awt.Color(15, 42, 61));
         jScrollPane1.setViewportView(jTablePropriedade);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 870, 350));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 700, 430));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasPropriedade/img_tela_de_propriedade.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 640));

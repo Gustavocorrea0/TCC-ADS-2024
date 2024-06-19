@@ -16,9 +16,9 @@ public class TelaCRUDCarro extends javax.swing.JFrame {
     private void initComponents() {
 
         jButtonCadastrarVeiculo = new javax.swing.JButton();
+        jButtonAtualizarVeiculo = new javax.swing.JButton();
         jButtonVerificarVeiculo = new javax.swing.JButton();
         jButtonDeletarVeiculo = new javax.swing.JButton();
-        jButtonAtualizarVeiculo = new javax.swing.JButton();
         jButtonVoltarATelaDeInicio = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableTrator = new javax.swing.JTable();
@@ -35,27 +35,7 @@ public class TelaCRUDCarro extends javax.swing.JFrame {
                 jButtonCadastrarVeiculoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCadastrarVeiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 136, 261, 45));
-
-        jButtonVerificarVeiculo.setBorder(null);
-        jButtonVerificarVeiculo.setContentAreaFilled(false);
-        jButtonVerificarVeiculo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonVerificarVeiculo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonVerificarVeiculoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonVerificarVeiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 209, 261, 45));
-
-        jButtonDeletarVeiculo.setBorder(null);
-        jButtonDeletarVeiculo.setContentAreaFilled(false);
-        jButtonDeletarVeiculo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonDeletarVeiculo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonDeletarVeiculoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonDeletarVeiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 136, 261, 45));
+        getContentPane().add(jButtonCadastrarVeiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 119, 80, 70));
 
         jButtonAtualizarVeiculo.setBorder(null);
         jButtonAtualizarVeiculo.setContentAreaFilled(false);
@@ -65,7 +45,27 @@ public class TelaCRUDCarro extends javax.swing.JFrame {
                 jButtonAtualizarVeiculoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAtualizarVeiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 209, 261, 45));
+        getContentPane().add(jButtonAtualizarVeiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 80, 70));
+
+        jButtonVerificarVeiculo.setBorder(null);
+        jButtonVerificarVeiculo.setContentAreaFilled(false);
+        jButtonVerificarVeiculo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonVerificarVeiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVerificarVeiculoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonVerificarVeiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 490, 70, 70));
+
+        jButtonDeletarVeiculo.setBorder(null);
+        jButtonDeletarVeiculo.setContentAreaFilled(false);
+        jButtonDeletarVeiculo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonDeletarVeiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDeletarVeiculoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonDeletarVeiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 365, 60, 80));
 
         jButtonVoltarATelaDeInicio.setBorder(null);
         jButtonVoltarATelaDeInicio.setBorderPainted(false);
@@ -112,10 +112,10 @@ public class TelaCRUDCarro extends javax.swing.JFrame {
         jTableTrator.setSelectionForeground(new java.awt.Color(15, 42, 61));
         jScrollPane1.setViewportView(jTableTrator);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 870, 350));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 740, 350));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasVeiculo/imgCarro/img_tela_de_inicio_carro.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -13, -1, 660));
 
         pack();
         setLocationRelativeTo(null);

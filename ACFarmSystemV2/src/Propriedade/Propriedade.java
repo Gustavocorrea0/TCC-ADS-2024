@@ -5,6 +5,7 @@ package Propriedade;
  * @author Gustavo
  */
 public class Propriedade {
+
     private int idPropriedade;
     private String nomePropriedade;
     private String localPropriedade;
@@ -68,6 +69,5 @@ public class Propriedade {
     public void setCidade(String cidade) {
         this.cidade = cidade;
     }
-    
-    
+
 }

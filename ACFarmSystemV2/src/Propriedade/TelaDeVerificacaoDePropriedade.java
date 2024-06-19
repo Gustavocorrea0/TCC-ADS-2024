@@ -18,7 +18,7 @@ public class TelaDeVerificacaoDePropriedade extends javax.swing.JFrame {
     private void initComponents() {
 
         jButtonVoltarAoTelaDeUsuario = new javax.swing.JButton();
-        jTextFieldIdPropriedade = new javax.swing.JTextField();
+        jTextFieldNomePropriedadeBuscada = new javax.swing.JTextField();
         jTextFieldAreaPropriedade = new javax.swing.JTextField();
         jTextFieldCulturaPropriedade = new javax.swing.JTextField();
         jTextFieldEstadoPropriedade = new javax.swing.JTextField();
@@ -44,16 +44,16 @@ public class TelaDeVerificacaoDePropriedade extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonVoltarAoTelaDeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 20, 35, 23));
 
-        jTextFieldIdPropriedade.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldIdPropriedade.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldIdPropriedade.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldIdPropriedade.setBorder(null);
-        jTextFieldIdPropriedade.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldNomePropriedadeBuscada.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldNomePropriedadeBuscada.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldNomePropriedadeBuscada.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldNomePropriedadeBuscada.setBorder(null);
+        jTextFieldNomePropriedadeBuscada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldIdPropriedadeActionPerformed(evt);
+                jTextFieldNomePropriedadeBuscadaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldIdPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 138, 300, 28));
+        getContentPane().add(jTextFieldNomePropriedadeBuscada, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 138, 305, 29));
 
         jTextFieldAreaPropriedade.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldAreaPropriedade.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -65,7 +65,7 @@ public class TelaDeVerificacaoDePropriedade extends javax.swing.JFrame {
                 jTextFieldAreaPropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldAreaPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 398, 275, 28));
+        getContentPane().add(jTextFieldAreaPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 397, 278, 28));
 
         jTextFieldCulturaPropriedade.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCulturaPropriedade.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -77,7 +77,7 @@ public class TelaDeVerificacaoDePropriedade extends javax.swing.JFrame {
                 jTextFieldCulturaPropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCulturaPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 490, 275, 28));
+        getContentPane().add(jTextFieldCulturaPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 490, 278, 28));
 
         jTextFieldEstadoPropriedade.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldEstadoPropriedade.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -89,7 +89,7 @@ public class TelaDeVerificacaoDePropriedade extends javax.swing.JFrame {
                 jTextFieldEstadoPropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldEstadoPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(462, 305, 275, 28));
+        getContentPane().add(jTextFieldEstadoPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 305, 277, 28));
 
         jTextFieldCidadePropriedade.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCidadePropriedade.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -101,7 +101,7 @@ public class TelaDeVerificacaoDePropriedade extends javax.swing.JFrame {
                 jTextFieldCidadePropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCidadePropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(462, 399, 270, 28));
+        getContentPane().add(jTextFieldCidadePropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 398, 277, 28));
 
         jTextFieldLocalPropriedade.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldLocalPropriedade.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -113,7 +113,7 @@ public class TelaDeVerificacaoDePropriedade extends javax.swing.JFrame {
                 jTextFieldLocalPropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldLocalPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 488, 415, 29));
+        getContentPane().add(jTextFieldLocalPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 489, 417, 29));
 
         jTextFieldNomePropriedade.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNomePropriedade.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -125,7 +125,7 @@ public class TelaDeVerificacaoDePropriedade extends javax.swing.JFrame {
                 jTextFieldNomePropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomePropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 305, 276, 28));
+        getContentPane().add(jTextFieldNomePropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 305, 277, 28));
 
         jButtonBuscarPropriedade.setBorder(null);
         jButtonBuscarPropriedade.setContentAreaFilled(false);
@@ -135,7 +135,7 @@ public class TelaDeVerificacaoDePropriedade extends javax.swing.JFrame {
                 jButtonBuscarPropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(384, 130, 260, 45));
+        getContentPane().add(jButtonBuscarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(384, 130, 284, 45));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasPropriedade/img_tela_de_verificacao_de_propriedade.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 640));
@@ -149,9 +149,9 @@ public class TelaDeVerificacaoDePropriedade extends javax.swing.JFrame {
         new TelaDeInicioPropriedade().setVisible(true);
     }//GEN-LAST:event_jButtonVoltarAoTelaDeUsuarioActionPerformed
 
-    private void jTextFieldIdPropriedadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdPropriedadeActionPerformed
+    private void jTextFieldNomePropriedadeBuscadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomePropriedadeBuscadaActionPerformed
 
-    }//GEN-LAST:event_jTextFieldIdPropriedadeActionPerformed
+    }//GEN-LAST:event_jTextFieldNomePropriedadeBuscadaActionPerformed
 
     private void jTextFieldLocalPropriedadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldLocalPropriedadeActionPerformed
 
@@ -186,7 +186,13 @@ public class TelaDeVerificacaoDePropriedade extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonBuscarPropriedadeActionPerformed
 
     public void buscarPropriedade() throws SQLException {
-        String nomeParaBusca = jTextFieldIdPropriedade.getText();
+        if (jTextFieldNomePropriedadeBuscada.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome da propriedade");
+            limparCampos();
+            return;
+        }
+        
+        String nomeParaBusca = jTextFieldNomePropriedadeBuscada.getText();
         Propriedade propriedadeEncontrada = controlePropriedade.buscarPropriedadePorNome(nomeParaBusca);
 
         if (propriedadeEncontrada != null) {
@@ -211,7 +217,17 @@ public class TelaDeVerificacaoDePropriedade extends javax.swing.JFrame {
 
         } else {
             JOptionPane.showMessageDialog(this, "Propriedade não encontrada.");
+            limparCampos();
         }
+    }
+
+    private void limparCampos() {
+        jTextFieldAreaPropriedade.setText("");
+        jTextFieldNomePropriedade.setText("");
+        jTextFieldLocalPropriedade.setText("");
+        jTextFieldEstadoPropriedade.setText("");
+        jTextFieldCidadePropriedade.setText("");
+        jTextFieldCulturaPropriedade.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -222,8 +238,8 @@ public class TelaDeVerificacaoDePropriedade extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldCidadePropriedade;
     private javax.swing.JTextField jTextFieldCulturaPropriedade;
     private javax.swing.JTextField jTextFieldEstadoPropriedade;
-    private javax.swing.JTextField jTextFieldIdPropriedade;
     private javax.swing.JTextField jTextFieldLocalPropriedade;
     private javax.swing.JTextField jTextFieldNomePropriedade;
+    private javax.swing.JTextField jTextFieldNomePropriedadeBuscada;
     // End of variables declaration//GEN-END:variables
 }

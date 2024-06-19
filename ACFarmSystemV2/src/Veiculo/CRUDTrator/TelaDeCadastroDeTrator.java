@@ -61,7 +61,7 @@ public class TelaDeCadastroDeTrator extends javax.swing.JFrame {
                 jButtonCancelarCadastroActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCancelarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 600, 280, 33));
+        getContentPane().add(jButtonCancelarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 599, 280, 34));
 
         jButtonConfirmarCadastro.setBorder(null);
         jButtonConfirmarCadastro.setBorderPainted(false);
@@ -80,19 +80,24 @@ public class TelaDeCadastroDeTrator extends javax.swing.JFrame {
         jTextFieldPotenciaTrator.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTextFieldPotenciaTrator.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldPotenciaTrator.setBorder(null);
-        getContentPane().add(jTextFieldPotenciaTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 395, 270, 30));
+        getContentPane().add(jTextFieldPotenciaTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 394, 271, 29));
 
         jTextFieldNomeTrator.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNomeTrator.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTextFieldNomeTrator.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldNomeTrator.setBorder(null);
-        getContentPane().add(jTextFieldNomeTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 135, 270, 30));
+        jTextFieldNomeTrator.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNomeTratorActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldNomeTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 135, 271, 29));
 
         jTextFieldMarcaTrator.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldMarcaTrator.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTextFieldMarcaTrator.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldMarcaTrator.setBorder(null);
-        getContentPane().add(jTextFieldMarcaTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 218, 270, 30));
+        getContentPane().add(jTextFieldMarcaTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 218, 271, 29));
 
         jTextFieldAnoTrator.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldAnoTrator.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -109,25 +114,25 @@ public class TelaDeCadastroDeTrator extends javax.swing.JFrame {
         jTextFieldChassiTrator.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTextFieldChassiTrator.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldChassiTrator.setBorder(null);
-        getContentPane().add(jTextFieldChassiTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 395, 270, 30));
+        getContentPane().add(jTextFieldChassiTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 395, 270, 29));
 
         jTextFieldCapacidadeDoTanqueTrator.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCapacidadeDoTanqueTrator.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTextFieldCapacidadeDoTanqueTrator.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldCapacidadeDoTanqueTrator.setBorder(null);
-        getContentPane().add(jTextFieldCapacidadeDoTanqueTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 132, 270, 30));
+        getContentPane().add(jTextFieldCapacidadeDoTanqueTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 132, 270, 29));
 
         jTextFieldNumeroDeMarchasTrator.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNumeroDeMarchasTrator.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTextFieldNumeroDeMarchasTrator.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldNumeroDeMarchasTrator.setBorder(null);
-        getContentPane().add(jTextFieldNumeroDeMarchasTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 218, 270, 30));
+        getContentPane().add(jTextFieldNumeroDeMarchasTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 218, 270, 29));
 
         jTextFieldQuantidadeDeRodasTrator.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldQuantidadeDeRodasTrator.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTextFieldQuantidadeDeRodasTrator.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldQuantidadeDeRodasTrator.setBorder(null);
-        getContentPane().add(jTextFieldQuantidadeDeRodasTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(497, 303, 270, 30));
+        getContentPane().add(jTextFieldQuantidadeDeRodasTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(497, 303, 270, 29));
 
         jButtonVoltarATelaDeInicioVeiculo.setBorder(null);
         jButtonVoltarATelaDeInicioVeiculo.setBorderPainted(false);
@@ -151,7 +156,7 @@ public class TelaDeCadastroDeTrator extends javax.swing.JFrame {
         });
         getContentPane().add(jComboBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, 260, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasVeiculo/img_tela_de_cadastro_de_trator.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasVeiculo/imgTrator/img_tela_de_cadastro_de_trator.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 650));
 
         pack();
@@ -159,7 +164,8 @@ public class TelaDeCadastroDeTrator extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonCancelarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarCadastroActionPerformed
-
+        JOptionPane.showMessageDialog(null, "Cadastro Cancelado");
+        limparCampos();
     }//GEN-LAST:event_jButtonCancelarCadastroActionPerformed
 
     private void jButtonVoltarATelaDeInicioVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarATelaDeInicioVeiculoActionPerformed
@@ -179,7 +185,51 @@ public class TelaDeCadastroDeTrator extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jComboBoxEstadoActionPerformed
 
+    private void jTextFieldNomeTratorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeTratorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNomeTratorActionPerformed
+
     public void cadastrarTrator() {
+
+        if (jTextFieldNomeTrator.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o nome do trator");
+            return;
+        }
+
+        if (jTextFieldMarcaTrator.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a marca do trator");
+            return;
+        }
+
+        if (jTextFieldAnoTrator.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o ano do trator");
+            return;
+        }
+
+        if (jTextFieldChassiTrator.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o chassi do trator");
+            return;
+        }
+
+        if (jTextFieldCapacidadeDoTanqueTrator.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a capacidade do tanque do trator");
+            return;
+        }
+
+        if (jTextFieldNumeroDeMarchasTrator.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o  número de marchas do trator");
+            return;
+        }
+
+        if (jTextFieldQuantidadeDeRodasTrator.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a quantidade de rodas do trator");
+            return;
+        }
+
+        if (jTextFieldPotenciaTrator.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a potêcia do trator");
+            return;
+        }
 
         Calendar cal = Calendar.getInstance();
 
@@ -187,14 +237,43 @@ public class TelaDeCadastroDeTrator extends javax.swing.JFrame {
         marca = jTextFieldMarcaTrator.getText();
         chassi = jTextFieldChassiTrator.getText();
 
-        capacidadeDoTanque = Double.valueOf(jTextFieldCapacidadeDoTanqueTrator.getText());
-
         anoAtual = cal.get(Calendar.YEAR);
-        ano = Integer.parseInt(jTextFieldAnoTrator.getText());
-        numeroDeMarchas = Integer.parseInt(jTextFieldNumeroDeMarchasTrator.getText());
-        quantidadeDeRodas = Integer.parseInt(jTextFieldQuantidadeDeRodasTrator.getText());
-        potenciaEmCv = Integer.parseInt(jTextFieldPotenciaTrator.getText());
 
+        try {
+            ano = Integer.parseInt(jTextFieldAnoTrator.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "O ano do trator deve ser numérico");
+            return;
+        }
+
+        try {
+            numeroDeMarchas = Integer.parseInt(jTextFieldNumeroDeMarchasTrator.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "A quantidade de marchas do trator deve ser numérico");
+            return;
+        }
+
+        try {
+            quantidadeDeRodas = Integer.parseInt(jTextFieldQuantidadeDeRodasTrator.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "A quantidade de rodas do trator deve ser numérico");
+            return;
+        }
+
+        try {
+            potenciaEmCv = Integer.parseInt(jTextFieldPotenciaTrator.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "A potêcia do trator deve ser numérica");
+            return;
+        }
+
+       try {
+            capacidadeDoTanque = Double.valueOf(jTextFieldCapacidadeDoTanqueTrator.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "A capacidade do tanque do trator deve ser numérica");
+            return;
+        }
+        
         estado = jComboBoxEstado.getSelectedItem().toString();
 
         if (numeroDeMarchas <= 0) {
@@ -209,16 +288,6 @@ public class TelaDeCadastroDeTrator extends javax.swing.JFrame {
 
         if (potenciaEmCv <= 0) {
             JOptionPane.showMessageDialog(null, "Potencia Inválida");
-            return;
-        }
-
-        if (nome.equals("")) {
-            JOptionPane.showMessageDialog(null, "Nome Inválido");
-            return;
-        }
-
-        if (marca.equals("")) {
-            JOptionPane.showMessageDialog(null, "Marca Inválida");
             return;
         }
 
@@ -263,17 +332,23 @@ public class TelaDeCadastroDeTrator extends javax.swing.JFrame {
 
             String msg = controleVeiculo.cadastrarTrator(ControleVeiculo.INCLUSAO);
             JOptionPane.showMessageDialog(this, msg);
-
-        } catch (NullPointerException ex) {
-            System.out.println("Problema no sistema, tipo: ");
-            ex.printStackTrace();
+            limparCampos();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Falha tipo: " + ex);
         }
 
     }
 
-    /**
-     * @param args the command line arguments
-     */
+    public void limparCampos() {
+        jTextFieldAnoTrator.setText("");
+        jTextFieldCapacidadeDoTanqueTrator.setText("");
+        jTextFieldChassiTrator.setText("");
+        jTextFieldMarcaTrator.setText("");
+        jTextFieldNomeTrator.setText("");
+        jTextFieldNumeroDeMarchasTrator.setText("");
+        jTextFieldPotenciaTrator.setText("");
+        jTextFieldQuantidadeDeRodasTrator.setText("");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroupEstado;

@@ -41,10 +41,10 @@ public class JInternalFrameGraficoProducao extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-     public void criarGraficoBarras(){
-        
+    public void criarGraficoBarras() {
+
         DefaultCategoryDataset barra = new DefaultCategoryDataset();
-        
+
         ControleProducao controleProducao = new ControleProducao();
 
         for (Producao p : controleProducao.buscarTodasAsProducoes()) {
@@ -53,19 +53,18 @@ public class JInternalFrameGraficoProducao extends javax.swing.JInternalFrame {
 
         // Grafico 3D
         //JFreeChart grafico = ChartFactory.createBarChart3D("Sacas por producão", "Produção", "Sacas", barra, PlotOrientation.VERTICAL, true, true , false);
-        JFreeChart grafico = ChartFactory.createBarChart3D("Sacas por producão", "Produção", "Sacas", barra, PlotOrientation.HORIZONTAL, true, true , false);
+        JFreeChart grafico = ChartFactory.createBarChart3D("Sacas por producão", "Produção", "Sacas", barra, PlotOrientation.HORIZONTAL, true, true, false);
 
         ChartPanel painel = new ChartPanel(grafico);
-        
+
         // Mudar cor da barra
         CategoryPlot barraItem = grafico.getCategoryPlot();
-        
+
         //                                                            Barra,  Cor
         barraItem.getRenderer().setSeriesPaint(0, Color.cyan);
-        
+
         add(painel);
     }
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables

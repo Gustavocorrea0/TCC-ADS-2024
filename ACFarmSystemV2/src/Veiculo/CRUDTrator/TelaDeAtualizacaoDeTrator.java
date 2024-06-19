@@ -20,9 +20,9 @@ public class TelaDeAtualizacaoDeTrator extends javax.swing.JFrame {
     private String estado;
 
     private int idTrator;
-    private String anoTrator;
     private String nomeVeiculoAtualizado;
     private String marcaVeiculoAtualizado;
+    private String anoVeiculo;
     private int anoVeiculoAtualizado;
     private String chassiVeiculoAtualizado;
     private String estadoVeiculoAtualizado;
@@ -37,7 +37,7 @@ public class TelaDeAtualizacaoDeTrator extends javax.swing.JFrame {
     private void initComponents() {
 
         jButtonCancelarAtualizacaoDeTrator = new javax.swing.JButton();
-        jTextFieldIdTrator = new javax.swing.JTextField();
+        jTextFieldNomeTratorBuscado = new javax.swing.JTextField();
         jTextFieldMarcaTrator = new javax.swing.JTextField();
         jTextFieldAnoTrator = new javax.swing.JTextField();
         jTextFieldChassiTrator = new javax.swing.JTextField();
@@ -66,18 +66,18 @@ public class TelaDeAtualizacaoDeTrator extends javax.swing.JFrame {
                 jButtonCancelarAtualizacaoDeTratorActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCancelarAtualizacaoDeTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 597, 282, 37));
+        getContentPane().add(jButtonCancelarAtualizacaoDeTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 595, 282, 36));
 
-        jTextFieldIdTrator.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldIdTrator.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldIdTrator.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldIdTrator.setBorder(null);
-        jTextFieldIdTrator.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldNomeTratorBuscado.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldNomeTratorBuscado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldNomeTratorBuscado.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldNomeTratorBuscado.setBorder(null);
+        jTextFieldNomeTratorBuscado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldIdTratorActionPerformed(evt);
+                jTextFieldNomeTratorBuscadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldIdTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 120, 267, 28));
+        getContentPane().add(jTextFieldNomeTratorBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 117, 272, 29));
 
         jTextFieldMarcaTrator.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldMarcaTrator.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -89,7 +89,7 @@ public class TelaDeAtualizacaoDeTrator extends javax.swing.JFrame {
                 jTextFieldMarcaTratorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldMarcaTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 327, 270, 28));
+        getContentPane().add(jTextFieldMarcaTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 317, 271, 29));
 
         jTextFieldAnoTrator.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldAnoTrator.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -101,7 +101,7 @@ public class TelaDeAtualizacaoDeTrator extends javax.swing.JFrame {
                 jTextFieldAnoTratorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldAnoTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 410, 269, 29));
+        getContentPane().add(jTextFieldAnoTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 401, 271, 29));
 
         jTextFieldChassiTrator.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldChassiTrator.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -113,7 +113,7 @@ public class TelaDeAtualizacaoDeTrator extends javax.swing.JFrame {
                 jTextFieldChassiTratorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldChassiTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 496, 270, 29));
+        getContentPane().add(jTextFieldChassiTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 486, 271, 29));
 
         jTextFieldCapacidadeDoTanqueTrator.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCapacidadeDoTanqueTrator.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -125,7 +125,7 @@ public class TelaDeAtualizacaoDeTrator extends javax.swing.JFrame {
                 jTextFieldCapacidadeDoTanqueTratorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCapacidadeDoTanqueTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 236, 269, 29));
+        getContentPane().add(jTextFieldCapacidadeDoTanqueTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(413, 227, 271, 29));
 
         jTextFieldEstadoTrator.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldEstadoTrator.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -137,7 +137,7 @@ public class TelaDeAtualizacaoDeTrator extends javax.swing.JFrame {
                 jTextFieldEstadoTratorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldEstadoTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 496, 60, 29));
+        getContentPane().add(jTextFieldEstadoTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(413, 486, 64, 29));
 
         jTextFieldNomeTrator.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNomeTrator.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -149,7 +149,7 @@ public class TelaDeAtualizacaoDeTrator extends javax.swing.JFrame {
                 jTextFieldNomeTratorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 236, 270, 28));
+        getContentPane().add(jTextFieldNomeTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 227, 271, 28));
 
         jTextFieldPotenciaEmCVTrator.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldPotenciaEmCVTrator.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -161,7 +161,7 @@ public class TelaDeAtualizacaoDeTrator extends javax.swing.JFrame {
                 jTextFieldPotenciaEmCVTratorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldPotenciaEmCVTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 328, 268, 29));
+        getContentPane().add(jTextFieldPotenciaEmCVTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(413, 318, 271, 29));
 
         jTextFieldQuantidadeDeRodasTrator.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldQuantidadeDeRodasTrator.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -173,7 +173,7 @@ public class TelaDeAtualizacaoDeTrator extends javax.swing.JFrame {
                 jTextFieldQuantidadeDeRodasTratorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldQuantidadeDeRodasTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 583, 268, 29));
+        getContentPane().add(jTextFieldQuantidadeDeRodasTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 573, 271, 29));
 
         jTextFieldNumeroDeMarchasTrator.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNumeroDeMarchasTrator.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -185,7 +185,7 @@ public class TelaDeAtualizacaoDeTrator extends javax.swing.JFrame {
                 jTextFieldNumeroDeMarchasTratorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNumeroDeMarchasTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 411, 268, 29));
+        getContentPane().add(jTextFieldNumeroDeMarchasTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(413, 402, 271, 29));
 
         jButtonBuscarTrator.setBorder(null);
         jButtonBuscarTrator.setContentAreaFilled(false);
@@ -195,7 +195,7 @@ public class TelaDeAtualizacaoDeTrator extends javax.swing.JFrame {
                 jButtonBuscarTratorActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 111, 260, 45));
+        getContentPane().add(jButtonBuscarTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(354, 105, 281, 45));
 
         jButtonVoltarATelaDeEscolhaDeVeiculo.setBorder(null);
         jButtonVoltarATelaDeEscolhaDeVeiculo.setBorderPainted(false);
@@ -208,7 +208,7 @@ public class TelaDeAtualizacaoDeTrator extends javax.swing.JFrame {
                 jButtonVoltarATelaDeEscolhaDeVeiculoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonVoltarATelaDeEscolhaDeVeiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 24, 40, 24));
+        getContentPane().add(jButtonVoltarATelaDeEscolhaDeVeiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 18, 40, 30));
 
         jButtonConfirmarAtualizaoDeTrator.setBorder(null);
         jButtonConfirmarAtualizaoDeTrator.setBorderPainted(false);
@@ -223,20 +223,21 @@ public class TelaDeAtualizacaoDeTrator extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonConfirmarAtualizaoDeTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 546, 282, 37));
 
-        jLabelTelaDeRemocao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasVeiculo/img_tela_de_atualizacao_de_trator.png"))); // NOI18N
-        getContentPane().add(jLabelTelaDeRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabelTelaDeRemocao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasVeiculo/imgTrator/img_tela_de_atualizacao_de_trator.png"))); // NOI18N
+        getContentPane().add(jLabelTelaDeRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -4, -1, 650));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonCancelarAtualizacaoDeTratorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarAtualizacaoDeTratorActionPerformed
-        this.dispose();
+        JOptionPane.showMessageDialog(null, "Atualização Cancelada");
+        limparCampos();
     }//GEN-LAST:event_jButtonCancelarAtualizacaoDeTratorActionPerformed
 
-    private void jTextFieldIdTratorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdTratorActionPerformed
+    private void jTextFieldNomeTratorBuscadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeTratorBuscadoActionPerformed
 
-    }//GEN-LAST:event_jTextFieldIdTratorActionPerformed
+    }//GEN-LAST:event_jTextFieldNomeTratorBuscadoActionPerformed
 
     private void jTextFieldEstadoTratorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEstadoTratorActionPerformed
 
@@ -296,17 +297,21 @@ public class TelaDeAtualizacaoDeTrator extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonConfirmarAtualizaoDeTratorActionPerformed
 
     public void buscarTrator() throws SQLException {
-        String nomeBuscaTrator = jTextFieldIdTrator.getText();
+        if (jTextFieldNomeTratorBuscado.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome do trator");
+            return;
+        }
+        String nomeBuscaTrator = jTextFieldNomeTratorBuscado.getText();
         Trator tratorEncontrado = controleVeiculo.buscarTratorPorNome(nomeBuscaTrator);
 
         if (tratorEncontrado != null) {
-            anoTrator = Integer.toString(tratorEncontrado.getAnoVeiculo());
+            anoVeiculo = Integer.toString(tratorEncontrado.getAnoVeiculo());
             capacidadeDoTanque = Double.toString(tratorEncontrado.getCapacidadeDoTanqueDeCombustivel());
             numeroDeMarchas = Integer.toString(tratorEncontrado.getQuantidadeDeMarchas());
             potenciaTrator = Integer.toString(tratorEncontrado.getPotenciaEmCV());
             quantidadeDeRodas = Integer.toString(tratorEncontrado.getQuantidadeDeRodas());
 
-            jTextFieldAnoTrator.setText(anoTrator);
+            jTextFieldAnoTrator.setText(anoVeiculo);
             jTextFieldCapacidadeDoTanqueTrator.setText(capacidadeDoTanque);
             jTextFieldChassiTrator.setText(tratorEncontrado.getChassiVeiculo());
             jTextFieldEstadoTrator.setText(tratorEncontrado.getEstadoVeiculo());
@@ -316,13 +321,58 @@ public class TelaDeAtualizacaoDeTrator extends javax.swing.JFrame {
             jTextFieldPotenciaEmCVTrator.setText(potenciaTrator);
             jTextFieldQuantidadeDeRodasTrator.setText(quantidadeDeRodas);
             idTrator = tratorEncontrado.getIdTrator();
-            
         } else {
             JOptionPane.showMessageDialog(this, "Veiculo não encontrado");
+            limparCampos();
         }
     }
 
     public void atualizarTrator() throws SQLException {
+        if (jTextFieldNomeTrator.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o nome do trator");
+            return;
+        }
+
+        if (jTextFieldMarcaTrator.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a marca do trator");
+            return;
+        }
+
+        if (jTextFieldAnoTrator.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o ano do trator");
+            return;
+        }
+
+        if (jTextFieldChassiTrator.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o chassi do trator");
+            return;
+        }
+        
+        if (jTextFieldCapacidadeDoTanqueTrator.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a capacidade do tanque do trator");
+            return;
+        }
+
+        if (jTextFieldQuantidadeDeRodasTrator.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a quantidade de rodas do trator");
+            return;
+        }
+
+        if (jTextFieldPotenciaEmCVTrator.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a potêcia do trator");
+            return;
+        }
+        
+        if (jTextFieldNumeroDeMarchasTrator.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o número de marchas do trator");
+            return;
+        }
+        
+        if (jTextFieldEstadoTrator.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o estado do trator:\nA para Ativo\nI para Inativo");
+            return;
+        }
+        
         Calendar cal = Calendar.getInstance();
         int anoAtual = cal.get(Calendar.YEAR);
         nomeVeiculoAtualizado = jTextFieldNomeTrator.getText();
@@ -330,21 +380,11 @@ public class TelaDeAtualizacaoDeTrator extends javax.swing.JFrame {
         anoVeiculoAtualizado = Integer.parseInt(jTextFieldAnoTrator.getText());
         chassiVeiculoAtualizado = jTextFieldChassiTrator.getText();
         estadoVeiculoAtualizado = jTextFieldEstadoTrator.getText();
-        capacidadeTanqueDeCombustivelAtualizado = Double.parseDouble(jTextFieldCapacidadeDoTanqueTrator.getText());
+        capacidadeTanqueDeCombustivelAtualizado = Double.valueOf(jTextFieldCapacidadeDoTanqueTrator.getText());
 
         int quantidadeDeMarchasAtualizado = Integer.parseInt(jTextFieldNumeroDeMarchasTrator.getText());
         int quantidadeDeRodasAtualizado = Integer.parseInt(jTextFieldQuantidadeDeRodasTrator.getText());
         int potenciaTratorAtualizado = Integer.parseInt(jTextFieldPotenciaEmCVTrator.getText());
-
-        if (nomeVeiculoAtualizado.equals("")) {
-            JOptionPane.showMessageDialog(this, "Nome Inválido");
-            return;
-        }
-
-        if (marcaVeiculoAtualizado.equals("")) {
-            JOptionPane.showMessageDialog(this, "Marca Inválida");
-            return;
-        }
 
         if (anoVeiculoAtualizado > (anoAtual + 1) || anoVeiculoAtualizado < 1970) {
             JOptionPane.showMessageDialog(this, "Ano Inválido");
@@ -353,11 +393,6 @@ public class TelaDeAtualizacaoDeTrator extends javax.swing.JFrame {
 
         if (chassiVeiculoAtualizado.length() != 17) {
             JOptionPane.showMessageDialog(this, "Chassi Inválido");
-            return;
-        }
-
-        if (estadoVeiculoAtualizado.equals("")) {
-            JOptionPane.showMessageDialog(this, "Estado Inválido");
             return;
         }
 
@@ -371,7 +406,7 @@ public class TelaDeAtualizacaoDeTrator extends javax.swing.JFrame {
             return;
         }
 
-        if (quantidadeDeRodasAtualizado <= 4) {
+        if (quantidadeDeRodasAtualizado < 4) {
             JOptionPane.showMessageDialog(this, "Quantidade de rodas Inválida");
             return;
         }
@@ -397,11 +432,24 @@ public class TelaDeAtualizacaoDeTrator extends javax.swing.JFrame {
             controleVeiculo = new ControleVeiculo();
             String msgAtualizacao = controleVeiculo.atualizarTrator(tratorAtualizado);
             JOptionPane.showMessageDialog(null, msgAtualizacao);
+            limparCampos();
         } else {
             JOptionPane.showMessageDialog(this, "Estado inválido, apenas A ou I");
         }
     }
 
+    private void limparCampos() {
+        jTextFieldAnoTrator.setText("");
+        jTextFieldCapacidadeDoTanqueTrator.setText("");
+        jTextFieldChassiTrator.setText("");
+        jTextFieldEstadoTrator.setText("");
+        jTextFieldMarcaTrator.setText("");
+        jTextFieldNomeTrator.setText("");
+        jTextFieldNomeTratorBuscado.setText("");
+        jTextFieldNumeroDeMarchasTrator.setText("");
+        jTextFieldPotenciaEmCVTrator.setText("");
+        jTextFieldQuantidadeDeRodasTrator.setText("");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscarTrator;
@@ -413,9 +461,9 @@ public class TelaDeAtualizacaoDeTrator extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldCapacidadeDoTanqueTrator;
     private javax.swing.JTextField jTextFieldChassiTrator;
     private javax.swing.JTextField jTextFieldEstadoTrator;
-    private javax.swing.JTextField jTextFieldIdTrator;
     private javax.swing.JTextField jTextFieldMarcaTrator;
     private javax.swing.JTextField jTextFieldNomeTrator;
+    private javax.swing.JTextField jTextFieldNomeTratorBuscado;
     private javax.swing.JTextField jTextFieldNumeroDeMarchasTrator;
     private javax.swing.JTextField jTextFieldPotenciaEmCVTrator;
     private javax.swing.JTextField jTextFieldQuantidadeDeRodasTrator;

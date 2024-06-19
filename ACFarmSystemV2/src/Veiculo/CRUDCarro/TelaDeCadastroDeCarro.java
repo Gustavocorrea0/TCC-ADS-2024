@@ -61,7 +61,7 @@ public class TelaDeCadastroDeCarro extends javax.swing.JFrame {
                 jButtonCancelarCadastroActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCancelarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 598, 280, 33));
+        getContentPane().add(jButtonCancelarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 597, 280, 34));
 
         jButtonConfirmarCadastro.setBorder(null);
         jButtonConfirmarCadastro.setBorderPainted(false);
@@ -74,7 +74,7 @@ public class TelaDeCadastroDeCarro extends javax.swing.JFrame {
                 jButtonConfirmarCadastroActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonConfirmarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 547, 280, 33));
+        getContentPane().add(jButtonConfirmarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 547, 280, 34));
 
         jTextFieldNomeCarro.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNomeCarro.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -85,7 +85,7 @@ public class TelaDeCadastroDeCarro extends javax.swing.JFrame {
                 jTextFieldNomeCarroActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 134, 270, 30));
+        getContentPane().add(jTextFieldNomeCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 133, 271, 29));
 
         jTextFieldAnoCarro.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldAnoCarro.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -96,7 +96,7 @@ public class TelaDeCadastroDeCarro extends javax.swing.JFrame {
                 jTextFieldAnoCarroActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldAnoCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 320, 271, 30));
+        getContentPane().add(jTextFieldAnoCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 319, 271, 29));
 
         jTextFieldChassiCarro.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldChassiCarro.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -107,7 +107,7 @@ public class TelaDeCadastroDeCarro extends javax.swing.JFrame {
                 jTextFieldChassiCarroActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldChassiCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 414, 270, 30));
+        getContentPane().add(jTextFieldChassiCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 413, 270, 29));
 
         jTextFieldPlacaCarro.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldPlacaCarro.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -118,7 +118,7 @@ public class TelaDeCadastroDeCarro extends javax.swing.JFrame {
                 jTextFieldPlacaCarroActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldPlacaCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 317, 270, 30));
+        getContentPane().add(jTextFieldPlacaCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 316, 271, 29));
 
         jTextFieldCapacidadeDoTanqueCarro.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCapacidadeDoTanqueCarro.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -129,7 +129,7 @@ public class TelaDeCadastroDeCarro extends javax.swing.JFrame {
                 jTextFieldCapacidadeDoTanqueCarroActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCapacidadeDoTanqueCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 233, 270, 30));
+        getContentPane().add(jTextFieldCapacidadeDoTanqueCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 232, 270, 29));
 
         jTextFieldCorCarro.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCorCarro.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -140,7 +140,7 @@ public class TelaDeCadastroDeCarro extends javax.swing.JFrame {
                 jTextFieldCorCarroActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCorCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 133, 270, 30));
+        getContentPane().add(jTextFieldCorCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 132, 271, 29));
 
         jTextFieldQuilometragemCarro.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldQuilometragemCarro.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -151,7 +151,7 @@ public class TelaDeCadastroDeCarro extends javax.swing.JFrame {
                 jTextFieldQuilometragemCarroActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldQuilometragemCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(496, 414, 270, 30));
+        getContentPane().add(jTextFieldQuilometragemCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(496, 413, 271, 29));
 
         jButtonVoltarATelaDeInicioVeiculo.setBorder(null);
         jButtonVoltarATelaDeInicioVeiculo.setBorderPainted(false);
@@ -173,7 +173,7 @@ public class TelaDeCadastroDeCarro extends javax.swing.JFrame {
                 jComboBoxEstadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 520, 280, 30));
+        getContentPane().add(jComboBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 520, 280, 30));
 
         jComboBoxMarcas.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jComboBoxMarcas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Fiat", "Volkswagen", "Chevrolet", "Hyundai", "Toyota", "JEEP", "Renault", "Honda", "Dodge", "Volvo", "Outro" }));
@@ -192,13 +192,8 @@ public class TelaDeCadastroDeCarro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonCancelarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarCadastroActionPerformed
-        jTextFieldAnoCarro.setText("");
-        jTextFieldCapacidadeDoTanqueCarro.setText("");
-        jTextFieldChassiCarro.setText("");
-        jTextFieldCorCarro.setText("");
-        jTextFieldNomeCarro.setText("");
-        jTextFieldPlacaCarro.setText("");
-        jTextFieldQuilometragemCarro.setText("");
+        JOptionPane.showMessageDialog(null, "Cadastro Cancelado");
+        limparCampos();
     }//GEN-LAST:event_jButtonCancelarCadastroActionPerformed
 
     private void jButtonVoltarATelaDeInicioVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarATelaDeInicioVeiculoActionPerformed
@@ -207,6 +202,7 @@ public class TelaDeCadastroDeCarro extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonVoltarATelaDeInicioVeiculoActionPerformed
 
     private void jButtonConfirmarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarCadastroActionPerformed
+
         cadastrarCarro();
     }//GEN-LAST:event_jButtonConfirmarCadastroActionPerformed
 
@@ -258,26 +254,73 @@ public class TelaDeCadastroDeCarro extends javax.swing.JFrame {
 
     public void cadastrarCarro() {
 
+        if (jTextFieldNomeCarro.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o nome do carro");
+            return;
+        }
+
+        if (jTextFieldAnoCarro.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o ano do carro");
+            return;
+        }
+
+        if (jTextFieldChassiCarro.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o chassi do carro");
+            return;
+        }
+
+        if (jTextFieldCorCarro.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a cor do carro");
+            return;
+        }
+
+        if (jTextFieldCapacidadeDoTanqueCarro.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a capacidade do tanque do carro");
+            return;
+        }
+
+        if (jTextFieldPlacaCarro.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a placa do carro");
+            return;
+        }
+
+        if (jTextFieldQuilometragemCarro.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a quilometragem do carro");
+            return;
+        }
+
         Calendar cal = Calendar.getInstance();
 
         nome = jTextFieldNomeCarro.getText();
         marca = jComboBoxMarcas.getSelectedItem().toString();
         chassi = jTextFieldChassiCarro.getText();
-
-        anoAtual = cal.get(Calendar.YEAR);
-        ano = Integer.parseInt(jTextFieldAnoCarro.getText());
-
-        capacidadeDoTanque = Double.valueOf(jTextFieldCapacidadeDoTanqueCarro.getText());
-        estado = jComboBoxEstado.getSelectedItem().toString();
-
         cor = jTextFieldCorCarro.getText();
-        placa = jTextFieldPlacaCarro.getText();
-        quilometragem = Integer.parseInt(jTextFieldQuilometragemCarro.getText());
+        placa = jTextFieldPlacaCarro.getText().toUpperCase();
 
-        if (nome.equals("")) {
-            JOptionPane.showMessageDialog(null, "Cor Inválida");
+        try {
+            quilometragem = Integer.parseInt(jTextFieldQuilometragemCarro.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "A quilometragem deve ser numérica");
             return;
         }
+
+        try {
+            capacidadeDoTanque = Double.valueOf(jTextFieldCapacidadeDoTanqueCarro.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "A capacidade do tanque deve ser numérica");
+            return;
+        }
+
+        try {
+            ano = Integer.parseInt(jTextFieldAnoCarro.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "O ano deve ser numérico");
+            return;
+        }
+
+        anoAtual = cal.get(Calendar.YEAR);
+
+        estado = jComboBoxEstado.getSelectedItem().toString();
 
         if (placa.length() != 7) {
             JOptionPane.showMessageDialog(null, "Placa Inválida, 7 digitos sem traço");
@@ -291,11 +334,6 @@ public class TelaDeCadastroDeCarro extends javax.swing.JFrame {
 
         if (nome.equals("")) {
             JOptionPane.showMessageDialog(null, "Nome Inválido");
-            return;
-        }
-
-        if (marca.equals("")) {
-            JOptionPane.showMessageDialog(null, "Marca Inválida");
             return;
         }
 
@@ -314,6 +352,11 @@ public class TelaDeCadastroDeCarro extends javax.swing.JFrame {
             return;
         }
 
+        if (marca.equals("Selecione")) {
+            JOptionPane.showMessageDialog(this, "Selecione a marca");
+            return;
+        }
+
         tipoVeiculo = "Carro";
 
         if (estado.equals("Ativo")) {
@@ -321,12 +364,7 @@ public class TelaDeCadastroDeCarro extends javax.swing.JFrame {
         } else if (estado.equals("Inativo")) {
             estado = "I";
         } else {
-            JOptionPane.showMessageDialog(this, "Estado Inválido");
-            return;
-        }
-
-        if (marca.equals("Selecione")) {
-            JOptionPane.showMessageDialog(this, "Marca Inválida");
+            JOptionPane.showMessageDialog(this, "Selecione o estado");
             return;
         }
 
@@ -345,12 +383,11 @@ public class TelaDeCadastroDeCarro extends javax.swing.JFrame {
 
             msg = controleVeiculo.cadastrarCarro(ControleVeiculo.INCLUSAO);
             JOptionPane.showMessageDialog(this, msg);
-            
+
             limparCampos();
 
         } catch (NullPointerException ex) {
-            System.out.println("Problema no sistema, tipo: NullPointerException");
-            ex.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Falha tipo: " + ex.getMessage());
         }
 
     }

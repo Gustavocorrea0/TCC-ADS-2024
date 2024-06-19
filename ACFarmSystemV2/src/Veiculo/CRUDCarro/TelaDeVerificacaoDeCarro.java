@@ -106,7 +106,7 @@ public class TelaDeVerificacaoDeCarro extends javax.swing.JFrame {
                 jTextFieldChassiCarroActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldChassiCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 480, 268, 29));
+        getContentPane().add(jTextFieldChassiCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 480, 270, 29));
 
         jTextFieldNomeCarro.setEditable(false);
         jTextFieldNomeCarro.setBackground(new java.awt.Color(255, 255, 255));
@@ -132,7 +132,7 @@ public class TelaDeVerificacaoDeCarro extends javax.swing.JFrame {
                 jTextFieldQuilometragemCarroActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldQuilometragemCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(496, 500, 271, 29));
+        getContentPane().add(jTextFieldQuilometragemCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(496, 501, 271, 29));
 
         jTextFieldCapacidadeDeCombustivelCarro.setEditable(false);
         jTextFieldCapacidadeDeCombustivelCarro.setBackground(new java.awt.Color(255, 255, 255));
@@ -145,7 +145,7 @@ public class TelaDeVerificacaoDeCarro extends javax.swing.JFrame {
                 jTextFieldCapacidadeDeCombustivelCarroActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCapacidadeDeCombustivelCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 319, 270, 29));
+        getContentPane().add(jTextFieldCapacidadeDeCombustivelCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 320, 271, 29));
 
         jTextFieldEstadoCarro.setEditable(false);
         jTextFieldEstadoCarro.setBackground(new java.awt.Color(255, 255, 255));
@@ -158,7 +158,7 @@ public class TelaDeVerificacaoDeCarro extends javax.swing.JFrame {
                 jTextFieldEstadoCarroActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldEstadoCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 567, 60, 30));
+        getContentPane().add(jTextFieldEstadoCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 567, 64, 30));
 
         jTextFieldPlacaCarro.setEditable(false);
         jTextFieldPlacaCarro.setBackground(new java.awt.Color(255, 255, 255));
@@ -171,7 +171,7 @@ public class TelaDeVerificacaoDeCarro extends javax.swing.JFrame {
                 jTextFieldPlacaCarroActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldPlacaCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 403, 269, 29));
+        getContentPane().add(jTextFieldPlacaCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 404, 271, 29));
 
         jTextFieldCorCarro.setEditable(false);
         jTextFieldCorCarro.setBackground(new java.awt.Color(255, 255, 255));
@@ -184,7 +184,7 @@ public class TelaDeVerificacaoDeCarro extends javax.swing.JFrame {
                 jTextFieldCorCarroActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCorCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 220, 269, 29));
+        getContentPane().add(jTextFieldCorCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 220, 271, 29));
 
         jButtonBuscarCarroPorNome.setBorder(null);
         jButtonBuscarCarroPorNome.setContentAreaFilled(false);
@@ -194,7 +194,7 @@ public class TelaDeVerificacaoDeCarro extends javax.swing.JFrame {
                 jButtonBuscarCarroPorNomeActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarCarroPorNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(326, 103, 262, 45));
+        getContentPane().add(jButtonBuscarCarroPorNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 105, 282, 40));
 
         jButtonBuscarCarroPorPlaca.setBorder(null);
         jButtonBuscarCarroPorPlaca.setContentAreaFilled(false);
@@ -204,7 +204,7 @@ public class TelaDeVerificacaoDeCarro extends javax.swing.JFrame {
                 jButtonBuscarCarroPorPlacaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarCarroPorPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(624, 103, 262, 45));
+        getContentPane().add(jButtonBuscarCarroPorPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(616, 105, 282, 40));
 
         jLabelTelaVerificacaoDeTrator.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasVeiculo/imgCarro/img_tela_de_verificacao_de_carro.png"))); // NOI18N
         getContentPane().add(jLabelTelaVerificacaoDeTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 640));
@@ -275,6 +275,11 @@ public class TelaDeVerificacaoDeCarro extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonBuscarCarroPorPlacaActionPerformed
 
     public void buscarCarroNome() throws SQLException {
+        if (jTextFieldNomeOuPlacaCarro.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome do carro");
+            return;
+        }
+
         nomeOuPlacaBuscaCarro = jTextFieldNomeOuPlacaCarro.getText();
         Carro carroEncontrado = controleVeiculo.buscarCarroPorNome(nomeOuPlacaBuscaCarro);
 
@@ -302,32 +307,41 @@ public class TelaDeVerificacaoDeCarro extends javax.swing.JFrame {
     }
 
     public void buscarCarroPorPlaca() throws SQLException {
-        nomeOuPlacaBuscaCarro = jTextFieldNomeOuPlacaCarro.getText();
-        Carro carroEncontrado = controleVeiculo.buscarCarroPorPlaca(nomeOuPlacaBuscaCarro);
+        try {
+            if (jTextFieldNomeOuPlacaCarro.getText().isBlank()) {
+                JOptionPane.showMessageDialog(this, "Insira a placa do carro");
+                return;
+            }
 
-        if (carroEncontrado != null) {
-            anoCarro = Integer.toString(carroEncontrado.getAnoVeiculo());
-            corCarro = carroEncontrado.getCorCarro();
-            capacidadeDoTanqueCarro = Double.toString(carroEncontrado.getCapacidadeDoTanqueDeCombustivel());
-            quilometragemCarro = Double.toString(carroEncontrado.getQuilometragemCarro());
+            nomeOuPlacaBuscaCarro = jTextFieldNomeOuPlacaCarro.getText().toUpperCase();
+            Carro carroEncontrado = controleVeiculo.buscarCarroPorPlaca(nomeOuPlacaBuscaCarro);
 
-            jTextFieldAnoCarro.setText(anoCarro);
-            jTextFieldCapacidadeDeCombustivelCarro.setText(capacidadeDoTanqueCarro);
-            jTextFieldChassiCarro.setText(carroEncontrado.getChassiVeiculo());
-            jTextFieldCorCarro.setText(corCarro);
-            jTextFieldEstadoCarro.setText(carroEncontrado.getEstadoVeiculo());
-            jTextFieldMarcaCarro.setText(carroEncontrado.getMarcaVeiculo());
-            jTextFieldNomeCarro.setText(carroEncontrado.getNomeVeiculo());
-            jTextFieldPlacaCarro.setText(carroEncontrado.getPlacaCarro());
-            jTextFieldQuilometragemCarro.setText(quilometragemCarro);
+            if (carroEncontrado != null) {
+                anoCarro = Integer.toString(carroEncontrado.getAnoVeiculo());
+                corCarro = carroEncontrado.getCorCarro();
+                capacidadeDoTanqueCarro = Double.toString(carroEncontrado.getCapacidadeDoTanqueDeCombustivel());
+                quilometragemCarro = Double.toString(carroEncontrado.getQuilometragemCarro());
 
-        } else {
-            JOptionPane.showMessageDialog(this, "Veiculo não encontrado.");
-            limparCampos();
+                jTextFieldAnoCarro.setText(anoCarro);
+                jTextFieldCapacidadeDeCombustivelCarro.setText(capacidadeDoTanqueCarro);
+                jTextFieldChassiCarro.setText(carroEncontrado.getChassiVeiculo());
+                jTextFieldCorCarro.setText(corCarro);
+                jTextFieldEstadoCarro.setText(carroEncontrado.getEstadoVeiculo());
+                jTextFieldMarcaCarro.setText(carroEncontrado.getMarcaVeiculo());
+                jTextFieldNomeCarro.setText(carroEncontrado.getNomeVeiculo());
+                jTextFieldPlacaCarro.setText(carroEncontrado.getPlacaCarro());
+                jTextFieldQuilometragemCarro.setText(quilometragemCarro);
+
+            } else {
+                JOptionPane.showMessageDialog(this, "Veiculo não encontrado.");
+                limparCampos();
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Falha tipo: " + ex);
         }
 
     }
-    
+
     private void limparCampos() {
         jTextFieldAnoCarro.setText("");
         jTextFieldCapacidadeDeCombustivelCarro.setText("");

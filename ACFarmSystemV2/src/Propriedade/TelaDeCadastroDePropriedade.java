@@ -16,8 +16,8 @@ public class TelaDeCadastroDePropriedade extends javax.swing.JFrame {
         botaoTipoDeCultura = new javax.swing.ButtonGroup();
         jButtonCancelarCadastroDePropriedade = new javax.swing.JButton();
         jButtonConfirmarCadastroDePropriedade = new javax.swing.JButton();
-        jTextFieldLocalPropriedade = new javax.swing.JTextField();
         jTextFieldAreaPropriedade = new javax.swing.JTextField();
+        jTextFieldLocalPropriedade = new javax.swing.JTextField();
         jTextFieldCidadePropriedade = new javax.swing.JTextField();
         jTextFieldEstadoPropriedade = new javax.swing.JTextField();
         jTextFieldNomePropriedade = new javax.swing.JTextField();
@@ -36,7 +36,7 @@ public class TelaDeCadastroDePropriedade extends javax.swing.JFrame {
                 jButtonCancelarCadastroDePropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCancelarCadastroDePropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(585, 563, 280, 36));
+        getContentPane().add(jButtonCancelarCadastroDePropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 598, 280, 36));
 
         jButtonConfirmarCadastroDePropriedade.setBorder(null);
         jButtonConfirmarCadastroDePropriedade.setContentAreaFilled(false);
@@ -46,18 +46,7 @@ public class TelaDeCadastroDePropriedade extends javax.swing.JFrame {
                 jButtonConfirmarCadastroDePropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonConfirmarCadastroDePropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(585, 512, 280, 36));
-
-        jTextFieldLocalPropriedade.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldLocalPropriedade.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldLocalPropriedade.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldLocalPropriedade.setBorder(null);
-        jTextFieldLocalPropriedade.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldLocalPropriedadeActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextFieldLocalPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 286, 275, 29));
+        getContentPane().add(jButtonConfirmarCadastroDePropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(612, 549, 282, 36));
 
         jTextFieldAreaPropriedade.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldAreaPropriedade.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -68,7 +57,18 @@ public class TelaDeCadastroDePropriedade extends javax.swing.JFrame {
                 jTextFieldAreaPropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldAreaPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 403, 275, 28));
+        getContentPane().add(jTextFieldAreaPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 286, 278, 28));
+
+        jTextFieldLocalPropriedade.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldLocalPropriedade.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldLocalPropriedade.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldLocalPropriedade.setBorder(null);
+        jTextFieldLocalPropriedade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldLocalPropriedadeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldLocalPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 397, 277, 29));
 
         jTextFieldCidadePropriedade.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCidadePropriedade.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -79,7 +79,7 @@ public class TelaDeCadastroDePropriedade extends javax.swing.JFrame {
                 jTextFieldCidadePropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCidadePropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(513, 167, 276, 28));
+        getContentPane().add(jTextFieldCidadePropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(513, 167, 276, 29));
 
         jTextFieldEstadoPropriedade.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldEstadoPropriedade.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -90,7 +90,7 @@ public class TelaDeCadastroDePropriedade extends javax.swing.JFrame {
                 jTextFieldEstadoPropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldEstadoPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 522, 275, 28));
+        getContentPane().add(jTextFieldEstadoPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(513, 286, 277, 29));
 
         jTextFieldNomePropriedade.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNomePropriedade.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -101,7 +101,7 @@ public class TelaDeCadastroDePropriedade extends javax.swing.JFrame {
                 jTextFieldNomePropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomePropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 168, 276, 28));
+        getContentPane().add(jTextFieldNomePropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 167, 277, 29));
 
         jButtonVoltarAoTelaDeUsuario.setBorder(null);
         jButtonVoltarAoTelaDeUsuario.setBorderPainted(false);
@@ -123,7 +123,7 @@ public class TelaDeCadastroDePropriedade extends javax.swing.JFrame {
                 jComboBoxCulturaActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxCultura, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 290, 260, -1));
+        getContentPane().add(jComboBoxCultura, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 400, 280, 30));
 
         jLabelCadatroPropriedade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasPropriedade/img_tela_de_cadastro_de_propriedade.png"))); // NOI18N
         jLabelCadatroPropriedade.setText("jLabel1");
@@ -134,7 +134,6 @@ public class TelaDeCadastroDePropriedade extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private ControlePropriedade propriedade = new ControlePropriedade();
-    private String limparCampo;
     private Double areaCovertida;
     private String nomePropriedade;
     private String localPropriedade;
@@ -144,12 +143,8 @@ public class TelaDeCadastroDePropriedade extends javax.swing.JFrame {
     private HashSet<String> siglaEstado = new HashSet<>();
 
     private void jButtonCancelarCadastroDePropriedadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarCadastroDePropriedadeActionPerformed
-
-        jTextFieldAreaPropriedade.setText(limparCampo);
-        jTextFieldCidadePropriedade.setText(limparCampo);
-        jTextFieldEstadoPropriedade.setText(limparCampo);
-        jTextFieldLocalPropriedade.setText(limparCampo);
-        jTextFieldNomePropriedade.setText(limparCampo);
+        JOptionPane.showMessageDialog(null, "Cadastro cancelado");
+        limparCampos();
     }//GEN-LAST:event_jButtonCancelarCadastroDePropriedadeActionPerformed
 
     private void jTextFieldLocalPropriedadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldLocalPropriedadeActionPerformed
@@ -186,81 +181,109 @@ public class TelaDeCadastroDePropriedade extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxCulturaActionPerformed
 
     public void cadastrarPropriedade() {
-
-        areaCovertida = Double.valueOf(jTextFieldAreaPropriedade.getText());
-        nomePropriedade = jTextFieldNomePropriedade.getText();
-        localPropriedade = jTextFieldLocalPropriedade.getText();
-        estadoPropriedade = jTextFieldEstadoPropriedade.getText();
-        cidadePropriedade = jTextFieldCidadePropriedade.getText();
-        tipoCultura = jComboBoxCultura.getSelectedItem().toString();
-
-        siglaEstado = new HashSet<>();
-
-        validarEstado(siglaEstado);
-
-        if (nomePropriedade.equals("")) {
-            JOptionPane.showMessageDialog(null, "Nome Inválido");
-            jTextFieldNomePropriedade.requestFocus();
+        if (jTextFieldNomePropriedade.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o nome da propriedade");
             return;
         }
 
-        if (localPropriedade.equals("")) {
-            JOptionPane.showMessageDialog(null, "Local Inválido");
-            jTextFieldLocalPropriedade.requestFocus();
+        if (jTextFieldAreaPropriedade.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a area da propriedade");
             return;
         }
 
-        if (areaCovertida <= 0) {
-            JOptionPane.showMessageDialog(null, "Area Inválida");
+        if (jTextFieldLocalPropriedade.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o local da propriedade");
+            return;
+        }
+        
+        if (jTextFieldCidadePropriedade.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a cidade da propriedade");
+            return;
+        }
+        
+        if (jTextFieldEstadoPropriedade.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o estado(UF) da propriedade");
             return;
         }
 
-        if (estadoPropriedade.equals("")) {
-            JOptionPane.showMessageDialog(null, "Estado Inválido");
-            jTextFieldEstadoPropriedade.requestFocus();
-            return;
+        try {
+            areaCovertida = Double.valueOf(jTextFieldAreaPropriedade.getText());
+            nomePropriedade = jTextFieldNomePropriedade.getText();
+            localPropriedade = jTextFieldLocalPropriedade.getText();
+            estadoPropriedade = jTextFieldEstadoPropriedade.getText();
+            cidadePropriedade = jTextFieldCidadePropriedade.getText();
+            tipoCultura = jComboBoxCultura.getSelectedItem().toString();
+
+            siglaEstado = new HashSet<>();
+
+            validarEstado(siglaEstado);
+
+            if (nomePropriedade.isBlank()) {
+                JOptionPane.showMessageDialog(null, "Nome Inválido");
+                jTextFieldNomePropriedade.requestFocus();
+                return;
+            }
+
+            if (localPropriedade.isBlank()) {
+                JOptionPane.showMessageDialog(null, "Local Inválido");
+                jTextFieldLocalPropriedade.requestFocus();
+                return;
+            }
+
+            if (areaCovertida <= 0) {
+                JOptionPane.showMessageDialog(null, "Area Inválida");
+                return;
+            }
+
+            if (estadoPropriedade.isBlank()) {
+                JOptionPane.showMessageDialog(null, "Estado Inválido");
+                jTextFieldEstadoPropriedade.requestFocus();
+                return;
+            }
+
+            if (cidadePropriedade.isBlank()) {
+                JOptionPane.showMessageDialog(null, "Cidade Inválida");
+                jTextFieldCidadePropriedade.requestFocus();
+                return;
+            }
+
+            if (!siglaEstado.contains(estadoPropriedade)) {
+                JOptionPane.showMessageDialog(null, "Estado Inválido");
+                return;
+            }
+
+            if (tipoCultura.equals("Soja") || tipoCultura.equals("Milho")) {
+
+                propriedade.propriedade.setNomePropriedade(nomePropriedade);
+                propriedade.propriedade.setLocalPropriedade(localPropriedade);
+                propriedade.propriedade.setAreaPropriedade(areaCovertida);
+                propriedade.propriedade.setTipoDeCulturaDaPropriedade(tipoCultura);
+                propriedade.propriedade.setEstado(estadoPropriedade);
+                propriedade.propriedade.setCidade(cidadePropriedade);
+
+                String msg = propriedade.cadastrarPropriedade(ControlePropriedade.INCLUSAO);
+
+                JOptionPane.showMessageDialog(this, msg);
+                limparCampos();
+
+            } else {
+                JOptionPane.showMessageDialog(this, "Cultura Inválida");
+                return;
+            }
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Área deve ser númerica");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Falha tipo: " + e);
         }
 
-        if (cidadePropriedade.equals("")) {
-            JOptionPane.showMessageDialog(null, "Cidade Inválida");
-            jTextFieldCidadePropriedade.requestFocus();
-            return;
-        }
+    }
 
-        if (botaoTipoDeCultura.equals("")) {
-            JOptionPane.showMessageDialog(null, "Adicione o nivel de Acesso");
-            return;
-        }
-
-        if (!siglaEstado.contains(estadoPropriedade)) {
-            JOptionPane.showMessageDialog(null, "Estado Inválido");
-            return;
-        }
-
-        if (tipoCultura.equals("Soja") || tipoCultura.equals("Milho")) {
-
-            propriedade.propriedade.setNomePropriedade(nomePropriedade);
-            propriedade.propriedade.setLocalPropriedade(localPropriedade);
-            propriedade.propriedade.setAreaPropriedade(areaCovertida);
-            propriedade.propriedade.setTipoDeCulturaDaPropriedade(tipoCultura);
-            propriedade.propriedade.setEstado(estadoPropriedade);
-            propriedade.propriedade.setCidade(cidadePropriedade);
-
-            String msg = propriedade.cadastrarPropriedade(ControlePropriedade.INCLUSAO);
-
-            JOptionPane.showMessageDialog(this, msg);
-
-            jTextFieldAreaPropriedade.setText(limparCampo);
-            jTextFieldCidadePropriedade.setText(limparCampo);
-            jTextFieldEstadoPropriedade.setText(limparCampo);
-            jTextFieldLocalPropriedade.setText(limparCampo);
-            jTextFieldNomePropriedade.setText(limparCampo);
-
-        } else {
-            JOptionPane.showMessageDialog(this, "Cultura Inválida");
-            return;
-        }
-
+    private void limparCampos() {
+        jTextFieldAreaPropriedade.setText("");
+        jTextFieldCidadePropriedade.setText("");
+        jTextFieldEstadoPropriedade.setText("");
+        jTextFieldLocalPropriedade.setText("");
+        jTextFieldNomePropriedade.setText("");
     }
 
     private static void validarEstado(HashSet<String> siglaEstado) {

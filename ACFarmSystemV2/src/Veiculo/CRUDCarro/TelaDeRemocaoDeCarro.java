@@ -27,7 +27,7 @@ public class TelaDeRemocaoDeCarro extends javax.swing.JFrame {
     private void initComponents() {
 
         jButtonVoltarAoTelaDeEscolhaDeVeiculo = new javax.swing.JButton();
-        jTextFieldNomeOuPlacaCarroBuscado = new javax.swing.JTextField();
+        jTextFieldPlacaCarroBuscado = new javax.swing.JTextField();
         jTextFieldMarcaCarro = new javax.swing.JTextField();
         jTextFieldAnoCarro = new javax.swing.JTextField();
         jTextFieldChassiCarro = new javax.swing.JTextField();
@@ -58,16 +58,16 @@ public class TelaDeRemocaoDeCarro extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonVoltarAoTelaDeEscolhaDeVeiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 40, 24));
 
-        jTextFieldNomeOuPlacaCarroBuscado.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldNomeOuPlacaCarroBuscado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldNomeOuPlacaCarroBuscado.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldNomeOuPlacaCarroBuscado.setBorder(null);
-        jTextFieldNomeOuPlacaCarroBuscado.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldPlacaCarroBuscado.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldPlacaCarroBuscado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldPlacaCarroBuscado.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldPlacaCarroBuscado.setBorder(null);
+        jTextFieldPlacaCarroBuscado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldNomeOuPlacaCarroBuscadoActionPerformed(evt);
+                jTextFieldPlacaCarroBuscadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeOuPlacaCarroBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 112, 271, 29));
+        getContentPane().add(jTextFieldPlacaCarroBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 111, 271, 29));
 
         jTextFieldMarcaCarro.setEditable(false);
         jTextFieldMarcaCarro.setBackground(new java.awt.Color(255, 255, 255));
@@ -80,7 +80,7 @@ public class TelaDeRemocaoDeCarro extends javax.swing.JFrame {
                 jTextFieldMarcaCarroActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldMarcaCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 304, 270, 28));
+        getContentPane().add(jTextFieldMarcaCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 303, 270, 29));
 
         jTextFieldAnoCarro.setEditable(false);
         jTextFieldAnoCarro.setBackground(new java.awt.Color(255, 255, 255));
@@ -93,7 +93,7 @@ public class TelaDeRemocaoDeCarro extends javax.swing.JFrame {
                 jTextFieldAnoCarroActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldAnoCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 389, 269, 29));
+        getContentPane().add(jTextFieldAnoCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 388, 271, 29));
 
         jTextFieldChassiCarro.setEditable(false);
         jTextFieldChassiCarro.setBackground(new java.awt.Color(255, 255, 255));
@@ -106,7 +106,7 @@ public class TelaDeRemocaoDeCarro extends javax.swing.JFrame {
                 jTextFieldChassiCarroActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldChassiCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 480, 268, 29));
+        getContentPane().add(jTextFieldChassiCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 479, 271, 29));
 
         jTextFieldNomeCarro.setEditable(false);
         jTextFieldNomeCarro.setBackground(new java.awt.Color(255, 255, 255));
@@ -119,7 +119,7 @@ public class TelaDeRemocaoDeCarro extends javax.swing.JFrame {
                 jTextFieldNomeCarroActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 221, 270, 28));
+        getContentPane().add(jTextFieldNomeCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 220, 271, 29));
 
         jTextFieldQuilometragemCarro.setEditable(false);
         jTextFieldQuilometragemCarro.setBackground(new java.awt.Color(255, 255, 255));
@@ -145,7 +145,7 @@ public class TelaDeRemocaoDeCarro extends javax.swing.JFrame {
                 jTextFieldCapacidadeDeCombustivelCarroActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCapacidadeDeCombustivelCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 319, 270, 29));
+        getContentPane().add(jTextFieldCapacidadeDeCombustivelCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 319, 271, 29));
 
         jTextFieldEstadoCarro.setEditable(false);
         jTextFieldEstadoCarro.setBackground(new java.awt.Color(255, 255, 255));
@@ -158,7 +158,7 @@ public class TelaDeRemocaoDeCarro extends javax.swing.JFrame {
                 jTextFieldEstadoCarroActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldEstadoCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 567, 60, 30));
+        getContentPane().add(jTextFieldEstadoCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 567, 60, 29));
 
         jTextFieldPlacaCarro.setEditable(false);
         jTextFieldPlacaCarro.setBackground(new java.awt.Color(255, 255, 255));
@@ -171,7 +171,7 @@ public class TelaDeRemocaoDeCarro extends javax.swing.JFrame {
                 jTextFieldPlacaCarroActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldPlacaCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 403, 269, 29));
+        getContentPane().add(jTextFieldPlacaCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 403, 271, 29));
 
         jTextFieldCorCarro.setEditable(false);
         jTextFieldCorCarro.setBackground(new java.awt.Color(255, 255, 255));
@@ -184,7 +184,7 @@ public class TelaDeRemocaoDeCarro extends javax.swing.JFrame {
                 jTextFieldCorCarroActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCorCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 220, 269, 29));
+        getContentPane().add(jTextFieldCorCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 219, 271, 29));
 
         jButtonBuscarCarroPorPlaca.setBorder(null);
         jButtonBuscarCarroPorPlaca.setContentAreaFilled(false);
@@ -194,7 +194,7 @@ public class TelaDeRemocaoDeCarro extends javax.swing.JFrame {
                 jButtonBuscarCarroPorPlacaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarCarroPorPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 103, 262, 45));
+        getContentPane().add(jButtonBuscarCarroPorPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(354, 103, 282, 45));
 
         jButtonCancelarRemocao.setBorder(null);
         jButtonCancelarRemocao.setBorderPainted(false);
@@ -207,7 +207,7 @@ public class TelaDeRemocaoDeCarro extends javax.swing.JFrame {
                 jButtonCancelarRemocaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCancelarRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 594, 280, 36));
+        getContentPane().add(jButtonCancelarRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 600, 280, 36));
 
         jButtonConfirmarRemocao.setBorder(null);
         jButtonConfirmarRemocao.setBorderPainted(false);
@@ -220,7 +220,7 @@ public class TelaDeRemocaoDeCarro extends javax.swing.JFrame {
                 jButtonConfirmarRemocaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonConfirmarRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 594, 280, 36));
+        getContentPane().add(jButtonConfirmarRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(612, 550, 282, 37));
 
         jLabelTelaVerificacaoDeTrator.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasVeiculo/imgCarro/img_tela_de_remocao_de_carro.png"))); // NOI18N
         getContentPane().add(jLabelTelaVerificacaoDeTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 640));
@@ -234,9 +234,9 @@ public class TelaDeRemocaoDeCarro extends javax.swing.JFrame {
         new TelaCRUDCarro().setVisible(true);
     }//GEN-LAST:event_jButtonVoltarAoTelaDeEscolhaDeVeiculoActionPerformed
 
-    private void jTextFieldNomeOuPlacaCarroBuscadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeOuPlacaCarroBuscadoActionPerformed
+    private void jTextFieldPlacaCarroBuscadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPlacaCarroBuscadoActionPerformed
 
-    }//GEN-LAST:event_jTextFieldNomeOuPlacaCarroBuscadoActionPerformed
+    }//GEN-LAST:event_jTextFieldPlacaCarroBuscadoActionPerformed
 
     private void jTextFieldAnoCarroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAnoCarroActionPerformed
 
@@ -283,8 +283,13 @@ public class TelaDeRemocaoDeCarro extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonBuscarCarroPorPlacaActionPerformed
 
     private void jButtonCancelarRemocaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarRemocaoActionPerformed
-
+        JOptionPane.showMessageDialog(this, "Remoção Cancelada");
+        limparCampos();
     }//GEN-LAST:event_jButtonCancelarRemocaoActionPerformed
+
+    private void jButtonConfirmarRemocaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarRemocaoActionPerformed
+        removerCarro();
+    }//GEN-LAST:event_jButtonConfirmarRemocaoActionPerformed
 
     private void limparCampos() {
         jTextFieldAnoCarro.setText("");
@@ -296,69 +301,53 @@ public class TelaDeRemocaoDeCarro extends javax.swing.JFrame {
         jTextFieldNomeCarro.setText("");
         jTextFieldPlacaCarro.setText("");
         jTextFieldQuilometragemCarro.setText("");
+        jTextFieldPlacaCarroBuscado.setText("");
     }
 
-    private void jButtonConfirmarRemocaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarRemocaoActionPerformed
-        removerCarro();
-    }//GEN-LAST:event_jButtonConfirmarRemocaoActionPerformed
-
     public void removerCarro() {
-        nomeOuPlacaBuscaCarro = jTextFieldNomeOuPlacaCarroBuscado.getText();
+        if (jTextFieldPlacaCarroBuscado.getText().isBlank() || jTextFieldNomeCarro.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Busque um carro");
+            return;
+        }
+
+        nomeOuPlacaBuscaCarro = jTextFieldPlacaCarroBuscado.getText();
         String mensagem = controleVeiculo.removerCarro(nomeOuPlacaBuscaCarro);
         JOptionPane.showMessageDialog(this, mensagem);
         limparCampos();
     }
 
-    public void buscarCarroNome() throws SQLException {
-        nomeOuPlacaBuscaCarro = jTextFieldNomeOuPlacaCarroBuscado.getText();
-        Carro carroEncontrado = controleVeiculo.buscarCarroPorNome(nomeOuPlacaBuscaCarro);
-
-        if (carroEncontrado != null) {
-            anoCarro = Integer.toString(carroEncontrado.getAnoVeiculo());
-            corCarro = carroEncontrado.getCorCarro();
-            capacidadeDoTanqueCarro = Double.toString(carroEncontrado.getCapacidadeDoTanqueDeCombustivel());
-            quilometragemCarro = Double.toString(carroEncontrado.getQuilometragemCarro());
-
-            jTextFieldAnoCarro.setText(anoCarro);
-            jTextFieldCapacidadeDeCombustivelCarro.setText(capacidadeDoTanqueCarro);
-            jTextFieldChassiCarro.setText(carroEncontrado.getChassiVeiculo());
-            jTextFieldCorCarro.setText(corCarro);
-            jTextFieldEstadoCarro.setText(carroEncontrado.getEstadoVeiculo());
-            jTextFieldMarcaCarro.setText(carroEncontrado.getMarcaVeiculo());
-            jTextFieldNomeCarro.setText(carroEncontrado.getNomeVeiculo());
-            jTextFieldPlacaCarro.setText(carroEncontrado.getPlacaCarro());
-            jTextFieldQuilometragemCarro.setText(quilometragemCarro);
-
-        } else {
-            JOptionPane.showMessageDialog(this, "Veiculo não encontrado.");
-            limparCampos();
-        }
-
-    }
-
     public void buscarCarroPorPlaca() throws SQLException {
-        nomeOuPlacaBuscaCarro = jTextFieldNomeOuPlacaCarroBuscado.getText();
-        Carro carroEncontrado = controleVeiculo.buscarCarroPorPlaca(nomeOuPlacaBuscaCarro);
+        try {
+            if (jTextFieldPlacaCarroBuscado.getText().isBlank()) {
+                JOptionPane.showMessageDialog(this, "Insira a placa do carro");
+                return;
+            }
 
-        if (carroEncontrado != null) {
-            anoCarro = Integer.toString(carroEncontrado.getAnoVeiculo());
-            corCarro = carroEncontrado.getCorCarro();
-            capacidadeDoTanqueCarro = Double.toString(carroEncontrado.getCapacidadeDoTanqueDeCombustivel());
-            quilometragemCarro = Double.toString(carroEncontrado.getQuilometragemCarro());
+            nomeOuPlacaBuscaCarro = jTextFieldPlacaCarroBuscado.getText().toUpperCase();
+            Carro carroEncontrado = controleVeiculo.buscarCarroPorPlaca(nomeOuPlacaBuscaCarro);
 
-            jTextFieldAnoCarro.setText(anoCarro);
-            jTextFieldCapacidadeDeCombustivelCarro.setText(capacidadeDoTanqueCarro);
-            jTextFieldChassiCarro.setText(carroEncontrado.getChassiVeiculo());
-            jTextFieldCorCarro.setText(corCarro);
-            jTextFieldEstadoCarro.setText(carroEncontrado.getEstadoVeiculo());
-            jTextFieldMarcaCarro.setText(carroEncontrado.getMarcaVeiculo());
-            jTextFieldNomeCarro.setText(carroEncontrado.getNomeVeiculo());
-            jTextFieldPlacaCarro.setText(carroEncontrado.getPlacaCarro());
-            jTextFieldQuilometragemCarro.setText(quilometragemCarro);
+            if (carroEncontrado != null) {
+                anoCarro = Integer.toString(carroEncontrado.getAnoVeiculo());
+                corCarro = carroEncontrado.getCorCarro();
+                capacidadeDoTanqueCarro = Double.toString(carroEncontrado.getCapacidadeDoTanqueDeCombustivel());
+                quilometragemCarro = Double.toString(carroEncontrado.getQuilometragemCarro());
 
-        } else {
-            JOptionPane.showMessageDialog(this, "Veiculo não encontrado.");
-            limparCampos();
+                jTextFieldAnoCarro.setText(anoCarro);
+                jTextFieldCapacidadeDeCombustivelCarro.setText(capacidadeDoTanqueCarro);
+                jTextFieldChassiCarro.setText(carroEncontrado.getChassiVeiculo());
+                jTextFieldCorCarro.setText(corCarro);
+                jTextFieldEstadoCarro.setText(carroEncontrado.getEstadoVeiculo());
+                jTextFieldMarcaCarro.setText(carroEncontrado.getMarcaVeiculo());
+                jTextFieldNomeCarro.setText(carroEncontrado.getNomeVeiculo());
+                jTextFieldPlacaCarro.setText(carroEncontrado.getPlacaCarro());
+                jTextFieldQuilometragemCarro.setText(quilometragemCarro);
+
+            } else {
+                JOptionPane.showMessageDialog(this, "Veiculo não encontrado.");
+                limparCampos();
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Falha tipo: " + ex);
         }
 
     }
@@ -376,8 +365,8 @@ public class TelaDeRemocaoDeCarro extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldEstadoCarro;
     private javax.swing.JTextField jTextFieldMarcaCarro;
     private javax.swing.JTextField jTextFieldNomeCarro;
-    private javax.swing.JTextField jTextFieldNomeOuPlacaCarroBuscado;
     private javax.swing.JTextField jTextFieldPlacaCarro;
+    private javax.swing.JTextField jTextFieldPlacaCarroBuscado;
     private javax.swing.JTextField jTextFieldQuilometragemCarro;
     // End of variables declaration//GEN-END:variables
 }

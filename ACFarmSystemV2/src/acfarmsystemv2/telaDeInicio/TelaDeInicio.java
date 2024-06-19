@@ -288,7 +288,7 @@ public class TelaDeInicio extends javax.swing.JFrame {
         new TelaDeInicioEstoque().setVisible(true);
     }//GEN-LAST:event_jButtonAcessarEstoqueActionPerformed
 
-    public void apresentarGrafico() {
+    private void apresentarGrafico() {
         JInternalFrameGraficoProducao graficoProducao = new JInternalFrameGraficoProducao();
         jDesktopPaneGraficoDeProducao.add(graficoProducao);
         graficoProducao.setVisible(true);

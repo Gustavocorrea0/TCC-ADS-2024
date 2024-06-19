@@ -1,9 +1,6 @@
 package Veiculo;
 
-/**
- *
- * @author Gustavo
- */
+
 public class CaminhaoOuVeiculoDeTransporte extends Veiculo {
     
     private int idCaminhaoOuVeiculoDeTransporte;

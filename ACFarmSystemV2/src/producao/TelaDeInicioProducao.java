@@ -8,6 +8,7 @@ public class TelaDeInicioProducao extends javax.swing.JFrame {
     public TelaDeInicioProducao() {
         initComponents();
         readJtable();
+        apresentarGrafico();
     }
 
     @SuppressWarnings("unchecked")
@@ -19,6 +20,7 @@ public class TelaDeInicioProducao extends javax.swing.JFrame {
         jButtonRemoverProducao = new javax.swing.JButton();
         jButtonVoltarAoInicio = new javax.swing.JButton();
         jButtonRelatorioProducao = new javax.swing.JButton();
+        jDesktopPaneGraficoDeProducao = new javax.swing.JDesktopPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableProducao = new javax.swing.JTable();
         jLabelTelaProducao = new javax.swing.JLabel();
@@ -80,6 +82,7 @@ public class TelaDeInicioProducao extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonRelatorioProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 505, 74, 65));
+        getContentPane().add(jDesktopPaneGraficoDeProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 720, 310));
 
         jTableProducao.setBackground(new java.awt.Color(15, 42, 61));
         jTableProducao.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -120,7 +123,7 @@ public class TelaDeInicioProducao extends javax.swing.JFrame {
             jTableProducao.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 720, 370));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 720, 210));
 
         jLabelTelaProducao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasProducao/img_tela_de_inicio_producao.png"))); // NOI18N
         jLabelTelaProducao.setText("jLabel1");
@@ -187,12 +190,19 @@ public class TelaDeInicioProducao extends javax.swing.JFrame {
 
     }
 
+    private void apresentarGrafico() {
+        JInternalFrameGraficoProducao1 graficoProducao = new JInternalFrameGraficoProducao1();
+        jDesktopPaneGraficoDeProducao.add(graficoProducao);
+        graficoProducao.setVisible(true);
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAdicionarProducao;
     private javax.swing.JButton jButtonRelatorioProducao;
     private javax.swing.JButton jButtonRemoverProducao;
     private javax.swing.JButton jButtonVerificarProducao;
     private javax.swing.JButton jButtonVoltarAoInicio;
+    private javax.swing.JDesktopPane jDesktopPaneGraficoDeProducao;
     private javax.swing.JLabel jLabelTelaProducao;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableProducao;

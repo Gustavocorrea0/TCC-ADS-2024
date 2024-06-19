@@ -12,16 +12,15 @@ import javax.swing.JOptionPane;
 public class TelaDeAtualizacaoDeCaminhaoOuVeiculoDeTransporte extends javax.swing.JFrame {
 
     private ControleVeiculo controleVeiculo = new ControleVeiculo();
+    private String nomeParaBuscaCaminhao;
     private String nomeVeiculoAtualizado;
     private String marcaVeiculoAtualizado;
     private int anoVeiculoAtualizado;
     private String chassiVeiculoAtualizado;
     private String estadoVeiculoAtualizado;
     private Double capacidadeTanqueDeCombustivelAtualizado;
-    private String tipoVeiculoAtualizado;
-    private String placaCarroAtualizado;
-    private String corCarroAtualizado;
-    private int quilometragemCarroAtualizado;
+    private Double capacidadeDeCargaCaminhaoOuVeiculoDeTransporteAtualizada;
+
     private int idParaBuscaCaminhao;
 
     public TelaDeAtualizacaoDeCaminhaoOuVeiculoDeTransporte() {
@@ -33,14 +32,14 @@ public class TelaDeAtualizacaoDeCaminhaoOuVeiculoDeTransporte extends javax.swin
     private void initComponents() {
 
         jButtonVoltarAoTelaDeEscolhaDeVeiculo = new javax.swing.JButton();
-        jTextFieldIdCaminhaoOuVeiculoDeTransporte = new javax.swing.JTextField();
+        jTextFieldNomeCaminhaoOuVeiculoDeTransporteBuscado = new javax.swing.JTextField();
         jTextFieldMarcaCaminhaoOuVeiculoDeTransporte = new javax.swing.JTextField();
         jTextFieldAnoCaminhaoOuVeiculoDeTransporte = new javax.swing.JTextField();
         jTextFieldChassiCaminhaoOuVeiculoDeTransporte = new javax.swing.JTextField();
-        jTextFieldEstadoCaminhaoOuVeiculoDeTransporte = new javax.swing.JTextField();
         jTextFieldNomeCaminhaoOuVeiculoDeTransporte = new javax.swing.JTextField();
         jTextFieldCapacidadeDoTanqueCaminhaoOuVeiculoDeTransporte = new javax.swing.JTextField();
         jTextFieldCapacidadeDeCargaCaminhaoOuVeiculoDeTransporte = new javax.swing.JTextField();
+        jTextFieldEstadoCaminhao = new javax.swing.JTextField();
         jButtonBuscarTrator = new javax.swing.JButton();
         jButtonCancelarAtualizacao = new javax.swing.JButton();
         jButtonConfirmarAtualizacao = new javax.swing.JButton();
@@ -62,16 +61,16 @@ public class TelaDeAtualizacaoDeCaminhaoOuVeiculoDeTransporte extends javax.swin
         });
         getContentPane().add(jButtonVoltarAoTelaDeEscolhaDeVeiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 40, 24));
 
-        jTextFieldIdCaminhaoOuVeiculoDeTransporte.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldIdCaminhaoOuVeiculoDeTransporte.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldIdCaminhaoOuVeiculoDeTransporte.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldIdCaminhaoOuVeiculoDeTransporte.setBorder(null);
-        jTextFieldIdCaminhaoOuVeiculoDeTransporte.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldNomeCaminhaoOuVeiculoDeTransporteBuscado.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldNomeCaminhaoOuVeiculoDeTransporteBuscado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldNomeCaminhaoOuVeiculoDeTransporteBuscado.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldNomeCaminhaoOuVeiculoDeTransporteBuscado.setBorder(null);
+        jTextFieldNomeCaminhaoOuVeiculoDeTransporteBuscado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldIdCaminhaoOuVeiculoDeTransporteActionPerformed(evt);
+                jTextFieldNomeCaminhaoOuVeiculoDeTransporteBuscadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldIdCaminhaoOuVeiculoDeTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 114, 267, 28));
+        getContentPane().add(jTextFieldNomeCaminhaoOuVeiculoDeTransporteBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 114, 271, 28));
 
         jTextFieldMarcaCaminhaoOuVeiculoDeTransporte.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldMarcaCaminhaoOuVeiculoDeTransporte.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -83,7 +82,7 @@ public class TelaDeAtualizacaoDeCaminhaoOuVeiculoDeTransporte extends javax.swin
                 jTextFieldMarcaCaminhaoOuVeiculoDeTransporteActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldMarcaCaminhaoOuVeiculoDeTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 331, 270, 28));
+        getContentPane().add(jTextFieldMarcaCaminhaoOuVeiculoDeTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 332, 270, 29));
 
         jTextFieldAnoCaminhaoOuVeiculoDeTransporte.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldAnoCaminhaoOuVeiculoDeTransporte.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -95,7 +94,7 @@ public class TelaDeAtualizacaoDeCaminhaoOuVeiculoDeTransporte extends javax.swin
                 jTextFieldAnoCaminhaoOuVeiculoDeTransporteActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldAnoCaminhaoOuVeiculoDeTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 414, 269, 29));
+        getContentPane().add(jTextFieldAnoCaminhaoOuVeiculoDeTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 416, 271, 29));
 
         jTextFieldChassiCaminhaoOuVeiculoDeTransporte.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldChassiCaminhaoOuVeiculoDeTransporte.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -107,19 +106,7 @@ public class TelaDeAtualizacaoDeCaminhaoOuVeiculoDeTransporte extends javax.swin
                 jTextFieldChassiCaminhaoOuVeiculoDeTransporteActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldChassiCaminhaoOuVeiculoDeTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(527, 240, 268, 29));
-
-        jTextFieldEstadoCaminhaoOuVeiculoDeTransporte.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldEstadoCaminhaoOuVeiculoDeTransporte.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldEstadoCaminhaoOuVeiculoDeTransporte.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldEstadoCaminhaoOuVeiculoDeTransporte.setBorder(null);
-        jTextFieldEstadoCaminhaoOuVeiculoDeTransporte.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextFieldEstadoCaminhaoOuVeiculoDeTransporte.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldEstadoCaminhaoOuVeiculoDeTransporteActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextFieldEstadoCaminhaoOuVeiculoDeTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(527, 414, 60, 29));
+        getContentPane().add(jTextFieldChassiCaminhaoOuVeiculoDeTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(526, 241, 272, 29));
 
         jTextFieldNomeCaminhaoOuVeiculoDeTransporte.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNomeCaminhaoOuVeiculoDeTransporte.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -131,7 +118,7 @@ public class TelaDeAtualizacaoDeCaminhaoOuVeiculoDeTransporte extends javax.swin
                 jTextFieldNomeCaminhaoOuVeiculoDeTransporteActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeCaminhaoOuVeiculoDeTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 240, 270, 28));
+        getContentPane().add(jTextFieldNomeCaminhaoOuVeiculoDeTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 241, 271, 29));
 
         jTextFieldCapacidadeDoTanqueCaminhaoOuVeiculoDeTransporte.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCapacidadeDoTanqueCaminhaoOuVeiculoDeTransporte.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -143,7 +130,7 @@ public class TelaDeAtualizacaoDeCaminhaoOuVeiculoDeTransporte extends javax.swin
                 jTextFieldCapacidadeDoTanqueCaminhaoOuVeiculoDeTransporteActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCapacidadeDoTanqueCaminhaoOuVeiculoDeTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 506, 269, 29));
+        getContentPane().add(jTextFieldCapacidadeDoTanqueCaminhaoOuVeiculoDeTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 507, 271, 29));
 
         jTextFieldCapacidadeDeCargaCaminhaoOuVeiculoDeTransporte.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCapacidadeDeCargaCaminhaoOuVeiculoDeTransporte.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -155,7 +142,19 @@ public class TelaDeAtualizacaoDeCaminhaoOuVeiculoDeTransporte extends javax.swin
                 jTextFieldCapacidadeDeCargaCaminhaoOuVeiculoDeTransporteActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCapacidadeDeCargaCaminhaoOuVeiculoDeTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(527, 329, 269, 29));
+        getContentPane().add(jTextFieldCapacidadeDeCargaCaminhaoOuVeiculoDeTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(526, 330, 272, 29));
+
+        jTextFieldEstadoCaminhao.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldEstadoCaminhao.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldEstadoCaminhao.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldEstadoCaminhao.setBorder(null);
+        jTextFieldEstadoCaminhao.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldEstadoCaminhao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldEstadoCaminhaoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldEstadoCaminhao, new org.netbeans.lib.awtextra.AbsoluteConstraints(526, 414, 65, 29));
 
         jButtonBuscarTrator.setBorder(null);
         jButtonBuscarTrator.setContentAreaFilled(false);
@@ -165,7 +164,7 @@ public class TelaDeAtualizacaoDeCaminhaoOuVeiculoDeTransporte extends javax.swin
                 jButtonBuscarTratorActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(344, 104, 260, 45));
+        getContentPane().add(jButtonBuscarTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(354, 105, 280, 45));
 
         jButtonCancelarAtualizacao.setBorder(null);
         jButtonCancelarAtualizacao.setBorderPainted(false);
@@ -178,7 +177,7 @@ public class TelaDeAtualizacaoDeCaminhaoOuVeiculoDeTransporte extends javax.swin
                 jButtonCancelarAtualizacaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCancelarAtualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 592, 282, 37));
+        getContentPane().add(jButtonCancelarAtualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 594, 282, 37));
 
         jButtonConfirmarAtualizacao.setBorder(null);
         jButtonConfirmarAtualizacao.setBorderPainted(false);
@@ -191,9 +190,9 @@ public class TelaDeAtualizacaoDeCaminhaoOuVeiculoDeTransporte extends javax.swin
                 jButtonConfirmarAtualizacaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonConfirmarAtualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 541, 282, 37));
+        getContentPane().add(jButtonConfirmarAtualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 545, 282, 37));
 
-        jLabelTelaVerificacaoDeCaminhao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasVeiculo/img_tela_de_atualizacao_de_caminhao.png"))); // NOI18N
+        jLabelTelaVerificacaoDeCaminhao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasVeiculo/imgCaminhao/img_tela_de_atualizacao_de_caminhao.png"))); // NOI18N
         getContentPane().add(jLabelTelaVerificacaoDeCaminhao, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 640));
 
         pack();
@@ -205,9 +204,9 @@ public class TelaDeAtualizacaoDeCaminhaoOuVeiculoDeTransporte extends javax.swin
         new TelaCRUDCaminhaoOuVeiculoDeTransporte().setVisible(true);
     }//GEN-LAST:event_jButtonVoltarAoTelaDeEscolhaDeVeiculoActionPerformed
 
-    private void jTextFieldIdCaminhaoOuVeiculoDeTransporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdCaminhaoOuVeiculoDeTransporteActionPerformed
+    private void jTextFieldNomeCaminhaoOuVeiculoDeTransporteBuscadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeCaminhaoOuVeiculoDeTransporteBuscadoActionPerformed
 
-    }//GEN-LAST:event_jTextFieldIdCaminhaoOuVeiculoDeTransporteActionPerformed
+    }//GEN-LAST:event_jTextFieldNomeCaminhaoOuVeiculoDeTransporteBuscadoActionPerformed
 
     private void jTextFieldAnoCaminhaoOuVeiculoDeTransporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAnoCaminhaoOuVeiculoDeTransporteActionPerformed
 
@@ -216,10 +215,6 @@ public class TelaDeAtualizacaoDeCaminhaoOuVeiculoDeTransporte extends javax.swin
     private void jTextFieldChassiCaminhaoOuVeiculoDeTransporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldChassiCaminhaoOuVeiculoDeTransporteActionPerformed
 
     }//GEN-LAST:event_jTextFieldChassiCaminhaoOuVeiculoDeTransporteActionPerformed
-
-    private void jTextFieldEstadoCaminhaoOuVeiculoDeTransporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEstadoCaminhaoOuVeiculoDeTransporteActionPerformed
-
-    }//GEN-LAST:event_jTextFieldEstadoCaminhaoOuVeiculoDeTransporteActionPerformed
 
     private void jTextFieldMarcaCaminhaoOuVeiculoDeTransporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldMarcaCaminhaoOuVeiculoDeTransporteActionPerformed
 
@@ -242,12 +237,8 @@ public class TelaDeAtualizacaoDeCaminhaoOuVeiculoDeTransporte extends javax.swin
     }//GEN-LAST:event_jTextFieldCapacidadeDoTanqueCaminhaoOuVeiculoDeTransporteActionPerformed
 
     private void jButtonCancelarAtualizacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarAtualizacaoActionPerformed
-        jTextFieldChassiCaminhaoOuVeiculoDeTransporte.setText("");
-        jTextFieldMarcaCaminhaoOuVeiculoDeTransporte.setText("");
-        jTextFieldNomeCaminhaoOuVeiculoDeTransporte.setText("");
-        jTextFieldAnoCaminhaoOuVeiculoDeTransporte.setText("");
-        jTextFieldEstadoCaminhaoOuVeiculoDeTransporte.setText("");
-        jTextFieldCapacidadeDoTanqueCaminhaoOuVeiculoDeTransporte.setText("");
+        JOptionPane.showMessageDialog(null, "Atualização cancelada");
+        limparCampos();
     }//GEN-LAST:event_jButtonCancelarAtualizacaoActionPerformed
 
     private void jButtonConfirmarAtualizacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarAtualizacaoActionPerformed
@@ -262,96 +253,173 @@ public class TelaDeAtualizacaoDeCaminhaoOuVeiculoDeTransporte extends javax.swin
 
     }//GEN-LAST:event_jTextFieldCapacidadeDeCargaCaminhaoOuVeiculoDeTransporteActionPerformed
 
+    private void jTextFieldEstadoCaminhaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEstadoCaminhaoActionPerformed
+
+    }//GEN-LAST:event_jTextFieldEstadoCaminhaoActionPerformed
+
     public void atualizarCaminhaoOuVeiculoDeTransporte() throws SQLException {
+        if (jTextFieldNomeCaminhaoOuVeiculoDeTransporteBuscado.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Busque um caminhão");
+            limparCampos();
+            return;
+        }
+        
+        if (jTextFieldNomeCaminhaoOuVeiculoDeTransporte.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o nome do caminhão");
+            return;
+        }
+
+        if (jTextFieldMarcaCaminhaoOuVeiculoDeTransporte.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a marca do caminhão");
+            return;
+        }
+
+        if (jTextFieldAnoCaminhaoOuVeiculoDeTransporte.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o ano do caminhão");
+            return;
+        }
+
+        if (jTextFieldCapacidadeDoTanqueCaminhaoOuVeiculoDeTransporte.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a capacidade do tanque do caminhão");
+            return;
+        }
+
+        if (jTextFieldCapacidadeDeCargaCaminhaoOuVeiculoDeTransporte.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a capacidade de carga do caminhão");
+            return;
+        }
+
+        if (jTextFieldChassiCaminhaoOuVeiculoDeTransporte.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o chassi do caminhão (17 Digitos)");
+            return;
+        }
+
+        if (jTextFieldChassiCaminhaoOuVeiculoDeTransporte.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o estado do caminhão\nA para Ativo\nI para Inativo");
+            return;
+        }
+
         Calendar cal = Calendar.getInstance();
         int anoAtual = cal.get(Calendar.YEAR);
         nomeVeiculoAtualizado = jTextFieldNomeCaminhaoOuVeiculoDeTransporte.getText();
         marcaVeiculoAtualizado = jTextFieldMarcaCaminhaoOuVeiculoDeTransporte.getText();
-        anoVeiculoAtualizado = Integer.parseInt(jTextFieldAnoCaminhaoOuVeiculoDeTransporte.getText());
+        try {
+            anoVeiculoAtualizado = Integer.parseInt(jTextFieldAnoCaminhaoOuVeiculoDeTransporte.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "O ano deve ser númerico");
+            return;
+        }
+
         chassiVeiculoAtualizado = jTextFieldChassiCaminhaoOuVeiculoDeTransporte.getText();
-        estadoVeiculoAtualizado = jTextFieldEstadoCaminhaoOuVeiculoDeTransporte.getText();
-        capacidadeTanqueDeCombustivelAtualizado = Double.parseDouble(jTextFieldCapacidadeDoTanqueCaminhaoOuVeiculoDeTransporte.getText());
+        estadoVeiculoAtualizado = jTextFieldEstadoCaminhao.getText();
 
-        Double capacidadeDeCargaCaminhaoOuVeiculoDeTransporteAtualizada = Double.parseDouble(jTextFieldCapacidadeDeCargaCaminhaoOuVeiculoDeTransporte.getText());
-
-        if (nomeVeiculoAtualizado.equals("")) {
-            JOptionPane.showMessageDialog(this, "Nome Inválido");
+        try {
+            capacidadeTanqueDeCombustivelAtualizado = Double.valueOf(jTextFieldCapacidadeDoTanqueCaminhaoOuVeiculoDeTransporte.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "A capacidade do tanque deve ser númerica");
             return;
         }
 
-        if (marcaVeiculoAtualizado.equals("")) {
-            JOptionPane.showMessageDialog(this, "Marca Inválida");
+        try {
+            capacidadeDeCargaCaminhaoOuVeiculoDeTransporteAtualizada = Double.valueOf(jTextFieldCapacidadeDeCargaCaminhaoOuVeiculoDeTransporte.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "A capacidade de carga deve ser númerica");
             return;
         }
 
-        if (anoVeiculoAtualizado > (anoAtual + 1) || anoVeiculoAtualizado < 1970) {
-            JOptionPane.showMessageDialog(this, "Ano Inválido");
-            return;
-        }
+        try {
+            if (anoVeiculoAtualizado > (anoAtual + 1) || anoVeiculoAtualizado < 1970) {
+                JOptionPane.showMessageDialog(this, "Ano Inválido");
+                return;
+            }
 
-        if (chassiVeiculoAtualizado.length() != 17) {
-            JOptionPane.showMessageDialog(this, "Chassi Inválido");
-            return;
-        }
+            if (chassiVeiculoAtualizado.length() != 17) {
+                JOptionPane.showMessageDialog(this, "Chassi Inválido");
+                return;
+            }
 
-        if (estadoVeiculoAtualizado.equals("")) {
-            JOptionPane.showMessageDialog(this, "Estado Inválido");
-            return;
-        }
+            if (estadoVeiculoAtualizado.isBlank()) {
+                JOptionPane.showMessageDialog(this, "Estado Inválido");
+                return;
+            }
 
-        if (capacidadeTanqueDeCombustivelAtualizado <= 0) {
-            JOptionPane.showMessageDialog(this, "Capacidade do tanque Inválida");
-            return;
-        }
+            if (capacidadeTanqueDeCombustivelAtualizado <= 0) {
+                JOptionPane.showMessageDialog(this, "Capacidade do tanque Inválida");
+                return;
+            }
 
-        if (capacidadeDeCargaCaminhaoOuVeiculoDeTransporteAtualizada <= 0) {
-            JOptionPane.showMessageDialog(this, "Capacidade de carga Inválida");
-            return;
-        }
+            if (capacidadeDeCargaCaminhaoOuVeiculoDeTransporteAtualizada <= 0) {
+                JOptionPane.showMessageDialog(this, "Capacidade de carga Inválida");
+                return;
+            }
 
-        if (estadoVeiculoAtualizado.equalsIgnoreCase("A") || estadoVeiculoAtualizado.equalsIgnoreCase("I")) {
-            CaminhaoOuVeiculoDeTransporte caminhaoOuVeiculoDeTransporteAtualizado = new CaminhaoOuVeiculoDeTransporte();
-            caminhaoOuVeiculoDeTransporteAtualizado.setNomeVeiculo(nomeVeiculoAtualizado);
-            caminhaoOuVeiculoDeTransporteAtualizado.setMarcaVeiculo(marcaVeiculoAtualizado);
-            caminhaoOuVeiculoDeTransporteAtualizado.setAnoVeiculo(anoVeiculoAtualizado);
-            caminhaoOuVeiculoDeTransporteAtualizado.setChassiVeiculo(chassiVeiculoAtualizado);
-            caminhaoOuVeiculoDeTransporteAtualizado.setEstadoVeiculo(estadoVeiculoAtualizado);
-            caminhaoOuVeiculoDeTransporteAtualizado.setCapacidadeDoTanqueDeCombustivel(capacidadeTanqueDeCombustivelAtualizado);
-            caminhaoOuVeiculoDeTransporteAtualizado.setCapacidadeDeCarga(capacidadeDeCargaCaminhaoOuVeiculoDeTransporteAtualizada);
-            caminhaoOuVeiculoDeTransporteAtualizado.setIdCaminhaoOuVeiculoDeTransporte(idParaBuscaCaminhao);
+            if (estadoVeiculoAtualizado.equalsIgnoreCase("A") || estadoVeiculoAtualizado.equalsIgnoreCase("I")) {
+                CaminhaoOuVeiculoDeTransporte caminhaoOuVeiculoDeTransporteAtualizado = new CaminhaoOuVeiculoDeTransporte();
+                caminhaoOuVeiculoDeTransporteAtualizado.setNomeVeiculo(nomeVeiculoAtualizado);
+                caminhaoOuVeiculoDeTransporteAtualizado.setMarcaVeiculo(marcaVeiculoAtualizado);
+                caminhaoOuVeiculoDeTransporteAtualizado.setAnoVeiculo(anoVeiculoAtualizado);
+                caminhaoOuVeiculoDeTransporteAtualizado.setChassiVeiculo(chassiVeiculoAtualizado);
+                caminhaoOuVeiculoDeTransporteAtualizado.setEstadoVeiculo(estadoVeiculoAtualizado);
+                caminhaoOuVeiculoDeTransporteAtualizado.setCapacidadeDoTanqueDeCombustivel(capacidadeTanqueDeCombustivelAtualizado);
+                caminhaoOuVeiculoDeTransporteAtualizado.setCapacidadeDeCarga(capacidadeDeCargaCaminhaoOuVeiculoDeTransporteAtualizada);
+                caminhaoOuVeiculoDeTransporteAtualizado.setIdCaminhaoOuVeiculoDeTransporte(idParaBuscaCaminhao);
 
-            controleVeiculo = new ControleVeiculo();
-            String msgAtualizacao = controleVeiculo.atualizarCaminhaoOuVeiculoDeTransporte(caminhaoOuVeiculoDeTransporteAtualizado);
-            JOptionPane.showMessageDialog(null, msgAtualizacao);
-        } else {
-            JOptionPane.showMessageDialog(this, "Estado inválido, apenas A ou I");
+                controleVeiculo = new ControleVeiculo();
+                String msgAtualizacao = controleVeiculo.atualizarCaminhaoOuVeiculoDeTransporte(caminhaoOuVeiculoDeTransporteAtualizado);
+                JOptionPane.showMessageDialog(null, msgAtualizacao);
+                limparCampos();
+            } else {
+                JOptionPane.showMessageDialog(null, "Estado inválido\nA para Ativo\nI para Inativo");
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Falha tipo:" + ex);
         }
     }
 
     public void buscarCaminhaoOuVeiculoDeTransporte() throws SQLException {
+        try {
 
-        String nomeParaBuscaCaminhao = jTextFieldIdCaminhaoOuVeiculoDeTransporte.getText();
-        CaminhaoOuVeiculoDeTransporte caminhaoOuVeiculoDeTransporteEncontrado = controleVeiculo.buscarCaminhaoOuVeiculoDeTransportePorNome(nomeParaBuscaCaminhao);
+            if (jTextFieldNomeCaminhaoOuVeiculoDeTransporteBuscado.getText().isBlank()) {
+                JOptionPane.showMessageDialog(this, "Insira o nome do veículo");
+                limparCampos();
+                return;
+            }
 
-        if (caminhaoOuVeiculoDeTransporteEncontrado != null) {
+            nomeParaBuscaCaminhao = jTextFieldNomeCaminhaoOuVeiculoDeTransporteBuscado.getText();
+            CaminhaoOuVeiculoDeTransporte caminhaoOuVeiculoDeTransporteEncontrado = controleVeiculo.buscarCaminhaoOuVeiculoDeTransportePorNome(nomeParaBuscaCaminhao);
 
-            String anoCaminhaoOuVeiculoDeTransporte = Integer.toString(caminhaoOuVeiculoDeTransporteEncontrado.getAnoVeiculo());
-            String capacidadeDeCargaCaminhaoOuVeiculoDeTransporte = Double.toString(caminhaoOuVeiculoDeTransporteEncontrado.getCapacidadeDeCarga());
-            String estadoCaminhaoOuVeiculoDeTransporte = caminhaoOuVeiculoDeTransporteEncontrado.getEstadoVeiculo();
-            String capacidadeDoTanque = Double.toString(caminhaoOuVeiculoDeTransporteEncontrado.getCapacidadeDoTanqueDeCombustivel());
+            if (caminhaoOuVeiculoDeTransporteEncontrado != null) {
+                String anoCaminhaoOuVeiculoDeTransporte = Integer.toString(caminhaoOuVeiculoDeTransporteEncontrado.getAnoVeiculo());
+                String capacidadeDeCargaCaminhaoOuVeiculoDeTransporte = Double.toString(caminhaoOuVeiculoDeTransporteEncontrado.getCapacidadeDeCarga());
+                String capacidadeDoTanqueCaminhaoOuVeiculoDeTransporte = Double.toString(caminhaoOuVeiculoDeTransporteEncontrado.getCapacidadeDoTanqueDeCombustivel());
 
-            jTextFieldChassiCaminhaoOuVeiculoDeTransporte.setText(caminhaoOuVeiculoDeTransporteEncontrado.getChassiVeiculo());
-            jTextFieldMarcaCaminhaoOuVeiculoDeTransporte.setText(caminhaoOuVeiculoDeTransporteEncontrado.getMarcaVeiculo());
-            jTextFieldNomeCaminhaoOuVeiculoDeTransporte.setText(caminhaoOuVeiculoDeTransporteEncontrado.getNomeVeiculo());
-            jTextFieldAnoCaminhaoOuVeiculoDeTransporte.setText(anoCaminhaoOuVeiculoDeTransporte);
-            jTextFieldEstadoCaminhaoOuVeiculoDeTransporte.setText(estadoCaminhaoOuVeiculoDeTransporte);
-            jTextFieldCapacidadeDeCargaCaminhaoOuVeiculoDeTransporte.setText(capacidadeDeCargaCaminhaoOuVeiculoDeTransporte);
-            jTextFieldCapacidadeDoTanqueCaminhaoOuVeiculoDeTransporte.setText(capacidadeDoTanque);
-            idParaBuscaCaminhao = caminhaoOuVeiculoDeTransporteEncontrado.getIdCaminhaoOuVeiculoDeTransporte();
-
-        } else {
-            JOptionPane.showMessageDialog(this, "Veiculo não encontrado.");
+                jTextFieldChassiCaminhaoOuVeiculoDeTransporte.setText(caminhaoOuVeiculoDeTransporteEncontrado.getChassiVeiculo());
+                jTextFieldMarcaCaminhaoOuVeiculoDeTransporte.setText(caminhaoOuVeiculoDeTransporteEncontrado.getMarcaVeiculo());
+                jTextFieldNomeCaminhaoOuVeiculoDeTransporte.setText(caminhaoOuVeiculoDeTransporteEncontrado.getNomeVeiculo());
+                jTextFieldAnoCaminhaoOuVeiculoDeTransporte.setText(anoCaminhaoOuVeiculoDeTransporte);
+                jTextFieldCapacidadeDoTanqueCaminhaoOuVeiculoDeTransporte.setText(capacidadeDoTanqueCaminhaoOuVeiculoDeTransporte);
+                jTextFieldCapacidadeDeCargaCaminhaoOuVeiculoDeTransporte.setText(capacidadeDeCargaCaminhaoOuVeiculoDeTransporte);
+                jTextFieldEstadoCaminhao.setText(caminhaoOuVeiculoDeTransporteEncontrado.getEstadoVeiculo());
+                idParaBuscaCaminhao = caminhaoOuVeiculoDeTransporteEncontrado.getIdCaminhaoOuVeiculoDeTransporte();
+            } else {
+                JOptionPane.showMessageDialog(this, "Veiculo não encontrado");
+                limparCampos();
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Falha tipo: " + ex.getMessage());
         }
+
+    }
+
+    private void limparCampos() {
+        jTextFieldAnoCaminhaoOuVeiculoDeTransporte.setText("");
+        jTextFieldCapacidadeDeCargaCaminhaoOuVeiculoDeTransporte.setText("");
+        jTextFieldCapacidadeDoTanqueCaminhaoOuVeiculoDeTransporte.setText("");
+        jTextFieldChassiCaminhaoOuVeiculoDeTransporte.setText("");
+        jTextFieldEstadoCaminhao.setText("");
+        jTextFieldMarcaCaminhaoOuVeiculoDeTransporte.setText("");
+        jTextFieldNomeCaminhaoOuVeiculoDeTransporte.setText("");
+        jTextFieldNomeCaminhaoOuVeiculoDeTransporteBuscado.setText("");
     }
 
 
@@ -365,9 +433,9 @@ public class TelaDeAtualizacaoDeCaminhaoOuVeiculoDeTransporte extends javax.swin
     private javax.swing.JTextField jTextFieldCapacidadeDeCargaCaminhaoOuVeiculoDeTransporte;
     private javax.swing.JTextField jTextFieldCapacidadeDoTanqueCaminhaoOuVeiculoDeTransporte;
     private javax.swing.JTextField jTextFieldChassiCaminhaoOuVeiculoDeTransporte;
-    private javax.swing.JTextField jTextFieldEstadoCaminhaoOuVeiculoDeTransporte;
-    private javax.swing.JTextField jTextFieldIdCaminhaoOuVeiculoDeTransporte;
+    private javax.swing.JTextField jTextFieldEstadoCaminhao;
     private javax.swing.JTextField jTextFieldMarcaCaminhaoOuVeiculoDeTransporte;
     private javax.swing.JTextField jTextFieldNomeCaminhaoOuVeiculoDeTransporte;
+    private javax.swing.JTextField jTextFieldNomeCaminhaoOuVeiculoDeTransporteBuscado;
     // End of variables declaration//GEN-END:variables
 }

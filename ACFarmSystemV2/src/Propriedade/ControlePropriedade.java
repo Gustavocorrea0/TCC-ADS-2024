@@ -38,7 +38,7 @@ public class ControlePropriedade {
             if (operacao == INCLUSAO) {
                 sql = "INSERT INTO propriedade (nome_propriedade, local_propriedade, area_propriedade, tipo_de_cultura_propriedade, estado, cidade) VALUES (?, ?, ?, ?, ?, ?)";
                 ps = conexao.conn.prepareStatement(sql);
-                
+
                 ps.setString(1, propriedade.getNomePropriedade());
                 ps.setString(2, propriedade.getLocalPropriedade());
                 ps.setDouble(3, propriedade.getAreaPropriedade());
@@ -47,17 +47,17 @@ public class ControlePropriedade {
                 ps.setString(6, propriedade.getCidade());
 
                 int linhasAfetadas = ps.executeUpdate();
-                
+
                 if (linhasAfetadas > 0) {
                     msg = "Propriedade cadastrada com sucesso.";
                 } else {
                     msg = "Nenhuma propriedade cadastrada.";
                 }
-                
+
             } else {
                 msg = "Operação não suportada.";
             }
-            
+
         } catch (SQLException ex) {
             msg = "Erro ao cadastrar usuário: " + ex.getMessage();
         } finally {
@@ -100,9 +100,9 @@ public class ControlePropriedade {
             }
 
         } catch (SQLException ex) {
-            ex.printStackTrace(); 
+            ex.printStackTrace();
             return "Falha ao atualizar o propriedade";
-        } 
+        }
     }
 
     public List<Propriedade> readPropriedade() {
@@ -119,8 +119,8 @@ public class ControlePropriedade {
         try {
             ps = conexao.conn.prepareStatement(sql);
             resultados = ps.executeQuery();
-            
-            while(resultados.next()){
+
+            while (resultados.next()) {
                 Propriedade propriedadeEncontrada = new Propriedade();
                 propriedadeEncontrada.setNomePropriedade(resultados.getString("nome"));
                 propriedadeEncontrada.setAreaPropriedade(resultados.getDouble("area"));
@@ -133,7 +133,7 @@ public class ControlePropriedade {
         }
         return propriedades;
     }
-    
+
     public Propriedade buscarPropriedadePorNome(String nome) throws SQLException {
         if (!conexao.getConexao()) {
             return null;
@@ -155,9 +155,9 @@ public class ControlePropriedade {
                 propriedade1.setEstado(resultados.getString("estado"));
                 propriedade1.setCidade(resultados.getString("cidade"));
                 return propriedade1;
-                
+
             } else {
-            
+
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -165,7 +165,7 @@ public class ControlePropriedade {
 
         return null;
     }
-    
+
     public String removerPropriedadePorNome(String nome) {
         if (!conexao.getConexao()) {
             return "Falha de conexao";
@@ -189,5 +189,5 @@ public class ControlePropriedade {
         }
         return msg;
     }
-    
+
 }
