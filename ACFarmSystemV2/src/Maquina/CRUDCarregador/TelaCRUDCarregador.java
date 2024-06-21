@@ -45,7 +45,7 @@ public class TelaCRUDCarregador extends javax.swing.JFrame {
                 jButtonAdicionarMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAdicionarMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 96, 261, 44));
+        getContentPane().add(jButtonAdicionarMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 80, 70));
 
         jButtonRemoverMaquina.setBorder(null);
         jButtonRemoverMaquina.setContentAreaFilled(false);
@@ -55,7 +55,7 @@ public class TelaCRUDCarregador extends javax.swing.JFrame {
                 jButtonRemoverMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonRemoverMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 163, 261, 44));
+        getContentPane().add(jButtonRemoverMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 364, 60, 70));
 
         jButtonAtualizarMaquina.setBorder(null);
         jButtonAtualizarMaquina.setContentAreaFilled(false);
@@ -65,7 +65,7 @@ public class TelaCRUDCarregador extends javax.swing.JFrame {
                 jButtonAtualizarMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAtualizarMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 98, 261, 44));
+        getContentPane().add(jButtonAtualizarMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 244, 80, 70));
 
         jButtonVerificarMaquina.setBorder(null);
         jButtonVerificarMaquina.setContentAreaFilled(false);
@@ -75,7 +75,7 @@ public class TelaCRUDCarregador extends javax.swing.JFrame {
                 jButtonVerificarMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonVerificarMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 163, 260, 44));
+        getContentPane().add(jButtonVerificarMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 494, 80, 70));
 
         jTableCarregador.setBackground(new java.awt.Color(15, 42, 61));
         jTableCarregador.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -109,7 +109,7 @@ public class TelaCRUDCarregador extends javax.swing.JFrame {
         jTableCarregador.setSelectionForeground(new java.awt.Color(15, 42, 61));
         jScrollPane1.setViewportView(jTableCarregador);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 890, 340));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 740, 420));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasMaquinas/img_tela_CRUD_carregador.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 640));

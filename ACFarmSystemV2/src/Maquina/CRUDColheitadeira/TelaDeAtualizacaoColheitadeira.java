@@ -24,6 +24,9 @@ public class TelaDeAtualizacaoColheitadeira extends javax.swing.JFrame {
     private String nomeMaquina;
     private int idMaquina;
 
+    private int quantidadeDeSacosAtualizado;
+    private Double capacidadeDoTanqueDeCombustivelAtualizado;
+
     public TelaDeAtualizacaoColheitadeira() {
         initComponents();
     }
@@ -32,34 +35,23 @@ public class TelaDeAtualizacaoColheitadeira extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextFieldIdMaquina = new javax.swing.JTextField();
         jTextFieldNomeMaquina = new javax.swing.JTextField();
         jTextFieldMarcaMaquina = new javax.swing.JTextField();
-        jTextFieldTipoDeCultura = new javax.swing.JTextField();
         jTextFieldAnoMaquina = new javax.swing.JTextField();
         jTextFieldChassiMaquina = new javax.swing.JTextField();
         jTextFieldEstadoMaquina = new javax.swing.JTextField();
         jTextFieldQuantidadeDeSacas = new javax.swing.JTextField();
         jTextFieldCapacidadeDoTanqueDeCombustivel = new javax.swing.JTextField();
+        jTextFieldTipoDeCultura = new javax.swing.JTextField();
+        jTextFieldNomeColheitadeiraBuscada = new javax.swing.JTextField();
         jButtonBuscarMaquina = new javax.swing.JButton();
         jButtonSairDaTelaDeAtualizacao = new javax.swing.JButton();
         jButtonConfirmarAtualizacao = new javax.swing.JButton();
+        jButtonCancelarAtualizacao = new javax.swing.JButton();
         jLabelFundoAtualizacao = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jTextFieldIdMaquina.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldIdMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldIdMaquina.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldIdMaquina.setBorder(null);
-        jTextFieldIdMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextFieldIdMaquina.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldIdMaquinaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextFieldIdMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 117, 300, 27));
 
         jTextFieldNomeMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNomeMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -71,7 +63,7 @@ public class TelaDeAtualizacaoColheitadeira extends javax.swing.JFrame {
                 jTextFieldNomeMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 225, 270, 27));
+        getContentPane().add(jTextFieldNomeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 224, 271, 29));
 
         jTextFieldMarcaMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldMarcaMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -83,19 +75,7 @@ public class TelaDeAtualizacaoColheitadeira extends javax.swing.JFrame {
                 jTextFieldMarcaMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldMarcaMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 308, 270, 27));
-
-        jTextFieldTipoDeCultura.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldTipoDeCultura.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldTipoDeCultura.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldTipoDeCultura.setBorder(null);
-        jTextFieldTipoDeCultura.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextFieldTipoDeCultura.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldTipoDeCulturaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextFieldTipoDeCultura, new org.netbeans.lib.awtextra.AbsoluteConstraints(502, 393, 270, 27));
+        getContentPane().add(jTextFieldMarcaMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 307, 271, 29));
 
         jTextFieldAnoMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldAnoMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -107,7 +87,7 @@ public class TelaDeAtualizacaoColheitadeira extends javax.swing.JFrame {
                 jTextFieldAnoMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldAnoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 394, 270, 27));
+        getContentPane().add(jTextFieldAnoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 392, 271, 29));
 
         jTextFieldChassiMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldChassiMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -119,7 +99,7 @@ public class TelaDeAtualizacaoColheitadeira extends javax.swing.JFrame {
                 jTextFieldChassiMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldChassiMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 485, 270, 27));
+        getContentPane().add(jTextFieldChassiMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 483, 271, 29));
 
         jTextFieldEstadoMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldEstadoMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -131,7 +111,7 @@ public class TelaDeAtualizacaoColheitadeira extends javax.swing.JFrame {
                 jTextFieldEstadoMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldEstadoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 581, 268, 27));
+        getContentPane().add(jTextFieldEstadoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 580, 271, 29));
 
         jTextFieldQuantidadeDeSacas.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldQuantidadeDeSacas.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -143,7 +123,7 @@ public class TelaDeAtualizacaoColheitadeira extends javax.swing.JFrame {
                 jTextFieldQuantidadeDeSacasActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldQuantidadeDeSacas, new org.netbeans.lib.awtextra.AbsoluteConstraints(499, 222, 271, 27));
+        getContentPane().add(jTextFieldQuantidadeDeSacas, new org.netbeans.lib.awtextra.AbsoluteConstraints(497, 221, 272, 29));
 
         jTextFieldCapacidadeDoTanqueDeCombustivel.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCapacidadeDoTanqueDeCombustivel.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -155,7 +135,25 @@ public class TelaDeAtualizacaoColheitadeira extends javax.swing.JFrame {
                 jTextFieldCapacidadeDoTanqueDeCombustivelActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCapacidadeDoTanqueDeCombustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(502, 308, 350, 27));
+        getContentPane().add(jTextFieldCapacidadeDoTanqueDeCombustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(499, 306, 352, 29));
+
+        jTextFieldTipoDeCultura.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldTipoDeCultura.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldTipoDeCultura.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldTipoDeCultura.setBorder(null);
+        jTextFieldTipoDeCultura.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldTipoDeCultura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldTipoDeCulturaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldTipoDeCultura, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 392, 271, 29));
+
+        jTextFieldNomeColheitadeiraBuscada.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldNomeColheitadeiraBuscada.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldNomeColheitadeiraBuscada.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldNomeColheitadeiraBuscada.setBorder(null);
+        getContentPane().add(jTextFieldNomeColheitadeiraBuscada, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 115, 305, 29));
 
         jButtonBuscarMaquina.setBorder(null);
         jButtonBuscarMaquina.setBorderPainted(false);
@@ -188,38 +186,25 @@ public class TelaDeAtualizacaoColheitadeira extends javax.swing.JFrame {
                 jButtonConfirmarAtualizacaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonConfirmarAtualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 570, 280, 34));
+        getContentPane().add(jButtonConfirmarAtualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(612, 547, 282, 36));
 
-        jLabelFundoAtualizacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasMaquinas/telasDeAtualizacao/img_tela_atualizacao_colheitadeira.png"))); // NOI18N
+        jButtonCancelarAtualizacao.setBorder(null);
+        jButtonCancelarAtualizacao.setBorderPainted(false);
+        jButtonCancelarAtualizacao.setContentAreaFilled(false);
+        jButtonCancelarAtualizacao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCancelarAtualizacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelarAtualizacaoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonCancelarAtualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 597, 280, 34));
+
+        jLabelFundoAtualizacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasMaquinas/telasColheitadeira/img_tela_atualizacao_colheitadeira.png"))); // NOI18N
         getContentPane().add(jLabelFundoAtualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, -1));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jTextFieldTipoDeCulturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTipoDeCulturaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldTipoDeCulturaActionPerformed
-
-    private void jTextFieldIdMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdMaquinaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldIdMaquinaActionPerformed
-
-    private void jTextFieldNomeMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeMaquinaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldNomeMaquinaActionPerformed
-
-    private void jTextFieldMarcaMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldMarcaMaquinaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldMarcaMaquinaActionPerformed
-
-    private void jTextFieldAnoMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAnoMaquinaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldAnoMaquinaActionPerformed
-
-    private void jTextFieldChassiMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldChassiMaquinaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldChassiMaquinaActionPerformed
 
     private void jButtonBuscarMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarMaquinaActionPerformed
         try {
@@ -235,18 +220,6 @@ public class TelaDeAtualizacaoColheitadeira extends javax.swing.JFrame {
         new TelaCRUDColheitadeira().setVisible(true);
     }//GEN-LAST:event_jButtonSairDaTelaDeAtualizacaoActionPerformed
 
-    private void jTextFieldEstadoMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEstadoMaquinaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldEstadoMaquinaActionPerformed
-
-    private void jTextFieldQuantidadeDeSacasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldQuantidadeDeSacasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldQuantidadeDeSacasActionPerformed
-
-    private void jTextFieldCapacidadeDoTanqueDeCombustivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCapacidadeDoTanqueDeCombustivelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldCapacidadeDoTanqueDeCombustivelActionPerformed
-
     private void jButtonConfirmarAtualizacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarAtualizacaoActionPerformed
         try {
             atualizarColheitadeira();
@@ -255,7 +228,89 @@ public class TelaDeAtualizacaoColheitadeira extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonConfirmarAtualizacaoActionPerformed
 
+    private void jTextFieldNomeMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeMaquinaActionPerformed
+
+    }//GEN-LAST:event_jTextFieldNomeMaquinaActionPerformed
+
+    private void jTextFieldMarcaMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldMarcaMaquinaActionPerformed
+
+    }//GEN-LAST:event_jTextFieldMarcaMaquinaActionPerformed
+
+    private void jTextFieldAnoMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAnoMaquinaActionPerformed
+
+    }//GEN-LAST:event_jTextFieldAnoMaquinaActionPerformed
+
+    private void jTextFieldChassiMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldChassiMaquinaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldChassiMaquinaActionPerformed
+
+    private void jTextFieldEstadoMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEstadoMaquinaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldEstadoMaquinaActionPerformed
+
+    private void jTextFieldQuantidadeDeSacasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldQuantidadeDeSacasActionPerformed
+
+    }//GEN-LAST:event_jTextFieldQuantidadeDeSacasActionPerformed
+
+    private void jTextFieldCapacidadeDoTanqueDeCombustivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCapacidadeDoTanqueDeCombustivelActionPerformed
+
+    }//GEN-LAST:event_jTextFieldCapacidadeDoTanqueDeCombustivelActionPerformed
+
+    private void jTextFieldTipoDeCulturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTipoDeCulturaActionPerformed
+
+    }//GEN-LAST:event_jTextFieldTipoDeCulturaActionPerformed
+
+    private void jButtonCancelarAtualizacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarAtualizacaoActionPerformed
+        JOptionPane.showMessageDialog(this, "Atualização Cancelada");
+        limparCampos();
+    }//GEN-LAST:event_jButtonCancelarAtualizacaoActionPerformed
+
     public void atualizarColheitadeira() throws SQLException {
+        if (jTextFieldNomeColheitadeiraBuscada.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Busque uma colheitadeira");
+            return;
+        }
+        
+        if (jTextFieldNomeMaquina.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o nome da colheitadeira");
+            return;
+        }
+
+        if (jTextFieldMarcaMaquina.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a marca da colheitadeira");
+            return;
+        }
+
+        if (jTextFieldAnoMaquina.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o ano da colheitadeira");
+            return;
+        }
+
+        if (jTextFieldChassiMaquina.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o chassi da colheitadeira (17 Digitos)");
+            return;
+        }
+
+        if (jTextFieldEstadoMaquina.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o estado da colheitadeira:\nA para Ativo\nI para Inativo");
+            return;
+        }
+
+        if (jTextFieldQuantidadeDeSacas.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a quantidade de sacas suporadas da colheitadeira");
+            return;
+        }
+
+        if (jTextFieldCapacidadeDoTanqueDeCombustivel.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a capacidade do tanque de combustivél da colheitadeira");
+            return;
+        }
+
+        if (jTextFieldTipoDeCultura.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a cultura da colheitadeira:\nSoja\nMilho");
+            return;
+        }
+
         Calendar cal = Calendar.getInstance();
         int anoAtual = cal.get(Calendar.YEAR);
 
@@ -263,18 +318,27 @@ public class TelaDeAtualizacaoColheitadeira extends javax.swing.JFrame {
         marcaAtualizado = jTextFieldMarcaMaquina.getText();
         chassiAtualizado = jTextFieldChassiMaquina.getText();
         estadoAtualizado = jTextFieldEstadoMaquina.getText();
-        anoAtualizado = Integer.parseInt(jTextFieldAnoMaquina.getText());
-        String tipoDeCultura = jTextFieldTipoDeCultura.getText();
-        int quantidadeDeSacos = Integer.parseInt(jTextFieldQuantidadeDeSacas.getText());
-        Double capacidadeDoTanqueDeCombustivel = Double.parseDouble(jTextFieldCapacidadeDoTanqueDeCombustivel.getText());
-
-        if (nomeAtualizado.equals("")) {
-            JOptionPane.showMessageDialog(this, "Nome Inválido");
+        
+        try {
+            anoAtualizado = Integer.parseInt(jTextFieldAnoMaquina.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "O ano deve ser numérico");
             return;
         }
 
-        if (marcaAtualizado.equals("")) {
-            JOptionPane.showMessageDialog(this, "Marca Inválida");
+        String tipoDeCultura = jTextFieldTipoDeCultura.getText();
+
+        try {
+            quantidadeDeSacosAtualizado = Integer.parseInt(jTextFieldQuantidadeDeSacas.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "A quantidade de sacos deve ser numérica");
+            return;
+        }
+
+        try {
+            capacidadeDoTanqueDeCombustivelAtualizado = Double.valueOf(jTextFieldCapacidadeDoTanqueDeCombustivel.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, " capacidade do tanque deve ser numérica");
             return;
         }
 
@@ -288,12 +352,12 @@ public class TelaDeAtualizacaoColheitadeira extends javax.swing.JFrame {
             return;
         }
 
-        if (quantidadeDeSacos <= 0) {
+        if (quantidadeDeSacosAtualizado <= 0) {
             JOptionPane.showMessageDialog(null, "Quantidade de sacos Inválida");
             return;
         }
 
-        if (capacidadeDoTanqueDeCombustivel <= 0) {
+        if (capacidadeDoTanqueDeCombustivelAtualizado<= 0) {
             JOptionPane.showMessageDialog(null, "Capacidade do tanque de combustivel Inválida");
             return;
         }
@@ -307,15 +371,16 @@ public class TelaDeAtualizacaoColheitadeira extends javax.swing.JFrame {
                 colheitadeiraAtualizada.setEstadoMaquina(estadoAtualizado);
                 colheitadeiraAtualizada.setChassiMaquina(chassiAtualizado);
                 colheitadeiraAtualizada.setCultura(tipoDeCultura);
-                colheitadeiraAtualizada.setCapacidadeDoTanqueDeCombustivel(capacidadeDoTanqueDeCombustivel);
-                colheitadeiraAtualizada.setQuantidadeDeSacos(quantidadeDeSacos);
+                colheitadeiraAtualizada.setCapacidadeDoTanqueDeCombustivel(capacidadeDoTanqueDeCombustivelAtualizado);
+                colheitadeiraAtualizada.setQuantidadeDeSacos(quantidadeDeSacosAtualizado);
                 colheitadeiraAtualizada.setIdColheitadeira(idMaquina);
 
                 controleMaquina = new ControleMaquina();
                 String msgAtualizacao = controleMaquina.atualizarColheitadeira(colheitadeiraAtualizada);
                 JOptionPane.showMessageDialog(null, msgAtualizacao);
+                limparCampos();
             } else {
-                JOptionPane.showMessageDialog(this, "Estado inválido, apenas A ou I");
+                JOptionPane.showMessageDialog(this, "Estado inválido\nA para Ativo\nI para Inativo");
             }
         } else {
             JOptionPane.showMessageDialog(null, "Cultura Inválida, apenas Milho ou Soja");
@@ -324,7 +389,12 @@ public class TelaDeAtualizacaoColheitadeira extends javax.swing.JFrame {
     }
 
     public void consultarColheitadeira() throws SQLException {
-        nomeMaquina = jTextFieldIdMaquina.getText();
+        if (jTextFieldNomeColheitadeiraBuscada.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome da colheitadeira");
+            return;
+        }
+
+        nomeMaquina = jTextFieldNomeColheitadeiraBuscada.getText();
         Colheitadeira colheitadeiraEncontrado = controleMaquina.buscarColheitadeira(nomeMaquina);
 
         if (colheitadeiraEncontrado != null) {
@@ -338,27 +408,31 @@ public class TelaDeAtualizacaoColheitadeira extends javax.swing.JFrame {
             jTextFieldAnoMaquina.setText(ano);
             jTextFieldChassiMaquina.setText(colheitadeiraEncontrado.getChassiMaquina());
             jTextFieldEstadoMaquina.setText(colheitadeiraEncontrado.getEstadoMaquina());
-            jTextFieldTipoDeCultura.setText(colheitadeiraEncontrado.getCultura());
             jTextFieldQuantidadeDeSacas.setText(quantidadeDeSacos);
             jTextFieldCapacidadeDoTanqueDeCombustivel.setText(capacidadeDoTanqueDeCombustivel);
+            jTextFieldTipoDeCultura.setText(colheitadeiraEncontrado.getCultura());
             idMaquina = colheitadeiraEncontrado.getIdColheitadeira();
-            
         } else {
             JOptionPane.showMessageDialog(this, "Colheitadeira não encontrada");
-
-            jTextFieldNomeMaquina.setText("");
-            jTextFieldMarcaMaquina.setText("");
-            jTextFieldAnoMaquina.setText("");
-            jTextFieldChassiMaquina.setText("");
-            jTextFieldEstadoMaquina.setText("");
-            jTextFieldTipoDeCultura.setText("");
-            jTextFieldQuantidadeDeSacas.setText("");
-            jTextFieldCapacidadeDoTanqueDeCombustivel.setText("");
+            limparCampos();
         }
+    }
+
+    private void limparCampos() {
+        jTextFieldChassiMaquina.setText("");
+        jTextFieldAnoMaquina.setText("");
+        jTextFieldCapacidadeDoTanqueDeCombustivel.setText("");
+        jTextFieldQuantidadeDeSacas.setText("");
+        jTextFieldTipoDeCultura.setText("");
+        jTextFieldEstadoMaquina.setText("");
+        jTextFieldMarcaMaquina.setText("");
+        jTextFieldNomeMaquina.setText("");
+        jTextFieldNomeColheitadeiraBuscada.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscarMaquina;
+    private javax.swing.JButton jButtonCancelarAtualizacao;
     private javax.swing.JButton jButtonConfirmarAtualizacao;
     private javax.swing.JButton jButtonSairDaTelaDeAtualizacao;
     private javax.swing.JLabel jLabelFundoAtualizacao;
@@ -366,8 +440,8 @@ public class TelaDeAtualizacaoColheitadeira extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldCapacidadeDoTanqueDeCombustivel;
     private javax.swing.JTextField jTextFieldChassiMaquina;
     private javax.swing.JTextField jTextFieldEstadoMaquina;
-    private javax.swing.JTextField jTextFieldIdMaquina;
     private javax.swing.JTextField jTextFieldMarcaMaquina;
+    private javax.swing.JTextField jTextFieldNomeColheitadeiraBuscada;
     private javax.swing.JTextField jTextFieldNomeMaquina;
     private javax.swing.JTextField jTextFieldQuantidadeDeSacas;
     private javax.swing.JTextField jTextFieldTipoDeCultura;

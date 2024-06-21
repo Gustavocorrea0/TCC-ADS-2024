@@ -28,33 +28,39 @@ public class TelaDeRemocaoCarretaGraneleira extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextFieldIdMaquina = new javax.swing.JTextField();
+        jTextFieldNomeMaquinaBuscada = new javax.swing.JTextField();
         jTextFieldNomeMaquina = new javax.swing.JTextField();
         jTextFieldMarcaMaquina = new javax.swing.JTextField();
-        jTextFieldEstadoMaquina = new javax.swing.JTextField();
         jTextFieldAnoMaquina = new javax.swing.JTextField();
-        jTextFieldCapacidadeDePeso = new javax.swing.JTextField();
         jTextFieldChassiMaquina = new javax.swing.JTextField();
+        jTextFieldEstadoMaquina = new javax.swing.JTextField();
+        jTextFieldCapacidadeDePeso = new javax.swing.JTextField();
         jTextFieldCapacidadeDeSacas = new javax.swing.JTextField();
         jButtonBuscarMaquina = new javax.swing.JButton();
         jButtonConfirmarRemocao = new javax.swing.JButton();
+        jButtonCancelarRemocao = new javax.swing.JButton();
         jButtonSairDaTelaDeConsulta = new javax.swing.JButton();
         jLabelFundoConsultaCarregador = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextFieldIdMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldIdMaquina.setBorder(null);
-        jTextFieldIdMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextFieldIdMaquina.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldNomeMaquinaBuscada.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldNomeMaquinaBuscada.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldNomeMaquinaBuscada.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldNomeMaquinaBuscada.setBorder(null);
+        jTextFieldNomeMaquinaBuscada.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldNomeMaquinaBuscada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldIdMaquinaActionPerformed(evt);
+                jTextFieldNomeMaquinaBuscadaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldIdMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 119, 300, 27));
+        getContentPane().add(jTextFieldNomeMaquinaBuscada, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 116, 303, 29));
 
+        jTextFieldNomeMaquina.setEditable(false);
+        jTextFieldNomeMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNomeMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldNomeMaquina.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldNomeMaquina.setBorder(null);
         jTextFieldNomeMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextFieldNomeMaquina.addActionListener(new java.awt.event.ActionListener() {
@@ -62,9 +68,12 @@ public class TelaDeRemocaoCarretaGraneleira extends javax.swing.JFrame {
                 jTextFieldNomeMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 226, 270, 27));
+        getContentPane().add(jTextFieldNomeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 219, 271, 29));
 
+        jTextFieldMarcaMaquina.setEditable(false);
+        jTextFieldMarcaMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldMarcaMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldMarcaMaquina.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldMarcaMaquina.setBorder(null);
         jTextFieldMarcaMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextFieldMarcaMaquina.addActionListener(new java.awt.event.ActionListener() {
@@ -72,19 +81,12 @@ public class TelaDeRemocaoCarretaGraneleira extends javax.swing.JFrame {
                 jTextFieldMarcaMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldMarcaMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 310, 270, 27));
+        getContentPane().add(jTextFieldMarcaMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 301, 270, 29));
 
-        jTextFieldEstadoMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldEstadoMaquina.setBorder(null);
-        jTextFieldEstadoMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextFieldEstadoMaquina.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldEstadoMaquinaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextFieldEstadoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 582, 270, 27));
-
+        jTextFieldAnoMaquina.setEditable(false);
+        jTextFieldAnoMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldAnoMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldAnoMaquina.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldAnoMaquina.setBorder(null);
         jTextFieldAnoMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextFieldAnoMaquina.addActionListener(new java.awt.event.ActionListener() {
@@ -92,19 +94,12 @@ public class TelaDeRemocaoCarretaGraneleira extends javax.swing.JFrame {
                 jTextFieldAnoMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldAnoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 395, 270, 27));
+        getContentPane().add(jTextFieldAnoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 387, 271, 29));
 
-        jTextFieldCapacidadeDePeso.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldCapacidadeDePeso.setBorder(null);
-        jTextFieldCapacidadeDePeso.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextFieldCapacidadeDePeso.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldCapacidadeDePesoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextFieldCapacidadeDePeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(523, 234, 268, 27));
-
+        jTextFieldChassiMaquina.setEditable(false);
+        jTextFieldChassiMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldChassiMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldChassiMaquina.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldChassiMaquina.setBorder(null);
         jTextFieldChassiMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextFieldChassiMaquina.addActionListener(new java.awt.event.ActionListener() {
@@ -112,9 +107,38 @@ public class TelaDeRemocaoCarretaGraneleira extends javax.swing.JFrame {
                 jTextFieldChassiMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldChassiMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 486, 270, 27));
+        getContentPane().add(jTextFieldChassiMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 478, 271, 29));
 
+        jTextFieldEstadoMaquina.setEditable(false);
+        jTextFieldEstadoMaquina.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldEstadoMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldEstadoMaquina.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldEstadoMaquina.setBorder(null);
+        jTextFieldEstadoMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldEstadoMaquina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldEstadoMaquinaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldEstadoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 574, 270, 29));
+
+        jTextFieldCapacidadeDePeso.setEditable(false);
+        jTextFieldCapacidadeDePeso.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldCapacidadeDePeso.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldCapacidadeDePeso.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldCapacidadeDePeso.setBorder(null);
+        jTextFieldCapacidadeDePeso.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldCapacidadeDePeso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCapacidadeDePesoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldCapacidadeDePeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(523, 233, 271, 29));
+
+        jTextFieldCapacidadeDeSacas.setEditable(false);
+        jTextFieldCapacidadeDeSacas.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCapacidadeDeSacas.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldCapacidadeDeSacas.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldCapacidadeDeSacas.setBorder(null);
         jTextFieldCapacidadeDeSacas.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextFieldCapacidadeDeSacas.addActionListener(new java.awt.event.ActionListener() {
@@ -122,7 +146,7 @@ public class TelaDeRemocaoCarretaGraneleira extends javax.swing.JFrame {
                 jTextFieldCapacidadeDeSacasActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCapacidadeDeSacas, new org.netbeans.lib.awtextra.AbsoluteConstraints(525, 320, 268, 27));
+        getContentPane().add(jTextFieldCapacidadeDeSacas, new org.netbeans.lib.awtextra.AbsoluteConstraints(525, 319, 270, 29));
 
         jButtonBuscarMaquina.setBorder(null);
         jButtonBuscarMaquina.setBorderPainted(false);
@@ -133,7 +157,7 @@ public class TelaDeRemocaoCarretaGraneleira extends javax.swing.JFrame {
                 jButtonBuscarMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(378, 106, 260, 42));
+        getContentPane().add(jButtonBuscarMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(395, 108, 280, 42));
 
         jButtonConfirmarRemocao.setBorder(null);
         jButtonConfirmarRemocao.setBorderPainted(false);
@@ -144,7 +168,18 @@ public class TelaDeRemocaoCarretaGraneleira extends javax.swing.JFrame {
                 jButtonConfirmarRemocaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonConfirmarRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 568, 280, 40));
+        getContentPane().add(jButtonConfirmarRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 547, 280, 40));
+
+        jButtonCancelarRemocao.setBorder(null);
+        jButtonCancelarRemocao.setBorderPainted(false);
+        jButtonCancelarRemocao.setContentAreaFilled(false);
+        jButtonCancelarRemocao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCancelarRemocao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelarRemocaoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonCancelarRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 596, 280, 40));
 
         jButtonSairDaTelaDeConsulta.setBorder(null);
         jButtonSairDaTelaDeConsulta.setBorderPainted(false);
@@ -157,20 +192,29 @@ public class TelaDeRemocaoCarretaGraneleira extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonSairDaTelaDeConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 22, 40, 28));
 
-        jLabelFundoConsultaCarregador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasMaquinas/telasDeRemocao/img_tela_remocao_carreta_graneleira.png"))); // NOI18N
+        jLabelFundoConsultaCarregador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasMaquinas/telasCarretaGraneleira/img_tela_remocao_carreta_graneleira.png"))); // NOI18N
         getContentPane().add(jLabelFundoConsultaCarregador, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 650));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextFieldEstadoMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEstadoMaquinaActionPerformed
+    private void jButtonBuscarMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarMaquinaActionPerformed
+        try {
+            consultarCarretaGraneleira();
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaDeRemocaoCarretaGraneleira.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButtonBuscarMaquinaActionPerformed
 
-    }//GEN-LAST:event_jTextFieldEstadoMaquinaActionPerformed
+    private void jButtonSairDaTelaDeConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairDaTelaDeConsultaActionPerformed
+        this.dispose();
+        new TelaCRUDCarretaGraneleira().setVisible(true);
+    }//GEN-LAST:event_jButtonSairDaTelaDeConsultaActionPerformed
 
-    private void jTextFieldIdMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdMaquinaActionPerformed
-
-    }//GEN-LAST:event_jTextFieldIdMaquinaActionPerformed
+    private void jButtonConfirmarRemocaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarRemocaoActionPerformed
+        removerCarretaGraneleira();
+    }//GEN-LAST:event_jButtonConfirmarRemocaoActionPerformed
 
     private void jTextFieldNomeMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeMaquinaActionPerformed
 
@@ -188,46 +232,44 @@ public class TelaDeRemocaoCarretaGraneleira extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jTextFieldChassiMaquinaActionPerformed
 
-    private void jButtonBuscarMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarMaquinaActionPerformed
-        try {
-            consultarCarretaGraneleira();
-        } catch (SQLException ex) {
-            Logger.getLogger(TelaDeRemocaoCarretaGraneleira.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButtonBuscarMaquinaActionPerformed
+    private void jTextFieldEstadoMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEstadoMaquinaActionPerformed
 
-    private void jButtonSairDaTelaDeConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairDaTelaDeConsultaActionPerformed
-        this.dispose();
-        new TelaCRUDCarretaGraneleira().setVisible(true);
-    }//GEN-LAST:event_jButtonSairDaTelaDeConsultaActionPerformed
+    }//GEN-LAST:event_jTextFieldEstadoMaquinaActionPerformed
 
     private void jTextFieldCapacidadeDePesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCapacidadeDePesoActionPerformed
 
     }//GEN-LAST:event_jTextFieldCapacidadeDePesoActionPerformed
 
-    private void jButtonConfirmarRemocaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarRemocaoActionPerformed
-        removerCarretaGraneleira();
-    }//GEN-LAST:event_jButtonConfirmarRemocaoActionPerformed
-
     private void jTextFieldCapacidadeDeSacasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCapacidadeDeSacasActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldCapacidadeDeSacasActionPerformed
 
+    private void jButtonCancelarRemocaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarRemocaoActionPerformed
+        JOptionPane.showMessageDialog(this, "Remoção Cancelada");
+        limparCampos();
+    }//GEN-LAST:event_jButtonCancelarRemocaoActionPerformed
+
+    private void jTextFieldNomeMaquinaBuscadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeMaquinaBuscadaActionPerformed
+
+    }//GEN-LAST:event_jTextFieldNomeMaquinaBuscadaActionPerformed
+
     public void removerCarretaGraneleira() {
+        if (jTextFieldNomeMaquinaBuscada.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Busque uma graneleira");
+            return;
+        }
         mensagem = controleMaquina.removerCarretaGraneleira(nomeMaquina);
         JOptionPane.showMessageDialog(this, mensagem);
-
-        jTextFieldNomeMaquina.setText(limparCampo);
-        jTextFieldMarcaMaquina.setText(limparCampo);
-        jTextFieldAnoMaquina.setText(limparCampo);
-        jTextFieldChassiMaquina.setText(limparCampo);
-        jTextFieldEstadoMaquina.setText(limparCampo);
-        jTextFieldCapacidadeDePeso.setText(limparCampo);
-        jTextFieldCapacidadeDeSacas.setText(limparCampo);
+        limparCampos();
     }
 
     public void consultarCarretaGraneleira() throws SQLException {
-        nomeMaquina = jTextFieldIdMaquina.getText();
+        if (jTextFieldNomeMaquinaBuscada.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome da graneleira");
+            return;
+        }
+
+        nomeMaquina = jTextFieldNomeMaquinaBuscada.getText();
         CarretaGraneleira carretaEncontrada = controleMaquina.buscarCarretaGraneleira(nomeMaquina);
 
         if (carretaEncontrada != null) {
@@ -253,17 +295,24 @@ public class TelaDeRemocaoCarretaGraneleira extends javax.swing.JFrame {
 
         } else {
             JOptionPane.showMessageDialog(this, "Carreta Graneleira não encontrada");
-            jTextFieldNomeMaquina.setText("");
-            jTextFieldMarcaMaquina.setText("");
-            jTextFieldAnoMaquina.setText("");
-            jTextFieldChassiMaquina.setText("");
-            jTextFieldEstadoMaquina.setText("");
-            jTextFieldCapacidadeDePeso.setText("");
-            jTextFieldCapacidadeDeSacas.setText("");
+            limparCampos();
         }
     }
+
+    private void limparCampos() {
+        jTextFieldNomeMaquina.setText("");
+        jTextFieldMarcaMaquina.setText("");
+        jTextFieldAnoMaquina.setText("");
+        jTextFieldChassiMaquina.setText("");
+        jTextFieldEstadoMaquina.setText("");
+        jTextFieldCapacidadeDePeso.setText("");
+        jTextFieldCapacidadeDeSacas.setText("");
+        jTextFieldNomeMaquinaBuscada.setText("");
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscarMaquina;
+    private javax.swing.JButton jButtonCancelarRemocao;
     private javax.swing.JButton jButtonConfirmarRemocao;
     private javax.swing.JButton jButtonSairDaTelaDeConsulta;
     private javax.swing.JLabel jLabelFundoConsultaCarregador;
@@ -272,8 +321,8 @@ public class TelaDeRemocaoCarretaGraneleira extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldCapacidadeDeSacas;
     private javax.swing.JTextField jTextFieldChassiMaquina;
     private javax.swing.JTextField jTextFieldEstadoMaquina;
-    private javax.swing.JTextField jTextFieldIdMaquina;
     private javax.swing.JTextField jTextFieldMarcaMaquina;
     private javax.swing.JTextField jTextFieldNomeMaquina;
+    private javax.swing.JTextField jTextFieldNomeMaquinaBuscada;
     // End of variables declaration//GEN-END:variables
 }

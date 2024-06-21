@@ -15,7 +15,6 @@ public class TelaDeRemocaoCarregador extends javax.swing.JFrame {
 
     private ControleMaquina controleMaquina = new ControleMaquina();
     private String ano;
-    private String limparCampo = "";
     private String nomeMaquina;
     private String mensagem;
 
@@ -27,32 +26,34 @@ public class TelaDeRemocaoCarregador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextFieldIdMaquina = new javax.swing.JTextField();
+        jTextFieldNomeMaquinaBuscada = new javax.swing.JTextField();
         jTextFieldNomeMaquina = new javax.swing.JTextField();
         jTextFieldMarcaMaquina = new javax.swing.JTextField();
-        jTextFieldEstadoMaquina = new javax.swing.JTextField();
         jTextFieldAnoMaquina = new javax.swing.JTextField();
-        jTextFieldPesoSuportado = new javax.swing.JTextField();
         jTextFieldChassiMaquina = new javax.swing.JTextField();
+        jTextFieldEstadoMaquina = new javax.swing.JTextField();
+        jTextFieldPesoSuportado = new javax.swing.JTextField();
         jButtonBuscarMaquina = new javax.swing.JButton();
         jButtonConfirmarRemocao = new javax.swing.JButton();
+        jButtonCancelarRemocao = new javax.swing.JButton();
         jButtonSairDaTelaDeConsulta = new javax.swing.JButton();
         jLabelFundoConsultaCarregador = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextFieldIdMaquina.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldIdMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldIdMaquina.setBorder(null);
-        jTextFieldIdMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextFieldIdMaquina.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldNomeMaquinaBuscada.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldNomeMaquinaBuscada.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldNomeMaquinaBuscada.setBorder(null);
+        jTextFieldNomeMaquinaBuscada.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldNomeMaquinaBuscada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldIdMaquinaActionPerformed(evt);
+                jTextFieldNomeMaquinaBuscadaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldIdMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 118, 300, 27));
+        getContentPane().add(jTextFieldNomeMaquinaBuscada, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 111, 305, 29));
 
+        jTextFieldNomeMaquina.setEditable(false);
         jTextFieldNomeMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNomeMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTextFieldNomeMaquina.setForeground(new java.awt.Color(0, 0, 0));
@@ -63,10 +64,12 @@ public class TelaDeRemocaoCarregador extends javax.swing.JFrame {
                 jTextFieldNomeMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 226, 270, 27));
+        getContentPane().add(jTextFieldNomeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 214, 271, 29));
 
+        jTextFieldMarcaMaquina.setEditable(false);
         jTextFieldMarcaMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldMarcaMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldMarcaMaquina.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldMarcaMaquina.setBorder(null);
         jTextFieldMarcaMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextFieldMarcaMaquina.addActionListener(new java.awt.event.ActionListener() {
@@ -74,8 +77,35 @@ public class TelaDeRemocaoCarregador extends javax.swing.JFrame {
                 jTextFieldMarcaMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldMarcaMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 310, 270, 27));
+        getContentPane().add(jTextFieldMarcaMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 296, 271, 29));
 
+        jTextFieldAnoMaquina.setEditable(false);
+        jTextFieldAnoMaquina.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldAnoMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldAnoMaquina.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldAnoMaquina.setBorder(null);
+        jTextFieldAnoMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldAnoMaquina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldAnoMaquinaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldAnoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 382, 271, 29));
+
+        jTextFieldChassiMaquina.setEditable(false);
+        jTextFieldChassiMaquina.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldChassiMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldChassiMaquina.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldChassiMaquina.setBorder(null);
+        jTextFieldChassiMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldChassiMaquina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldChassiMaquinaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldChassiMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 473, 271, 29));
+
+        jTextFieldEstadoMaquina.setEditable(false);
         jTextFieldEstadoMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldEstadoMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTextFieldEstadoMaquina.setBorder(null);
@@ -85,21 +115,12 @@ public class TelaDeRemocaoCarregador extends javax.swing.JFrame {
                 jTextFieldEstadoMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldEstadoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 582, 270, 27));
+        getContentPane().add(jTextFieldEstadoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 569, 271, 29));
 
-        jTextFieldAnoMaquina.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldAnoMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldAnoMaquina.setBorder(null);
-        jTextFieldAnoMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextFieldAnoMaquina.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldAnoMaquinaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextFieldAnoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 395, 270, 27));
-
+        jTextFieldPesoSuportado.setEditable(false);
         jTextFieldPesoSuportado.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldPesoSuportado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldPesoSuportado.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldPesoSuportado.setBorder(null);
         jTextFieldPesoSuportado.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextFieldPesoSuportado.addActionListener(new java.awt.event.ActionListener() {
@@ -107,18 +128,7 @@ public class TelaDeRemocaoCarregador extends javax.swing.JFrame {
                 jTextFieldPesoSuportadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldPesoSuportado, new org.netbeans.lib.awtextra.AbsoluteConstraints(505, 226, 268, 27));
-
-        jTextFieldChassiMaquina.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldChassiMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldChassiMaquina.setBorder(null);
-        jTextFieldChassiMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextFieldChassiMaquina.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldChassiMaquinaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextFieldChassiMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 486, 270, 27));
+        getContentPane().add(jTextFieldPesoSuportado, new org.netbeans.lib.awtextra.AbsoluteConstraints(503, 221, 270, 29));
 
         jButtonBuscarMaquina.setBorder(null);
         jButtonBuscarMaquina.setBorderPainted(false);
@@ -129,7 +139,7 @@ public class TelaDeRemocaoCarregador extends javax.swing.JFrame {
                 jButtonBuscarMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(378, 106, 260, 42));
+        getContentPane().add(jButtonBuscarMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 102, 280, 42));
 
         jButtonConfirmarRemocao.setBorder(null);
         jButtonConfirmarRemocao.setBorderPainted(false);
@@ -140,7 +150,18 @@ public class TelaDeRemocaoCarregador extends javax.swing.JFrame {
                 jButtonConfirmarRemocaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonConfirmarRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 568, 280, 40));
+        getContentPane().add(jButtonConfirmarRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(612, 544, 282, 37));
+
+        jButtonCancelarRemocao.setBorder(null);
+        jButtonCancelarRemocao.setBorderPainted(false);
+        jButtonCancelarRemocao.setContentAreaFilled(false);
+        jButtonCancelarRemocao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCancelarRemocao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelarRemocaoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonCancelarRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(612, 593, 280, 35));
 
         jButtonSairDaTelaDeConsulta.setBorder(null);
         jButtonSairDaTelaDeConsulta.setBorderPainted(false);
@@ -153,36 +174,12 @@ public class TelaDeRemocaoCarregador extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonSairDaTelaDeConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 22, 40, 28));
 
-        jLabelFundoConsultaCarregador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasMaquinas/telasDeRemocao/img_tela_remocao_carregador.png"))); // NOI18N
-        getContentPane().add(jLabelFundoConsultaCarregador, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 650));
+        jLabelFundoConsultaCarregador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasMaquinas/telasCarregador/img_tela_remocao_carregador.png"))); // NOI18N
+        getContentPane().add(jLabelFundoConsultaCarregador, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 910, 660));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jTextFieldEstadoMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEstadoMaquinaActionPerformed
-
-    }//GEN-LAST:event_jTextFieldEstadoMaquinaActionPerformed
-
-    private void jTextFieldIdMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdMaquinaActionPerformed
-
-    }//GEN-LAST:event_jTextFieldIdMaquinaActionPerformed
-
-    private void jTextFieldNomeMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeMaquinaActionPerformed
-
-    }//GEN-LAST:event_jTextFieldNomeMaquinaActionPerformed
-
-    private void jTextFieldMarcaMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldMarcaMaquinaActionPerformed
-
-    }//GEN-LAST:event_jTextFieldMarcaMaquinaActionPerformed
-
-    private void jTextFieldAnoMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAnoMaquinaActionPerformed
-
-    }//GEN-LAST:event_jTextFieldAnoMaquinaActionPerformed
-
-    private void jTextFieldChassiMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldChassiMaquinaActionPerformed
-
-    }//GEN-LAST:event_jTextFieldChassiMaquinaActionPerformed
 
     private void jButtonBuscarMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarMaquinaActionPerformed
         try {
@@ -197,29 +194,62 @@ public class TelaDeRemocaoCarregador extends javax.swing.JFrame {
         new TelaCRUDCarregador().setVisible(true);
     }//GEN-LAST:event_jButtonSairDaTelaDeConsultaActionPerformed
 
-    private void jTextFieldPesoSuportadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPesoSuportadoActionPerformed
-
-    }//GEN-LAST:event_jTextFieldPesoSuportadoActionPerformed
-
     private void jButtonConfirmarRemocaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarRemocaoActionPerformed
         removerCarregador();
     }//GEN-LAST:event_jButtonConfirmarRemocaoActionPerformed
 
+    private void jTextFieldNomeMaquinaBuscadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeMaquinaBuscadaActionPerformed
+
+    }//GEN-LAST:event_jTextFieldNomeMaquinaBuscadaActionPerformed
+
+    private void jTextFieldNomeMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeMaquinaActionPerformed
+
+    }//GEN-LAST:event_jTextFieldNomeMaquinaActionPerformed
+
+    private void jTextFieldChassiMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldChassiMaquinaActionPerformed
+
+    }//GEN-LAST:event_jTextFieldChassiMaquinaActionPerformed
+
+    private void jTextFieldEstadoMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEstadoMaquinaActionPerformed
+
+    }//GEN-LAST:event_jTextFieldEstadoMaquinaActionPerformed
+
+    private void jTextFieldPesoSuportadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPesoSuportadoActionPerformed
+
+    }//GEN-LAST:event_jTextFieldPesoSuportadoActionPerformed
+
+    private void jButtonCancelarRemocaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarRemocaoActionPerformed
+        JOptionPane.showMessageDialog(this, "Remoção Cancelada");
+        limparCampos();
+    }//GEN-LAST:event_jButtonCancelarRemocaoActionPerformed
+
+    private void jTextFieldMarcaMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldMarcaMaquinaActionPerformed
+
+    }//GEN-LAST:event_jTextFieldMarcaMaquinaActionPerformed
+
+    private void jTextFieldAnoMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAnoMaquinaActionPerformed
+
+    }//GEN-LAST:event_jTextFieldAnoMaquinaActionPerformed
+
     public void removerCarregador() {
-        nomeMaquina = jTextFieldIdMaquina.getText();
+        if (jTextFieldNomeMaquinaBuscada.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Busque um carregador");
+            return;
+        }
+
+        nomeMaquina = jTextFieldNomeMaquinaBuscada.getText();
         mensagem = controleMaquina.removerCarregador(nomeMaquina);
         JOptionPane.showMessageDialog(this, mensagem);
-
-        jTextFieldNomeMaquina.setText(limparCampo);
-        jTextFieldMarcaMaquina.setText(limparCampo);
-        jTextFieldAnoMaquina.setText(limparCampo);
-        jTextFieldChassiMaquina.setText(limparCampo);
-        jTextFieldEstadoMaquina.setText(limparCampo);
-        jTextFieldPesoSuportado.setText(limparCampo);
+        limparCampos();
     }
 
     public void consultarCarregador() throws SQLException {
-        String nomeParaBusca = jTextFieldIdMaquina.getText();
+        if (jTextFieldNomeMaquinaBuscada.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome do carregador");
+            return;
+        }
+
+        String nomeParaBusca = jTextFieldNomeMaquinaBuscada.getText();
         Carregador carregadorEncontrado = controleMaquina.buscarCarregador(nomeParaBusca);
 
         if (carregadorEncontrado != null) {
@@ -232,6 +262,7 @@ public class TelaDeRemocaoCarregador extends javax.swing.JFrame {
             jTextFieldChassiMaquina.setText(carregadorEncontrado.getChassiMaquina());
             jTextFieldEstadoMaquina.setText(carregadorEncontrado.getEstadoMaquina());
             jTextFieldPesoSuportado.setText(pesoSuportado);
+            int idMaquina = carregadorEncontrado.getIdCarregador();
 
             jTextFieldNomeMaquina.setEnabled(false);
             jTextFieldMarcaMaquina.setEnabled(false);
@@ -239,27 +270,35 @@ public class TelaDeRemocaoCarregador extends javax.swing.JFrame {
             jTextFieldChassiMaquina.setEnabled(false);
             jTextFieldEstadoMaquina.setEnabled(false);
             jTextFieldPesoSuportado.setEnabled(false);
+
         } else {
             JOptionPane.showMessageDialog(this, "Carregador não encontrado");
-            jTextFieldNomeMaquina.setText("");
-            jTextFieldMarcaMaquina.setText("");
-            jTextFieldAnoMaquina.setText("");
-            jTextFieldChassiMaquina.setText("");
-            jTextFieldEstadoMaquina.setText("");
-            jTextFieldPesoSuportado.setText("");
+            limparCampos();
         }
     }
+
+    public void limparCampos() {
+        jTextFieldNomeMaquina.setText("");
+        jTextFieldMarcaMaquina.setText("");
+        jTextFieldAnoMaquina.setText("");
+        jTextFieldChassiMaquina.setText("");
+        jTextFieldEstadoMaquina.setText("");
+        jTextFieldPesoSuportado.setText("");
+        jTextFieldNomeMaquinaBuscada.setText("");
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscarMaquina;
+    private javax.swing.JButton jButtonCancelarRemocao;
     private javax.swing.JButton jButtonConfirmarRemocao;
     private javax.swing.JButton jButtonSairDaTelaDeConsulta;
     private javax.swing.JLabel jLabelFundoConsultaCarregador;
     private javax.swing.JTextField jTextFieldAnoMaquina;
     private javax.swing.JTextField jTextFieldChassiMaquina;
     private javax.swing.JTextField jTextFieldEstadoMaquina;
-    private javax.swing.JTextField jTextFieldIdMaquina;
     private javax.swing.JTextField jTextFieldMarcaMaquina;
     private javax.swing.JTextField jTextFieldNomeMaquina;
+    private javax.swing.JTextField jTextFieldNomeMaquinaBuscada;
     private javax.swing.JTextField jTextFieldPesoSuportado;
     // End of variables declaration//GEN-END:variables
 }

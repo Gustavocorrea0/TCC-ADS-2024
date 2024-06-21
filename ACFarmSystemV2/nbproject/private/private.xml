@@ -3,8 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Gustavo/Desktop/Gustavo%20Arquivos%205/TCC_P2/Codigo%20Final/ACFarmSystemV2/src/Veiculo/CRUDCaminhaoOuVeiculoDeTransporte/TelaDeRemocaoDeCaminhaoOuVeiculoDeTransporte.java</file>
-            <file>file:/C:/Users/Gustavo/Desktop/Gustavo%20Arquivos%205/TCC_P2/Codigo%20Final/ACFarmSystemV2/src/Veiculo/CRUDCaminhaoOuVeiculoDeTransporte/TelaDeAtualizacaoDeCaminhaoOuVeiculoDeTransporte.java</file>
+            <file>file:/C:/Users/Gustavo/Desktop/Gustavo%20Arquivos%205/TCC_P2/Codigo%20Final/ACFarmSystemV2/src/Maquina/CRUDSubsolador/TelaDeCadastroSubsolador.java</file>
+            <file>file:/C:/Users/Gustavo/Desktop/Gustavo%20Arquivos%205/TCC_P2/Codigo%20Final/ACFarmSystemV2/src/Maquina/CRUDPulverizador/TelaDeCadastroPulverizador.java</file>
+            <file>file:/C:/Users/Gustavo/Desktop/Gustavo%20Arquivos%205/TCC_P2/Codigo%20Final/ACFarmSystemV2/src/Maquina/CRUDSubsolador/TelaDeAtualizacaoSubsolador.java</file>
+            <file>file:/C:/Users/Gustavo/Desktop/Gustavo%20Arquivos%205/TCC_P2/Codigo%20Final/ACFarmSystemV2/src/Maquina/CRUDSubsolador/TelaDeRemocaoSubsolador.java</file>
         </group>
     </open-files>
 </project-private>

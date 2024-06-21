@@ -15,6 +15,11 @@ public class TelaDeCadastroSubsolador extends javax.swing.JFrame {
     private int anoMaquina;
     private String chassiMaquina = null;
 
+    private Double peso;
+    private Double largura;
+    private int numeroDeHastes;
+    private int potenciaNecessariaDoTrator;
+
     public TelaDeCadastroSubsolador() {
         initComponents();
     }
@@ -24,11 +29,11 @@ public class TelaDeCadastroSubsolador extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroupEstado = new javax.swing.ButtonGroup();
+        jTextFieldNomeMaquina = new javax.swing.JTextField();
+        jTextFieldMarcaMaquina = new javax.swing.JTextField();
         jTextFieldAnoMaquina = new javax.swing.JTextField();
         jTextFieldChassiMaquina = new javax.swing.JTextField();
-        jTextFieldMarcaMaquina = new javax.swing.JTextField();
         jTextFieldPotenciaNecessariaDoTrator = new javax.swing.JTextField();
-        jTextFieldNomeMaquina = new javax.swing.JTextField();
         jTextFieldPesoDoSubsolador = new javax.swing.JTextField();
         jTextFieldLarguraEmMM = new javax.swing.JTextField();
         jTextFieldNumeroDeHastes = new javax.swing.JTextField();
@@ -41,29 +46,17 @@ public class TelaDeCadastroSubsolador extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextFieldAnoMaquina.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldAnoMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldAnoMaquina.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldAnoMaquina.setBorder(null);
-        jTextFieldAnoMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextFieldAnoMaquina.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldNomeMaquina.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldNomeMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldNomeMaquina.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldNomeMaquina.setBorder(null);
+        jTextFieldNomeMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldNomeMaquina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldAnoMaquinaActionPerformed(evt);
+                jTextFieldNomeMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldAnoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 304, 270, 27));
-
-        jTextFieldChassiMaquina.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldChassiMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldChassiMaquina.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldChassiMaquina.setBorder(null);
-        jTextFieldChassiMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextFieldChassiMaquina.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldChassiMaquinaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextFieldChassiMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 395, 270, 27));
+        getContentPane().add(jTextFieldNomeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 135, 271, 29));
 
         jTextFieldMarcaMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldMarcaMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -75,7 +68,31 @@ public class TelaDeCadastroSubsolador extends javax.swing.JFrame {
                 jTextFieldMarcaMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldMarcaMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 219, 270, 27));
+        getContentPane().add(jTextFieldMarcaMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 218, 272, 29));
+
+        jTextFieldAnoMaquina.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldAnoMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldAnoMaquina.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldAnoMaquina.setBorder(null);
+        jTextFieldAnoMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldAnoMaquina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldAnoMaquinaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldAnoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 303, 271, 29));
+
+        jTextFieldChassiMaquina.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldChassiMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldChassiMaquina.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldChassiMaquina.setBorder(null);
+        jTextFieldChassiMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldChassiMaquina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldChassiMaquinaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldChassiMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 394, 271, 29));
 
         jTextFieldPotenciaNecessariaDoTrator.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldPotenciaNecessariaDoTrator.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -87,19 +104,7 @@ public class TelaDeCadastroSubsolador extends javax.swing.JFrame {
                 jTextFieldPotenciaNecessariaDoTratorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldPotenciaNecessariaDoTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 419, 270, 27));
-
-        jTextFieldNomeMaquina.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldNomeMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldNomeMaquina.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldNomeMaquina.setBorder(null);
-        jTextFieldNomeMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextFieldNomeMaquina.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldNomeMaquinaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextFieldNomeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 136, 270, 27));
+        getContentPane().add(jTextFieldPotenciaNecessariaDoTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 419, 271, 29));
 
         jTextFieldPesoDoSubsolador.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldPesoDoSubsolador.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -111,7 +116,7 @@ public class TelaDeCadastroSubsolador extends javax.swing.JFrame {
                 jTextFieldPesoDoSubsoladorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldPesoDoSubsolador, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 133, 270, 27));
+        getContentPane().add(jTextFieldPesoDoSubsolador, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 132, 270, 29));
 
         jTextFieldLarguraEmMM.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldLarguraEmMM.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -123,7 +128,7 @@ public class TelaDeCadastroSubsolador extends javax.swing.JFrame {
                 jTextFieldLarguraEmMMActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldLarguraEmMM, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 219, 270, 27));
+        getContentPane().add(jTextFieldLarguraEmMM, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 218, 270, 29));
 
         jTextFieldNumeroDeHastes.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNumeroDeHastes.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -135,7 +140,7 @@ public class TelaDeCadastroSubsolador extends javax.swing.JFrame {
                 jTextFieldNumeroDeHastesActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNumeroDeHastes, new org.netbeans.lib.awtextra.AbsoluteConstraints(496, 304, 270, 27));
+        getContentPane().add(jTextFieldNumeroDeHastes, new org.netbeans.lib.awtextra.AbsoluteConstraints(496, 303, 272, 29));
 
         jButtonCancelarCadastroDeMaquina.setBorder(null);
         jButtonCancelarCadastroDeMaquina.setBorderPainted(false);
@@ -145,7 +150,7 @@ public class TelaDeCadastroSubsolador extends javax.swing.JFrame {
                 jButtonCancelarCadastroDeMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCancelarCadastroDeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 599, 280, 33));
+        getContentPane().add(jButtonCancelarCadastroDeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 599, 280, 35));
 
         jButtonConfirmarCadastroDeMaquina.setBorder(null);
         jButtonConfirmarCadastroDeMaquina.setBorderPainted(false);
@@ -156,7 +161,7 @@ public class TelaDeCadastroSubsolador extends javax.swing.JFrame {
                 jButtonConfirmarCadastroDeMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonConfirmarCadastroDeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 549, 280, 33));
+        getContentPane().add(jButtonConfirmarCadastroDeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 549, 280, 35));
 
         jButtonSairDaTelaCadastrarCarretaGraneleira.setBorder(null);
         jButtonSairDaTelaCadastrarCarretaGraneleira.setBorderPainted(false);
@@ -178,24 +183,12 @@ public class TelaDeCadastroSubsolador extends javax.swing.JFrame {
         });
         getContentPane().add(jComboBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, 280, -1));
 
-        jLabelFundoCadastroSubsolador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasMaquinas/telasDeCadastro/img_tela_cadastro_de_subsolador.png"))); // NOI18N
+        jLabelFundoCadastroSubsolador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasMaquinas/telasSubsolador/img_tela_cadastro_de_subsolador.png"))); // NOI18N
         getContentPane().add(jLabelFundoCadastroSubsolador, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 650));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jTextFieldMarcaMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldMarcaMaquinaActionPerformed
-
-    }//GEN-LAST:event_jTextFieldMarcaMaquinaActionPerformed
-
-    private void jTextFieldChassiMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldChassiMaquinaActionPerformed
-
-    }//GEN-LAST:event_jTextFieldChassiMaquinaActionPerformed
-
-    private void jTextFieldAnoMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAnoMaquinaActionPerformed
-
-    }//GEN-LAST:event_jTextFieldAnoMaquinaActionPerformed
 
     private void jTextFieldPotenciaNecessariaDoTratorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPotenciaNecessariaDoTratorActionPerformed
 
@@ -205,10 +198,6 @@ public class TelaDeCadastroSubsolador extends javax.swing.JFrame {
         this.dispose();
         new TelaCRUDSubsolador().setVisible(true);
     }//GEN-LAST:event_jButtonSairDaTelaCadastrarCarretaGraneleiraActionPerformed
-
-    private void jTextFieldNomeMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeMaquinaActionPerformed
-
-    }//GEN-LAST:event_jTextFieldNomeMaquinaActionPerformed
 
     private void jTextFieldPesoDoSubsoladorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPesoDoSubsoladorActionPerformed
 
@@ -231,34 +220,109 @@ public class TelaDeCadastroSubsolador extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxEstadoActionPerformed
 
     private void jButtonCancelarCadastroDeMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarCadastroDeMaquinaActionPerformed
-         limparCampos();
+        limparCampos();
     }//GEN-LAST:event_jButtonCancelarCadastroDeMaquinaActionPerformed
 
+    private void jTextFieldNomeMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeMaquinaActionPerformed
+
+    }//GEN-LAST:event_jTextFieldNomeMaquinaActionPerformed
+
+    private void jTextFieldMarcaMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldMarcaMaquinaActionPerformed
+
+    }//GEN-LAST:event_jTextFieldMarcaMaquinaActionPerformed
+
+    private void jTextFieldAnoMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAnoMaquinaActionPerformed
+
+    }//GEN-LAST:event_jTextFieldAnoMaquinaActionPerformed
+
+    private void jTextFieldChassiMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldChassiMaquinaActionPerformed
+
+    }//GEN-LAST:event_jTextFieldChassiMaquinaActionPerformed
+
     public void cadastrarSubsolador() {
+        if (jTextFieldNomeMaquina.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o nome do subsolador");
+            return;
+        }
+
+        if (jTextFieldMarcaMaquina.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a marca do subsolador");
+            return;
+        }
+
+        if (jTextFieldAnoMaquina.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o ano do subsolador");
+            return;
+        }
+
+        if (jTextFieldChassiMaquina.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o chassi do subsolador (17 Digitos)");
+            return;
+        }
+        
+        if (jTextFieldPesoDoSubsolador.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o peso do subdolador");
+            return;
+        }
+        
+        if (jTextFieldLarguraEmMM.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a larguara em MM do subdolador");
+            return;
+        }
+        
+        if (jTextFieldNumeroDeHastes.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o número de hastes do subdolador");
+            return;
+        }
+        
+        if (jTextFieldPotenciaNecessariaDoTrator.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a potência necessaria do trator");
+            return;
+        }
+        
         Calendar cal = Calendar.getInstance();
         int anoAtual = cal.get(Calendar.YEAR);
         nomeMaquina = jTextFieldNomeMaquina.getText();
         marcaMaquina = jTextFieldMarcaMaquina.getText();
-        anoMaquina = Integer.parseInt(jTextFieldAnoMaquina.getText());
         chassiMaquina = jTextFieldChassiMaquina.getText();
         estado = jComboBoxEstado.getSelectedItem().toString();
 
+        try {
+            anoMaquina = Integer.parseInt(jTextFieldAnoMaquina.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "Ano é um valor numérico (Ex: 2024)");
+            return;
+        }
+
+        try {
+            peso = Double.valueOf(jTextFieldPesoDoSubsolador.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "Peso é um valor numérico (Ex: 12.5)");
+            return;
+        }
+
+        try {
+            largura = Double.valueOf(jTextFieldLarguraEmMM.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "Largura em MM é um valor numérico (Ex: 1.5)");
+            return;
+        }
+
+        try {
+            numeroDeHastes = Integer.parseInt(jTextFieldNumeroDeHastes.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "Número de hastes é um valor numérico (Ex: 10)");
+            return;
+        }
+
+        try {
+            potenciaNecessariaDoTrator = Integer.parseInt(jTextFieldPotenciaNecessariaDoTrator.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "Potência necessaria do trator é um valor numérico (Ex: 75)");
+            return;
+        }
+
         tipoMaquina = "Subsolador ";
-
-        Double peso = Double.valueOf(jTextFieldPesoDoSubsolador.getText());
-        Double largura = Double.valueOf(jTextFieldLarguraEmMM.getText());
-        int numeroDeHastes = Integer.parseInt(jTextFieldNumeroDeHastes.getText());
-        int potenciaNecessariaDoTrator = Integer.parseInt(jTextFieldPotenciaNecessariaDoTrator.getText());
-
-        if (nomeMaquina.equals("")) {
-            JOptionPane.showMessageDialog(null, "Nome Inválido");
-            return;
-        }
-
-        if (marcaMaquina.equals("")) {
-            JOptionPane.showMessageDialog(null, "Marca Inválida");
-            return;
-        }
 
         if (anoMaquina > (anoAtual + 1) || anoMaquina < 1970) {
             JOptionPane.showMessageDialog(null, "Ano Inválido");
@@ -268,10 +332,6 @@ public class TelaDeCadastroSubsolador extends javax.swing.JFrame {
         if (chassiMaquina.length() != 17) {
             JOptionPane.showMessageDialog(null, "Chassi Inválido");
             return;
-        }
-
-        if (buttonGroupEstado.equals("")) {
-            JOptionPane.showMessageDialog(null, "Adicione o nivel de Acesso");
         }
 
         if (estado.equals("Selecione")) {

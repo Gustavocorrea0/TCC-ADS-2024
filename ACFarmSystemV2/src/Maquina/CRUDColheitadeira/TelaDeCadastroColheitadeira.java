@@ -16,6 +16,9 @@ public class TelaDeCadastroColheitadeira extends javax.swing.JFrame {
     private String chassiMaquina = null;
     private String cultura = null;
 
+    private int quantidadeDeSacas;
+    private Double capacidadeDoTanqueDeCombustivel;
+
     public TelaDeCadastroColheitadeira() {
         initComponents();
     }
@@ -24,8 +27,6 @@ public class TelaDeCadastroColheitadeira extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroupEstado = new javax.swing.ButtonGroup();
-        buttonGroupCultura = new javax.swing.ButtonGroup();
         jTextFieldAnoMaquina = new javax.swing.JTextField();
         jTextFieldChassiMaquina = new javax.swing.JTextField();
         jTextFieldMarcaMaquina = new javax.swing.JTextField();
@@ -52,7 +53,7 @@ public class TelaDeCadastroColheitadeira extends javax.swing.JFrame {
                 jTextFieldAnoMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldAnoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 305, 270, 27));
+        getContentPane().add(jTextFieldAnoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 303, 270, 29));
 
         jTextFieldChassiMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldChassiMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -64,7 +65,7 @@ public class TelaDeCadastroColheitadeira extends javax.swing.JFrame {
                 jTextFieldChassiMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldChassiMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 396, 270, 27));
+        getContentPane().add(jTextFieldChassiMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 395, 270, 29));
 
         jTextFieldMarcaMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldMarcaMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -76,7 +77,7 @@ public class TelaDeCadastroColheitadeira extends javax.swing.JFrame {
                 jTextFieldMarcaMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldMarcaMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 220, 270, 27));
+        getContentPane().add(jTextFieldMarcaMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 218, 270, 29));
 
         jTextFieldCapacidadeDoTanque.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCapacidadeDoTanque.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -88,7 +89,7 @@ public class TelaDeCadastroColheitadeira extends javax.swing.JFrame {
                 jTextFieldCapacidadeDoTanqueActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCapacidadeDoTanque, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 220, 350, 27));
+        getContentPane().add(jTextFieldCapacidadeDoTanque, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 218, 353, 29));
 
         jTextFieldNomeMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNomeMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -100,7 +101,7 @@ public class TelaDeCadastroColheitadeira extends javax.swing.JFrame {
                 jTextFieldNomeMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 137, 270, 27));
+        getContentPane().add(jTextFieldNomeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 135, 270, 29));
 
         jTextFieldQuantidadeDeSacas.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldQuantidadeDeSacas.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -112,7 +113,7 @@ public class TelaDeCadastroColheitadeira extends javax.swing.JFrame {
                 jTextFieldQuantidadeDeSacasActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldQuantidadeDeSacas, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 134, 270, 27));
+        getContentPane().add(jTextFieldQuantidadeDeSacas, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 132, 271, 29));
 
         jButtonCancelarCadastroDeMaquina.setBorder(null);
         jButtonCancelarCadastroDeMaquina.setBorderPainted(false);
@@ -154,7 +155,7 @@ public class TelaDeCadastroColheitadeira extends javax.swing.JFrame {
                 jComboBoxEstadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, 280, -1));
+        getContentPane().add(jComboBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, 280, 30));
 
         jComboBoxCultura.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jComboBoxCultura.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Milho", "Soja" }));
@@ -163,9 +164,9 @@ public class TelaDeCadastroColheitadeira extends javax.swing.JFrame {
                 jComboBoxCulturaActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxCultura, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 305, 280, -1));
+        getContentPane().add(jComboBoxCultura, new org.netbeans.lib.awtextra.AbsoluteConstraints(493, 300, 280, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasMaquinas/telasDeCadastro/img_tela_cadastro_de_colheitadeira.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasMaquinas/telasColheitadeira/img_tela_cadastro_de_colheitadeira.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 650));
 
         pack();
@@ -218,26 +219,66 @@ public class TelaDeCadastroColheitadeira extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCancelarCadastroDeMaquinaActionPerformed
 
     public void cadastrarColheitadeira() {
+        if (jTextFieldNomeMaquina.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o nome da colheitadeira");
+            return;
+        }
+
+        if (jTextFieldMarcaMaquina.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a marca da colheitadeira");
+            return;
+        }
+
+        if (jTextFieldAnoMaquina.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o ano da colheitadeira");
+            return;
+        }
+
+        if (jTextFieldChassiMaquina.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o chassi da colheitadeira (17 Digitos)");
+            return;
+        }
+
+        if (jTextFieldQuantidadeDeSacas.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a quantidade de sacas suporadas da colheitadeira");
+            return;
+        }
+
+        if (jTextFieldCapacidadeDoTanque.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a capacidade do tanque de combustivél da colheitadeira");
+            return;
+        }
+
         Calendar cal = Calendar.getInstance();
         int anoAtual = cal.get(Calendar.YEAR);
         nomeMaquina = jTextFieldNomeMaquina.getText();
         marcaMaquina = jTextFieldMarcaMaquina.getText();
-        anoMaquina = Integer.parseInt(jTextFieldAnoMaquina.getText());
+
+        try {
+            anoMaquina = Integer.parseInt(jTextFieldAnoMaquina.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "Ano é um valor numérico (Ex: 2024)");
+            return;
+        }
+
         chassiMaquina = jTextFieldChassiMaquina.getText();
+
         estado = jComboBoxEstado.getSelectedItem().toString();
         cultura = jComboBoxCultura.getSelectedItem().toString();
 
         tipoMaquina = "Colheitadeira";
-        int quantidadeDeSacas = Integer.parseInt(jTextFieldQuantidadeDeSacas.getText());
-        Double capacidadeDoTanqueDeCombustivel = Double.parseDouble(jTextFieldCapacidadeDoTanque.getText());
 
-        if (nomeMaquina.equals("")) {
-            JOptionPane.showMessageDialog(null, "Nome Inválido");
+        try {
+            quantidadeDeSacas = Integer.parseInt(jTextFieldQuantidadeDeSacas.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "A quantidade de sacas deve ser numérica");
             return;
         }
 
-        if (marcaMaquina.equals("")) {
-            JOptionPane.showMessageDialog(null, "Marca Inválida");
+        try {
+            capacidadeDoTanqueDeCombustivel = Double.valueOf(jTextFieldCapacidadeDoTanque.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "A capacidade do tanque deve ser numérica");
             return;
         }
 
@@ -280,6 +321,7 @@ public class TelaDeCadastroColheitadeira extends javax.swing.JFrame {
         }
 
         try {
+
             controleMaquina.colheitadeira.setTipoMaquina(tipoMaquina);
             controleMaquina.colheitadeira.setNomeMaquina(nomeMaquina);
             controleMaquina.colheitadeira.setMarcaMaquina(marcaMaquina);
@@ -294,9 +336,9 @@ public class TelaDeCadastroColheitadeira extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, msg);
 
             limparCampos();
-        } catch (NullPointerException ex) {
-            System.out.println("Problema no sistema, tipo: ");
-            ex.printStackTrace();
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
         }
     }
 
@@ -309,10 +351,7 @@ public class TelaDeCadastroColheitadeira extends javax.swing.JFrame {
         jTextFieldQuantidadeDeSacas.setText("");
     }
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroupCultura;
-    private javax.swing.ButtonGroup buttonGroupEstado;
     private javax.swing.JButton jButtonCancelarCadastroDeMaquina;
     private javax.swing.JButton jButtonConfirmarCadastroDeMaquina;
     private javax.swing.JButton jButtonSairDaTelaCadastrarCarretaGraneleira;

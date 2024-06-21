@@ -8,10 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Gustavo
- */
+
 public class TelaDeAtualizacaoMaquinaDePlantio extends javax.swing.JFrame {
 
     ControleMaquina controleMaquina = new ControleMaquina();
@@ -25,7 +22,7 @@ public class TelaDeAtualizacaoMaquinaDePlantio extends javax.swing.JFrame {
     private String nomeMaquina;
     private int capacidadeDeSementes;
     private int quantidadeDeLinhas;
-    
+
     public TelaDeAtualizacaoMaquinaDePlantio() {
         initComponents();
     }
@@ -34,33 +31,28 @@ public class TelaDeAtualizacaoMaquinaDePlantio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextFieldIdMaquina = new javax.swing.JTextField();
+        jTextFieldNomePlantadeiraBuscada = new javax.swing.JTextField();
         jTextFieldNomeMaquina = new javax.swing.JTextField();
         jTextFieldMarcaMaquina = new javax.swing.JTextField();
-        jTextFieldCapacidadeDeSementes = new javax.swing.JTextField();
         jTextFieldAnoMaquina = new javax.swing.JTextField();
         jTextFieldChassiMaquina = new javax.swing.JTextField();
-        jTextFieldQuantidadeDeLinhas = new javax.swing.JTextField();
         jTextFieldEstadoMaquina = new javax.swing.JTextField();
+        jTextFieldCapacidadeDeSementes = new javax.swing.JTextField();
+        jTextFieldQuantidadeDeLinhas = new javax.swing.JTextField();
         jButtonBuscarMaquina = new javax.swing.JButton();
         jButtonSairDaTelaDeConsulta = new javax.swing.JButton();
         jButtonConfirmarAtualizacao = new javax.swing.JButton();
+        jButtonCancelarRemocao = new javax.swing.JButton();
         jLabelFundoAtualizacao = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextFieldIdMaquina.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldIdMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldIdMaquina.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldIdMaquina.setBorder(null);
-        jTextFieldIdMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextFieldIdMaquina.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldIdMaquinaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextFieldIdMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 119, 302, 27));
+        jTextFieldNomePlantadeiraBuscada.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldNomePlantadeiraBuscada.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldNomePlantadeiraBuscada.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldNomePlantadeiraBuscada.setBorder(null);
+        getContentPane().add(jTextFieldNomePlantadeiraBuscada, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 117, 304, 29));
 
         jTextFieldNomeMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNomeMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -72,7 +64,7 @@ public class TelaDeAtualizacaoMaquinaDePlantio extends javax.swing.JFrame {
                 jTextFieldNomeMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 227, 272, 27));
+        getContentPane().add(jTextFieldNomeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 226, 271, 29));
 
         jTextFieldMarcaMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldMarcaMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -84,19 +76,7 @@ public class TelaDeAtualizacaoMaquinaDePlantio extends javax.swing.JFrame {
                 jTextFieldMarcaMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldMarcaMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 310, 270, 27));
-
-        jTextFieldCapacidadeDeSementes.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldCapacidadeDeSementes.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldCapacidadeDeSementes.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldCapacidadeDeSementes.setBorder(null);
-        jTextFieldCapacidadeDeSementes.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextFieldCapacidadeDeSementes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldCapacidadeDeSementesActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextFieldCapacidadeDeSementes, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 224, 270, 27));
+        getContentPane().add(jTextFieldMarcaMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 308, 271, 29));
 
         jTextFieldAnoMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldAnoMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -108,10 +88,11 @@ public class TelaDeAtualizacaoMaquinaDePlantio extends javax.swing.JFrame {
                 jTextFieldAnoMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldAnoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 396, 270, 27));
+        getContentPane().add(jTextFieldAnoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 394, 271, 29));
 
         jTextFieldChassiMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldChassiMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldChassiMaquina.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldChassiMaquina.setBorder(null);
         jTextFieldChassiMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextFieldChassiMaquina.addActionListener(new java.awt.event.ActionListener() {
@@ -119,21 +100,11 @@ public class TelaDeAtualizacaoMaquinaDePlantio extends javax.swing.JFrame {
                 jTextFieldChassiMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldChassiMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 487, 270, 27));
-
-        jTextFieldQuantidadeDeLinhas.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldQuantidadeDeLinhas.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldQuantidadeDeLinhas.setBorder(null);
-        jTextFieldQuantidadeDeLinhas.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextFieldQuantidadeDeLinhas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldQuantidadeDeLinhasActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextFieldQuantidadeDeLinhas, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 310, 270, 27));
+        getContentPane().add(jTextFieldChassiMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 485, 271, 29));
 
         jTextFieldEstadoMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldEstadoMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldEstadoMaquina.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldEstadoMaquina.setBorder(null);
         jTextFieldEstadoMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextFieldEstadoMaquina.addActionListener(new java.awt.event.ActionListener() {
@@ -141,7 +112,31 @@ public class TelaDeAtualizacaoMaquinaDePlantio extends javax.swing.JFrame {
                 jTextFieldEstadoMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldEstadoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 583, 268, 27));
+        getContentPane().add(jTextFieldEstadoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 581, 271, 29));
+
+        jTextFieldCapacidadeDeSementes.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldCapacidadeDeSementes.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldCapacidadeDeSementes.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldCapacidadeDeSementes.setBorder(null);
+        jTextFieldCapacidadeDeSementes.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldCapacidadeDeSementes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCapacidadeDeSementesActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldCapacidadeDeSementes, new org.netbeans.lib.awtextra.AbsoluteConstraints(529, 222, 271, 29));
+
+        jTextFieldQuantidadeDeLinhas.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldQuantidadeDeLinhas.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldQuantidadeDeLinhas.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldQuantidadeDeLinhas.setBorder(null);
+        jTextFieldQuantidadeDeLinhas.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldQuantidadeDeLinhas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldQuantidadeDeLinhasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldQuantidadeDeLinhas, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 309, 272, 29));
 
         jButtonBuscarMaquina.setBorder(null);
         jButtonBuscarMaquina.setBorderPainted(false);
@@ -152,7 +147,7 @@ public class TelaDeAtualizacaoMaquinaDePlantio extends javax.swing.JFrame {
                 jButtonBuscarMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(378, 106, 260, 43));
+        getContentPane().add(jButtonBuscarMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(394, 107, 280, 43));
 
         jButtonSairDaTelaDeConsulta.setBorder(null);
         jButtonSairDaTelaDeConsulta.setBorderPainted(false);
@@ -174,22 +169,46 @@ public class TelaDeAtualizacaoMaquinaDePlantio extends javax.swing.JFrame {
                 jButtonConfirmarAtualizacaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonConfirmarAtualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 572, 280, 34));
+        getContentPane().add(jButtonConfirmarAtualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 550, 280, 34));
 
-        jLabelFundoAtualizacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasMaquinas/telasDeAtualizacao/img_tela_atualizacao_maquina_de_plantio.png"))); // NOI18N
+        jButtonCancelarRemocao.setBorder(null);
+        jButtonCancelarRemocao.setBorderPainted(false);
+        jButtonCancelarRemocao.setContentAreaFilled(false);
+        jButtonCancelarRemocao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCancelarRemocao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelarRemocaoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonCancelarRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 598, 280, 37));
+
+        jLabelFundoAtualizacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasMaquinas/telasMaquinaDePlantio/img_tela_atualizacao_maquina_de_plantio.png"))); // NOI18N
         getContentPane().add(jLabelFundoAtualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 650));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextFieldCapacidadeDeSementesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCapacidadeDeSementesActionPerformed
+    private void jButtonBuscarMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarMaquinaActionPerformed
+        try {
+            buscarMaquinaDePlantio();
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaDeAtualizacaoMaquinaDePlantio.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButtonBuscarMaquinaActionPerformed
 
-    }//GEN-LAST:event_jTextFieldCapacidadeDeSementesActionPerformed
+    private void jButtonSairDaTelaDeConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairDaTelaDeConsultaActionPerformed
+        this.dispose();
+        new TelaCRUDMaquinaDePlantio().setVisible(true);
+    }//GEN-LAST:event_jButtonSairDaTelaDeConsultaActionPerformed
 
-    private void jTextFieldIdMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdMaquinaActionPerformed
-
-    }//GEN-LAST:event_jTextFieldIdMaquinaActionPerformed
+    private void jButtonConfirmarAtualizacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarAtualizacaoActionPerformed
+        try {
+            atualizarMaquinaDePlantio();
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaDeAtualizacaoMaquinaDePlantio.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButtonConfirmarAtualizacaoActionPerformed
 
     private void jTextFieldNomeMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeMaquinaActionPerformed
 
@@ -207,36 +226,64 @@ public class TelaDeAtualizacaoMaquinaDePlantio extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jTextFieldChassiMaquinaActionPerformed
 
-    private void jButtonBuscarMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarMaquinaActionPerformed
-        try {
-            buscarMaquinaDePlantio();
-        } catch (SQLException ex) {
-            Logger.getLogger(TelaDeAtualizacaoMaquinaDePlantio.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButtonBuscarMaquinaActionPerformed
-
-    private void jButtonSairDaTelaDeConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairDaTelaDeConsultaActionPerformed
-        this.dispose();
-        new TelaCRUDMaquinaDePlantio().setVisible(true);
-    }//GEN-LAST:event_jButtonSairDaTelaDeConsultaActionPerformed
-
-    private void jTextFieldQuantidadeDeLinhasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldQuantidadeDeLinhasActionPerformed
-        
-    }//GEN-LAST:event_jTextFieldQuantidadeDeLinhasActionPerformed
-
     private void jTextFieldEstadoMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEstadoMaquinaActionPerformed
-       
+
     }//GEN-LAST:event_jTextFieldEstadoMaquinaActionPerformed
 
-    private void jButtonConfirmarAtualizacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarAtualizacaoActionPerformed
-        try {
-            atualizarMaquinaDePlantio();
-        } catch (SQLException ex) {
-            Logger.getLogger(TelaDeAtualizacaoMaquinaDePlantio.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButtonConfirmarAtualizacaoActionPerformed
+    private void jTextFieldCapacidadeDeSementesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCapacidadeDeSementesActionPerformed
+
+    }//GEN-LAST:event_jTextFieldCapacidadeDeSementesActionPerformed
+
+    private void jTextFieldQuantidadeDeLinhasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldQuantidadeDeLinhasActionPerformed
+
+    }//GEN-LAST:event_jTextFieldQuantidadeDeLinhasActionPerformed
+
+    private void jButtonCancelarRemocaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarRemocaoActionPerformed
+        JOptionPane.showMessageDialog(this, "Atualização Cancelada");
+        limparCampos();
+    }//GEN-LAST:event_jButtonCancelarRemocaoActionPerformed
 
     public void atualizarMaquinaDePlantio() throws SQLException {
+        if (jTextFieldNomePlantadeiraBuscada.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Busque uma máquina de plantio");
+            return;
+        }
+        
+        if (jTextFieldNomeMaquina.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o nome da máquina de plantio");
+            return;
+        }
+
+        if (jTextFieldMarcaMaquina.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a marca da máquina de plantio");
+            return;
+        }
+
+        if (jTextFieldAnoMaquina.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o ano da máquina de plantio");
+            return;
+        }
+
+        if (jTextFieldChassiMaquina.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o chassi da máquina de plantio (17 Digitos)");
+            return;
+        }
+
+        if (jTextFieldEstadoMaquina.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o estado da máquina de plantio:\nA para Ativo\nI para Inativo");
+            return;
+        }
+
+        if (jTextFieldCapacidadeDeSementes.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a capacidade de sementes da máquina de plantio");
+            return;
+        }
+
+        if (jTextFieldQuantidadeDeLinhas.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a quantidade de linhas da máquina de plantio");
+            return;
+        }
+
         Calendar cal = Calendar.getInstance();
         int anoAtual = cal.get(Calendar.YEAR);
 
@@ -244,22 +291,30 @@ public class TelaDeAtualizacaoMaquinaDePlantio extends javax.swing.JFrame {
         marcaAtualizado = jTextFieldMarcaMaquina.getText();
         chassiAtualizado = jTextFieldChassiMaquina.getText();
         estadoAtualizado = jTextFieldEstadoMaquina.getText();
-        anoAtualizado = Integer.parseInt(jTextFieldAnoMaquina.getText());
-        capacidadeDeSementes = Integer.parseInt(jTextFieldCapacidadeDeSementes.getText());
-        quantidadeDeLinhas = Integer.parseInt(jTextFieldQuantidadeDeLinhas.getText());
 
-        if (nomeAtualizado.equals("")) {
-            JOptionPane.showMessageDialog(this, "Nome Inválido");
+        try {
+            anoAtualizado = Integer.parseInt(jTextFieldAnoMaquina.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Ano é um valor numérico (Ex: 2024)");
             return;
         }
 
-        if (marcaAtualizado.equals("")) {
-            JOptionPane.showMessageDialog(this, "Marca Inválida");
+         try {
+            capacidadeDeSementes = Integer.parseInt(jTextFieldCapacidadeDeSementes.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "A capacidade de sementes é um valor numérico");
+            return;
+        }
+
+        try {
+            quantidadeDeLinhas = Integer.parseInt(jTextFieldQuantidadeDeLinhas.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "A quantidade de linhas é um valor numérico");
             return;
         }
 
         if (chassiAtualizado.length() != 17) {
-            JOptionPane.showMessageDialog(this, "Chassi Inválido");
+            JOptionPane.showMessageDialog(this, "Chassi Inválido (17 Digitos)");
             return;
         }
 
@@ -292,20 +347,25 @@ public class TelaDeAtualizacaoMaquinaDePlantio extends javax.swing.JFrame {
             controleMaquina = new ControleMaquina();
             String msgAtualizacao = controleMaquina.atualizarMaquinaDePlantio(maquinaDePlantioAtualizada);
             JOptionPane.showMessageDialog(null, msgAtualizacao);
+            limparCampos();
         } else {
-            JOptionPane.showMessageDialog(this, "Estado inválido, apenas A ou I");
+            JOptionPane.showMessageDialog(this, "Estado inválido\nA para Ativo\nI para Inativo");
         }
     }
 
     public void buscarMaquinaDePlantio() throws SQLException {
-        nomeMaquina = jTextFieldIdMaquina.getText();
+        if (jTextFieldNomePlantadeiraBuscada.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome da maquina de plantio");
+            return;
+        }
+        nomeMaquina = jTextFieldNomePlantadeiraBuscada.getText();
         MaquinaDePlantio maquinaDePlantioEncontrada = controleMaquina.buscarMaquinaDePlantio(nomeMaquina);
 
         if (maquinaDePlantioEncontrada != null) {
 
             ano = Integer.toString(maquinaDePlantioEncontrada.getAnoMaquina());
             String quantidadeDeLihas = Integer.toString(maquinaDePlantioEncontrada.getQuantidadeDeLinhas());
-            String capacidadeDeSementes = Integer.toString(maquinaDePlantioEncontrada.getCapacidadeDeSementes());
+            String capacidadeDeSementes1 = Integer.toString(maquinaDePlantioEncontrada.getCapacidadeDeSementes());
 
             jTextFieldNomeMaquina.setText(maquinaDePlantioEncontrada.getNomeMaquina());
             jTextFieldMarcaMaquina.setText(maquinaDePlantioEncontrada.getMarcaMaquina());
@@ -313,22 +373,27 @@ public class TelaDeAtualizacaoMaquinaDePlantio extends javax.swing.JFrame {
             jTextFieldChassiMaquina.setText(maquinaDePlantioEncontrada.getChassiMaquina());
             jTextFieldEstadoMaquina.setText(maquinaDePlantioEncontrada.getEstadoMaquina());
             jTextFieldQuantidadeDeLinhas.setText(quantidadeDeLihas);
-            jTextFieldCapacidadeDeSementes.setText(capacidadeDeSementes);
+            jTextFieldCapacidadeDeSementes.setText(capacidadeDeSementes1);
             idMaquina = maquinaDePlantioEncontrada.getIdMaquinaDePlantio();
         } else {
             JOptionPane.showMessageDialog(this, "Maquina de plantio não encontrada");
-
-            jTextFieldNomeMaquina.setText("");
-            jTextFieldMarcaMaquina.setText("");
-            jTextFieldAnoMaquina.setText("");
-            jTextFieldChassiMaquina.setText("");
-            jTextFieldEstadoMaquina.setText("");
-            jTextFieldQuantidadeDeLinhas.setText("");
-            jTextFieldCapacidadeDeSementes.setText("");
+            limparCampos();
         }
     }
+
+    private void limparCampos() {
+        jTextFieldNomeMaquina.setText("");
+        jTextFieldMarcaMaquina.setText("");
+        jTextFieldAnoMaquina.setText("");
+        jTextFieldChassiMaquina.setText("");
+        jTextFieldEstadoMaquina.setText("");
+        jTextFieldQuantidadeDeLinhas.setText("");
+        jTextFieldCapacidadeDeSementes.setText("");
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscarMaquina;
+    private javax.swing.JButton jButtonCancelarRemocao;
     private javax.swing.JButton jButtonConfirmarAtualizacao;
     private javax.swing.JButton jButtonSairDaTelaDeConsulta;
     private javax.swing.JLabel jLabelFundoAtualizacao;
@@ -336,9 +401,9 @@ public class TelaDeAtualizacaoMaquinaDePlantio extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldCapacidadeDeSementes;
     private javax.swing.JTextField jTextFieldChassiMaquina;
     private javax.swing.JTextField jTextFieldEstadoMaquina;
-    private javax.swing.JTextField jTextFieldIdMaquina;
     private javax.swing.JTextField jTextFieldMarcaMaquina;
     private javax.swing.JTextField jTextFieldNomeMaquina;
+    private javax.swing.JTextField jTextFieldNomePlantadeiraBuscada;
     private javax.swing.JTextField jTextFieldQuantidadeDeLinhas;
     // End of variables declaration//GEN-END:variables
 }

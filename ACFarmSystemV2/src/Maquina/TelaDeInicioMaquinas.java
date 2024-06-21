@@ -50,7 +50,7 @@ public class TelaDeInicioMaquinas extends javax.swing.JFrame {
                 jButtonAcessarSubsoladorActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAcessarSubsolador, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 165, 140, 120));
+        getContentPane().add(jButtonAcessarSubsolador, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 166, 140, 110));
 
         jButtonAcessarCarregador.setBorder(null);
         jButtonAcessarCarregador.setContentAreaFilled(false);
@@ -60,7 +60,7 @@ public class TelaDeInicioMaquinas extends javax.swing.JFrame {
                 jButtonAcessarCarregadorActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAcessarCarregador, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 398, 140, 120));
+        getContentPane().add(jButtonAcessarCarregador, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 365, 140, 110));
 
         jButtonAcessarColheitadeira.setBorder(null);
         jButtonAcessarColheitadeira.setContentAreaFilled(false);
@@ -70,7 +70,7 @@ public class TelaDeInicioMaquinas extends javax.swing.JFrame {
                 jButtonAcessarColheitadeiraActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAcessarColheitadeira, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 165, 140, 120));
+        getContentPane().add(jButtonAcessarColheitadeira, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 166, 140, 110));
 
         jButtonAcessarCarregaGraneleira.setBorder(null);
         jButtonAcessarCarregaGraneleira.setContentAreaFilled(false);
@@ -80,7 +80,7 @@ public class TelaDeInicioMaquinas extends javax.swing.JFrame {
                 jButtonAcessarCarregaGraneleiraActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAcessarCarregaGraneleira, new org.netbeans.lib.awtextra.AbsoluteConstraints(501, 165, 140, 120));
+        getContentPane().add(jButtonAcessarCarregaGraneleira, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 167, 140, 110));
 
         jButtonAcessarMaquinaDePlantio.setBorder(null);
         jButtonAcessarMaquinaDePlantio.setContentAreaFilled(false);
@@ -90,7 +90,7 @@ public class TelaDeInicioMaquinas extends javax.swing.JFrame {
                 jButtonAcessarMaquinaDePlantioActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAcessarMaquinaDePlantio, new org.netbeans.lib.awtextra.AbsoluteConstraints(729, 165, 140, 120));
+        getContentPane().add(jButtonAcessarMaquinaDePlantio, new org.netbeans.lib.awtextra.AbsoluteConstraints(706, 167, 140, 110));
 
         jButtonAcessarPulverizador.setBorder(null);
         jButtonAcessarPulverizador.setContentAreaFilled(false);
@@ -100,7 +100,7 @@ public class TelaDeInicioMaquinas extends javax.swing.JFrame {
                 jButtonAcessarPulverizadorActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAcessarPulverizador, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 398, 140, 120));
+        getContentPane().add(jButtonAcessarPulverizador, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 366, 140, 110));
 
         jButtonAcessarRelatorioDeMaquina.setBorder(null);
         jButtonAcessarRelatorioDeMaquina.setContentAreaFilled(false);
@@ -110,7 +110,7 @@ public class TelaDeInicioMaquinas extends javax.swing.JFrame {
                 jButtonAcessarRelatorioDeMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAcessarRelatorioDeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(607, 398, 140, 120));
+        getContentPane().add(jButtonAcessarRelatorioDeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(591, 366, 140, 110));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasMaquinas/img_tela_inicial_maquina.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 640));

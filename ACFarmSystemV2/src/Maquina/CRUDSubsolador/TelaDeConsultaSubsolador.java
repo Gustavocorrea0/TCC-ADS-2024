@@ -7,25 +7,26 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Gustavo
- */
 public class TelaDeConsultaSubsolador extends javax.swing.JFrame {
 
     ControleMaquina controleMaquina = new ControleMaquina();
     private String ano;
     private String nomeMaquina;
+
+    private String larguraEmMM;
+    private String peso;
+    private String numeroDeHastes;
+    private String potenciaTrator;
+
     public TelaDeConsultaSubsolador() {
         initComponents();
     }
 
- 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextFieldIdMaquina = new javax.swing.JTextField();
+        jTextFieldNomeMaquinaBuscada = new javax.swing.JTextField();
         jTextFieldNomeMaquina = new javax.swing.JTextField();
         jTextFieldMarcaMaquina = new javax.swing.JTextField();
         jTextFieldNumeroDeHastes = new javax.swing.JTextField();
@@ -42,17 +43,17 @@ public class TelaDeConsultaSubsolador extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextFieldIdMaquina.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldIdMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldIdMaquina.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldIdMaquina.setBorder(null);
-        jTextFieldIdMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextFieldIdMaquina.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldNomeMaquinaBuscada.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldNomeMaquinaBuscada.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldNomeMaquinaBuscada.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldNomeMaquinaBuscada.setBorder(null);
+        jTextFieldNomeMaquinaBuscada.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldNomeMaquinaBuscada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldIdMaquinaActionPerformed(evt);
+                jTextFieldNomeMaquinaBuscadaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldIdMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 120, 300, 27));
+        getContentPane().add(jTextFieldNomeMaquinaBuscada, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 116, 304, 29));
 
         jTextFieldNomeMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNomeMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -64,7 +65,7 @@ public class TelaDeConsultaSubsolador extends javax.swing.JFrame {
                 jTextFieldNomeMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 220, 270, 27));
+        getContentPane().add(jTextFieldNomeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 219, 271, 29));
 
         jTextFieldMarcaMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldMarcaMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -76,7 +77,7 @@ public class TelaDeConsultaSubsolador extends javax.swing.JFrame {
                 jTextFieldMarcaMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldMarcaMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 303, 270, 27));
+        getContentPane().add(jTextFieldMarcaMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 302, 271, 29));
 
         jTextFieldNumeroDeHastes.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNumeroDeHastes.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -88,7 +89,7 @@ public class TelaDeConsultaSubsolador extends javax.swing.JFrame {
                 jTextFieldNumeroDeHastesActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNumeroDeHastes, new org.netbeans.lib.awtextra.AbsoluteConstraints(485, 308, 268, 27));
+        getContentPane().add(jTextFieldNumeroDeHastes, new org.netbeans.lib.awtextra.AbsoluteConstraints(578, 306, 271, 29));
 
         jTextFieldAnoMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldAnoMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -100,7 +101,7 @@ public class TelaDeConsultaSubsolador extends javax.swing.JFrame {
                 jTextFieldAnoMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldAnoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 389, 270, 27));
+        getContentPane().add(jTextFieldAnoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 387, 271, 29));
 
         jTextFieldChassiMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldChassiMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -112,7 +113,7 @@ public class TelaDeConsultaSubsolador extends javax.swing.JFrame {
                 jTextFieldChassiMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldChassiMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 480, 270, 27));
+        getContentPane().add(jTextFieldChassiMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 478, 270, 29));
 
         jTextFieldPotenciaDoTrator.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldPotenciaDoTrator.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -124,7 +125,7 @@ public class TelaDeConsultaSubsolador extends javax.swing.JFrame {
                 jTextFieldPotenciaDoTratorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldPotenciaDoTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(485, 399, 268, 27));
+        getContentPane().add(jTextFieldPotenciaDoTrator, new org.netbeans.lib.awtextra.AbsoluteConstraints(576, 397, 271, 29));
 
         jTextFieldEstadoMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldEstadoMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -136,7 +137,7 @@ public class TelaDeConsultaSubsolador extends javax.swing.JFrame {
                 jTextFieldEstadoMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldEstadoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 576, 268, 27));
+        getContentPane().add(jTextFieldEstadoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 574, 271, 29));
 
         jTextFieldLarguraEmMM.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldLarguraEmMM.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -148,7 +149,7 @@ public class TelaDeConsultaSubsolador extends javax.swing.JFrame {
                 jTextFieldLarguraEmMMActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldLarguraEmMM, new org.netbeans.lib.awtextra.AbsoluteConstraints(485, 222, 268, 27));
+        getContentPane().add(jTextFieldLarguraEmMM, new org.netbeans.lib.awtextra.AbsoluteConstraints(576, 221, 271, 29));
 
         jTextFieldPeso.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldPeso.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -160,7 +161,7 @@ public class TelaDeConsultaSubsolador extends javax.swing.JFrame {
                 jTextFieldPesoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(485, 480, 268, 27));
+        getContentPane().add(jTextFieldPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(576, 478, 271, 29));
 
         jButtonBuscarMaquina.setBorder(null);
         jButtonBuscarMaquina.setBorderPainted(false);
@@ -171,7 +172,7 @@ public class TelaDeConsultaSubsolador extends javax.swing.JFrame {
                 jButtonBuscarMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, 260, 42));
+        getContentPane().add(jButtonBuscarMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 108, 282, 42));
 
         jButtonSairDaTelaDeConsulta.setBorder(null);
         jButtonSairDaTelaDeConsulta.setBorderPainted(false);
@@ -184,7 +185,7 @@ public class TelaDeConsultaSubsolador extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonSairDaTelaDeConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 22, 40, 28));
 
-        jLabelFundoConsultaCarregador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasMaquinas/telasDeConsulta/img_tela_consulta_subsolador.png"))); // NOI18N
+        jLabelFundoConsultaCarregador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasMaquinas/telasSubsolador/img_tela_consulta_subsolador.png"))); // NOI18N
         getContentPane().add(jLabelFundoConsultaCarregador, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 650));
 
         pack();
@@ -192,28 +193,8 @@ public class TelaDeConsultaSubsolador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextFieldNumeroDeHastesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNumeroDeHastesActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldNumeroDeHastesActionPerformed
-
-    private void jTextFieldIdMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdMaquinaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldIdMaquinaActionPerformed
-
-    private void jTextFieldNomeMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeMaquinaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldNomeMaquinaActionPerformed
-
-    private void jTextFieldMarcaMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldMarcaMaquinaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldMarcaMaquinaActionPerformed
-
-    private void jTextFieldAnoMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAnoMaquinaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldAnoMaquinaActionPerformed
-
-    private void jTextFieldChassiMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldChassiMaquinaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldChassiMaquinaActionPerformed
 
     private void jButtonBuscarMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarMaquinaActionPerformed
         try {
@@ -224,37 +205,61 @@ public class TelaDeConsultaSubsolador extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonBuscarMaquinaActionPerformed
 
     private void jButtonSairDaTelaDeConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairDaTelaDeConsultaActionPerformed
-        // TODO add your handling code here:
         this.dispose();
         new TelaCRUDSubsolador().setVisible(true);
     }//GEN-LAST:event_jButtonSairDaTelaDeConsultaActionPerformed
 
     private void jTextFieldPotenciaDoTratorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPotenciaDoTratorActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldPotenciaDoTratorActionPerformed
 
     private void jTextFieldEstadoMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEstadoMaquinaActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldEstadoMaquinaActionPerformed
 
     private void jTextFieldLarguraEmMMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldLarguraEmMMActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldLarguraEmMMActionPerformed
 
     private void jTextFieldPesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPesoActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldPesoActionPerformed
 
+    private void jTextFieldChassiMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldChassiMaquinaActionPerformed
+
+    }//GEN-LAST:event_jTextFieldChassiMaquinaActionPerformed
+
+    private void jTextFieldAnoMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAnoMaquinaActionPerformed
+
+    }//GEN-LAST:event_jTextFieldAnoMaquinaActionPerformed
+
+    private void jTextFieldNomeMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeMaquinaActionPerformed
+
+    }//GEN-LAST:event_jTextFieldNomeMaquinaActionPerformed
+
+    private void jTextFieldNomeMaquinaBuscadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeMaquinaBuscadaActionPerformed
+
+    }//GEN-LAST:event_jTextFieldNomeMaquinaBuscadaActionPerformed
+
+    private void jTextFieldMarcaMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldMarcaMaquinaActionPerformed
+
+    }//GEN-LAST:event_jTextFieldMarcaMaquinaActionPerformed
+
     public void buscarSubsolador() throws SQLException {
-        nomeMaquina = jTextFieldIdMaquina.getText();
+        if (jTextFieldNomeMaquinaBuscada.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome do subsolador");
+            return;
+        }
+
+        nomeMaquina = jTextFieldNomeMaquinaBuscada.getText();
         Subsolador subsoladorEncontrado = controleMaquina.buscarSubsolador(nomeMaquina);
 
         if (subsoladorEncontrado != null) {
             ano = Integer.toString(subsoladorEncontrado.getAnoMaquina());
-            String larguraEmMM = Double.toString(subsoladorEncontrado.getLarguraEmMM());
-            String peso = Double.toString(subsoladorEncontrado.getPeso());
-            String numeroDeHastes = Integer.toString(subsoladorEncontrado.getNumeroDeHastes());
-            String potenciaTrator = Integer.toString(subsoladorEncontrado.getPotenciaNecessariaTratorEmCv());
+            larguraEmMM = Double.toString(subsoladorEncontrado.getLarguraEmMM());
+            peso = Double.toString(subsoladorEncontrado.getPeso());
+            numeroDeHastes = Integer.toString(subsoladorEncontrado.getNumeroDeHastes());
+            potenciaTrator = Integer.toString(subsoladorEncontrado.getPotenciaNecessariaTratorEmCv());
 
             jTextFieldNomeMaquina.setText(subsoladorEncontrado.getNomeMaquina());
             jTextFieldMarcaMaquina.setText(subsoladorEncontrado.getMarcaMaquina());
@@ -278,17 +283,21 @@ public class TelaDeConsultaSubsolador extends javax.swing.JFrame {
 
         } else {
             JOptionPane.showMessageDialog(this, "Subsolador não encontrado");
-
-            jTextFieldNomeMaquina.setText("");
-            jTextFieldMarcaMaquina.setText("");
-            jTextFieldAnoMaquina.setText("");
-            jTextFieldChassiMaquina.setText("");
-            jTextFieldEstadoMaquina.setText("");
-            jTextFieldPotenciaDoTrator.setText("");
-            jTextFieldPeso.setText("");
-            jTextFieldNumeroDeHastes.setText("");
-            jTextFieldLarguraEmMM.setText("");
+            limparCampos();
         }
+    }
+
+    private void limparCampos() {
+        jTextFieldNomeMaquinaBuscada.setText("");
+        jTextFieldNomeMaquina.setText("");
+        jTextFieldMarcaMaquina.setText("");
+        jTextFieldAnoMaquina.setText("");
+        jTextFieldChassiMaquina.setText("");
+        jTextFieldEstadoMaquina.setText("");
+        jTextFieldPotenciaDoTrator.setText("");
+        jTextFieldPeso.setText("");
+        jTextFieldNumeroDeHastes.setText("");
+        jTextFieldLarguraEmMM.setText("");
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscarMaquina;
@@ -297,10 +306,10 @@ public class TelaDeConsultaSubsolador extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldAnoMaquina;
     private javax.swing.JTextField jTextFieldChassiMaquina;
     private javax.swing.JTextField jTextFieldEstadoMaquina;
-    private javax.swing.JTextField jTextFieldIdMaquina;
     private javax.swing.JTextField jTextFieldLarguraEmMM;
     private javax.swing.JTextField jTextFieldMarcaMaquina;
     private javax.swing.JTextField jTextFieldNomeMaquina;
+    private javax.swing.JTextField jTextFieldNomeMaquinaBuscada;
     private javax.swing.JTextField jTextFieldNumeroDeHastes;
     private javax.swing.JTextField jTextFieldPeso;
     private javax.swing.JTextField jTextFieldPotenciaDoTrator;

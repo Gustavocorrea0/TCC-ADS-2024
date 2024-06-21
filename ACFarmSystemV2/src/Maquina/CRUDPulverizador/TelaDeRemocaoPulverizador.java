@@ -28,33 +28,39 @@ public class TelaDeRemocaoPulverizador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextFieldIdMaquina = new javax.swing.JTextField();
+        jTextFieldNomePulverizadorBuscado = new javax.swing.JTextField();
         jTextFieldNomeMaquina = new javax.swing.JTextField();
         jTextFieldMarcaMaquina = new javax.swing.JTextField();
-        jTextFieldEstadoMaquina = new javax.swing.JTextField();
         jTextFieldAnoMaquina = new javax.swing.JTextField();
-        jTextFieldTipoDeCultura = new javax.swing.JTextField();
         jTextFieldChassiMaquina = new javax.swing.JTextField();
+        jTextFieldEstadoMaquina = new javax.swing.JTextField();
         jTextFieldCapacidadeDoReservatorio = new javax.swing.JTextField();
-        jButtonBuscarMaquina = new javax.swing.JButton();
+        jTextFieldTipoDeCultura = new javax.swing.JTextField();
         jButtonConfirmarRemocao = new javax.swing.JButton();
+        jButtonCancelarRemocao = new javax.swing.JButton();
+        jButtonBuscarMaquina = new javax.swing.JButton();
         jButtonSairDaTelaDeConsulta = new javax.swing.JButton();
         jLabelFundoConsultaCarregador = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextFieldIdMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldIdMaquina.setBorder(null);
-        jTextFieldIdMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextFieldIdMaquina.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldNomePulverizadorBuscado.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldNomePulverizadorBuscado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldNomePulverizadorBuscado.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldNomePulverizadorBuscado.setBorder(null);
+        jTextFieldNomePulverizadorBuscado.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldNomePulverizadorBuscado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldIdMaquinaActionPerformed(evt);
+                jTextFieldNomePulverizadorBuscadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldIdMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 118, 300, 27));
+        getContentPane().add(jTextFieldNomePulverizadorBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 116, 304, 29));
 
+        jTextFieldNomeMaquina.setEditable(false);
+        jTextFieldNomeMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNomeMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldNomeMaquina.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldNomeMaquina.setBorder(null);
         jTextFieldNomeMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextFieldNomeMaquina.addActionListener(new java.awt.event.ActionListener() {
@@ -62,9 +68,12 @@ public class TelaDeRemocaoPulverizador extends javax.swing.JFrame {
                 jTextFieldNomeMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 226, 270, 27));
+        getContentPane().add(jTextFieldNomeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 219, 271, 29));
 
+        jTextFieldMarcaMaquina.setEditable(false);
+        jTextFieldMarcaMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldMarcaMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldMarcaMaquina.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldMarcaMaquina.setBorder(null);
         jTextFieldMarcaMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextFieldMarcaMaquina.addActionListener(new java.awt.event.ActionListener() {
@@ -72,19 +81,12 @@ public class TelaDeRemocaoPulverizador extends javax.swing.JFrame {
                 jTextFieldMarcaMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldMarcaMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 310, 270, 27));
+        getContentPane().add(jTextFieldMarcaMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 301, 271, 29));
 
-        jTextFieldEstadoMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldEstadoMaquina.setBorder(null);
-        jTextFieldEstadoMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextFieldEstadoMaquina.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldEstadoMaquinaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextFieldEstadoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 578, 270, 27));
-
+        jTextFieldAnoMaquina.setEditable(false);
+        jTextFieldAnoMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldAnoMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldAnoMaquina.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldAnoMaquina.setBorder(null);
         jTextFieldAnoMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextFieldAnoMaquina.addActionListener(new java.awt.event.ActionListener() {
@@ -92,19 +94,12 @@ public class TelaDeRemocaoPulverizador extends javax.swing.JFrame {
                 jTextFieldAnoMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldAnoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 395, 270, 27));
+        getContentPane().add(jTextFieldAnoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 387, 271, 29));
 
-        jTextFieldTipoDeCultura.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldTipoDeCultura.setBorder(null);
-        jTextFieldTipoDeCultura.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextFieldTipoDeCultura.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldTipoDeCulturaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextFieldTipoDeCultura, new org.netbeans.lib.awtextra.AbsoluteConstraints(497, 309, 268, 27));
-
+        jTextFieldChassiMaquina.setEditable(false);
+        jTextFieldChassiMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldChassiMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldChassiMaquina.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldChassiMaquina.setBorder(null);
         jTextFieldChassiMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextFieldChassiMaquina.addActionListener(new java.awt.event.ActionListener() {
@@ -112,9 +107,25 @@ public class TelaDeRemocaoPulverizador extends javax.swing.JFrame {
                 jTextFieldChassiMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldChassiMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 486, 270, 27));
+        getContentPane().add(jTextFieldChassiMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 478, 271, 29));
 
+        jTextFieldEstadoMaquina.setEditable(false);
+        jTextFieldEstadoMaquina.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldEstadoMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldEstadoMaquina.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldEstadoMaquina.setBorder(null);
+        jTextFieldEstadoMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldEstadoMaquina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldEstadoMaquinaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldEstadoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 574, 271, 29));
+
+        jTextFieldCapacidadeDoReservatorio.setEditable(false);
+        jTextFieldCapacidadeDoReservatorio.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCapacidadeDoReservatorio.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldCapacidadeDoReservatorio.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldCapacidadeDoReservatorio.setBorder(null);
         jTextFieldCapacidadeDoReservatorio.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextFieldCapacidadeDoReservatorio.addActionListener(new java.awt.event.ActionListener() {
@@ -122,18 +133,19 @@ public class TelaDeRemocaoPulverizador extends javax.swing.JFrame {
                 jTextFieldCapacidadeDoReservatorioActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCapacidadeDoReservatorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(497, 228, 268, 27));
+        getContentPane().add(jTextFieldCapacidadeDoReservatorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(493, 227, 271, 29));
 
-        jButtonBuscarMaquina.setBorder(null);
-        jButtonBuscarMaquina.setBorderPainted(false);
-        jButtonBuscarMaquina.setContentAreaFilled(false);
-        jButtonBuscarMaquina.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonBuscarMaquina.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldTipoDeCultura.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldTipoDeCultura.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldTipoDeCultura.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldTipoDeCultura.setBorder(null);
+        jTextFieldTipoDeCultura.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextFieldTipoDeCultura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonBuscarMaquinaActionPerformed(evt);
+                jTextFieldTipoDeCulturaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(378, 106, 260, 42));
+        getContentPane().add(jTextFieldTipoDeCultura, new org.netbeans.lib.awtextra.AbsoluteConstraints(493, 309, 271, 29));
 
         jButtonConfirmarRemocao.setBorder(null);
         jButtonConfirmarRemocao.setBorderPainted(false);
@@ -144,7 +156,29 @@ public class TelaDeRemocaoPulverizador extends javax.swing.JFrame {
                 jButtonConfirmarRemocaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonConfirmarRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 568, 280, 40));
+        getContentPane().add(jButtonConfirmarRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(612, 550, 282, 35));
+
+        jButtonCancelarRemocao.setBorder(null);
+        jButtonCancelarRemocao.setBorderPainted(false);
+        jButtonCancelarRemocao.setContentAreaFilled(false);
+        jButtonCancelarRemocao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCancelarRemocao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelarRemocaoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonCancelarRemocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 598, 280, 36));
+
+        jButtonBuscarMaquina.setBorder(null);
+        jButtonBuscarMaquina.setBorderPainted(false);
+        jButtonBuscarMaquina.setContentAreaFilled(false);
+        jButtonBuscarMaquina.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonBuscarMaquina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBuscarMaquinaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonBuscarMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 106, 281, 45));
 
         jButtonSairDaTelaDeConsulta.setBorder(null);
         jButtonSairDaTelaDeConsulta.setBorderPainted(false);
@@ -157,36 +191,12 @@ public class TelaDeRemocaoPulverizador extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonSairDaTelaDeConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 22, 40, 28));
 
-        jLabelFundoConsultaCarregador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasMaquinas/telasDeRemocao/img_tela_remocao_pulverizador.png"))); // NOI18N
+        jLabelFundoConsultaCarregador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasMaquinas/telasPulverizador/img_tela_remocao_pulverizador.png"))); // NOI18N
         getContentPane().add(jLabelFundoConsultaCarregador, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 650));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jTextFieldEstadoMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEstadoMaquinaActionPerformed
-        
-    }//GEN-LAST:event_jTextFieldEstadoMaquinaActionPerformed
-
-    private void jTextFieldIdMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdMaquinaActionPerformed
-        
-    }//GEN-LAST:event_jTextFieldIdMaquinaActionPerformed
-
-    private void jTextFieldNomeMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeMaquinaActionPerformed
-        
-    }//GEN-LAST:event_jTextFieldNomeMaquinaActionPerformed
-
-    private void jTextFieldMarcaMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldMarcaMaquinaActionPerformed
-        
-    }//GEN-LAST:event_jTextFieldMarcaMaquinaActionPerformed
-
-    private void jTextFieldAnoMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAnoMaquinaActionPerformed
-        
-    }//GEN-LAST:event_jTextFieldAnoMaquinaActionPerformed
-
-    private void jTextFieldChassiMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldChassiMaquinaActionPerformed
-        
-    }//GEN-LAST:event_jTextFieldChassiMaquinaActionPerformed
 
     private void jButtonBuscarMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarMaquinaActionPerformed
         try {
@@ -201,34 +211,66 @@ public class TelaDeRemocaoPulverizador extends javax.swing.JFrame {
         new TelaCRUDPulverizador().setVisible(true);
     }//GEN-LAST:event_jButtonSairDaTelaDeConsultaActionPerformed
 
-    private void jTextFieldTipoDeCulturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTipoDeCulturaActionPerformed
-
-    }//GEN-LAST:event_jTextFieldTipoDeCulturaActionPerformed
-
     private void jButtonConfirmarRemocaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarRemocaoActionPerformed
         removerPulverizador();
     }//GEN-LAST:event_jButtonConfirmarRemocaoActionPerformed
+
+    private void jTextFieldNomePulverizadorBuscadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomePulverizadorBuscadoActionPerformed
+
+    }//GEN-LAST:event_jTextFieldNomePulverizadorBuscadoActionPerformed
+
+    private void jTextFieldNomeMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeMaquinaActionPerformed
+
+    }//GEN-LAST:event_jTextFieldNomeMaquinaActionPerformed
+
+    private void jTextFieldMarcaMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldMarcaMaquinaActionPerformed
+
+    }//GEN-LAST:event_jTextFieldMarcaMaquinaActionPerformed
+
+    private void jTextFieldAnoMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAnoMaquinaActionPerformed
+
+    }//GEN-LAST:event_jTextFieldAnoMaquinaActionPerformed
+
+    private void jTextFieldChassiMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldChassiMaquinaActionPerformed
+
+    }//GEN-LAST:event_jTextFieldChassiMaquinaActionPerformed
+
+    private void jTextFieldEstadoMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEstadoMaquinaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldEstadoMaquinaActionPerformed
 
     private void jTextFieldCapacidadeDoReservatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCapacidadeDoReservatorioActionPerformed
 
     }//GEN-LAST:event_jTextFieldCapacidadeDoReservatorioActionPerformed
 
+    private void jTextFieldTipoDeCulturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTipoDeCulturaActionPerformed
+
+    }//GEN-LAST:event_jTextFieldTipoDeCulturaActionPerformed
+
+    private void jButtonCancelarRemocaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarRemocaoActionPerformed
+        JOptionPane.showMessageDialog(this, "Remoção Cancelada");
+        limparCampos();
+    }//GEN-LAST:event_jButtonCancelarRemocaoActionPerformed
+
     public void removerPulverizador() {
-        nomeMaquina = jTextFieldIdMaquina.getText();
+        if (jTextFieldNomePulverizadorBuscado.getText().isBlank() || jTextFieldNomeMaquina.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Busque um pulverizador");
+            return;
+        }
+
+        nomeMaquina = jTextFieldNomePulverizadorBuscado.getText();
         mensagem = controleMaquina.removerPulverizador(nomeMaquina);
         JOptionPane.showMessageDialog(this, mensagem);
-
-        jTextFieldNomeMaquina.setText(limparCampo);
-        jTextFieldMarcaMaquina.setText(limparCampo);
-        jTextFieldAnoMaquina.setText(limparCampo);
-        jTextFieldChassiMaquina.setText(limparCampo);
-        jTextFieldEstadoMaquina.setText(limparCampo);
-        jTextFieldCapacidadeDoReservatorio.setText(limparCampo);
-        jTextFieldTipoDeCultura.setText(limparCampo);
+        limparCampos();
     }
 
     public void buscarPulverizador() throws SQLException {
-        nomeMaquina = jTextFieldIdMaquina.getText();
+        if (jTextFieldNomePulverizadorBuscado.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira o nome do pulverizador");
+            return;
+        }
+
+        nomeMaquina = jTextFieldNomePulverizadorBuscado.getText();
         Pulverizador pulverizadorEncontrado = controleMaquina.buscarPulverizador(nomeMaquina);
 
         if (pulverizadorEncontrado != null) {
@@ -253,19 +295,24 @@ public class TelaDeRemocaoPulverizador extends javax.swing.JFrame {
 
         } else {
             JOptionPane.showMessageDialog(this, "Pulverizador não encontrado");
-
-            jTextFieldNomeMaquina.setText("");
-            jTextFieldMarcaMaquina.setText("");
-            jTextFieldAnoMaquina.setText("");
-            jTextFieldChassiMaquina.setText("");
-            jTextFieldEstadoMaquina.setText("");
-            jTextFieldCapacidadeDoReservatorio.setText("");
-            jTextFieldTipoDeCultura.setText("");
+            limparCampos();
         }
+    }
+
+    private void limparCampos() {
+        jTextFieldNomeMaquina.setText("");
+        jTextFieldMarcaMaquina.setText("");
+        jTextFieldAnoMaquina.setText("");
+        jTextFieldChassiMaquina.setText("");
+        jTextFieldEstadoMaquina.setText("");
+        jTextFieldCapacidadeDoReservatorio.setText("");
+        jTextFieldTipoDeCultura.setText("");
+        jTextFieldNomePulverizadorBuscado.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscarMaquina;
+    private javax.swing.JButton jButtonCancelarRemocao;
     private javax.swing.JButton jButtonConfirmarRemocao;
     private javax.swing.JButton jButtonSairDaTelaDeConsulta;
     private javax.swing.JLabel jLabelFundoConsultaCarregador;
@@ -273,9 +320,9 @@ public class TelaDeRemocaoPulverizador extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldCapacidadeDoReservatorio;
     private javax.swing.JTextField jTextFieldChassiMaquina;
     private javax.swing.JTextField jTextFieldEstadoMaquina;
-    private javax.swing.JTextField jTextFieldIdMaquina;
     private javax.swing.JTextField jTextFieldMarcaMaquina;
     private javax.swing.JTextField jTextFieldNomeMaquina;
+    private javax.swing.JTextField jTextFieldNomePulverizadorBuscado;
     private javax.swing.JTextField jTextFieldTipoDeCultura;
     // End of variables declaration//GEN-END:variables
 }

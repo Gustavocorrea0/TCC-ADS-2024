@@ -15,6 +15,8 @@ public class TelaDeCadastroCarregador extends javax.swing.JFrame {
     private int anoMaquina;
     private String chassiMaquina = null;
 
+    private Double pesoSuportado;
+
     public TelaDeCadastroCarregador() {
         initComponents();
     }
@@ -38,7 +40,9 @@ public class TelaDeCadastroCarregador extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTextFieldAnoMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldAnoMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldAnoMaquina.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldAnoMaquina.setBorder(null);
         jTextFieldAnoMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextFieldAnoMaquina.addActionListener(new java.awt.event.ActionListener() {
@@ -46,9 +50,11 @@ public class TelaDeCadastroCarregador extends javax.swing.JFrame {
                 jTextFieldAnoMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldAnoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 305, 270, 27));
+        getContentPane().add(jTextFieldAnoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 304, 272, 29));
 
+        jTextFieldChassiMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldChassiMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldChassiMaquina.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldChassiMaquina.setBorder(null);
         jTextFieldChassiMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextFieldChassiMaquina.addActionListener(new java.awt.event.ActionListener() {
@@ -56,9 +62,11 @@ public class TelaDeCadastroCarregador extends javax.swing.JFrame {
                 jTextFieldChassiMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldChassiMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 396, 270, 27));
+        getContentPane().add(jTextFieldChassiMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 395, 272, 29));
 
+        jTextFieldMarcaMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldMarcaMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldMarcaMaquina.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldMarcaMaquina.setBorder(null);
         jTextFieldMarcaMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextFieldMarcaMaquina.addActionListener(new java.awt.event.ActionListener() {
@@ -66,9 +74,11 @@ public class TelaDeCadastroCarregador extends javax.swing.JFrame {
                 jTextFieldMarcaMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldMarcaMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 220, 270, 27));
+        getContentPane().add(jTextFieldMarcaMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 218, 272, 29));
 
+        jTextFieldPesoSuportado.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldPesoSuportado.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldPesoSuportado.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldPesoSuportado.setBorder(null);
         jTextFieldPesoSuportado.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextFieldPesoSuportado.addActionListener(new java.awt.event.ActionListener() {
@@ -76,9 +86,11 @@ public class TelaDeCadastroCarregador extends javax.swing.JFrame {
                 jTextFieldPesoSuportadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldPesoSuportado, new org.netbeans.lib.awtextra.AbsoluteConstraints(496, 134, 270, 27));
+        getContentPane().add(jTextFieldPesoSuportado, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 132, 272, 29));
 
+        jTextFieldNomeMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNomeMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldNomeMaquina.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldNomeMaquina.setBorder(null);
         jTextFieldNomeMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextFieldNomeMaquina.addActionListener(new java.awt.event.ActionListener() {
@@ -86,7 +98,7 @@ public class TelaDeCadastroCarregador extends javax.swing.JFrame {
                 jTextFieldNomeMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 137, 270, 27));
+        getContentPane().add(jTextFieldNomeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 135, 272, 29));
 
         jButtonCancelarCadastroDeMaquina.setBorder(null);
         jButtonCancelarCadastroDeMaquina.setBorderPainted(false);
@@ -97,7 +109,7 @@ public class TelaDeCadastroCarregador extends javax.swing.JFrame {
                 jButtonCancelarCadastroDeMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCancelarCadastroDeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 600, 280, 33));
+        getContentPane().add(jButtonCancelarCadastroDeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 600, 280, 34));
 
         jButtonConfirmarCadastroDeMaquina.setBorder(null);
         jButtonConfirmarCadastroDeMaquina.setBorderPainted(false);
@@ -128,9 +140,9 @@ public class TelaDeCadastroCarregador extends javax.swing.JFrame {
                 jComboBoxEstadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, 280, -1));
+        getContentPane().add(jComboBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, 280, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasMaquinas/telasDeCadastro/img_tela_cadastro_de_carregador.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasMaquinas/telasCarregador/img_tela_cadastro_de_carregador.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 650));
 
         pack();
@@ -138,33 +150,32 @@ public class TelaDeCadastroCarregador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextFieldMarcaMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldMarcaMaquinaActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldMarcaMaquinaActionPerformed
 
     private void jTextFieldChassiMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldChassiMaquinaActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldChassiMaquinaActionPerformed
 
     private void jTextFieldAnoMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAnoMaquinaActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldAnoMaquinaActionPerformed
 
     private void jTextFieldPesoSuportadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPesoSuportadoActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldPesoSuportadoActionPerformed
 
     private void jButtonSairDaTelaDeConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairDaTelaDeConsultaActionPerformed
-        // TODO add your handling code here:
+
         this.dispose();
         new TelaCRUDCarregador().setVisible(true);
     }//GEN-LAST:event_jButtonSairDaTelaDeConsultaActionPerformed
 
     private void jTextFieldNomeMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeMaquinaActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldNomeMaquinaActionPerformed
 
     private void jButtonConfirmarCadastroDeMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarCadastroDeMaquinaActionPerformed
-        // TODO add your handling code here:
         cadastrarCarregador();
     }//GEN-LAST:event_jButtonConfirmarCadastroDeMaquinaActionPerformed
 
@@ -173,31 +184,46 @@ public class TelaDeCadastroCarregador extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxEstadoActionPerformed
 
     private void jButtonCancelarCadastroDeMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarCadastroDeMaquinaActionPerformed
+        JOptionPane.showMessageDialog(null, "Cadastro Cancelado");
         limparCampos();
     }//GEN-LAST:event_jButtonCancelarCadastroDeMaquinaActionPerformed
 
     public void cadastrarCarregador() {
+        if (jTextFieldNomeMaquina.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o nome do carregador");
+            return;
+        }
+
+        if (jTextFieldMarcaMaquina.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a marca do carregador");
+            return;
+        }
+
+        if (jTextFieldAnoMaquina.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o ano do carregador");
+            return;
+        }
+
+        if (jTextFieldChassiMaquina.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o chassi do carregador (17 Digitos)");
+            return;
+        }
 
         Calendar cal = Calendar.getInstance();
         int anoAtual = cal.get(Calendar.YEAR);
 
         nomeMaquina = jTextFieldNomeMaquina.getText();
         marcaMaquina = jTextFieldMarcaMaquina.getText();
-        anoMaquina = Integer.parseInt(jTextFieldAnoMaquina.getText());
+
+        try {
+            anoMaquina = Integer.parseInt(jTextFieldAnoMaquina.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "Ano é um valor numérico (Ex: 2024)");
+            return;
+        }
+
         chassiMaquina = jTextFieldChassiMaquina.getText();
         estado = jComboBoxEstado.getSelectedItem().toString();
-
-        Double pesoSuportado = Double.valueOf(jTextFieldPesoSuportado.getText());
-
-        if (nomeMaquina.equals("")) {
-            JOptionPane.showMessageDialog(null, "Nome Inválido");
-            return;
-        }
-
-        if (marcaMaquina.equals("")) {
-            JOptionPane.showMessageDialog(null, "Marca Inválida");
-            return;
-        }
 
         if (anoMaquina > (anoAtual + 1) || anoMaquina < 1970) {
             JOptionPane.showMessageDialog(null, "Ano Inválido");
@@ -205,17 +231,12 @@ public class TelaDeCadastroCarregador extends javax.swing.JFrame {
         }
 
         if (chassiMaquina.length() != 17) {
-            JOptionPane.showMessageDialog(null, "Chassi Inválido");
+            JOptionPane.showMessageDialog(null, "Chassi Inválido (17 Digitos");
             return;
         }
 
         if (estado.equals("Selecione")) {
             JOptionPane.showMessageDialog(null, "Adicione o estado");
-            return;
-        }
-
-        if (pesoSuportado <= 0) {
-            JOptionPane.showMessageDialog(null, "Peso Inválido");
             return;
         }
 
@@ -230,6 +251,18 @@ public class TelaDeCadastroCarregador extends javax.swing.JFrame {
         tipoMaquina = "Carregador";
 
         try {
+            pesoSuportado = Double.valueOf(jTextFieldPesoSuportado.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "O peso suportado deve ser numérico");
+            return;
+        }
+
+        if (pesoSuportado <= 0) {
+            JOptionPane.showMessageDialog(null, "Peso Inválido");
+            return;
+        }
+
+        try {
             controleMaquina.carregador.setTipoMaquina(tipoMaquina);
             controleMaquina.carregador.setNomeMaquina(nomeMaquina);
             controleMaquina.carregador.setMarcaMaquina(marcaMaquina);
@@ -241,10 +274,8 @@ public class TelaDeCadastroCarregador extends javax.swing.JFrame {
             String msg = controleMaquina.cadastrarCarregador(ControleMaquina.INCLUSAO);
             JOptionPane.showMessageDialog(this, msg);
             limparCampos();
-
-        } catch (NullPointerException ex) {
-            System.out.println("Problema no sistema, tipo: ");
-            ex.printStackTrace();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Problema no sistema, tipo: " + ex.getMessage());
         }
 
     }

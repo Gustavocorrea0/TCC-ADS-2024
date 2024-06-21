@@ -14,6 +14,8 @@ public class TelaDeCadastroCarretaGraneleira extends javax.swing.JFrame {
     private String marcaMaquina = null;
     private int anoMaquina;
     private String chassiMaquina = null;
+    private Double capacidadeCargaEmKG;
+    private int capacidadeDeSacas;
 
     public TelaDeCadastroCarretaGraneleira() {
         initComponents();
@@ -41,6 +43,7 @@ public class TelaDeCadastroCarretaGraneleira extends javax.swing.JFrame {
 
         jTextFieldAnoMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldAnoMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldAnoMaquina.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldAnoMaquina.setBorder(null);
         jTextFieldAnoMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextFieldAnoMaquina.addActionListener(new java.awt.event.ActionListener() {
@@ -48,10 +51,11 @@ public class TelaDeCadastroCarretaGraneleira extends javax.swing.JFrame {
                 jTextFieldAnoMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldAnoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 305, 270, 27));
+        getContentPane().add(jTextFieldAnoMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 304, 271, 29));
 
         jTextFieldChassiMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldChassiMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldChassiMaquina.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldChassiMaquina.setBorder(null);
         jTextFieldChassiMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextFieldChassiMaquina.addActionListener(new java.awt.event.ActionListener() {
@@ -59,10 +63,11 @@ public class TelaDeCadastroCarretaGraneleira extends javax.swing.JFrame {
                 jTextFieldChassiMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldChassiMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 396, 270, 27));
+        getContentPane().add(jTextFieldChassiMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 395, 271, 29));
 
         jTextFieldMarcaMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldMarcaMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldMarcaMaquina.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldMarcaMaquina.setBorder(null);
         jTextFieldMarcaMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextFieldMarcaMaquina.addActionListener(new java.awt.event.ActionListener() {
@@ -70,10 +75,11 @@ public class TelaDeCadastroCarretaGraneleira extends javax.swing.JFrame {
                 jTextFieldMarcaMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldMarcaMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 220, 270, 27));
+        getContentPane().add(jTextFieldMarcaMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 219, 271, 29));
 
         jTextFieldCapacidadeDeSacas.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCapacidadeDeSacas.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldCapacidadeDeSacas.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldCapacidadeDeSacas.setBorder(null);
         jTextFieldCapacidadeDeSacas.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextFieldCapacidadeDeSacas.addActionListener(new java.awt.event.ActionListener() {
@@ -81,10 +87,11 @@ public class TelaDeCadastroCarretaGraneleira extends javax.swing.JFrame {
                 jTextFieldCapacidadeDeSacasActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCapacidadeDeSacas, new org.netbeans.lib.awtextra.AbsoluteConstraints(506, 220, 270, 27));
+        getContentPane().add(jTextFieldCapacidadeDeSacas, new org.netbeans.lib.awtextra.AbsoluteConstraints(507, 219, 270, 29));
 
         jTextFieldCapacidadeDePeso.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCapacidadeDePeso.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldCapacidadeDePeso.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldCapacidadeDePeso.setBorder(null);
         jTextFieldCapacidadeDePeso.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextFieldCapacidadeDePeso.addActionListener(new java.awt.event.ActionListener() {
@@ -92,10 +99,11 @@ public class TelaDeCadastroCarretaGraneleira extends javax.swing.JFrame {
                 jTextFieldCapacidadeDePesoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldCapacidadeDePeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(506, 134, 270, 27));
+        getContentPane().add(jTextFieldCapacidadeDePeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(505, 133, 271, 29));
 
         jTextFieldNomeMaquina.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNomeMaquina.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldNomeMaquina.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldNomeMaquina.setBorder(null);
         jTextFieldNomeMaquina.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextFieldNomeMaquina.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +111,7 @@ public class TelaDeCadastroCarretaGraneleira extends javax.swing.JFrame {
                 jTextFieldNomeMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 137, 270, 27));
+        getContentPane().add(jTextFieldNomeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 136, 271, 29));
 
         jButtonCancelarCadastroDeMaquina.setBorder(null);
         jButtonCancelarCadastroDeMaquina.setBorderPainted(false);
@@ -113,7 +121,7 @@ public class TelaDeCadastroCarretaGraneleira extends javax.swing.JFrame {
                 jButtonCancelarCadastroDeMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCancelarCadastroDeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 600, 280, 33));
+        getContentPane().add(jButtonCancelarCadastroDeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 600, 280, 35));
 
         jButtonConfirmarCadastroDeMaquina.setBorder(null);
         jButtonConfirmarCadastroDeMaquina.setBorderPainted(false);
@@ -124,7 +132,7 @@ public class TelaDeCadastroCarretaGraneleira extends javax.swing.JFrame {
                 jButtonConfirmarCadastroDeMaquinaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonConfirmarCadastroDeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 550, 280, 33));
+        getContentPane().add(jButtonConfirmarCadastroDeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 550, 280, 35));
 
         jButtonSairDaTelaCadastrarCarretaGraneleira.setBorder(null);
         jButtonSairDaTelaCadastrarCarretaGraneleira.setContentAreaFilled(false);
@@ -144,9 +152,9 @@ public class TelaDeCadastroCarretaGraneleira extends javax.swing.JFrame {
                 jComboBoxEstadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, 280, -1));
+        getContentPane().add(jComboBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, 280, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasMaquinas/telasDeCadastro/img_tela_cadastro_de_carreta_graneleira.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasMaquinas/telasCarretaGraneleira/img_tela_cadastro_de_carreta_graneleira.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 650));
 
         pack();
@@ -154,37 +162,36 @@ public class TelaDeCadastroCarretaGraneleira extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextFieldMarcaMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldMarcaMaquinaActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldMarcaMaquinaActionPerformed
 
     private void jTextFieldChassiMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldChassiMaquinaActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldChassiMaquinaActionPerformed
 
     private void jTextFieldAnoMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAnoMaquinaActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldAnoMaquinaActionPerformed
 
     private void jTextFieldCapacidadeDeSacasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCapacidadeDeSacasActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldCapacidadeDeSacasActionPerformed
 
     private void jButtonSairDaTelaCadastrarCarretaGraneleiraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairDaTelaCadastrarCarretaGraneleiraActionPerformed
-        // TODO add your handling code here:
         this.dispose();
         new TelaCRUDCarretaGraneleira().setVisible(true);
     }//GEN-LAST:event_jButtonSairDaTelaCadastrarCarretaGraneleiraActionPerformed
 
     private void jTextFieldNomeMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeMaquinaActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldNomeMaquinaActionPerformed
 
     private void jTextFieldCapacidadeDePesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCapacidadeDePesoActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldCapacidadeDePesoActionPerformed
 
     private void jButtonConfirmarCadastroDeMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarCadastroDeMaquinaActionPerformed
-        // TODO add your handling code here:
+
         cadastrarCarretaGraneleira();
     }//GEN-LAST:event_jButtonConfirmarCadastroDeMaquinaActionPerformed
 
@@ -193,29 +200,69 @@ public class TelaDeCadastroCarretaGraneleira extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxEstadoActionPerformed
 
     private void jButtonCancelarCadastroDeMaquinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarCadastroDeMaquinaActionPerformed
+        JOptionPane.showMessageDialog(null, "Cadastro Cancelado");
         limparCampos();
     }//GEN-LAST:event_jButtonCancelarCadastroDeMaquinaActionPerformed
 
     public void cadastrarCarretaGraneleira() {
+        if (jTextFieldNomeMaquina.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o nome da graneleira");
+            return;
+        }
+
+        if (jTextFieldMarcaMaquina.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a marca da graneleira");
+            return;
+        }
+
+        if (jTextFieldAnoMaquina.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o ano da graneleira");
+            return;
+        }
+
+        if (jTextFieldChassiMaquina.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o chassi da graneleira (17 Digitos)");
+            return;
+        }
+
+        if (jTextFieldCapacidadeDePeso.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a capacidade de peso da graneleira");
+            return;
+        }
+        
+        if (jTextFieldCapacidadeDeSacas.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a capacidade de sacas da graneleira");
+            return;
+        }
+
         Calendar cal = Calendar.getInstance();
         int anoAtual = cal.get(Calendar.YEAR);
+
         nomeMaquina = jTextFieldNomeMaquina.getText();
         marcaMaquina = jTextFieldMarcaMaquina.getText();
-        anoMaquina = Integer.parseInt(jTextFieldAnoMaquina.getText());
+
+        try {
+            anoMaquina = Integer.parseInt(jTextFieldAnoMaquina.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "Ano é um valor numérico (Ex: 2024)");
+            return;
+        }
+
+        try {
+            capacidadeCargaEmKG = Double.valueOf(jTextFieldCapacidadeDePeso.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "A capacidade de peso deve ser numérica");
+            return;
+        }
+
         chassiMaquina = jTextFieldChassiMaquina.getText();
         estado = jComboBoxEstado.getSelectedItem().toString();
         tipoMaquina = "Carreta Graneleira";
 
-        Double capacidadeCargaEmKG = Double.parseDouble(jTextFieldCapacidadeDePeso.getText());
-        int capacidadeDeSacas = Integer.parseInt(jTextFieldCapacidadeDePeso.getText());
-
-        if (nomeMaquina.equals("")) {
-            JOptionPane.showMessageDialog(null, "Nome Inválido");
-            return;
-        }
-
-        if (marcaMaquina.equals("")) {
-            JOptionPane.showMessageDialog(null, "Marca Inválida");
+        try {
+            capacidadeDeSacas = Integer.parseInt(jTextFieldCapacidadeDeSacas.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "A capacidade de sacas deve ser numérica (ex: 1910)");
             return;
         }
 
@@ -265,9 +312,8 @@ public class TelaDeCadastroCarretaGraneleira extends javax.swing.JFrame {
             String msg = controleMaquina.cadastrarCarretaGraneleira(ControleMaquina.INCLUSAO);
             JOptionPane.showMessageDialog(this, msg);
             limparCampos();
-        } catch (NullPointerException ex) {
-            System.out.println("Problema no sistema, tipo: ");
-            ex.printStackTrace();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Falha tipo: " + ex);
         }
     }
 
