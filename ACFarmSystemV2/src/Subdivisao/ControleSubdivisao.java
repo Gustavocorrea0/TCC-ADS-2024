@@ -157,25 +157,25 @@ public class ControleSubdivisao {
         }
 
         try {
-            sql = "UPDATE subdivisao SET nome_subdivisao = ?, area_subdivisao = ?, tipo_de_cultura_subdivisao = ? WHERE id_subdivisao = ?";
+            sql = "UPDATE subdivisao SET nome_subdivisao = ?, area_subdivisao = ?, tipo_de_cultura_subdivisao = ?, nome_propriedade = ? WHERE id_subdivisao = ?";
             ps = conexao.conn.prepareStatement(sql);
 
             ps.setString(1, subdivisao.getNomeSubdivisao());
             ps.setDouble(2, subdivisao.getAreaSubdivisao());
             ps.setString(3, subdivisao.getCulturaSubdivisao());
-            ps.setInt(4, subdivisao.getIdSubdivisao());
+            ps.setString(4, subdivisao.getNomePropriedade());
+            ps.setInt(5, subdivisao.getIdSubdivisao());
 
             int linhasAfetadas = ps.executeUpdate();
 
             if (linhasAfetadas > 0) {
                 return "Subdivisão atualizada com sucesso";
             } else {
-                return "Subdivisão não encontrada";
+                return "Falha ao atualizar subdivisão";
             }
 
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            return "Falha ao atulizar subdivisão";
+        } catch (Exception ex) {
+            return "Falha ao atualizar subdivisão" + ex.getMessage();
         } finally {
             try {
                 if (ps != null) {

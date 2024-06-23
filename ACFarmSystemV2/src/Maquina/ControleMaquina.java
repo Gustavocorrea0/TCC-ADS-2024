@@ -181,6 +181,7 @@ public class ControleMaquina {
             ex.printStackTrace();
             return "Falha ao atualizar carregador";
         }
+        
     }
 
     public List<Carregador> readCarregador() {

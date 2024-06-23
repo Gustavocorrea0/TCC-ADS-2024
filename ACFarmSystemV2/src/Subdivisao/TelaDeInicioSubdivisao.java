@@ -37,7 +37,7 @@ public final class TelaDeInicioSubdivisao extends javax.swing.JFrame {
                 jButtonCadastrarPropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCadastrarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 108, 261, 45));
+        getContentPane().add(jButtonCadastrarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 118, 80, 70));
 
         jButtonAtualizarPropriedade.setBorder(null);
         jButtonAtualizarPropriedade.setContentAreaFilled(false);
@@ -47,7 +47,7 @@ public final class TelaDeInicioSubdivisao extends javax.swing.JFrame {
                 jButtonAtualizarPropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAtualizarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 182, 261, 45));
+        getContentPane().add(jButtonAtualizarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(9, 240, 86, 70));
 
         jButtonDeletarPropriedade.setBorder(null);
         jButtonDeletarPropriedade.setContentAreaFilled(false);
@@ -57,7 +57,7 @@ public final class TelaDeInicioSubdivisao extends javax.swing.JFrame {
                 jButtonDeletarPropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonDeletarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(601, 108, 261, 45));
+        getContentPane().add(jButtonDeletarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 365, 60, 70));
 
         jButtonVerificarPropriedade.setBorder(null);
         jButtonVerificarPropriedade.setContentAreaFilled(false);
@@ -67,7 +67,7 @@ public final class TelaDeInicioSubdivisao extends javax.swing.JFrame {
                 jButtonVerificarPropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonVerificarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 181, 261, 45));
+        getContentPane().add(jButtonVerificarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 495, 80, 70));
 
         jButtonVoltarAoTelaDeInicio.setBorder(null);
         jButtonVoltarAoTelaDeInicio.setBorderPainted(false);
@@ -114,7 +114,7 @@ public final class TelaDeInicioSubdivisao extends javax.swing.JFrame {
         jTableSubdivisao.setSelectionForeground(new java.awt.Color(15, 42, 61));
         jScrollPane1.setViewportView(jTableSubdivisao);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 870, 350));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 740, 350));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasSubdivisao/img_tela_de_inicio_subdivisao.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 640));
@@ -125,7 +125,7 @@ public final class TelaDeInicioSubdivisao extends javax.swing.JFrame {
 
     private void jButtonCadastrarPropriedadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarPropriedadeActionPerformed
         this.dispose();
-        new TelaDePropriedades().setVisible(true);
+        new TelaDeCadastroDeSubdivisao().setVisible(true);
     }//GEN-LAST:event_jButtonCadastrarPropriedadeActionPerformed
 
     private void jButtonAtualizarPropriedadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtualizarPropriedadeActionPerformed

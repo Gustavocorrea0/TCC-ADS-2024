@@ -5,11 +5,13 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class TelaDeCadastroDeSubdivisao extends javax.swing.JFrame {
 
     public TelaDeCadastroDeSubdivisao() {
         initComponents();
+        readTable();
     }
 
     @SuppressWarnings("unchecked")
@@ -17,38 +19,20 @@ public class TelaDeCadastroDeSubdivisao extends javax.swing.JFrame {
     private void initComponents() {
 
         botaoTipoDeCultura = new javax.swing.ButtonGroup();
-        jButtonCancelarCadastroDePropriedade = new javax.swing.JButton();
-        jButtonConfirmarCadastroDePropriedade = new javax.swing.JButton();
         jTextFieldNomeSubdivisao = new javax.swing.JTextField();
         jTextFieldAreaSubdivisao = new javax.swing.JTextField();
-        jTextFieldIdPropriedade = new javax.swing.JTextField();
+        jTextFieldNomePropriedade = new javax.swing.JTextField();
+        jButtonCancelarCadastroDePropriedade = new javax.swing.JButton();
+        jButtonConfirmarCadastroDePropriedade = new javax.swing.JButton();
         jButtonVoltarAoTelaDeUsuario = new javax.swing.JButton();
         jButtonBuscarPropriedade = new javax.swing.JButton();
         jComboBoxCultura = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTablePropriedade = new javax.swing.JTable();
         jLabelCadatroPropriedade = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jButtonCancelarCadastroDePropriedade.setBorder(null);
-        jButtonCancelarCadastroDePropriedade.setContentAreaFilled(false);
-        jButtonCancelarCadastroDePropriedade.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonCancelarCadastroDePropriedade.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCancelarCadastroDePropriedadeActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonCancelarCadastroDePropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(587, 571, 280, 36));
-
-        jButtonConfirmarCadastroDePropriedade.setBorder(null);
-        jButtonConfirmarCadastroDePropriedade.setContentAreaFilled(false);
-        jButtonConfirmarCadastroDePropriedade.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonConfirmarCadastroDePropriedade.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonConfirmarCadastroDePropriedadeActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonConfirmarCadastroDePropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 520, 280, 36));
 
         jTextFieldNomeSubdivisao.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNomeSubdivisao.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -59,7 +43,7 @@ public class TelaDeCadastroDeSubdivisao extends javax.swing.JFrame {
                 jTextFieldNomeSubdivisaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNomeSubdivisao, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 256, 276, 29));
+        getContentPane().add(jTextFieldNomeSubdivisao, new org.netbeans.lib.awtextra.AbsoluteConstraints(486, 128, 278, 29));
 
         jTextFieldAreaSubdivisao.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldAreaSubdivisao.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -70,18 +54,38 @@ public class TelaDeCadastroDeSubdivisao extends javax.swing.JFrame {
                 jTextFieldAreaSubdivisaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldAreaSubdivisao, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 384, 275, 28));
+        getContentPane().add(jTextFieldAreaSubdivisao, new org.netbeans.lib.awtextra.AbsoluteConstraints(487, 233, 278, 29));
 
-        jTextFieldIdPropriedade.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldIdPropriedade.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldIdPropriedade.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldIdPropriedade.setBorder(null);
-        jTextFieldIdPropriedade.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldNomePropriedade.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldNomePropriedade.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextFieldNomePropriedade.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldNomePropriedade.setBorder(null);
+        jTextFieldNomePropriedade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldIdPropriedadeActionPerformed(evt);
+                jTextFieldNomePropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldIdPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 131, 304, 28));
+        getContentPane().add(jTextFieldNomePropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 128, 305, 29));
+
+        jButtonCancelarCadastroDePropriedade.setBorder(null);
+        jButtonCancelarCadastroDePropriedade.setContentAreaFilled(false);
+        jButtonCancelarCadastroDePropriedade.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCancelarCadastroDePropriedade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelarCadastroDePropriedadeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonCancelarCadastroDePropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 593, 280, 36));
+
+        jButtonConfirmarCadastroDePropriedade.setBorder(null);
+        jButtonConfirmarCadastroDePropriedade.setContentAreaFilled(false);
+        jButtonConfirmarCadastroDePropriedade.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonConfirmarCadastroDePropriedade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConfirmarCadastroDePropriedadeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonConfirmarCadastroDePropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 543, 280, 36));
 
         jButtonVoltarAoTelaDeUsuario.setBorder(null);
         jButtonVoltarAoTelaDeUsuario.setBorderPainted(false);
@@ -104,7 +108,7 @@ public class TelaDeCadastroDeSubdivisao extends javax.swing.JFrame {
                 jButtonBuscarPropriedadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBuscarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(395, 120, 260, 45));
+        getContentPane().add(jButtonBuscarPropriedade, new org.netbeans.lib.awtextra.AbsoluteConstraints(365, 120, 59, 45));
 
         jComboBoxCultura.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jComboBoxCultura.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Milho", "Soja" }));
@@ -113,7 +117,41 @@ public class TelaDeCadastroDeSubdivisao extends javax.swing.JFrame {
                 jComboBoxCulturaActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxCultura, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 490, 280, -1));
+        getContentPane().add(jComboBoxCultura, new org.netbeans.lib.awtextra.AbsoluteConstraints(486, 340, 290, 30));
+
+        jTablePropriedade.setBackground(new java.awt.Color(15, 42, 61));
+        jTablePropriedade.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        jTablePropriedade.setForeground(new java.awt.Color(255, 255, 255));
+        jTablePropriedade.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Propriedade", "Area(Alqueire)"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Double.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTablePropriedade.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTablePropriedade.setGridColor(new java.awt.Color(255, 204, 0));
+        jTablePropriedade.setRowHeight(30);
+        jTablePropriedade.setSelectionForeground(new java.awt.Color(15, 42, 61));
+        jScrollPane1.setViewportView(jTablePropriedade);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 400, 260));
 
         jLabelCadatroPropriedade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasSubdivisao/img_tela_de_cadastro_subdivisao.png"))); // NOI18N
         jLabelCadatroPropriedade.setText("jLabel1");
@@ -131,11 +169,10 @@ public class TelaDeCadastroDeSubdivisao extends javax.swing.JFrame {
     private String nomeSubdivisao;
     private int idPropriedade;
     private String nomePropriedade;
+    private DefaultTableModel modeloPropriedade;
 
     private void jButtonCancelarCadastroDePropriedadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarCadastroDePropriedadeActionPerformed
-        jTextFieldAreaSubdivisao.setText(limparCampo);
-        jTextFieldNomeSubdivisao.setText(limparCampo);
-        jTextFieldIdPropriedade.setText(limparCampo);
+        limparCampos();
     }//GEN-LAST:event_jButtonCancelarCadastroDePropriedadeActionPerformed
 
     private void jTextFieldNomeSubdivisaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeSubdivisaoActionPerformed
@@ -146,17 +183,17 @@ public class TelaDeCadastroDeSubdivisao extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jTextFieldAreaSubdivisaoActionPerformed
 
-    private void jTextFieldIdPropriedadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdPropriedadeActionPerformed
+    private void jTextFieldNomePropriedadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomePropriedadeActionPerformed
 
-    }//GEN-LAST:event_jTextFieldIdPropriedadeActionPerformed
+    }//GEN-LAST:event_jTextFieldNomePropriedadeActionPerformed
 
     private void jButtonConfirmarCadastroDePropriedadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarCadastroDePropriedadeActionPerformed
         cadastrarSubdivisao();
     }//GEN-LAST:event_jButtonConfirmarCadastroDePropriedadeActionPerformed
 
     private void jButtonVoltarAoTelaDeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarAoTelaDeUsuarioActionPerformed
-        this.dispose(); 
-        new TelaDePropriedades().setVisible(true);
+        this.dispose();
+        new TelaDeInicioSubdivisao().setVisible(true);
     }//GEN-LAST:event_jButtonVoltarAoTelaDeUsuarioActionPerformed
 
     private void jButtonBuscarPropriedadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarPropriedadeActionPerformed
@@ -172,7 +209,7 @@ public class TelaDeCadastroDeSubdivisao extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxCulturaActionPerformed
 
     public void buscarPropriedade() throws SQLException {
-        String nomeBuscaPropriedade = jTextFieldIdPropriedade.getText();
+        String nomeBuscaPropriedade = jTextFieldNomePropriedade.getText();
         Propriedade propriedadeEncontrada = controlePropriedade.buscarPropriedadePorNome(nomeBuscaPropriedade);
 
         if (propriedadeEncontrada != null) {
@@ -185,28 +222,39 @@ public class TelaDeCadastroDeSubdivisao extends javax.swing.JFrame {
     }
 
     public void cadastrarSubdivisao() {
-        areaCovertida = Double.valueOf(jTextFieldAreaSubdivisao.getText());
+        if (jTextFieldNomePropriedade.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o nome da subdivisão");
+            return;
+        }
+
+        if (jTextFieldNomeSubdivisao.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira o nome da subdivisão");
+            return;
+        }
+
+        if (jTextFieldAreaSubdivisao.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Insira a area da subdivisão");
+            return;
+        }
+
+        try {
+            areaCovertida = Double.valueOf(jTextFieldAreaSubdivisao.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "A area da subdivisão é um valor numérico");
+            return;
+        }
+
         cultura = jComboBoxCultura.getSelectedItem().toString();
         nomeSubdivisao = jTextFieldNomeSubdivisao.getText();
 
-        if(cultura.equals("Selecione")){
+        if (cultura.equals("Selecione")) {
             JOptionPane.showMessageDialog(null, "Adicione a cultura");
-            return;
-        }
-        
-        if (nomeSubdivisao.equals("")) {
-            JOptionPane.showMessageDialog(null, "Nome Inválido");
-            jTextFieldIdPropriedade.requestFocus();
             return;
         }
 
         if (areaCovertida <= 0) {
             JOptionPane.showMessageDialog(null, "Area Inválida");
             return;
-        }
-
-        if (botaoTipoDeCultura.equals("")) {
-            JOptionPane.showMessageDialog(null, "Adicione o nivel de Acesso");
         }
 
         controleSubdivisao.subdivisao.setNomeSubdivisao(nomeSubdivisao);
@@ -217,14 +265,23 @@ public class TelaDeCadastroDeSubdivisao extends javax.swing.JFrame {
         String msg = controleSubdivisao.cadastrarSubdivisao(ControleSubdivisao.INCLUSAO);
 
         JOptionPane.showMessageDialog(this, msg);
-
-        jTextFieldAreaSubdivisao.setText(limparCampo);
-        jTextFieldNomeSubdivisao.setText(limparCampo);
-        jTextFieldIdPropriedade.setText(limparCampo);
-
+        limparCampos();
     }
 
+    private void limparCampos() {
+        jTextFieldAreaSubdivisao.setText("");
+        jTextFieldNomeSubdivisao.setText("");
+        jTextFieldNomePropriedade.setText("");
+    }
 
+    public void readTable() {
+        modeloPropriedade = (DefaultTableModel) jTablePropriedade.getModel();
+        ControlePropriedade controlePropriedade1 = new ControlePropriedade();
+
+        for (Propriedade u : controlePropriedade1.readPropriedade()) {
+            modeloPropriedade.addRow(new Object[]{u.getNomePropriedade(), u.getAreaPropriedade()});
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup botaoTipoDeCultura;
     private javax.swing.JButton jButtonBuscarPropriedade;
@@ -233,8 +290,10 @@ public class TelaDeCadastroDeSubdivisao extends javax.swing.JFrame {
     private javax.swing.JButton jButtonVoltarAoTelaDeUsuario;
     private javax.swing.JComboBox<String> jComboBoxCultura;
     private javax.swing.JLabel jLabelCadatroPropriedade;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTablePropriedade;
     private javax.swing.JTextField jTextFieldAreaSubdivisao;
-    private javax.swing.JTextField jTextFieldIdPropriedade;
+    private javax.swing.JTextField jTextFieldNomePropriedade;
     private javax.swing.JTextField jTextFieldNomeSubdivisao;
     // End of variables declaration//GEN-END:variables
 }

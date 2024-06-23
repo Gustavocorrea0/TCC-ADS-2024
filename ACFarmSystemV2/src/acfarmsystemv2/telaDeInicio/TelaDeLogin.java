@@ -60,13 +60,13 @@ public class TelaDeLogin extends javax.swing.JFrame {
                 jTextNomeUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextNomeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(305, 242, 450, 50));
+        getContentPane().add(jTextNomeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(303, 242, 460, 50));
 
         jPasswordSenhaDoUsuario.setBackground(new java.awt.Color(255, 255, 255));
         jPasswordSenhaDoUsuario.setFont(new java.awt.Font("Arial", 0, 23)); // NOI18N
         jPasswordSenhaDoUsuario.setForeground(new java.awt.Color(0, 0, 0));
         jPasswordSenhaDoUsuario.setBorder(null);
-        getContentPane().add(jPasswordSenhaDoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(305, 334, 450, 50));
+        getContentPane().add(jPasswordSenhaDoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(303, 334, 460, 50));
 
         jButtonEncerrarSistema.setBorder(null);
         jButtonEncerrarSistema.setBorderPainted(false);
@@ -81,7 +81,7 @@ public class TelaDeLogin extends javax.swing.JFrame {
         getContentPane().add(jButtonEncerrarSistema, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 10, 50, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img_tela_de_login_2.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -1, -1, 650));
 
         pack();
         setLocationRelativeTo(null);
