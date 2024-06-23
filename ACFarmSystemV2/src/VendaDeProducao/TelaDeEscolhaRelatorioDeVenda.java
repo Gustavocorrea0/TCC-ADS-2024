@@ -78,7 +78,11 @@ public class TelaDeEscolhaRelatorioDeVenda extends javax.swing.JFrame {
 
     private void jButtonVoltarATelaDeProducaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarATelaDeProducaoActionPerformed
         this.dispose();
-        new TelaDeInicioVendasProducao().setVisible(true);
+        try {
+            new TelaDeInicioVendasProducao().setVisible(true);
+        } catch (ParseException ex) {
+            Logger.getLogger(TelaDeEscolhaRelatorioDeVenda.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButtonVoltarATelaDeProducaoActionPerformed
 
     private void jButtonGerarRelatorioGeralDeFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGerarRelatorioGeralDeFornecedorActionPerformed
@@ -96,9 +100,9 @@ public class TelaDeEscolhaRelatorioDeVenda extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonGerarRelatorioGeralDeFornecedorActionPerformed
 
     public void apresentarGraficoVendas() {
-       JInternalFrameGraficoFinaceiro graficoFinanceiro = new JInternalFrameGraficoFinaceiro();
-       jDesktopPaneGraficoDeValores.add(graficoFinanceiro);
-       graficoFinanceiro.setVisible(true);
+        JInternalFrameGraficoFinaceiro graficoFinanceiro = new JInternalFrameGraficoFinaceiro();
+        jDesktopPaneGraficoDeValores.add(graficoFinanceiro);
+        graficoFinanceiro.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
