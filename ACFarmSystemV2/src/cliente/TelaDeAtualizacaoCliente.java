@@ -368,7 +368,7 @@ public class TelaDeAtualizacaoCliente extends javax.swing.JFrame {
                 }
 
             default:
-                JOptionPane.showMessageDialog(null, "Tipo de Cliente inválido, APENAS: pessoa, empresa ou cooperativa");
+                JOptionPane.showMessageDialog(null, "Tipo de Cliente inválido, APENAS:\npessoa\nempresa\ncooperativa");
                 return;
         }
 
@@ -391,9 +391,9 @@ public class TelaDeAtualizacaoCliente extends javax.swing.JFrame {
             controleCliente = new ControleCliente();
             String msgAtualizacao = controleCliente.atualizarCliente(clienteAtualizado);
             JOptionPane.showMessageDialog(null, msgAtualizacao);
+            limparCampos();
         } catch (NullPointerException ex) {
-            System.out.println("Falha no sistema, tipo: ");
-            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Falha no sistema, tipo: " + ex.getMessage());
         }
     }
 

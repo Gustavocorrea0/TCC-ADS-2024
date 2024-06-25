@@ -116,7 +116,7 @@ public class TelaDeConsultaCliente extends javax.swing.JFrame {
                 jTextFieldClienteBuscadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldClienteBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 114, 272, 30));
+        getContentPane().add(jTextFieldClienteBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 114, 272, 30));
 
         jTextFieldTelefone.setEditable(false);
         jTextFieldTelefone.setBackground(new java.awt.Color(255, 255, 255));

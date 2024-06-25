@@ -3,11 +3,9 @@ package VendaDeProducao;
 import cliente.Cliente;
 import cliente.ControleCliente;
 import java.sql.SQLException;
-import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -63,6 +61,7 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
         jButtonBuscarCliente = new javax.swing.JButton();
         jButtonBuscarProducao = new javax.swing.JButton();
         jButtonConfirmarVenda = new javax.swing.JButton();
+        jButtonCancelarAtualizacao = new javax.swing.JButton();
         jComboBoxMetodoDePagamento = new javax.swing.JComboBox<>();
         jComboBoxFormaDePagamento = new javax.swing.JComboBox<>();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -88,6 +87,11 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
         jTextFieldDataProducao.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldDataProducao.setBorder(null);
         jTextFieldDataProducao.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextFieldDataProducao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldDataProducaoActionPerformed(evt);
+            }
+        });
         getContentPane().add(jTextFieldDataProducao, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 338, 325, 30));
 
         jTextFieldNomeProducaoBuscada.setBackground(new java.awt.Color(255, 255, 255));
@@ -155,7 +159,7 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
         getContentPane().add(jTextFieldDataDaVenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(677, 415, 207, 30));
 
         jTextFieldValorTotal.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldValorTotal.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
+        jTextFieldValorTotal.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jTextFieldValorTotal.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldValorTotal.setBorder(null);
         jTextFieldValorTotal.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -223,6 +227,17 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonConfirmarVenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 550, 282, 35));
 
+        jButtonCancelarAtualizacao.setBorder(null);
+        jButtonCancelarAtualizacao.setBorderPainted(false);
+        jButtonCancelarAtualizacao.setContentAreaFilled(false);
+        jButtonCancelarAtualizacao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCancelarAtualizacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelarAtualizacaoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonCancelarAtualizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(617, 600, 280, 36));
+
         jComboBoxMetodoDePagamento.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jComboBoxMetodoDePagamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Parcelado", "Á vista", "" }));
         jComboBoxMetodoDePagamento.addActionListener(new java.awt.event.ActionListener() {
@@ -274,7 +289,7 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
         jTableProducao.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(jTableProducao);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 110, 240, 160));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 110, 240, 160));
 
         jTableFornecedor.setBackground(new java.awt.Color(15, 42, 61));
         jTableFornecedor.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
@@ -308,7 +323,7 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
         jTableFornecedor.setSelectionForeground(new java.awt.Color(15, 42, 61));
         jScrollPane1.setViewportView(jTableFornecedor);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, 190, 160));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 110, 190, 160));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/telasVendaProducao/img_tela_de_realizar_vendas.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -380,6 +395,15 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jComboBoxFormaDePagamentoActionPerformed
 
+    private void jTextFieldDataProducaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDataProducaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldDataProducaoActionPerformed
+
+    private void jButtonCancelarAtualizacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarAtualizacaoActionPerformed
+        JOptionPane.showMessageDialog(this, "Venda Cancelada");
+        limparCampos();
+    }//GEN-LAST:event_jButtonCancelarAtualizacaoActionPerformed
+
     public void buscarCliente() throws SQLException {
         nomeClienteBuscado = jTextFieldNomeClienteBuscado.getText();
 
@@ -424,6 +448,30 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
     }
 
     public void realizarVenda() {
+        if (jTextFieldNomeProducao.getText().isBlank() || jTextFieldDataProducao.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Busque uma Produção");
+            return;
+        }
+
+        if (jTextFieldNomeCliente.getText().isBlank() || jTextFieldCPFOuCNPJCliente.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Busque um Cliente");
+            return;
+        }
+
+        if (jTextFieldNumeroDeParcelas.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira a quantidade de vezes");
+            return;
+        }
+        
+        if (jTextFieldDataDaVenda.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira a data da venda");
+            return;
+        }
+        
+         if (jTextFieldValorTotal.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "Insira um formato valido para o valor total");
+            return;
+        }
         metodoDePagamentoNovo = jComboBoxMetodoDePagamento.getSelectedItem().toString();
         formaDePagamentoNovo = jComboBoxFormaDePagamento.getSelectedItem().toString();
 
@@ -434,11 +482,35 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
         dataProducaoNovo = jTextFieldDataProducao.getText();
         dataVendaNovo = jTextFieldDataDaVenda.getText();
         valorTotalTexto = jTextFieldValorTotal.getText();
-        valorTotalVendaNovoCorrigido = Double.valueOf(valorTotalTexto.replace(".", "").replace(",", "."));
-        quantidadeDeSacasProducaoNovo = Integer.parseInt(jTextFieldNumeroSacasProducao.getText());
-        quantidadeDeParcelasNovo = Integer.parseInt(jTextFieldNumeroDeParcelas.getText());
+
+        try {
+            valorTotalVendaNovoCorrigido = Double.valueOf(valorTotalTexto.replace(".", "").replace(",", "."));
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Insira um formato valido para o valor");
+            return;
+        }
+
+        try {
+            quantidadeDeSacasProducaoNovo = Integer.parseInt(jTextFieldNumeroSacasProducao.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "A quantidade de sacas deve ser numérica");
+            return;
+        }
+
+        try {
+            quantidadeDeParcelasNovo = Integer.parseInt(jTextFieldNumeroDeParcelas.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "A quantidade de parcelas deve ser numérica");
+            return;
+        }
+
         try {
             SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            
+            if (ValidarData.validaData(dataVendaNovo) == false) {
+                JOptionPane.showMessageDialog(this, "Data de venda produção inválida");
+                return;
+            }
 
             if (nomeProducaoNovo.isBlank()) {
                 JOptionPane.showMessageDialog(this, "Busque uma producao");
@@ -470,12 +542,7 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
                 return;
             }
 
-            if (ValidarData.validaData(dataVendaNovo) == false) {
-                JOptionPane.showMessageDialog(this, "Data de venda produção inválida");
-                return;
-            }
-
-            if (valorTotalVendaNovoCorrigido < 0 || valorTotalVendaNovoCorrigido.equals("")) {
+            if (valorTotalVendaNovoCorrigido < 0) {
                 JOptionPane.showMessageDialog(this, "Valor da venda inválido");
                 return;
             }
@@ -515,7 +582,7 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(this, "Os valores devem ser númericos");
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(this, "Formato de moeda inválido");
+            JOptionPane.showMessageDialog(this, "Falha tipo: " + ex.getMessage());
         }
     }
 
@@ -567,6 +634,7 @@ public class TelaDeVendaProducao extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscarCliente;
     private javax.swing.JButton jButtonBuscarProducao;
+    private javax.swing.JButton jButtonCancelarAtualizacao;
     private javax.swing.JButton jButtonConfirmarVenda;
     private javax.swing.JButton jButtonVoltarAoInicio;
     private javax.swing.JComboBox<String> jComboBoxFormaDePagamento;

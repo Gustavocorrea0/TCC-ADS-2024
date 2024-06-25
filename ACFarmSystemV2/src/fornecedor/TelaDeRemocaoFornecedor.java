@@ -335,6 +335,7 @@ public class TelaDeRemocaoFornecedor extends javax.swing.JFrame {
         jTextFieldNomeFantasia.setText("");
         jTextFieldRazaoSocial.setText("");
         jTextFieldTelefoneFornecedor.setText("");
+        jTextFieldFornecedorBuscado.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

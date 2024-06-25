@@ -275,6 +275,7 @@ public class TelaDeAtualizacaoPraga extends javax.swing.JFrame {
                 ControlePraga controlePraga1 = new ControlePraga();
                 String msgAtualizacao = controlePraga1.atualizarPraga(pragaAtualizada);
                 JOptionPane.showMessageDialog(null, msgAtualizacao);
+                limparCampos();
             } else {
                 JOptionPane.showMessageDialog(null, "Estado Inválido, apenas SIM ou NAO");
                 return;

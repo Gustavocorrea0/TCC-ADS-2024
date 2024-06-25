@@ -14,7 +14,7 @@ public class JInternalFrameGraficoProducao extends javax.swing.JInternalFrame {
     public JInternalFrameGraficoProducao() {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Grafico");
-        setSize(720, 240);
+        setSize(720, 300);
 
         setVisible(true);
 
@@ -52,8 +52,8 @@ public class JInternalFrameGraficoProducao extends javax.swing.JInternalFrame {
         }
 
         // Grafico 3D
-        //JFreeChart grafico = ChartFactory.createBarChart3D("Sacas por producão", "Produção", "Sacas", barra, PlotOrientation.VERTICAL, true, true , false);
-        JFreeChart grafico = ChartFactory.createBarChart3D("Sacas por producão", "Produção", "Sacas", barra, PlotOrientation.HORIZONTAL, true, true, false);
+        JFreeChart grafico = ChartFactory.createBarChart3D("Sacas por producão", "Produção", "Sacas", barra, PlotOrientation.VERTICAL, true, true , false);
+        //JFreeChart grafico = ChartFactory.createBarChart3D("Sacas por producão", "Produção", "Sacas", barra, PlotOrientation.HORIZONTAL, true, true, false);
 
         ChartPanel painel = new ChartPanel(grafico);
 
