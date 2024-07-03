@@ -267,13 +267,13 @@ public class TelaDeCadastroDeTrator extends javax.swing.JFrame {
             return;
         }
 
-       try {
+        try {
             capacidadeDoTanque = Double.valueOf(jTextFieldCapacidadeDoTanqueTrator.getText());
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(null, "A capacidade do tanque do trator deve ser numérica");
             return;
         }
-        
+
         estado = jComboBoxEstado.getSelectedItem().toString();
 
         if (numeroDeMarchas <= 0) {
@@ -287,7 +287,7 @@ public class TelaDeCadastroDeTrator extends javax.swing.JFrame {
         }
 
         if (potenciaEmCv <= 0) {
-            JOptionPane.showMessageDialog(null, "Potencia Inválida");
+            JOptionPane.showMessageDialog(null, "Potência Inválida");
             return;
         }
 
@@ -316,6 +316,12 @@ public class TelaDeCadastroDeTrator extends javax.swing.JFrame {
                 estado = "I";
             } else {
                 JOptionPane.showMessageDialog(this, "Estado Inválido");
+                return;
+            }
+
+            if (controleVeiculo.buscarTratorPorNome(nome) != null) {
+                JOptionPane.showMessageDialog(this, "Já existe um trator com este nome\n"
+                        + "Recomenda-se utilizar o nome + numero (ex: Trato 12)");
                 return;
             }
 

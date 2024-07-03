@@ -1,6 +1,9 @@
 package usuario;
 
+import java.sql.SQLException;
 import java.util.HashSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import org.jasypt.util.password.BasicPasswordEncryptor;
 
@@ -115,7 +118,11 @@ public class TelaDeCadastroDeUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCancelarCadastroDeUsuarioActionPerformed
 
     private void jButtonConfirmarCadastroDeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarCadastroDeUsuarioActionPerformed
-        cadastrarUsuario();
+        try {
+            cadastrarUsuario();
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaDeCadastroDeUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButtonConfirmarCadastroDeUsuarioActionPerformed
 
     private void jButtonVoltarAoTelaDeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarAoTelaDeUsuarioActionPerformed
@@ -135,14 +142,14 @@ public class TelaDeCadastroDeUsuario extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jPasswordSenhaDoUsuarioActionPerformed
 
-    public void cadastrarUsuario() {
+    public void cadastrarUsuario() throws SQLException {
         BasicPasswordEncryptor passwordEncryptor = new BasicPasswordEncryptor();
 
         if (jTextFieldNomeUsuario.getText().isBlank()) {
             JOptionPane.showMessageDialog(null, "Insira o nome");
             return;
         }
-        
+
         nivelDeAcesso = jComboBoxNivelDeAcesso.getSelectedItem().toString();
         senhaInserida = new String(jPasswordSenhaDoUsuario.getPassword());
         nomeUsuario = jTextFieldNomeUsuario.getText();
@@ -176,7 +183,7 @@ public class TelaDeCadastroDeUsuario extends javax.swing.JFrame {
         }
 
         if (jPasswordSenhaDoUsuario.getText().equals(jTextFieldNomeUsuario.getText())) {
-            JOptionPane.showMessageDialog(null, "Nome de usuario e senha não devem ser iguais");
+            JOptionPane.showMessageDialog(null, "Nome de usuário e senha não devem ser iguais");
             return;
         }
 
@@ -186,9 +193,13 @@ public class TelaDeCadastroDeUsuario extends javax.swing.JFrame {
         }
 
         senhaCriptograda = passwordEncryptor.encryptPassword(senhaInserida);
-
+        
+        if (usuario.buscarUsuario(nomeUsuario) != null) {
+            JOptionPane.showMessageDialog(null, "Este nome de usuário já existe");
+            return;
+        }
+        
         if (nivelDeAcesso.equals("Master")) {
-
             nivelDeAcesso = "M";
             usuario.usuario.setNome(nomeUsuario);
             usuario.usuario.setSenha(senhaCriptograda);

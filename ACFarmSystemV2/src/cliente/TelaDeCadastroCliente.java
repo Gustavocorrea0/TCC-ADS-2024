@@ -3,6 +3,7 @@ package cliente;
 import buscarCEP.ViaCEP;
 import buscarCEP.ViaCEPEvents;
 import buscarCEP.ViaCEPException;
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -229,6 +230,8 @@ public class TelaDeCadastroCliente extends javax.swing.JFrame implements ViaCEPE
             ValidarCliente();
         } catch (ParseException ex) {
             Logger.getLogger(TelaDeCadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaDeCadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButtonConfirmarCadastroActionPerformed
 
@@ -258,7 +261,7 @@ public class TelaDeCadastroCliente extends javax.swing.JFrame implements ViaCEPE
         }
     }//GEN-LAST:event_jButtonBuscarCEPActionPerformed
 
-    public void ValidarCliente() throws ParseException {
+    public void ValidarCliente() throws ParseException, SQLException {
         nomeClienteNovo = jTextFieldNomeCliente.getText();
         cnpjOuCpfClienteNovo = jTextFieldCNPJOuCPF.getText();
         cepClienteNovo = jTextFieldCep.getText();
@@ -338,8 +341,14 @@ public class TelaDeCadastroCliente extends javax.swing.JFrame implements ViaCEPE
 
     }
 
-    public void cadastrarCliente() {
+    public void cadastrarCliente() throws SQLException {
         try {
+
+            if (controleCliente.buscarCliente(nomeClienteNovo) != null) {
+                JOptionPane.showMessageDialog(null, "Já existe um cliente com este nome");
+                return;
+            }
+
             controleCliente.cliente.setNomeCliente(nomeClienteNovo);
             controleCliente.cliente.setCnpjOuCpfCliente(cnpjOuCpfClienteNovo);
             controleCliente.cliente.setCepCliente(cepClienteNovo);

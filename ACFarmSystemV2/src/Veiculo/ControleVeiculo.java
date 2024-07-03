@@ -7,10 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author Gustavo
- */
 public class ControleVeiculo {
 
     public Conecta conexao = new Conecta();
@@ -544,7 +540,7 @@ public class ControleVeiculo {
         }
     }
 
-     public List<Carro> readCarro() {
+    public List<Carro> readCarro() {
 
         if (!conexao.getConexao()) {
             msg = "Falha na conexão com o banco de dados.";

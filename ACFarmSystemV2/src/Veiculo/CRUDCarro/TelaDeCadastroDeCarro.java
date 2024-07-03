@@ -297,6 +297,8 @@ public class TelaDeCadastroDeCarro extends javax.swing.JFrame {
         cor = jTextFieldCorCarro.getText();
         placa = jTextFieldPlacaCarro.getText().toUpperCase();
 
+        
+        
         try {
             quilometragem = Integer.parseInt(jTextFieldQuilometragemCarro.getText());
         } catch (NumberFormatException ex) {
@@ -380,7 +382,18 @@ public class TelaDeCadastroDeCarro extends javax.swing.JFrame {
             controleVeiculo.carro.setPlacaCarro(placa);
             controleVeiculo.carro.setCorCarro(cor);
             controleVeiculo.carro.setQuilometragemCarro(quilometragem);
-
+            
+            if (controleVeiculo.buscarCarroPorNome(nome) != null) {
+                JOptionPane.showMessageDialog(this, "Já existe um carro com este nome\n"
+                        + "Recomenda-se utilizar o nome + numero (Exemplo: Hilux 12)");
+                return;
+            }
+            
+            if (controleVeiculo.buscarCarroPorPlaca(nome) != null) {
+                JOptionPane.showMessageDialog(this, "Já existe um carro com esta placa");
+                return;
+            }
+ 
             msg = controleVeiculo.cadastrarCarro(ControleVeiculo.INCLUSAO);
             JOptionPane.showMessageDialog(this, msg);
 

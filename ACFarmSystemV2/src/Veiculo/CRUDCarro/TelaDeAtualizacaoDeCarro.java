@@ -442,7 +442,7 @@ public class TelaDeAtualizacaoDeCarro extends javax.swing.JFrame {
                 return;
             }
 
-            if (marcaVeiculoAtualizado.equals("")) {
+            if (marcaVeiculoAtualizado.isBlank()) {
                 JOptionPane.showMessageDialog(null, "Marca Inválida");
                 return;
             }
@@ -463,7 +463,7 @@ public class TelaDeAtualizacaoDeCarro extends javax.swing.JFrame {
             }
 
             tipoVeiculoAtualizado = "Carro";
-
+            
             if (estadoVeiculoAtualizado.equalsIgnoreCase("A") || estadoVeiculoAtualizado.equalsIgnoreCase("I")) {
                 Carro carroAtualizado = new Carro();
                 carroAtualizado.setNomeVeiculo(nomeVeiculoAtualizado);

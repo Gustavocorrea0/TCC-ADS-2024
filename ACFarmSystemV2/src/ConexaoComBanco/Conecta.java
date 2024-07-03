@@ -6,10 +6,9 @@ public class Conecta {
 
     public Connection conn;
     private final String DRIVER = "org.postgresql.Driver";
-    private final String URL = "jdbc:postgresql://localhost:5432/db_farm_system_v3";
-    private final String USUARIO = "postgres";
-    private final String SENHA = "#89Gu$t4V0";
-    // private final String SENHA = "postgres";
+    private final String URL = "jdbc:postgresql://localhost:5432/db_farm_system";
+    private final String USUARIO = "<nome-usuario>";
+    private final String SENHA = "<senha-usuario>";
 
     public boolean getConexao() {
 
@@ -35,4 +34,5 @@ public class Conecta {
             System.out.println("Problema ao encerrar a conexão");
         }
     }
+    
 }

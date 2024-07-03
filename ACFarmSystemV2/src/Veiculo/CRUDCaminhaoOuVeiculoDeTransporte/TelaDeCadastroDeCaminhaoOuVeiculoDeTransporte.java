@@ -86,6 +86,11 @@ public class TelaDeCadastroDeCaminhaoOuVeiculoDeTransporte extends javax.swing.J
         jTextFieldMarcaCaminhaoOuVeiculoDeTransporte.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jTextFieldMarcaCaminhaoOuVeiculoDeTransporte.setForeground(new java.awt.Color(0, 0, 0));
         jTextFieldMarcaCaminhaoOuVeiculoDeTransporte.setBorder(null);
+        jTextFieldMarcaCaminhaoOuVeiculoDeTransporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldMarcaCaminhaoOuVeiculoDeTransporteActionPerformed(evt);
+            }
+        });
         getContentPane().add(jTextFieldMarcaCaminhaoOuVeiculoDeTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 284, 271, 29));
 
         jTextFieldAnoCaminhaoOuVeiculoDeTransporte.setBackground(new java.awt.Color(255, 255, 255));
@@ -189,6 +194,10 @@ public class TelaDeCadastroDeCaminhaoOuVeiculoDeTransporte extends javax.swing.J
     private void jTextFieldNomeCaminhaoOuVeiculoDeTransporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeCaminhaoOuVeiculoDeTransporteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldNomeCaminhaoOuVeiculoDeTransporteActionPerformed
+
+    private void jTextFieldMarcaCaminhaoOuVeiculoDeTransporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldMarcaCaminhaoOuVeiculoDeTransporteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldMarcaCaminhaoOuVeiculoDeTransporteActionPerformed
 
     public void cadastrarCaminhaoOuVeiculoDeTransporte() {
         if (jTextFieldNomeCaminhaoOuVeiculoDeTransporte.getText().isBlank()) {
@@ -296,6 +305,13 @@ public class TelaDeCadastroDeCaminhaoOuVeiculoDeTransporte extends javax.swing.J
             controleVeiculo.caminhaoOuVeiculoDeTransporte.setEstadoVeiculo(estado);
             controleVeiculo.caminhaoOuVeiculoDeTransporte.setCapacidadeDoTanqueDeCombustivel(capacidadeDoTanque);
             controleVeiculo.caminhaoOuVeiculoDeTransporte.setCapacidadeDeCarga(capacidadeDeCarga);
+
+            if (controleVeiculo.buscarCaminhaoOuVeiculoDeTransportePorNome(nome) != null) {
+                JOptionPane.showMessageDialog(this, "Já existe um veiculo com este nome\n"
+                        + "Recomenda-se utilizar o nome + numero (Exemplo: Caminhao 12)");
+                return;
+            }
+
             String msg = controleVeiculo.cadastrarCaminhaoOuVeiculoDeTransporte(ControleVeiculo.INCLUSAO);
             JOptionPane.showMessageDialog(this, msg);
             limparCampos();

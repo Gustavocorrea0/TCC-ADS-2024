@@ -264,5 +264,5 @@ CREATE TABLE controle (
     id_fornecedor INTEGER REFERENCES fornecedor(id_fornecedor),
     id_praga INTEGER REFERENCES praga(id_praga),
     id_cliente INTEGER REFERENCES cliente(id_cliente),
-    id_cliente INTEGER REFERENCES venda_producao(id_venda_producao)
+    id_venda_producao INTEGER REFERENCES venda_producao(id_venda_producao)
 );

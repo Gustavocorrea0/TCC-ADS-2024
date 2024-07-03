@@ -347,10 +347,10 @@ public class TelaDeCadastroProducao extends javax.swing.JFrame {
         }
 
         try {
-            dataPlantio = jTextFieldDataPlantio.getText(); //
+            dataPlantio = jTextFieldDataPlantio.getText();
             dataInicioColheita = jTextFieldDataInicioColheita.getText();
             dataFimColheita = jTextFieldDataFimColheita.getText();
-            nomeProducao = jTextFieldNomeProducao.getText();//
+            nomeProducao = jTextFieldNomeProducao.getText();
             quantidadeProduzidaEmSacos = Integer.parseInt(jTextFieldQuantidadeProduzidaEmSacos.getText());
             estadoDeVenda = jComboBoxEstadoDeVenda.getSelectedItem().toString();
             tipoDeCultura = jComboBoxCultura.getSelectedItem().toString();
@@ -412,6 +412,11 @@ public class TelaDeCadastroProducao extends javax.swing.JFrame {
                 return;
             }
 
+            if (controleProducao.buscarProducao(nomeProducao) != null) {
+                JOptionPane.showMessageDialog(null, "Já existe uma produção com este nome");
+                return;
+            }
+
             controleProducao.producao.setNomeProducao(nomeProducao);
             controleProducao.producao.setPropriedade(nomePropriedade);
             controleProducao.producao.setDataDePlantio(dataPlantioValida);
@@ -425,8 +430,8 @@ public class TelaDeCadastroProducao extends javax.swing.JFrame {
 
             msg = controleProducao.cadastrarProducao(ControlePropriedade.INCLUSAO);
             JOptionPane.showMessageDialog(this, msg);
-
             limparCampos();
+            
         } catch (ParseException e) {
             JOptionPane.showMessageDialog(this, "Formato de data inválido, o formato é dd/mm/aaaa.");
         } catch (NumberFormatException ex) {

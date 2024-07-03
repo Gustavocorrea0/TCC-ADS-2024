@@ -3,6 +3,9 @@ package fornecedor;
 import buscarCEP.ViaCEP;
 import buscarCEP.ViaCEPEvents;
 import buscarCEP.ViaCEPException;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import validacoes.ValidarCNPJ;
 
@@ -254,7 +257,11 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame implements ViaC
     }//GEN-LAST:event_jTextFieldEstadoFornecedorActionPerformed
 
     private void jButtonConfirmarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarCadastroActionPerformed
-        cadastrarFornecedor();
+        try {
+            cadastrarFornecedor();
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaDeCadastroFornecedor.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButtonConfirmarCadastroActionPerformed
 
     @Override
@@ -284,7 +291,7 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame implements ViaC
         }
     }
 
-    public void cadastrarFornecedor() {
+    public void cadastrarFornecedor() throws SQLException {
         cepNovoFornecedor = jTextFieldCEPFornecedor.getText();
         cnpjNovoFornecedor = jTextFieldCNPJ.getText();
         estadoNovoFornecedor = jTextFieldEstadoFornecedor.getText();
@@ -346,6 +353,11 @@ public class TelaDeCadastroFornecedor extends javax.swing.JFrame implements ViaC
         }
 
         try {
+            if (controleFornecedor.buscarFornecedor(nomeFantasiaNovoFornecedor) != null) {
+                JOptionPane.showMessageDialog(this, "Já existe um fornecedor com este nome");
+                return;
+            }
+
             controleFornecedor.fornecedor.setCepFornecedor(cepNovoFornecedor);
             controleFornecedor.fornecedor.setCidadeFornecedor(cidadeNovoFornecedor);
             controleFornecedor.fornecedor.setCnpj(cnpjNovoFornecedor);
