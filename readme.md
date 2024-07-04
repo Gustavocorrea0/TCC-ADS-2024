@@ -40,12 +40,12 @@ Necessario: [Java], [Netbeans IDEA] e [PgAdmin4]
 git clone https://github.com/Gustavocorrea0/TCC-ADS-2024.git
 ```
 2 - Extrair projeto <br>
-3 - Iniciar [Netbeans IDEA], buscar projeto e abri-lo
+3 - Iniciar [Netbeans IDEA], buscar projeto e abri-lo <br><br>
 <img src="./img-projeto/img-configuracoes/abrir-projeto.png" alt="Alt text" width="200"/><br>
 
 ##### 📚 Adicionar biliotecas
 1 - Caso após abrir o projeto ocorra algum erro nas biliotecas, se faz necessário realizar os imports das mesmas <br>
-2 - Basta clicar "Libraries" no projeto e em seguida clicar com o botão direito <br>
+2 - Basta clicar "Libraries" no projeto e em seguida clicar com o botão direito <br><br>
 <img src="./img-projeto/img-configuracoes/importar-bibliotecas.png" alt="Alt text" width="200"/><br>
 3 - Após isso, clicar em "Add JAR/Folder..." <br>
 4 - E buscar as necessarias bibliotecas na pasta clonada do git <br>
@@ -53,14 +53,14 @@ git clone https://github.com/Gustavocorrea0/TCC-ADS-2024.git
 
 ##### 🔩 Configurar Banco de dados
 1 - Inicie o [PgAdmin4] <br>
-2 - Selecione um servidor e crie um banco de dados com nome: db_farm_system <br>
+2 - Selecione um servidor e crie um banco de dados com nome: db_farm_system <br><br>
 <img src="./img-projeto/img-configuracoes/iniciar-banco.png" alt="Alt text" width="200"/><br>
-3 - Após isso inicie uma "Query-tool" e cole o script do arquivo "bancoDeDados.sql" que está na pasta do repositorio clonado <br>
+3 - Após isso inicie uma "Query-tool" e cole o script do arquivo "bancoDeDados.sql" que está na pasta do repositorio clonado <br><br>
 <img src="./img-projeto/img-configuracoes/iniciar-query-tool.png" alt="Alt text" width="200"/><br>
 4 - Execute a criação do banco de dados <br>
 
 ##### ✅ Validar usuário e senha
-1 - No [Netbeans IDEA], acessa o pacote "ConexaoComBanco" e abra o arquivo "Conecta.java" <br>
+1 - No [Netbeans IDEA], acessa o pacote "ConexaoComBanco" e abra o arquivo "Conecta.java" <br><br>
 <img src="./img-projeto/img-configuracoes/config-banco.png" alt="Alt text" width="200"/><br>
 2 - Adicione o seu usuario do [PgAdmin4] no campo <seu-usuario> (padrão: postgres), na variavel: 
 > private final String USUARIO = "<seu-usuario>";
@@ -68,7 +68,7 @@ git clone https://github.com/Gustavocorrea0/TCC-ADS-2024.git
 3 - Adicione a sua senha do [PgAdmin4] no campo <sua-senha> (padrão: postgres), na variavel :
 > private final String SENHA = "<sua-senha>";
 
-4 - Após isso inicie o projeto <br>
+4 - Após isso inicie o projeto <br><br>
 <img src="./img-projeto/img-configuracoes/config-banco.png" alt="Alt text" width="200"/><br>
 #### 🚨 Possivéis Falhas
 1 - Imports de bibliotecas <br>
@@ -76,8 +76,8 @@ git clone https://github.com/Gustavocorrea0/TCC-ADS-2024.git
 
 ### 🖥️ Telas
 
-<img src="./img-projeto/img-telas/tela-de-login.png" alt="Alt text" width="500"/>
-<img src="./img-projeto/img-telas/tela-de-inicio.png" alt="Alt text" width="500"/> 
+<img src="./img-projeto/img-telas/tela-de-login.png" alt="Alt text" width="400"/>
+<img src="./img-projeto/img-telas/tela-de-inicio.png" alt="Alt text" width="400"/> 
 
 
 [Java]: <https://www.oracle.com/br/java/technologies/downloads/>
